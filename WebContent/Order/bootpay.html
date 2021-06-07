@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--#ffdc16 #5d5a55  -->
+<title>Insert title here</title>
+<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>My Account || Hurst</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+		<!-- Place favicon.ico in the root directory -->
+		
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+	<!-- all css here -->
+		<!-- bootstrap v3.3.6 css -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<!-- animate css -->
+		<link rel="stylesheet" href="../css/animate.css">
+		<!-- jquery-ui.min css -->
+		<link rel="stylesheet" href="../css/jquery-ui.min.css">
+		<!-- meanmenu css -->
+		<link rel="stylesheet" href="../css/meanmenu.min.css">
+		<!-- nivo-slider css -->
+		<link rel="stylesheet" href="../lib/css/nivo-slider.css">
+		<link rel="stylesheet" href="../lib/css/preview.css">
+		<!-- slick css -->
+		<link rel="stylesheet" href="../css/slick.css">
+		<!-- lightbox css -->
+		<link rel="stylesheet" href="../css/lightbox.min.css">
+		<!-- material-design-iconic-font css -->
+		<link rel="stylesheet" href="../css/material-design-iconic-font.css">
+		<!-- All common css of theme -->
+		<link rel="stylesheet" href="../css/default.css">
+		<!-- style css -->
+		<link rel="stylesheet" href="../css/style.css">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="../css/shortcode.css">
+		<!-- responsive css -->
+		<link rel="stylesheet" href="../css/responsive.css">
+		<!-- modernizr css -->
+		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+		<!-- iamport -->
+		<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+		<!-- 폰트 -->
+		 <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+<script type="text/javascript">
+//html->html에서 parm가져오는법
+let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+    return paramPair.split(/=(.+)?/).slice(0, 2);
+}).reduce(function(obj, pairArray) {
+    obj[pairArray[0]] = pairArray[1];
+    return obj;
+}, {});
+</script>
+<style type="text/css">
+
+#regForm {
+    background-color: #ffffff;
+    margin: 0px auto;
+    font-family: Raleway;
+    padding: 40px;
+    border-radius: 10px
+}
+
+
+h1 {
+    text-align: center
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+    border-radius: 10px;
+    -webkit-appearance: none
+}
+
+.tab input:focus {
+    border: 1px solid #6a1b9a !important;
+    outline: none
+}
+
+input.invalid {
+    border: 1px solid #e03a0666
+}
+
+.tab {
+    display: none
+}
+
+button {
+    background-color: #6f6f6a;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer
+}
+
+button:hover {
+    opacity: 0.8
+}
+
+button:focus {
+    outline: none !important
+}
+
+#prevBtn {
+    background-color: #6f6f6a
+}
+
+.all-steps {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center
+}
+
+.step {
+    height: 40px;
+    width: 40px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: black;
+    opacity: 0.5
+}
+
+.step.active {
+    opacity: 1
+}
+
+.step.finish {
+    color: #fff;
+    background: black;
+    opacity: 1
+}
+
+.all-steps {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+.thanks-message {
+    display: none
+}
+/*  */
+body{
+	background-color: white;
+}
+.heading-banner-area {
+    background: #FFDC15;
+}
+#username{
+	color: #6f6f6a;
+}
+.plus-minus {
+    position: relative
+}
+
+.plus {
+    position: absolute;
+    top: -4px;
+    left: 2px;
+    cursor: pointer
+}
+
+.minus {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    cursor: pointer
+}
+
+.vsm-text:hover {
+    color: #FF5252
+}
+
+.book,
+.book-img {
+	margin:0px;
+    width: 120px;
+    height: 180px;
+    border-radius: 5px
+}
+
+.book {
+    margin: 20px 15px 5px 15px
+}
+
+.border-top {
+    border-top: 1px solid black !important;
+    margin-top: 20px;
+    padding-top: 15px
+}
+
+.card {
+    margin: 40px 0px;
+    padding: 40px 50px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.2)
+}
+
+input,
+textarea {
+    background-color: #F3E5F5;
+    padding: 8px 15px 8px 15px;
+    width: 100%;
+    border-radius: 5px !important;
+    box-sizing: border-box;
+    border: 1px solid #F3E5F5;
+    font-size: 15px !important;
+    color: #000 !important;
+    font-weight: 300
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #9FA8DA;
+    outline-width: 0;
+    font-weight: 400
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+.pay {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+   
+    margin: 10px 20px 10px 0px;
+    cursor: pointer;
+/*     box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.2)
+ */}
+
+.gray {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: #E0E0E0
+}
+
+.gray .pay {
+    box-shadow: none
+}
+
+#tax {
+    border-top: 1px black solid;
+    margin-top: 10px;
+    padding-top: 10px
+}
+
+.btn-blue {
+    border: none;
+    border-radius: 10px;
+    background-color:  #5d5a55;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 20px 0px;
+    cursor: pointer
+}
+
+.btn-blue:hover {
+    background-color: #311B92;
+    color: #fff
+}
+
+#checkout {
+    float: left
+}
+
+#check-amt {
+    float: right
+}
+
+@media screen and (max-width: 768px) {
+
+    .book,
+    .book-img {
+        width: 100px;
+        height: 150px
+    }
+
+    .card {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .mob-text {
+        font-size: 13px
+    }
+
+    .pad-left {
+        padding-left: 20px
+    }
+}
+
+
+
+
+
+ body {
+     background-color: #f9f9fa
+ }
+
+ .flex {
+     -webkit-box-flex: 1;
+     -ms-flex: 1 1 auto;
+     flex: 1 1 auto
+ }
+
+ @media (max-width:991.98px) {
+     .padding {
+         padding: 1.5rem
+     }
+ }
+
+ @media (max-width:767.98px) {
+     .padding {
+         padding: 1rem
+     }
+ }
+
+ .padding {
+     padding: 5rem
+ }
+
+ .card {
+     box-shadow: none;
+     -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+     -ms-box-shadow: none
+ }
+
+ .pl-3,
+ .px-3 {
+     padding-left: 1rem !important
+ }
+
+ .card {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     min-width: 0;
+     word-wrap: break-word;
+     background-color: #fff;
+     background-clip: border-box;
+     border: 1.5px solid #ffdc16;
+     border-radius: 15px
+ }
+
+ .card .card-title {
+     color: #000000;
+     margin-bottom: 0.625rem;
+     text-transform: capitalize;
+     font-size: 0.875rem;
+     font-weight: 500
+ }
+
+ .card .card-description {
+     margin-bottom: .875rem;
+     font-weight: 400;
+     color: #76838f
+ }
+
+ p {
+     font-size: 0.875rem;
+     margin-bottom: .5rem;
+     line-height: 1.5rem
+ }
+
+ .table-responsive {
+     display: block;
+     width: 100%;
+     overflow-x: auto;
+     -webkit-overflow-scrolling: touch;
+     -ms-overflow-style: -ms-autohiding-scrollbar
+ }
+
+ .table,
+ .jsgrid .jsgrid-table {
+     width: 100%;
+     max-width: 100%;
+     margin-bottom: 1rem;
+     background-color: transparent
+ }
+
+ .table thead th,
+ .jsgrid .jsgrid-table thead th {
+     border-top: 0;
+     border-bottom-width: 1px;
+     font-weight: 500;
+     font-size: .875rem;
+     text-transform: uppercase
+ }
+
+ .table td,
+ .jsgrid .jsgrid-table td {
+     font-size: 0.875rem;
+     padding: .875rem 0.9375rem
+ }
+
+ .badge {
+     border-radius: 0;
+     font-size: 12px;
+     line-height: 1;
+     padding: .375rem .5625rem;
+     font-weight: normal
+ }
+ 
+ 
+ 
+ 
+ 
+#cno {
+    transform: translateY(-10px)
+}
+
+.btn {
+    background:#5d5a55 !important;
+    border: none;
+    border-radius: 30px
+}
+
+.btn:focus {
+    box-shadow: none
+}
+.heading {
+    color: #C1C1C1;
+    font-size: 14px;
+    font-weight: 500
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+</style>
+</head>
+<body>
+		<!-- WRAPPER START -->
+		<div class="wrapper bg-dark-white" style="background-color: white">
+
+			<!-- HEADER-AREA START -->
+			<header id="sticky-menu" class="header header-2">
+				<div class="header-area">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-4 col-sm-offset-4 col-xs-7">
+								<div class="logo text-center">
+									<a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
+								</div>
+							</div>
+							<div class="col-sm-4 col-xs-5">
+								<div class="mini-cart text-right">
+									<ul>
+										<li>
+											<a href="./purchases.html">구매내역</a>
+										</li>
+										<li>
+											<a class="cart-icon" href="#">
+												<i class="zmdi zmdi-shopping-cart"></i>
+												<span>3</span>
+											</a>
+											<div class="mini-cart-brief text-left">
+												<div class="cart-items">
+													<p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+												</div>
+												<div class="all-cart-product clearfix">
+													<div class="single-cart clearfix">
+														<div class="cart-photo">
+															<a href="#"><img src="img/cart/1.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 100.00</p>
+															<p class="mb-0">Qty : 02 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+													<div class="single-cart clearfix">
+														<div class="cart-photo">
+															<a href="#"><img src="img/cart/2.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 300.00</p>
+															<p class="mb-0">Qty : 01 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+												</div>
+												<div class="cart-totals">
+													<h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+												</div>
+												<div class="cart-bottom  clearfix">
+													<a href="cart.html" class="button-one floatleft text-uppercase" data-text="View cart">장바구니</a>
+													<a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- MAIN-MENU START -->
+				<div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<div class="main-menu  hidden-xs">
+					<nav>
+						<ul>
+							<li><a href="index.html">home</a>
+								<div class="sub-menu menu-scroll">
+									<ul>
+										<li class="menu-title">Page's</li>
+										<li><a href="index.html">Home Version 1</a></li>
+										<li><a href="index-2.html">Home Version 2</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="shop.html">products</a>
+								<div class="mega-menu menu-scroll">
+									<div class="table">
+										<div class="table-cell">
+											<div class="half-width">
+												<ul>
+													<li class="menu-title">best brands</li>
+													<li><a href="#">henning koppel</a></li>
+													<li><a href="#">jehs + Laub</a></li>
+													<li><a href="#">vicke lindstrand</a></li>
+													<li><a href="#">don chadwick</a></li>
+													<li><a href="#">akiko kuwahata</a></li>
+													<li><a href="#">barbro berlin</a></li>
+													<li><a href="#">cecilia hall</a></li>
+													<li><a href="#">don chadwick</a></li>
+												</ul>
+											</div>
+											<div class="half-width">
+												<ul>
+													<li class="menu-title">popular brands</li>
+													<li><a href="#">akiko kuwahata</a></li>
+													<li><a href="#">barbro berlin</a></li>
+													<li><a href="#">cecilia hall</a></li>
+													<li><a href="#">don chadwick</a></li>
+													<li><a href="#">henning koppel</a></li>
+													<li><a href="#">jehs + Laub</a></li>
+													<li><a href="#">vicke lindstrand</a></li>
+													<li><a href="#">don chadwick</a></li>
+												</ul>
+											</div>
+											<div class="full-width">
+												<div class="mega-menu-img">
+													<a href="single-product.html"><img src="img/megamenu/1.jpg" alt="" /></a>
+												</div>
+											</div>
+											<div class="pb-80"></div>
+										</div>
+									</div>
+								</div>
+							</li>
+                            <li><a href="#">Shortcodes</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Shortcodes</li>
+                                        <li><a href="elements-accordions.html">Accordion</a></li>
+                                        <li><a href="elements-toggles.html">Toggles</a></li>
+                                        <li><a href="elements-tab.html">Tab</a></li>
+                                        <li><a href="elements-product-tab.html">Product Tab</a></li>
+                                        <li><a href="elements-product-tab-2.html">Product Tab 2</a></li>
+                                        <li><a href="elements-carousel.html">product carousel</a></li>
+                                        <li><a href="elements-carousel-2.html">product carousel 2</a></li>
+                                        <li><a href="elements-featured-product.html">Featured Product</a></li>
+                                        <li><a href="elements-featured-product-2.html">Featured Product 2</a></li>
+                                        <li><a href="elements-button.html">Button</a></li>
+                                        <li><a href="elements-table.html">Table</a></li>
+                                        <li><a href="elements-progress-bars.html">Progress Bar</a></li>
+                                        <li><a href="elements-blog.html">Blog</a></li>
+                                        <li><a href="elements-blog-2.html">Blog - 2</a></li>
+                                        <li><a href="elements-team.html">Team</a></li>
+                                        <li><a href="elements-footer.html">Footer</a></li>
+                                        <li><a href="elements-footer-2.html">Footer 2</a></li>
+                                        <li><a href="elements-map.html">Map</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+							<li><a href="shop-sidebar.html">accesories</a></li>
+							<li><a href="shop-list.html">lookbook</a></li>
+							<li><a href="blog.html">blog</a></li>
+							<li><a href="#">pages</a>
+								<div class="sub-menu menu-scroll">
+									<ul>
+										<li class="menu-title">Page's</li>
+										<li><a href="shop.html">Shop</a></li>
+										<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+										<li><a href="shop-grid-right-sidebar.html">Shop Right Sidebar</a></li>
+										<li><a href="shop-list.html">Shop List</a></li>
+										<li><a href="shop-list-right-sidebar.html">Shop List right sidebar</a></li>
+										<li><a href="single-product.html">Single Product</a></li>
+										<li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+										<li><a href="cart.html">Shopping Cart</a></li>
+										<li><a href="wishlist.html">Wishlist</a></li>
+										<li><a href="checkout.html">Checkout</a></li>
+										<li><a href="order.html">Order</a></li>
+										<li><a href="login.html">login / Registration</a></li>
+										<li><a href="my-account.html">My Account</a></li>
+										<li><a href="404.html">404</a></li>
+										<li><a href="blog.html">Blog</a></li>
+										<li><a href="single-blog.html">Single Blog</a></li>
+										<li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="about.html">about us</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- MAIN-MENU END -->
+			</header>
+			<!-- HEADER-AREA END -->
+			<!-- Mobile-menu start -->
+			<div class="mobile-menu-area">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+							<div class="mobile-menu">
+								<nav id="dropdown">
+									<ul>
+										<li><a href="index.html">home</a>
+											<ul>
+												<li><a href="index.html">Home Version 1</a></li>
+												<li><a href="index-2.html">Home Version 2</a></li>
+											</ul>
+										</li>
+										<li><a href="shop.html">products</a></li>
+										<li><a href="shop-sidebar.html">accesories</a></li>
+										<li><a href="shop-list.html">lookbook</a></li>
+										<li><a href="blog.html">blog</a></li>
+										<li><a href="#">pages</a>
+											<ul>
+												<li><a href="shop.html">Shop</a></li>
+												<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+												<li><a href="shop-list.html">Shop List</a></li>
+												<li><a href="single-product.html">Single Product</a></li>
+												<li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+												<li><a href="cart.html">Shopping Cart</a></li>
+												<li><a href="wishlist.html">Wishlist</a></li>
+												<li><a href="checkout.html">Checkout</a></li>
+												<li><a href="order.html">Order</a></li>
+												<li><a href="login.html">login / Registration</a></li>
+												<li><a href="my-account.html">My Account</a></li>
+												<li><a href="404.html">404</a></li>
+												<li><a href="blog.html">Blog</a></li>
+												<li><a href="single-blog.html">Single Blog</a></li>
+												<li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+												<li><a href="about.html">About Us</a></li>
+												<li><a href="contact.html">Contact</a></li>
+											</ul>
+										</li>
+										<li><a href="about.html">about us</a></li>
+										<li><a href="contact.html">contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile-menu end -->
+			<!-- HEADING-BANNER START -->
+			<div class="heading-banner-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="heading-banner">
+								<div class="heading-banner-title">
+									<h2 id="username" style=""></h2>
+								</div>
+								<div class="breadcumbs pb-15">
+									<ul>
+										<li><a href="index.html">Home</a></li>
+										<li>My Account</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- HEADING-BANNER END -->
+			<!-- MY-ACCOUNT-AREA START -->
+			<br><br><br><br>
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-5">
+			<div class="container" style="width: 600px; margin-right: 0px">
+			    <div class="row d-flex justify-content-center align-items-center">
+			        <div class="col-md-12">
+			            <form id="regForm" style="padding-bottom: 0px">
+			                <h1 style="color: black">Order</h1>
+			                <div class="all-steps" id="all-steps" > <span class="step"><i class="fas fa-chair"></i></span> <span class="step"><i class="fas fa-user-circle"></i></span> <span class="step"><i class="fas fa-credit-card"></i></span>   </div>
+			                <div class="tab" style="margin-top: 50px">
+							        <div class="col-5">
+							            <h4 style="margin-bottom: 0px"><strong><i class="fas fa-chair"></i> &nbsp;&nbsp;주문 상품</strong></h4>
+							        </div>
+					                    <div class="row "  style="width: 100%; margin-left: 0px">
+											 <div class="page-content page-container" id="page-content">
+											    <div class="padding" style="padding: 0px">
+											        <div class="row container d-flex justify-content-center"  >
+											            <div class="col-lg-9 grid-margin stretch-card" style="padding-left: 10px">
+											                <div class="card" style="width: 500px; margin-bottom: 10px;margin-top: 20px">
+											                    <div class="card-body">
+											                       
+											                        <div class="table-responsive">
+											                            <table class="table">
+											                                <thead>
+											                                    <tr>
+											                                        <th>상품</th>
+											                                        <th>상품명</th>
+											                                        <th>수량</th>
+											                                        <th>가격</th>
+											                                         <th>삭제</th>
+											                                    </tr>
+											                                </thead>
+											                                <tbody id="productList">
+											                                 
+											                                </tbody>
+											                                
+											                            </table>
+											                        </div>
+											                    </div>
+											                </div>
+											            </div>
+											        </div>
+											    </div>
+											</div>
+											      <div class="OrderedProdNum"></div>
+											    </div>
+			                </div>
+			                <div class="tab" style="margin-top: 70px">
+			                    <div class="col-5">
+			            			<h4><i class="fas fa-user-circle"></i>&nbsp;&nbsp;<strong>주문자 정보</strong></h4>
+			       				 </div>
+			                    <div class="row "  style="margin-left: 22px;">
+					   
+									   <div class="container-fluid">
+									    <div class="row d-flex justify-content-center">
+									        <div class="col-sm-12">
+									            <div class="card mx-auto" style="  border: 1.5px solid #ffdc16 ;border-color:#ffdc16; max-width: 600px;border-radius: 15px;margin: 20px 0 30px;padding: 35px;padding-bottom: 20px !important">
+									                
+									                <form class="card-details ">
+									                    <div class="form-group mb-0">
+									                        <h5 class="text-warning mb-0" style="margin-bottom: 10px">주문자명</h5><strong><div id="loginMem"></div></strong>
+									                    </div><br>
+									                    <div class="form-group">
+									                        <h5 class="text-warning mb-0" style="margin-bottom: 10px">핸드폰 번호</h5> <strong><div id="phoneNum"></div></strong>
+									                    </div>
+									                    <div class="form-group pt-2">
+									                        <div class="row d-flex">
+									                            <div class="col-sm-7">
+									                                <h5 class="text-warning mb-0" style="margin-bottom: 10px">주소</h5>  <strong><div id="address"></div></strong>
+									                            </div>
+									                         </div>
+									                            
+									                    </div>
+									                    <div class="form-group pt-2" >
+									                        <div class="row d-flex">
+									                            <div class="col-sm-7">
+									                                <h5 class="text-warning mb-0" style="margin-bottom: 10px">배송 메세지</h5><input id ="obMes" type="text">
+									                              </div>
+									                      <div class="col-sm-5 pt-0" style="padding-left: 50px; padding-top: 20px"> <a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View"><button type="button" class="btn" style="color: white">수정</button></a> </div>
+									                        </div>
+									                    </div>
+									                    
+									                    
+									                </form>
+									            </div>
+									        </div>
+									    </div>
+									</div>
+			   					</div>
+			                </div>
+			                 <div class="tab" style="margin-top: 70px">
+			                     <div class="col-5">
+			            			<h4><i class="fas fa-credit-card"></i>&nbsp;&nbsp;<strong>결제</strong></h4><input type="hidden" id="quantityOrder">
+			        			</div>
+			                     <div class="row justify-content-center"  style="margin-left: 22px;">
+								        <div class="col-lg-12">
+								            <div class="card" style="width: 100%; margin-left: 0px; margin-top: 20px;margin-bottom: 30px">
+								                <div class="row">
+								                    
+								                    <div class="col-lg-6">
+								                        <div class="row px-2">
+								                            <div class="form-group col-md-12"> 
+								                            	 <label class="form-control-label" style="margin-bottom: 14px;">포인트 사용하기</label> 
+								                            	 <div id="MyPoint"></div>
+								                          		 <div class="row px-2"><div class="col-lg-9" id="pointUpdate"><input type="text" id="cname" name="cname" placeholder="0"></div></div>
+								                          		 <div class="row px-2">	<div class="col-lg-6"><button class="btn-block btn-blue" id="gotoUsePoint">포인트 사용</button></div></div>
+								                          		   		 
+								                          		 
+								                            </div>
+								                           
+								                        </div>
+								                        
+								                    </div>
+								                    <div class="col-lg-4 mt-2">
+								                        <div class="row d-flex justify-content-between px-4">
+								                            <p class="mb-1 text-left">주문 금액</p>
+								                            <h6 class="mb-1 text-right" id="orderPrice"></h6>
+								                        </div>
+								                        <div class="row d-flex justify-content-between px-4">
+								                            <p class="mb-1 text-left">배달비</p>
+								                            <h6 class="mb-1 text-right" id="deliveryPay">10000</h6>
+								                        </div>
+								                        <div class="row d-flex justify-content-between px-4">
+								                            <p class="mb-1 text-left">할인 금액</p>
+								                            <h6 class="mb-1 text-right" id="usePoint"></h6>
+								                        </div>
+								                        <div class="row d-flex justify-content-between px-4" id="tax">
+								                            <p class="mb-1 text-left">Total</p>
+								                            <h6 class="mb-1 text-right" id="totalPrice"></h6>
+								                        </div> <button class="btn-block btn-blue" id="check_module"> <span> <span id="checkout">Checkout</span> </span> </button>
+								                    </div>
+								                </div>
+								            </div>
+								        </div>
+			    						</div>
+			                		</div>
+			                
+			               
+			                <div style="overflow:auto; margin-bottom: 150px" id="nextprevious;" >
+			                    <div style="float:right;"> <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fa fa-angle-double-left"></i></button> <button type="button" id="nextBtn" onclick="nextPrev(1)"><i class="fa fa-angle-double-right"></i></button> </div>
+			                </div>
+			            </form>
+			        </div>
+			    </div>
+			</div>
+		</div>
+		<div class="col-md-1"> </div>
+	<div class="col-md-3"> 
+	
+		 <div class="row justify-content-center"  style="margin-left: 22px; width:800px;margin-top: 200px">
+								        <div class="col-lg-12" style="width: 400px">
+								            <div class="card" style="border: 1.5px solid #5d5a55; padding-left: 30px">
+								                <div class="row">
+								                    
+								                    <div class="col-lg-6">
+								                        <div class="row px-2">
+								                            <div class="form-group col-md-12" style="margin-bottom: 0px;width:600px"> 
+								                            	 <label class="form-control-label" style="margin-bottom: 14px;">주문 정보</label> 
+								                            	 <div id="MyPoint"></div>
+								                          		 <div class="row px-2"><div class="col-lg-9" id="rightPic"></div></div>
+								                          		 <div class="row px-2">	<div class="col-lg-6" style="margin: 2.5rem 0 0;margin-bottom: 1.25rem"><strong>주문 내역</strong></div></div>
+								                          		 <div class="row px-2">	<div class="col-lg-6" style="margin-bottom: 1.25rem"><div class="row"><div class="col-lg-6">전체 가격 </div><div class="col-lg-6" id="rightPrice" style="text-align: right;">sssss</div></div></div></div></div>
+								                          		    		 
+								                          		 
+								                            </div>
+								                           
+								                        </div>
+								                        
+								                    </div>
+								                    <div class="col-lg-4 mt-2">
+								                       
+								                        <div class="row d-flex justify-content-between px-4" id="tax" style="margin-top: 0px;width:300px">
+								                            <div class="mb-1 text-left"><strong>Total</strong></div>
+								                            <h6 class="mb-1 text-right" id="rightTotalPrice"></h6>
+								                        </div> 
+								                    </div>
+								                </div>
+								            </div>
+								        </div>
+			    						</div>
+	</div>
+	<div class="col-md-2"> </div>
+</div>			
+
+
+			<!-- MY-ACCOUNT-CART-AREA END -->
+			<!-- FOOTER START -->
+			<footer>
+				<!-- Footer-area start -->
+				<div class="footer-area footer-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Contact Us</h3>
+									<ul class="footer-contact">
+										<li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
+										<li><span>Cell-Phone :</span>+012 345 678 102</li>
+										<li><span>Email :</span>info@example.com</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">accounts</h3>
+									<ul class="footer-menu">
+										<li><a href="my-account.html"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
+										<li><a href="wishlist.html"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
+										<li><a href="cart.html"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
+										<li><a href="login.html"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
+										<li><a href="checkout.html"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">shipping</h3>
+									<ul class="footer-menu">
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>New Products</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Top Sellers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Manufactirers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Suppliers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Specials</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Email Newsletters</h3>
+									<div class="footer-subscribe">
+										<form action="#">
+											<input type="text" name="email" placeholder="Email Address..." />
+											<button class="button-one submit-btn-4" type="submit" data-text="Subscribe">Subscribe</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer-area end -->
+				<!-- Copyright-area start -->
+				<div class="copyright-area copyright-2">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-xs-12">
+								<div class="copyright">
+									<p class="mb-0">&copy; <a href="#" target="_blank">Hurst </a> 2018. All Rights Reserved.</p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="payment  text-right">
+									<a href="#"><img src="img/payment/1.png" alt="" /></a>
+									<a href="#"><img src="img/payment/2.png" alt="" /></a>
+									<a href="#"><img src="img/payment/3.png" alt="" /></a>
+									<a href="#"><img src="img/payment/4.png" alt="" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Copyright-area start -->
+			</footer>
+			<!-- FOOTER END -->
+			<!-- QUICKVIEW PRODUCT -->
+			<div id="quickview-wrapper" >
+			   <div class="modal fade" id="productModal" tabindex="-1" role="dialog" >
+					<div class="modal-dialog" role="document" style="width: 600px; height: 400px ">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body">
+								
+
+									<div class="product-info" style="margin: 20px">
+										
+										<div class="row">
+												<div class="col-lg-8">
+													<h3>정보 수정</h3>
+												</div>
+												<div style="padding-top: 20px">
+												<a id="sameInfo"><i class="far fa-check-circle"></i> 주문자 정보와 일치하게</a>
+												</div>
+											</div>
+										<div class="price-box-3">
+											<hr />
+											<div class="row">
+												<div class="col-lg-6">
+													<h5>수령자 이름</h5>
+													<div id="deliveryName"><input type="text" id="inputdN" placeholder="수령자 이름을 입력하세요"></div>
+												</div>
+												<div class="col-lg-6">
+													<h5>수령자 전화번호</h5>
+													<div id="deliveryPhone"><input type="text" id="inputdP" placeholder="수령자  번호를 입력하세요"></div>
+												</div>
+											</div>
+											<hr />
+											<div id="addressS">
+									        		<h5 id="memAddressck">원래 주소</h5>
+									        		<h4 id="memAddress"></h4>
+									        		<br><br>
+									        		<div class="newAddress">
+											        		<h5>다른 주소로 배달 하기 </h5>
+											        		<div class="row">
+																<div class="col-lg-6">
+																	<input type="text" id="sample6_postcode" placeholder="우편번호">
+																	
+																</div>
+																<div class="col-lg-6">
+																	<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+																</div>
+															</div>
+											        		<div class="row">
+																<div class="col-lg-6">
+																	<input type="text" id="sample6_address" placeholder="주소"><br>
+																	
+																</div>
+																<div class="col-lg-6">
+																	<input type="text" id="sample6_detailAddress" placeholder="상세주소">
+																</div>
+															</div>
+															
+															<input type="text" id="sample6_extraAddress" placeholder="참고항목">
+									        		</div>
+									        		
+									        		
+									        	</div>
+											<hr />
+										</div>
+											
+										<div class="social-sharing">
+											<div class="widget widget_socialsharing_widget">
+												<button type="button" class="btn btn-light" data-dismiss="modal">Close</button> 
+             							<button type="button" class="btn btn-primary" id="dataSelected" data-dismiss="modal">Save Changes</button> 
+											</div>
+										</div>
+									</div><!-- .product-info -->
+								
+							</div><!-- .modal-body -->
+						</div><!-- .modal-content -->
+					</div><!-- .modal-dialog -->
+			   </div>
+			
+		</div>
+ <!-- Modal -->
+	<input type="hidden" id="odNumCk">		  
+
+
+<script type="text/javascript">
+let login = JSON.parse(sessionStorage.getItem("login"));
+
+$( document ).ready(function() {	
+	//alert(login.address)
+	$("#username").html("안녕하세요, " + login.name + "님");
+	loadPersonal(login);
+});
+
+//주문 디테일에서 받아들이는 param
+let prodNum = urlParams.prodNum;
+let color = urlParams.color;
+let quantity = urlParams.quantity;
+let price = urlParams.price;
+let filename = urlParams.filename;
+let prodName = urlParams.prodName;
+let weight = urlParams.weight;
+let cartCk =0;		//장바구니인지 체크
+$("#loginMem").html(login.name);
+$("#phoneNum").html(login.phone);
+$("#address").html(login.address);
+$("#memAddress").html(login.address);
+$("#MyPoint").html("보유 포인트 : "+login.memPoint+"점");
+let OrderedProdNum=0;		//주문한 제품의 prodNum
+let OrderedProdCount=0;
+//1.param이 null이라면 -> 장바구니에서 넘어온거 
+if(prodNum==null){
+	//alert('장바구니에서 넘어옴');
+	cartCk +=1;
+	//alert(cartCk);
+	$.ajax({
+		url:'http://localhost:3000/getCart',
+		type:'post',		
+		data:{ id:login.id },
+		success:function(list){
+	 		let OrderPrice=0;
+	 		let totalPrice=0;
+	 		let weightCart=0;
+	 		let deliveryCost=0;
+	 		let quantityCart=0;	//총 갯수
+			$.each(list, function (i, item) {
+				//prodNum저장
+				$(".OrderedProdNum").append(' <input type="hidden" id="OrderedProdNum'+i+'" value="'+item.prodNum+'">');
+				//주문한 prodNum의 갯수
+				OrderedProdCount+=1;
+				$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
+				$("#rightPic").append('<img class="pay" src="../productPic/'+item.filename+'" style="height:85px;width: 85px">');
+				OrderPrice += parseInt(item.price);   
+				weightCart += parseInt(item.weight);  
+				quantityCart+= parseInt(item.quantity);
+				//let totalPrice += parseInt(item.price) * parseInt(item.quantity);
+				
+			});	
+			$("#productList").append('<tr><td></td><td colspan="2" style="background-color:#F5F5F5;"><h4><strong>전체 상품 가격</strong></h4><br><br></td><td style="background-color:#F5F5F5;"><br><br><h4>₩'+OrderPrice+'</h4></td><td></td></tr>')
+					
+			$("#orderPrice").html(OrderPrice);
+			if(weightCart<1){
+				deliveryCost=3000;
+			}
+			else if(weightCart<5){
+				deliveryCost=10000;
+			}
+			else if(weightCart<10){
+				deliveryCost=15000;
+			}
+			else if(weightCart<20){
+				deliveryCost=30000;
+			}
+			else if(weightCart<50){
+				deliveryCost=70000;
+			}
+			else{
+				deliveryCost=100000;
+			}
+			//alert(quantityCart)
+			$("#deliveryPay").html(deliveryCost);
+			 totalPrice = OrderPrice+deliveryCost;
+			$("#totalPrice").html(totalPrice);
+			$("#rightTotalPrice").html(totalPrice);
+			$("#quantityOrder").val(quantityCart);
+			
+		},
+		error:function(){
+			alert('error');
+		}
+	});	
+	
+}
+
+//2.param 있음 -> 상품 디테일에서 바로 구매한 것 
+else{
+	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+price+'원</div></td></tr>');
+	let OrderPrice = price*quantity;
+	$("#rightPic").append('<img class="pay" src="../productPic/'+filename+'" style="height:85px;width: 85px">');
+	
+	$("#orderPrice").html(OrderPrice);
+	$(".OrderedProdNum").append(' <input type="hidden" id="OrderedProdNum0" value="'+prodNum+'">');
+	OrderedProdCount=1;
+	let deliveryCost=0;
+	if(weight<1){
+		deliveryCost=3000;
+	}
+	else if(weight<5){
+		deliveryCost=10000;
+	}
+	else if(weight<10){
+		deliveryCost=15000;
+	}
+	else if(weight<20){
+		deliveryCost=30000;
+	}
+	else if(weight<50){
+		deliveryCost=70000;
+	}
+	else{
+		deliveryCost=100000;
+	}
+	let totalPrice = OrderPrice+deliveryCost;
+	$("#quantityOrder").val(quantity);
+	$("#deliveryPay").html(deliveryCost);
+	$("#totalPrice").html(totalPrice);
+	$("#rightTotalPrice").html(totalPrice);
+}
+
+
+
+
+$("#dataSelected").click(function(){
+	   //alert('주소 저장');
+	   let finaldN =document.getElementById("inputdN").value;
+	   let finaldP = document.getElementById("inputdP").value;
+	   //alert(finaldN);
+	   $("#loginMem").html(finaldN);
+	   $("#phoneNum").html(finaldP);
+	   let detailAddress=  document.getElementById("sample6_detailAddress").value; 
+	   alert(detailAddress);
+	   let finalAddress=address+" "+detailAddress;
+	   //alert(finalAddress);
+	   if(detailAddress!=""){
+		   $("#address").html(finalAddress);
+	   }
+	   
+	  
+	});
+//포인트 사용
+let point=0;
+$("#gotoUsePoint").click(function(){
+	$("#pointUpdate").html('<input type="text" id="cname" name="cname" value="'+login.memPoint+'" readonly>');
+	$("#usePoint").html(login.memPoint);
+	let totalPrice = document.getElementById("totalPrice").innerHTML;
+	//alert(totalPrice)
+	totalPrice -=login.memPoint;
+	$("#totalPrice").html(totalPrice);
+	$("#MyPoint").html("보유 포인트 : 0 점");
+	//db에 0점으로 바꿔주기
+	point+=1;
+	alert(point);
+	});
+//정보 일치하기 
+$("#sameInfo").click(function(){
+	//alert('정보 일치');
+	let l = $("#loginMem").html();
+	let p =$("#phoneNum").html();
+	$("#deliveryName").html('<input type="text" id="dN" value="'+l+'" readonly>');
+	$("#deliveryPhone").html('<input type="text" id="dP" value="'+p+'" readonly>');
+	$(".newAddress").html(" ");
+});
+	
+function delCart(cNum) {
+	alert(cNum);
+	$.ajax({
+		url:'http://localhost:3000/delWishCart',
+		type:'post',		
+		data:{ 'cNum':cNum },
+		success:function(){
+			alert('삭제');
+			cart();
+		},
+		error:function(){
+			alert('error');
+		}
+	});	
+}
+function cart() {
+	
+	$.ajax({
+		url:'http://localhost:3000/getCart',
+		type:'post',		
+		data:{ id:login.id },
+		success:function(list){
+	 		let OrderPrice=0;
+	 		let totalPrice=0;
+	 		let weightCart=0;
+	 		let deliveryCost=0;
+			$.each(list, function (i, item) {
+				
+				$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
+				OrderPrice += parseInt(item.price);   
+				weightCart += parseInt(item.weight);   
+				//let totalPrice += parseInt(item.price) * parseInt(item.quantity);
+			});	
+			
+			$("#orderPrice").html(OrderPrice);
+			if(weightCart<1){
+				deliveryCost=3000;
+			}
+			else if(weightCart<5){
+				deliveryCost=10000;
+			}
+			else if(weightCart<10){
+				deliveryCost=15000;
+			}
+			else if(weightCart<20){
+				deliveryCost=30000;
+			}
+			else if(weightCart<50){
+				deliveryCost=70000;
+			}
+			else{
+				deliveryCost=100000;
+			}
+			$("#deliveryPay").html(deliveryCost);
+			 totalPrice = OrderPrice+deliveryCost;
+			$("#totalPrice").html(totalPrice);
+		},
+		error:function(){
+			alert('error');
+		}
+	});	
+	
+	
+}
+//포인트 초기화
+function updatePoint(){
+	$.ajax({
+        url:"http://localhost:3000/updatePoint",
+        type: "get",
+        data:{id:login.id},
+        success:function(data){
+          if(data=='YES'){
+        	 alert(" 성공");
+          }
+        },
+        error:function(){
+           alert("error");
+        }
+     });
+}
+
+//구매 후, 카트 초기화
+function OrderDelCart(){
+	//alert(login.id);
+	$.ajax({
+		url:'http://localhost:3000/OrderDelCart',
+		type:'get',		
+		data:{'id':login.id},
+		success:function(){
+			alert('카트 삭제 완료');
+			cart();
+		},
+		error:function(){
+			alert('error');
+		}
+	});	
+}
+
+//구매후, order_detail 넣어주기
+function setOrderDetail(obNum){
+	alert(OrderedProdCount)
+	alert("obNum: "+obNum);//주문번호 받음
+	for(i=0;i<OrderedProdCount;i++){
+		let a = '#OrderedProdNum'+String(i);
+		
+		//prodNum으로 product정보를 가지고 온 후, order_detail에 넣어준다. 
+		 $.ajax({
+			url:'http://localhost:3000/setOrderDetail',
+			type:'get',		
+			data:{obNum:obNum,
+				  prodNum:$(a).val()
+				  },
+			success:function(data){
+				//넣은 odnum가져옴
+				$("#odNumCk").append(' <input type="hidden" id="odNumCkF" value="'+data+'">');
+				
+				alert('order_detail 넣기성공/ odnum:'+data);
+			},
+			error:function(){
+				alert('error');
+			}
+		});	 
+		
+	}
+	
+}
+function updateOrderPoint(id,money){
+	let moneyPoint = money*0.05;
+	alert(id);
+	alert("적립될 포인트"+id+"/"+moneyPoint);
+	 $.ajax({
+			url:'http://localhost:3000/updateOrderPoint',
+			type:'get',		
+			data:{id:id,memPoint:moneyPoint},
+			success:function(dataF){
+				alert("포인트 성공")
+			},
+			error:function(){
+				alert('error');
+			}
+		});	 
+}
+//delivery_check에 넣어주기
+function setDeliveryCheck(data){
+	alert("setDeliveryCheck");
+	 $.ajax({
+			url:'http://localhost:3000/setDeliveryCheck',
+			type:'get',		
+			data:{obNum:data,memId:login.id},
+			success:function(dataF){
+				let odNumCkF=$("#odNumCkF").val();
+				//넣은 dcNum가져옴
+				alert('delivery_check 넣기성공/ dcNum:'+dataF+'odNum: '+odNumCkF);
+				//주문번호  
+				location.href="./orderCk.html?obNum="+data;
+			},
+			error:function(){
+				alert('error');
+			}
+		});	 
+}
+</script>
+		<!-- all js here -->
+		<!-- jquery latest version -->
+		<script src="../js/vendor/jquery-1.12.0.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- jquery.meanmenu js -->
+		<script src="../js/jquery.meanmenu.js"></script>
+		<!-- slick.min js -->
+		<script src="../js/slick.min.js"></script>
+		<!-- jquery.treeview js -->
+		<script src="../js/jquery.treeview.js"></script>
+		<!-- lightbox.min js -->
+		<script src="../js/lightbox.min.js"></script>
+		<!-- jquery-ui js -->
+		<script src="../js/jquery-ui.min.js"></script>
+		<!-- jquery.nivo.slider js -->
+		<script src="../lib/js/jquery.nivo.slider.js"></script>
+		<script src="../lib/home.js"></script>
+		<!-- jquery.nicescroll.min js -->
+		<script src="../js/jquery.nicescroll.min.js"></script>
+		<!-- countdon.min js -->
+		<script src="../js/countdon.min.js"></script>
+		<!-- wow js -->
+		<script src="../js/wow.min.js"></script>
+		<!-- plugins js -->
+		<script src="../js/plugins.js"></script>
+		<!-- main js -->
+		<script src="../js/main.js"></script>
+		<script type="text/javascript">
+
+
+		<!--다음 도로명 주소 api  -->
+
+		function sample6_execDaumPostcode() {
+		    new daum.Postcode({
+		        oncomplete: function(data) {
+		            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+		            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+		            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+		            var addr = ''; // 주소 변수
+		            var extraAddr = ''; // 참고항목 변수
+
+		            //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+		            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+		                addr = data.roadAddress;
+		            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+		                addr = data.jibunAddress;
+		            }
+
+		            // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+		            if(data.userSelectedType === 'R'){
+		                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+		                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+		                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+		                    extraAddr += data.bname;
+		                }
+		                // 건물명이 있고, 공동주택일 경우 추가한다.
+		                if(data.buildingName !== '' && data.apartment === 'Y'){
+		                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+		                }
+		                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+		                if(extraAddr !== ''){
+		                    extraAddr = ' (' + extraAddr + ')';
+		                }
+		                // 조합된 참고항목을 해당 필드에 넣는다.
+		                document.getElementById("sample6_extraAddress").value = extraAddr;
+		            
+		            } else {
+		                document.getElementById("sample6_extraAddress").value = '';
+		            }
+
+		            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+		            document.getElementById('sample6_postcode').value = data.zonecode;
+		            document.getElementById("sample6_address").value = addr;
+		            // 커서를 상세주소 필드로 이동한다.
+		            
+		            document.getElementById("sample6_detailAddress").focus();
+		           
+		            address=addr;
+		        }
+		    }).open();
+		}
+
+		</script>
+		
+		<!-- 주문 -->
+		<script type="text/javascript">
+		$("#check_module").click(function () {
+			 let money = $('#totalPrice').html();
+			 let obMes = document.getElementById("obMes").value;
+			 let deliveryPay=$("#deliveryPay").html();
+			 let obAddress=$("#address").html();
+		alert(obAddress)
+			var IMP = window.IMP; // 생략가능
+			IMP.init('imp85857789');
+			// 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+			// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+			IMP.request_pay({
+			pg: 'kakao', // version 1.1.0부터 지원.
+			/*
+			'kakao':카카오페이,
+			html5_inicis':이니시스(웹표준결제)
+			'nice':나이스페이
+			'jtnet':제이티넷
+			'uplus':LG유플러스
+			'danal':다날
+			'payco':페이코
+			'syrup':시럽페이
+			'paypal':페이팔
+			*/
+			pay_method: 'card',
+			/*
+			'samsung':삼성페이,
+			'card':신용카드,
+			'trans':실시간계좌이체,
+			'vbank':가상계좌,
+			'phone':휴대폰소액결제
+			*/
+			merchant_uid: 'merchant_' + new Date().getTime(),
+			/*
+			merchant_uid에 경우
+			https://docs.iamport.kr/implementation/payment
+			위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
+			참고하세요.
+			나중에 포스팅 해볼게요.
+			*/
+			name: '주문명:결제테스트',
+			//결제창에서 보여질 이름
+			amount: 1,	//amount: money
+			//가격
+			buyer_email: 'iamport@siot.do',
+			buyer_name: '구매자이름',
+			buyer_tel: '010-1234-5678',
+			buyer_addr: '서울특별시 강남구 삼성동',
+			buyer_postcode: '123-456',
+			m_redirect_url: 'https://www.yourdomain.com/payments/complete'
+			/*
+			모바일 결제시,
+			결제가 끝나고 랜딩되는 URL을 지정
+			(카카오페이, 페이코, 다날의 경우는 필요없음. PC와 마찬가지로 callback함수로 결과가 떨어짐)
+			*/
+			}, function (rsp) {
+			console.log(rsp);
+			if (rsp.success) {
+			var msg = '결제가 완료되었습니다.';
+			msg += '고유ID : ' + rsp.imp_uid;
+			msg += '상점 거래ID : ' + rsp.merchant_uid;
+			msg += '결제 금액 : ' + rsp.paid_amount;
+			msg += '카드 승인번호 : ' + rsp.apply_num;
+			 $.ajax({
+		         type: "GET", 
+		         url: "http://localhost:3000/setOrder", //충전 금액값을 보낼 url 설정
+		         data: {
+		        	     "id":login.id,
+			             "name":login.name,
+			             "quantity":$("#quantityOrder").val(),
+			             "price" : money,
+			             "obName":$("#loginMem").html(),
+			             "obPhone":$("#phoneNum").html(),
+			             "obAddress":obAddress,
+			             "obMes":obMes,
+			             "obWay":'card', 
+			             "obCardN":'KakaoPay',
+			             "deliveryCost":deliveryPay
+			             
+		        	 },
+		        	 success:function(data){				
+							//data = obNum
+							if(point==1){
+								updatePoint();
+							}
+							if(cartCk==1){
+								alert(data);	
+								alert('장바구니');
+								OrderDelCart();
+							}
+							setOrderDetail(data);
+							updateOrderPoint(login.id,money);
+							setDeliveryCheck(data);
+							
+						},
+						error:function(){
+							alert('error');
+						}
+		     });
+			} else {
+			var msg = '결제에 실패하였습니다.';
+			msg += '에러내용 : ' + rsp.error_msg;
+			}
+			alert(msg);
+			});
+			});
+
+		</script>
+		<script type="text/javascript">
+		var currentTab = 0;
+		document.addEventListener("DOMContentLoaded", function(event) {
+
+
+		showTab(currentTab);
+
+		});
+
+		function showTab(n) {
+		var x = document.getElementsByClassName("tab");
+		x[n].style.display = "block";
+		if (n == 0) {
+		document.getElementById("prevBtn").style.display = "none";
+		} else {
+		document.getElementById("prevBtn").style.display = "inline";
+		}
+		if (n == (x.length - 1)) {
+		document.getElementById("nextBtn").innerHTML = '<i class="fa fa-angle-double-right"></i>';
+		} else {
+		document.getElementById("nextBtn").innerHTML = '<i class="fa fa-angle-double-right"></i>';
+		}
+		fixStepIndicator(n)
+		}
+
+		function nextPrev(n) {
+		var x = document.getElementsByClassName("tab");
+		if (n == 1 && !validateForm()) return false;
+		x[currentTab].style.display = "none";
+		currentTab = currentTab + n;
+		if (currentTab >= x.length) {
+
+		document.getElementById("nextprevious").style.display = "none";
+		document.getElementById("all-steps").style.display = "none";
+		document.getElementById("register").style.display = "none";
+		document.getElementById("text-message").style.display = "block";
+
+
+
+
+		}
+		showTab(currentTab);
+		}
+
+		function validateForm() {
+		var x, y, i, valid = true;
+		x = document.getElementsByClassName("tab");
+		y = x[currentTab].getElementsByTagName("input");
+		for (i = 0; i < y.length; i++) { if (y[i].value=="" ) { y[i].className +=" invalid" ; valid=false; } } if (valid) { document.getElementsByClassName("step")[currentTab].className +=" finish" ; } return valid; } function fixStepIndicator(n) { var i, x=document.getElementsByClassName("step"); for (i=0; i < x.length; i++) { x[i].className=x[i].className.replace(" active", "" ); } x[n].className +=" active" ; }s
+		</script>
+</body>
+</html>
