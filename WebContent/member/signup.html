@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이거 언제 다만드냐</title>
+
+    <meta name="author" content="3team">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 대표 로고 -->
+    <link rel="icon" href="../image/PNG/favicon.png">
+    <link rel="apple-touch-icon" href="../image/PNG/favicon.png">
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/signup.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<!-- daum 도로명 주소 -->
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	
+	<!-- 나이 -->
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+/* 헤더 상단바 고정 */
+
+/* 공통 모듈 */
+.body__container {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* SUMMARY */
+.summary__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.summary__description {
+    font-size: 12px;
+    font-weight: 500;
+    color: #727272;
+    line-height: 1.5;
+}
+
+/* input */
+
+.input--text{
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+}
+
+.input--text:hover {
+    background: #f7f7f7;
+}
+
+.input--text::-webkit-input-placeholder {
+    color: #cacaca;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.input--text::-ms-input-placeholder {
+    color: #cacaca;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.input--text::-moz-input-placeholder {
+    color: #cacaca;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.sign_msg{
+	color: red;
+}
+
+/* BTN */
+.btn {
+    font-family: 'Noto Sans KR', sans-serif;
+    height: 70px;
+    width: 100%;
+    background: #35C5F0;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    /* 수평을 가지지만 위아래 패딩 가로사이즈를 가질 수 없다. 이 속성을 주면 다음 요소에 스페이스바로 인식해 빈공간이 생김 */
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    color: #ffffff;
+}
+
+.btn:hover{
+    background: #2bb0d8;
+}
+
+/* FLOAT CLEARFIX */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.float--left {
+    float: left;
+}
+
+.float--right {
+    float: right;
+}
+
+/* 섹션 영역 */
+
+.section {
+    position: relative;
+}
+
+.section .inner {
+    max-width: 1136px;
+    /* 최대 너비 980px */
+    margin: 0 auto;
+    /* 중앙절렬. 980px이라는 영역이 중앙에 정위치 하게됨 상하 0 좌우 auto*/
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 헤더 영역 */
+header {
+    background: #ffffff;
+    /* white같은 지정값의 경우 브라우저마다 상이할 수 있으므로 헥사코드로 명시하자 */
+}
+
+
+header .inner {
+    width: 1136px;
+    height: 80px;
+    /* header는 안의 요소 inner에 영향을 받으므로 자식요소에 값을 지정해주도록 한다. 부모 height는 기본으로 auto */
+}
+
+header .menu-group {
+    display: flex;
+    /* 자식요소들을 수평 정렬 */
+    align-items: center;
+    height: 100%;
+    /* inner높이 만큼 */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width:30px;
+    height:30px;
+}
+
+header .logo a {
+    margin-left: 4px;
+    width:90px;
+    height:30px;
+    display: block;
+    background-image: url("../image/PNG/wehouse_logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+    /* 들여쓰기 속성 html코드의 GitHub를 대체텍스트로 이용하기 위해 왼쪽으로 없애준다. 이를 명시하기위해 -9999px를 사용한다 */
+}
+
+header .menu-group {
+    display: flex;
+    /* 자식요소들을 수평 정렬 */
+    align-items: center;
+    height: 100%;
+    /* inner높이 만큼 */
+}
+
+/* 사인폼 영역 */
+
+.section-signup{
+    width:360px;
+    margin: 0 auto;
+}
+
+.section-signup .inner{
+    width:360px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.section-signup .sign--api{
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-signup .api--service{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-signup .icon{
+    width:48px;
+    height:48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.section-signup .facebook-signup{
+    background-color: #1877f2;
+    margin-right: 15px;
+}
+
+.section-signup .kakaotalk-signup{
+    background-color: #f7e600;
+    margin-right: 15px;
+}
+
+.section-signup .naver-signup{
+    background-color: #19ce60;
+}
+
+.section-signup .icon i{
+    color:#ffffff;
+    font-size: 34px;
+}
+
+.section-signup .kakaotalk-signup i{
+    color:#6d3701;
+}
+
+.sign-group{
+    border-top: 1px solid#E5E5E5;
+}
+
+.sign-group .sign{
+    margin-top:14px;
+    display: flex;
+    width:100%;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.sign-group .sign:nth-child(1){
+    margin-top: 40px;
+}
+
+.sign-group .sign_subtitle{
+    font-weight: 700;
+}
+
+.sign-form{
+    display: flex;
+    width:100%;
+    margin: 14px 0;
+}
+
+.sign-form .email1{
+    flex:1;
+}
+
+.sign-form .email2{
+    flex:1;
+}
+
+.sign-form .interval{
+    width: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E5E5E5;
+}
+
+.sign-form .input--check{
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #35c5f0;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    /* 수평을 가지지만 위아래 패딩 가로사이즈를 가질 수 없다. 이 속성을 주면 다음 요소에 스페이스바로 인식해 빈공간이 생김 */
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    color: #ffffff;
+    margin-left:5px;
+    min-width:110px;
+    max-width:150px;
+}
+
+.sign-group .danger{
+    color: #f77;
+    font-size: 12px;
+    display:none;
+}
+
+.sign-group .pass-danger{
+    color: #f77;
+    font-size: 12px;
+    display:none;
+}
+
+.pass{
+    margin-top: 40px;
+}
+
+.sign-form .password{
+    width:100%;
+}
+
+.sign_subdescription{
+    margin-top: 16px;
+    font-weight: 300;
+    font-size: 12px;
+    color:#757575;
+}
+
+.agreement{
+    width:100%;
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 14px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.agreement input[type="checkbox"]{
+    display: none;
+}
+
+.agreement input[type="checkbox"] + label span{
+    display: inline-block;
+    width:20px;
+    height:20px;
+    margin: -4px 10px 0 0;
+    vertical-align: middle;
+    background: url(../image/SVG/check_default.svg) left top no-repeat;
+    cursor: pointer;
+    background-clip: cover;
+}
+
+.agreement label:hover{
+    cursor: pointer;
+}
+
+.agreement .check_container div:not(:first-child) {
+    margin: 10px 0;
+    font-size:14px;
+    font-weight: 300;
+}
+
+.check_container{
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+}
+
+.check_container .allcheck {
+    margin-top:9px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    width:100%;
+    font-size: 14px;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+
+.check_container .agecheck{
+    padding-top:10px;
+    box-sizing: border-box;
+}
+
+.check_container a{
+    color:#424242;
+    text-decoration:underline;
+}
+
+.check_container .necessary{
+    margin-left: 5px;
+    color: #35c5f0;
+    font-size: 12px;
+}
+
+.check_container .select {
+    margin-left: 5px;
+    color: #727272;
+    font-size: 12px;
+}
+
+.takeid{
+    margin: 25px 0 60px 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.takeid a{
+    margin-left: 5px;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.takeid a:hover{
+    color:#727272;
+}
+</style>
+
+</head>
+<body>
+    <!-- body 태그에 직접적으로 css는 부여하지 않는다. 컨테이너를 따로 지정하자. -->
+    <!-- 언더바 두개를 사용하는 이유 -->
+<div class="body__container"> <!-- body의 일부분인 컨테이너임을 의미 -->
+
+    <!-- HEADER -->
+    <header class="section">
+        <!-- 콘텐츠가 들어가는 inner영역 -->
+        <div class="inner clearfix">
+
+            <div class="menu-group float--left">
+                
+                <div class="logo">
+                    <img src="../image/PNG/favicon.png" alt="">
+                    <a href="./home.html">우리의집</a>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <section class="section section-signup">
+
+        <h2 class="summary__title">회원가입</h2>
+
+        <div class="sign--api">
+            <p class="summary__description">SNS 계정으로 간편 회원가입</p>
+            <div class="api--service">
+                <div class="icon facebook-signup"><i class="xi-3x xi-facebook"></i></div>
+                <div class="icon kakaotalk-signup"><i class="xi-3x xi-kakaotalk text-white"></i></div>
+                <div class="icon naver-signup"><i class="xi-3x xi-naver"></i></div>
+            </div>
+        </div>
+
+        <div class="inner sign-group">
+
+            <form>
+
+            <div class="sign_id">
+                <h2 class="sign_subtitle">
+                    아이디
+                </h2>
+                <div class="sign-form">
+                    <input class="input--text password" type="text" placeholder="아이디 입력" id="id">
+                </div>
+                <p class="sign_msg">
+                	
+                </p>
+                <button type="button" id="idCheck">id확인</button>
+            </div>
+
+            <div class="sign_pwd">
+                <h2 class="sign_subtitle">
+                    비밀번호
+                </h2>
+                <h2 class="sign_subdescription">
+                    8자 이상 입력해주세요.
+                </h2>
+                <div class="sign-form">
+                    <input class="input--text password" id="pwd" type="text" placeholder="비밀번호 입력">
+                </div>
+                <p class="sign_msg">
+                </p>
+            </div>
+
+            <div class="sign__pwd">
+                <h2 class="sign_subtitle">
+                    비밀번호 확인
+                </h2>
+                <div class="sign-form">
+                    <input class="input--text password" id="_pwd" type="text" placeholder="비밀번호 재입력">
+                </div>
+                <p class="sign_msg">
+                </p>
+            </div>
+
+
+            <div class="sign_name">
+                <h2 class="sign_subtitle">
+                    이름
+                </h2>
+                <div class="sign-form">
+                    <input class="input--text password" id="name" type="text" placeholder="이름 입력">
+                </div>
+            </div>
+            
+            <div class="sign_nickname">
+                <h2 class="sign_subtitle">
+                    별명
+                </h2>
+                <h2 class="sign_subdescription">
+                    다른 유저와 겹치지 않는 별명을 입력해주세요. (2~15자)
+                </h2>
+                <div class="sign-form">
+                    <input class="input--text password" id="nickname" type="text" placeholder="별명 (2~15자)">
+                </div>
+                <h2 class="pass-danger">
+                    필수 입력 항목입니다.
+                </h2>
+            </div>
+
+            <div class="sign">
+                <h2 class="sign_subtitle">
+                    이메일
+                </h2>
+                <div class="sign-form">
+                    <input class="input--text email1" id="email1" type="text" placeholder="이메일"> 
+                    <span class="interval">@</span>
+                    <input class="input--text email2" id="email2" type="text" placeholder="주소 입력">
+                </div>
+                <h2 class="danger">
+                    필수 입력 항목입니다.
+                </h2>
+            </div>
+			
+			<div class="sign">
+                <h2 class="sign_subtitle">
+           	전화번호
+                </h2>
+                <div class="sign-form">
+                	<input type="text" id="phone1"> - <input type="text" id="phone2"> - <input type="text" id="phone3">
+                </div>
+            </div>
+            
+           <div class="sign">
+                <h2 class="sign_subtitle">
+           	생년월일
+                </h2>
+                <div class="sign-form">
+					<select name="year" id="year" title="년도"></select>
+					<select name="month" id="month" title="월"></select>
+					<select name="day" id="day" title="일"></select>
+                </div>
+                <h2 class="danger">
+                    필수 입력 항목입니다.
+                </h2>
+            </div>
+			
+			
+            <div class="sign">
+                <h2 class="sign_subtitle">
+                    주소
+                </h2>
+                <input type="text" id="sample4_postcode" placeholder="우편번호">
+				<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+				<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+				<span id="guide" style="color:#999;display:none"></span>
+				<input type="text" id="sample4_detailAddress" placeholder="상세주소">
+
+                <h2 class="pass-danger">
+                    비밀번호가 일치하지 않습니다.
+                </h2>
+            </div>
+            
+           
+            <input type="submit" class="btn" id="signupBtn" value="회원가입 완료">
+
+            </form>
+
+            <div class="takeid">
+                이미 아이디가 있으신가요?<a href="#">로그인</a>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script type="text/javascript">
+
+$(".sign_msg").hide();
+setDateBox();
+
+/* $("#_id").blur(function () {
+		$(".sign_id .sign_msg").show();
+}); */
+
+
+$('#idCheck').click(function() {
+	
+	var idRegExp = /^[a-z0-9]{5,20}$/;
+
+	if( !idRegExp.test( $("#id").val() ) ){
+		$(".sign_id .sign_msg").show();
+		$(".sign_id .sign_msg").html('조건에 맞지 않습니다.');
+		// 5~20자의 영문 소문자, 숫자만 사용 가능합니다.
+		$("#id").focus();
+	}else{
+		
+	 	 $.ajax({
+			url:"http://localhost:3000/idcheck",
+			type:"post",
+			data:{ "id":$("#id").val() },
+			success:function( data ){
+			//	alert("success");			
+				 if(data.trim() == "YES"){
+				//	$("#idcheck").css("color", "#0000ff");
+					$(".sign_id .sign_msg").html('사용할 수 있는 id입니다');
+				}else{
+				//	$("#idcheck").css("color", "#ff0000");
+					$(".sign_id .sign_msg").html('사용 중인 id입니다');
+					$("#id").val("");
+				}	
+			}, 
+			error:function(){
+				alert("error");
+			}
+		});
+	}
+});
+
+
+$("#pwd").blur(function () {
+	
+	// 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
+	var pwdRegExp = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
+	if( !pwdRegExp.test( $("#pwd").val() ) ){
+		$(".sign_pwd .sign_msg").show();
+		$(".sign_pwd .sign_msg").html('조건에 맞지 않습니다.');
+		$("#pwd").focus();
+	}
+	
+});
+
+
+// /^[가-힣]{2,15}$/
+$("#_pwd").blur(function () {
+	if( !$("#pwd").val()==$("#_pwd").val() ){
+		$(".sign__pwd .sign_msg").html('비밀번호가 일치하지 않습니다.');
+	}
+});
+
+//select box 연도 , 월 표시
+function setDateBox() {
+	
+	 var dt = new Date();
+	 var year = "";
+	 var com_year = dt.getFullYear();
+	
+	 // 발행 뿌려주기
+	 $("#year").append("<option value=''>년도</option>");
+	
+	 //미성년자를 가리기위함
+	 // 올해 기준으로 -60년부터 -20년을 보여준다.
+	 for (var y = (com_year - 70); y <= (com_year - 20); y++) {
+	   $("#year").append("<option value='" + y + "'>" + y  + "</option>");
+	 }
+	
+	 // 월 뿌려주기(1월부터 12월)
+	 var month;
+	 $("#month").append("<option value=''>월</option>");
+	 for (var i = 1; i <= 12; i++) {
+	   $("#month").append("<option value='" + i + "'>" + i +  "</option>");
+	 }
+	
+	 // 일 뿌려주기(1일부터 31일)
+	 var day;
+	 $("#day").append("<option value=''>일</option>");
+	 for (var i = 1; i <= 31; i++) {
+	   $("#day").append("<option value='" + i + "'>" + i +  "</option>");
+	 }
+}
+
+
+function sample4_execDaumPostcode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+            // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var roadAddr = data.roadAddress; // 도로명 주소 변수
+            var extraRoadAddr = ''; // 참고 항목 변수
+
+            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                extraRoadAddr += data.bname;
+            }
+            // 건물명이 있고, 공동주택일 경우 추가한다.
+            if(data.buildingName !== '' && data.apartment === 'Y'){
+               extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+            }
+            // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+            if(extraRoadAddr !== ''){
+                extraRoadAddr = ' (' + extraRoadAddr + ')';
+            }
+
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            document.getElementById('sample4_postcode').value = data.zonecode;
+            document.getElementById("sample4_roadAddress").value = roadAddr;
+    
+
+        }
+    }).open();
+}
+
+
+
+$("#signupBtn").click(function () {
+
+	$.ajax({
+		url:"http://localhost:3000/signup",
+		type:"post",
+		data:{ id:$("#id").val(), pwd:$("#pwd").val(), name:$("#name").val(), nickname:$("#nickname").val(), 
+				email:$("#email1").val() + "@" + $("#email2").val(), bdate:'1992-04-06',
+				address: $("#sample4_roadAddress").val() + " " + $("#sample4_detailAddress").val(),
+				phone:$("#phone1").val() + $("#phone2").val() + $("#phone3").val()},
+		//data:params,
+		success:function( data ){
+			alert("success");
+			if(data.trim() == "YES"){
+				alert("가입성공!!");
+				location.href = "signin.html";
+			}else{
+				alert("가입실패~");
+			}						
+		},
+		error:function(){
+			alert("error");
+		}
+	});
+	
+});
+
+
+
+</script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyD7RQDC2svVo1LwzSMFJN_4_ytf5YcUE2A",
+    authDomain: "parallaxxx-6a80e.firebaseapp.com",
+    projectId: "parallaxxx-6a80e",
+    storageBucket: "parallaxxx-6a80e.appspot.com",
+    messagingSenderId: "584545335458",
+    appId: "1:584545335458:web:25c4285c77135e3c363ffb",
+    measurementId: "G-G6EQ4F7FE0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+</html>
+
+

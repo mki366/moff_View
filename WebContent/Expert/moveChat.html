@@ -1,0 +1,953 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>시공 홈</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+		<!-- Place favicon.ico in the root directory -->
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		
+		<script type="text/javascript" src="../jquery/jquery.min.js"></script>	
+		
+		
+		
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+		<!-- all css here -->
+		<!-- bootstrap v3.3.6 css -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<!-- animate css -->
+		<link rel="stylesheet" href="../css/animate.css">
+		<!-- jquery-ui.min css -->
+		<link rel="stylesheet" href="../css/jquery-ui.min.css">
+		<!-- meanmenu css -->
+		<link rel="stylesheet" href="../css/meanmenu.min.css">
+		<!-- nivo-slider css -->
+		<link rel="stylesheet" href="../lib/css/nivo-slider.css">
+		<link rel="stylesheet" href="../lib/css/preview.css">
+		<!-- slick css -->
+		<link rel="stylesheet" href="../css/slick.css">
+		<!-- lightbox css -->
+		<link rel="stylesheet" href="../css/lightbox.min.css">
+		<!-- material-design-iconic-font css -->
+		<link rel="stylesheet" href="../css/material-design-iconic-font.css">
+		<!-- All common css of theme -->
+		<link rel="stylesheet" href="../css/default.css">
+		<!-- style css -->
+		<link rel="stylesheet" href="../css/style.css">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="../css/shortcode.css">
+		<!-- responsive css -->
+		<link rel="stylesheet" href="../css/responsive.css">
+		<link rel="stylesheet" href="../css/chatExpert.css">
+		
+		
+<style>
+    .map_wrap {position:relative;width:100%;height:350px;}
+    .title {font-weight:bold;display:block;}
+    .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
+    #centerAddr {display:block;margin-top:2px;font-weight: normal;}
+    .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+</style>
+	<!-- delivery service -->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	 -->
+	
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
+	 
+	
+	<!-- <script src="../js/admin_page.js"></script>  -->
+		
+		
+		
+		<!-- modernizr css -->
+		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d37d0c601b91ed657160c03ac7faf573&libraries=services"></script>
+		
+	</head>
+	<body>	
+		<!-- WRAPPER START -->
+		<div class="wrapper bg-dark-white">
+
+			<!-- HEADER-AREA START -->
+			
+		<!-- HEADER-AREA START -->
+			<header id="sticky-menu" class="header header-2">
+				<div class="header-area">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-4 col-sm-offset-4 col-xs-7">
+								<div class="logo text-center">
+									<a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
+								</div>
+							</div>
+							<div class="col-sm-4 col-xs-5">
+								<div class="mini-cart text-right">
+									<ul>
+										<li>
+											<a class="cart-icon" href="#">
+												<i class="zmdi zmdi-shopping-cart"></i>
+												<span>3</span>
+											</a>
+											<div class="mini-cart-brief text-left">
+												<div class="cart-items">
+													<p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+												</div>
+												<div class="all-cart-product clearfix">
+													<div class="single-cart clearfix">
+														<div class="cart-photo">
+															<a href="#"><img src="img/cart/1.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 100.00</p>
+															<p class="mb-0">Qty : 02 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+													<div class="single-cart clearfix">
+														<div class="cart-photo">
+															<a href="#"><img src="img/cart/2.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 300.00</p>
+															<p class="mb-0">Qty : 01 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+												</div>
+												<div class="cart-totals">
+													<h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+												</div>
+												<div class="cart-bottom  clearfix">
+													<a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
+													<a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- MAIN-MENU START -->
+				<div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<div class="main-menu  hidden-xs">
+					<nav>
+						<ul>
+							<li><a href="index.html">home</a>
+								<div class="sub-menu menu-scroll">
+									<ul>
+										<li class="menu-title">Page's</li>
+										<li><a href="index.html">Home Version 1</a></li>
+										<li><a href="index-2.html">Home Version 2</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="shop.html">products</a>
+								<div class="mega-menu menu-scroll">
+									<div class="table">
+										<div class="table-cell">
+											<div class="half-width">
+												<ul>
+													<li class="menu-title">best brands</li>
+													<li><a href="#">henning koppel</a></li>
+													<li><a href="#">jehs + Laub</a></li>
+													<li><a href="#">vicke lindstrand</a></li>
+													<li><a href="#">don chadwick</a></li>
+													<li><a href="#">akiko kuwahata</a></li>
+													<li><a href="#">barbro berlin</a></li>
+													<li><a href="#">cecilia hall</a></li>
+													<li><a href="#">don chadwick</a></li>
+												</ul>
+											</div>
+											<div class="half-width">
+												<ul>
+													<li class="menu-title">popular brands</li>
+													<li><a href="#">akiko kuwahata</a></li>
+													<li><a href="#">barbro berlin</a></li>
+													<li><a href="#">cecilia hall</a></li>
+													<li><a href="#">don chadwick</a></li>
+													<li><a href="#">henning koppel</a></li>
+													<li><a href="#">jehs + Laub</a></li>
+													<li><a href="#">vicke lindstrand</a></li>
+													<li><a href="#">don chadwick</a></li>
+												</ul>
+											</div>
+											<div class="full-width">
+												<div class="mega-menu-img">
+													<a href="single-product.html"><img src="img/megamenu/1.jpg" alt="" /></a>
+												</div>
+											</div>
+											<div class="pb-80"></div>
+										</div>
+									</div>
+								</div>
+							</li>
+                            <li><a href="#">Shortcodes</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Shortcodes</li>
+                                        <li><a href="elements-accordions.html">Accordion</a></li>
+                                        <li><a href="elements-toggles.html">Toggles</a></li>
+                                        <li><a href="elements-tab.html">Tab</a></li>
+                                        <li><a href="elements-product-tab.html">Product Tab</a></li>
+                                        <li><a href="elements-product-tab-2.html">Product Tab 2</a></li>
+                                        <li><a href="elements-carousel.html">product carousel</a></li>
+                                        <li><a href="elements-carousel-2.html">product carousel 2</a></li>
+                                        <li><a href="elements-featured-product.html">Featured Product</a></li>
+                                        <li><a href="elements-featured-product-2.html">Featured Product 2</a></li>
+                                        <li><a href="elements-button.html">Button</a></li>
+                                        <li><a href="elements-table.html">Table</a></li>
+                                        <li><a href="elements-progress-bars.html">Progress Bar</a></li>
+                                        <li><a href="elements-blog.html">Blog</a></li>
+                                        <li><a href="elements-blog-2.html">Blog - 2</a></li>
+                                        <li><a href="elements-team.html">Team</a></li>
+                                        <li><a href="elements-footer.html">Footer</a></li>
+                                        <li><a href="elements-footer-2.html">Footer 2</a></li>
+                                        <li><a href="elements-map.html">Map</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+							<li><a href="shop-sidebar.html">accesories</a></li>
+							<li><a href="shop-list.html">lookbook</a></li>
+							<li><a href="blog.html">blog</a></li>
+							<li><a href="#">pages</a>
+								<div class="sub-menu menu-scroll">
+									<ul>
+										<li class="menu-title">Page's</li>
+										<li><a href="shop.html">Shop</a></li>
+										<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+										<li><a href="shop-grid-right-sidebar.html">Shop Right Sidebar</a></li>
+										<li><a href="shop-list.html">Shop List</a></li>
+										<li><a href="shop-list-right-sidebar.html">Shop List right sidebar</a></li>
+										<li><a href="single-product.html">Single Product</a></li>
+										<li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+										<li><a href="cart.html">Shopping Cart</a></li>
+										<li><a href="wishlist.html">Wishlist</a></li>
+										<li><a href="checkout.html">Checkout</a></li>
+										<li><a href="order.html">Order</a></li>
+										<li><a href="login.html">login / Registration</a></li>
+										<li><a href="my-account.html">My Account</a></li>
+										<li><a href="404.html">404</a></li>
+										<li><a href="blog.html">Blog</a></li>
+										<li><a href="single-blog.html">Single Blog</a></li>
+										<li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="about.html">about us</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- MAIN-MENU END -->
+			</header>
+			<!-- HEADER-AREA END -->
+			<!-- Mobile-menu start -->
+			<div class="mobile-menu-area">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+							<div class="mobile-menu">
+								<nav id="dropdown">
+									<ul>
+										<li><a href="index.html">home</a>
+											<ul>
+												<li><a href="index.html">Home Version 1</a></li>
+												<li><a href="index-2.html">Home Version 2</a></li>
+											</ul>
+										</li>
+										<li><a href="shop.html">products</a></li>
+										<li><a href="shop-sidebar.html">accesories</a></li>
+										<li><a href="shop-list.html">lookbook</a></li>
+										<li><a href="blog.html">blog</a></li>
+										<li><a href="#">pages</a>
+											<ul>
+												<li><a href="shop.html">Shop</a></li>
+												<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+												<li><a href="shop-list.html">Shop List</a></li>
+												<li><a href="single-product.html">Single Product</a></li>
+												<li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+												<li><a href="cart.html">Shopping Cart</a></li>
+												<li><a href="wishlist.html">Wishlist</a></li>
+												<li><a href="checkout.html">Checkout</a></li>
+												<li><a href="order.html">Order</a></li>
+												<li><a href="login.html">login / Registration</a></li>
+												<li><a href="my-account.html">My Account</a></li>
+												<li><a href="404.html">404</a></li>
+												<li><a href="blog.html">Blog</a></li>
+												<li><a href="single-blog.html">Single Blog</a></li>
+												<li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+												<li><a href="about.html">About Us</a></li>
+												<li><a href="contact.html">Contact</a></li>
+											</ul>
+										</li>
+										<li><a href="about.html">about us</a></li>
+										<li><a href="contact.html">contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile-menu end -->
+			<!-- HEADING-BANNER START -->
+			<div class="heading-banner-area" style="background-color: #ffdc16;">
+				<div class="container">
+					<div class="row">
+						<div align="center">
+						<!-- <div class="col-md-12"> -->
+							<div class="heading-banner">
+								<div class="heading-banner-title">
+									<h2 style="padding-top: 70px;padding-bottom: 50px; color: #5d5a55 ">1대1상담 &nbsp;&nbsp;</h2>
+								</div>
+								<div class="breadcumbs pb-15" style="color:#5d5a55">
+									<ul>
+										<li><a href="index.html" style="color:#5d5a55">Home</a></li>
+										<li style="color:#5d5a55">1대1상담</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- HEADING-BANNER END -->
+			<!-- SHOPPING-CART-AREA START -->
+			<div class="shopping-cart-area  pt-80 pb-80" style=" padding-top: 35px;">
+				<div class="container">	
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="shopping-cart">
+								<!-- Nav tabs -->
+								<div align="center">
+								<!-- <ul style="display: table; margin: auto; padding:0;"> -->
+								<ul  class="cart-page-menu row clearfix mb-30"  style="margin:0 auto;  text-align: center; padding: 0" > 
+									
+									<li class="active" style="display: inline-block;"><a href="#shopping-cart" data-toggle="tab" style=" font-size: 20px">시공업체 찾기</a></li>
+									<!-- background: #185adb ; -->
+									<li  style="display: inline-block;"><a href="#mydelivery" data-toggle="tab" style="font-size: 20px">간편상담</a></li>
+									
+									
+								</ul>
+								</div>
+								
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<!-- shopping-cart start -->
+									<div class="tab-pane active" id="shopping-cart">
+										<form action="#">
+											
+		<div class="product-area pt-80 pb-80 product-style-2" style="padding-top: 0px;">
+				<div class="container">
+					<!-- Shop-Content End -->
+					<div class="shop-content">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="product-option mb-30 clearfix mo_appear"  style="height:800px; padding-top: 15px;"  align="center">
+									
+									<script type="text/javascript">
+	var ws;
+	var roomNumber = urlParams.roomNumber;
+	var eNUM = urlParams.eNUM;
+	function wsOpen(){
+		//웹소켓 전송시 현재 방의 번호를 넘겨서 보낸다.
+		
+		
+		ws = new WebSocket("ws://localhost:3000/chating/"+ eNUM + "/"+ roomNumber);
+		wsEvt();
+	}
+		
+	function wsEvt() {
+		ws.onopen = function(data){
+			//소켓이 열리면 동작
+		}
+		
+		ws.onmessage = function(data) {
+			
+			
+			
+			
+			//메시지를 받으면 동작
+			var msg = data.data;
+			if(msg != null && msg.trim() != ''){
+				var d = JSON.parse(msg);
+				if(d.type == "getId"){
+					var si = d.sessionId != null ? d.sessionId : "";
+					if(si != ''){
+						$("#sessionId").val(si); 
+					}
+				}else if(d.type == "message"){
+					if(d.sessionId == $("#sessionId").val()){
+						$("#chating").append("<div class='direct-chat-msg right'><div class='direct-chat-info clearfix'><span class='direct-chat-name pull-right'>나</span></div> <div class='direct-chat-text'>" + d.msg + "</div></div>");	
+					}else{
+						$("#chating").append("<div class='direct-chat-msg'><div class='direct-chat-info clearfix'><span class='direct-chat-name pull-left'>" + d.userName + "</span><div><div class='direct-chat-text'>" + d.msg + "</div></div>");
+					}
+						
+				}else{
+					console.warn("unknown type!")
+				}
+			}
+		}
+
+		document.addEventListener("keypress", function(e){
+			if(e.keyCode == 13){ //enter press
+				send();
+			}
+		});
+	}
+
+	function chatName(){
+		var userName = $("#userName").val();
+		if(userName == null || userName.trim() == ""){
+			alert("사용자 이름을 입력해주세요.");
+			$("#userName").focus();
+		}else{
+			wsOpen();
+			$("#yourName").hide();
+			$("#yourMsg").show();
+		}
+	}
+
+	function send() {
+		var option ={
+			type: "message",
+			eNUM: eNUM,
+			roomNumber: roomNumber,
+			sessionId : $("#sessionId").val(),
+			userName : $("#userName").val(),
+			msg : $("#chatting").val()
+		}
+		ws.send(JSON.stringify(option))
+		$('#chatting').val("");
+	}
+</script>
+
+
+		<h1>1대1 문의</h1>
+		<input type="hidden" id="sessionId" value="">
+		<!-- <input type="hidden" id="roomNumber" value="${roomNumber}"> -->
+
+		
+		
+		
+		<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-4">
+                <div class="box box-warning direct-chat direct-chat-warning">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Chat Messages</h3>
+                        <div class="box-tools pull-right"> <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">시공업체와 대화해보세요~!</span> <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i> </button> <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts"> <i class="fa fa-comments"></i></button> <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i> </button> </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="direct-chat-messages">
+                        <!--append로 메세지 추가  -->
+                           <div id="chating" >
+							</div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                      <div class="input-group">
+                       <div id="yourName">
+						<table class="inputTable">
+							<tr>
+								<th>사용자명</th>
+								<th><input type="text" name="userName" id="userName"></th>
+								<th><button onclick="chatName()" id="startBtn" class="btn btn-warning btn-flat">이름 등록</button></th>
+							</tr>
+						</table>
+					</div>
+					<div id="yourMsg">
+						<table class="inputTable">
+							<tr>
+								<th>메시지</th>
+								<th><input id="chatting" placeholder="보내실 메시지를 입력하세요."></th>
+								<th><button onclick="send()" id="sendBtn" class="btn btn-warning btn-flat">보내기</button></th>
+							</tr>
+						</table>
+					</div>
+					</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+		
+	
+								</div>						
+							</div>	
+							
+							
+							
+						
+						</div>
+					</div>
+					<!-- Shop-Content End -->
+				</div>
+			</div>
+					<!-- 리스트 끝 -->			
+										</form>		
+										
+			
+
+ 						
+
+									</div>
+									<!-- shopping-cart end -->
+									<!-- wishlist start -->
+									<div class="tab-pane" id="mydelivery">
+										<form action="#">
+											<div class="shop-cart-table">
+											
+											</div>
+										</form>		
+								
+					
+									</div>
+									
+									
+									 
+									<!-- wishlist end -->
+									<!-- check-out start -->
+									<div class="tab-pane" id="check-out">
+										<form action="#">
+											<div class="shop-cart-table check-out-wrap">
+													<div class="shop-cart-table check-out-wrap">
+														<h2 align="center" style="font-weight: 700;">바이백 서비스 신청 현황</h2>
+														<br>
+														<br>
+														<hr>
+														
+															 <!-- <aside class="widget widget-search" style="width:500px"> -->
+			                                   <!--  <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요." size="25px">
+			                                    <button type="button" id="csSearch"><i class="zmdi zmdi-search" ></i></button> 
+			                                    
+			                                    
+			                                      <!-- Widget-Search start -->
+								                          
+			                                    
+			                                    
+			                                    		<div class="table-container">	
+			                                 			<table style="height: 52px;width: 502px;">
+			                                 			<col width=200px><col width=400px>
+																<tr>
+																<td>
+																<select class="_choice3 custom-select mb-15" name="choice" style="width:200px">
+																	
+																	<option value=" " selected="selected">주소 검색</option>
+																	<option value="address3" >방문 주소지</option>
+																	
+																</select>
+																</td>
+																<td>
+																<!--  -->
+																
+																
+																  <aside class="widget widget-search mb-30" style="width:300px">
+								                               
+								                                    <input class="_searchWord3"  type="text" placeholder="찾고자하는 주소지를 검색하세요" />
+								                                    <button id="btnSearch3">
+								                                        <i class="zmdi zmdi-search"></i>
+								                                    </button>
+								                               
+								                       		     </aside>
+															
+											
+															 	</td>
+																
+																<!-- 월검색 -->
+																
+																<td>
+																<input type="text" readonly="readonly" value="방문신청 월 검색" style="width:200px">
+																
+																</td>
+																
+																
+																<td>
+																  <aside class="widget widget-search mb-30" style="width:300px">
+																<input type="month" id="searchdate" style="border:0px">
+																<button id="btnSearch4">
+								                                        <i class="zmdi zmdi-search"></i>
+								                                  </button>
+								                                  </aside>
+																</td>
+																</tr>
+															</table>
+															</div>
+															<hr>
+														
+														<!--  </aside>  -->
+														<!--  -->
+														
+														
+														
+											
+												
+											
+														
+														<div class= "appendbuyback">
+														</div>
+												<!-- <div class="row">
+												
+													<div class="col-md-6 col-sm-6 col-sm-12">
+														<div class="our-order payment-details pr-20">
+															<h4 class="title-1 title-border text-uppercase mb-30">바이백 신청 견적서</h4>
+															<table>
+																<thead>
+																	<tr>
+																		<th><strong>신청번호</strong></th>
+																		<th class="text-right"><strong>1</strong></th>
+																	</tr>
+																</thead>
+																<tbody>
+														
+																	<tr>
+																		<td>상품고유번호/대분류/소분류</td>
+																		<td  class="text-right">3/의자/이쁜의자</td>
+																	</tr>
+																
+																	<tr>
+																		<td>상품 원가</td>
+																		<td class="text-right">30,000</td>
+																	
+																	</tr>
+																	<tr>
+																		<td>상품 컨디션</td>
+																		<td class="text-right">40%</td>
+																	</tr>
+																	<tr>
+																		<td>바이백 리턴 가격</td>
+																		<td class="text-right">12,000</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+													payment-method
+													<div class="col-md-6 col-sm-6 col-sm-12 mt-xs-30">
+														<div class="payment-method  pl-20">
+															<h4 class="title-1 title-border text-uppercase mb-30">신청자 정보</h4>
+															<div class="payment-accordion">
+																Accordion start 
+																<h3 class="payment-accordion-toggle active">바이백 서비스 신청정보 </h3>
+																<div class="payment-content default">
+																
+																</div> 
+																Accordion end
+																Accordion start
+																<h3 class="payment-accordion-toggle">바이백 신청자 정보</h3>
+																<div class="payment-content">
+																			<table>
+																			<thead>
+																			
+																				<tr>
+																					<th>주소</th>
+																				</tr>
+																			
+																				<tr>
+																			
+																					<td style="padding-bottom: 10px;">양천구 신월동 남부순환로 70길 12-6번지</td>
+																				
+																				</tr>
+																				
+																			</thead>
+																			<tbody>
+																				<tr>
+																				
+																					<th><strong>전화번호</strong></th>
+																					
+																					
+																				</tr>
+																				<tr>
+																					<td style="padding-bottom: 10px;">010-2888-3498</td>
+																				</tr>
+																				
+																				
+																			
+																				<tr>
+																					<th>요청 방문 날짜</th>
+																					
+																				</tr>
+																				<tr>
+																					<td>2021-05-28</td>
+																				</tr>
+																				
+																			</tbody>
+																		</table>
+																		
+																</div>
+															
+																Accordion end 
+																<button class="button-one submit-button mt-15" data-text="place order">바이백 서비스 수락하기</button>			
+																
+															</div>
+																														
+														</div>
+														
+													</div>
+												</div> -->
+												<hr>
+											</div>
+											</div>
+										</form>		
+										
+										
+										
+												<div class="col-md-12">
+														<div class="shop-pagination  text-center" id="makepagination3" >
+																
+																	
+														</div>
+														
+									
+														</div>										
+									</div>
+									<!-- check-out end -->
+								
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SHOPPING-CART-AREA END -->
+			<!-- FOOTER START -->
+			<footer>
+				<!-- Footer-area start -->
+				<div class="footer-area footer-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Contact Us</h3>
+									<ul class="footer-contact">
+										<li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
+										<li><span>Cell-Phone :</span>+012 345 678 102</li>
+										<li><span>Email :</span>info@example.com</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">accounts</h3>
+									<ul class="footer-menu">
+										<li><a href="my-account.html"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
+										<li><a href="wishlist.html"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
+										<li><a href="cart.html"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
+										<li><a href="login.html"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
+										<li><a href="checkout.html"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">shipping</h3>
+									<ul class="footer-menu">
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>New Products</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Top Sellers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Manufactirers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Suppliers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Specials</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Email Newsletters</h3>
+									<div class="footer-subscribe">
+										<form action="#">
+											<input type="text" name="email" placeholder="Email Address..." />
+											<button class="button-one submit-btn-4" type="submit" data-text="Subscribe">Subscribe</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer-area end -->
+				<!-- Copyright-area start -->
+				<div class="copyright-area copyright-2">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-xs-12">
+								<div class="copyright">
+									<p class="mb-0">&copy; <a href="#" target="_blank">Hurst </a> 2018. All Rights Reserved.</p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="payment  text-right">
+									<a href="#"><img src="img/payment/1.png" alt="" /></a>
+									<a href="#"><img src="img/payment/2.png" alt="" /></a>
+									<a href="#"><img src="img/payment/3.png" alt="" /></a>
+									<a href="#"><img src="img/payment/4.png" alt="" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Copyright-area start -->
+			</footer>
+			<!-- FOOTER END -->
+			<!-- QUICKVIEW PRODUCT -->
+			<div id="quickview-wrapper">
+			 
+	
+			     
+			   
+			</div>
+			<!-- END QUICKVIEW PRODUCT -->	
+			
+		</div>
+		<!-- WRAPPER END -->
+		
+		<!--kakao map  -->
+		
+		<script type="text/javascript">
+		$(document).ready(function(){
+			navigator.geolocation.getCurrentPosition(function func(pos) {
+			    var latitude = pos.coords.latitude;
+			    var longitude = pos.coords.longitude;
+			    
+			    //$("#place1").append(latitude);
+			    //$("#place2").append(longitude);
+			    
+			    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			    mapOption = {
+			        center: new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
+			        level: 1 // 지도의 확대 레벨
+			    };  
+
+			// 지도를 생성합니다    
+			var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+			// 주소-좌표 변환 객체를 생성합니다
+			var geocoder = new kakao.maps.services.Geocoder();
+
+			var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입니다
+			    infowindow = new kakao.maps.InfoWindow({zindex:1}); // 클릭한 위치에 대한 주소를 표시할 인포윈도우입니다
+
+			// 현재 지도 중심좌표로 주소를 검색해서 지도 좌측 상단에 표시합니다
+			searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+			    
+			var tmap =  searchAddrFromCoords(map.getCenter(), displayCenterInfo);   
+			$("#centerAddr1").append(tmap);    
+
+			// 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
+			kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+			    searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
+			        if (status === kakao.maps.services.Status.OK) {
+			            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
+			            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+			            
+			            var content = '<div class="bAddr">' +
+			                            '<span class="title">법정동 주소정보</span>' + 
+			                            detailAddr + 
+			                        '</div>';
+
+			            // 마커를 클릭한 위치에 표시합니다 
+			            marker.setPosition(mouseEvent.latLng);
+			            marker.setMap(map);
+
+			            // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
+			            infowindow.setContent(content);
+			            infowindow.open(map, marker);
+			        }   
+			    });
+			});
+
+			// 중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다
+			kakao.maps.event.addListener(map, 'idle', function() {
+			    searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+			});
+
+			function searchAddrFromCoords(coords, callback) {
+			    // 좌표로 행정동 주소 정보를 요청합니다
+			    geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
+			}
+
+			function searchDetailAddrFromCoords(coords, callback) {
+			    // 좌표로 법정동 상세 주소 정보를 요청합니다
+			    geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+			}
+
+			// 지도 좌측상단에 지도 중심좌표에 대한 주소정보를 표출하는 함수입니다
+			function displayCenterInfo(result, status) {
+			    if (status === kakao.maps.services.Status.OK) {
+			        var infoDiv = document.getElementById('centerAddr');
+			        var infoDiv1 = document.getElementById('centerAddr1');
+
+			        for(var i = 0; i < result.length; i++) {
+			            // 행정동의 region_type 값은 'H' 이므로
+			            if (result[i].region_type === 'H') {
+			                infoDiv.innerHTML = result[i].address_name;
+			                infoDiv1.innerHTML = result[i].address_name;
+			                
+			                
+			                break;
+			            }
+			        }
+			    }    
+			}
+
+			    
+			});
+			});
+
+		
+		</script>
+		<!-- all js here -->
+		<!-- jquery latest version -->
+		<script src="../js/vendor/jquery-1.12.0.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- jquery.meanmenu js -->
+		<script src="../js/jquery.meanmenu.js"></script>
+		<!-- slick.min js -->
+		<script src="../js/slick.min.js"></script>
+		<!-- jquery.treeview js -->
+		<script src="../js/jquery.treeview.js"></script>
+		<!-- lightbox.min js -->
+		<script src="../js/lightbox.min.js"></script>
+		<!-- jquery-ui js -->
+		<script src="../js/jquery-ui.min.js"></script>
+		<!-- jquery.nivo.slider js -->
+		<script src="../lib/js/jquery.nivo.slider.js"></script>
+		<script src="../lib/home.js"></script>
+		<!-- jquery.nicescroll.min js -->
+		<script src="../js/jquery.nicescroll.min.js"></script>
+		<!-- countdon.min js -->
+		<script src="../js/countdon.min.js"></script>
+		<!-- wow js -->
+		<script src="../js/wow.min.js"></script>
+		<!-- plugins js -->
+		<script src="../js/plugins.js"></script>
+		<!-- main js -->
+		<script src="../js/main.js"></script>
+	</body>
+</html>

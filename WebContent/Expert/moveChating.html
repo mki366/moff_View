@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+		<!-- Place favicon.ico in the root directory -->
+		
+			
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		
+	
+	
+		<!-- all css here -->
+		<!-- bootstrap v3.3.6 css -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<!-- animate css -->
+		<link rel="stylesheet" href="../css/animate.css">
+		<!-- jquery-ui.min css -->
+		<link rel="stylesheet" href="../css/jquery-ui.min.css">
+		<!-- meanmenu css -->
+		<link rel="stylesheet" href="../css/meanmenu.min.css">
+		<!-- nivo-slider css -->
+		<link rel="stylesheet" href="../lib/css/nivo-slider.css">
+		<link rel="stylesheet" href="../lib/css/preview.css">
+		<!-- slick css -->
+		<link rel="stylesheet" href="../css/slick.css">
+		<!-- lightbox css -->
+		<link rel="stylesheet" href="../css/lightbox.min.css">
+		<!-- material-design-iconic-font css -->
+		<link rel="stylesheet" href="../css/material-design-iconic-font.css">
+		<!-- All common css of theme -->
+		<link rel="stylesheet" href="../css/default.css">
+		<!-- style css -->
+		<link rel="stylesheet" href="../css/style.css">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="../css/shortcode.css">
+		<!-- responsive css -->
+		<link rel="stylesheet" href="../css/responsive.css">
+		<!-- modernizr css -->
+		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+		
+		
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
+<script type="text/javascript">
+	let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+	    return paramPair.split(/=(.+)?/).slice(0, 2);
+	}).reduce(function(obj, pairArray) {
+	    obj[pairArray[0]] = pairArray[1];
+	    return obj;
+	}, {});
+	
+	</script>
+
+<link rel="stylesheet" href="../css/chatExpert.css">
+<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.container{
+			width: 500px;
+			margin: 0 auto;
+			padding: 25px
+		}
+	
+		#yourMsg{
+			display: none;
+		}
+	</style>
+</head>
+
+
+<body>
+
+
+
+
+
+<script type="text/javascript">
+	var ws;
+	var roomNumber = urlParams.roomNumber;
+	var eNUM = urlParams.eNUM;
+	function wsOpen(){
+		//웹소켓 전송시 현재 방의 번호를 넘겨서 보낸다.
+		
+		
+		ws = new WebSocket("ws://localhost:3000/chating/"+ eNUM + "/"+ roomNumber);
+		wsEvt();
+	}
+		
+	function wsEvt() {
+		ws.onopen = function(data){
+			//소켓이 열리면 동작
+		}
+		
+		ws.onmessage = function(data) {
+			
+			
+			
+			
+			//메시지를 받으면 동작
+			var msg = data.data;
+			if(msg != null && msg.trim() != ''){
+				var d = JSON.parse(msg);
+				if(d.type == "getId"){
+					var si = d.sessionId != null ? d.sessionId : "";
+					if(si != ''){
+						$("#sessionId").val(si); 
+					}
+				}else if(d.type == "message"){
+					if(d.sessionId == $("#sessionId").val()){
+						$("#chating").append("<div class='direct-chat-msg right'><div class='direct-chat-info clearfix'><span class='direct-chat-name pull-right'>나</span></div> <div class='direct-chat-text'>" + d.msg + "</div></div>");	
+					}else{
+						$("#chating").append("<div class='direct-chat-msg'><div class='direct-chat-info clearfix'><span class='direct-chat-name pull-left'>" + d.userName + "</span><div><div class='direct-chat-text'>" + d.msg + "</div></div>");
+					}
+						
+				}else{
+					console.warn("unknown type!")
+				}
+			}
+		}
+
+		document.addEventListener("keypress", function(e){
+			if(e.keyCode == 13){ //enter press
+				send();
+			}
+		});
+	}
+
+	function chatName(){
+		var userName = $("#userName").val();
+		if(userName == null || userName.trim() == ""){
+			alert("사용자 이름을 입력해주세요.");
+			$("#userName").focus();
+		}else{
+			wsOpen();
+			$("#yourName").hide();
+			$("#yourMsg").show();
+		}
+	}
+
+	function send() {
+		var option ={
+			type: "message",
+			eNUM: eNUM,
+			roomNumber: roomNumber,
+			sessionId : $("#sessionId").val(),
+			userName : $("#userName").val(),
+			msg : $("#chatting").val()
+		}
+		ws.send(JSON.stringify(option))
+		$('#chatting').val("");
+	}
+</script>
+
+
+		<h1>1대1 문의</h1>
+		<input type="hidden" id="sessionId" value="">
+		<!-- <input type="hidden" id="roomNumber" value="${roomNumber}"> -->
+
+		
+		
+		
+		<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-4">
+                <div class="box box-warning direct-chat direct-chat-warning">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Chat Messages</h3>
+                        <div class="box-tools pull-right"> <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">시공업체와 대화해보세요~!</span> <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i> </button> <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts"> <i class="fa fa-comments"></i></button> <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i> </button> </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="direct-chat-messages">
+                        <!--append로 메세지 추가  -->
+                           <div id="chating" >
+							</div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                      <div class="input-group">
+                       <div id="yourName">
+						<table class="inputTable">
+							<tr>
+								<th>사용자명</th>
+								<th><input type="text" name="userName" id="userName"></th>
+								<th><button onclick="chatName()" id="startBtn" class="btn btn-warning btn-flat">이름 등록</button></th>
+							</tr>
+						</table>
+					</div>
+					<div id="yourMsg">
+						<table class="inputTable">
+							<tr>
+								<th>메시지</th>
+								<th><input id="chatting" placeholder="보내실 메시지를 입력하세요."></th>
+								<th><button onclick="send()" id="sendBtn" class="btn btn-warning btn-flat">보내기</button></th>
+							</tr>
+						</table>
+					</div>
+					</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+		
+	
+
+</body>
+</html>

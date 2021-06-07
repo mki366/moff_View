@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:replace="~{/layout/basic :: setContent(~{this :: content})}">
+    <th:block th:fragment="content">
+        <div class="container">
+            <div>
+                <ul th:each="room : ${list}">
+                    <li><a th:href="@{http://localhost:3000/chat/room(roomId=${room.roomId})}">[[${room.name}]]</a></li>
+                </ul>
+            </div>
+        </div>
+        <form th:action="@{http://localhost:3000/chat/room}" method="post">
+            <input type="text" name="name" class="form-control">
+            <button class="btn btn-secondary">개설하기</button>
+        </form>
+    </th:block>
+</th:block>
+
+</body>
+</html>

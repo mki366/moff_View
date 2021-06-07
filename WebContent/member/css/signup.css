@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+/* 헤더 상단바 고정 */
+
+/* 공통 모듈 */
+.body__container {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* SUMMARY */
+.summary__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.summary__description {
+    font-size: 12px;
+    font-weight: 500;
+    color: #727272;
+    line-height: 1.5;
+}
+
+/* input */
+
+.input--text{
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+}
+
+.input--text:hover {
+    background: #f7f7f7;
+}
+
+.input--text::-webkit-input-placeholder {
+    color: #cacaca;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.input--text::-ms-input-placeholder {
+    color: #cacaca;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.input--text::-moz-input-placeholder {
+    color: #cacaca;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* BTN */
+.btn {
+    font-family: 'Noto Sans KR', sans-serif;
+    height: 70px;
+    width: 100%;
+    background: #35C5F0;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    /* 수평을 가지지만 위아래 패딩 가로사이즈를 가질 수 없다. 이 속성을 주면 다음 요소에 스페이스바로 인식해 빈공간이 생김 */
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    color: #ffffff;
+}
+
+.btn:hover{
+    background: #2bb0d8;
+}
+
+/* FLOAT CLEARFIX */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.float--left {
+    float: left;
+}
+
+.float--right {
+    float: right;
+}
+
+/* 섹션 영역 */
+
+.section {
+    position: relative;
+}
+
+.section .inner {
+    max-width: 1136px;
+    /* 최대 너비 980px */
+    margin: 0 auto;
+    /* 중앙절렬. 980px이라는 영역이 중앙에 정위치 하게됨 상하 0 좌우 auto*/
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 헤더 영역 */
+header {
+    background: #ffffff;
+    /* white같은 지정값의 경우 브라우저마다 상이할 수 있으므로 헥사코드로 명시하자 */
+}
+
+
+header .inner {
+    width: 1136px;
+    height: 80px;
+    /* header는 안의 요소 inner에 영향을 받으므로 자식요소에 값을 지정해주도록 한다. 부모 height는 기본으로 auto */
+}
+
+header .menu-group {
+    display: flex;
+    /* 자식요소들을 수평 정렬 */
+    align-items: center;
+    height: 100%;
+    /* inner높이 만큼 */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width:30px;
+    height:30px;
+}
+
+header .logo a {
+    margin-left: 4px;
+    width:90px;
+    height:30px;
+    display: block;
+    background-image: url("../image/PNG/wehouse_logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+    /* 들여쓰기 속성 html코드의 GitHub를 대체텍스트로 이용하기 위해 왼쪽으로 없애준다. 이를 명시하기위해 -9999px를 사용한다 */
+}
+
+header .menu-group {
+    display: flex;
+    /* 자식요소들을 수평 정렬 */
+    align-items: center;
+    height: 100%;
+    /* inner높이 만큼 */
+}
+
+/* 사인폼 영역 */
+
+.section-signup{
+    width:360px;
+    margin: 0 auto;
+}
+
+.section-signup .inner{
+    width:360px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.section-signup .sign--api{
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-signup .api--service{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-signup .icon{
+    width:48px;
+    height:48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.section-signup .facebook-signup{
+    background-color: #1877f2;
+    margin-right: 15px;
+}
+
+.section-signup .kakaotalk-signup{
+    background-color: #f7e600;
+    margin-right: 15px;
+}
+
+.section-signup .naver-signup{
+    background-color: #19ce60;
+}
+
+.section-signup .icon i{
+    color:#ffffff;
+    font-size: 34px;
+}
+
+.section-signup .kakaotalk-signup i{
+    color:#6d3701;
+}
+
+.sign-group{
+    border-top: 1px solid#E5E5E5;
+}
+
+.sign-group .sign{
+    margin-top:14px;
+    display: flex;
+    width:100%;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.sign-group .sign:nth-child(1){
+    margin-top: 40px;
+}
+
+.sign-group .sign_subtitle{
+    font-weight: 700;
+}
+
+.sign-form{
+    display: flex;
+    width:100%;
+    margin: 14px 0;
+}
+
+.sign-form .email1{
+    flex:1;
+}
+
+.sign-form .email2{
+    flex:1;
+}
+
+.sign-form .interval{
+    width: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E5E5E5;
+}
+
+.sign-form .input--check{
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #35c5f0;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    /* 수평을 가지지만 위아래 패딩 가로사이즈를 가질 수 없다. 이 속성을 주면 다음 요소에 스페이스바로 인식해 빈공간이 생김 */
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    color: #ffffff;
+    margin-left:5px;
+    min-width:110px;
+    max-width:150px;
+}
+
+.sign-group .danger{
+    color: #f77;
+    font-size: 12px;
+    display:none;
+}
+
+.sign-group .pass-danger{
+    color: #f77;
+    font-size: 12px;
+    display:none;
+}
+
+.pass{
+    margin-top: 40px;
+}
+
+.sign-form .password{
+    width:100%;
+}
+
+.sign_subdescription{
+    margin-top: 16px;
+    font-weight: 300;
+    font-size: 12px;
+    color:#757575;
+}
+
+.agreement{
+    width:100%;
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 14px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.agreement input[type="checkbox"]{
+    display: none;
+}
+
+.agreement input[type="checkbox"] + label span{
+    display: inline-block;
+    width:20px;
+    height:20px;
+    margin: -4px 10px 0 0;
+    vertical-align: middle;
+    background: url(../image/SVG/check_default.svg) left top no-repeat;
+    cursor: pointer;
+    background-clip: cover;
+}
+
+.agreement label:hover{
+    cursor: pointer;
+}
+
+.agreement .check_container div:not(:first-child) {
+    margin: 10px 0;
+    font-size:14px;
+    font-weight: 300;
+}
+
+.check_container{
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+}
+
+.check_container .allcheck {
+    margin-top:9px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    width:100%;
+    font-size: 14px;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+
+.check_container .agecheck{
+    padding-top:10px;
+    box-sizing: border-box;
+}
+
+.check_container a{
+    color:#424242;
+    text-decoration:underline;
+}
+
+.check_container .necessary{
+    margin-left: 5px;
+    color: #35c5f0;
+    font-size: 12px;
+}
+
+.check_container .select {
+    margin-left: 5px;
+    color: #727272;
+    font-size: 12px;
+}
+
+.takeid{
+    margin: 25px 0 60px 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.takeid a{
+    margin-left: 5px;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.takeid a:hover{
+    color:#727272;
+}

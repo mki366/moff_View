@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="profile_frontend">
+	
+	<div>
+		<h2>안녕하세요!</h2>
+		<p id="username"></p>
+	</div>
+
+	<div>
+		<div>
+			<button type="button" id="purchases">구매내역</button>
+			<button type="button" id="cart">장바구니</button>
+		</div>
+		<div>
+			<button type="button" id="bye">회원탈퇴</button>
+		</div>
+	</div>
+
+	<div>
+		<button id="tab-button-account">계정</button>
+		<button id="tab-button-address">주소</button>
+	</div>
+
+
+	<div id="profile-tab">
+	</div>
+
+</div>
+
+
+</body>
+
+
+<script type="text/javascript">
+
+let login = JSON.parse(sessionStorage.getItem("login"));
+
+$( document ).ready(function() {	
+	
+	$("#username").html("\"" + login.name + "\"님");
+	
+	let pwdtype="";
+	for(i = 0; i < login.pwd.length; i++){
+		pwdtype += "*";
+	}
+	
+	$("#profile-tab").html("<div id='account-personal'>" +
+								"<h3>개인정보</h3>" +
+								"<a href='#' onclick='personalUpdate()'>수정</a>" +
+								"<p id='id'>" + login.id + "</p>" +
+								"<p id='name'>" + login.name + "</p>" +
+								"<p id='nickname'>" + login.nickname + "</p>" +
+								"<p id='bdate'>" + login.bdate + "</p>" +
+							"</div>" + 
+							"<hr style='width: 100%;border-top: 1px solid #f5f5f5'>" +
+							"<div id='account-contact'>" +
+								"<h3>연락처</h3>" + 
+								"<a href='#' onclick='contactUpdate()'>수정</a>" +
+								"<p id='phone'>" + login.phone + "</p>" +
+								"<p id='email'>" + login.email + "</p>" +
+							"</div>" +
+							"<hr style='width: 100%;border-top: 1px solid #f5f5f5'>" +
+							"<div id='account-pwd'>" +
+								"<h3>비밀번호</h3>" +
+								"<a href='#' onclick='pwdUpdate()'>수정</a>" +
+								"<p id='pwd'>" + pwdtype +"</p>" +
+							"</div>");
+	
+	
+	
+});
+
+
+
+<!-- 구매내역 -->
+
+
+
+<!-- 장바구니 -->
+
+
+
+<!-- 계정 탭 -->
+$("#tab-button-account").click(function () {
+	
+	let pwdtype="";
+	for(i = 0; i < login.pwd.length; i++){
+		pwdtype += "*";
+	}
+	
+	$("#profile-tab").html("<div id='account-personal'>" +
+								"<h3>개인정보</h3>" +
+								"<a href='#' onclick='personalUpdate()'>수정</a>" +
+								"<p id='id'>" + login.id + "</p>" +
+								"<p id='name'>" + login.name + "</p>" +
+								"<p id='nickname'>" + login.nickname + "</p>" +
+								"<p id='bdate'>" + login.bdate + "</p>" +
+							"</div>" + 
+							"<hr style='width: 100%;border-top: 1px solid #f5f5f5'>" +
+							"<div id='account-contact'>" +
+								"<h3>연락처</h3>" + 
+								"<a href='#' onclick='contactUpdate()'>수정</a>" +
+								"<p id='phone'>" + login.phone + "</p>" +
+								"<p id='email'>" + login.email + "</p>" +
+							"</div>" +
+							"<hr style='width: 100%;border-top: 1px solid #f5f5f5'>" +
+							"<div id='account-pwd'>" +
+								"<h3>비밀번호</h3>" +
+								"<a href='#' onclick='pwdUpdate()'>수정</a>" +
+								"<p id='pwd'>" + pwdtype +"</p>" +
+							"</div>");
+	});
+
+
+<!-- 주소 탭 -->
+$("#tab-button-address").click(function () {
+		$("#profile-tab").html("<div id='address-add'>" +
+									"<h3>기본 주소</h3>" +
+									"<a href='#' onclick='addressUpdate()'>수정</a>" +
+									"<p id='address'>" + login.address + "</p>" +
+							   "</div>");
+});
+
+
+<!-- 개인정보수정 -->
+function personalUpdate() {
+	
+	$("#account-personal").html("<div>" +
+									"<h3>개인정보</h3>" +
+									"<form>" +
+										"<p>이름</p>" + 
+										"<input type='text' id='name' value='" + login.name + "'>" +
+										"<p>별명</p>" +
+										"<input type='text' id='nickname' value='" + login.nickname + "'>" +
+										"<p>생년얼일</p>" +
+										"<input type='text' id='bdate' value=" + login.bdate + ">" +
+									"</form>" +
+									"<button id='personal-submit' type='button'>저장</button>" +
+							   "</div>");
+	
+	$("#personal-submit").click(function () {
+	 	 
+			$.ajax({
+				url:"http://localhost:3000/personalUpdate",
+				type:"post",
+				data:{ "name":$("#name").val(), "nickname":$("#nickname").val(), "bdate":$("#bdate").val(), "memNum":login.memNum },
+				success:function( data ){
+
+					$("#account-personal").html("<div>" +
+													"<h3>개인정보</h3>" +
+													"<a href='#' onclick='personalUpdate()'>수정</a>" +
+													"<p id='id'>" + data.id + "</p>" +
+													"<p id='name'>" + data.name + "</p>" +
+													"<p id='nickname'>" + data.nickname + "</p>" +
+													"<p id='bdate'>" + data.bdate + "</p>" +
+											   "</div>");				 
+				},
+				error:function(){
+					alert("error");
+				}
+			});
+			
+	});
+}
+
+
+
+
+<!-- 연락처수정 -->
+function contactUpdate() {
+	
+	$("#account-contact").html("<div>" +
+									"<h3>연락처</h3>" +
+									"<form>" +
+										"<p>휴대폰</p>" +
+										"<input type='text' id='phone' value=" + login.phone + ">" +
+										"<p>이메일</p>" +
+										"<input type='text' id='email' value=" + login.email + ">" +
+									"</form>" +
+									"<button id='contact-submit' type='button'>저장</button>" +
+							   "</div>");
+	
+	$("#contact-submit").click(function () {
+	 	 
+		$.ajax({
+			url:"http://localhost:3000/contactUpdate",
+			type:"post",
+			data:{ "phone":$("#phone").val(), "email":$("#email").val(), "memNum":login.memNum },
+			success:function( data ){
+
+				$("#account-contact").html("<div>" +
+												"<h3>연락처</h3>" + 
+												"<a href='#' onclick='contactUpdate()'>수정</a>" +
+												"<p id='phone'>" + data.phone + "</p>" +
+												"<p id='email'>" + data.email + "</p>" +
+										   "</div>");				 
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+		
+});
+}
+
+
+<!-- 비밀번호수정 -->
+function pwdUpdate() {
+	
+	$("#account-pwd").html("<div>" +
+									"<h3>비밀번호</h3>" +
+									"<form>" +
+										"<input type='text' placeholder='현재 비밀번호'>" +
+										"<input type='text' id='pwd' placeholder='새 비밀번호'>" +
+										"<input type='text' placeholder='새 비밀번호 확인'>" +
+									"</form>" +
+									"<button id='pwd-submit' type='button'>저장</button>" +
+							   "</div>");
+	
+	$("#pwd-submit").click(function () {
+	 	 
+		$.ajax({
+			url:"http://localhost:3000/pwdUpdate",
+			type:"post",
+			data:{ "pwd":$("#pwd").val(), "memNum":login.memNum },
+			success:function( data ){
+
+				let pwdtype="";
+				for(i = 0; i < data.pwd.length; i++){
+					pwdtype += "*";
+				}
+				
+				$("#account-pwd").html("<div>" +
+												"<h3>비밀번호</h3>" +
+												"<a href='#' onclick='pwdUpdate()'>수정</a>" +
+												"<p id='pwd'>" + pwdtype +"</p>" +
+										   "</div>");				 
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+	
+	});
+}
+	
+
+<!-- 주소 수정 -->
+function addressUpdate() {
+	
+	$("#address-add").html("<div>" +
+								"<h3>기본 주소</h3>" +
+								"<form>" +
+									"<input type='text' id='address' value='" + login.address + "'>" +
+								"<button id='address-submit' type='button'>저장</button>" +
+						   "</div>");
+	
+	$("#address-submit").click(function () {
+	 	 
+		$.ajax({
+			url:"http://localhost:3000/addressUpdate",
+			type:"post",
+			data:{ "address":$("#address").val(), "memNum":login.memNum },
+			success:function( data ){
+				
+				$("#address-add").html("<div>" +
+											"<h3>기본 주소</h3>" +
+											"<a href='#' onclick='addressUpdate()'>수정</a>" +
+											"<p id='address'>" + data.address + "</p>" +
+									   "</div>");				 
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+	
+	});
+	
+}
+</script>
+
+
+</html>

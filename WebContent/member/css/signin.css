@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+/* 헤더 상단바 고정 */
+
+/* 공통 모듈 */
+.body__container {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    height:95%;
+    min-height: 593px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* SUMMARY */
+.summary__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.summary__description {
+    font-size: 12px;
+    font-weight: 500;
+    color: #727272;
+    line-height: 1.5;
+}
+
+/* input */
+
+.input--text {
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.input--text:hover {
+    background: #f7f7f7;
+}
+
+.input--text::-webkit-input-placeholder {
+    color: #616161;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input--text::-ms-input-placeholder {
+    color: #616161;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input--text::-moz-input-placeholder {
+    color: #616161;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* BTN */
+.btn {
+    font-family: 'Noto Sans KR', sans-serif;
+    height: 50px;
+    width: 100%;
+    background: #35C5F0;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    /* 수평을 가지지만 위아래 패딩 가로사이즈를 가질 수 없다. 이 속성을 주면 다음 요소에 스페이스바로 인식해 빈공간이 생김 */
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background: #2bb0d8;
+}
+
+/* body */
+
+body{
+    background: rgb(248, 248, 248);
+    height:100vh;
+}
+
+/* 로그인 섹션 */
+
+.section-login {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section .inner {
+    max-width: 300px;
+    /* 최대 너비 980px */
+    /* 중앙절렬. 980px이라는 영역이 중앙에 정위치 하게됨 상하 0 좌우 auto*/
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.section-login .signin{
+    width:100%;
+}
+
+.section-login .btn:nth-child(3){
+	margin-top:10px;
+}
+
+.section-footer{
+    width:300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-login .login-logo{
+    width:200px;
+    height:60px;
+    background: url(../image/PNG/signin-logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.section-login .signform {
+    margin: 30px 0 20px 0;
+    width:100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.section-login .text--id{
+    border-radius: 5px 5px 0 0;
+    height: 50px;
+}
+
+.section-login .text--pw{
+    border-radius: 0 0 5px 5px;
+    height: 50px;
+}
+
+.reset{
+    margin-top: 20px;
+}
+
+.reset a{
+    color:#333;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.reset a:nth-child(1){
+    margin-right: 30px;
+}
+
+.reset a:hover{
+    text-decoration: underline;
+}
+
+.section-login .sign--api {
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-login .api--service {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-login .icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.section-login .facebook-signup {
+    background-color: #1877f2;
+    margin-right: 15px;
+}
+
+.section-login .kakaotalk-signup {
+    background-color: #f7e600;
+    margin-right: 15px;
+}
+
+.section-login .naver-signup {
+    background-color: #19ce60;
+}
+
+.section-login .icon i {
+    color: #ffffff;
+    font-size: 34px;
+}
+
+.section-login .kakaotalk-signup i {
+    color: #6d3701;
+}
+
+.line{
+    width:100%;
+    border:1px solid rgb(235, 235, 235);
+}
+
+.section-footer{
+    font-size: 12px;
+    color:#727272;
+}
