@@ -1,0 +1,864 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Hurst Furniture Template</title>
+       <meta name="viewport" content="width=device-width,initial-scale=1">
+	
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="description" content="">
+		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+        
+        <!-- Google Font -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+
+        <!-- all css here -->
+        <!-- bootstrap v3.3.6 css -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="../css/animate.css">
+        <!-- jquery-ui.min css -->
+        <link rel="stylesheet" href="../css/jquery-ui.min.css">
+        <!-- meanmenu css -->
+        <link rel="stylesheet" href="../css/meanmenu.min.css">
+        <!-- nivo-slider css -->
+        <link rel="stylesheet" href="../lib/css/nivo-slider.css">
+        <link rel="stylesheet" href="../lib/css/preview.css">
+        <!-- slick css -->
+        <link rel="stylesheet" href="../css/slick.css">
+        <!-- lightbox css -->
+        <link rel="stylesheet" href="../css/lightbox.min.css">
+        <!-- material-design-iconic-font css -->
+        <link rel="stylesheet" href="../css/material-design-iconic-font.css">
+        <!-- All common css of theme -->
+        <link rel="stylesheet" href="../css/default.css">
+        <!-- style css -->
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="../css/shortcode.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="../css/responsive.css">
+        <!-- modernizr css -->
+        <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+      
+
+  <style>
+
+
+
+
+.container {
+
+	width: 80%;
+}
+
+
+ .gallery-title {
+ 
+     font-size: 36px;
+     color: #000;
+     text-align: center;
+     font-weight: 500;
+   
+     margin-bottom: 30px
+ }
+
+ .gallery-title:after {
+     content: "";
+     position: absolute;
+     width: 22.5%;
+     left: 38.5%;
+     height: 45px;
+    
+ }
+
+ .filter-button {
+
+ 	 margin-right: 3px;
+     font-size: 20px;
+     border-radius: 20px;
+     text-align: center;
+     margin-bottom: 40px
+ }
+
+ .filter-button:hover {
+     font-size: 23px;
+     border: 3px solid #D7D9DB;
+     border-radius: 20px;
+     text-align: center;
+     background-color: #D7D9DB
+ }
+
+
+ .btn-default:active .filter-button:active {
+     background-color: #FFA500;
+     color: white
+ }
+
+ .port-image {
+
+     width: 100%
+ }
+
+ .gallery_product {
+
+     margin-bottom: 25px;
+  
+	 float: left;
+	 
+ }
+
+
+  .img-responsive{
+ 	height: 690px;
+ 	width: 650px;
+ 	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+/*     margin-right: -5px; */
+ 	
+ }
+ 
+ 
+ 
+ /* 툴팁 */
+ span{
+   position: absolute;
+ }
+ 
+ iframe{
+ 	
+   height: 400px;
+ }
+ 
+.fa-dot-circle-o {
+ 	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    color: #fff;
+ 	 opacity: 0.8; 
+ 
+    cursor: pointer;
+
+ }
+
+ .mytooltip {
+    display: inline;
+    position: relative;
+    z-index: 999
+}
+
+.mytooltip .tooltip-item {
+   
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    padding: 0 10px
+}
+
+.mytooltip .tooltip-content {
+    position: absolute;
+    z-index: 9999;
+    width: 360px;
+    left: 50%;
+    margin: 0 0 25px -155px;
+    padding-top: 25px;
+    padding-left: 25px;
+    bottom: 100%;
+    text-align: left;
+    font-size: 14px;
+    line-height: 30px;
+    -webkit-box-shadow: -5px -5px 15px rgba(48, 54, 61, 0.2);
+    box-shadow: -5px -5px 15px rgba(48, 54, 61, 0.2);
+    background: #fff;
+    opacity: 0;
+    cursor: default;
+    pointer-events: none
+}
+
+
+.mytooltip .tooltip-content img {
+    position: relative;
+    height: 140px;
+    display: block;
+    float: left;
+	margin-right: 3em;
+	/* border: solid 1px;
+	border-color: #DFBB83; */
+    
+}
+
+.mytooltip .tooltip-item::after {
+    content: '';
+    position: absolute;
+    width: 360px;
+    height: 20px;
+    bottom: 100%;
+    left: 50%;
+    pointer-events: none;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.mytooltip:hover .tooltip-item::after {
+    pointer-events: auto
+}
+
+.mytooltip:hover .tooltip-content {
+
+    pointer-events: auto;
+    opacity: 0.8;
+    -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg)
+}
+
+.mytooltip:hover .tooltip-content2 {
+    opacity: 1;
+    font-size: 18px
+}
+
+.mytooltip .tooltip-text {
+	
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    padding: 1.31em 1.21em 1.21em 0;
+    color: #000
+}
+
+
+
+/* 상단 메뉴 */
+.card{
+
+	padding: 30px;
+	border: solid 1px #D7D9DB;
+	border-radius: 8px
+}
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.book {
+    color: #66bb6a
+}
+
+.bg-success-400 {
+    background-color: #66bb6a
+}
+
+[class*=bg-]:not(.bg-transparent):not(.bg-light):not(.bg-white):not(.btn-outline):not(body) {
+    color: #fff
+}
+
+.btn {
+    position: relative
+}
+
+.border-warning-400 {
+    border-color: #ff7043
+}
+
+.support {
+    color: #ff7043;
+}
+
+
+.newspaper {
+    color: #03a9f4
+}
+
+.topmenu button{
+	border-radius: 8px
+}
+
+ 
+</style>
+    </head>
+    <body>  
+        <!-- WRAPPER START -->
+    
+
+            <!-- HEADER-AREA START -->
+            <header id="sticky-menu" class="header header-2">
+                <div class="header-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-4 col-xs-7">
+                                <div class="logo text-center">
+                                    <a href="index.html"><img src="../img/logo/logo6.png" alt="" /></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-5">
+                                <div class="mini-cart text-right">
+                                    <ul>
+                                        <li>
+                                            <a class="cart-icon" href="#">
+                                                <i class="zmdi zmdi-shopping-cart"></i>
+                                                <span>3</span>
+                                            </a>
+                                            <div class="mini-cart-brief text-left">
+                                                <div class="cart-items">
+                                                    <p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+                                                </div>
+                                                <div class="all-cart-product clearfix">
+                                                    <div class="single-cart clearfix">
+                                                        <div class="cart-photo">
+                                                            <a href="#"><img src="img/cart/1.jpg" alt="" /></a>
+                                                        </div>
+                                                        <div class="cart-info">
+                                                            <h5><a href="#">dummy product name</a></h5>
+                                                            <p class="mb-0">Price : $ 100.00</p>
+                                                            <p class="mb-0">Qty : 02 </p>
+                                                            <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-cart clearfix">
+                                                        <div class="cart-photo">
+                                                            <a href="#"><img src="img/cart/2.jpg" alt="" /></a>
+                                                        </div>
+                                                        <div class="cart-info">
+                                                            <h5><a href="#">dummy product name</a></h5>
+                                                            <p class="mb-0">Price : $ 300.00</p>
+                                                            <p class="mb-0">Qty : 01 </p>
+                                                            <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-totals">
+                                                    <h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+                                                </div>
+                                                <div class="cart-bottom  clearfix">
+                                                    <a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
+                                                    <a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MAIN-MENU START -->
+                <div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+                <div class="main-menu  hidden-xs">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">home</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Page's</li>
+                                        <li><a href="index.html">Home Version 1</a></li>
+                                        <li><a href="index-2.html">Home Version 2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="shop.html">products</a>
+                                <div class="mega-menu menu-scroll">
+                                    <div class="table">
+                                        <div class="table-cell">
+                                            <div class="half-width">
+                                                <ul>
+                                                    <li class="menu-title">best brands</li>
+                                                    <li><a href="#">henning koppel</a></li>
+                                                    <li><a href="#">jehs + Laub</a></li>
+                                                    <li><a href="#">vicke lindstrand</a></li>
+                                                    <li><a href="#">don chadwick</a></li>
+                                                    <li><a href="#">akiko kuwahata</a></li>
+                                                    <li><a href="#">barbro berlin</a></li>
+                                                    <li><a href="#">cecilia hall</a></li>
+                                                    <li><a href="#">don chadwick</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="half-width">
+                                                <ul>
+                                                    <li class="menu-title">popular brands</li>
+                                                    <li><a href="#">akiko kuwahata</a></li>
+                                                    <li><a href="#">barbro berlin</a></li>
+                                                    <li><a href="#">cecilia hall</a></li>
+                                                    <li><a href="#">don chadwick</a></li>
+                                                    <li><a href="#">henning koppel</a></li>
+                                                    <li><a href="#">jehs + Laub</a></li>
+                                                    <li><a href="#">vicke lindstrand</a></li>
+                                                    <li><a href="#">don chadwick</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="full-width">
+                                                <div class="mega-menu-img">
+                                                    <a href="single-product.html"><img src="simg/megamenu/1.jpg" alt="" /></a>
+                                                </div>
+                                            </div>
+                                            <div class="pb-80"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="#">Shortcodes</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Shortcodes</li>
+                                        <li><a href="elements-accordions.html">Accordion</a></li>
+                                        <li><a href="elements-toggles.html">Toggles</a></li>
+                                        <li><a href="elements-tab.html">Tab</a></li>
+                                        <li><a href="elements-product-tab.html">Product Tab</a></li>
+                                        <li><a href="elements-product-tab-2.html">Product Tab 2</a></li>
+                                        <li><a href="elements-carousel.html">product carousel</a></li>
+                                        <li><a href="elements-carousel-2.html">product carousel 2</a></li>
+                                        <li><a href="elements-featured-product.html">Featured Product</a></li>
+                                        <li><a href="elements-featured-product-2.html">Featured Product 2</a></li>
+                                        <li><a href="elements-button.html">Button</a></li>
+                                        <li><a href="elements-table.html">Table</a></li>
+                                        <li><a href="elements-progress-bars.html">Progress Bar</a></li>
+                                        <li><a href="elements-blog.html">Blog</a></li>
+                                        <li><a href="elements-blog-2.html">Blog - 2</a></li>
+                                        <li><a href="elements-team.html">Team</a></li>
+                                        <li><a href="elements-footer.html">Footer</a></li>
+                                        <li><a href="elements-footer-2.html">Footer 2</a></li>
+                                        <li><a href="elements-map.html">Map</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="shop-sidebar.html">accesories</a></li>
+                            <li><a href="shop-list.html">lookbook</a></li>
+                            <li><a href="blog.html">blog</a></li>
+                            <li><a href="#">pages</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Page's</li>
+                                        <li><a href="shop.html">Shop</a></li>
+                                        <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+                                        <li><a href="shop-grid-right-sidebar.html">Shop Right Sidebar</a></li>
+                                        <li><a href="shop-list.html">Shop List</a></li>
+                                        <li><a href="shop-list-right-sidebar.html">Shop List right sidebar</a></li>
+                                        <li><a href="single-product.html">Single Product</a></li>
+                                        <li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+                                        <li><a href="cart.html">Shopping Cart</a></li>
+                                        <li><a href="wishlist.html">Wishlist</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="order.html">Order</a></li>
+                                        <li><a href="login.html">login / Registration</a></li>
+                                        <li><a href="my-account.html">My Account</a></li>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="single-blog.html">Single Blog</a></li>
+                                        <li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="contact.html">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- MAIN-MENU END -->
+            </header>
+            <!-- HEADER-AREA END -->
+            <!-- Mobile-menu start -->
+            <div class="mobile-menu-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a href="index.html">home</a>
+                                            <ul>
+                                                <li><a href="index.html">Home Version 1</a></li>
+                                                <li><a href="index-2.html">Home Version 2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="shop.html">products</a></li>
+                                        <li><a href="shop-sidebar.html">accesories</a></li>
+                                        <li><a href="shop-list.html">lookbook</a></li>
+                                        <li><a href="blog.html">blog</a></li>
+                                        <li><a href="#">pages</a>
+                                            <ul>
+                                                <li><a href="shop.html">Shop</a></li>
+                                                <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+                                                <li><a href="shop-list.html">Shop List</a></li>
+                                                <li><a href="single-product.html">Single Product</a></li>
+                                                <li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+                                                <li><a href="cart.html">Shopping Cart</a></li>
+                                                <li><a href="wishlist.html">Wishlist</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="order.html">Order</a></li>
+                                                <li><a href="login.html">login / Registration</a></li>
+                                                <li><a href="my-account.html">My Account</a></li>
+                                                <li><a href="404.html">404</a></li>
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="single-blog.html">Single Blog</a></li>
+                                                <li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about.html">about us</a></li>
+                                        <li><a href="contact.html">contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+      <div class="heading-banner-area ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-banner">
+                                <div class="heading-banner-title">
+                                    <h2>SHOWROOM</h2>
+                                </div>
+                                <div class="breadcumbs pb-15">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li>SHOWROOM</li>
+                                   
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+   
+<div class="container" >
+ 
+ 
+<!--  상단메뉴 -->
+ <div class="topmenu">
+  <div class="container-fluid d-flex justify-content-center mt-100">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body text-center"> 
+                    <h5 class="card-title">주문제작 </h5>
+                    <p class="mb-3">간단한 방식의 플래닝 툴을 활용해 색상, 스타일, 구성을 마음대로 바꿔 보면서 완벽한 나만의 공간을 설계하고 디자인해보세요.</p><button class="btn btn-default btn-lg" id="custom">바로가기 </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body text-center"> 
+                    <h5 class="card-title">커뮤니티</h5>
+                    <p class="mb-3">내가 관심 있는 상품이 다른 곳에선 어떻게 사용되고 있는지 확인해보고 여러 가지 인테리어 아이디어도 얻어 가세요.</p><button class="btn btn-default btn-lg" id="commu">바로가기 </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">인테리어상담  </h5>
+                    <p class="mb-3">시공사례, 사업자, 전문성 검증을 통해 전문가 인증 마크를 부여하고 지속 관리해주는 인증된 전문가와 함께 인테리어를 완성해세요. </p> <button class="btn btn-default btn-lg" id="Expert">바로가기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>  
+  
+<!-- 필터버튼 -->
+<h1 class="gallery-title">&nbsp;</h1>
+<div align="left">
+         <button class="btn btn-default btn-lg filter-button" data-filter="all">All</button>
+         <button class="btn btn-default btn-lg filter-button" data-filter="Bedroom"> Bedroom</button> 
+         <button class="btn btn-default btn-lg filter-button" data-filter="LivingRoom">Living Room </button> 
+         <button class="btn btn-default btn-lg filter-button" data-filter="WorkSpace">WorkSpace</button>
+         <button class="btn btn-default btn-lg filter-button" data-filter="Dining">Dining</button> 
+
+ <div class="row" >
+
+	<div class="con">
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Bedroom" >
+     	 <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 120px; top: 350px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(2)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span> 
+          	<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 250px; top: 400px;">
+           		<span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px;" onmouseover="productlist(1)"> </i> </span>
+           		 <span class="tooltip-content clearfix"> </span> </span> 
+     	 </span><img src='../image/sr2.png' class="img-responsive" >
+     	  </div>
+     </div>	  
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter LivingRoom"> 
+        	 <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 100px; top: 180px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(3)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span> 
+          	<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 350px; top: 500px;">
+           		<span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px;" onmouseover="productlist(2)"> </i> </span>
+           		 <span class="tooltip-content clearfix"> </span> </span> 
+     	 </span> <img src="../image/sr1.png" class="img-responsive">
+         </div>
+         
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Bedroom">
+         <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 300px; top: 300px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(1)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span>
+     	 </span> <img src="../image/sr10.png" class="img-responsive">
+         </div>
+         
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Dining">
+          <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 120px; top: 350px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(2)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span> 
+          	<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 200px; top: 150px;">
+           		<span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px;" onmouseover="productlist(1)"> </i> </span>
+           		 <span class="tooltip-content clearfix"> </span> </span> 
+     	 </span><img src="../image/sr4.png" class="img-responsive">
+        </div>
+        
+        
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter LivingRoom">
+   	   <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 220px; top: 150px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(1)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span>
+     	 </span><img src="../image/sr11.png" class="img-responsive">
+        </div>
+        
+        
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter WorkSpace">
+         <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left:250px; top: 180px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(1)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span> 
+          	<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 180px; top: 380px;">
+           		<span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px;" onmouseover="productlist(2)"> </i> </span>
+           		 <span class="tooltip-content clearfix"> </span> </span> 
+          	<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 80px; top: 450px;">
+           		<span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px;" onmouseover="productlist(2)"> </i> </span>
+           		 <span class="tooltip-content clearfix"> </span> </span> 
+     	 </span><img src="../image/sr3.png" class="img-responsive">
+        </div>
+
+        
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Dining">
+        <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 250px; top: 460px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(1)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span>
+     	 </span>  <img src="../image/sr6.png" class="img-responsive">
+         </div>
+         
+         
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Bedroom"> 
+    	   <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left:180px; top:60px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(1)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span> 
+          	<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 330px; top: 300px;">
+           		<span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px;" onmouseover="productlist(2)"> </i> </span>
+           		 <span class="tooltip-content clearfix"> </span> </span> 
+          	<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 400px; top: 420px;">
+           		<span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px;" onmouseover="productlist(2)"> </i> </span>
+           		 <span class="tooltip-content clearfix"> </span> </span> 
+     	 </span><img src="../image/sr5.png" class="img-responsive">
+        </div>
+        
+        
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter WorkSpace">
+         <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 110px; top: 300px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(2)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span> 
+          	<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 350px; top: 40px;">
+           		<span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px;" onmouseover="productlist(1)"> </i> </span>
+           		 <span class="tooltip-content clearfix"> </span> </span> 
+     	 </span><img src="../image/sr7.png" class="img-responsive">
+         </div>
+         
+         
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Dining">
+           <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 130px; top: 180px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(2)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span> 
+          	<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 350px; top: 80px;">
+           		<span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px;" onmouseover="productlist(1)"> </i> </span>
+           		 <span class="tooltip-content clearfix"> </span> </span> 
+     	 </span><img src="../image/sr8.png" class="img-responsive">
+        </div>
+        
+        
+        
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter LivingRoom">
+         <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 150px; top: 290px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(1)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span>
+     	 </span> <img src="../image/sr9.png" class="img-responsive"> 
+        </div>
+        
+        
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter WorkSpace">
+         <span id='sr1' >	
+			<span class="mytooltip tooltip-effect-1" style=" position:absolute; left: 150px; top: 590px;" > 
+	          <span class="tooltip-item" ><i class="fa fa-dot-circle-o" style="font-size:36px; "onmouseover="productlist(1)"> </i> </span> 
+           		<span class="tooltip-content clearfix"> </span></span>
+     	 </span>  <img src="../image/sr12.png" class="img-responsive"> 
+        </div>
+</div>
+</div>
+
+
+        <!-- FOOTER -->
+		<div id="footer"></div>
+</div>
+
+        
+        
+        
+        
+      
+<script type="text/javascript">
+
+$(function(){
+    $("#footer").load("../footer.html"); 
+  });
+
+
+
+
+$(document).ready(function () {
+	$('.img-responsive').click(function () {
+		location.href = 'srlistpage.html';
+	})
+});
+
+
+
+// 필터버튼 
+$(document).ready(function(){
+	$(".filter-button").click(function(){
+	var value = $(this).attr('data-filter');
+
+	if(value == "all")
+	{
+
+	$('.filter').show('1000');
+	}
+	else
+	{
+	$(".filter").not('.'+value).hide('3000');
+	$('.filter').filter('.'+value).show('3000');
+
+	}
+	});
+
+	if ($(".filter-button").removeClass("active")) {
+	$(this).removeClass("active");
+	}
+	$(this).addClass("active");
+
+});
+
+// 쇼룸 리스트 
+function productlist(prodNumber) {
+//alert($('.prodNum').val());
+	$.ajax({
+		url:'http://localhost:3000/srList',
+		type:'get',
+		data:{ prodNum:prodNumber },
+		success:function(dto){
+		//	 alert('success');
+	//	 alert(JSON.stringify(dto));
+			
+		// $(".tooltip-content").remove();
+ 		
+		let data1 = dto.oriPrice;
+		let data2 = dto.price; 
+
+		let srprice = String(data1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+		let srprice2 = String(data2).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+            
+				let str =  "<input type='hidden'value='" +  dto.prodNum+ "'>";
+						str	+= '<img class="prdImg" src="../image/' + dto.filename + '">'
+						str	+= "<a href='../product/productDetail.html?prodNum=" + dto.prodNum + "'style='color:#000; text-decoration:none '>"
+						str	+= "<p style='font-size:20px'><b>" + dto.prodName + "</b></p>"
+						str	+= "</a><p style='font-size:15px;text-decoration:line-through'><b>" + srprice + "원</b></p>"
+						str	+= "<p style='color:#3742DD;font-size:18px'><b>특별할인가<br>" + srprice2 + "원</p>";
+				$(".tooltip-content").html(str);
+
+		}, 
+		error:function(){
+			alert('error');
+		}
+	});
+}
+
+// 주문제작으로 
+$('#custom').click(function () {
+	location.href = "../customMade/custom.html";
+});
+// 커뮤니티로 
+$('#commu').click(function () {
+	location.href = "../community/commulist.html";
+});
+
+// 인테리어로 
+$('#Expert').click(function () {
+	location.href = "../Expert/ExpertPage.html";
+});
+
+
+
+
+
+</script>
+
+
+        <!-- all js here -->
+        <!-- jquery latest version -->
+        <script src="../js/vendor/jquery-1.12.0.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- jquery.meanmenu js -->
+        <script src="../js/jquery.meanmenu.js"></script>
+        <!-- slick.min js -->
+        <script src="../js/slick.min.js"></script>
+        <!-- jquery.treeview js -->
+        <script src="../js/jquery.treeview.js"></script>
+        <!-- lightbox.min js -->
+        <script src="../js/lightbox.min.js"></script>
+        <!-- jquery-ui js -->
+        <script src="../js/jquery-ui.min.js"></script>
+        <!-- jquery.nivo.slider js -->
+        <script src="../lib/js/jquery.nivo.slider.js"></script>
+        <script src="../lib/home.js"></script>
+        <!-- jquery.nicescroll.min js -->
+        <script src="../js/jquery.nicescroll.min.js"></script>
+        <!-- countdon.min js -->
+        <script src="../js/countdon.min.js"></script>
+        <!-- wow js -->
+        <script src="../js/wow.min.js"></script>
+        <!-- plugins js -->
+        <script src="../js/plugins.js"></script>
+        <!-- main js -->
+        <script src="../js/main.js"></script>
+    </body>
+</html>
