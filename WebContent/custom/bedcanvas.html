@@ -1,0 +1,1098 @@
+<!doctype html>
+<html class="no-js" lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title> Hurst</title>
+      
+      <!--  캡쳐	 -->
+
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+      
+      
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	  <link rel="stylesheet" href="/resources/demos/style.css">
+
+	 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+      <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+      <!-- Place favicon.ico in the root directory -->
+      
+      <!-- Google Font -->
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+
+ <script type="text/javascript">
+let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+    return paramPair.split(/=(.+)?/).slice(0, 2);
+}).reduce(function(obj, pairArray) {
+    obj[pairArray[0]] = pairArray[1];
+    return obj;
+}, {});
+</script>   
+
+
+
+         <!-- all css here -->
+      <!-- bootstrap v3.3.6 css -->
+      <link rel="stylesheet" href="../css/bootstrap.min.css">
+      <!-- animate css -->
+      <link rel="stylesheet" href="../css/animate.css">
+      <!-- jquery-ui.min css -->
+      <link rel="stylesheet" href="../css/jquery-ui.min.css">
+      <!-- meanmenu css -->
+      <link rel="stylesheet" href="../css/meanmenu.min.css">
+      <!-- nivo-slider css -->
+      <link rel="stylesheet" href="../lib/css/nivo-slider.css">
+      <link rel="stylesheet" href="../lib/css/preview.css">
+      <!-- slick css -->
+      <link rel="stylesheet" href="../css/slick.css">
+      <!-- lightbox css -->
+      <link rel="stylesheet" href="../css/lightbox.min.css">
+      <!-- material-design-iconic-font css -->
+      <link rel="stylesheet" href="../css/material-design-iconic-font.css">
+      <!-- All common css of theme -->
+      <link rel="stylesheet" href="../css/default.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="../css/style.css">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="../css/shortcode.css">
+      <!-- responsive css -->
+      <link rel="stylesheet" href="../css/responsive.css">
+      <!-- modernizr css -->
+      <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+      
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+
+<style type="text/css">
+
+
+#container{
+padding: 50px
+}
+
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none;
+}
+#accordion .panel{
+    border: none;
+    box-shadow: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    position: relative;
+
+}
+#accordion .panel:after{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: #ffdc16;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+#accordion .panel:last-child:after{
+    display: none;
+}
+#accordion .panel-heading{
+    padding: 0;
+    border: none;
+
+}
+#accordion .panel-title a{
+    display: block;
+    padding: 15px 20px 20px 70px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #5d5a55;
+    position: relative;
+}
+#accordion .panel-title a:before{
+    content: "";
+    width: 50px;
+    height: 1px;
+    background: #ffdc16;
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+}
+#accordion .panel-title a:after{
+    content: "";
+
+    font-weight: 400;
+    width: 40px;
+    height: 40px;
+    line-height: 50px;
+    background: #ffdc16;
+    border: 2px solid #ffdc16;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: normal;
+
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#accordion .panel-title a.collapsed:after{
+    background: #fff;
+    border: 2px solid #ffdc16;
+    color: #ffdc16;
+}
+#accordion .panel-body{
+
+
+    padding: 10px 20px 10px 70px;
+    border: none;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+/* Buttons */ 
+.btn {
+    min-width: 145px;
+    line-height: 50px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: box-shadow 0.25s ease-in-out;
+    -moz-transition: box-shadow 0.25s ease-in-out;
+    -webkit-transition: box-shadow 0.25s ease-in-out;
+    -o-transition: box-shadow 0.25s ease-in-out;
+    -ms-transition: box-shadow 0.25s ease-in-out;
+}
+
+
+.btn-fillnext {
+    color: #fff;
+    background-color: #3348a2;
+}
+
+.btn-fillnext:hover,
+.btn-fillnext:focus {
+    color: #fff;
+}
+
+</style>
+   
+
+   </head>
+   <body>   
+      <!-- WRAPPER START -->
+      <div class="wrapper bg-dark-white">
+
+         <!-- HEADER-AREA START -->
+         <header id="sticky-menu" class="header header-2">
+            <div class="header-area">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-sm-4 col-sm-offset-4 col-xs-7">
+                        <div class="logo text-center">
+                           <a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
+                        </div>
+                     </div>
+                     <div class="col-sm-4 col-xs-5">
+                        <div class="mini-cart text-right">
+                           <ul>
+                              <li>
+                                 <a class="cart-icon" href="#">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                    <span>3</span>
+                                 </a>
+                                 <div class="mini-cart-brief text-left">
+                                    <div class="cart-items">
+                                       <p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+                                    </div>
+                                    <div class="all-cart-product clearfix">
+                                       <div class="single-cart clearfix">
+                                          <div class="cart-photo">
+                                             <a href="#"><img src="img/cart/1.jpg" alt="" /></a>
+                                          </div>
+                                          <div class="cart-info">
+                                             <h5><a href="#">dummy product name</a></h5>
+                                             <p class="mb-0">Price : $ 100.00</p>
+                                             <p class="mb-0">Qty : 02 </p>
+                                             <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                                          </div>
+                                       </div>
+                                       <div class="single-cart clearfix">
+                                          <div class="cart-photo">
+                                             <a href="#"><img src="img/cart/2.jpg" alt="" /></a>
+                                          </div>
+                                          <div class="cart-info">
+                                             <h5><a href="#">dummy product name</a></h5>
+                                             <p class="mb-0">Price : $ 300.00</p>
+                                             <p class="mb-0">Qty : 01 </p>
+                                             <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="cart-totals">
+                                       <h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+                                    </div>
+                                    <div class="cart-bottom  clearfix">
+                                       <a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
+                                       <a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+                                    </div>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- MAIN-MENU START -->
+            <div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+               <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+               </div>
+            </div>
+            <div class="main-menu  hidden-xs">
+               <nav>
+                  <ul>
+                     <li><a href="index.html">home</a>
+                        <div class="sub-menu menu-scroll">
+                           <ul>
+                              <li class="menu-title">Page's</li>
+                              <li><a href="index.html">Home Version 1</a></li>
+                              <li><a href="index-2.html">Home Version 2</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li><a href="shop.html">products</a>
+                        <div class="mega-menu menu-scroll">
+                           <div class="table">
+                              <div class="table-cell">
+                                 <div class="half-width">
+                                    <ul>
+                                       <li class="menu-title">best brands</li>
+                                       <li><a href="#">henning koppel</a></li>
+                                       <li><a href="#">jehs + Laub</a></li>
+                                       <li><a href="#">vicke lindstrand</a></li>
+                                       <li><a href="#">don chadwick</a></li>
+                                       <li><a href="#">akiko kuwahata</a></li>
+                                       <li><a href="#">barbro berlin</a></li>
+                                       <li><a href="#">cecilia hall</a></li>
+                                       <li><a href="#">don chadwick</a></li>
+                                    </ul>
+                                 </div>
+                                 <div class="half-width">
+                                    <ul>
+                                       <li class="menu-title">popular brands</li>
+                                       <li><a href="#">akiko kuwahata</a></li>
+                                       <li><a href="#">barbro berlin</a></li>
+                                       <li><a href="#">cecilia hall</a></li>
+                                       <li><a href="#">don chadwick</a></li>
+                                       <li><a href="#">henning koppel</a></li>
+                                       <li><a href="#">jehs + Laub</a></li>
+                                       <li><a href="#">vicke lindstrand</a></li>
+                                       <li><a href="#">don chadwick</a></li>
+                                    </ul>
+                                 </div>
+                                 <div class="full-width">
+                                    <div class="mega-menu-img">
+                                       <a href="single-product.html"><img src="img/megamenu/1.jpg" alt="" /></a>
+                                    </div>
+                                 </div>
+                                 <div class="pb-80"></div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                            <li><a href="#">Shortcodes</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Shortcodes</li>
+                                        <li><a href="elements-accordions.html">Accordion</a></li>
+                                        <li><a href="elements-toggles.html">Toggles</a></li>
+                                        <li><a href="elements-tab.html">Tab</a></li>
+                                        <li><a href="elements-product-tab.html">Product Tab</a></li>
+                                        <li><a href="elements-product-tab-2.html">Product Tab 2</a></li>
+                                        <li><a href="elements-carousel.html">product carousel</a></li>
+                                        <li><a href="elements-carousel-2.html">product carousel 2</a></li>
+                                        <li><a href="elements-featured-product.html">Featured Product</a></li>
+                                        <li><a href="elements-featured-product-2.html">Featured Product 2</a></li>
+                                        <li><a href="elements-button.html">Button</a></li>
+                                        <li><a href="elements-table.html">Table</a></li>
+                                        <li><a href="elements-progress-bars.html">Progress Bar</a></li>
+                                        <li><a href="elements-blog.html">Blog</a></li>
+                                        <li><a href="elements-blog-2.html">Blog - 2</a></li>
+                                        <li><a href="elements-team.html">Team</a></li>
+                                        <li><a href="elements-footer.html">Footer</a></li>
+                                        <li><a href="elements-footer-2.html">Footer 2</a></li>
+                                        <li><a href="elements-map.html">Map</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                     <li><a href="shop-sidebar.html">accesories</a></li>
+                     <li><a href="shop-list.html">lookbook</a></li>
+                     <li><a href="blog.html">blog</a></li>
+                     <li><a href="#">pages</a>
+                        <div class="sub-menu menu-scroll">
+                           <ul>
+                              <li class="menu-title">Page's</li>
+                              <li><a href="shop.html">Shop</a></li>
+                              <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+                              <li><a href="shop-grid-right-sidebar.html">Shop Right Sidebar</a></li>
+                              <li><a href="shop-list.html">Shop List</a></li>
+                              <li><a href="shop-list-right-sidebar.html">Shop List right sidebar</a></li>
+                              <li><a href="single-product.html">Single Product</a></li>
+                              <li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+                              <li><a href="cart.html">Shopping Cart</a></li>
+                              <li><a href="wishlist.html">Wishlist</a></li>
+                              <li><a href="checkout.html">Checkout</a></li>
+                              <li><a href="order.html">Order</a></li>
+                              <li><a href="login.html">login / Registration</a></li>
+                              <li><a href="my-account.html">My Account</a></li>
+                              <li><a href="404.html">404</a></li>
+                              <li><a href="blog.html">Blog</a></li>
+                              <li><a href="single-blog.html">Single Blog</a></li>
+                              <li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+                              <li><a href="about.html">About Us</a></li>
+                              <li><a href="contact.html">Contact</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li><a href="about.html">about us</a></li>
+                     <li><a href="contact.html">contact</a></li>
+                  </ul>
+               </nav>
+            </div>
+            <!-- MAIN-MENU END -->
+         </header>
+         <!-- HEADER-AREA END -->
+         <!-- Mobile-menu start -->
+         <div class="mobile-menu-area">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+                     <div class="mobile-menu">
+                        <nav id="dropdown">
+                           <ul>
+                              <li><a href="index.html">home</a>
+                                 <ul>
+                                    <li><a href="index.html">Home Version 1</a></li>
+                                    <li><a href="index-2.html">Home Version 2</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="shop.html">products</a></li>
+                              <li><a href="shop-sidebar.html">accesories</a></li>
+                              <li><a href="shop-list.html">lookbook</a></li>
+                              <li><a href="blog.html">blog</a></li>
+                              <li><a href="#">pages</a>
+                                 <ul>
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+                                    <li><a href="shop-list.html">Shop List</a></li>
+                                    <li><a href="single-product.html">Single Product</a></li>
+                                    <li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+                                    <li><a href="cart.html">Shopping Cart</a></li>
+                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="order.html">Order</a></li>
+                                    <li><a href="login.html">login / Registration</a></li>
+                                    <li><a href="my-account.html">My Account</a></li>
+                                    <li><a href="404.html">404</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="single-blog.html">Single Blog</a></li>
+                                    <li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="about.html">about us</a></li>
+                              <li><a href="contact.html">contact</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Mobile-menu end -->
+         <!-- HEADING-BANNER START -->
+         <div class="heading-banner-area overlay-bg">
+            <div class="container" >
+               <div class="row" >
+                  <div class="col-md-12">
+                     <div class="heading-banner">
+                        <div class="heading-banner-title">
+                           <h2>Custom Made  </h2>
+                        </div>
+                        <div class="breadcumbs pb-15">
+                           <ul>
+                              <li><a href="index.html">Home</a></li>
+                              <li><a href="index.html">Custom Made</a></li>
+                              <li>Bed</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- HEADING-BANNER END -->
+         <!-- 본문  -->
+
+	<div id="container"> 
+		  <div class="row" id="row">
+		    <div class="col-md-1 "></div>
+		     <div class="col-md-3">
+		            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		                <div class="panel panel-default">
+		                    <div class="panel-heading" role="tab" id="headingOne">
+		                        <h4 class="panel-title">
+		                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		                                  FRAME 
+		                            </a>
+		                        </h4>
+		                    </div>
+		                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+		                        <div class="panel-body">
+		                           <div id="framelist">
+		                         
+		                       </div>
+		                        </div>
+		                    </div>
+		                </div>
+		 
+		                <div class="panel panel-default">
+		                    <div class="panel-heading" role="tab" id="headingTwo">
+		                        <h4 class="panel-title">
+		                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		                                     MATRESS
+		                            </a>
+		                        </h4>
+		                    </div>
+		                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		                        <div class="panel-body">
+		                        <div id="matlist">
+		                          
+		                   </div>
+		                        </div>
+		                    </div>
+		                </div>
+		 
+		                <div class="panel panel-default">
+		                    <div class="panel-heading" role="tab" id="headingThree">
+		                        <h4 class="panel-title">
+		                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		                                 TOPPER
+		                            </a>
+		                        </h4>
+		                    </div>
+		                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+		                        <div class="panel-body">
+		                        <div id="topplist">
+		                        
+		                       </div>
+		                       </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        
+    
+		<div class="col-md-5">
+		
+			<div style=" width: 800px; height: 500px; position: relative;" id="cv1" >
+				<div style="position: absolute;  "id='frameZone' ></div>
+				<div style="position: absolute;  "id='matZone'></div>
+				<div style="position: absolute;  "id='topperZone'></div>
+				<div style="position: absolute;  "id='pillowZone'></div>
+				<div style="position: absolute;  "id='quiltZone'></div>
+				<div style="position: absolute; top: 300px; left: 630px ">
+					<p>판매가</p>
+					<div id="price"></div>
+					<a class="btn btn-fillnext" onclick="nextPage()">다음 ></a>
+				</div>			
+			</div>
+		</div>
+
+		
+		 <div class="col-md-3 ">
+		            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		                <div class="panel panel-default">
+		              <div class="panel-heading" role="tab" id="headingFour">
+		                        <h4 class="panel-title">
+		                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+		            
+		                                  PILLOW
+		                            </a>
+		                        </h4>
+		                    </div>
+		                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+		                        <div class="panel-body">
+		                           <div id="pillowlist">
+		                         
+		                       </div>
+		                        </div>
+		                    </div>
+		                </div>
+		 
+		                <div class="panel panel-default">
+		                    <div class="panel-heading" role="tab" id="headingFive">
+		                        <h4 class="panel-title">
+		                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">  
+		                       QUILT
+		                            </a>
+		                        </h4>
+		                    </div>
+		                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+		                        <div class="panel-body">
+		                        <div id="quiltlist">
+		                          
+		                   </div>
+		                        </div>
+		                    </div>
+		                </div>
+		         
+		            </div>
+		        </div>
+		 
+		    </div>    
+		  </div>  
+		        
+		      
+   
+
+
+         <!-- 본문끝  -->      
+         <!-- FOOTER START -->
+         <footer>
+            <!-- Footer-area start -->
+            <div class="footer-area footer-3">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                        <div class="single-footer">
+                           <h3 class="footer-title  title-border">Contact Us</h3>
+                           <ul class="footer-contact">
+                              <li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
+                              <li><span>Cell-Phone :</span>+012 345 678 102</li>
+                              <li><span>Email :</span>info@example.com</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                        <div class="single-footer">
+                           <h3 class="footer-title  title-border">accounts</h3>
+                           <ul class="footer-menu">
+                              <li><a href="my-account.html"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
+                              <li><a href="wishlist.html"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
+                              <li><a href="cart.html"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
+                              <li><a href="login.html"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
+                              <li><a href="checkout.html"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+                        <div class="single-footer">
+                           <h3 class="footer-title  title-border">shipping</h3>
+                           <ul class="footer-menu">
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>New Products</a></li>
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Top Sellers</a></li>
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Manufactirers</a></li>
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Suppliers</a></li>
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Specials</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="single-footer">
+                           <h3 class="footer-title  title-border">Email Newsletters</h3>
+                           <div class="footer-subscribe">
+                              <form action="#">
+                                 <input type="text" name="email" placeholder="Email Address..." />
+                                 <button class="button-one submit-btn-4" type="submit" data-text="Subscribe">Subscribe</button>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Footer-area end -->
+            <!-- Copyright-area start -->
+            <div class="copyright-area copyright-2">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-sm-6 col-xs-12">
+                        <div class="copyright">
+                           <p class="mb-0">&copy; <a href="#" target="_blank">Hurst </a> 2018. All Rights Reserved.</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-xs-12">
+                        <div class="payment  text-right">
+                           <a href="#"><img src="img/payment/1.png" alt="" /></a>
+                           <a href="#"><img src="img/payment/2.png" alt="" /></a>
+                           <a href="#"><img src="img/payment/3.png" alt="" /></a>
+                           <a href="#"><img src="img/payment/4.png" alt="" /></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Copyright-area start -->
+         </footer>
+         <!-- FOOTER END -->
+         <!-- QUICKVIEW PRODUCT -->
+         <div id="quickview-wrapper">
+            <!-- Modal -->
+            <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+               <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     </div>
+                     <div class="modal-body">
+                        <div class="modal-product">
+                           <div class="product-images">
+                              <div class="main-image images">
+                                 <img alt="#" src="img/product/quickview-photo.jpg"/>
+                              </div>
+                           </div><!-- .product-images -->
+
+                           <div class="product-info">
+                              <h1>Aenean eu tristique</h1>
+                              <div class="price-box-3">
+                                 <hr />
+                                 <div class="s-price-box">
+                                    <span class="new-price">$160.00</span>
+                                    <span class="old-price">$190.00</span>
+                                 </div>
+                                 <hr />
+                              </div>
+                              <a href="shop.html" class="see-all">See all features</a>
+                              <div class="quick-add-to-cart">
+                                 <form method="post" class="cart">
+                                    <div class="numbers-row">
+                                       <input type="number" id="french-hens"  value="3"  >
+                                    </div>
+                                    <button class="single_add_to_cart_button" type="submit">Add to cart</button>
+                                 </form>
+                              </div>
+                              <div class="quick-desc">
+                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
+                              </div>
+                              <div class="social-sharing">
+                                 <div class="widget widget_socialsharing_widget">
+                                    <h3 class="widget-title-modal">Share this product</h3>
+                                    <ul class="social-icons">
+                                       <li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="zmdi zmdi-google-plus"></i></a></li>
+                                       <li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="zmdi zmdi-twitter"></i></a></li>
+                                       <li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="zmdi zmdi-facebook"></i></a></li>
+                                       <li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div><!-- .product-info -->
+                        </div><!-- .modal-product -->
+                     </div><!-- .modal-body -->
+                  </div><!-- .modal-content -->
+               </div><!-- .modal-dialog -->
+            </div>
+            <!-- END Modal -->
+         </div>
+         <!-- END QUICKVIEW PRODUCT -->   
+         
+      </div>
+      <!-- WRAPPER END -->
+
+        
+<script type="text/javascript">
+
+	let prodNum = urlParams.prodNum;
+	getProduct(prodNum);
+	
+	let type = urlParams.type;
+	
+	var frame=prodNum;
+	var mat=0;
+	var topper=0;
+	var pillow=0;
+	var quilt=0;
+	
+	var fProdNum=prodNum;
+	var mProdNum=0;
+	var tProdNum=0;
+	var pProdNum=0;
+	var qProdNum=0;
+	
+	calPrice();
+	
+	// 프레임
+	$.ajax({
+		url:'http://localhost:3000/getBedList',
+		type:'post',		
+		data:{ 'type': type },
+		success:function( list ){
+		
+		//	alert('suc');	 
+		//	alert(JSON.stringify(list));			
+			
+						        
+			let str = "<ul style='list-style:none;'>";
+			
+			$.each(list, function (i, item) {
+	
+				  str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'  onclick='canv("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"				 
+			});	 
+			
+			$("#framelist").html(str + "</ul>");	
+			matlist();
+			pillowlist();
+			topperList();
+			quiltlist();
+			calPrice();
+			
+		},
+		error:function(){
+			alert('error');
+		}
+	});	 
+	
+	
+	//매트리스
+	function matlist(){
+			
+		$.ajax({
+			url:'http://localhost:3000/getBedList',
+			type:'post',		
+			data:{ 'type': "mat" },
+			success:function( list ){
+	
+			//	alert(JSON.stringify(list));			
+								        
+				let str = "<ul style='list-style:none;'>";
+				
+				$.each(list, function (i, item) {
+		
+					  str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'onclick='canv2("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"					 
+				});	 
+				
+				$("#matlist").html(str + "</ul>");	
+				
+			},
+			error:function(){
+				alert('error');
+			}
+		});	 
+	}
+	
+	
+	// 토퍼
+	function topplist(){
+			
+		$.ajax({
+			url:'http://localhost:3000/getBedList',
+			type:'post',		
+			data:{ 'type': "topper" },
+			success:function( list ){
+	
+			//	alert(JSON.stringify(list));			
+								        
+				let str = "<ul style='list-style:none;'>";
+				
+				$.each(list, function (i, item) {
+		
+					str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'onclick='canv3("+ item.prodNum +")' ><p>"  + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"
+					 
+				});	 
+				
+				$("#topplist").html(str + "</ul>");	
+				
+			},
+			error:function(){
+				alert('error');
+			}
+		});	 
+	}
+	
+	// 베개
+	function pillowlist(){
+			
+		$.ajax({
+			url:'http://localhost:3000/getBedList',
+			type:'post',		
+			data:{ 'type': "pillow" },
+			success:function( list ){
+	
+			//	alert(JSON.stringify(list));			
+								        
+				let str = "<ul style='list-style:none;'>";
+				
+				$.each(list, function (i, item) {
+		
+					 str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'onclick='canv4("+ item.prodNum +")'> <p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"					 
+				});	 
+				
+				$("#pillowlist").html(str + "</ul>");	
+				
+			},
+			error:function(){
+				alert('error');
+			}
+		});	 
+	}
+	
+	
+	// 이불
+	function quiltlist(){
+			
+		$.ajax({
+			url:'http://localhost:3000/getBedList',
+			type:'post',		
+			data:{ 'type': "quilt" },
+			success:function( list ){
+	
+			//	alert(JSON.stringify(list));			
+								        
+				let str = "<ul style='list-style:none;'>";
+				
+				$.each(list, function (i, item) {
+		
+		            str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'onclick='canv5("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"
+					 
+				});	 
+				
+				$("#quiltlist").html(str + "</ul>");	
+				
+			},
+			error:function(){
+				alert('error');
+			}
+		});	 
+	}
+	
+
+	
+	/////////////////////////// 클릭시 (프레임)
+	function canv(prodNum) {
+	
+		$.ajax({
+			url:'http://localhost:3000/getProduct',
+			type:'post',
+			data:{ prodNum:prodNum },
+			success:function(dto){	
+					
+	          let str = "<img src='../image/"+ dto.filename +"' >" 
+			  $("#frameZone").html(str);
+	          
+	          frame = prodNum;
+	          fProdNum = prodNum;
+	          
+	          calPrice();
+	           
+			}, 
+			error:function(){
+				alert('error');
+			}
+		});
+	}
+	
+	
+	
+	//////////////////////////	클릭시 (매트리스)
+	function canv2(prodNum) {
+	
+		$.ajax({
+			url:'http://localhost:3000/getProduct',
+			type:'post',
+			data:{ prodNum:prodNum },
+			success:function(dto){
+				
+	           let str = "<img src='../image/"+ dto.filename +"'  >" 
+			   $("#matZone").html(str);
+	           
+			   mat = prodNum;  
+			   mProdNum = prodNum;
+		          
+	           calPrice();
+				
+			}, 
+			error:function(){
+				alert('error');
+			}
+		});
+	}
+	
+	//////////////////////////클릭시 (토퍼)
+	function canv3(prodNum) {
+	
+		$.ajax({
+			url:'http://localhost:3000/getProduct',
+			type:'post',
+			data:{ prodNum:prodNum },
+			success:function(dto){
+				
+	           let str = "<img src='../image/"+ dto.filename +"'  >" 
+			   $("#topperZone").html(str);
+	           
+			   topper = prodNum;          
+			   tProdNum = prodNum;
+			   
+	           calPrice();
+				
+			}, 
+			error:function(){
+				alert('error');
+			}
+		});
+	}
+	
+	//////////////////////////클릭시 (베개)
+	function canv4(prodNum) {
+	
+		$.ajax({
+			url:'http://localhost:3000/getProduct',
+			type:'post',
+			data:{ prodNum:prodNum },
+			success:function(dto){
+				
+			  let str = "<img src='../image/"+ dto.filename +"' style='height:150px;width:150px;margin-left:190px; margin-top: 130px;' >" 
+	            +   "<img src='../image/"+ dto.filename +"' style='height:150px;width:150px;margin-left:-40px; margin-top: 150px;' >" ;
+
+			   $("#pillowZone").html(str);
+	           
+			   pillow = prodNum;   
+			   pProdNum = prodNum;
+		          
+	           calPrice();
+				
+			}, 
+			error:function(){
+				alert('error');
+			}
+		});
+	}
+	
+	
+	//////////////////////////클릭시 (이불)
+	function canv5(prodNum) {
+	
+		$.ajax({
+			url:'http://localhost:3000/getProduct',
+			type:'post',
+			data:{ prodNum:prodNum },
+			success:function(dto){
+				
+	           let str = "<img src='../image/"+ dto.filename +"'  >" 
+			   $("#quiltZone").html(str);
+	           
+			   quilt = prodNum;    
+			   qProdNum = prodNum;
+		          
+	           calPrice();
+				
+			}, 
+			error:function(){
+				alert('error');
+			}
+		});
+	}
+	
+	
+	
+	
+	function getProduct(prodNum) {
+		
+		$.ajax({
+			url:'http://localhost:3000/getProduct',
+			type:'post',
+			data:{ prodNum:prodNum },
+			success:function(dto){
+		
+			let filename = dto.filename;
+			$("#frameZone").html("<img src='../image/"+ filename +"'>");
+			fimg = filename;
+			fname = dto.prodName;
+			
+			}, 
+			error:function(){
+				alert('error');
+			}
+		});
+	}
+	
+	
+	// 가격 계산
+	function calPrice() {
+			
+				$.ajax({
+					url:"http://localhost:3000/getBedPrice",
+					type:'post',
+					data:{ frame:frame, mat:mat, topper:topper, pillow:pillow, quilt:quilt },
+					success:function(data){				
+					//	alert('success');
+						$("#price").html("<h3><strong>₩ " +  numberWithCommas(data) + "원</strong></h3><b>");
+					},
+					error:function(){
+						alert('error');
+					}
+					
+				});
+	}
+	
+	
+	function numberWithCommas(x) {
+		  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	}
+
+	function nextPage() {
+		
+		var price=$("#price").text();
+		location.href="bedFinal.html?price=" + price + "&fProdNum=" + fProdNum + "&mProdNum=" + mProdNum + "&tProdNum=" + tProdNum + "&pProdNum=" + pProdNum + "&qProdNum=" + qProdNum;
+	}
+	
+</script>
+
+      <script src="../js/vendor/jquery-1.12.0.min.js"></script>
+      <!-- bootstrap js -->
+      <script src="../js/bootstrap.min.js"></script>
+      <!-- jquery.meanmenu js -->
+      <script src="../js/jquery.meanmenu.js"></script>
+      <!-- slick.min js -->
+      <script src="../js/slick.min.js"></script>
+      <!-- jquery.treeview js -->
+      <script src="../js/jquery.treeview.js"></script>
+      <!-- lightbox.min js -->
+      <script src="../js/lightbox.min.js"></script>
+      <!-- jquery-ui js -->
+      <script src="../js/jquery-ui.min.js"></script>
+      <!-- jquery.nivo.slider js -->
+      <script src="../lib/js/jquery.nivo.slider.js"></script>
+   
+      <script src="../lib/home.js"></script>
+      <!-- jquery.nicescroll.min js -->
+      <script src="../js/jquery-ui.js"></script>
+      <!-- countdon.min js -->
+      <script src="../js/countdon.min.js"></script>
+      <!-- wow js -->
+      <script src="../js/wow.min.js"></script>
+      <!-- plugins js -->
+      <script src="../js/plugins.js"></script>
+      <!-- main js -->
+      <script src="../js/main.js"></script>
+
+
+   </body>
+</html>

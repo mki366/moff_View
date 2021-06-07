@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  
+<script type="text/javascript">
+let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+    return paramPair.split(/=(.+)?/).slice(0, 2);
+}).reduce(function(obj, pairArray) {
+    obj[pairArray[0]] = pairArray[1];
+    return obj;
+}, {});
+</script>
+
+</head>
+<body>
+
+
+
+<div id="bedList">
+</div>
+
+
+<script type="text/javascript">
+
+	let type = urlParams.bedtype;
+	
+	$.ajax({
+		url:'http://localhost:3000/getBedList',
+		type:'post',		
+		data:{ 'type': type },
+		success:function( list ){
+		
+		//	alert('suc');	 
+		//	alert(JSON.stringify(list));			
+			
+			$.each(list, function (i, item) {
+
+				let str = "사진:" + "<a href='bedcanvas.html?prodNum=" + item.prodNum + "'><img style='height:150px;width:150px' src='../image/" + item.filename + "'></a>"
+						+ "<br>이름:" + item.prodName
+						+ "<br>가격:" + item.price 
+						+ "<br>정보:" + item.info + "<hr>";
+
+		 		$("#bedList").append(str);	
+				 
+			});	 
+			
+		},
+		error:function(){
+			alert('error');
+		}
+	});	 
+
+	$('img').draggable();
+</script>
+</body>
+</html>

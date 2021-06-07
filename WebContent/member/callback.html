@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="EUC-KR">
+
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+  var naver_id_login = new naver_id_login("E2G2Ono7tLJwqb3bgB4S", "http://localhost:8090/FinalProject/member/callback.html");
+
+  // 접근 토큰 값 출력
+ // alert(naver_id_login.oauthParams.access_token);
+
+  // 네이버 사용자 프로필 조회
+  naver_id_login.get_naver_userprofile("naverSignInCallback()");
+
+  let email;
+  let name;
+  let nickname;
+  let personal;
+  let birthday;
+
+  // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+  function naverSignInCallback() {
+	  
+/* 
+	alert(naver_id_login.getProfileData('id'));
+    alert(naver_id_login.getProfileData('email'));
+    alert(naver_id_login.getProfileData('nickname'));
+    alert(naver_id_login.getProfileData('name'));   
+//    alert(naver_id_login.getProfileData('birthyear'));    //
+    alert(naver_id_login.getProfileData('birthday'));
+    alert(naver_id_login.getProfileData('mobile'));       //
+
+   */ 
+
+    personal = naver_id_login.getProfileData('id');
+    email = naver_id_login.getProfileData('email');
+    name = naver_id_login.getProfileData('name');
+    nickname = naver_id_login.getProfileData('nickname');
+    birthday = naver_id_login.getProfileData('birthday');
+
+    // email = naver_id_login.getProfileData('email');
+    
+     snsCheck();
+
+  }
+
+  
+
+function snsCheck() {
+
+	 $.ajax({
+	  	  
+			url:"http://localhost:3000/snsCheck",
+			type:"post",
+			data:{ "email":email },
+			success:function( data ){
+			//	alert(data);
+
+				if(data.trim()=="YES"){ // 이메일 존재하지 않음
+					// 가입
+					alert("yes");
+					snsSignup();
+				}else{  // 이메일 존재
+					// 로그인
+					alert('no');
+					login();
+				}			
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+}
+
+ 
+function snsSignup(){
+
+	$.ajax({
+		url:"http://localhost:3000/snsSignup",
+		type:"post",
+		data:{ "email":email, name:name, nickname:nickname, id:personal.substring(0,10), pwd:personal.substring(0,10),
+				address:"입력해주세요", phone:"입력해 주세요", bdate: "입력해주세요"},
+		success:function( data ){
+			// 회원가입 후,
+			alert("회원가입되셨습니다");
+			
+			if(data == ''){
+				alert('login fail');
+			}else{
+				alert(JSON.stringify(data));
+				sessionStorage.setItem("login", JSON.stringify(data));
+
+				location.href = "mypage.html";
+				
+			//	opener.location.href='mypage.html'; 
+			//	window.close();
+		
+			} 
+		},
+
+		error:function(){
+			alert("error");
+		}
+	});
+}
+
+ 
+
+function login(){
+
+	$.ajax({
+		url:"http://localhost:3000/login",
+		type:"post",
+		data:{ id:personal.substring(0,10), pwd:personal.substring(0,10)},
+		success:function( data ){
+			if(data == ''){
+				alert('login fail');
+			}else{
+				alert(JSON.stringify(data));
+				sessionStorage.setItem("login", JSON.stringify(data));
+
+			//	location.href = "mypage.html";
+				
+			//	opener.location.href='mypage.html'; 
+			//	window.close();
+				location.href='mypage.html'; 
+			//	window.close();
+			}
+		},
+		error:function(){
+			alert("error");
+		}
+	});
+
+}
+ 
+
+</script>
+</body>
+</html>

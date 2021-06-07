@@ -1,711 +1,974 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>이거 언제 다만드냐</title>
-
-    <meta name="author" content="3team">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- 대표 로고 -->
-    <link rel="icon" href="../image/PNG/favicon.png">
-    <link rel="apple-touch-icon" href="../image/PNG/favicon.png">
-    
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/signup.css">
-
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
-	<!-- daum 도로명 주소 -->
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	
-	<!-- 나이 -->
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>
-<style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-/* 헤더 상단바 고정 */
-
-/* 공통 모듈 */
-.body__container {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* SUMMARY */
-.summary__title {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.5;
-}
-
-.summary__description {
-    font-size: 12px;
-    font-weight: 500;
-    color: #727272;
-    line-height: 1.5;
-}
-
-/* input */
-
-.input--text{
-    height: 40px;
-    padding: 0 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    outline: none;
-    font-size: 16px;
-}
-
-.input--text:hover {
-    background: #f7f7f7;
-}
-
-.input--text::-webkit-input-placeholder {
-    color: #cacaca;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.input--text::-ms-input-placeholder {
-    color: #cacaca;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.input--text::-moz-input-placeholder {
-    color: #cacaca;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.sign_msg{
-	color: red;
-}
-
-/* BTN */
-.btn {
-    font-family: 'Noto Sans KR', sans-serif;
-    height: 70px;
-    width: 100%;
-    background: #35C5F0;
-    border: none;
-    border-radius: 4px;
-    display: inline-flex;
-    /* 수평을 가지지만 위아래 패딩 가로사이즈를 가질 수 없다. 이 속성을 주면 다음 요소에 스페이스바로 인식해 빈공간이 생김 */
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    box-sizing: border-box;
-    position: relative;
-    color: #ffffff;
-}
-
-.btn:hover{
-    background: #2bb0d8;
-}
-
-/* FLOAT CLEARFIX */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
-.float--left {
-    float: left;
-}
-
-.float--right {
-    float: right;
-}
-
-/* 섹션 영역 */
-
-.section {
-    position: relative;
-}
-
-.section .inner {
-    max-width: 1136px;
-    /* 최대 너비 980px */
-    margin: 0 auto;
-    /* 중앙절렬. 980px이라는 영역이 중앙에 정위치 하게됨 상하 0 좌우 auto*/
-    box-sizing: border-box;
-    position: relative;
-}
-
-/* 헤더 영역 */
-header {
-    background: #ffffff;
-    /* white같은 지정값의 경우 브라우저마다 상이할 수 있으므로 헥사코드로 명시하자 */
-}
-
-
-header .inner {
-    width: 1136px;
-    height: 80px;
-    /* header는 안의 요소 inner에 영향을 받으므로 자식요소에 값을 지정해주도록 한다. 부모 height는 기본으로 auto */
-}
-
-header .menu-group {
-    display: flex;
-    /* 자식요소들을 수평 정렬 */
-    align-items: center;
-    height: 100%;
-    /* inner높이 만큼 */
-}
-
-header .logo {
-    display: flex;
-    align-items: center;
-}
-
-header .logo img {
-    width:30px;
-    height:30px;
-}
-
-header .logo a {
-    margin-left: 4px;
-    width:90px;
-    height:30px;
-    display: block;
-    background-image: url("../image/PNG/wehouse_logo.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    text-indent: -9999px;
-    /* 들여쓰기 속성 html코드의 GitHub를 대체텍스트로 이용하기 위해 왼쪽으로 없애준다. 이를 명시하기위해 -9999px를 사용한다 */
-}
-
-header .menu-group {
-    display: flex;
-    /* 자식요소들을 수평 정렬 */
-    align-items: center;
-    height: 100%;
-    /* inner높이 만큼 */
-}
-
-/* 사인폼 영역 */
-
-.section-signup{
-    width:360px;
-    margin: 0 auto;
-}
-
-.section-signup .inner{
-    width:360px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-
-.section-signup .sign--api{
-    margin-top: 30px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.section-signup .api--service{
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-}
-
-.section-signup .icon{
-    width:48px;
-    height:48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    cursor: pointer;
-}
-
-.section-signup .facebook-signup{
-    background-color: #1877f2;
-    margin-right: 15px;
-}
-
-.section-signup .kakaotalk-signup{
-    background-color: #f7e600;
-    margin-right: 15px;
-}
-
-.section-signup .naver-signup{
-    background-color: #19ce60;
-}
-
-.section-signup .icon i{
-    color:#ffffff;
-    font-size: 34px;
-}
-
-.section-signup .kakaotalk-signup i{
-    color:#6d3701;
-}
-
-.sign-group{
-    border-top: 1px solid#E5E5E5;
-}
-
-.sign-group .sign{
-    margin-top:14px;
-    display: flex;
-    width:100%;
-    flex-flow: column;
-    align-items: flex-start;
-}
-
-.sign-group .sign:nth-child(1){
-    margin-top: 40px;
-}
-
-.sign-group .sign_subtitle{
-    font-weight: 700;
-}
-
-.sign-form{
-    display: flex;
-    width:100%;
-    margin: 14px 0;
-}
-
-.sign-form .email1{
-    flex:1;
-}
-
-.sign-form .email2{
-    flex:1;
-}
-
-.sign-form .interval{
-    width: 6%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #E5E5E5;
-}
-
-.sign-form .input--check{
-    font-family: 'Noto Sans KR', sans-serif;
-    background: #35c5f0;
-    border: none;
-    border-radius: 4px;
-    display: inline-flex;
-    /* 수평을 가지지만 위아래 패딩 가로사이즈를 가질 수 없다. 이 속성을 주면 다음 요소에 스페이스바로 인식해 빈공간이 생김 */
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    box-sizing: border-box;
-    position: relative;
-    color: #ffffff;
-    margin-left:5px;
-    min-width:110px;
-    max-width:150px;
-}
-
-.sign-group .danger{
-    color: #f77;
-    font-size: 12px;
-    display:none;
-}
-
-.sign-group .pass-danger{
-    color: #f77;
-    font-size: 12px;
-    display:none;
-}
-
-.pass{
-    margin-top: 40px;
-}
-
-.sign-form .password{
-    width:100%;
-}
-
-.sign_subdescription{
-    margin-top: 16px;
-    font-weight: 300;
-    font-size: 12px;
-    color:#757575;
-}
-
-.agreement{
-    width:100%;
-    display: flex;
-    border: 1px solid #ddd;
-    padding: 14px;
-    box-sizing: border-box;
-    margin-top: 30px;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.agreement input[type="checkbox"]{
-    display: none;
-}
-
-.agreement input[type="checkbox"] + label span{
-    display: inline-block;
-    width:20px;
-    height:20px;
-    margin: -4px 10px 0 0;
-    vertical-align: middle;
-    background: url(../image/SVG/check_default.svg) left top no-repeat;
-    cursor: pointer;
-    background-clip: cover;
-}
-
-.agreement label:hover{
-    cursor: pointer;
-}
-
-.agreement .check_container div:not(:first-child) {
-    margin: 10px 0;
-    font-size:14px;
-    font-weight: 300;
-}
-
-.check_container{
-    width: 90%;
-    display: flex;
-    flex-flow: column;
-}
-
-.check_container .allcheck {
-    margin-top:9px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    width:100%;
-    font-size: 14px;
-    font-weight: 700;
-    box-sizing: border-box;
-}
-
-.check_container .agecheck{
-    padding-top:10px;
-    box-sizing: border-box;
-}
-
-.check_container a{
-    color:#424242;
-    text-decoration:underline;
-}
-
-.check_container .necessary{
-    margin-left: 5px;
-    color: #35c5f0;
-    font-size: 12px;
-}
-
-.check_container .select {
-    margin-left: 5px;
-    color: #727272;
-    font-size: 12px;
-}
-
-.takeid{
-    margin: 25px 0 60px 0;
-    font-size: 15px;
-    font-weight: 400;
-}
-
-.takeid a{
-    margin-left: 5px;
-    font-weight: 500;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.takeid a:hover{
-    color:#727272;
-}
-</style>
-
-</head>
-<body>
-    <!-- body 태그에 직접적으로 css는 부여하지 않는다. 컨테이너를 따로 지정하자. -->
-    <!-- 언더바 두개를 사용하는 이유 -->
-<div class="body__container"> <!-- body의 일부분인 컨테이너임을 의미 -->
-
-    <!-- HEADER -->
-    <header class="section">
-        <!-- 콘텐츠가 들어가는 inner영역 -->
-        <div class="inner clearfix">
-
-            <div class="menu-group float--left">
-                
-                <div class="logo">
-                    <img src="../image/PNG/favicon.png" alt="">
-                    <a href="./home.html">우리의집</a>
-                </div>
-
-            </div>
-
-        </div>
-    </header>
-
-    <section class="section section-signup">
-
-        <h2 class="summary__title">회원가입</h2>
-
-        <div class="sign--api">
-            <p class="summary__description">SNS 계정으로 간편 회원가입</p>
-            <div class="api--service">
-                <div class="icon facebook-signup"><i class="xi-3x xi-facebook"></i></div>
-                <div class="icon kakaotalk-signup"><i class="xi-3x xi-kakaotalk text-white"></i></div>
-                <div class="icon naver-signup"><i class="xi-3x xi-naver"></i></div>
-            </div>
-        </div>
-
-        <div class="inner sign-group">
-
-            <form>
-
-            <div class="sign_id">
-                <h2 class="sign_subtitle">
-                    아이디
-                </h2>
-                <div class="sign-form">
-                    <input class="input--text password" type="text" placeholder="아이디 입력" id="id">
-                </div>
-                <p class="sign_msg">
-                	
-                </p>
-                <button type="button" id="idCheck">id확인</button>
-            </div>
-
-            <div class="sign_pwd">
-                <h2 class="sign_subtitle">
-                    비밀번호
-                </h2>
-                <h2 class="sign_subdescription">
-                    8자 이상 입력해주세요.
-                </h2>
-                <div class="sign-form">
-                    <input class="input--text password" id="pwd" type="text" placeholder="비밀번호 입력">
-                </div>
-                <p class="sign_msg">
-                </p>
-            </div>
-
-            <div class="sign__pwd">
-                <h2 class="sign_subtitle">
-                    비밀번호 확인
-                </h2>
-                <div class="sign-form">
-                    <input class="input--text password" id="_pwd" type="text" placeholder="비밀번호 재입력">
-                </div>
-                <p class="sign_msg">
-                </p>
-            </div>
-
-
-            <div class="sign_name">
-                <h2 class="sign_subtitle">
-                    이름
-                </h2>
-                <div class="sign-form">
-                    <input class="input--text password" id="name" type="text" placeholder="이름 입력">
-                </div>
-            </div>
-            
-            <div class="sign_nickname">
-                <h2 class="sign_subtitle">
-                    별명
-                </h2>
-                <h2 class="sign_subdescription">
-                    다른 유저와 겹치지 않는 별명을 입력해주세요. (2~15자)
-                </h2>
-                <div class="sign-form">
-                    <input class="input--text password" id="nickname" type="text" placeholder="별명 (2~15자)">
-                </div>
-                <h2 class="pass-danger">
-                    필수 입력 항목입니다.
-                </h2>
-            </div>
-
-            <div class="sign">
-                <h2 class="sign_subtitle">
-                    이메일
-                </h2>
-                <div class="sign-form">
-                    <input class="input--text email1" id="email1" type="text" placeholder="이메일"> 
-                    <span class="interval">@</span>
-                    <input class="input--text email2" id="email2" type="text" placeholder="주소 입력">
-                </div>
-                <h2 class="danger">
-                    필수 입력 항목입니다.
-                </h2>
-            </div>
-			
-			<div class="sign">
-                <h2 class="sign_subtitle">
-           	전화번호
-                </h2>
-                <div class="sign-form">
-                	<input type="text" id="phone1"> - <input type="text" id="phone2"> - <input type="text" id="phone3">
-                </div>
-            </div>
-            
-           <div class="sign">
-                <h2 class="sign_subtitle">
-           	생년월일
-                </h2>
-                <div class="sign-form">
-					<select name="year" id="year" title="년도"></select>
-					<select name="month" id="month" title="월"></select>
-					<select name="day" id="day" title="일"></select>
-                </div>
-                <h2 class="danger">
-                    필수 입력 항목입니다.
-                </h2>
-            </div>
-			
-			
-            <div class="sign">
-                <h2 class="sign_subtitle">
-                    주소
-                </h2>
-                <input type="text" id="sample4_postcode" placeholder="우편번호">
-				<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-				<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-				<span id="guide" style="color:#999;display:none"></span>
-				<input type="text" id="sample4_detailAddress" placeholder="상세주소">
-
-                <h2 class="pass-danger">
-                    비밀번호가 일치하지 않습니다.
-                </h2>
-            </div>
-            
-           
-            <input type="submit" class="btn" id="signupBtn" value="회원가입 완료">
-
-            </form>
-
-            <div class="takeid">
-                이미 아이디가 있으신가요?<a href="#">로그인</a>
-            </div>
-
-        </div>
-
-    </section>
-
-</div>
-
-<script type="text/javascript">
-
-$(".sign_msg").hide();
-setDateBox();
-
-/* $("#_id").blur(function () {
-		$(".sign_id .sign_msg").show();
-}); */
-
-
-$('#idCheck').click(function() {
-	
-	var idRegExp = /^[a-z0-9]{5,20}$/;
-
-	if( !idRegExp.test( $("#id").val() ) ){
-		$(".sign_id .sign_msg").show();
-		$(".sign_id .sign_msg").html('조건에 맞지 않습니다.');
-		// 5~20자의 영문 소문자, 숫자만 사용 가능합니다.
-		$("#id").focus();
-	}else{
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Single Blog || Hurst</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+		<!-- Place favicon.ico in the root directory -->
 		
-	 	 $.ajax({
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+		<!-- all css here -->
+		<!-- bootstrap v3.3.6 css -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<!-- animate css -->
+		<link rel="stylesheet" href="../css/animate.css">
+		<!-- jquery-ui.min css -->
+		<link rel="stylesheet" href="../css/jquery-ui.min.css">
+		<!-- meanmenu css -->
+		<link rel="stylesheet" href="../css/meanmenu.min.css">
+		<!-- nivo-slider css -->
+		<link rel="stylesheet" href="../lib/css/nivo-slider.css">
+		<link rel="stylesheet" href="../lib/css/preview.css">
+		<!-- slick css -->
+		<link rel="stylesheet" href="../css/slick.css">
+		<!-- lightbox css -->
+		<link rel="stylesheet" href="../css/lightbox.min.css">
+		<!-- material-design-iconic-font css -->
+		<link rel="stylesheet" href="../css/material-design-iconic-font.css">
+		<!-- All common css of theme -->
+		<link rel="stylesheet" href="../css/default.css">
+		<!-- style css -->
+		<link rel="stylesheet" href="../css/style.css">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="../css/shortcode.css">
+		<!-- responsive css -->
+		<link rel="stylesheet" href="../css/responsive.css">
+		<!-- modernizr css -->
+		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+		 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	
+	
+	</head>
+	<body>	
+		<!-- WRAPPER START -->
+		<div class="wrapper bg-dark-white">
+
+			<!-- HEADER-AREA START -->
+			<header id="sticky-menu" class="header header-2">
+				<div class="header-area">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-4 col-sm-offset-4 col-xs-7">
+								<div class="logo text-center">
+									<a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
+								</div>
+							</div>
+							<div class="col-sm-4 col-xs-5">
+								<div class="mini-cart text-right">
+									<ul>
+										<li>
+											<!-- <a class="cart-icon" href="#">
+												<i class="zmdi zmdi-shopping-cart"></i>
+												<span>3</span>
+											</a> -->
+											<div class="mini-cart-brief text-left">
+												<div class="cart-items">
+													<p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+												</div>
+												<div class="all-cart-product clearfix">
+													<div class="single-cart clearfix">
+														<div class="cart-photo">
+															<a href="#"><img src="img/cart/1.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 100.00</p>
+															<p class="mb-0">Qty : 02 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+													<div class="single-cart clearfix">
+														<div class="cart-photo">
+															<a href="#"><img src="img/cart/2.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 300.00</p>
+															<p class="mb-0">Qty : 01 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+												</div>
+												<div class="cart-totals">
+													<h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+												</div>
+												<div class="cart-bottom  clearfix">
+													<a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
+													<a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- MAIN-MENU START -->
+				<div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<div class="main-menu  hidden-xs">
+					<nav>
+						<ul>
+							<li><a href="index.html">home</a>
+								<div class="sub-menu menu-scroll">
+									<ul>
+										<li class="menu-title">Page's</li>
+										<li><a href="index.html">Home Version 1</a></li>
+										<li><a href="index-2.html">Home Version 2</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="shop.html">products</a>
+								<div class="mega-menu menu-scroll">
+									<div class="table">
+										<div class="table-cell">
+											<div class="half-width">
+												<ul>
+													<li class="menu-title">best brands</li>
+													<li><a href="#">henning koppel</a></li>
+													<li><a href="#">jehs + Laub</a></li>
+													<li><a href="#">vicke lindstrand</a></li>
+													<li><a href="#">don chadwick</a></li>
+													<li><a href="#">akiko kuwahata</a></li>
+													<li><a href="#">barbro berlin</a></li>
+													<li><a href="#">cecilia hall</a></li>
+													<li><a href="#">don chadwick</a></li>
+												</ul>
+											</div>
+											<div class="half-width">
+												<ul>
+													<li class="menu-title">popular brands</li>
+													<li><a href="#">akiko kuwahata</a></li>
+													<li><a href="#">barbro berlin</a></li>
+													<li><a href="#">cecilia hall</a></li>
+													<li><a href="#">don chadwick</a></li>
+													<li><a href="#">henning koppel</a></li>
+													<li><a href="#">jehs + Laub</a></li>
+													<li><a href="#">vicke lindstrand</a></li>
+													<li><a href="#">don chadwick</a></li>
+												</ul>
+											</div>
+											<div class="full-width">
+												<div class="mega-menu-img">
+													<a href="single-product.html"><img src="img/megamenu/1.jpg" alt="" /></a>
+												</div>
+											</div>
+											<div class="pb-80"></div>
+										</div>
+									</div>
+								</div>
+							</li>
+                            <li><a href="#">Shortcodes</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Shortcodes</li>
+                                        <li><a href="elements-accordions.html">Accordion</a></li>
+                                        <li><a href="elements-toggles.html">Toggles</a></li>
+                                        <li><a href="elements-tab.html">Tab</a></li>
+                                        <li><a href="elements-product-tab.html">Product Tab</a></li>
+                                        <li><a href="elements-product-tab-2.html">Product Tab 2</a></li>
+                                        <li><a href="elements-carousel.html">product carousel</a></li>
+                                        <li><a href="elements-carousel-2.html">product carousel 2</a></li>
+                                        <li><a href="elements-featured-product.html">Featured Product</a></li>
+                                        <li><a href="elements-featured-product-2.html">Featured Product 2</a></li>
+                                        <li><a href="elements-button.html">Button</a></li>
+                                        <li><a href="elements-table.html">Table</a></li>
+                                        <li><a href="elements-progress-bars.html">Progress Bar</a></li>
+                                        <li><a href="elements-blog.html">Blog</a></li>
+                                        <li><a href="elements-blog-2.html">Blog - 2</a></li>
+                                        <li><a href="elements-team.html">Team</a></li>
+                                        <li><a href="elements-footer.html">Footer</a></li>
+                                        <li><a href="elements-footer-2.html">Footer 2</a></li>
+                                        <li><a href="elements-map.html">Map</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+							<li><a href="shop-sidebar.html">accesories</a></li>
+							<li><a href="shop-list.html">lookbook</a></li>
+							<li><a href="blog.html">blog</a></li>
+							<li><a href="#">pages</a>
+								<div class="sub-menu menu-scroll">
+									<ul>
+										<li class="menu-title">Page's</li>
+										<li><a href="shop.html">Shop</a></li>
+										<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+										<li><a href="shop-grid-right-sidebar.html">Shop Right Sidebar</a></li>
+										<li><a href="shop-list.html">Shop List</a></li>
+										<li><a href="shop-list-right-sidebar.html">Shop List right sidebar</a></li>
+										<li><a href="single-product.html">Single Product</a></li>
+										<li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+										<li><a href="cart.html">Shopping Cart</a></li>
+										<li><a href="wishlist.html">Wishlist</a></li>
+										<li><a href="checkout.html">Checkout</a></li>
+										<li><a href="order.html">Order</a></li>
+										<li><a href="login.html">login / Registration</a></li>
+										<li><a href="my-account.html">My Account</a></li>
+										<li><a href="404.html">404</a></li>
+										<li><a href="blog.html">Blog</a></li>
+										<li><a href="single-blog.html">Single Blog</a></li>
+										<li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="about.html">about us</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- MAIN-MENU END -->
+			</header>
+			<!-- HEADER-AREA END -->
+			<!-- Mobile-menu start -->
+			<div class="mobile-menu-area">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+							<div class="mobile-menu">
+								<nav id="dropdown">
+									<ul>
+										<li><a href="index.html">home</a>
+											<ul>
+												<li><a href="index.html">Home Version 1</a></li>
+												<li><a href="index-2.html">Home Version 2</a></li>
+											</ul>
+										</li>
+										<li><a href="shop.html">products</a></li>
+										<li><a href="shop-sidebar.html">accesories</a></li>
+										<li><a href="shop-list.html">lookbook</a></li>
+										<li><a href="blog.html">blog</a></li>
+										<li><a href="#">pages</a>
+											<ul>
+												<li><a href="shop.html">Shop</a></li>
+												<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+												<li><a href="shop-list.html">Shop List</a></li>
+												<li><a href="single-product.html">Single Product</a></li>
+												<li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+												<li><a href="cart.html">Shopping Cart</a></li>
+												<li><a href="wishlist.html">Wishlist</a></li>
+												<li><a href="checkout.html">Checkout</a></li>
+												<li><a href="order.html">Order</a></li>
+												<li><a href="login.html">login / Registration</a></li>
+												<li><a href="my-account.html">My Account</a></li>
+												<li><a href="404.html">404</a></li>
+												<li><a href="blog.html">Blog</a></li>
+												<li><a href="single-blog.html">Single Blog</a></li>
+												<li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+												<li><a href="about.html">About Us</a></li>
+												<li><a href="contact.html">Contact</a></li>
+											</ul>
+										</li>
+										<li><a href="about.html">about us</a></li>
+										<li><a href="contact.html">contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile-menu end -->
+			<!-- HEADING-BANNER START -->
+			<div class="heading-banner-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="heading-banner">
+								<div class="heading-banner-title">
+									<h2>Member Sign Up</h2>
+								</div>
+								<div class="breadcumbs pb-15">
+									<ul>
+										<li><a href="index.html">Home</a></li>
+										<li>Single-Blog</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- HEADING-BANNER END -->
+			<!-- BLGO-AREA START -->
+			<div class="blog-area blog-2 blog-details-area  pt-80 pb-80">
+				<div class="container">	
+					<div class="blog">
+						<div class="row">
+							<!-- Single-blog start -->
+							<div class="col-lg-12">
+								<div class="single-blog mb-30">
+								
+									<div class="blog-info blog-details-info">
+										<div class="author-comments clearfix mt-40">
+											<div class="author-photo floatleft">
+												<img src="img/reviewer/author.jpg" alt="" />
+											</div>
+											<div class="author-brief">
+												<h3 class="font-16px"><strong>MOFF Family 회원가입</strong></h3>
+											</div>
+										</div>
+										<div class="pro-reviews mt-60" >
+										
+											<div class="leave-review" align="center">
+												
+												<div class="reply-box"  align="center">
+													<form action="#" id="upload_file_frm">
+														<div class="row"  align="center">
+														
+															
+															<div style="width:460px">
+															<!--start  -->
+															  <div class="inner sign-group">
+
+														            
+														
+														        
+																<!-- 아이디 -->
+																
+														            <div class="sign">
+														                <h2  class="tab-title title-border mb-30" align="left">
+														                    아이디
+														                </h2>
+														                
+														                <p style="float: left">
+														                    5~20자의 영문 소문자, 숫자만 사용 가능합니다.
+														                </p>
+														                
+														                <div class="sign-form">
+														                    <input  id="id" name="id" class="input--text password" type="text" placeholder="아이디 입력">
+														                </div>
+														                
+														                 
+														                 <!-- 정규화식에 안맞을떄 -->
+														                <p class="sign_subdescription2" id="idmess" align="left"></p>
+														                
+														                
+														                <div class="sign-form" align="left">
+														                   		<p id="idcheck"></p>
+																				<button type="button" class="btn btn-default" id="idcheckbtn">중복확인</button>
+														                		<p id="idcheckmsg"></p>
+														                </div>
+														                
+														               
+														             
+														            </div>
+														            <br><br>
+														            
+														            <!-- 이메일 -->
+														              <div class="sign">
+														                <h2  class="tab-title title-border mb-30" align="left">
+														                    	이메일
+														                </h2>
+														                <br>
+														                <div class="sign-form">
+														                    <input style="width: 200px" id ="email1" name="email1" type="text" placeholder="이메일"> 
+														                    <span class="interval">@</span>
+														                    <input style="width: 200px" id="email2" name="email2" type="text" placeholder="주소 입력">
+														                </div>
+														              
+														            </div>
+														            <br><br>
+														            
+																	<!-- 비밀번호 -->
+														            <div class="sign">
+														                <h2  class="tab-title title-border mb-30"  align="left">
+														                 	   비밀번호
+														                </h2>
+														                <p align="left">
+														                    8~16자 영문 대/소문자, 숫자, 특수문자를 사용하세요.
+														                </p>
+														                <div class="sign-form">
+														                    <input id="pass" name = "pwd" class="input--text password" type="password" placeholder="비밀번호 입력" style="margin-bottom: 0px;"><br><br>
+														                
+														               
+														                </div>
+														                
+														                 <!-- 정규화식에 안맞을떄 -->
+														                <p class="sign_subdescription2" id="passSpan"  align="left" style="margin-bottom: 30px"></p>
+														                
+														     
+														            </div>
+														          
+														            
+														            
+														            
+														
+														            <div class="sign">
+														                <h2 class="tab-title title-border mb-30"  align="left">
+														                    비밀번호 확인
+														                </h2>
+														                <div class="sign-form">
+														                    <input id = "passcheck" class="input--text password" type="password" placeholder="비밀번호 재입력">
+														                </div>
+														                 <!-- 정규화식에 안맞을떄 -->
+														                <p class="sign_subdescription2" id="passcheckmess"  align="left"></p>
+														              
+														            </div>
+														            <br><br>
+														            
+														            <!-- 전화번호 -->
+														             <div class="sign">
+														                <h2  class="tab-title title-border mb-30" align="left">
+														                  	  전화번호
+														                </h2>
+														                <p class="sign_subdescription" align="left">
+														                  	 예시) 010-1234-5678 
+														                </p>
+														               
+														                <div class="sign-form">
+														                    <input id="phone" name="phone" class="input--text password" type="text" placeholder="010-1234-5678">
+														                </div> 
+														                
+														                 <p class="sign_subdescription2" id="phonecheck" align="left"></p>
+														                
+														            </div>
+														            <br><br>
+														            
+																<!-- 생년월일 -->
+																  <div class="sign">
+														                <h2 class="tab-title title-border mb-30"  align="left">
+														             	   생년월일
+														                </h2>
+														                <div class="sign-form">
+														      		
+														      		<select name="year" id="year" title="년도" class="custom-select" style="width: 100px"></select>
+																	<select name="month" id="month" title="월" class="custom-select" style="width: 100px"></select>
+																	<select name="day" id="day" title="일" class="custom-select" style="width: 100px"></select>
+																      		
+														      		
+														      		
+														                </div>
+														                
+														            </div>
+														            <br><br>
+														            
+														            
+														            
+														            
+														             <div class="sign">
+														                <h2 class="tab-title title-border mb-30"  align="left">
+														                	거주지주소
+														                </h2>
+														                
+														                <div class="sign-form" align="left">
+														                   			<input class="input--text password" type="text" id="sample4_postcode" placeholder="우편번호" style="width: 100px">
+														               				
+																					<input  class="input--text password btn btn-default " type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" data-text="우편번호찾기"  ><br>
+																		 			
+																		 </div>
+																		 <div class="sign-form">
+																					<input name="address1" class="input--text password" type="text" id="sample4_roadAddress" placeholder="도로명주소">
+		
+																		</div>
+																		
+																					<span id="guide" style="color:#999;display:none"></span>
+																		<div class="sign-form">
+																					<input name="address2" class="input--text password" type="text" id="sample4_detailAddress" placeholder="상세주소">
+																					
+														                </div>
+														                
+														            </div>
+														            <br><br>
+														            
+														            
+														            <!-- 이름 -->
+														             <div class="sign">
+														                <h2 class="tab-title title-border mb-30" align="left">
+														       			    이름(본명)
+														                </h2>
+														               
+														                <div class="sign-form">
+														                    <input id="name" name="name" class="input--text password" type="text" placeholder="주민등록상 이름">
+														                </div>
+														               
+														            </div>
+																	
+																
+																	<br><br>
+														            <div class="sign">
+														                <h2 class="tab-title title-border mb-30" align="left">
+														                    별명
+														                </h2>
+														               <p class="sign_subdescription" align="left">
+														                  	  다른 유저와 겹치지 않는 별명을 입력해주세요. (2~15자)
+														                </p>
+														                <div class="sign-form">
+														                    <input id="nickname" name="nickname" class="input--text password" type="text" placeholder="별명 입력">
+														                </div>
+														              
+														            </div>
+														            <br><br>
+
+														        </div>
+														        </div>
+																													
+															
+														</div>
+													 	<div class="row">
+															<div class="col-md-12">
+
+																 <input  type="button" id="account" data-text="신청서 제출" class='button-one submit-button mt-15 order1' value="신청서 제출">
+															</div>
+														</div> 
+													</form>
+												</div>
+											</div>
+										</div>										
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- BLGO-AREA END -->		
+			<!-- FOOTER START -->
+			<footer>
+				<!-- Footer-area start -->
+				<div class="footer-area footer-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Contact Us</h3>
+									<ul class="footer-contact">
+										<li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
+										<li><span>Cell-Phone :</span>+012 345 678 102</li>
+										<li><span>Email :</span>info@example.com</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">accounts</h3>
+									<ul class="footer-menu">
+										<li><a href="my-account.html"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
+										<li><a href="wishlist.html"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
+										<li><a href="cart.html"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
+										<li><a href="login.html"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
+										<li><a href="checkout.html"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">shipping</h3>
+									<ul class="footer-menu">
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>New Products</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Top Sellers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Manufactirers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Suppliers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Specials</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Email Newsletters</h3>
+									<div class="footer-subscribe">
+										<form action="#">
+											<input type="text" name="email" placeholder="Email Address..." />
+											<button class="button-one submit-btn-4" type="submit" data-text="Subscribe">Subscribe</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer-area end -->
+				<!-- Copyright-area start -->
+				<div class="copyright-area copyright-2">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-xs-12">
+								<div class="copyright">
+									<p class="mb-0">&copy; <a href="#" target="_blank">Hurst </a> 2018. All Rights Reserved.</p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="payment  text-right">
+									<a href="#"><img src="img/payment/1.png" alt="" /></a>
+									<a href="#"><img src="img/payment/2.png" alt="" /></a>
+									<a href="#"><img src="img/payment/3.png" alt="" /></a>
+									<a href="#"><img src="img/payment/4.png" alt="" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Copyright-area start -->
+			</footer>
+			<!-- FOOTER END -->
+			<!-- QUICKVIEW PRODUCT -->
+			<div id="quickview-wrapper">
+			   <!-- Modal -->
+			   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body">
+								<div class="modal-product">
+									<div class="product-images">
+										<div class="main-image images">
+											<img alt="#" src="img/product/quickview-photo.jpg"/>
+										</div>
+									</div><!-- .product-images -->
+
+									<div class="product-info">
+										<h1>Aenean eu tristique</h1>
+										<div class="price-box-3">
+											<hr />
+											<div class="s-price-box">
+												<span class="new-price">$160.00</span>
+												<span class="old-price">$190.00</span>
+											</div>
+											<hr />
+										</div>
+										<a href="shop.html" class="see-all">See all features</a>
+										<div class="quick-add-to-cart">
+											<form method="post" class="cart">
+												<div class="numbers-row">
+													<input type="number" id="french-hens" value="3">
+												</div>
+												<button class="single_add_to_cart_button" type="submit">Add to cart</button>
+											</form>
+										</div>
+										<div class="quick-desc">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
+										</div>
+										<div class="social-sharing">
+											<div class="widget widget_socialsharing_widget">
+												<h3 class="widget-title-modal">Share this product</h3>
+												<ul class="social-icons">
+													<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="zmdi zmdi-google-plus"></i></a></li>
+													<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="zmdi zmdi-twitter"></i></a></li>
+													<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="zmdi zmdi-facebook"></i></a></li>
+													<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div><!-- .product-info -->
+								</div><!-- .modal-product -->
+							</div><!-- .modal-body -->
+						</div><!-- .modal-content -->
+					</div><!-- .modal-dialog -->
+			   </div>
+			   <!-- END Modal -->
+			</div>
+			<!-- END QUICKVIEW PRODUCT -->	
+			
+		</div>
+		<!-- WRAPPER END -->
+
+		<!-- all js here -->
+		<!-- jquery latest version -->
+		
+		<!-- 다음 지도 -->
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		<script src="../js/address.js"></script>
+		
+		<script type="text/javascript">
+$(document).ready(function() {
+	
+
+	$('#idcheckbtn').click(function() {
+		
+		$.ajax({
 			url:"http://localhost:3000/idcheck",
 			type:"post",
 			data:{ "id":$("#id").val() },
 			success:function( data ){
-			//	alert("success");			
-				 if(data.trim() == "YES"){
-				//	$("#idcheck").css("color", "#0000ff");
-					$(".sign_id .sign_msg").html('사용할 수 있는 id입니다');
+			//	alert(data);
+				
+				if(data.trim()=="YES"){
+					$("#idmess").html('사용할 수 있는 id입니다').css("color", "blue");
 				}else{
-				//	$("#idcheck").css("color", "#ff0000");
-					$(".sign_id .sign_msg").html('사용 중인 id입니다');
+					$("#idmess").html('사용 중인 id입니다').css("color", "red");
 					$("#id").val("");
-				}	
-			}, 
+				}			
+			},
 			error:function(){
 				alert("error");
 			}
 		});
-	}
+	});
+
+
+	
+	$('#account').click(function() {
+		
+		
+			//데이터가 잘 입력되었는지 확인
+			if( $("#id").val().trim() == "" ){
+				alert("id를 입력해 주세요");
+				$("#id").focus();
+			}
+			else if( $("#pass").val().trim() == "" ){
+				alert("패스워드를 입력해 주세요");
+				$("#pass").focus();
+			}
+			else if( $("#email1").val().trim() == "" || $("#email2").val().trim() == "" ){
+				alert("이메일을 입력해 주세요");
+				$("#email1").focus();
+			}
+			else if( $("#passcheck").val().trim() == "" ){
+				alert("비밀번호 재확인을 하지않았습니다.");
+				$("#passcheck").focus();
+			}
+			else if( $("#phone").val().trim() == "" ){
+				alert("전화번호를 입력해 주세요");
+				$("#phone").focus();
+			}
+			else if( $("#year").val().trim() == "" ||
+				$("#month").val().trim() == "" ||
+				$("#day").val().trim() == ""){
+				
+				alert("생년월일을 입력해 주세요");
+				
+				$("#year").focus();
+			}
+			else{//신청서에 데이터가 잘 입력되었을시
+	
+				alert($("#year").val() + "-" + $("#month").val() + "-" + $("#day").val());
+				$.ajax({
+					url:"http://localhost:3000/signup",
+					type:"post",
+					data:{ id:$("#id").val(), pwd:$("#pass").val(), name:$("#name").val(), nickname:$("#nickname").val(), 
+						email:$("#email1").val() + "@" + $("#email2").val(), bdate:$("#year").val() + "-" + $("#month").val() + "-" + $("#day").val(),
+						address: $("#sample4_roadAddress").val() + " " + $("#sample4_detailAddress").val(),
+						phone:$("#phone").val()},
+					//data:params,
+					success:function( data ){
+						alert("success");
+						if(data.trim() == "YES"){
+							location.href = "login.html";
+						}else{
+							alert("가입실패");
+						}						
+					},
+					error:function(){
+						alert("error");
+					}
+				
+		});//ajax end
+	
+	}//else end
+			
+	});	//account end
+	
+	
+});	//document
+</script>
+    
+    
+    
+<script>
+
+  $(document).ready(function () {
+    setDateBox();
+  });
+
+  // select box 연도 , 월 표시
+  function setDateBox() {
+    var dt = new Date();
+    var year = "";
+    var com_year = dt.getFullYear();
+
+    // 발행 뿌려주기
+    $("#year").append("<option value=''>년도</option>");
+
+    //미성년자를 가리기위함
+    // 올해 기준으로 -60년부터 -20년을 보여준다.
+    for (var y = (com_year - 70); y <= (com_year - 20); y++) {
+      $("#year").append("<option value='" + y + "'>" + y  + "</option>");
+    }
+
+    // 월 뿌려주기(1월부터 12월)
+    var month;
+    $("#month").append("<option value=''>월</option>");
+    for (var i = 1; i <= 12; i++) {
+      $("#month").append("<option value='" + i + "'>" + i +  "</option>");
+    }
+
+    // 일 뿌려주기(1일부터 31일)
+    var day;
+    $("#day").append("<option value=''>일</option>");
+    for (var i = 1; i <= 31; i++) {
+      $("#day").append("<option value='" + i + "'>" + i +  "</option>");
+    }
+
+  }
+
+</script>
+    
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+//	//메일인증 받으면 여기에다가 메일인증받은 이메일주소 처리
+//	$.ajax({
+//		//회원가입아이디 서블릿? 도 만들어서 json처리해주는 jsp또 만들어서 
+//		url: "/member/memIdChk.do"
+//		,type: "post"
+//		,data: $("#signupForm").serialize() //{"action" : "signIdInput"}
+//		,dataType: "json"
+//		,success: function(data) {
+//			console.log(data);
+//			idDupCheckResult(data);
+//		}
+//		,error: function(xhr) {
+//			alert("ID 중복검사에 실패했습니다.\n관리자에게 문의해주세요.\n오류코드 : " + xhr.status)
+//		}
+//	});
+//	
+	
+	//아이디 정규식
+	$("#id").on({
+		blur : function() {
+			if(idCheck($(this).val())){
+			/* 	$("#memIdSpan").html("&nbsp;GOOD!")
+							   .css("color", "green"); */
+				$("#idmess").html("&nbsp;GOOD!")
+				   .css("color", "green");
+			}else {
+
+				$("#idmess").html("조건에 맞지 않습니다. 다시입력해주세요").css("color", "red");
+				//alert("5~20자의 영문 소문자, 숫자만 사용 가능합니다.😊");
+			}
+		}
+	});
+	//패스워드 정규식
+	$("#pass").on({
+		blur : function() {
+			if(passCheck($(this).val())){
+				$("#passSpan").html("GOOD!")
+							   .css("color", "green");
+			}else {
+//				alert("영문 대소문자 숫자포함 8-12자리 입력해주세요😊");
+				$("#passSpan").html("조건에 맞지 않습니다. 다시입력해주세요")
+							   .css("color", "red");
+			}
+		}
+	});
+	//패스워드 일치 여부
+	$("#memPass").on({
+		blur : function() {
+			if($(this).val() == $("#pass").val()){
+				$("#mempassSpan").html("&nbsp;GOOD!")
+				.css("color", "green");
+			}else {
+//				alert("입력하신 비밀번호와 일치하지 않습니다😊 다시 입력해주세요");
+				$("#memPass").focus();
+				$("#mempassSpan").html("&nbsp;FAIL!")
+				.css("color", "red");
+			}
+		}
+	});
+
+	
+	$("#passcheck").on({
+		
+		blur : function() {
+			if($(this).val() == $("#pass").val()){
+				$("#passcheckmess").html("GOOD!")
+				.css("color", "green");
+			}else {
+//				alert("입력하신 비밀번호와 일치하지 않습니다😊 다시 입력해주세요");
+				$("#passcheck").focus();
+				$("#passcheckmess").html("입력하신 비밀번호와 일치하지 않습니다")
+				.css("color", "red");
+			}
+			
+		}
+	});
+	
+$("#phone").on({
+		
+		blur : function() {
+			if(phone($(this).val())){
+				$("#phonecheck").html("GOOD!").css("color", "green");
+			}else {
+//				alert("입력하신 비밀번호와 일치하지 않습니다😊 다시 입력해주세요");
+				$("#phonecheck").focus();
+				$("#phonecheck").html("입력하신 전화번호가 형식에 맞지 않습니다. 다시 입력해주세요.")
+				.css("color", "red");
+			}
+			
+		}
+	});
+	
+	
+	
 });
 
-
-$("#pwd").blur(function () {
-	
-	// 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
-	var pwdRegExp = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
-	if( !pwdRegExp.test( $("#pwd").val() ) ){
-		$(".sign_pwd .sign_msg").show();
-		$(".sign_pwd .sign_msg").html('조건에 맞지 않습니다.');
-		$("#pwd").focus();
-	}
-	
-});
-
-
-// /^[가-힣]{2,15}$/
-$("#_pwd").blur(function () {
-	if( !$("#pwd").val()==$("#_pwd").val() ){
-		$(".sign__pwd .sign_msg").html('비밀번호가 일치하지 않습니다.');
-	}
-});
-
-//select box 연도 , 월 표시
-function setDateBox() {
-	
-	 var dt = new Date();
-	 var year = "";
-	 var com_year = dt.getFullYear();
-	
-	 // 발행 뿌려주기
-	 $("#year").append("<option value=''>년도</option>");
-	
-	 //미성년자를 가리기위함
-	 // 올해 기준으로 -60년부터 -20년을 보여준다.
-	 for (var y = (com_year - 70); y <= (com_year - 20); y++) {
-	   $("#year").append("<option value='" + y + "'>" + y  + "</option>");
-	 }
-	
-	 // 월 뿌려주기(1월부터 12월)
-	 var month;
-	 $("#month").append("<option value=''>월</option>");
-	 for (var i = 1; i <= 12; i++) {
-	   $("#month").append("<option value='" + i + "'>" + i +  "</option>");
-	 }
-	
-	 // 일 뿌려주기(1일부터 31일)
-	 var day;
-	 $("#day").append("<option value=''>일</option>");
-	 for (var i = 1; i <= 31; i++) {
-	   $("#day").append("<option value='" + i + "'>" + i +  "</option>");
-	 }
+//정규식 아이디
+function idCheck(memId){
+	console.log(memId);
+	//5~20자의 영문 소문자, 숫자만 사용 가능합니다.
+	var idReg = /^[a-z]+[a-z0-9]{4,19}$/g;
+	return idReg.test(memId);
 }
 
+//정규식 패스워드
+function passCheck(pass){
+	//8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
+	
+	
+	console.log(pass);
+	var passReg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
+	return passReg.test(pass);
+	
+	//!/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/.test(password))
+	
+}	
+//이메일 정규식
+function CheckEmail(str){                                                 
+
+     var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+     if(!reg_email.test(str)) {                            
+          return false;         
+     }                            
+
+     else {                       
+          return true;         
+     }                            
+}
+
+//전화번호 정규식
+function phone(str){
+	var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+	if(!regExp.test(str)){                            
+        return false;         
+    }                            
+
+    else {                       
+         return true;         
+    }                         
+	
+}
+
+	
+// daum 주소
 
 function sample4_execDaumPostcode() {
     new daum.Postcode({
@@ -742,83 +1005,35 @@ function sample4_execDaumPostcode() {
 
 
 
-$("#signupBtn").click(function () {
-
-	$.ajax({
-		url:"http://localhost:3000/signup",
-		type:"post",
-		data:{ id:$("#id").val(), pwd:$("#pwd").val(), name:$("#name").val(), nickname:$("#nickname").val(), 
-				email:$("#email1").val() + "@" + $("#email2").val(), bdate:'1992-04-06',
-				address: $("#sample4_roadAddress").val() + " " + $("#sample4_detailAddress").val(),
-				phone:$("#phone1").val() + $("#phone2").val() + $("#phone3").val()},
-		//data:params,
-		success:function( data ){
-			alert("success");
-			if(data.trim() == "YES"){
-				alert("가입성공!!");
-				location.href = "signin.html";
-			}else{
-				alert("가입실패~");
-			}						
-		},
-		error:function(){
-			alert("error");
-		}
-	});
-	
-});
-
-
-
 </script>
-
-</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyD7RQDC2svVo1LwzSMFJN_4_ytf5YcUE2A",
-    authDomain: "parallaxxx-6a80e.firebaseapp.com",
-    projectId: "parallaxxx-6a80e",
-    storageBucket: "parallaxxx-6a80e.appspot.com",
-    messagingSenderId: "584545335458",
-    appId: "1:584545335458:web:25c4285c77135e3c363ffb",
-    measurementId: "G-G6EQ4F7FE0"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-
+		
+		
+		
+		<script src="../js/vendor/jquery-1.12.0.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- jquery.meanmenu js -->
+		<script src="../js/jquery.meanmenu.js"></script>
+		<!-- slick.min js -->
+		<script src="../js/slick.min.js"></script>
+		<!-- jquery.treeview js -->
+		<script src="../js/jquery.treeview.js"></script>
+		<!-- lightbox.min js -->
+		<script src="../js/lightbox.min.js"></script>
+		<!-- jquery-ui js -->
+		<script src="../js/jquery-ui.min.js"></script>
+		<!-- jquery.nivo.slider js -->
+		<script src="../lib/js/jquery.nivo.slider.js"></script>
+		<script src="../lib/home.js"></script>
+		<!-- jquery.nicescroll.min js -->
+		<script src="../js/jquery.nicescroll.min.js"></script>
+		<!-- countdon.min js -->
+		<script src="../js/countdon.min.js"></script>
+		<!-- wow js -->
+		<script src="../js/wow.min.js"></script>
+		<!-- plugins js -->
+		<script src="../js/plugins.js"></script>
+		<!-- main js -->
+		<script src="../js/main.js"></script>
+	</body>
 </html>
-
-

@@ -1,291 +1,1103 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-<body>
 
-<div class="profile_frontend">
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>My Account || Hurst</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- icon -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> 
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+		<!-- Place favicon.ico in the root directory -->
+		
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+	<!-- all css here -->
+		<!-- bootstrap v3.3.6 css -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<!-- animate css -->
+		<link rel="stylesheet" href="../css/animate.css">
+		<!-- jquery-ui.min css -->
+		<link rel="stylesheet" href="../css/jquery-ui.min.css">
+		<!-- meanmenu css -->
+		<link rel="stylesheet" href="../css/meanmenu.min.css">
+		<!-- nivo-slider css -->
+		<link rel="stylesheet" href="../lib/css/nivo-slider.css">
+		<link rel="stylesheet" href="../lib/css/preview.css">
+		<!-- slick css -->
+		<link rel="stylesheet" href="../css/slick.css">
+		<!-- lightbox css -->
+		<link rel="stylesheet" href="../css/lightbox.min.css">
+		<!-- material-design-iconic-font css -->
+		<link rel="stylesheet" href="../css/material-design-iconic-font.css">
+		<!-- All common css of theme -->
+		<link rel="stylesheet" href="../css/default.css">
+		<!-- style css -->
+		<link rel="stylesheet" href="../css/style.css">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="../css/shortcode.css">
+		<!-- responsive css -->
+		<link rel="stylesheet" href="../css/responsive.css">
+		<!-- modernizr css -->
+		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+		
+		
+		<!-- 다음 지도 -->
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		
+		
+		
+		<!-- css -->
+		
+		<link rel="stylesheet" href="../css/member-mypage.css">
+		<style type="text/css">
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<!-- 탈퇴 -->
+	</head>
+		<!-- WRAPPER START -->
+		<div class="wrapper">
+
+			<!-- HEADER-AREA START -->
+			<header id="sticky-menu" class="header header-2">
+				<div class="header-area">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-4 col-sm-offset-4 col-xs-7">
+								<div class="logo text-center">
+									<a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
+								</div>
+							</div>
+							<div class="col-sm-4 col-xs-5">
+								<div class="mini-cart text-right">
+									<ul>
+										<li>
+											<a href="./purchases.html">구매내역</a>
+										</li>
+										<li>
+											<a class="cart-icon" href="#">
+												<i class="zmdi zmdi-shopping-cart"></i>
+												<span>3</span>
+											</a>
+											<div class="mini-cart-brief text-left">
+												<div class="cart-items">
+													<p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+												</div>
+												<div class="all-cart-product clearfix">
+													<div class="single-cart clearfix">
+														<div class="cart-photo">
+															<a href="#"><img src="img/cart/1.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 100.00</p>
+															<p class="mb-0">Qty : 02 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+													<div class="single-cart clearfix">
+														<div class="cart-photo">
+															<a href="#"><img src="img/cart/2.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 300.00</p>
+															<p class="mb-0">Qty : 01 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+												</div>
+												<div class="cart-totals">
+													<h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+												</div>
+												<div class="cart-bottom  clearfix">
+													<a href="cart.html" class="button-one floatleft text-uppercase" data-text="View cart">장바구니</a>
+													<a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- MAIN-MENU START -->
+
+					
+					
+				<div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<div class="main-menu  hidden-xs">
+					<nav>
+						<ul>
+							<li><a href="index.html">home</a>
+								<div class="sub-menu menu-scroll">
+									<ul>
+										<li class="menu-title">Page's</li>
+										<li><a href="../custom/chair.html">의자만들기</a></li>
+										<li><a href="../custom/desk.html">책상만들기</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="shop.html">products</a>
+								<div class="mega-menu menu-scroll">
+									<div class="table">
+										<div class="table-cell">
+											<div class="half-width">
+												<ul>
+													<li class="menu-title">best brands</li>
+													<li><a href="#">henning koppel</a></li>
+													<li><a href="#">jehs + Laub</a></li>
+													<li><a href="#">vicke lindstrand</a></li>
+													<li><a href="#">don chadwick</a></li>
+													<li><a href="#">akiko kuwahata</a></li>
+													<li><a href="#">barbro berlin</a></li>
+													<li><a href="#">cecilia hall</a></li>
+													<li><a href="#">don chadwick</a></li>
+												</ul>
+											</div>
+											<div class="half-width">
+												<ul>
+													<li class="menu-title">popular brands</li>
+													<li><a href="#">akiko kuwahata</a></li>
+													<li><a href="#">barbro berlin</a></li>
+													<li><a href="#">cecilia hall</a></li>
+													<li><a href="#">don chadwick</a></li>
+													<li><a href="#">henning koppel</a></li>
+													<li><a href="#">jehs + Laub</a></li>
+													<li><a href="#">vicke lindstrand</a></li>
+													<li><a href="#">don chadwick</a></li>
+												</ul>
+											</div>
+											<div class="full-width">
+												<div class="mega-menu-img">
+													<a href="single-product.html"><img src="img/megamenu/1.jpg" alt="" /></a>
+												</div>
+											</div>
+											<div class="pb-80"></div>
+										</div>
+									</div>
+								</div>
+							</li>
+                            <li><a href="#">Shortcodes</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Shortcodes</li>
+                                        <li><a href="elements-accordions.html">Accordion</a></li>
+                                        <li><a href="elements-toggles.html">Toggles</a></li>
+                                        <li><a href="elements-tab.html">Tab</a></li>
+                                        <li><a href="elements-product-tab.html">Product Tab</a></li>
+                                        <li><a href="elements-product-tab-2.html">Product Tab 2</a></li>
+                                        <li><a href="elements-carousel.html">product carousel</a></li>
+                                        <li><a href="elements-carousel-2.html">product carousel 2</a></li>
+                                        <li><a href="elements-featured-product.html">Featured Product</a></li>
+                                        <li><a href="elements-featured-product-2.html">Featured Product 2</a></li>
+                                        <li><a href="elements-button.html">Button</a></li>
+                                        <li><a href="elements-table.html">Table</a></li>
+                                        <li><a href="elements-progress-bars.html">Progress Bar</a></li>
+                                        <li><a href="elements-blog.html">Blog</a></li>
+                                        <li><a href="elements-blog-2.html">Blog - 2</a></li>
+                                        <li><a href="elements-team.html">Team</a></li>
+                                        <li><a href="elements-footer.html">Footer</a></li>
+                                        <li><a href="elements-footer-2.html">Footer 2</a></li>
+                                        <li><a href="elements-map.html">Map</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+							<li><a href="shop-sidebar.html">accesories</a></li>
+							<li><a href="shop-list.html">lookbook</a></li>
+							<li><a href="blog.html">blog</a></li>
+							<li><a href="#">pages</a>
+								<div class="sub-menu menu-scroll">
+									<ul>
+										<li class="menu-title">Page's</li>
+										<li><a href="shop.html">Shop</a></li>
+										<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+										<li><a href="shop-grid-right-sidebar.html">Shop Right Sidebar</a></li>
+										<li><a href="shop-list.html">Shop List</a></li>
+										<li><a href="shop-list-right-sidebar.html">Shop List right sidebar</a></li>
+										<li><a href="single-product.html">Single Product</a></li>
+										<li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+										<li><a href="cart.html">Shopping Cart</a></li>
+										<li><a href="wishlist.html">Wishlist</a></li>
+										<li><a href="checkout.html">Checkout</a></li>
+										<li><a href="order.html">Order</a></li>
+										<li><a href="login.html">login / Registration</a></li>
+										<li><a href="my-account.html">My Account</a></li>
+										<li><a href="404.html">404</a></li>
+										<li><a href="blog.html">Blog</a></li>
+										<li><a href="single-blog.html">Single Blog</a></li>
+										<li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="about.html">about us</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- MAIN-MENU END -->
+			</header>
+			<!-- HEADER-AREA END -->
+																										
+			<!-- Mobile-menu start -->
+			<div class="mobile-menu-area">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+							<div class="mobile-menu">
+								<nav id="dropdown">
+									<ul>
+										<li><a href="index.html">home</a>
+											<ul>
+												<li><a href="index.html">Home Version 1</a></li>
+												<li><a href="index-2.html">Home Version 2</a></li>
+											</ul>
+										</li>
+										<li><a href="shop.html">products</a></li>
+										<li><a href="shop-sidebar.html">accesories</a></li>
+										<li><a href="shop-list.html">lookbook</a></li>
+										<li><a href="blog.html">blog</a></li>
+										<li><a href="#">pages</a>
+											<ul>
+												<li><a href="shop.html">Shop</a></li>
+												<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+												<li><a href="shop-list.html">Shop List</a></li>
+												<li><a href="single-product.html">Single Product</a></li>
+												<li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+												<li><a href="cart.html">Shopping Cart</a></li>
+												<li><a href="wishlist.html">Wishlist</a></li>
+												<li><a href="checkout.html">Checkout</a></li>
+												<li><a href="order.html">Order</a></li>
+												<li><a href="login.html">login / Registration</a></li>
+												<li><a href="my-account.html">My Account</a></li>
+												<li><a href="404.html">404</a></li>
+												<li><a href="blog.html">Blog</a></li>
+												<li><a href="single-blog.html">Single Blog</a></li>
+												<li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+												<li><a href="about.html">About Us</a></li>
+												<li><a href="contact.html">Contact</a></li>
+											</ul>
+										</li>
+										<li><a href="about.html">about us</a></li>
+										<li><a href="contact.html">contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile-menu end -->
+			<!-- HEADING-BANNER START -->
+			<div class="heading-banner-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="heading-banner">
+								<div class="heading-banner-title">
+									<h2 id="username"></h2>
+								</div>
+								<div class="breadcumbs pb-15">
+									<ul>
+										<li><a href="index.html">Home</a></li>
+										<li>My Account</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- HEADING-BANNER END -->
+
+
+        <!-- Service Start -->
+        <div class="service">
+            <div class="container">
+              
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+                        <div class="service-item" onclick="purchases()">
+	                            <div class="service-icon" style="float: left;">
+	                            	<i class="fas fa-boxes"></i> 
+	                            </div> 
+	                    		<div class="service-p" style="float: left;">                           
+	                            	<h3>구매내역 </h3>
+	                   			</div>
+	                   			<div class="service-arrow" style="float: left;">
+	                           		 <i class="fas fa-arrow-right"></i>
+                        		</div>
+                         </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-item" onclick="cart()">
+                            <div class="service-icon" style="float: left;">
+	                            	 <i class="fas fa-shopping-cart"></i>
+	                            </div> 
+	                    		<div class="service-p" style="float: left;">                           
+	                            	<h3>장바구니 </h3>
+	                   			</div>
+	                   			<div class="service-arrow" style="float: left;">
+	                           		 <i class="fas fa-arrow-right"></i>
+                        		</div>
+                        </div>
+                    </div>
+					 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-item" onclick="wish()">
+                            <div class="service-icon" style="float: left;">
+	                            	 <i class="far fa-heart"></i>
+	                            </div> 
+	                    		<div class="service-p" style="float: left;">                           
+	                            	<h3>위시리스트 </h3>
+	                   			</div>
+	                   			<div class="service-arrow" style="float: left;">
+	                           		 <i class="fas fa-arrow-right"></i>
+                        		</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+
+		<div class="container">
+		    <div class="row">
+		        <div class="col-md-12">
+		            <div class="tab" role="tabpanel">
+		                <!-- Nav tabs -->
+		                <ul class="nav nav-tabs" role="tablist">
+		                    <li role="presentation" class="active"><a href="#Section1" aria-controls="profile" role="tab" data-toggle="tab">계정</a></li>
+		                    <li role="presentation"><a href="#Section2" aria-controls="address" role="tab" data-toggle="tab">주소</a></li>
+		                    <li role="presentation"><a href="#Section3" aria-controls="setting" role="tab" data-toggle="tab">설정</a></li>
+		                </ul>
+		                <!-- Tab panes -->
+		                <div class="tab-content tabs">
+		                
+		                    <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+		                    	<div id="account-personal" class="accountbox">
+		                    		<div class="boxcontent" id="personal">
+		                    			<div class="account-title">
+		                    				<div class="row">
+		                    					 <div class="col-md-11 ahead">  <h4><b>개인정보</b></h4></div>
+		                    					 <div class="col-md-1"> <button type="button" class="btn button blue" id="personalUpdate" onclick="personalUpdate()">수정</button></div>
+		                    				</div>
+					                    </div>
+					                    <div class="account-content">
+											<div id="name"></div>
+											<div id="nickname"></div>
+											<div id="bdate"></div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div id="account-contact" class="accountbox">
+									<div class="boxcontent" id="contact">
+										<div class="account-title">
+											<div class="row">
+		                    					 <div class="col-md-11 ahead"> <h4><b>연락처</b></h4></div>
+		                    					 <div class="col-md-1"> <button type="button" class="btn button blue" onclick="contactUpdate()">수정</button></div>
+		                    				</div>
+										</div>
+										<div class="account-content">
+											<div id="phone">0101-2233-3131</div>
+											<div id="email">dsad@dsad.d</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div id="account-pwd" class="accountbox">
+									<div class="boxcontent" id="passwd">
+										<div class="account-title">
+											<div class="row">
+		                    					 <div class="col-md-11 ahead">  <h4><b>비밀번호</b></h4></div>
+		                    					 <div class="col-md-1"> <button type="button" class="btn button blue" onclick="pwdUpdate()">수정</button></div>
+		                    				</div>
+										</div>
+										<div class="account-content">
+											<div id="pwd">******</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+		                    </div>
+		                    
+		                    <div role="tabpanel" class="tab-pane fade" id="Section2">
+		                    	<div class="accountbox">
+		                    		<div class="boxcontent" id="addressbox">
+				                        <div class="account-title">
+											<div class="row">
+		                    					 <div class="col-md-11 ahead">  <h4><b>기본주소</b></h4></div>
+		                    					 <div class="col-md-1">  <button type="button" class="btn button blue" onclick="addressUpdate()">수정</button></div>
+		                    				</div>
+										</div>
+										<div class="account-content">
+											<div id="address">인천광역시 연수구</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+		                    </div>
+		              
+		                    
+		                    <div role="tabpanel" class="tab-pane fade" id="Section3">
+		                        <div class="accountbox">
+		                    		<div class="boxcontent">
+				                         <div class="account-title">
+											<div class="row">
+		                    					 <div class="col-md-11 ahead">  <h4><b>아이디</b></h4></div>
+		                    				</div>
+										</div>
+										<div class="account-content">
+											<div id="id">parallaxxx</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="accountbox">
+									<div class="boxcontent">
+										<div class="account-title">
+											<div class="row">
+		                    					 <div class="col-md-11 ahead"> <h4><b>가입일</b></h4></div>
+		                    				</div>
+										</div>
+										<div class="account-content">
+											<div id="jdate">2031-03-01</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="accountbox">
+									<div class="boxcontent">
+										<div class="account-title">
+											<div class="row">
+		                    					 <div class="col-md-11 ahead"> <h4><b>회원탈퇴</b></h4></div>
+		                    				</div>
+										</div>
+										<div class="account-content">
+											<div>MOFF를 더 이상 이용하지 않는다면 언제든 탈퇴할 수 있습니다. 단, 회원 정보 및 구매 내역이 함께 삭제된다는 점을 참고해주세요.</div>
+											<div style="margin-top: 10px">
+												<a href="#" id="bye" data-toggle="modal" data-target="#myModal">계정을 삭제하시겠습니까?</a>
+											</div>
+										</div>
 	
-	<div>
-		<h2>�ȳ��ϼ���!</h2>
-		<p id="username"></p>
-	</div>
-
-	<div>
-		<div>
-			<button type="button" id="purchases">���ų���</button>
-			<button type="button" id="cart">��ٱ���</button>
+									</div>
+								</div>
+								<hr>
+								</div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
 		</div>
-		<div>
-			<button type="button" id="bye">ȸ��Ż��</button>
-		</div>
-	</div>
-
-	<div>
-		<button id="tab-button-account">����</button>
-		<button id="tab-button-address">�ּ�</button>
-	</div>
 
 
-	<div id="profile-tab">
-	</div>
 
-</div>
+<!-- class="profile__modal__title"  -->
 
+	<!-- Modal -->
+	<div class="modal right fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
 
-</body>
+					<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity: 2;"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">&nbsp;</h4>
+				</div>
 
+				<div class="modal-body">
+				
+					<div class="profile__modal__content">
+						<div class="profile__modal__content-heading"><h3><b>정말로 탈퇴하시겠습니까?</b></h3></div>
+						<div class="profile__delete-profile-text">
+							<span class="profile__text-block mt-30">계정을 없애고 싶으신 경우 계정 삭제를 처리해드릴게요. </span>
+							<span class="profile__text-block mt-30">계정을 없애시면  IKEA Family 멤버십 혜택을 더 이상 누리실 수 없습니다. 계정의 모든 개인정보 및 위시리스트가 모두 삭제됩니다.</span>
+							<span class="profile__text-block mt-30">언제든지 다시 가입하실 수 있어요!</span>
+							<span class="profile__text-block profile__text-bold profile__text-margin-top-l">질문이 있으세요?</span>
+							<span class="profile__text-block">문의하기<a target="_blank" rel="noopener noreferrer" href="https://www.ikea.com/kr/ko/customer-service/" class="profile__link profile__link">IKEA 서비스</a>.</span>
+						</div>
+				  </div>
+				  <div class="profile__modal__buttons">
+				  	<button type="button" disabled="" class="profile__btn profile__btn--danger" id="delete-profile-submit"
+				  	><span class="profile__btn__copy">
+				  	<span class="profile__btn__label">계정 삭제</span></span></button></div>
+				</div>
 
-<script type="text/javascript">
-
-let login = JSON.parse(sessionStorage.getItem("login"));
-
-$( document ).ready(function() {	
-	
-	$("#username").html("\"" + login.name + "\"��");
-	
-	let pwdtype="";
-	for(i = 0; i < login.pwd.length; i++){
-		pwdtype += "*";
-	}
-	
-	$("#profile-tab").html("<div id='account-personal'>" +
-								"<h3>��������</h3>" +
-								"<a href='#' onclick='personalUpdate()'>����</a>" +
-								"<p id='id'>" + login.id + "</p>" +
-								"<p id='name'>" + login.name + "</p>" +
-								"<p id='nickname'>" + login.nickname + "</p>" +
-								"<p id='bdate'>" + login.bdate + "</p>" +
-							"</div>" + 
-							"<hr style='width: 100%;border-top: 1px solid #f5f5f5'>" +
-							"<div id='account-contact'>" +
-								"<h3>����ó</h3>" + 
-								"<a href='#' onclick='contactUpdate()'>����</a>" +
-								"<p id='phone'>" + login.phone + "</p>" +
-								"<p id='email'>" + login.email + "</p>" +
-							"</div>" +
-							"<hr style='width: 100%;border-top: 1px solid #f5f5f5'>" +
-							"<div id='account-pwd'>" +
-								"<h3>��й�ȣ</h3>" +
-								"<a href='#' onclick='pwdUpdate()'>����</a>" +
-								"<p id='pwd'>" + pwdtype +"</p>" +
-							"</div>");
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
 	
 	
-	
-});
+<!-- container -->
+			<!-- FOOTER START -->
+			<footer>
+				<!-- Footer-area start -->
+				<div class="footer-area footer-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Contact Us</h3>
+									<ul class="footer-contact">
+										<li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
+										<li><span>Cell-Phone :</span>+012 345 678 102</li>
+										<li><span>Email :</span>info@example.com</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">accounts</h3>
+									<ul class="footer-menu">
+										<li><a href="my-account.html"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
+										<li><a href="wishlist.html"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
+										<li><a href="cart.html"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
+										<li><a href="login.html"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
+										<li><a href="checkout.html"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">shipping</h3>
+									<ul class="footer-menu">
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>New Products</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Top Sellers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Manufactirers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Suppliers</a></li>
+										<li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Specials</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="single-footer">
+									<h3 class="footer-title  title-border">Email Newsletters</h3>
+									<div class="footer-subscribe">
+										<form action="#">
+											<input type="text" name="email" placeholder="Email Address..." />
+											<button class="button-one submit-btn-4" type="submit" data-text="Subscribe">Subscribe</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer-area end -->
+				<!-- Copyright-area start -->
+				<div class="copyright-area copyright-2">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-xs-12">
+								<div class="copyright">
+									<p class="mb-0">&copy; <a href="#" target="_blank">Hurst </a> 2018. All Rights Reserved.</p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="payment  text-right">
+									<a href="#"><img src="img/payment/1.png" alt="" /></a>
+									<a href="#"><img src="img/payment/2.png" alt="" /></a>
+									<a href="#"><img src="img/payment/3.png" alt="" /></a>
+									<a href="#"><img src="img/payment/4.png" alt="" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Copyright-area start -->
+			</footer>
+			<!-- FOOTER END -->
+			<!-- QUICKVIEW PRODUCT -->
+			<div id="quickview-wrapper">
+			   <!-- Modal -->
+			   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body">
+								<div class="modal-product">
+									<div class="product-images">
+										<div class="main-image images">
+											<img alt="#" src="img/product/quickview-photo.jpg"/>
+										</div>
+									</div><!-- .product-images -->
 
-
-
-<!-- ���ų��� -->
-
-
-
-<!-- ��ٱ��� -->
-
-
-
-<!-- ���� �� -->
-$("#tab-button-account").click(function () {
-	
-	let pwdtype="";
-	for(i = 0; i < login.pwd.length; i++){
-		pwdtype += "*";
-	}
-	
-	$("#profile-tab").html("<div id='account-personal'>" +
-								"<h3>��������</h3>" +
-								"<a href='#' onclick='personalUpdate()'>����</a>" +
-								"<p id='id'>" + login.id + "</p>" +
-								"<p id='name'>" + login.name + "</p>" +
-								"<p id='nickname'>" + login.nickname + "</p>" +
-								"<p id='bdate'>" + login.bdate + "</p>" +
-							"</div>" + 
-							"<hr style='width: 100%;border-top: 1px solid #f5f5f5'>" +
-							"<div id='account-contact'>" +
-								"<h3>����ó</h3>" + 
-								"<a href='#' onclick='contactUpdate()'>����</a>" +
-								"<p id='phone'>" + login.phone + "</p>" +
-								"<p id='email'>" + login.email + "</p>" +
-							"</div>" +
-							"<hr style='width: 100%;border-top: 1px solid #f5f5f5'>" +
-							"<div id='account-pwd'>" +
-								"<h3>��й�ȣ</h3>" +
-								"<a href='#' onclick='pwdUpdate()'>����</a>" +
-								"<p id='pwd'>" + pwdtype +"</p>" +
-							"</div>");
-	});
-
-
-<!-- �ּ� �� -->
-$("#tab-button-address").click(function () {
-		$("#profile-tab").html("<div id='address-add'>" +
-									"<h3>�⺻ �ּ�</h3>" +
-									"<a href='#' onclick='addressUpdate()'>����</a>" +
-									"<p id='address'>" + login.address + "</p>" +
-							   "</div>");
-});
-
-
-<!-- ������������ -->
-function personalUpdate() {
-	
-	$("#account-personal").html("<div>" +
-									"<h3>��������</h3>" +
-									"<form>" +
-										"<p>�̸�</p>" + 
-										"<input type='text' id='name' value='" + login.name + "'>" +
-										"<p>����</p>" +
-										"<input type='text' id='nickname' value='" + login.nickname + "'>" +
-										"<p>�������</p>" +
-										"<input type='text' id='bdate' value=" + login.bdate + ">" +
-									"</form>" +
-									"<button id='personal-submit' type='button'>����</button>" +
-							   "</div>");
-	
-	$("#personal-submit").click(function () {
-	 	 
-			$.ajax({
-				url:"http://localhost:3000/personalUpdate",
-				type:"post",
-				data:{ "name":$("#name").val(), "nickname":$("#nickname").val(), "bdate":$("#bdate").val(), "memNum":login.memNum },
-				success:function( data ){
-
-					$("#account-personal").html("<div>" +
-													"<h3>��������</h3>" +
-													"<a href='#' onclick='personalUpdate()'>����</a>" +
-													"<p id='id'>" + data.id + "</p>" +
-													"<p id='name'>" + data.name + "</p>" +
-													"<p id='nickname'>" + data.nickname + "</p>" +
-													"<p id='bdate'>" + data.bdate + "</p>" +
-											   "</div>");				 
-				},
-				error:function(){
-					alert("error");
-				}
-			});
+									<div class="product-info">
+										<h1>Aenean eu tristique</h1>
+										<div class="price-box-3">
+											<hr />
+											<div class="s-price-box">
+												<span class="new-price">$160.00</span>
+												<span class="old-price">$190.00</span>
+											</div>
+											<hr />
+										</div>
+										<a href="shop.html" class="see-all">See all features</a>
+										<div class="quick-add-to-cart">
+											<form method="post" class="cart">
+												<div class="numbers-row">
+													<input type="number" id="french-hens" value="3">
+												</div>
+												<button class="single_add_to_cart_button" type="submit">Add to cart</button>
+											</form>
+										</div>
+										<div class="quick-desc">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
+										</div>
+										<div class="social-sharing">
+											<div class="widget widget_socialsharing_widget">
+												<h3 class="widget-title-modal">Share this product</h3>
+												<ul class="social-icons">
+													<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="zmdi zmdi-google-plus"></i></a></li>
+													<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="zmdi zmdi-twitter"></i></a></li>
+													<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="zmdi zmdi-facebook"></i></a></li>
+													<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div><!-- .product-info -->
+								</div><!-- .modal-product -->
+							</div><!-- .modal-body -->
+						</div><!-- .modal-content -->
+					</div><!-- .modal-dialog -->
+			   </div>
+			   <!-- END Modal -->
+			</div>
+			<!-- END QUICKVIEW PRODUCT -->	
 			
-	});
-}
+		
+		<!-- WRAPPER END -->
 
+		
+		<!-- all js here -->
+		<!-- jquery latest version -->
+		<script src="../js/vendor/jquery-1.12.0.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- jquery.meanmenu js -->
+		<script src="../js/jquery.meanmenu.js"></script>
+		<!-- slick.min js -->
+		<script src="../js/slick.min.js"></script>
+		<!-- jquery.treeview js -->
+		<script src="../js/jquery.treeview.js"></script>
+		<!-- lightbox.min js -->
+		<script src="../js/lightbox.min.js"></script>
+		<!-- jquery-ui js -->
+		<script src="../js/jquery-ui.min.js"></script>
+		<!-- jquery.nivo.slider js -->
+		<script src="../lib/js/jquery.nivo.slider.js"></script>
+		<script src="../lib/home.js"></script>
+		<!-- jquery.nicescroll.min js -->
+		<script src="../js/jquery.nicescroll.min.js"></script>
+		<!-- countdon.min js -->
+		<script src="../js/countdon.min.js"></script>
+		<!-- wow js -->
+		<script src="../js/wow.min.js"></script>
+		<!-- plugins js -->
+		<script src="../js/plugins.js"></script>
+		<!-- main js -->
+		<script src="../js/main.js"></script>
+		
+		
+		<script type="text/javascript">
+		
+		let login = JSON.parse(sessionStorage.getItem("login"));
+		
+		$( document ).ready(function() {
+			
+			$("#username").html("안녕하세요, " + login.name + "님");
+			$("#name").text(login.name);
+			$("#nickname").text(login.nickname);
+			$("#bdate").text(login.bdate);
+			$("#phone").text(login.phone);
+			$("#email").text(login.email);
+			
+			let pwdtype="";
+			for(i = 0; i < login.pwd.length; i++){
+				pwdtype += "*";
+			}
+			$("#pwd").text(pwdtype);
+			
+			$("#address").text(login.address);
+			$("#id").text(login.id);
+			$("#jdate").text(login.jdate);
+			
+		});
 
+		
+		// 개인정보 수정
+		function personalUpdate() {
+			
+			
+			$("#personal").html(
+		                 			'<div class="account-title">' +
+		                 				'<div class="row">' +
+		                 					 '<div class="col-md-11 ahead">  <h4><b>개인정보</b></h4></div>' +
+		                 					 '<div class="col-md-1"> <button type="button" class="btn button blue" id="personal-submit">저장</button></div>' +
+		                 				'</div>' +
+					                '</div>' +
+				                    '<div class="account-content">' +
+				                    	'<div class="smtxt">이름</div>' +
+											'<input type="text" class="inputUpdate" id="name" value="' + login.name + '">' +
+										'<div class="smtxt">닉네임</div>' +
+											'<input type="text" class="inputUpdate" id="nickname" value="' + login.nickname +'">' +
+										'<div class="smtxt">생년월일</div>' +
+											'<input type="text" class="inputUpdate" id="bdate" value="' + login.bdate + '">' +
+									'</div>');
+			
+			
 
+			// 개인정보 수정 완료
+			$("#personal-submit").click(function () {
+			 	 
+				$.ajax({
+					url:"http://localhost:3000/personalUpdate",
+					type:"post",
+					data:{ "name":$("#name").val(), "nickname":$("#nickname").val(), "bdate":$("#bdate").val(), "memNum":login.memNum },
+					success:function( data ){
+						
+						$("#personal").html(
+												'<div class="account-title">' +
+			                    				'<div class="row">' +
+			                    					 '<div class="col-md-11 ahead">  <h4><b>개인정보</b></h4></div>' +
+			                    					 '<div class="col-md-1"> <button type="button" class="btn button blue" onclick="personalUpdate()">수정</button></div>' +
+			                    				'</div>' +
+							                    '</div>' +
+							                    '<div class="account-content">' +
+													'<div id="name">' + data.name + '</div>' +
+													'<div id="nickname">' + data.nickname + '</div>' +
+													'<div id="bdate">' + data.bdate + '</div>' +
+											    '</div>');
+					},
+					error:function(){
+						alert("error");
+					}
+				});
+				
+			}); 
+			
 
-<!-- ����ó���� -->
-function contactUpdate() {
+		
+		}
+		
+		
+		
+		
+		// 연락처 수정
+		function contactUpdate() {
+			
+			$("#contact").html(
+
+                 			'<div class="account-title">' +
+                 				'<div class="row">' +
+                 					 '<div class="col-md-11 ahead">  <h4><b>연락처</b></h4></div>' +
+                 					 '<div class="col-md-1"> <button type="button" class="btn button blue" id="contact-submit">저장</button></div>' +
+                 				'</div>' +
+			                '</div>' +
+		                    '<div class="account-content">' +
+		                    	'<div class="smtxt">전화번호</div>' +
+									'<input type="text" class="inputUpdate" id="phone" value="' + login.phone + '">' +
+								'<div class="smtxt">이메일</div>' +
+									'<input type="text" class="inputUpdate" id="email" value="' + login.email +'">' +
+							'</div>' );	
 	
-	$("#account-contact").html("<div>" +
-									"<h3>����ó</h3>" +
-									"<form>" +
-										"<p>�޴���</p>" +
-										"<input type='text' id='phone' value=" + login.phone + ">" +
-										"<p>�̸���</p>" +
-										"<input type='text' id='email' value=" + login.email + ">" +
-									"</form>" +
-									"<button id='contact-submit' type='button'>����</button>" +
-							   "</div>");
-	
-	$("#contact-submit").click(function () {
-	 	 
-		$.ajax({
-			url:"http://localhost:3000/contactUpdate",
-			type:"post",
-			data:{ "phone":$("#phone").val(), "email":$("#email").val(), "memNum":login.memNum },
-			success:function( data ){
+		
+			// 연락처 수정 완료
+			$("#contact-submit").click(function () {
+			 	 
+				$.ajax({
+					url:"http://localhost:3000/contactUpdate",
+					type:"post",
+					data:{ "phone":$("#phone").val(), "email":$("#email").val(), "memNum":login.memNum },
+					success:function( data ){
+						
+						$("#contact").html(
+												'<div class="account-title">' +
+			                    				'<div class="row">' +
+			                    					 '<div class="col-md-11 ahead">  <h4><b>연락처</b></h4></div>' +
+			                    					 '<div class="col-md-1"> <button type="button" class="btn button blue" id="contactUpdate">수정</button></div>' +
+			                    				'</div>' +
+							                    '</div>' +
+							                    '<div class="account-content">' +
+													'<div id="phone">' + data.phone + '</div>' +
+													'<div id="email">' + data.email + '</div>' +
+											    '</div>');
+					},
+					error:function(){
+						alert("error");
+					}
+				});
+				
+			});
+		}
+		
+		
+		
 
-				$("#account-contact").html("<div>" +
-												"<h3>����ó</h3>" + 
-												"<a href='#' onclick='contactUpdate()'>����</a>" +
-												"<p id='phone'>" + data.phone + "</p>" +
-												"<p id='email'>" + data.email + "</p>" +
-										   "</div>");				 
-			},
-			error:function(){
-				alert("error");
+		// 비밀번호 수정
+		function pwdUpdate() {
+				
+				$("#passwd").html(
+									'<div class="account-title">' +
+										'<div class="row">' +
+		                 					 '<div class="col-md-11 ahead">  <h4><b>비밀번호</b></h4></div>' +
+		                 					 '<div class="col-md-1"> <button type="button" class="btn button blue" id="pwd-submit">저장</button></div>' +
+	                 					'</div>' +
+									'</div>' +
+									'<div class="account-content">' +
+										'<div class="smtxt">현재 비밀번호</div>' +
+											'<input type="text" class="inputUpdate" id="oldpwd" value="">' +
+										'<div class="smtxt">새 비밀번호</div>' +
+											'<input type="text" class="inputUpdate" id="newpwd" value="">' +
+											'<p id="newpwdSpan"></p>' +
+										'<div class="smtxt">새 비밀번호 확인</div>' +
+											'<input type="text" class="inputUpdate" id="newpwd2" value="">' +
+											'<p id="newpwd2Span"></p>' +
+									'</div>');
+
+		
+			// 비밀번호 수정 완료
+			$("#pwd-submit").click(function () {
+					 	 
+						$.ajax({
+							url:"http://localhost:3000/pwdUpdate",
+							type:"post",
+							data:{ "pwd":$("#pwd").val(), "memNum":login.memNum  },
+							success:function( data ){
+								
+								let newpwd="";
+								for(i = 0; i < data.pwd.length; i++){
+									newpwd += "*";
+								}
+								
+								$("#passwd").html(
+													'<div class="account-title">' +
+				                    				'<div class="row">' +
+				                    					 '<div class="col-md-11 ahead">  <h4><b>비밀번호</b></h4></div>' +
+				                    					 '<div class="col-md-1"> <button type="button" class="btn button blue" id="pwdUpdate">수정</button></div>' +
+				                    				'</div>' +
+								                    '</div>' +
+								                    '<div class="account-content">' +
+														'<div id="pwd">' + newpwd + '</div>' +
+												    '</div>');
+								
+								
+							},
+							error:function(){
+								alert("error");
+							}
+						});
+						
+			}); 
+		
+		}
+		
+		
+		// 주소 수정
+		function addressUpdate() {
+	
+				$("#addressbox").html(
+									'<div class="account-title">' +
+										'<div class="row">' +
+		                 					 '<div class="col-md-11 ahead">  <h4><b>' + login.address + '</b></h4></div>' +
+		                 					 '<div class="col-md-1"> <button type="button" class="btn button blue" id="address-submit">저장</button></div>' +
+	                 					'</div><br>' +
+	                 					'<div class="row">' +
+	                 					 '<div class="col-md-11 ahead">  <h4><b>새로운 주소</b></h4></div></div>' +
+                					'</div>' +
+									'</div>' +
+									'<div class="account-content">' +
+									'<div class="smtxt">우편번호</div>' +
+											'<input class="input--text password inputUpdate" type="text" id="sample4_postcode" style="width: 100px">' + 
+											'<input class="input--text password btn btn-default" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" data-text="우편번호찾기">' +		
+									'<div class="smtxt">도로명 주소</div>' +
+										'<input name="address1" class="input--text password inputUpdate" type="text" id="sample4_roadAddress"></div>' +
+									'<div class="smtxt">상세 주소</div>' +
+									'<input name="address2" class="input--text password inputUpdate" type="text" id="sample4_detailAddress">' +
+									'</div>');
+
+			// 주소 수정 완료
+			$("#address-submit").click(function () {
+					 	 
+						$.ajax({
+							url:"http://localhost:3000/addressUpdate",
+							type:"post",
+							data:{ "address": $("#sample4_roadAddress").val() + " " + $("#sample4_detailAddress").val(), "memNum":login.memNum  },
+							success:function( data ){
+								
+								$("#addressbox").html(
+													'<div class="account-title">' +
+				                    				'<div class="row">' +
+				                    					 '<div class="col-md-11 ahead">  <h4><b>기본 주소</b></h4></div>' +
+				                    					 '<div class="col-md-1"> <button type="button" class="btn button blue" id="addressUpdate">수정</button></div>' +
+				                    				'</div>' +
+								                    '</div>' +
+								                    '<div class="account-content">' +
+														'<div id="address">' + data.address + '</div>' +
+												    '</div>');
+								
+								
+							},
+							error:function(){
+								alert("error");
+							}
+						});
+						
+				});  55442
+		}
+	
+		
+		
+		function purchases() {
+			location.href = "purchases.html";
+		}
+		
+		function cart() {
+			location.href = "cart.html";
+		}
+		
+		function wish() {
+			location.href = "cart.html";
+		}
+		
+		
+		
+		$("#bye").click(function name() {
+			
+				$.ajax({
+							url:"http://localhost:3000/addressUpdate",
+							type:"post",
+							data:{ "address": $("#sample4_roadAddress").val() + " " + $("#sample4_detailAddress").val(), "memNum":login.memNum  },
+							success:function( data ){
+								
+								$("#addressbox").html(
+													'<div class="account-title">' +
+				                    				'<div class="row">' +
+				                    					 '<div class="col-md-11 ahead">  <h4><b>기본 주소</b></h4></div>' +
+				                    					 '<div class="col-md-1"> <button type="button" class="btn button blue" id="addressUpdate">수정</button></div>' +
+				                    				'</div>' +
+								                    '</div>' +
+								                    '<div class="account-content">' +
+														'<div id="address">' + data.address + '</div>' +
+												    '</div>');
+								
+								
+							},
+							error:function(){
+								alert("error");
+							}
+				});
+		});
+		
+		//정규식 패스워드
+		function passCheck(pass){
+			//8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
+			
+			
+			console.log(pass);
+			var passReg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
+			return passReg.test(pass);
+			
+			//!/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/.test(password))
+			
+		}
+		
+		
+		//패스워드 정규식
+		$("#newpwd").on({
+
+			blur : function() {
+				if(passCheck($(this).val())){
+					alert('ddd');
+					$("#newpwdSpan").html("GOOD!")
+								   .css("color", "green");
+				}else {
+//					alert("영문 대소문자 숫자포함 8-12자리 입력해주세요😊");
+					$("#newpwd").focus();
+					$("#newpwdSpan").html("조건에 맞지 않습니다. 다시입력해주세요")
+								   .css("color", "red");
+				}
 			}
 		});
 		
-});
-}
-
-
-<!-- ��й�ȣ���� -->
-function pwdUpdate() {
-	
-	$("#account-pwd").html("<div>" +
-									"<h3>��й�ȣ</h3>" +
-									"<form>" +
-										"<input type='text' placeholder='���� ��й�ȣ'>" +
-										"<input type='text' id='pwd' placeholder='�� ��й�ȣ'>" +
-										"<input type='text' placeholder='�� ��й�ȣ Ȯ��'>" +
-									"</form>" +
-									"<button id='pwd-submit' type='button'>����</button>" +
-							   "</div>");
-	
-	$("#pwd-submit").click(function () {
-	 	 
-		$.ajax({
-			url:"http://localhost:3000/pwdUpdate",
-			type:"post",
-			data:{ "pwd":$("#pwd").val(), "memNum":login.memNum },
-			success:function( data ){
-
-				let pwdtype="";
-				for(i = 0; i < data.pwd.length; i++){
-					pwdtype += "*";
+		
+		
+		//패스워드 일치 여부
+		$("#newpwd2").on({
+			blur : function() {
+				if($(this).val() == $("#newpwd").val()){
+					$("newpwd2Span").html("&nbsp;GOOD!")
+					.css("color", "green");
+				}else {
+//					alert("입력하신 비밀번호와 일치하지 않습니다😊 다시 입력해주세요");
+					$("#newpwd2").focus();
+					$("#newpwd2Span").html("&nbsp;FAIL!")
+					.css("color", "red");
 				}
-				
-				$("#account-pwd").html("<div>" +
-												"<h3>��й�ȣ</h3>" +
-												"<a href='#' onclick='pwdUpdate()'>����</a>" +
-												"<p id='pwd'>" + pwdtype +"</p>" +
-										   "</div>");				 
-			},
-			error:function(){
-				alert("error");
 			}
 		});
-	
-	});
-}
-	
+		
+		
+		
+		
+		// daum 주소
 
-<!-- �ּ� ���� -->
-function addressUpdate() {
-	
-	$("#address-add").html("<div>" +
-								"<h3>�⺻ �ּ�</h3>" +
-								"<form>" +
-									"<input type='text' id='address' value='" + login.address + "'>" +
-								"<button id='address-submit' type='button'>����</button>" +
-						   "</div>");
-	
-	$("#address-submit").click(function () {
-	 	 
-		$.ajax({
-			url:"http://localhost:3000/addressUpdate",
-			type:"post",
-			data:{ "address":$("#address").val(), "memNum":login.memNum },
-			success:function( data ){
-				
-				$("#address-add").html("<div>" +
-											"<h3>�⺻ �ּ�</h3>" +
-											"<a href='#' onclick='addressUpdate()'>����</a>" +
-											"<p id='address'>" + data.address + "</p>" +
-									   "</div>");				 
-			},
-			error:function(){
-				alert("error");
-			}
-		});
-	
-	});
-	
-}
-</script>
+		function sample4_execDaumPostcode() {
+		    new daum.Postcode({
+		        oncomplete: function(data) {
+		            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
+		            // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+		            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+		            var roadAddr = data.roadAddress; // 도로명 주소 변수
+		            var extraRoadAddr = ''; // 참고 항목 변수
 
+		            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+		            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+		            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+		                extraRoadAddr += data.bname;
+		            }
+		            // 건물명이 있고, 공동주택일 경우 추가한다.
+		            if(data.buildingName !== '' && data.apartment === 'Y'){
+		               extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+		            }
+		            // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+		            if(extraRoadAddr !== ''){
+		                extraRoadAddr = ' (' + extraRoadAddr + ')';
+		            }
+
+		            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+		            document.getElementById('sample4_postcode').value = data.zonecode;
+		            document.getElementById("sample4_roadAddress").value = roadAddr;
+		    
+
+		        }
+		    }).open();
+		}
+
+		$("#sidebar-toggle").click(function(){
+			  $("html").toggleClass("open");
+			});
+		
+		
+		</script>
+		
+	</body>
 </html>
