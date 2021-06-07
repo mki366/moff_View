@@ -1,0 +1,709 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+        
+        <!-- Google Font -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+        <!-- all css here -->
+        <!-- bootstrap v3.3.6 css -->
+          <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="../css/animate.css">
+        <!-- jquery-ui.min css -->
+        <link rel="stylesheet" href="../css/jquery-ui.min.css">
+        <!-- meanmenu css -->
+        <link rel="stylesheet" href="../css/meanmenu.min.css">
+        <!-- nivo-slider css -->
+        <link rel="stylesheet" href="../lib/css/nivo-slider.css">
+        <link rel="stylesheet" href="../lib/css/preview.css">
+        <!-- slick css -->
+        <link rel="stylesheet" href="../css/slick.css">
+        <!-- lightbox css -->
+        <link rel="stylesheet" href="../css/lightbox.min.css">
+        <!-- material-design-iconic-font css -->
+        <link rel="stylesheet" href="../css/material-design-iconic-font.css">
+        <!-- All common css of theme -->
+        <link rel="stylesheet" href="../css/default.css">
+        <!-- style css -->
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="../css/shortcode.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="../css/responsive.css">
+        <!-- modernizr css -->
+        <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+        
+     <!--    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css'>
+        <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script> -->
+        
+<style type="text/css">
+
+/* .height {
+    height: 100vh
+}
+
+.card {
+    border: none;
+    padding: 20px;
+    position: relative;
+    align-self: center;
+}
+
+.inputs span {
+    font-size: 14px;
+    font-weight: 500
+}
+
+.inputs input {
+    font-size: 13px;
+    height: 44px
+}
+
+.inputs input:focus {
+    border-color: #2c1e8e;
+    box-shadow: none
+}
+
+.integration {
+    font-size: 14px;
+    height: 44px
+} */
+
+.filebox input[type="file"] { 
+	position: absolute; 
+	width: 1px; 
+	height: 1px; 
+	padding: 0; 
+	margin: -1px; 
+	overflow: hidden; 
+	clip:rect(0,0,0,0); 
+	border: 0; 
+}
+
+.filebox label { 
+	display: inline-block; 
+	padding: .5em .75em; 
+	color: #999; 
+	font-size: inherit; 
+	line-height: normal; 
+	vertical-align: middle; 
+	background-color: #fdfdfd; 
+	cursor: pointer; 
+	border: 1px solid #ebebeb; 
+	border-bottom-color: #e2e2e2; 
+	border-radius: .25em; 
+} /* named upload */ 
+
+.filebox .upload-name { 
+	display: inline-block; 
+	padding: .5em .75em; /* label의 패딩값과 일치 */ 
+	font-size: inherit; 
+	font-family: inherit; 
+	line-height: normal; 
+	vertical-align: middle; 
+	background-color: #f6f6f6; 
+	border: 1px solid #ebebeb; 
+	border-bottom-color: #e2e2e2; 
+	border-radius: .25em; 
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */ 
+	-moz-appearance: none; appearance: none; 
+	width: 500px;
+	height: 40px;
+}
+
+
+</style>
+
+<script type="text/javascript">
+let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+    return paramPair.split(/=(.+)?/).slice(0, 2);
+}).reduce(function(obj, pairArray) {
+    obj[pairArray[0]] = pairArray[1];
+    return obj;
+}, {});
+</script>
+
+</head>
+<body>
+
+
+      <!-- WRAPPER START -->
+        <div class="wrapper bg-white">
+
+            <!-- HEADER-AREA START -->
+            <header id="sticky-menu" class="header header-2">
+                <div class="header-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-4 col-xs-7">
+                                <div class="logo text-center">
+                                    <a href="index.html"><img src="../img/logo/logo.png" alt="" /></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-5">
+                                <div class="mini-cart text-right">
+                                    <ul>
+                                        <li>
+                                            <a class="cart-icon" href="#">
+                                                <i class="zmdi zmdi-shopping-cart"></i>
+                                                <span>3</span>
+                                            </a>
+                                            <div class="mini-cart-brief text-left">
+                                                <div class="cart-items">
+                                                    <p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+                                                </div>
+                                                <div class="all-cart-product clearfix">
+                                                    <div class="single-cart clearfix">
+                                                        <div class="cart-photo">
+                                                            <a href="#"><img src="img/cart/1.jpg" alt="" /></a>
+                                                        </div>
+                                                        <div class="cart-info">
+                                                            <h5><a href="#">dummy product name</a></h5>
+                                                            <p class="mb-0">Price : $ 100.00</p>
+                                                            <p class="mb-0">Qty : 02 </p>
+                                                            <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-cart clearfix">
+                                                        <div class="cart-photo">
+                                                            <a href="#"><img src="img/cart/2.jpg" alt="" /></a>
+                                                        </div>
+                                                        <div class="cart-info">
+                                                            <h5><a href="#">dummy product name</a></h5>
+                                                            <p class="mb-0">Price : $ 300.00</p>
+                                                            <p class="mb-0">Qty : 01 </p>
+                                                            <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-totals">
+                                                    <h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+                                                </div>
+                                                <div class="cart-bottom  clearfix">
+                                                    <a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
+                                                    <a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MAIN-MENU START -->
+                <div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+                <div class="main-menu  hidden-xs">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">home</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Page's</li>
+                                        <li><a href="index.html">Home Version 1</a></li>
+                                        <li><a href="index-2.html">Home Version 2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="shop.html">products</a>
+                                <div class="mega-menu menu-scroll">
+                                    <div class="table">
+                                        <div class="table-cell">
+                                            <div class="half-width">
+                                                <ul>
+                                                    <li class="menu-title">best brands</li>
+                                                    <li><a href="#">henning koppel</a></li>
+                                                    <li><a href="#">jehs + Laub</a></li>
+                                                    <li><a href="#">vicke lindstrand</a></li>
+                                                    <li><a href="#">don chadwick</a></li>
+                                                    <li><a href="#">akiko kuwahata</a></li>
+                                                    <li><a href="#">barbro berlin</a></li>
+                                                    <li><a href="#">cecilia hall</a></li>
+                                                    <li><a href="#">don chadwick</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="half-width">
+                                                <ul>
+                                                    <li class="menu-title">popular brands</li>
+                                                    <li><a href="#">akiko kuwahata</a></li>
+                                                    <li><a href="#">barbro berlin</a></li>
+                                                    <li><a href="#">cecilia hall</a></li>
+                                                    <li><a href="#">don chadwick</a></li>
+                                                    <li><a href="#">henning koppel</a></li>
+                                                    <li><a href="#">jehs + Laub</a></li>
+                                                    <li><a href="#">vicke lindstrand</a></li>
+                                                    <li><a href="#">don chadwick</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="full-width">
+                                                <div class="mega-menu-img">
+                                                    <a href="single-product.html"><img src="img/megamenu/1.jpg" alt="" /></a>
+                                                </div>
+                                            </div>
+                                            <div class="pb-80"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="#">Shortcodes</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Shortcodes</li>
+                                        <li><a href="elements-accordions.html">Accordion</a></li>
+                                        <li><a href="elements-toggles.html">Toggles</a></li>
+                                        <li><a href="elements-tab.html">Tab</a></li>
+                                        <li><a href="elements-product-tab.html">Product Tab</a></li>
+                                        <li><a href="elements-product-tab-2.html">Product Tab 2</a></li>
+                                        <li><a href="elements-carousel.html">product carousel</a></li>
+                                        <li><a href="elements-carousel-2.html">product carousel 2</a></li>
+                                        <li><a href="elements-featured-product.html">Featured Product</a></li>
+                                        <li><a href="elements-featured-product-2.html">Featured Product 2</a></li>
+                                        <li><a href="elements-button.html">Button</a></li>
+                                        <li><a href="elements-table.html">Table</a></li>
+                                        <li><a href="elements-progress-bars.html">Progress Bar</a></li>
+                                        <li><a href="elements-blog.html">Blog</a></li>
+                                        <li><a href="elements-blog-2.html">Blog - 2</a></li>
+                                        <li><a href="elements-team.html">Team</a></li>
+                                        <li><a href="elements-footer.html">Footer</a></li>
+                                        <li><a href="elements-footer-2.html">Footer 2</a></li>
+                                        <li><a href="elements-map.html">Map</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="shop-sidebar.html">accesories</a></li>
+                            <li><a href="shop-list.html">lookbook</a></li>
+                            <li><a href="blog.html">blog</a></li>
+                            <li><a href="#">pages</a>
+                                <div class="sub-menu menu-scroll">
+                                    <ul>
+                                        <li class="menu-title">Page's</li>
+                                        <li><a href="shop.html">Shop</a></li>
+                                        <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+                                        <li><a href="shop-grid-right-sidebar.html">Shop Right Sidebar</a></li>
+                                        <li><a href="shop-list.html">Shop List</a></li>
+                                        <li><a href="shop-list-right-sidebar.html">Shop List right sidebar</a></li>
+                                        <li><a href="single-product.html">Single Product</a></li>
+                                        <li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+                                        <li><a href="cart.html">Shopping Cart</a></li>
+                                        <li><a href="wishlist.html">Wishlist</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="order.html">Order</a></li>
+                                        <li><a href="login.html">login / Registration</a></li>
+                                        <li><a href="my-account.html">My Account</a></li>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="single-blog.html">Single Blog</a></li>
+                                        <li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="contact.html">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- MAIN-MENU END -->
+            </header>
+            <!-- HEADER-AREA END -->
+            <!-- Mobile-menu start -->
+            <div class="mobile-menu-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a href="index.html">home</a>
+                                            <ul>
+                                                <li><a href="index.html">Home Version 1</a></li>
+                                                <li><a href="index-2.html">Home Version 2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="shop.html">products</a></li>
+                                        <li><a href="shop-sidebar.html">accesories</a></li>
+                                        <li><a href="shop-list.html">lookbook</a></li>
+                                        <li><a href="blog.html">blog</a></li>
+                                        <li><a href="#">pages</a>
+                                            <ul>
+                                                <li><a href="shop.html">Shop</a></li>
+                                                <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+                                                <li><a href="shop-list.html">Shop List</a></li>
+                                                <li><a href="single-product.html">Single Product</a></li>
+                                                <li><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+                                                <li><a href="cart.html">Shopping Cart</a></li>
+                                                <li><a href="wishlist.html">Wishlist</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="order.html">Order</a></li>
+                                                <li><a href="login.html">login / Registration</a></li>
+                                                <li><a href="my-account.html">My Account</a></li>
+                                                <li><a href="404.html">404</a></li>
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="single-blog.html">Single Blog</a></li>
+                                                <li><a href="single-blog-sidebar.html">Single Blog Sidebar</a></li>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about.html">about us</a></li>
+                                        <li><a href="contact.html">contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile-menu end -->
+            <!-- HEADING-BANNER START -->
+           <!-- HEADING-BANNER START -->
+         <!--    <div class="heading-banner-area overlay-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-banner">
+                                <div class="heading-banner-title">
+                                    <h2>Community</h2>
+                                </div>
+                                <div class="breadcumbs pb-15">
+                                    <ul>
+                                        <li><a href="#">Home</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- HEADING-BANNER END -->
+            
+            <!-- Writing Form Start-->
+         <!--    <div class="container mt-5 mb-5" style="float: center">
+			    <div class="row height d-flex justify-content-center align-items-center">
+			        <div class="col-md-6">
+			            <div class="card px-5 py-4">
+			                <div class="img-logo"></div>
+			                <div class="mt-4 inputs"> <span style="text-align: left;">cardApiKey</span> <input type="text" class="form-control" placeholder=""> </div>
+			                <div class="mt-2 inputs"> <span style="text-align: left;">cardApiPass</span> <input type="text" class="form-control" placeholder=""> </div>
+			                <div class="mt-2 inputs"> <span style="text-align: left;">cardApiRSA</span> <input type="text" class="form-control" placeholder=""> </div>
+			                <div class="mt-2 inputs"> <span style="text-align: left;">cardVerificationCode</span> <input type="text" class="form-control" placeholder=""> </div>
+			                <div class="mt-2 inputs"> <span style="text-align: left;">cardHashAlg</span> <input type="text" class="form-control" placeholder=""> </div>
+			                <div class="text-center mt-4"> <button class="btn btn-danger integration">Remove integration</button> </div>
+			            </div>
+			        </div>
+			    </div>
+			</div> -->
+			
+						<!-- BLGO-AREA START -->
+			<div class="blog-area blog-2 blog-details-area  pt-80 pb-80">
+				<div class="container">	
+					<div class="blog">
+						<div class="row">
+							<!-- Single-blog start -->
+							<div class="col-lg-12">
+								<div class="single-blog mb-30">
+									<div class="blog-info blog-details-info">
+									<!-- 	<h4 class="post-title post-title-2"><span>글쓰기</span></h4> -->
+											<form id="updateForm">
+												<div>
+													<input type="hidden" id="cmNum" name="cmNum" value="">
+													<p style="font-size: 20px;">아이디</p>
+													<div id="writingId"></div>
+													<input type="text" id="id" name="id" value="ddd"  style="width: 500px; background:#f6f6f6;" readonly="readonly">
+												</div>
+												<div style="height: 30px;"></div>
+												<div>
+													<p style="font-size: 20px;">제목</p>
+														<input type="text" id="title" value="commuTitle" name="title" style=" background:#f6f6f6;">
+												</div>
+												<div style="height: 30px;"></div>
+												 <p style="font-size: 20px;">파일첨부</p>
+												<div class="filebox" id="fileDiv1">		
+												<input class="upload-name" id="fileTitle1" value="대표사진" disabled="disabled"> 
+													<label for="fileload">파일수정</label>
+													<input type="file" id="fileload" name="fileload" value="" class="upload-hidden"><br>
+												</div>
+												
+												<div style="height: 30px;"></div>
+												
+												<div class="filebox" id="fileDiv2">	
+													<input class="upload-name" id="fileTitle2" value="파일선택" disabled="disabled"> 
+													<label for="fileload2">파일수정</label>
+													<input type="file" id="fileload2" name="fileload2" class="upload-hidden"><br>
+												</div> 
+												<div style="height: 30px;"></div>
+												<div>
+													<p style="font-size: 20px;">내용</p>
+													<textarea rows="20px" cols="148" id="content" value="commuContent" name="content" style="background-color: #f6f6f6; border-style: none; resize: none;"></textarea>
+												</div>
+												<div style="height: 30px;"></div>
+												<div class="row">
+													<div class="col-md-12">
+														<button type="button" onclick="cancelWriting()" data-text="취소" class="button-one submit-button mt-20" style="margin-right: 15px;">취소</button>
+														<button type="button" onclick="submitUpdate()" data-text="등록" class="button-one submit-button mt-20">등록</button>
+													</div>
+												</div>
+											</form>
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- BLGO-AREA END -->	
+			
+			
+            <!-- Writing Form End-->
+            
+            
+		</div>
+
+<script type="text/javascript">
+let cmNum = urlParams.cmNum;
+
+let login = JSON.parse(sessionStorage.getItem("login"));
+let id = login.id;
+$("#id").val(id);
+
+getCommunityDetail();
+
+function getCommunityDetail() {
+	let cmNum = urlParams.cmNum;
+//	alert(cmNum);
+	
+	
+	$.ajax({
+		url:'http://localhost:3000/getCommunityDetail?cmNum=' + cmNum,
+		type:'post',
+		success:function(data){
+		//	alert('getCommunityDetail succ');
+			
+			$("#title").val(data.title);
+			
+			$("#content").val(data.content);
+			$("#cmNum").val(cmNum);
+			$("#fileTitle1").val(data.image1);
+			$("#fileTitle2").val(data.image2);
+			
+		},
+		error:function(){
+			alert('getCommunityDetail err');
+		}
+	});
+	
+}
+
+function deletFile(cmNum, title, content, image1, image2){
+//	alert('cmNum' + cmNum);
+	let login = JSON.parse(sessionStorage.getItem("login"));
+	let id = login.id;
+	/*
+	let delFileStr =	'<form id="deleteForm">'
+		+					'<div>'
+		+						'<input type="hidden" id="cmNum" name="cmNum" value="' + cmNum + '">'
+		+						'<p style="font-size: 20px;">아이디</p>'
+		+						'<div id="writingId"></div>'
+		+						'<input type="text" id="id" name="id" value="' + id + '"  style="width: 500px; background:#f6f6f6;" readonly="readonly">'
+		+					'</div>'
+		+					'<div style="height: 30px;"></div>'
+		+					'<div>'
+		+						'<p style="font-size: 20px;">제목</p>'
+		+							'<input type="text" id="title" value="' + title + '" name="title" style=" background:#f6f6f6;">'
+		+					'</div>'
+		+					'<div style="height: 30px;"></div>'
+		+					'<div class="filebox" id="fileDiv1">'
+		+					 	'<p style="font-size: 20px;">파일첨부</p>'
+		+						'<input class="upload-name" id="fileTitle1" value="대표사진" disabled="disabled">' 
+		+						"<button type='button' onclick='deletFile(" + '"' + title + '"' + ',' + '"' + content + '"' + ',' + '"' + image1 + '"' + ','
+		+ 							'"' + image2 + '"' +  ")'>삭제</button>"
+		+						'<input type="file" id= "' +image1 + '" name="oldFile" value="" class="upload-hidden"><br>'
+		+					'</div>'
+		+					'<div style="height: 30px;"></div>'
+		+					'<div class="filebox" id="fileDiv2">'
+		+						'<input class="upload-name" id="fileTitle2" value="파일선택" disabled="disabled">'
+		+						"<button type='button' onclick='deletFile(" + '"' + cmNum + '"' + ',' + '"' + title + '"' + ',' + '"' + content + '"' + ',' 
+		+ 							'"' + image1 + '"' + ',' + '"' + image2 + '"' +  ")'>삭제</button>"
+		+						'<input type="file" id="' +image2 + '" name="oldFile2" class="upload-hidden"><br>'
+		+					'</div>'
+		+					'<div style="height: 30px;"></div>'
+		+					'<div>'
+		+						'<p style="font-size: 20px;">내용</p>'
+		+						'<textarea rows="20px" cols="148" id="content" value="' + content + '" name="content" style="background-color: #f6f6f6; border-style: none; resize: none;"></textarea>'
+		+					'</div>'
+		+					'<div style="height: 30px;"></div>'
+		+					'<div class="row">'
+		+						'<div class="col-md-12">'
+		+							'<button type="button" onclick="cancelWriting()" data-text="취소" class="button-one submit-button mt-20" style="margin-right: 15px;">취소</button>'
+		+							'<button type="button" onclick="submitUpdate()" data-text="등록" class="button-one submit-button mt-20">등록</button>'
+		+						'</div>'
+		+					'</div>'
+		+				'</form>';
+		
+		$("#fileDiv1").html(delFileStr);
+		
+		$("#fileTitle1").val(data.image1);
+		$("#fileTitle2").val(data.image2);
+	*/
+		var form = $("#updateForm")[0];
+		var formdata = new FormData(form);
+		alert(form);
+		
+	$.ajax({
+		url:'http://localhost:3000/deletFile?cmNum=' + cmNum,
+		type:"post",
+		data:formdata,
+		enctype:'multipart/form-data',
+		processData:false,
+		contentType:false,
+		cache:false,
+		success:function(data){
+			if(data.trim() == "YES"){
+				alert('deletFile succ');
+				
+			/* 	let newFileStr = '<input class="upload-name" id="fileTitle1" value="대표사진" disabled="disabled">'
+					+				'<label for="fileload">파일수정</label>'
+					+				'<input type="file" id="oldFile" name="fileload" value="" class="upload-hidden">'
+					+			'</div>'
+								
+					+			'<div style="height: 30px;"></div>'
+								
+					+			'<div class="filebox" id="fileDiv2">'
+					+				'<input class="upload-name" id="fileTitle2" value="파일선택" disabled="disabled"> '
+					+				'<label for="fileload2">파일수정</label>'
+					+				'<input type="file" id="oldFile2" name="fileload" class="upload-hidden"><br>';
+					
+				$("#fileDiv1").html(newFileStr);
+				
+				$("#fileTitle1").val(data.image1);
+				$("#fileTitle2").val(data.image2);
+				 */
+				
+			}else if(data.trim() == "NO"){
+				alert('실패');
+			}
+		},
+		error:function(){
+			alert("deletFile err");
+		}		
+	});
+}
+
+  													
+$(document).ready(function(){ 
+	var fileTarget = $('.filebox .upload-hidden'); 
+	fileTarget.on('change', function(){ 
+		// 값이 변경되면 
+		if(window.FileReader){ 
+			// modern browser 
+			var filename = $(this)[0].files[0].name; 
+		} else { 
+			// old IE 
+			var filename = $(this).val().split('/').pop().split('\\').pop(); 
+			// 파일명만 추출 
+		} // 추출한 파일명 삽입 
+		$(this).siblings('.upload-name').val(filename); 
+		
+	}); 
+	
+	
+});
+
+
+
+function submitUpdate() {
+	let cmNum = urlParams.cmNum;
+	
+	var form = $("#updateForm")[0];
+	var formdata = new FormData(form);
+	
+	$.ajax({
+		url:"http://localhost:3000/updateCommunity?cmNum=" + cmNum,
+		type:"post",
+		data:formdata,
+		enctype:'multipart/form-data',
+		processData:false,
+		contentType:false,
+		cache:false,
+		success:function(data){
+			if(data.trim() == "YES"){
+			//	alert('writeCommu succ');
+				location.href = "commulist.html";
+				
+			}else if(data.trim() == "NO"){
+				alert('실패');
+			}
+		},
+		error:function(){
+			alert("writeCommu err");
+		}
+	});
+}
+
+
+	
+		
+function cancelWriting() {
+	location.href = "commulist.html";
+}	
+	
+	 
+	 </script>
+	 
+	 
+	 
+	 	
+	 
+	 <script src="../js/vendor/jquery-1.12.0.min.js"></script>
+     <!-- bootstrap js -->
+     <script src="../js/bootstrap.min.js"></script>
+     <!-- jquery.meanmenu js -->
+     <script src="../js/jquery.meanmenu.js"></script>
+     <!-- slick.min js -->
+     <script src="../js/slick.min.js"></script>
+     <!-- jquery.treeview js -->
+     <script src="../js/jquery.treeview.js"></script>
+     <!-- lightbox.min js -->
+     <script src="../js/lightbox.min.js"></script>
+     <!-- jquery-ui js -->
+     <script src="../js/jquery-ui.min.js"></script>
+     <!-- jquery.nivo.slider js -->
+     <script src="../lib/js/jquery.nivo.slider.js"></script>
+     <script src="../lib/home.js"></script>
+     <!-- jquery.nicescroll.min js -->
+     <script src="../js/jquery.nicescroll.min.js"></script>
+     <!-- countdon.min js -->
+     <script src="../js/countdon.min.js"></script>
+     <!-- wow js -->
+     <script src="../js/wow.min.js"></script>
+     <!-- plugins js -->
+     <script src="../js/plugins.js"></script>
+     <!-- main js -->
+     <script src="../js/main.js"></script>
+
+
+</body>
+</html>
