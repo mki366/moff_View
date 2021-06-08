@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-		<meta charset="EUC-KR">
+
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Login / Registration || Hurst</title>
+		<title>ÎîîÌÖåÏùº ÌéòÏù¥ÏßÄ</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- google login -->
-		<meta name="google-signin-scope" content="profile email">
-		<meta name ="google-signin-client_id" content="68527952935-alrkqjjtbtneh4591p1779f9d7eshe2n.apps.googleusercontent.com">
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		
-		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 		<!-- Place favicon.ico in the root directory -->
 		
+			
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		
+	
+		
 		
 		<!-- Google Font -->
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
@@ -49,305 +51,44 @@
 		<!-- modernizr css -->
 		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
 		
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!--  naver login -->
-<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-<!--  kakao login -->
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
-	<style type="text/css">
-	
-	/* 
-		   
-@import url('https://fonts.googleapis.com/css?family=Mukta');
-
-
-.login-form{
-	height: 700px;
-}
-
-
-
-.login-reg-panel{
-    position: relative;
-    top: 10%;
-    transform: translateY(20%);
-	text-align:center;
-    width:50%;
-	right:0;left:0;
-    margin:auto;
-    height:400px;
-    background-color:  #ffdc16;
-}
-.white-panel{
-    background-color: rgba(255,255, 255, 1);
-    height:400px;
-    position:absolute;
-    width:50%;
-    right:calc(50% - 50px);
-    transition:.3s ease-in-out;
-    z-index:0;
-    box-shadow: 0 0 15px 9px #00000047;
-}
-.login-reg-panel input[type="radio"]{
-    position:relative;
-    display:none;
-}
-.login-reg-panel{
-    color:  #5d5a55;
-}
-
-.login-reg-panel #label-login, 
-.login-reg-panel #label-register{
-    border:1px solid #9E9E9E;
-    padding:5px 5px;
-    width:150px;
-    display:block;
-    text-align:center;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight: 600;
-    font-size: 18px;
-}
-.login-info-box{
-    width:50%;
-    padding:0 50px;
-    top:20%;
-    left:0;
-    position:absolute;
-    text-align:left;
-}
-.register-info-box{
-    width:32%;
-    padding:0 50px;
-    top:20%;
-    right:0;
-    position:absolute;
-    text-align:left;
-    
-}
-.right-log{right:50px !important;}
-
-.login-show, 
-.register-show{
-    z-index: 1;
-    display:none;
-    opacity:0;
-    transition:0.3s ease-in-out;
-    color:#242424;
-    text-align:left;
-    padding:60px;
-}
-.show-log-panel{
-    display:block;
-    opacity:0.9;
-}
-.login-show input[type="text"], .login-show input[type="password"]{
-    width: 100%;
-    display: block;
-    margin:20px 0;
-    padding: 15px;
-    border: 1px solid #b5b5b5;
-    outline: none;
-}
-.login-show input[type="button"] {
-    max-width: 150px;
-    width: 100%;
-    background: #444444;
-    color: #f9f9f9;
-    border: none;
-    padding: 10px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    float:right;
-    cursor:pointer;
-}
-.login-show a{
-    display:inline-block;
-    padding:10px 0;
-}
-
-.register-show input[type="text"], .register-show input[type="password"]{
-    width: 100%;
-    display: block;
-    margin:20px 0;
-    padding: 15px;
-    border: 1px solid #b5b5b5;
-    outline: none;
-}
-.register-show input[type="button"] {
-    max-width: 150px;
-    width: 100%;
-    background: #444444;
-    color: #f9f9f9;
-    border: none;
-    padding: 10px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    float:right;
-    cursor:pointer;
-}
-.credit {
-    position:absolute;
-    bottom:10px;
-    left:10px;
-    color: #3B3B25;
-    margin: 0;
-    padding: 0;
-    font-family: Arial,sans-serif;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    z-index: 99;
-}
- */
-    
-    
-.login-form{
-	height: 550px;
-	padding-top: 100px;
-	padding-right: 40px
-}
-    
-  .form-container{
-    background: #5d5a55;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0;
-    padding: 0 15px;
-    border: 1px solid #5d5a55;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-.form-container .form-icon{
-    color: #fff;
-    font-size: 13px;
-    text-align: center;
-    text-shadow: 0 0 20px rgba(0,0,0,0.2);
-    width: 50%;
-    padding: 70px 0;
-    vertical-align: top;
-    display: inline-block;
-}
-.form-container .form-icon i{
-    font-size: 124px;
-    margin: 0 0 15px;
-    display: block;
-}
-.form-container .form-icon .signup a{
-    color: #fff;
-    text-transform: capitalize;
-    transition: all 0.3s ease;
-}
-.form-container .form-icon .signup a:hover{ text-decoration: underline; }
-.form-container .form-horizontal{
-    background: rgba(255,255,255,0.99);
-    width: 50%;
-    padding: 60px 30px;
-    margin: -20px 0;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    display: inline-block;
-}
-.form-container .title{
-    color: #454545;
-    font-size: 23px;
-    font-weight: 900;
-    text-align: center;
-    text-transform: capitalize;
-    letter-spacing: 0.5px;
-    margin: 0 0 30px 0;
-}
-.form-horizontal .form-group{
-    background-color: rgba(255,255,255,0.15);
-    margin: 0 0 15px;
-    border: 1px solid #b5b5b5;
-    border-radius: 20px;
-}
-.form-horizontal .input-icon{
-    color: #b5b5b5;
-    font-size: 15px;
-    text-align: center;
-    line-height: 38px;
-    height: 35px;
-    width: 40px;
-    vertical-align: top;
-    display: inline-block;
-}
-.form-horizontal .form-control{
-    color: #b5b5b5;
-    background-color: transparent;
-    font-size: 14px;
-    letter-spacing: 1px;
-    width: calc(100% - 55px);
-    height: 33px;
-    padding: 2px 10px 0 0;
-    box-shadow: none;
-    border: none;
-    border-radius: 0;
-    display: inline-block;
-    transition: all 0.3s;
-}
-.form-horizontal .form-control:focus{
-    box-shadow: none;
-    border: none;
-}
-.form-horizontal .form-control::placeholder{
-    color: #b5b5b5;
-    font-size: 13px;
-    text-transform: capitalize;
-}
-.form-horizontal .btn{
-    color: #5d5a55;
-    background: #ffdc16;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    width: 100%;
-    margin: 0 0 10px 0;
-    border: none;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-.form-horizontal .btn:hover,
-.form-horizontal .btn:focus{
-    color: #fff;
-    background-color: #D31128;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-.form-horizontal .forgot-pass{
-    font-size: 12px;
-    text-align: center;
-    display: block;
-}
-.form-horizontal .forgot-pass a{
-    color: #999;
-    transition: all 0.3s ease;
-}
-.form-horizontal .forgot-pass a:hover{
-    color: #777;
-    text-decoration: underline;
-}
-@media only screen and (max-width:576px){
-    .form-container{ padding-bottom: 15px; }
-    .form-container .form-icon{
-        width: 100%;
-        padding: 20px 0;
-    }
-    .form-container .form-horizontal{
-        width: 100%;
-        margin: 0;
-    }
-}
-
-	</style>
-	
+		<style type="text/css">
+		
+		.headerExpertName{
+		font-weight: 900; 
+		padding-top: 20px;
+		font-family: "Lato",sans-serif;
+		
+		
+		}
+		#ExpertText{
+		border-bottom: 2px solid 
+		}
+		
+		
+		.Whatpart{
+		margin-bottom: 50px;
+		}
+		
+		.btny{
+		
+		background-color: #ffdc16;
+		
+		}
+		</style>
 	</head>
-	
 	<body>	
+	
+	<!-- Ïä§ÌÅ¨Î¶ΩÌä∏ eNUM Î∞õÏïÑÏò§Í∏∞ -->
+	<script type="text/javascript">
+	let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+	    return paramPair.split(/=(.+)?/).slice(0, 2);
+	}).reduce(function(obj, pairArray) {
+	    obj[pairArray[0]] = pairArray[1];
+	    return obj;
+	}, {});
+	
+	</script>
+	
 		<!-- WRAPPER START -->
 		<div class="wrapper bg-dark-white">
 
@@ -358,7 +99,7 @@
 						<div class="row">
 							<div class="col-sm-4 col-sm-offset-4 col-xs-7">
 								<div class="logo text-center">
-									<a href="index.html"><img src=".../img/logo/logo.png" alt="" /></a>
+									<a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
 								</div>
 							</div>
 							<div class="col-sm-4 col-xs-5">
@@ -376,7 +117,7 @@
 												<div class="all-cart-product clearfix">
 													<div class="single-cart clearfix">
 														<div class="cart-photo">
-															<a href="#"><img src=".../img/cart/1.jpg" alt="" /></a>
+															<a href="#"><img src="img/cart/1.jpg" alt="" /></a>
 														</div>
 														<div class="cart-info">
 															<h5><a href="#">dummy product name</a></h5>
@@ -387,7 +128,7 @@
 													</div>
 													<div class="single-cart clearfix">
 														<div class="cart-photo">
-															<a href="#"><img src=".../img/cart/2.jpg" alt="" /></a>
+															<a href="#"><img src="img/cart/2.jpg" alt="" /></a>
 														</div>
 														<div class="cart-info">
 															<h5><a href="#">dummy product name</a></h5>
@@ -581,19 +322,19 @@
 				</div>
 			</div>
 			<!-- Mobile-menu end -->
-			
-			<div class="heading-banner-area">
+			<!-- HEADING-BANNER START -->
+			<div class="heading-banner-area" style="background-color: #ffdc16">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="heading-banner">
 								<div class="heading-banner-title">
-									<h2>LOGIN</h2>
+									<h2>Expert page</h2>
 								</div>
 								<div class="breadcumbs pb-15">
 									<ul>
 										<li><a href="index.html">Home</a></li>
-										<li>Single-Blog</li>
+										<li>ÏãúÍ≥µÏóÖÏ≤¥</li>
 									</ul>
 								</div>
 							</div>
@@ -601,108 +342,365 @@
 					</div>
 				</div>
 			</div>
-
-			
-		<!-- 	<div class="login-area  pt-80 pb-80">
+			<!-- HEADING-BANNER END -->
+			<!-- PRODUCT-AREA START -->
+			<div class="product-area single-pro-area pt-80 pb-80 product-style-2">
 				<div class="container">
-					<form action="#">	
-						<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<div class="customer-login text-left">
-									<h4 class="title-1 title-border text-uppercase mb-30">∞°¿‘«— »∏ø¯</h4>
-									<p class="text-gray">If you have an account with us, Please login!</p>
-									<input type="text" placeholder="æ∆¿Ãµ" id="id">
-									<input type="password" placeholder="∫Òπ–π¯»£" id="pwd">
-									<p><a href="#" class="text-gray">∫Òπ–π¯»£ √£±‚</a></p>
-									<button type="button" id="loginBtn" data-text="login" class="button-one submit-button mt-15">login</button>
-								</div>					
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<div class="customer-login text-left">
-									<h4 class="title-1 title-border text-uppercase mb-30">new customers</h4>
-									<p class="text-gray">If you have an account with us, Please login!</p>
-									<button type="submit" data-text="regiter" class="button-one submit-button mt-15">»∏ø¯∞°¿‘</button>
-								</div>					
-							</div>
+					<div class="row">
+					
+					<!-- ÏôºÏ™Ω Ïπ¥ÌÖåÍ≥†Î¶¨ Î∞∞ÎÑà -->
+					<div class="col-md-3 col-sm-12 col-xs-12 mt-tab-30">
+						
+							<!-- Widget-search end -->
+							<!-- Widget-Categories start -->
+							<aside class="widget widget-categories  mb-30"  style="border: 1px solid #d2d2d2 ">
+								<div class="widget-title">
+									<h3 id="ExpertName" class= "headerExpertName"  align="center"></h3>
+									<h5 id="ExpertText" align="center" style="border-bottom: 1px solid #d2d2d2; padding-bottom: 20px;" ></h5>
+								</div>
+								<div id="cat-treeview"  class="widget-info product-cat boxscrol2" style="padding-left: 20px;height:235px">
+									
+									<h5 id="numberExpert"></h5>
+									<h5 class="Whatpart"></h5>
+									<div class="chatAppend">
+									
+									</div>
+									<button type="button" class="btn btn-default btny" style="width:100%">Î¶¨Î∑∞Ïì∞Í∏∞</button>
+									
+								</div>
+							</aside>
+							<!-- Widget-categories end -->
+						
+							<script type="text/javascript">
+					
+							
+							function goExpertChat(eNUM) {
+								location.href="Expert_CHAT_ROOM.html?eNUM=" +eNUM;
+							}
+							
+							</script>
+							
+							
 						</div>
-					</form>
+						<div class="col-md-9 col-sm-12 col-xs-12">		
+							<div class="row shop-list single-pro-info">
+								<!-- Single-product start -->
+								<div class="col-lg-12" style=" height: 390px;">
+									<div class="single-product clearfix" style="height: 310px;">
+										<!-- Single-pro-slider Big-photo start -->
+										<div class="single-pro-slider single-big-photo view-lightbox slider-for">
+											<div>
+												<img class= "MainImage" src="../img/single-product/medium/1.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/1.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div>
+											<div>
+												<img class="image1" src="../img/single-product/medium/2.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/2.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div>
+											<div>
+												<img class="image2" src="../img/single-product/medium/3.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/3.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div>
+											<div>
+												<img class="image3" src="../img/single-product/medium/4.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/4.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div>
+											<!-- <div>
+												<img src="../img/single-product/medium/5.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/5.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div> -->
+										</div>	
+										<!-- Single-pro-slider Big-photo end -->										
+										<div class="product-info">
+											<div class="fix">
+												<h4 class="post-title floatleft" style="font-weight: 900">ÏãúÍ≥µÏóÖÏ≤¥ ÎåÄÌëúÏÇ¨ÏßÑ</h4>
+												<span class="pro-rating floatright">
+													<a href="#"><i class="zmdi zmdi-star"></i></a>
+													<a href="#"><i class="zmdi zmdi-star"></i></a>
+													<a href="#"><i class="zmdi zmdi-star"></i></a>
+													<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+													<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+													<span>( 27 Rating )</span>
+												</span>
+											</div>
+											
+											<div class="product-description">
+												<p class="part"></p>
+												
+												
+											</div>
+										
+								
+											
+											<!-- Single-pro-slider Small-photo start -->
+											<div class="single-pro-slider single-sml-photo slider-nav">
+												<div>
+													<img class="MainImage" src="../img/single-product/small/1.jpg" alt="" />
+												</div>
+												<div>
+													<img class="image1" src="../img/single-product/small/2.jpg" alt="" />
+												</div>
+												<div>
+													<img class="image2" src="../img/single-product/small/3.jpg" alt="" />
+												</div>
+												<div>
+													<img  class="image3" src="../img/single-product/small/4.jpg" alt="" />
+												</div>
+											 <div>
+													<img class="MainImage" src="../img/single-product/small/5.jpg" alt="" />
+												</div> 
+											</div>
+											<!-- Single-pro-slider Small-photo end -->
+										</div>
+									</div>
+								</div>
+								<!-- Single-product end -->
+							</div>
+							<!-- single-product-tab start -->
+							<div class="single-pro-tab">
+								<div class="row">
+									<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+										<div class="single-pro-tab-menu">
+											<!-- Nav tabs -->
+											<ul class="">
+												<li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+												<li><a href="#reviews"  data-toggle="tab">Reviews</a></li>
+												<li><a href="#information" data-toggle="tab">Information</a></li>
+												<li><a href="#tags" data-toggle="tab">Tags</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+										<!-- Tab panes -->
+										<div class="tab-content">
+											<div class="tab-pane active" id="description">
+												<div class="pro-tab-info pro-description">
+													<h3 class="tab-title title-border mb-30">dummy Product name</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+												</div>
+											</div>
+											<div class="tab-pane" id="reviews">
+												<div class="pro-tab-info pro-reviews">
+													<div class="customer-review mb-60">
+														<h3 class="tab-title title-border mb-30">Customer review</h3>
+														<ul class="product-comments clearfix">
+															<li class="mb-30">
+																<div class="pro-reviewer">
+																	<img src="img/reviewer/1.jpg" alt="" />
+																</div>
+																<div class="pro-reviewer-comment">
+																	<div class="fix">
+																		<div class="floatleft mbl-center">
+																			<h5 class="text-uppercase mb-0"><strong>Gerald Barnes</strong></h5>
+																			<p class="reply-date">27 Jun, 2017 at 2:30pm</p>
+																		</div>
+																		<div class="comment-reply floatright">
+																			<a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
+																			<a href="#"><i class="zmdi zmdi-close"></i></a>
+																		</div>
+																	</div>
+																	<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+																</div>
+															</li>
+															<li class="threaded-comments">
+																<div class="pro-reviewer">
+																	<img src="img/reviewer/1.jpg" alt="" />
+																</div>
+																<div class="pro-reviewer-comment">
+																	<div class="fix">
+																		<div class="floatleft mbl-center">
+																			<h5 class="text-uppercase mb-0"><strong>Gerald Barnes</strong></h5>
+																			<p class="reply-date">27 Jun, 2017 at 2:30pm</p>
+																		</div>
+																		<div class="comment-reply floatright">
+																			<a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
+																			<a href="#"><i class="zmdi zmdi-close"></i></a>
+																		</div>
+																	</div>
+																	<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+																</div>
+															</li>
+														</ul>
+													</div>
+													<div class="leave-review">
+														<h3 class="tab-title title-border mb-30">Leave your reviw</h3>
+														<div class="your-rating mb-30">
+															<p class="mb-10"><strong>Your Rating</strong></p>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+															<span class="separator">|</span>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+															<span class="separator">|</span>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+															<span class="separator">|</span>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+															<span class="separator">|</span>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+														</div>
+														<div class="reply-box">
+															<form action="#">
+																<div class="row">
+																	<div class="col-md-6">
+																		<input type="text" placeholder="Your name here..." name="name" />
+																	</div>
+																	<div class="col-md-6">
+																		<input type="text" placeholder="Subject..." name="name" />
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-12">
+																		<textarea class="custom-textarea" name="message" placeholder="Your review here..." ></textarea>
+																		<button type="submit" data-text="submit review" class="button-one submit-button mt-20">submit review</button>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>		
+											</div>
+											<div class="tab-pane" id="information">
+												<div class="pro-tab-info pro-information">
+													<h3 class="tab-title title-border mb-30">Product information</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+												</div>											
+											</div>
+											<div class="tab-pane" id="tags">
+												<div class="pro-tab-info pro-information">
+													<h3 class="tab-title title-border mb-30">tags</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+												</div>											
+											</div>
+										</div>									
+									</div>
+									
+									
+								</div>
+							</div>
+							<!-- single-product-tab end -->
+						</div>
+						<!--  -->
+					</div>
 				</div>
 			</div>
- -->
-		
-		
-	<!-- <div class="login-form">	
-		<div class="login-reg-panel">
-		<div class="login-info-box">
-			<h2>Have an account?</h2>
-			<p>Lorem ipsum dolor sit amet</p>
-			<label id="label-register" for="log-reg-show">LOGIN</label>
-			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
-		</div>
-							
-		<div class="register-info-box">
-			<h2>Don't have an account?</h2>
-			<p>Lorem ipsum dolor sit amet</p>
-			<label id="label-login" for="log-login-show">»∏ø¯∞°¿‘</label>
-			<input type="radio" name="active-log-panel" id="log-login-show">
-		</div>
-							
-		<div class="white-panel">
-			<div class="login-show">
-				<h2>LOGIN</h2>
-				<input type="text" placeholder="æ∆¿Ãµ" id="id">
-				<input type="password" placeholder="∫Òπ–π¯»£" id="pwd">
-				<input type="button" value="∑Œ±◊¿Œ" id="loginBtn">
-				<a href="">Forgot password?</a>
-				<div>
-					<div style="float: left" id="naver_id_login"></div>
-					<div style="float: left;width: 50px;height: 50px"><img src="../image/google_login.png"></div>
-					<div style="float: right"><img src="../image/kakao_login2.png"></div>
-				</div>
-			</div>
-			<div class="register-show">
-				<input type="button" value="»∏ø¯∞°¿‘«œ∑Ø∞°±‚" id="account">
-				<hr>
-				<h3>º“º»πÃµæÓ∑Œ »∏ø¯∞°¿‘</h3>
-				<button type="button" id="googleSignup">±∏±€∑Œ Ω√¿€«œ±‚</button>
-				<button type="button" id="naverSignup">≥◊¿Ãπˆ∑Œ Ω√¿€«œ±‚</button>
-				<button type="button" id="kakaoSignup">ƒ´ƒ´ø¿∑Œ Ω√¿€«œ±‚</button>
-			</div>
-		</div>
-	</div>
-	</div>
-		 -->
-	<div class="login-form">		
-			<div class="form-bg">
-		    	<div class="container">
-		        <div class="row">
-		            <div class="col-lg-offset-2 col-md-offset-2 col-md-8">
-		                <div class="form-container">
-		                    <div class="form-icon">
-		                        <i class="fa fa-user-circle"></i>
-		                        <span class="signup"><a href="signupSelect.html">»∏ø¯∞°¿‘</a></span>
-		                    </div>
-		                    <form class="form-horizontal">
-		                        <h3 class="title">Member Login</h3>
-		                        <div class="form-group">
-		                            <span class="input-icon"><i class="fa fa-envelope"></i></span>
-		                            <input class="form-control" type="text" placeholder="æ∆¿Ãµ" id="id">
-		                        </div>
-		                        <div class="form-group">
-		                            <span class="input-icon"><i class="fa fa-lock"></i></span>
-		                            <input class="form-control" type="password" placeholder="∫Òπ–π¯»£" id="pwd">
-		                        </div>
-		                        <button class="btn signin" id="loginBtn">Login</button>
-		                        <div style="float: left" id="naver_id_login"></div>
-		                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-		                        <span class="forgot-pass" onclick="kakaoLogin()">ƒ´ƒ´ø¿ ∑Œ±◊¿Œ</span>
-		                    </form>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	</div>
+			
+			<!-- Ïä§ÌÅ¨Î¶ΩÌä∏ ÏãúÏûë -->
+			<script type="text/javascript">
+			
+			var id = urlParams.loginId;
+			
+			$.ajax({
+				
+				url:"http://localhost:3000/ExpertMyDetail",
+				type:'post',
+				data:{'id':id},
+				success: function(Detail) {
+					
+					var ExpertName = Detail.regisName;
+					var ExpertText = Detail.expertInfo;
+					
+					
+					//alert("seccess"+ ExpertName);
+					//ÏóÖÏ≤¥ Ïù¥Î¶Ñ
+					$("#ExpertName").append(ExpertName);
+					
+					//ÏóÖÏ≤¥ ÌïúÏ§ÑÏÜåÍ≤å
+					$("#ExpertText").append(ExpertText);
+					
+					//ÏóÖÏ≤¥ ÎåÄÌëúÏÇ¨ÏßÑ, ÏÑ∏Î∂Ä ÏÇ¨ÏßÑ
+					
+					var MainImageURL = "http://localhost:3000/exper/" + Detail.image;
+					var image1 = "http://localhost:3000/exper/" + Detail.imageDetail1;
+					var image2 = "http://localhost:3000/exper/" + Detail.imageDetail2;
+					var image3 = "http://localhost:3000/exper/" + Detail.imageDetail3;
+					
+					
+					$(".MainImage").attr("src", MainImageURL);
+					$(".image1").attr("src", image1);
+					$(".image2").attr("src", image2);
+					$(".image3").attr("src", image3);
+					
+					//ÏóÖÏ≤¥Ïó∞ÎùΩÏ≤ò, Ï£ºÏÜå, ÎåÄÌëú Ïù¥Î¶Ñ
+					var phone = Detail.phone;
+					var address = Detail.regAddress;
+					var ceo = Detail.ceoName;
+					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>Ïó∞ÎùΩÏ≤ò </b>"+ phone +"</span><br>");
+					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>ÎåÄÌëúÏûêÎ™Ö </b>"+ ceo +"</span><br>");
+					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>Ï£ºÏÜå </b>"+ address +"</span><br>");
+					
+					
+					
+					//ÏµúÍ∑ºÍ≥ÑÏïΩ
+					var recentCon = Detail.recentCon;
+					$("#numberExpert").append( "ÏµúÍ∑ºÍ≥ÑÏïΩ " + recentCon);
+					
+					
+					//ÏãúÍ≥µÎ∂ÑÏïº
+					var part;
+					
+					//alert("Detail.part" + Detail.part);
+					if(Detail.part == 1){
+						part = "Ï¢ÖÌï©Ïù∏ÌÖåÎ¶¨Ïñ¥"
+					}else if(Detail.part == 2){
+						part = "ÎèÑÎ∞∞, ÌÉÄÏùº"
+					}
+					$(".Whatpart").append(part);
+					
+					
+					//Ï±ÑÌåÖ Î≤ÑÌäº
+					
+
+					$(".chatAppend").append("<button type='button' onclick='goExpertChat(" + Detail.eNUM + ")' class='btn btn-default btny ' style='width:100%;margin-bottom:10px'>Ïã§ÏãúÍ∞Ñ ÏÉÅÎã¥ Ïù¥Î†•ÌôïÏù∏</button>");
+						
+					
+					
+					
+				
+				},
+				error: function() {
+					alert("error");
+				}
+				
+				
+			});
+			
+			</script>
+			
+			<!-- PRODUCT-AREA END -->
 			<!-- FOOTER START -->
 			<footer>
 				<!-- Footer-area start -->
@@ -872,229 +870,5 @@
 		<script src="../js/plugins.js"></script>
 		<!-- main js -->
 		<script src="../js/main.js"></script>
-		
-		
-		<script type="text/javascript">
-		
-		var name;
-		var email;
-		var id;
-		
-		
-		<!-- naver login º≥¡§ -->
-		var naver_id_login = new naver_id_login("E2G2Ono7tLJwqb3bgB4S", "http://localhost:8090/FinalProject/member/callback.html");
-	  	var state = naver_id_login.getUniqState();
-	  	naver_id_login.setButton("green", 2, 40);
-	  	naver_id_login.setState(state);
-	//  naver_id_login.setPopup();
-	  	naver_id_login.init_naver_id_login();
-
-	  	
-	  	
-		$(document).ready(function() {
-			
-			 $('.login-info-box').fadeOut();
-			 $('.login-show').addClass('show-log-panel');
-			
-
-			$('.login-reg-panel input[type="radio"]').on('change', function() {
-			    if($('#log-login-show').is(':checked')) {
-			        $('.register-info-box').fadeOut(); 
-			        $('.login-info-box').fadeIn();
-			        
-			        $('.white-panel').addClass('right-log');
-			        $('.register-show').addClass('show-log-panel');
-			        $('.login-show').removeClass('show-log-panel');
-			        
-			    }
-			    else if($('#log-reg-show').is(':checked')) {
-			        $('.register-info-box').fadeIn();
-			        $('.login-info-box').fadeOut();
-			        
-			        $('.white-panel').removeClass('right-log');
-			        
-			        $('.login-show').addClass('show-log-panel');
-			        $('.register-show').removeClass('show-log-panel');
-			    }
-			
-			});
-			
-		
-		});	
-		
-		
-		
-		$('#loginBtn').click(function() {	
-			//var a = $('#id').val();
-			//var b = $('#pwd').val();
-			//alert(a);
-			//alert(b);
-			
-			$.ajax({
-				url:"http://localhost:3000/login",
-				type:'post',
-				data:{ id:$('#id').val(), pwd:$('#pwd').val() },
-				success:function(data){				
-				//	alert('success');				
-					if(data == ''){
-						alert('∑Œ±◊¿Œø° Ω«∆–«œø¥Ω¿¥œ¥Ÿ. ∫Òπ–π¯»£∏¶ »Æ¿Œ«œººø‰.');
-					}else{
-					//	alert('login success');
-						
-						sessionStorage.setItem("login", JSON.stringify(data));
-						
-						location.href = "mypage.html";
-					}
-				},
-				error:function(){
-					alert('error');
-				}
-				
-			});
-			
-		});
-		
-
-		function onSignIn(googleUser) {
-			
-			 var profile = googleUser.getBasicProfile();
-			 
-		     console.log('Full Name: ' + profile.getName());
-		     console.log("Email: " + profile.getEmail());
-		     // The ID token you need to pass to your backend:
-		     var id_token = googleUser.getAuthResponse().id_token;
-		     console.log("ID Token: " + id_token);
-		     
-		     name =  profile.getName();
-		     email =  profile.getEmail();
-		     id = id_token.substring(0,10);
-		     
-		//     snsCheck();
-		     
-		}
-		
-		
-		window.Kakao.init("897927412ae0bc3c7301cb71197b51ba");
-
-		function kakaoLogin() {
-			window.Kakao.Auth.login({
-				scope:'profile, account_email',
-				success: function(authObj) {
-					console.log(authObj);
-					window.Kakao.API.request({
-					 url: '/v2/user/me',
-					    success: function(response) {
-					        console.log(response);
-					        console.log(response.id);
-					        console.log(response.kakao_account['email']);
-		                    console.log(response.properties['nickname']);
-		                    
-		                    
-		                    id = response.id;
-		                    name = response.properties['nickname'];
-		                    email = response.kakao_account['email'];
-		                    
-		                    snsCheck();
-					    },
-					    fail: function(error) {
-					        console.log(error);
-					    }
-					});
-				}
-			});
-		}
-		
-		
-		function snsCheck() {
-			
-			 
-		     $.ajax({
-	  	  
-				url:"http://localhost:3000/snsCheck",
-				type:"post",
-				data:{ "email":email },
-				success:function( data ){
-				//	alert(data);
-	
-					if(data.trim()=="YES"){ // ¿Ã∏ﬁ¿œ ¡∏¿Á«œ¡ˆ æ ¿Ω
-						// ∞°¿‘
-						alert("yes");
-						snsSignup();
-					}else{  // ¿Ã∏ﬁ¿œ ¡∏¿Á
-						// ∑Œ±◊¿Œ
-						alert('no');
-						login();
-					}			
-				},
-				error:function(){
-					alert("error");
-				}
-			});
-			
-		}
-		
-		
-		function snsSignup(){
-
-			$.ajax({
-				url:"http://localhost:3000/snsSignup",
-				type:"post",
-				data:{ "email":email, name:name, nickname:name, id:id, pwd:id,
-						address:"¿‘∑¬«ÿ¡÷ººø‰", phone:"¿‘∑¬«ÿ ¡÷ººø‰", bdate: "¿‘∑¬«ÿ¡÷ººø‰"},
-				success:function( data ){
-					
-					if(data == ''){
-						alert('login fail');
-					}else{
-						alert(JSON.stringify(data));
-						sessionStorage.setItem("login", JSON.stringify(data));
-						window.close();
-						location.href = "mypage.html";
-
-						/* opener.location.href='member/mypage.html'; 
-						window.close(); */
-				
-					}
-				},
-
-				error:function(){
-					alert("error");
-				}
-			});
-		}
-
-		 
-
-		function login(){
-
-			alert(id);
-			$.ajax({
-				url:"http://localhost:3000/login",
-				type:"post",
-				data:{ id:id, pwd:id},
-				success:function( data ){
-					if(data == ''){
-						alert('login fail');
-					}else{
-						alert(JSON.stringify(data));
-						sessionStorage.setItem("login", JSON.stringify(data));
-
-						location.href = "mypage.html";
-
-					//	location.href='member/mypage.html'; 
-					//	window.close();
-					}
-				},
-				error:function(){
-					alert("error");
-				}
-			});
-
-		}
-		
-		
-		</script>
-
-		
 	</body>
 </html>
