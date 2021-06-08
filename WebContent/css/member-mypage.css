@@ -396,4 +396,7 @@ a:hover,a:focus{
 
 .profile__modal__content-heading{
 	margin-bottom: 50px;
+	color: black;
+    font-weight: 900;
+	font-size: 24px;
 }
