@@ -744,7 +744,7 @@ button:focus {
 											    <div class="padding" style="padding: 0px">
 											        <div class="row container d-flex justify-content-center"  >
 											            <div class="col-lg-9 grid-margin stretch-card" style="padding-left: 10px">
-											                <div class="card" style="width: 500px; margin-bottom: 10px;margin-top: 20px">
+											                <div class="card" style="width: 500px; margin-bottom: 10px;margin-top: 20px;padding-left: 40px; padding-right: 40px">
 											                    <div class="card-body">
 											                       
 											                        <div class="table-responsive">
@@ -877,17 +877,23 @@ button:focus {
 	
 		 <div class="row justify-content-center"  style="margin-left: 22px; width:800px;margin-top: 200px">
 								        <div class="col-lg-12" style="width: 400px">
-								            <div class="card" style="border: 1.5px solid #5d5a55; padding-left: 30px">
+								            <div class="card" style="border: 1.5px solid #5d5a55; padding-left: 10px">
 								                <div class="row">
 								                    
 								                    <div class="col-lg-6">
 								                        <div class="row px-2">
-								                            <div class="form-group col-md-12" style="margin-bottom: 0px;width:600px"> 
+								                            <div class="form-group col-md-12" style="margin-bottom: 0px;width:600px; padding-left: 30px"> 
 								                            	 <label class="form-control-label" style="margin-bottom: 14px;">주문 정보</label> 
-								                            	 <div id="MyPoint"></div>
+								                            	<div class="bill_content">
+																	<div style="overflow:scroll; width:310px; height:230px; margin-top: 20px;padding-left: 10px">
+																		<div class="row" style="margin-top: 20px;" id="orderedList">
+																			
+																		</div>
+																	</div>
+																</div>
 								                          		 <div class="row px-2"><div class="col-lg-9" id="rightPic"></div></div>
 								                          		 <div class="row px-2">	<div class="col-lg-6" style="margin: 2.5rem 0 0;margin-bottom: 1.25rem"><strong>주문 내역</strong></div></div>
-								                          		 <div class="row px-2">	<div class="col-lg-6" style="margin-bottom: 1.25rem"><div class="row"><div class="col-lg-6">전체 가격 </div><div class="col-lg-6" id="rightPrice" style="text-align: right;">sssss</div></div></div></div></div>
+								                          		 <div class="row px-2">	<div class="col-lg-6" style="margin-bottom: 1.25rem"><div class="row"><div class="col-lg-8">전체 가격 </div><div class="col-lg-4" id="rightPrice" style="text-align: right;"></div></div></div></div></div>
 								                          		    		 
 								                          		 
 								                            </div>
@@ -897,7 +903,7 @@ button:focus {
 								                    </div>
 								                    <div class="col-lg-4 mt-2">
 								                       
-								                        <div class="row d-flex justify-content-between px-4" id="tax" style="margin-top: 0px;width:300px">
+								                        <div class="row d-flex justify-content-between px-4" id="tax" style="margin-top: 0px;width:300px;margin-left: -0;">
 								                            <div class="mb-1 text-left"><strong>Total</strong></div>
 								                            <h6 class="mb-1 text-right" id="rightTotalPrice"></h6>
 								                        </div> 
@@ -1088,6 +1094,7 @@ $( document ).ready(function() {
 let prodNum = urlParams.prodNum;
 let color = urlParams.color;
 let quantity = urlParams.quantity;
+let oriPrice = urlParams.oriPrice;
 let price = urlParams.price;
 let filename = urlParams.filename;
 let prodName = urlParams.prodName;
@@ -1100,6 +1107,8 @@ $("#memAddress").html(login.address);
 $("#MyPoint").html("보유 포인트 : "+login.memPoint+"점");
 let OrderedProdNum=0;		//주문한 제품의 prodNum
 let OrderedProdCount=0;
+
+
 //1.param이 null이라면 -> 장바구니에서 넘어온거 
 if(prodNum==null){
 	//alert('장바구니에서 넘어옴');
@@ -1115,17 +1124,26 @@ if(prodNum==null){
 	 		let weightCart=0;
 	 		let deliveryCost=0;
 	 		let quantityCart=0;	//총 갯수
+	 		let pPrice=0;
 			$.each(list, function (i, item) {
 				//prodNum저장
 				$(".OrderedProdNum").append(' <input type="hidden" id="OrderedProdNum'+i+'" value="'+item.prodNum+'">');
 				//주문한 prodNum의 갯수
 				OrderedProdCount+=1;
-				$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
-				$("#rightPic").append('<img class="pay" src="../productPic/'+item.filename+'" style="height:85px;width: 85px">');
+				$("#productList").append(' <tr><td><img class="pay" src="../image/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
+				//7$("#rightPic").append('<img class="pay" src="../image/'+item.filename+'" style="height:85px;width: 85px">');
 				OrderPrice += parseInt(item.price);   
 				weightCart += parseInt(item.weight);  
 				quantityCart+= parseInt(item.quantity);
 				//let totalPrice += parseInt(item.price) * parseInt(item.quantity);
+
+				let s = '<div class="row"><div class="col-lg-4"><img src="../image/'+item.filename+'" style="height:70px;width: 70px"></div>';
+				s+='<div class="col-lg-8">'
+					+'<div ><h5><strong>'+item.prodName+'</strong> ('+item.prodNum+') </h5></div>'
+					+'<div><p>ㄴ<strong>[선택]</strong>&nbsp&nbsp'+item.color+' / '+item.weight+'kg / ( '+item.quantity+'개 )</p></div>'
+					+'<div>'+item.price+'원</div></div></div>';
+				pPrice += item.price;
+				$("#orderedList").append(s);
 				
 			});	
 			$("#productList").append('<tr><td></td><td colspan="2" style="background-color:#F5F5F5;"><h4><strong>전체 상품 가격</strong></h4><br><br></td><td style="background-color:#F5F5F5;"><br><br><h4>₩'+OrderPrice+'</h4></td><td></td></tr>')
@@ -1155,7 +1173,7 @@ if(prodNum==null){
 			$("#totalPrice").html(totalPrice);
 			$("#rightTotalPrice").html(totalPrice);
 			$("#quantityOrder").val(quantityCart);
-			
+			$("#rightPrice").html(OrderPrice);
 		},
 		error:function(){
 			alert('error');
@@ -1166,10 +1184,18 @@ if(prodNum==null){
 
 //2.param 있음 -> 상품 디테일에서 바로 구매한 것 
 else{
-	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+price+'원</div></td></tr>');
-	let OrderPrice = price*quantity;
-	$("#rightPic").append('<img class="pay" src="../productPic/'+filename+'" style="height:85px;width: 85px">');
-	
+	let Hprice=0;
+	if(price==null){
+		//세일하지 않는 상품
+		Hprice=oriPrice;
+	}
+	else{
+		//세일하는 상품
+		Hprice = price;
+	}
+	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
+	let OrderPrice = Hprice*quantity;
+
 	$("#orderPrice").html(OrderPrice);
 	$(".OrderedProdNum").append(' <input type="hidden" id="OrderedProdNum0" value="'+prodNum+'">');
 	OrderedProdCount=1;
@@ -1197,6 +1223,16 @@ else{
 	$("#deliveryPay").html(deliveryCost);
 	$("#totalPrice").html(totalPrice);
 	$("#rightTotalPrice").html(totalPrice);
+
+	let s = '<div class="row"><div class="col-lg-4" ><img src="../productPic/'+filename+'" style="height:70px;width: 70px"></div>';
+	s+='<div class="col-lg-8">'
+		+'<div id="itemName"><h5><strong>'+prodName+'</strong> ('+prodNum+') </h5></div>'
+		+'<div id="itemDetailInfo"><p>ㄴ<strong>[선택]</strong>&nbsp&nbsp'+color+' / '+weight+'kg / ( '+quantity+'개 )</p></div>'
+		+'<div id="priceInfo">'+Hprice+'원</div></div></div><br>';
+		let pPrice=0;
+	pPrice += price;
+	$("#orderedList").append(s);
+	$("#rightPrice").html(OrderPrice);
 }
 
 
