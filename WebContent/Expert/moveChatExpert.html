@@ -48,142 +48,26 @@
         <link rel="stylesheet" href="../css/shortcode.css">
 		<!-- responsive css -->
 		<link rel="stylesheet" href="../css/responsive.css">
-		
-		<style type="text/css">
-/* 		body {
-    color: #616161;
-    overflow-x: hidden;
-    height: 100%;
-    background-color: #ECEFF1;
-    background-repeat: no-repeat
-} */
-@media screen and (max-width: 765px) and (min-width: 300px){
-
-.table-container{
-	 width:100%;	
-	 overflow-x:auto;
-     white-space: nowrap;
-	}
-   
- table{
-    width:auto;
- } 
- 
- 
- .mo_appear{
-  width:auto;
- }
- 
- .row_me{
-   width:auto;
- }
- 
- 
- }
+		<link rel="stylesheet" href="../css/chatExpert.css">
 		
 		
-		
-		
-.cart-page-menu li.active a {
-    background: #ffdc16 none repeat scroll 0 0;
-    color:  #6f6f6a;
-}
-
-
-.box{
-    width: 55px;
-    height: 55px; 
-    border-radius: 70%;
-    overflow: hidden;
- 
- /*   border: 3px solid;  */ /* #185adb */
-
-}
-
- img.static { 
-        /* position: static; */
-        border: "1";
-        width: 58px;
-    	height: 58px; 
-      }
-      
-      
-ul.catee {
-    list-style:none;
-}
- 
-li.cate {
-    float: left;
-    width: 80px
-}      
-      
-.categories-group .btn-category {
-    padding: 4px 20px;
-    border-radius: 100px;
-    border: 1px solid white;
-    margin-bottom: 8px;
-    background-color: #6f6f6a;
-    color:white;
-   
-}
-
-.col-lg-3 col-md-4 col-sm-4 col-xs-12{
-	float:left;
-}
-
-
-.breadcumbs li::after {
-    color: #6f6f6a;
-    content: "/";
-    left: -22px;
-    position: absolute;
-    top: 0;
-}
-
-
-.widget-search{
-
-width:500px;
-height:60px; 
-float: right; 
-background-color:#ffdc16; 
-padding-top:5px
-
-}
-
-.km{
-padding-top: 10px;
-
-}
-
-
-.fontsize{
-	font-size: 20px;
-	color: #5d53ef;
-	
-}
-
-
-.MainImageSize{
- width: 263px;
- height: 175px;
-
-}
-		</style> 
 <style>
     .map_wrap {position:relative;width:100%;height:350px;}
     .title {font-weight:bold;display:block;}
     .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
     #centerAddr {display:block;margin-top:2px;font-weight: normal;}
     .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+    
+		#yourMsg{
+			display: none;
+		}
 </style>
 	<!-- delivery service -->
-		
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	 -->
 	
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
+	 
 	 
 	
 	<!-- <script src="../js/admin_page.js"></script>  -->
@@ -192,8 +76,16 @@ padding-top: 10px;
 		
 		<!-- modernizr css -->
 		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d37d0c601b91ed657160c03ac7faf573&libraries=services"></script>
-		
+	
+		<script type="text/javascript">
+	let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+	    return paramPair.split(/=(.+)?/).slice(0, 2);
+	}).reduce(function(obj, pairArray) {
+	    obj[pairArray[0]] = pairArray[1];
+	    return obj;
+	}, {});
+	
+	</script>
 	</head>
 	<body>	
 		<!-- WRAPPER START -->
@@ -205,7 +97,7 @@ padding-top: 10px;
 			<header id="sticky-menu" class="header header-2">
 				<div class="header-area">
 					<div class="container-fluid">
-						<div class="row">
+						<div class="table-content table-responsive">
 							<div class="col-sm-4 col-sm-offset-4 col-xs-7">
 								<div class="logo text-center">
 									<a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
@@ -439,12 +331,12 @@ padding-top: 10px;
 						<!-- <div class="col-md-12"> -->
 							<div class="heading-banner">
 								<div class="heading-banner-title">
-									<h2 style="padding-top: 70px;padding-bottom: 50px; color: #5d5a55 ">Interior &nbsp;&nbsp; Service</h2>
+									<h2 style="padding-top: 70px;padding-bottom: 50px; color: #5d5a55 ">1대1상담 &nbsp;&nbsp;</h2>
 								</div>
 								<div class="breadcumbs pb-15" style="color:#5d5a55">
 									<ul>
 										<li><a href="index.html" style="color:#5d5a55">Home</a></li>
-										<li style="color:#5d5a55">시공업체찾기/간편상담</li>
+										<li style="color:#5d5a55">1대1상담</li>
 									</ul>
 								</div>
 							</div>
@@ -459,18 +351,7 @@ padding-top: 10px;
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="shopping-cart">
-								<!-- Nav tabs -->
-								<div align="center">
-								<!-- <ul style="display: table; margin: auto; padding:0;"> -->
-								<ul  class="cart-page-menu row clearfix mb-30"  style="margin:0 auto;  text-align: center; padding: 0" > 
-									
-									<li class="active" style="display: inline-block;"><a href="#shopping-cart" data-toggle="tab" style=" font-size: 20px">시공업체 찾기</a></li>
-									<!-- background: #185adb ; -->
-									<li  style="display: inline-block;"><a href="#mydelivery" data-toggle="tab" style="font-size: 20px">간편상담</a></li>
-									
-									
-								</ul>
-								</div>
+								
 								
 
 								<!-- Tab panes -->
@@ -479,168 +360,165 @@ padding-top: 10px;
 									<div class="tab-pane active" id="shopping-cart">
 										<form action="#">
 											
-		<div class="product-area pt-80 pb-80 product-style-2" style="    padding-top: 0px;">
+		<div class="product-area pt-80 pb-80 product-style-2" style="padding-top: 0px;">
 				<div class="container">
 					<!-- Shop-Content End -->
 					<div class="shop-content">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="product-option mb-30 clearfix mo_appear"  style="height: 135px;padding-top: 15px;"  align="center">
-									<div class="row">
-									<div class="col-md-6">
-									<!-- 카테고리 -->
-									<ul class="catee" >
+						
+							
+								<div class="product-option mb-30 clearfix mo_appear"  style="height:600px; padding-top: 15px;"  align="center">
 									
-									<!-- 종합리모델링 -->
+									<script type="text/javascript">
 									
-									<li class="cate" style="width: 80px">
+									var login = JSON.parse(sessionStorage.getItem("login"));
+									var id = login.id;
+									//alert(id);
 									
-									<div class="box" onclick="partcheck(1)">
-									<img alt="" src="../deli-image/종합.jpg" class="static" style="width: 58px" >
+									$(document).ready(function(){
+									$(".appendId").val(id);
+									});
 									
-									</div>
+									var ws;
+										var roomNumber = urlParams.roomNumber;
+										var eNUM = urlParams.eNUM;
+									
+										//alert(roomNumber);
+										//alert(eNUM);
+										
+										function wsOpen(){
+											//웹소켓 전송시 현재 방의 번호를 넘겨서 보낸다.
+											
+											
+											ws = new WebSocket("ws://localhost:3000/chating/"+ eNUM + "/"+ roomNumber);
+											wsEvt();
+										}
+											
+										function wsEvt() {
+											ws.onopen = function(data){
+												//소켓이 열리면 동작
+											}
+											
+											ws.onmessage = function(data) {
+												
+												
+												
+												
+												//메시지를 받으면 동작
+												var msg = data.data;
+												if(msg != null && msg.trim() != ''){
+													var d = JSON.parse(msg);
+													if(d.type == "getId"){
+														var si = d.sessionId != null ? d.sessionId : "";
+														if(si != ''){
+															$("#sessionId").val(si); 
+														}
+													}else if(d.type == "message"){
+														if(d.sessionId == $("#sessionId").val()){
+															$("#chating").append("<div class='direct-chat-msg right'><div class='direct-chat-info clearfix'><span class='direct-chat-name pull-right'>" + id +"</span></div> <div class='direct-chat-text'>" + d.msg + "</div></div>");	
+														}else{
+															$("#chating").append("<div class='direct-chat-msg'><div class='direct-chat-info clearfix'><span class='direct-chat-name pull-left'>" + d.userName + "</span><div><div class='direct-chat-text'>" + d.msg + "</div></div>");
+														}
+															
+													}else{
+														console.warn("unknown type!")
+													}
+												}
+											}
+									
+											document.addEventListener("keypress", function(e){
+												if(e.keyCode == 13){ //enter press
+													send();
+												}
+											});
+										}
+									
+										function chatName(){
+											var userName = $("#userName").val();
+											if(userName == null || userName.trim() == ""){
+												alert("사용자 이름을 입력해주세요.");
+												$("#userName").focus();
+											}else{
+												wsOpen();
+												$("#yourName").hide();
+												$("#yourMsg").show();
+											}
+										}
+									
+										function send() {
+											var option ={
+												type: "message",
+												eNUM: eNUM,
+												roomNumber: roomNumber,
+												sessionId : $("#sessionId").val(),
+												userName : id,
+												msg : $("#chatting").val()
+											}
+											ws.send(JSON.stringify(option))
+											$('#chatting').val("");
+										}
+</script>
+
+
+		
+		<input type="hidden" id="sessionId" value="">
+		<!-- <input type="hidden" id="roomNumber" value="${roomNumber}"> -->
+
+		
+		
+		
+		<div class="page-content page-container" id="page-content">
+    <div class="padding">
+      
+            
+                <div class="box box-warning direct-chat direct-chat-warning" style="width: 600px">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Chat Messages</h3>
+                        <div class="box-tools pull-right"> <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">시공업체와 대화해보세요~!</span> <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i> </button> <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts"> <i class="fa fa-comments"></i></button> <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i> </button> </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="direct-chat-messages">
+                        <!--append로 메세지 추가  -->
+                           <div id="chating" >
+							</div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                      <div class="input-group">
+                       <div id="yourName">
+						<table class="inputTable">
+							<tr>
+								<th>사용자명</th>
+								<th><input type="text" name="userName" id="userName" class="appendId"></th>
 								
-									<p>종합리모델링</p>
-									</li>
-									
-									<!-- 타일 -->
-									<li  class="cate" style="float: left">
-									<div class="box" onclick="partcheck(2)">
-									<img alt="" src="../deli-image/타일.jpg" onclick="" class="static">
-									
-									</div>
-									<p>타일</p>
-									</li>
-									
-									<!-- 도배 -->
-									<li  class="cate" style="float: left">
-									<div class="box" onclick="partcheck(2)">
-									<img alt="" src="../deli-image/도배.jpg" onclick="" class="static">
-									
-									</div>
-									<p>도배</p>
-									</li>
-									
-									
-									<!-- 도배 -->
-									<li  class="cate" style="float: left">
-									<div class="box" onclick="partcheck(1)">
-									<img alt="" src="../deli-image/페인트.jpg" onclick="" class="static">
-									
-									</div>
-									<p>페인트</p>
-									</li>
-									
-									
-									<!-- 주방 -->
-									<li  class="cate" style="float: left">
-									<div class="box" onclick="partcheck(1)">
-									<img alt="" src="../deli-image/주방.jpg" onclick="" class="static">
-									
-									</div>
-									<p>주방</p>
-									</li>
-									
-									
-									<!-- 바닥재 -->
-									<li  class="cate" style="float: left">
-									<div class="box" onclick="partcheck(1)">
-									<img alt="" src="../deli-image/바닥.jpg" onclick=""  class="static">
-									
-									</div>
-									<p>바닥재</p>
-									</li>
-									
-									
-									
-								
-									
-									</ul><!-- 리스트끝 -->
-									</div>
-									
-									<!--start  -->
-										<div class="col-md-6 row_me">
-													<h5 style="text-align: left;padding-left: 25px">원하는 정보를 검색하세요!</h5>
-													 <div class="widget widget-search">
-			                                  				
-																
-																<select class="_choice" name="choice" style="width:200px; height:40px">
-																	<option value="" selected="selected">업체 정보 검색</option>
-																	<option value="regisname">업체 이름</option>
-																	<option value="address">업체 주소지</option>
-																
-																</select><!--  -->
-																
-																
-																
-													
-															
-																
-															
-																<input type="text" class="_searchWord" name="searchWord"  placeholder="검색어를 입력해주세요." style="width:200px; height: 40px">
-																
-																
-														
-																
-																	<button data-text="Subscribe" type="button" id="btnSearch"><i class="zmdi zmdi-search" ></i></button>
-																
-																 </div> 
-																<br>
-															
-									 </div>
-									 </div>
-									
+								<th><button type="button"  onclick="chatName()" id="startBtn" class="btn btn-warning btn-flat">이름 등록</button></th>
+							</tr>
+						</table>
+					</div>
+					<div id="yourMsg">
+						<table class="inputTable">
+							<tr>
+								<th>메시지</th>
+								<th><input id="chatting" placeholder="보내실 메시지를 입력하세요."></th>
+								<th><button type="button" onclick="send()" id="sendBtn" class="btn btn-warning btn-flat">보내기</button></th>
+							</tr>
+						</table>
+					</div>
+					</div>
+                    </div>
+                </div>
+            
+       
+    </div>
+</div>
+		
+	
 								</div>						
-							</div>	
-							<div class="col-md-12">
-							
-							<div class="categories-group" align="right" style="margin-bottom: 10px;">
-							
-							<img alt="" src="../deli-image/ping.png"  style="float:left; width: 35px">
-							  <span style="float:left; font-weight: 900; font-size: 20px; padding-top: 7px; color: #7067f1" id="centerAddr1"></span>
-							
-							  
-							 
-						
-							
-						      <!--   <a href="categorized_index.html" class="btn btn-category">차량</a> -->
-						      <a href="#"  onclick="filterList4()" class="btn btn-category filterList4" style="margin-right: 10px;">내 주변 업체</a>
-						        <a href="#"  onclick="filterList1()" class="btn btn-category filterList1" style="margin-right: 10px;">시공 계약순</a>
-						        <a href="#"  onclick="filterList2()" class="btn btn-category filterList2" style="margin-right: 10px;">최신 등록순</a>
-						        <a href="#" onclick="filterList3()" class="btn btn-category filterList3" style="margin-right: 10px;">업체 이름순</a>
-						        <!-- <a href="#" class="btn btn-category filterList4">생활/가공식품</a> -->
-						    </div>
-								<div class="row">
-								<!-- append 시작 --> 
-									<div class="apppendData">
-									
-									</div>
 								
-									<!-- Single-product end -->
-								</div>
-								
-								
-								 <div class="map_wrap" style="height: 0px">
-							    <div  id="map" style="width:100%;height:100%;position:relative;overflow:hidden;display:none;"></div>
-							    <div class="hAddr" style="display:none">
-							        <span class="title">지도중심기준 행정동 주소정보</span>
-							        <span id="centerAddr"></span>
-							    </div>
-							</div>  
-							</div>
 							
-								 
-							<div class="col-md-12">
-								<!-- Pagination start -->
-								<div class="shop-pagination  text-center" id="makepagination">
-									
-									
-								</div>
-								<!-- Pagination end -->
-							</div>
+							
 							
 						
-						</div>
+						
 					</div>
 					<!-- Shop-Content End -->
 				</div>
@@ -648,274 +526,7 @@ padding-top: 10px;
 					<!-- 리스트 끝 -->			
 										</form>		
 										
-				<script type="text/javascript">
-				
-				$(document).ready(function() {
-					ExperPage(0, " ");
-					pagination2();
-					//var data = $(".filterList").val();
-					//alert(data);
-					
-				});
-				
-				$("#btnSearch").click(function(){
-					ExperPage(0, " ");
-					pagination2(" ");
-				});
-				
-				
-				function partcheck(part){
-					ExperPage(0, " ", " " ," ", part);
-					pagination2(" ", " " ," ", part);
-				}
-				
-				
-				
-				function filterList1(){
-					
-					//가장 계약이 많은 순
-					ExperPage(0, "recent");
-					pagination2("recent");
-				}
-				
-				function filterList2(){
-					
-					//최신등록순
-					ExperPage(0, " ");
-					pagination2("recent");
-				}
-				
-
-				function filterList3(){
-					
-					//이름순
-					ExperPage(0, "korasc");
-					pagination2("korasc");
-				}
-				
-				
-				function filterList4(){
-					
-					var location = $("#centerAddr1").html();
-					
-					const arr = location.split(" ");
-					var loc = arr[1];
-					
-					//$("._choice").val("address");
-					//$("._searchWord").val(loc);
-					
-					//alert(location);
-					//alert(loc);
-					
-					//내주변업체
-					ExperPage(0, " ", loc ,"current");
-					pagination2(" ", loc ,"current");
-				}
-				
-				var thisDis;
-				
-				function ExperPage(pNumber, filterdata, loc, locI, partc){
-					
-					$.ajax({
-						url:"http://localhost:3000/allExperList",
-						type:"post",
-						data:{ page:pNumber,
-							choice:$("._choice").val(), 
-							search:$("._searchWord").val() ,
-							part:partc,	
-							filter: filterdata,
-							locationI: locI,
-							location: loc
-				
-							
-						
-						},
-						success:function(allExperList){
-							
-							//alert("success");
-							
-							 $(".list_data").remove();
-							 if(allExperList == " "){
-									var app = "<div class='list_data'>";
-									app += "<td>등록된 업체가 없습니다.</td>";
-									app += "</div>";
-									
-									$(".apppendData").append(app);	
-									
-								}else{
-
-									//현재위치와 거리계산
-									function getDistanceFromLatLonInKm(lat1,lng1,lat2,lng2) {
-										function deg2rad(deg) {
-											return deg * (Math.PI/180) }
-										
-										var R = 6371; // Radius of the earth in km
-										var dLat = deg2rad(lat2-lat1); // deg2rad below
-										var dLon = deg2rad(lng2-lng1);
-										var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon/2) * Math.sin(dLon/2);
-										var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-										var d = R * c; // Distance in km
-										return d; 
-										}
-									
-									
-									$.each(allExperList, function(i, val){
-										//주소를 배열에 넣어 지역,구,동까지 출력하기위해 처리
-										const addressTotal = val.regAddress;
-
-										const arr = addressTotal.split(" ");
-										
-										var address1 =  arr[0];									
-										var address2 =  arr[1];
-										var address3 =  arr[2];
-										
-									
-										navigator.geolocation.getCurrentPosition(function(pos) {
-										var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-												    mapOption = {
-												        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-												        level: 3 // 지도의 확대 레벨
-												    };  
-												
-												// 지도를 생성합니다    
-												var map = new kakao.maps.Map(mapContainer, mapOption); 
-												
-												// 주소-좌표 변환 객체를 생성합니다
-												var geocoder = new kakao.maps.services.Geocoder();
-												
-												// 주소로 좌표를 검색합니다
-												geocoder.addressSearch(addressTotal, function(result, status) {
-												
-												    // 정상적으로 검색이 완료됐으면 
-												     if (status === kakao.maps.services.Status.OK) {
-												
-												        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-														var message = 'latlng: new kakao.maps.LatLng(' + result[0].y + ', ';
-														message += result[0].x + ')';
-														
-														
-														
-														    var latitude = pos.coords.latitude;
-														    var longitude = pos.coords.longitude;
-														    //alert("현재 위치는 : " + latitude + ", "+ longitude);
-														    
-														    
-														    //주소계산---------------------------------------------
-														   thisDis =  getDistanceFromLatLonInKm(latitude, longitude, result[0].y, result[0].x);
-														   var thisDisString = String(thisDis);
-														  
-														   const  DisArr = thisDisString.split(".");
-														   const  DisC = DisArr[0];
-														   //alert(DisC);
-														   
-															//alert("거리계산:" + thisDis);
-															if(DisC == 0 || DisC <= 5){
-																$("#DisMap" + i).append("<br><p class='fontsize'>내주변</p>");
-															}else{
-															
-															
-													       $("#DisMap" + i).append("<br><p class='fontsize'>"+ DisC +"km</p>");
-														
-															}//if disC
-												    } 
-												});    
-																						
-										
-										});
-
-										
-										 var app = "<div class='list_data' >";
-										 app += "<div class='col-lg-3 col-md-4 col-sm-4 col-xs-12' >"
-												+	"<div class='single-product'> "
-												+		"<div class='product-img'>"
-												+			"<a href='ExpertDetail.html?eNUM=" + val.eNUM + "'><img class='MainImageSize' src='http://localhost:3000/exper/" + val.image + "' alt='' /></a>"
-												+		"</div>"
-												+		"<div class='product-info clearfix text-center'>"
-												+			"<div class='fix' style='float:left'>"
-												+				"<h4 class='post-title' align='left' style='color:#043cab; font-weight: 900;'><a href='#'> "+ val.regisName + "</a></h4>"
-												+					"<p style='float:left'>"+ address1 + " " + address2 + " " + address3 +"</p>"
-												+					"<br><p style='float:left'>최근계약 &nbsp;"+ val.recentCon +"</p>"
-												+			"</div>"	
-												+                   "<br><div id='DisMap"+ i +"'  class='km' align='right'></div>"
-												+		"</div>"
-												+	"</div>"
-											+	"</div>"
-											+	"</div>";
-												
-												$(".apppendData").append(app);
-										
-									});
-									
-									
-								}//else
-							 
-						},
-						error:function(){
-							alert("error");
-						}
-						
-						
-					});//ajax
-					
-					
-				}
-				
-				function pagination2(fi,loc, locI, partc ){
-					
-					//alert("pagination()");
-					
-					$.ajax({
-						url:"http://localhost:3000/allExperListCOUNT",
-						type:"post",
-						data:{ 
-							page:0,
-							choice:$("._choice").val(), 
-							search:$("._searchWord").val() ,
-							part:partc,	
-							filter:fi,
-							locationI: locI,
-							location: loc
-							
-							
-							
-						},
-						success:function( pagenum ){
-							//alert("페이지 확인:" + pagenum);
-							
-							//페이지가 아예 없지 않을시에
-							if(pagenum != 0 ){
-								var page = "<div class='pagination' style='margin-top: 50px;'>";
-								page += "<ul>"
-								page += "<li ><a href='#' ><i class='zmdi zmdi-long-arrow-left'></i></a></li>";
-								
-								//페이징 생성
-								for( pageN = 0; pageN < pagenum; pageN++ ){
-									if(pagenum == pageN){
-										page += "<li><a>" + (pageN + 1) +"</a> </li>";
-									}else if(pagenum != pageN){
-										page += "<li><a href='#'  onclick=ExperPage("+ pageN +")> "+ (pageN + 1) + "</a></li>";
-									}
-								}//for end
-								
-								page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right'  onclick=ExperPage("+ pageN +")></i></a></li>";
-								page += "</ul>";
-								page += "</div>";
-								
-								$("#makepagination").html(page);
-							}//if end
-							
-							
-						},
-						error:function(){
-							alert('error');
-						}		
-					});
-				}
-				
-				
-				</script>
-										
-
+			
 
  						
 
@@ -925,96 +536,10 @@ padding-top: 10px;
 									<div class="tab-pane" id="mydelivery">
 										<form action="#">
 											<div class="shop-cart-table">
-											<br>
-   											<h2 align="center" style="font-weight: 700;">나의 배송 목록</h2>
-											<br>
-											<br>
-											<hr>
 											
-											<!--start  -->
-											
-													 <aside class="widget widget-search" style="width:500px">
-			                                   <!--  <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요." size="25px">
-			                                    <button type="button" id="csSearch"><i class="zmdi zmdi-search" ></i></button> 
-			                                --> 
-											
-																<select class="_choice2 custom-select mb-15" name="choice" style="width:200px">
-																	<option value="" selected="selected">주문 정보 검색</option>
-																	<option value="membername2">수령자이름</option>
-																	<option value="address2">수령주소지</option>
-																
-																</select><!--  -->
-																
-																
-																
-															
-															
-															
-															
-																<input type="text" class="_searchWord2" name="searchWord"  placeholder="검색어를 입력해주세요." style="width:200px">
-																
-																
-														
-																
-																	<button data-text="Subscribe" type="button" id="btnSearch2"><i class="zmdi zmdi-search" ></i></button>
-																
-														 </aside> 
-														<!--  -->
-														
-														
-														
-											
-														<script type="text/javascript">
-														$("#btnSearch2").click(function(){
-															Mydelivery(0);
-															pagination2();
-														});
-														
-													
- 														
-														
-														
-														</script>
-											
-											
-											
-												<div class="table-content table-responsive">
-													<table>
-														<thead>
-															<tr>
-																<th class="product-thumbnail">주문번호</th>	
-																<th class="product-stock">수령자이름</th>
-																<th class="product-add-cart">수령자 전화번호</th>
-																<th class="product-remove">수령자 주소</th>
-																<th class="product-remove">주문일자</th>
-																<th class="product-remove">배송상태</th>
-																<th class="product-remove">주문상품확인</th>
-																<th class="product-remove">배송상태변경</th>
-															</tr>
-														</thead>
-														<tbody id = "_list_table2">
-														
-															
-														</tbody>
-													</table>
-													
-													
-													
-													
-													
-												</div>
 											</div>
 										</form>		
-										
-										<div class="col-md-12">
-														<div class="shop-pagination  text-center" id="makepagination2" >
-																
-																	
-														</div>
-														
-									
-														</div>	 
-										
+								
 					
 									</div>
 									
@@ -1317,99 +842,7 @@ padding-top: 10px;
 		
 		<!--kakao map  -->
 		
-		<script type="text/javascript">
-		$(document).ready(function(){
-			navigator.geolocation.getCurrentPosition(function func(pos) {
-			    var latitude = pos.coords.latitude;
-			    var longitude = pos.coords.longitude;
-			    
-			    //$("#place1").append(latitude);
-			    //$("#place2").append(longitude);
-			    
-			    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-			    mapOption = {
-			        center: new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
-			        level: 1 // 지도의 확대 레벨
-			    };  
-
-			// 지도를 생성합니다    
-			var map = new kakao.maps.Map(mapContainer, mapOption); 
-
-			// 주소-좌표 변환 객체를 생성합니다
-			var geocoder = new kakao.maps.services.Geocoder();
-
-			var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입니다
-			    infowindow = new kakao.maps.InfoWindow({zindex:1}); // 클릭한 위치에 대한 주소를 표시할 인포윈도우입니다
-
-			// 현재 지도 중심좌표로 주소를 검색해서 지도 좌측 상단에 표시합니다
-			searchAddrFromCoords(map.getCenter(), displayCenterInfo);
-			    
-			var tmap =  searchAddrFromCoords(map.getCenter(), displayCenterInfo);   
-			$("#centerAddr1").append(tmap);    
-
-			// 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
-			kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-			    searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-			        if (status === kakao.maps.services.Status.OK) {
-			            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-			            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
-			            
-			            var content = '<div class="bAddr">' +
-			                            '<span class="title">법정동 주소정보</span>' + 
-			                            detailAddr + 
-			                        '</div>';
-
-			            // 마커를 클릭한 위치에 표시합니다 
-			            marker.setPosition(mouseEvent.latLng);
-			            marker.setMap(map);
-
-			            // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
-			            infowindow.setContent(content);
-			            infowindow.open(map, marker);
-			        }   
-			    });
-			});
-
-			// 중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다
-			kakao.maps.event.addListener(map, 'idle', function() {
-			    searchAddrFromCoords(map.getCenter(), displayCenterInfo);
-			});
-
-			function searchAddrFromCoords(coords, callback) {
-			    // 좌표로 행정동 주소 정보를 요청합니다
-			    geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
-			}
-
-			function searchDetailAddrFromCoords(coords, callback) {
-			    // 좌표로 법정동 상세 주소 정보를 요청합니다
-			    geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
-			}
-
-			// 지도 좌측상단에 지도 중심좌표에 대한 주소정보를 표출하는 함수입니다
-			function displayCenterInfo(result, status) {
-			    if (status === kakao.maps.services.Status.OK) {
-			        var infoDiv = document.getElementById('centerAddr');
-			        var infoDiv1 = document.getElementById('centerAddr1');
-
-			        for(var i = 0; i < result.length; i++) {
-			            // 행정동의 region_type 값은 'H' 이므로
-			            if (result[i].region_type === 'H') {
-			                infoDiv.innerHTML = result[i].address_name;
-			                infoDiv1.innerHTML = result[i].address_name;
-			                
-			                
-			                break;
-			            }
-			        }
-			    }    
-			}
-
-			    
-			});
-			});
-
 		
-		</script>
 		<!-- all js here -->
 		<!-- jquery latest version -->
 		<script src="../js/vendor/jquery-1.12.0.min.js"></script>

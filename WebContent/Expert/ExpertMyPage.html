@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-		<meta charset="EUC-KR">
+
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Login / Registration || Hurst</title>
+		<title>ÎîîÌÖåÏùº ÌéòÏù¥ÏßÄ</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- google login -->
-		<meta name="google-signin-scope" content="profile email">
-		<meta name ="google-signin-client_id" content="68527952935-alrkqjjtbtneh4591p1779f9d7eshe2n.apps.googleusercontent.com">
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		
-		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 		<!-- Place favicon.ico in the root directory -->
 		
+			
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		
+	
+		
 		
 		<!-- Google Font -->
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
@@ -48,25 +50,45 @@
 		<link rel="stylesheet" href="../css/responsive.css">
 		<!-- modernizr css -->
 		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
-				
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<style type="text/css">
+		
+		.headerExpertName{
+		font-weight: 900; 
+		padding-top: 20px;
+		font-family: "Lato",sans-serif;
 		
 		
-		<!--  naver login -->
-		<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-		<!--  kakao login -->
-		<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+		}
+		#ExpertText{
+		border-bottom: 2px solid 
+		}
 		
-		<!-- css -->
-		<link rel="stylesheet" href="../css/member-login.css">
 		
-		<!-- icon -->
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> 
-	
+		.Whatpart{
+		margin-bottom: 50px;
+		}
+		
+		.btny{
+		
+		background-color: #ffdc16;
+		
+		}
+		</style>
 	</head>
-	
 	<body>	
+	
+	<!-- Ïä§ÌÅ¨Î¶ΩÌä∏ eNUM Î∞õÏïÑÏò§Í∏∞ -->
+	<script type="text/javascript">
+	let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+	    return paramPair.split(/=(.+)?/).slice(0, 2);
+	}).reduce(function(obj, pairArray) {
+	    obj[pairArray[0]] = pairArray[1];
+	    return obj;
+	}, {});
+	
+	</script>
+	
 		<!-- WRAPPER START -->
 		<div class="wrapper bg-dark-white">
 
@@ -77,7 +99,7 @@
 						<div class="row">
 							<div class="col-sm-4 col-sm-offset-4 col-xs-7">
 								<div class="logo text-center">
-									<a href="index.html"><img src=".../img/logo/logo.png" alt="" /></a>
+									<a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
 								</div>
 							</div>
 							<div class="col-sm-4 col-xs-5">
@@ -95,7 +117,7 @@
 												<div class="all-cart-product clearfix">
 													<div class="single-cart clearfix">
 														<div class="cart-photo">
-															<a href="#"><img src=".../img/cart/1.jpg" alt="" /></a>
+															<a href="#"><img src="img/cart/1.jpg" alt="" /></a>
 														</div>
 														<div class="cart-info">
 															<h5><a href="#">dummy product name</a></h5>
@@ -106,7 +128,7 @@
 													</div>
 													<div class="single-cart clearfix">
 														<div class="cart-photo">
-															<a href="#"><img src=".../img/cart/2.jpg" alt="" /></a>
+															<a href="#"><img src="img/cart/2.jpg" alt="" /></a>
 														</div>
 														<div class="cart-info">
 															<h5><a href="#">dummy product name</a></h5>
@@ -300,19 +322,19 @@
 				</div>
 			</div>
 			<!-- Mobile-menu end -->
-			
-			<div class="heading-banner-area">
+			<!-- HEADING-BANNER START -->
+			<div class="heading-banner-area" style="background-color: #ffdc16">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="heading-banner">
 								<div class="heading-banner-title">
-									<h2>LOGIN</h2>
+									<h2>Expert page</h2>
 								</div>
 								<div class="breadcumbs pb-15">
 									<ul>
 										<li><a href="index.html">Home</a></li>
-										<li>Single-Blog</li>
+										<li>ÏãúÍ≥µÏóÖÏ≤¥</li>
 									</ul>
 								</div>
 							</div>
@@ -320,49 +342,365 @@
 					</div>
 				</div>
 			</div>
-<!---------------------------------------------------------------------login start------------------------------------------------------------------------------------------>
-	<div class="login-form">		
-			<div class="form-bg">
-		    	<div class="container">
-		        <div class="row">
-		            <div class="col-lg-offset-2 col-md-offset-2 col-md-8">
-		                <div class="form-container">
-		                    <div class="form-icon">
-		                        <i class="fa fa-user-circle"></i>
-		                        <span class="signup"><a href="signupSelect.html">»∏ø¯∞°¿‘</a></span>
-		                    </div>
-		                    <form class="form-horizontal">
-		                        <h3 class="title">Member Login</h3>
-		                        <div class="form-group">
-		                            <span class="input-icon"><i class="fas fa-user"></i></span>
-		                            <input class="form-control" type="text" placeholder="æ∆¿Ãµ" id="id">
-		                        </div>
-		                        <div class="form-group">
-		                            <span class="input-icon"><i class="fa fa-lock"></i></span>
-		                            <input class="form-control" type="password" placeholder="∫Òπ–π¯»£" id="pwd"> <!-- <i class="fas fa-key"></i> -->
-		                        </div>
-		                        <button class="btn signin" id="loginBtn">Login</button>
-		                        <div class="row">
-		                        	<div class="col-md-4 delpad">
-		                     		   <div id="naver_id_login"></div>
-		                        	</div>
-		                        	<div class="col-md-4 delpad">
-			                        	<div class="g-signin2" id="google" data-onsuccess="onSignIn" data-theme="dark"></div> 
-			                    <!--     	<img  class="g-signin2" src="../image/google_login.png" style="height: 45px"  data-onsuccess="onSignIn"> -->
-			                        </div>
-		                        	<div class="col-md-4 delpad">
-			                       		 <img src="../image/kakao_login.png" style="height: 38px; cursor: pointer; margin-left: 24px;" onclick="kakaoLogin()">
-			                        </div>
-		                        </div>
-		                    </form>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	</div>
-	
-<!---------------------------------------------------------------------login end----------------------------------------------------------------------------------------->
+			<!-- HEADING-BANNER END -->
+			<!-- PRODUCT-AREA START -->
+			<div class="product-area single-pro-area pt-80 pb-80 product-style-2">
+				<div class="container">
+					<div class="row">
+					
+					<!-- ÏôºÏ™Ω Ïπ¥ÌÖåÍ≥†Î¶¨ Î∞∞ÎÑà -->
+					<div class="col-md-3 col-sm-12 col-xs-12 mt-tab-30">
+						
+							<!-- Widget-search end -->
+							<!-- Widget-Categories start -->
+							<aside class="widget widget-categories  mb-30"  style="border: 1px solid #d2d2d2 ">
+								<div class="widget-title">
+									<h3 id="ExpertName" class= "headerExpertName"  align="center"></h3>
+									<h5 id="ExpertText" align="center" style="border-bottom: 1px solid #d2d2d2; padding-bottom: 20px;" ></h5>
+								</div>
+								<div id="cat-treeview"  class="widget-info product-cat boxscrol2" style="padding-left: 20px;height:235px">
+									
+									<h5 id="numberExpert"></h5>
+									<h5 class="Whatpart"></h5>
+									<div class="chatAppend">
+									
+									</div>
+									<button type="button" class="btn btn-default btny" style="width:100%">Î¶¨Î∑∞Ïì∞Í∏∞</button>
+									
+								</div>
+							</aside>
+							<!-- Widget-categories end -->
+						
+							<script type="text/javascript">
+					
+							
+							function goExpertChat(eNUM) {
+								location.href="Expert_CHAT_ROOM.html?eNUM=" +eNUM;
+							}
+							
+							</script>
+							
+							
+						</div>
+						<div class="col-md-9 col-sm-12 col-xs-12">		
+							<div class="row shop-list single-pro-info">
+								<!-- Single-product start -->
+								<div class="col-lg-12" style=" height: 390px;">
+									<div class="single-product clearfix" style="height: 310px;">
+										<!-- Single-pro-slider Big-photo start -->
+										<div class="single-pro-slider single-big-photo view-lightbox slider-for">
+											<div>
+												<img class= "MainImage" src="../img/single-product/medium/1.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/1.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div>
+											<div>
+												<img class="image1" src="../img/single-product/medium/2.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/2.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div>
+											<div>
+												<img class="image2" src="../img/single-product/medium/3.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/3.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div>
+											<div>
+												<img class="image3" src="../img/single-product/medium/4.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/4.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div>
+											<!-- <div>
+												<img src="../img/single-product/medium/5.jpg" alt="" />
+												<a class="view-full-screen" href="../img/single-product/large/5.jpg"  data-lightbox="roadtrip" data-title="My caption">
+													<i class="zmdi zmdi-zoom-in"></i>
+												</a>
+											</div> -->
+										</div>	
+										<!-- Single-pro-slider Big-photo end -->										
+										<div class="product-info">
+											<div class="fix">
+												<h4 class="post-title floatleft" style="font-weight: 900">ÏãúÍ≥µÏóÖÏ≤¥ ÎåÄÌëúÏÇ¨ÏßÑ</h4>
+												<span class="pro-rating floatright">
+													<a href="#"><i class="zmdi zmdi-star"></i></a>
+													<a href="#"><i class="zmdi zmdi-star"></i></a>
+													<a href="#"><i class="zmdi zmdi-star"></i></a>
+													<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+													<a href="#"><i class="zmdi zmdi-star-half"></i></a>
+													<span>( 27 Rating )</span>
+												</span>
+											</div>
+											
+											<div class="product-description">
+												<p class="part"></p>
+												
+												
+											</div>
+										
+								
+											
+											<!-- Single-pro-slider Small-photo start -->
+											<div class="single-pro-slider single-sml-photo slider-nav">
+												<div>
+													<img class="MainImage" src="../img/single-product/small/1.jpg" alt="" />
+												</div>
+												<div>
+													<img class="image1" src="../img/single-product/small/2.jpg" alt="" />
+												</div>
+												<div>
+													<img class="image2" src="../img/single-product/small/3.jpg" alt="" />
+												</div>
+												<div>
+													<img  class="image3" src="../img/single-product/small/4.jpg" alt="" />
+												</div>
+											 <div>
+													<img class="MainImage" src="../img/single-product/small/5.jpg" alt="" />
+												</div> 
+											</div>
+											<!-- Single-pro-slider Small-photo end -->
+										</div>
+									</div>
+								</div>
+								<!-- Single-product end -->
+							</div>
+							<!-- single-product-tab start -->
+							<div class="single-pro-tab">
+								<div class="row">
+									<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+										<div class="single-pro-tab-menu">
+											<!-- Nav tabs -->
+											<ul class="">
+												<li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+												<li><a href="#reviews"  data-toggle="tab">Reviews</a></li>
+												<li><a href="#information" data-toggle="tab">Information</a></li>
+												<li><a href="#tags" data-toggle="tab">Tags</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+										<!-- Tab panes -->
+										<div class="tab-content">
+											<div class="tab-pane active" id="description">
+												<div class="pro-tab-info pro-description">
+													<h3 class="tab-title title-border mb-30">dummy Product name</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+												</div>
+											</div>
+											<div class="tab-pane" id="reviews">
+												<div class="pro-tab-info pro-reviews">
+													<div class="customer-review mb-60">
+														<h3 class="tab-title title-border mb-30">Customer review</h3>
+														<ul class="product-comments clearfix">
+															<li class="mb-30">
+																<div class="pro-reviewer">
+																	<img src="img/reviewer/1.jpg" alt="" />
+																</div>
+																<div class="pro-reviewer-comment">
+																	<div class="fix">
+																		<div class="floatleft mbl-center">
+																			<h5 class="text-uppercase mb-0"><strong>Gerald Barnes</strong></h5>
+																			<p class="reply-date">27 Jun, 2017 at 2:30pm</p>
+																		</div>
+																		<div class="comment-reply floatright">
+																			<a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
+																			<a href="#"><i class="zmdi zmdi-close"></i></a>
+																		</div>
+																	</div>
+																	<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+																</div>
+															</li>
+															<li class="threaded-comments">
+																<div class="pro-reviewer">
+																	<img src="img/reviewer/1.jpg" alt="" />
+																</div>
+																<div class="pro-reviewer-comment">
+																	<div class="fix">
+																		<div class="floatleft mbl-center">
+																			<h5 class="text-uppercase mb-0"><strong>Gerald Barnes</strong></h5>
+																			<p class="reply-date">27 Jun, 2017 at 2:30pm</p>
+																		</div>
+																		<div class="comment-reply floatright">
+																			<a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
+																			<a href="#"><i class="zmdi zmdi-close"></i></a>
+																		</div>
+																	</div>
+																	<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+																</div>
+															</li>
+														</ul>
+													</div>
+													<div class="leave-review">
+														<h3 class="tab-title title-border mb-30">Leave your reviw</h3>
+														<div class="your-rating mb-30">
+															<p class="mb-10"><strong>Your Rating</strong></p>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+															<span class="separator">|</span>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+															<span class="separator">|</span>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+															<span class="separator">|</span>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+															<span class="separator">|</span>
+															<span>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+															</span>
+														</div>
+														<div class="reply-box">
+															<form action="#">
+																<div class="row">
+																	<div class="col-md-6">
+																		<input type="text" placeholder="Your name here..." name="name" />
+																	</div>
+																	<div class="col-md-6">
+																		<input type="text" placeholder="Subject..." name="name" />
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-12">
+																		<textarea class="custom-textarea" name="message" placeholder="Your review here..." ></textarea>
+																		<button type="submit" data-text="submit review" class="button-one submit-button mt-20">submit review</button>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>		
+											</div>
+											<div class="tab-pane" id="information">
+												<div class="pro-tab-info pro-information">
+													<h3 class="tab-title title-border mb-30">Product information</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+												</div>											
+											</div>
+											<div class="tab-pane" id="tags">
+												<div class="pro-tab-info pro-information">
+													<h3 class="tab-title title-border mb-30">tags</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+												</div>											
+											</div>
+										</div>									
+									</div>
+									
+									
+								</div>
+							</div>
+							<!-- single-product-tab end -->
+						</div>
+						<!--  -->
+					</div>
+				</div>
+			</div>
+			
+			<!-- Ïä§ÌÅ¨Î¶ΩÌä∏ ÏãúÏûë -->
+			<script type="text/javascript">
+			
+			var id = urlParams.loginId;
+			
+			$.ajax({
+				
+				url:"http://localhost:3000/ExpertMyDetail",
+				type:'post',
+				data:{'id':id},
+				success: function(Detail) {
+					
+					var ExpertName = Detail.regisName;
+					var ExpertText = Detail.expertInfo;
+					
+					
+					//alert("seccess"+ ExpertName);
+					//ÏóÖÏ≤¥ Ïù¥Î¶Ñ
+					$("#ExpertName").append(ExpertName);
+					
+					//ÏóÖÏ≤¥ ÌïúÏ§ÑÏÜåÍ≤å
+					$("#ExpertText").append(ExpertText);
+					
+					//ÏóÖÏ≤¥ ÎåÄÌëúÏÇ¨ÏßÑ, ÏÑ∏Î∂Ä ÏÇ¨ÏßÑ
+					
+					var MainImageURL = "http://localhost:3000/exper/" + Detail.image;
+					var image1 = "http://localhost:3000/exper/" + Detail.imageDetail1;
+					var image2 = "http://localhost:3000/exper/" + Detail.imageDetail2;
+					var image3 = "http://localhost:3000/exper/" + Detail.imageDetail3;
+					
+					
+					$(".MainImage").attr("src", MainImageURL);
+					$(".image1").attr("src", image1);
+					$(".image2").attr("src", image2);
+					$(".image3").attr("src", image3);
+					
+					//ÏóÖÏ≤¥Ïó∞ÎùΩÏ≤ò, Ï£ºÏÜå, ÎåÄÌëú Ïù¥Î¶Ñ
+					var phone = Detail.phone;
+					var address = Detail.regAddress;
+					var ceo = Detail.ceoName;
+					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>Ïó∞ÎùΩÏ≤ò </b>"+ phone +"</span><br>");
+					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>ÎåÄÌëúÏûêÎ™Ö </b>"+ ceo +"</span><br>");
+					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>Ï£ºÏÜå </b>"+ address +"</span><br>");
+					
+					
+					
+					//ÏµúÍ∑ºÍ≥ÑÏïΩ
+					var recentCon = Detail.recentCon;
+					$("#numberExpert").append( "ÏµúÍ∑ºÍ≥ÑÏïΩ " + recentCon);
+					
+					
+					//ÏãúÍ≥µÎ∂ÑÏïº
+					var part;
+					
+					//alert("Detail.part" + Detail.part);
+					if(Detail.part == 1){
+						part = "Ï¢ÖÌï©Ïù∏ÌÖåÎ¶¨Ïñ¥"
+					}else if(Detail.part == 2){
+						part = "ÎèÑÎ∞∞, ÌÉÄÏùº"
+					}
+					$(".Whatpart").append(part);
+					
+					
+					//Ï±ÑÌåÖ Î≤ÑÌäº
+					
+
+					$(".chatAppend").append("<button type='button' onclick='goExpertChat(" + Detail.eNUM + ")' class='btn btn-default btny ' style='width:100%;margin-bottom:10px'>Ïã§ÏãúÍ∞Ñ ÏÉÅÎã¥ Ïù¥Î†•ÌôïÏù∏</button>");
+						
+					
+					
+					
+				
+				},
+				error: function() {
+					alert("error");
+				}
+				
+				
+			});
+			
+			</script>
+			
+			<!-- PRODUCT-AREA END -->
 			<!-- FOOTER START -->
 			<footer>
 				<!-- Footer-area start -->
@@ -532,229 +870,5 @@
 		<script src="../js/plugins.js"></script>
 		<!-- main js -->
 		<script src="../js/main.js"></script>
-		
-		
-		<script type="text/javascript">
-		
-		var name;
-		var email;
-		var id;
-		
-		
-		<!-- naver login º≥¡§ -->
-		var naver_id_login = new naver_id_login("E2G2Ono7tLJwqb3bgB4S", "http://localhost:8090/Moff-View/member/callback.html");
-	  	var state = naver_id_login.getUniqState();
-	  	naver_id_login.setButton("green", 2, 36);
-	  	naver_id_login.setState(state);
-	//  naver_id_login.setPopup();
-	  	naver_id_login.init_naver_id_login();
-
-	  	
-	  	
-		$(document).ready(function() {
-			
-			 $('.login-info-box').fadeOut();
-			 $('.login-show').addClass('show-log-panel');
-			
-
-			$('.login-reg-panel input[type="radio"]').on('change', function() {
-			    if($('#log-login-show').is(':checked')) {
-			        $('.register-info-box').fadeOut(); 
-			        $('.login-info-box').fadeIn();
-			        
-			        $('.white-panel').addClass('right-log');
-			        $('.register-show').addClass('show-log-panel');
-			        $('.login-show').removeClass('show-log-panel');
-			        
-			    }
-			    else if($('#log-reg-show').is(':checked')) {
-			        $('.register-info-box').fadeIn();
-			        $('.login-info-box').fadeOut();
-			        
-			        $('.white-panel').removeClass('right-log');
-			        
-			        $('.login-show').addClass('show-log-panel');
-			        $('.register-show').removeClass('show-log-panel');
-			    }
-			
-			});
-			
-		
-		});	
-		
-		
-		
-		$('#loginBtn').click(function() {	
-			//var a = $('#id').val();
-			//var b = $('#pwd').val();
-			//alert(a);
-			//alert(b);
-			
-			$.ajax({
-				url:"http://localhost:3000/login",
-				type:'post',
-				data:{ id:$('#id').val(), pwd:$('#pwd').val() },
-				success:function(data){				
-				//	alert('success');				
-					if(data == ''){
-						alert('∑Œ±◊¿Œø° Ω«∆–«œø¥Ω¿¥œ¥Ÿ. ∫Òπ–π¯»£∏¶ »Æ¿Œ«œººø‰.');
-					}else{
-					//	alert('login success');
-						
-						sessionStorage.setItem("login", JSON.stringify(data));
-						
-						location.href = "mypage.html";
-					}
-				},
-				error:function(){
-					alert('error');
-				}
-				
-			});
-			
-		});
-		
-
-		function onSignIn(googleUser) {
-			
-			 var profile = googleUser.getBasicProfile();
-			 
-		     console.log('Full Name: ' + profile.getName());
-		     console.log("Email: " + profile.getEmail());
-		     // The ID token you need to pass to your backend:
-		     var id_token = googleUser.getAuthResponse().id_token;
-		     console.log("ID Token: " + id_token);
-		     
-		     name =  profile.getName();
-		     email =  profile.getEmail();
-		     id = id_token.substring(0,10);
-		
-		 //    snsCheck();
-		     
-		}
-		
-		
-		window.Kakao.init("897927412ae0bc3c7301cb71197b51ba");
-
-		function kakaoLogin() {
-			window.Kakao.Auth.login({
-				scope:'profile, account_email',
-				success: function(authObj) {
-					console.log(authObj);
-					window.Kakao.API.request({
-					 url: '/v2/user/me',
-					    success: function(response) {
-					        console.log(response);
-					        console.log(response.id);
-					        console.log(response.kakao_account['email']);
-		                    console.log(response.properties['nickname']);
-		                    
-		                    
-		                    id = response.id;
-		                    name = response.properties['nickname'];
-		                    email = response.kakao_account['email'];
-		                    
-		                    snsCheck();
-					    },
-					    fail: function(error) {
-					        console.log(error);
-					    }
-					});
-				}
-			});
-		}
-		
-		
-		function snsCheck() {
-			
-			 
-		     $.ajax({
-	  	  
-				url:"http://localhost:3000/snsCheck",
-				type:"post",
-				data:{ "email":email },
-				success:function( data ){
-				//	alert(data);
-	
-					if(data.trim()=="YES"){ // ¿Ã∏ﬁ¿œ ¡∏¿Á«œ¡ˆ æ ¿Ω
-						// ∞°¿‘
-						alert("yes");
-						snsSignup();
-					}else{  // ¿Ã∏ﬁ¿œ ¡∏¿Á
-						// ∑Œ±◊¿Œ
-						alert('no');
-						login();
-					}			
-				},
-				error:function(){
-					alert("error");
-				}
-			});
-			
-		}
-		
-		
-		function snsSignup(){
-
-			$.ajax({
-				url:"http://localhost:3000/snsSignup",
-				type:"post",
-				data:{ "email":email, name:name, nickname:name, id:id, pwd:id,
-						address:"¿‘∑¬«ÿ¡÷ººø‰", phone:"¿‘∑¬«ÿ ¡÷ººø‰", bdate: "¿‘∑¬«ÿ¡÷ººø‰"},
-				success:function( data ){
-					
-					if(data == ''){
-						alert('login fail');
-					}else{
-						alert(JSON.stringify(data));
-						sessionStorage.setItem("login", JSON.stringify(data));
-						window.close();
-						location.href = "mypage.html";
-
-						/* opener.location.href='member/mypage.html'; 
-						window.close(); */
-				
-					}
-				},
-
-				error:function(){
-					alert("error");
-				}
-			});
-		}
-
-		 
-
-		function login(){
-
-			alert(id);
-			$.ajax({
-				url:"http://localhost:3000/login",
-				type:"post",
-				data:{ id:id, pwd:id},
-				success:function( data ){
-					if(data == ''){
-						alert('login fail');
-					}else{
-						alert(JSON.stringify(data));
-						sessionStorage.setItem("login", JSON.stringify(data));
-
-						location.href = "mypage.html";
-
-					//	location.href='member/mypage.html'; 
-					//	window.close();
-					}
-				},
-				error:function(){
-					alert("error");
-				}
-			});
-
-		}
-		
-		
-		</script>
-
-		
 	</body>
 </html>
