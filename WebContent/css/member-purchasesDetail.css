@@ -118,8 +118,9 @@ parallax & home seperator
 
 .mini .mini-content .mini-box i {
   display: block;
-  font-size: 16px;
-  margin-bottom: 15px;
+  font-size: 58px;
+  margin: 24px;
+  color: #43518e;
 }
 
 .mini .mini-content .mini-box span {
@@ -128,6 +129,7 @@ parallax & home seperator
   font-size: 23px;
   color: black;
   letter-spacing: .75px;
+  margin-bottom: 23px;
 }
 
 .mini .mini-content .mini-box strong {
@@ -139,6 +141,7 @@ parallax & home seperator
   margin-bottom: 5px;
   margin-top: 20px;
 }
+
 
 .counter {
   overflow: hidden;

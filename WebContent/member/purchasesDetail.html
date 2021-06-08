@@ -49,7 +49,9 @@
 		<!-- purchases checkout css -->
 		<link rel="stylesheet" href="../css/member-purchasesDetail.css">
 		
-		 
+		 <!-- icon -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> 
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 		<script type="text/javascript">
@@ -529,28 +531,28 @@
 										                '<div class="row">' +
 										                    '<div class="col-lg-3 col-md-3 col-sm-6 col-6">' +
 										                        '<a href="#" class="mini-box">' +
-										                            '<i><img src="../img/work-process-item-01.png" alt=""></i>' +
+										                            '<i class="fas fa-calendar-day"></i>' +
 										                            '<strong>주문 날짜</strong>' +
 										                            '<span>' + data.obDate.substring(0,19) + '</span>' +
 										                        '</a>' +
 										                    '</div>' +
 										                    '<div class="col-lg-3 col-md-3 col-sm-6 col-6">' +
 										                        '<a href="#" class="mini-box">' +
-										                            '<i><img src="../img/work-process-item-01.png" alt=""></i>' +
+										                            '<i class="fas fa-truck"></i>' +
 										                            '<strong>배송 상태</strong>' +
 										                            '<span>' + data.status + '</span>' +
 										                        '</a>' +
 										                    '</div>' +
 										                    '<div class="col-lg-3 col-md-3 col-sm-6 col-6">' +
 										                        '<a href="#" class="mini-box">' +
-										                            '<i><img src="../img/work-process-item-01.png" alt=""></i>' +
+										                            '<i class="fas fa-coins"></i>' +
 										                            '<strong>총 주문 가격</strong>' +
 										                            '<span>' + numberWithCommas(data.totalPrice) + '원</span>' +
 										                        '</a>' +
 										                    '</div>' +
 										                    '<div class="col-lg-3 col-md-3 col-sm-6 col-6">' +
 										                        '<a href="#" class="mini-box">' +
-										                            '<i><img src="../img/work-process-item-01.png" alt=""></i>' +
+										                            '<i class="fas fa-credit-card"></i>' +
 										                            '<strong>결제 방법</strong>' +
 										                            '<span>' + data.obWay + '</span>' +
 										                        '</a>' +

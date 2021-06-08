@@ -86,7 +86,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .tm-recommended-price-box1 {    
-    background-color: #69c6ba;
+    background-color: #5d5a55;
     font-weight: 400;
     display: -webkit-box;
     display: -webkit-flex;
@@ -108,10 +108,11 @@ p:last-child { margin-bottom: 0; }
     width: 160px;
     height: 80px;
     transition: all 0.3s ease;
+    color: white;
 }
 
 .tm-recommended-price-box2 {    
-    background-color: black;
+    background-color: #ffdc16;
     font-weight: 400;
     display: -webkit-box;
     display: -webkit-flex;
@@ -133,11 +134,12 @@ p:last-child { margin-bottom: 0; }
     width: 160px;
     height: 80px;
     transition: all 0.3s ease;
+    color: #444;
 }
 .tm-recommended-price-box1:hover { background-color: #c66995; }
 .tm-recommended-price-box2:hover { background-color: #c66995; }
 .tm-recommended-price {
-    color: white;
+  
     font-size: 1.6rem;
     font-weight: 600;
 }
@@ -323,7 +325,7 @@ p:last-child { margin-bottom: 0; }
 
 .feature_box:hover,
 .feature_box:focus {
-   background: #fc301e;
+   background: #de4444;
 }
 
 .feature_box:hover h4,

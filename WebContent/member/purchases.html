@@ -264,7 +264,7 @@
 			</div>
 			<!-- Mobile-menu end -->
 			<!-- HEADING-BANNER START -->
-			<div class="heading-banner-area overlay-bg">
+			<div class="heading-banner-area">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -548,36 +548,42 @@
 				success:function( list ){
 					
 				//	alert(JSON.stringify(list));
+				
+					if(list==""){
+						$("#purchases-container").html("<h3 class='tab-title mb-30' style='font-size:25px;text-align:center;margin-bottom:60px'>주문내역이 없습니다</h3>");
+					}else{
 					
-			 		$.each(list, function (i, item) {
-
-				 		let str = 
-									"<div class='pane'>" +
-		
-											"<div class='row'>" +
-												"<div class='col-lg-10'>" +
-													"<h3 class='tab-title title-border mb-30' style='font-size:25px'>" + item.obDate.substring(0,10) + "  주문</h3>" +
+				 		$.each(list, function (i, item) {
+	
+					 		let str = 
+										"<div class='pane'>" +
+			
+												"<div class='row'>" +
+													"<div class='col-lg-10'>" +
+														"<h3 class='tab-title title-border mb-30' style='font-size:25px'>" + item.obDate.substring(0,10) + "  주문</h3>" +
+													"</div>" +
+													"<div class='col-lg-2'>" +
+														"<a href='purchasesDetail.html?obNum=" + item.obNum + "'><h4>상세보기 > </h4></a>" +
+													"</div>" +
 												"</div>" +
-												"<div class='col-lg-2'>" +
-													"<a href='purchasesDetail.html?obNum=" + item.obNum + "'><h4>상세보기 > </h4></a>" +
-												"</div>" +
-											"</div>" +
-											
-											"<div id='" + item.obNum + "'></div>" + 
-											
-									"</div>";
-				 				
-
-				 		$("#purchases-container").append(str);
-				 		
-				 		purchasesDetail(item.obNum);
-			 		});	 
+												
+												"<div id='" + item.obNum + "'></div>" + 
+												
+										"</div>";
+					 				
+	
+					 		$("#purchases-container").append(str);
+					 		
+					 		purchasesDetail(item.obNum);
+				 		});	 
+					}
 			 		
 				},
 				error:function(){
 					alert('error');
 				}
 			});	 
+		
 			
 		});
 
