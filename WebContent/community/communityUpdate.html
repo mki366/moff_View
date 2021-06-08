@@ -521,56 +521,10 @@ function deletFile(cmNum, title, content, image1, image2){
 //	alert('cmNum' + cmNum);
 	let login = JSON.parse(sessionStorage.getItem("login"));
 	let id = login.id;
-	/*
-	let delFileStr =	'<form id="deleteForm">'
-		+					'<div>'
-		+						'<input type="hidden" id="cmNum" name="cmNum" value="' + cmNum + '">'
-		+						'<p style="font-size: 20px;">아이디</p>'
-		+						'<div id="writingId"></div>'
-		+						'<input type="text" id="id" name="id" value="' + id + '"  style="width: 500px; background:#f6f6f6;" readonly="readonly">'
-		+					'</div>'
-		+					'<div style="height: 30px;"></div>'
-		+					'<div>'
-		+						'<p style="font-size: 20px;">제목</p>'
-		+							'<input type="text" id="title" value="' + title + '" name="title" style=" background:#f6f6f6;">'
-		+					'</div>'
-		+					'<div style="height: 30px;"></div>'
-		+					'<div class="filebox" id="fileDiv1">'
-		+					 	'<p style="font-size: 20px;">파일첨부</p>'
-		+						'<input class="upload-name" id="fileTitle1" value="대표사진" disabled="disabled">' 
-		+						"<button type='button' onclick='deletFile(" + '"' + title + '"' + ',' + '"' + content + '"' + ',' + '"' + image1 + '"' + ','
-		+ 							'"' + image2 + '"' +  ")'>삭제</button>"
-		+						'<input type="file" id= "' +image1 + '" name="oldFile" value="" class="upload-hidden"><br>'
-		+					'</div>'
-		+					'<div style="height: 30px;"></div>'
-		+					'<div class="filebox" id="fileDiv2">'
-		+						'<input class="upload-name" id="fileTitle2" value="파일선택" disabled="disabled">'
-		+						"<button type='button' onclick='deletFile(" + '"' + cmNum + '"' + ',' + '"' + title + '"' + ',' + '"' + content + '"' + ',' 
-		+ 							'"' + image1 + '"' + ',' + '"' + image2 + '"' +  ")'>삭제</button>"
-		+						'<input type="file" id="' +image2 + '" name="oldFile2" class="upload-hidden"><br>'
-		+					'</div>'
-		+					'<div style="height: 30px;"></div>'
-		+					'<div>'
-		+						'<p style="font-size: 20px;">내용</p>'
-		+						'<textarea rows="20px" cols="148" id="content" value="' + content + '" name="content" style="background-color: #f6f6f6; border-style: none; resize: none;"></textarea>'
-		+					'</div>'
-		+					'<div style="height: 30px;"></div>'
-		+					'<div class="row">'
-		+						'<div class="col-md-12">'
-		+							'<button type="button" onclick="cancelWriting()" data-text="취소" class="button-one submit-button mt-20" style="margin-right: 15px;">취소</button>'
-		+							'<button type="button" onclick="submitUpdate()" data-text="등록" class="button-one submit-button mt-20">등록</button>'
-		+						'</div>'
-		+					'</div>'
-		+				'</form>';
-		
-		$("#fileDiv1").html(delFileStr);
-		
-		$("#fileTitle1").val(data.image1);
-		$("#fileTitle2").val(data.image2);
-	*/
+
 		var form = $("#updateForm")[0];
 		var formdata = new FormData(form);
-		alert(form);
+	//	alert(form);
 		
 	$.ajax({
 		url:'http://localhost:3000/deletFile?cmNum=' + cmNum,
@@ -583,24 +537,6 @@ function deletFile(cmNum, title, content, image1, image2){
 		success:function(data){
 			if(data.trim() == "YES"){
 				alert('deletFile succ');
-				
-			/* 	let newFileStr = '<input class="upload-name" id="fileTitle1" value="대표사진" disabled="disabled">'
-					+				'<label for="fileload">파일수정</label>'
-					+				'<input type="file" id="oldFile" name="fileload" value="" class="upload-hidden">'
-					+			'</div>'
-								
-					+			'<div style="height: 30px;"></div>'
-								
-					+			'<div class="filebox" id="fileDiv2">'
-					+				'<input class="upload-name" id="fileTitle2" value="파일선택" disabled="disabled"> '
-					+				'<label for="fileload2">파일수정</label>'
-					+				'<input type="file" id="oldFile2" name="fileload" class="upload-hidden"><br>';
-					
-				$("#fileDiv1").html(newFileStr);
-				
-				$("#fileTitle1").val(data.image1);
-				$("#fileTitle2").val(data.image2);
-				 */
 				
 			}else if(data.trim() == "NO"){
 				alert('실패');
@@ -631,7 +567,6 @@ $(document).ready(function(){
 	
 	
 });
-
 
 
 function submitUpdate() {

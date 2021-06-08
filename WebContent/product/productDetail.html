@@ -433,6 +433,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 												<!-- <span id="detailPrice"></span>
 												<span class="pro-price" id="detailOriprice"></span> -->
 											</div>
+											<br>
 											<div class="product-description" id="productInfo">
 												
 											</div>
@@ -767,7 +768,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 							<!-- Widget-banner start -->
 							<aside class="widget widget-banner">
 								<div class="widget-info widget-banner-img">
-									<a href="#"><img src="img/banner/5.jpg" alt="" /><h4>주문제작 링크 걸거임</h4></a>
+									<a href="#"><img src="../image/주문제작2.png" alt="" /></a>
 								</div>
 							</aside>
 							<!-- Widget-banner end -->
@@ -982,7 +983,7 @@ let prodNum = urlParams.prodNum;
 			
 			if(data.price != "" && data.price != null){
 				
-				$("#setPrice").html('<span class="pro-price">₩' + laprice + '원</span><p class="pro-price">원가 ₩' + orilaprice + '원</p><br>');
+				$("#setPrice").html('<span class="pro-price">₩' + laprice + '원</span><span class="pro-price" style="float:right; text-decoration: line-through;">₩' + orilaprice + '원</span>');
 				
 			//	$("#detailOriprice").html(orilaprice + '원');
 			//	$("#detailprice").html(laprice + '원');
@@ -1419,7 +1420,12 @@ function getAllReviewList(pagenum) {
 		
 					let	str	= '<li class="mb-30" id="reviewList">'
 								'<div class="pro-reviewer>';
-								
+						if(val.image != null && val.image != ""){
+					str += '<img src='+val.image+'>';			
+							
+						}else{
+							
+						}
 								
 																	
 					str	+=		'</div>';
@@ -1471,9 +1477,6 @@ function getAllReviewList(pagenum) {
 			        	str += "<i class='zmdi zmdi-star-outline'></i>";
 					}
 					
-					
-					
-				//	str	+=					'<h5 class="text-uppercase mb-0"><strong>'+ val.title +'</strong></h5>';
 					str	+=						'<p class="reply-date">'+val.rdate+'</p>';
 					str	+=					'</div>';
 					str	+=					'<div class="comment-reply floatright">';
