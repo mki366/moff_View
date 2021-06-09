@@ -241,11 +241,11 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 													
 													<div id="reviewStar">
 														<div class="rating">
-															<input type="radio" name="star" value="5" id="5"><label for="5">☆</label> 
-															<input type="radio" name="star" value="4" id="4"><label for="4">☆</label> 
-															<input type="radio" name="star" value="3" id="3"><label for="3">☆</label> 
-															<input type="radio" name="star" value="2" id="2"><label for="2">☆</label> 
-															<input type="radio" name="star" value="1" id="1"><label for="1">☆</label>
+															<input type="radio" name="star" value="5" id="5" class="starRadio"><label for="5">☆</label> 
+															<input type="radio" name="star" value="4" id="4" class="starRadio"><label for="4">☆</label> 
+															<input type="radio" name="star" value="3" id="3" class="starRadio"><label for="3">☆</label> 
+															<input type="radio" name="star" value="2" id="2" class="starRadio"><label for="2">☆</label> 
+															<input type="radio" name="star" value="1" id="1" class="starRadio"><label for="1">☆</label>
 														</div>
 
 													</div>
@@ -262,7 +262,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 												</div>
 												<div style="height: 20px;"></div>
 												<div style="font-size: 17px;">
-												<i class="zmdi zmdi-border-color"></i>&emsp;<span>리뷰작성 시 300포인트 적립!</span>
+												<i class="zmdi zmdi-border-color"></i>&emsp;<span>리뷰작성 시 500포인트 적립!</span>
 												</div>
 												<div style="height: 50px;"></div>
 												<div class="filebox">		
@@ -275,13 +275,13 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 												
 												<div style="height: 30px;"></div>
 				 								<div style="font-size: 17px;">
-												<i class="zmdi zmdi-camera"></i>&emsp;<span>사진 첨부 시 600포인트 적립!</span>
+												<i class="zmdi zmdi-camera"></i>&emsp;<span>사진 첨부 시 1,000포인트 적립!</span>
 												</div>
 												<div style="height: 30px;"></div>
 												<div class="row">
 													<div class="col-md-12" align="center">
 														<button type="button" onclick="cancelReview()" data-text="취소" class="button-one submit-button mt-20" style="margin-right: 15px;">취소</button>
-														<button type="button" onclick="submitReview()" data-text="등록" class="button-one submit-button mt-20">등록</button>
+														<button type="button" onclick="submitReview()" data-text="등록" id="btnSubmit" class="button-one submit-button mt-20">등록</button>
 													</div>
 												</div>
 											</form>
@@ -310,6 +310,8 @@ $("#id").val(id);
 $("#prodNum").val(prodNum);
 
 getProductInfo();
+
+
 
 
 $(document).ready(function(){ 
@@ -392,28 +394,46 @@ function submitReview() {
 	
 	let prodNum = urlParams.prodNum;
 	
-	$.ajax({
-		url:"http://localhost:3000/writeReview?prodNum=" + prodNum,
-		type:"post",
-		data:formdata,
-		enctype:'multipart/form-data',
-		processData:false,
-		contentType:false,
-		cache:false,
-		success:function(data){
-			if(data.trim() == "YES"){
-			//	alert('writeCommu succ');
-				location.href = "../member/locsuc.html";
-				
-			}else if(data.trim() == "NO"){
-				alert('실패');
-			}
-		},
-		error:function(){
-			alert("writeCommu err");
-		}
-	});
+	if ($('#content').val()=="" ){
+        alert('내용을 기입해주세요.');
+        return;                        
+    }
+    
+    if($("input:radio[name=star]").is(":checked") == true) {
+    	
+    	$.ajax({
+    		url:"http://localhost:3000/writeReview?prodNum=" + prodNum,
+    		type:"post",
+    		data:formdata,
+    		enctype:'multipart/form-data',
+    		processData:false,
+    		contentType:false,
+    		cache:false,
+    		success:function(data){
+    			if(data.trim() == "YES"){
+    				alert('리뷰가 작성되었습니다.');
+    				location.href = "../member/mypage.html";
+    				
+    			}else if(data.trim() == "NO"){
+    				alert('실패');
+    			}
+    		},
+    		error:function(){
+    			alert("writeCommu err");
+    		}
+    	});
+    	
+    }else{
+    	alert('별점을 체크해주세요.');
+    	return;
+    }	
+	
+
 }
+
+
+
+
 
 
 
@@ -422,7 +442,7 @@ function submitReview() {
 	
 		
 function cancelWriting() {
-	location.href = "logsuc.html";
+	location.href = "../member/mypage.html";
 }	
 	
 	 

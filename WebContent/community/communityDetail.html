@@ -593,8 +593,8 @@ function getCommunity() {
 		success:function(data){
 		//	alert('getCommunity success');
 		
-			$("#detilaImg1").html('<img style="height: 500px; width:500px; margin-left: 20px;" src="../image/'+ data.image1 + '">');
-			$("#detilaImg2").html('<img style="height: 500px; width:500px; margin-left:20px;" src="../image/'+ data.image2 + '">');
+			$("#detilaImg1").html('<img style="height: 500px; width:500px; margin-left: 20px;" src='+ data.image1 + '>');
+			$("#detilaImg2").html('<img style="height: 500px; width:500px; margin-left:20px;" src='+ data.image2 + '>');
 			$("#idInfo").html("<i class='zmdi zmdi-account'></i>" + " " + "<span>" + " &ensp;" + data.id + "</span>");
 			$("#likeInfo").html("<a href='#;' onclick='addLikeDetail(" + '"' + data.cmNum + '"' + ")'><i class='zmdi zmdi-favorite'></i>" + ' ' + "<span id='likeIcon'>" + '&ensp;' + data.cmLike + "Like</span></a>");
 			

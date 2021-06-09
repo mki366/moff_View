@@ -667,7 +667,6 @@
 
 
 
-
 <script type="text/javascript">
 
 	let login = JSON.parse(sessionStorage.getItem("login"));
@@ -748,12 +747,12 @@ function getAllCommunity(pagenum) {
 			$(".cList").remove();
 			$.each(list, function(i, val) {
 				
-				let str = '<div class="cList">'
+				let str = '<div class="cList">'									
 					+'<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">'
 					+		'<div class="single-blog mb-30" style="width: 345px; height: 495.55px;">'
 					+		'<div class="blog-photo">'
 					+			"<a href='communityDetail.html?cmNum=" + val.cmNum + "'>"
-					+				'<img style="width: 295px; height: 295px;" src="../image/' + val.image1 + '">'
+					+				'<img style="width: 295px; height: 295px;" src=' + val.image1 + '>'
 					+			'</a>'
 					+			'<div class="like-share text-center fix">'
 					+				"<a class='likeIcon" + i + "' href='#;' onclick='addLikeList(" + '"' + i + '"' + ',' + '"' + val.cmNum + '"' + ',' + '"' + val.cmLike + '"'+ ")'><i class='zmdi zmdi-favorite'></i><span>" + val.cmLike + "Like</span></a>"

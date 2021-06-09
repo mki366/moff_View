@@ -11,7 +11,7 @@
 <body>
 
 <script type="text/javascript">
-  var naver_id_login = new naver_id_login("E2G2Ono7tLJwqb3bgB4S", "http://localhost:8090/Moff-View/member/callback.html");
+  var naver_id_login = new naver_id_login("E2G2Ono7tLJwqb3bgB4S", "http://localhost:8085/Moff-View/member/callback.html");
 
   // 접근 토큰 값 출력
  // alert(naver_id_login.oauthParams.access_token);
@@ -115,6 +115,7 @@ function snsSignup(){
 
 function login(){
 
+	alert(personal);
 	$.ajax({
 		url:"http://localhost:3000/login",
 		type:"post",

@@ -512,6 +512,30 @@ function submitWrite() {
 	var form = $("#communityForm")[0];
 	var formdata = new FormData(form);
 	
+	if($("#title").val()=="" || $("#title").val()==null){
+		alert('제목을 입력해주세요.');
+		
+		return;
+	}
+	
+	if($("#content").val()=="" || $("#content").val()==null){
+		alert('내용을 입력해주세요.');
+		
+		return;
+	}
+	
+	
+	if($("#fileload").val()=="" || $("#fileload").val()==null){
+		alert('이미지를 추가해주세요.');
+		return;
+	}
+	
+	if($("#fileload2").val()=="" || $("#fileload2").val()==null){
+		alert('이미지를 추가해주세요.');
+		return;
+	}
+	
+
 	$.ajax({
 		url:"http://localhost:3000/writeCommunity",
 		type:"post",
@@ -521,38 +545,22 @@ function submitWrite() {
 		contentType:false,
 		cache:false,
 		success:function(data){
-			
-			 $("*").focus(function () {
-			        $(this).css("background-color", "white");
-			    });
-			    $("*").blur(function () { 
-			        $(this).css("background-color", "white");
-			    });
-			    
-			    $("#btnSubmit").click(function() {
-			    	//빈칸체크
-			   
-			    	$("#content").prop('required',true);
-			    	$("#file").prop('required',true);
-			    });
-
-		if(data.trim() == "YES"){
-			//	alert('writeCommu succ');
-				location.href = "commulist.html";
+			if(data.trim() == "YES"){
+				//	alert('writeCommu succ');
+					location.href = "commulist.html";
+					
+				}else if(data.trim() == "NO"){
+					alert('실패');
+				}
 				
-			}else if(data.trim() == "NO"){
-				alert('실패');
-			}
-			
 			
 		},
 		error:function(){
 			alert("writeCommu err");
 		}
 	});
+
 }
-
-
 
 
 	
