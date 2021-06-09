@@ -140,7 +140,7 @@
 				</div>
 				<div class="main-menu  hidden-xs">
 					<nav>
-						<ul>
+						<ul class ="CategoryUp">
 							<li><a href="index.html">home</a>
 								<div class="sub-menu menu-scroll">
 									<ul>
@@ -244,15 +244,35 @@
 									</ul>
 								</div>
 							</li>
-							<li><a href="about.html">about us</a></li>
-							<li><a href="contact.html">contact</a></li>
+							<li><a href="../Expert/ExpertPage.html">인테리어 업체찾기</a></li>
+							<li><div class="ExpertDetail"></div></li>
+							
 						</ul>
 					</nav>
 				</div>
 				<!-- MAIN-MENU END -->
 			</header>
 			<!-- HEADER-AREA END -->
-																										
+							<script type="text/javascript">
+							
+							
+							$(document).ready(function(){
+							
+								var loginDATA = JSON.parse(sessionStorage.getItem("login"));
+								var Type = loginDATA.memberType;
+								var Id = loginDATA.id;
+								
+								// 시공업체가 로그인할때 
+							if(Type == 2){
+								
+								
+								$(".CategoryUp").append("<li><a href='../Expert/ExpertMyPage.html?loginId="+ Id + "'>나의 업체 페이지</a></li>");
+								
+							}
+							
+							});	
+							
+							</script>																			
 			<!-- Mobile-menu start -->
 			<div class="mobile-menu-area">
 				<div class="container-fluid">

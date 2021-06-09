@@ -1101,7 +1101,7 @@ body {
 }
 .breadcumbs ul li:hover a { color: #C87065;}
 .breadcumbs li::after {
-  color: #fff;
+  color: #5d5a55;
   content: "/";
   left: -22px;
   position: absolute;

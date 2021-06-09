@@ -74,6 +74,11 @@
 		background-color: #ffdc16;
 		
 		}
+		
+		.single-pro-tab-menu ul li.active a {
+		    background: #534f49 none repeat scroll 0 0;
+		    color: #fff;
+}
 		</style>
 	</head>
 	<body>	
@@ -265,7 +270,7 @@
 									</ul>
 								</div>
 							</li>
-							<li><a href="about.html">about us</a></li>
+							<li><a href="ExpertPage.html">시공업체 찾기</a></li>
 							<li><a href="contact.html">contact</a></li>
 						</ul>
 					</nav>
@@ -331,10 +336,10 @@
 								<div class="heading-banner-title">
 									<h2>Expert page</h2>
 								</div>
-								<div class="breadcumbs pb-15">
+								<div class="breadcumbs pb-15" style="color: #5d5a55">
 									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li>시공업체</li>
+										<li><a href="index.html" style="color: #5d5a55">Home</a></li>
+										<li style="color: #5d5a55">시공업체</li>
 									</ul>
 								</div>
 							</div>
@@ -377,9 +382,9 @@
 									
 									url:"http://localhost:3000/gochatting",
 									type:'post',
-									data: {startChat : 'startChat'},
+									data: {"eNUM" : eNUM},
 									success: function (roomNumber) {
-										location.href = "moveChating.html?roomNumber=" + roomNumber + "&eNUM=" + eNUM;
+										location.href = "moveChat.html?roomNumber=" + roomNumber + "&eNUM=" + eNUM;
 									},
 									error: function (data) {
 										alert("error");
@@ -395,32 +400,24 @@
 							<div class="row shop-list single-pro-info">
 								<!-- Single-product start -->
 								<div class="col-lg-12" style=" height: 390px;">
-									<div class="single-product clearfix" style="height: 310px;">
+									<div class="single-product clearfix" style="height: 310px; border: 1px solid #d2d2d2">
 										<!-- Single-pro-slider Big-photo start -->
 										<div class="single-pro-slider single-big-photo view-lightbox slider-for">
 											<div>
 												<img class= "MainImage" src="../img/single-product/medium/1.jpg" alt="" />
-												<a class="view-full-screen" href="../img/single-product/large/1.jpg"  data-lightbox="roadtrip" data-title="My caption">
-													<i class="zmdi zmdi-zoom-in"></i>
-												</a>
+												
 											</div>
 											<div>
 												<img class="image1" src="../img/single-product/medium/2.jpg" alt="" />
-												<a class="view-full-screen" href="../img/single-product/large/2.jpg"  data-lightbox="roadtrip" data-title="My caption">
-													<i class="zmdi zmdi-zoom-in"></i>
-												</a>
+												
 											</div>
 											<div>
 												<img class="image2" src="../img/single-product/medium/3.jpg" alt="" />
-												<a class="view-full-screen" href="../img/single-product/large/3.jpg"  data-lightbox="roadtrip" data-title="My caption">
-													<i class="zmdi zmdi-zoom-in"></i>
-												</a>
+												
 											</div>
 											<div>
 												<img class="image3" src="../img/single-product/medium/4.jpg" alt="" />
-												<a class="view-full-screen" href="../img/single-product/large/4.jpg"  data-lightbox="roadtrip" data-title="My caption">
-													<i class="zmdi zmdi-zoom-in"></i>
-												</a>
+												
 											</div>
 											<!-- <div>
 												<img src="../img/single-product/medium/5.jpg" alt="" />
@@ -482,7 +479,7 @@
 										<div class="single-pro-tab-menu">
 											<!-- Nav tabs -->
 											<ul class="">
-												<li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+												<li class="active"><a href="#description" data-toggle="tab">Address</a></li>
 												<li><a href="#reviews"  data-toggle="tab">Reviews</a></li>
 												<li><a href="#information" data-toggle="tab">Information</a></li>
 												<li><a href="#tags" data-toggle="tab">Tags</a></li>
@@ -494,11 +491,12 @@
 										<div class="tab-content">
 											<div class="tab-pane active" id="description">
 												<div class="pro-tab-info pro-description">
-													<h3 class="tab-title title-border mb-30">dummy Product name</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+												<div class="addressWhere">
 												</div>
+													<div id="map" style="width: 100%; height: 300px;"></div>
+												</div>
+												
+												    
 											</div>
 											<div class="tab-pane" id="reviews">
 												<div class="pro-tab-info pro-reviews">
@@ -626,7 +624,8 @@
 					</div>
 				</div>
 			</div>
-			
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d37d0c601b91ed657160c03ac7faf573&libraries=services"></script>
+  
 			<!-- 스크립트 시작 -->
 			<script type="text/javascript">
 			
@@ -670,9 +669,85 @@
 					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>연락처 </b>"+ phone +"</span><br>");
 					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>대표자명 </b>"+ ceo +"</span><br>");
 					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>주소 </b>"+ address +"</span><br>");
+					$(".addressWhere").append("<h3 class='tab-title title-border mb-30 addressWhere'>"+ address +"</h3>");
 					
-					
-					
+					//지도 펼치기
+					/////////////////////////////////////////////////////////////////////
+					  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+						        mapOption = {
+						            center : new daum.maps.LatLng(36.633535, 127.425882), // 지도의 중심좌표
+						            level : 4
+						        // 지도의 확대 레벨
+						        };
+						 
+						        // 지도를 생성합니다    
+						        var map = new daum.maps.Map(mapContainer, mapOption);
+						 
+						        // 주소-좌표 변환 객체를 생성합니다
+						        var geocoder = new daum.maps.services.Geocoder();
+						 
+						        var myAddress = [address];
+						 
+						        function myMarker(number, address) {
+						            // 주소로 좌표를 검색합니다
+						            geocoder
+						                    .addressSearch(
+						                            //'주소',
+						                            address,
+						                            function(result, status) {
+						                                // 정상적으로 검색이 완료됐으면 
+						                                if (status === daum.maps.services.Status.OK) {
+						 
+						                                    var coords = new daum.maps.LatLng(
+						                                            result[0].y, result[0].x);
+						 
+						                                    // 결과값으로 받은 위치를 마커로 표시합니다
+						                                    /*
+						                                    var marker = new daum.maps.Marker({
+						                                        map : map,
+						                                        position : coords
+						                                    });
+						                                     */
+						 
+						                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+						                                    /*
+						                                    var infowindow = new daum.maps.InfoWindow(
+						                                            {
+						                                                // content : '<div style="width:50px;text-align:center;padding:3px 0;">I</div>'
+						                                                content : '<div style="color:red;">' +  number + '</div>'
+						                                            });
+						                                    infowindow.open(map, marker);
+						                                     */
+						 
+						                                    // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+						                                    var content = '<div class="customoverlay">'
+						                                            + '    <span class="title">'
+						                                            + '<div style="font-style:normal; color:red; font-weight:bold; font-size:2.0em">'
+						                                            + number + '</div>' + '</span>'
+						                                            + '</div>';
+						 
+						                                    // 커스텀 오버레이가 표시될 위치입니다 
+						                                    var position = new daum.maps.LatLng(
+						                                            result[0].y, result[0].x);
+						 
+						                                    // 커스텀 오버레이를 생성합니다
+						                                    var customOverlay = new daum.maps.CustomOverlay(
+						                                            {
+						                                                map : map,
+						                                                position : position,
+						                                               
+						                                                yAnchor : 1
+						                                            });
+						 
+						                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+						                                    map.setCenter(coords);
+						                                }
+						                            });
+						        }
+						 
+						        for (i = 0; i < myAddress.length; i++) {
+						            myMarker(i + 1, myAddress[i]);
+						        }
 					//최근계약
 					var recentCon = Detail.recentCon;
 					$("#numberExpert").append( "최근계약 " + recentCon);
@@ -689,11 +764,26 @@
 					}
 					$(".Whatpart").append(part);
 					
-					
+					var eNUMM = Detail.eNUM;
+					//alert(eNUMM);
 					//채팅 버튼
 					$(".chatAppend").append("<button type='button' onclick='goChat(" + Detail.eNUM + ")' class='btn btn-default btny ' style='width:100%;margin-bottom:10px'>실시간 상담하기</button>");
 					
 					
+					//로그인 아이디와 업체 로그인 아이디가 같을 시에 채팅 버튼 출력
+					var login = JSON.parse(sessionStorage.getItem("login"));
+					var login_id = login.id;
+					var Expert_id = Detail.id;
+					//alert(login_id);
+					//alert(Expert_id);
+
+					/* if(login_id == Expert_id){
+						
+						$(".chatAppend").append("<button type='button' onclick='goChat(" + Detail.eNUM + ")' class='btn btn-default btny ' style='width:100%;margin-bottom:10px'>실시간 상담 이력확인</button>");
+						
+					}
+					
+					 */
 				
 				},
 				error: function() {
