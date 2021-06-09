@@ -17,8 +17,8 @@
 		speed: 300,
 		slidesToShow: 4,
 		slidesToScroll: 1,
-		prevArrow: '<button type="button" class="slick-prev">p<br />r<br />e<br />v</button>',
-		nextArrow: '<button type="button" class="slick-next">n<br />e<br />x<br />t</button>',
+		prevArrow: '<button type="button" class="slick-prev"><</button>',
+		nextArrow: '<button type="button" class="slick-next">></button>',
 		responsive: [
 			{  breakpoint: 1169,  settings: { slidesToShow: 3,  }  },
 			{  breakpoint: 969,   settings: { slidesToShow: 3,  }  },
@@ -171,17 +171,21 @@
 /*----------------------------
 	price-slider active
 ------------------------------ */  
+	
 	$( "#slider-range" ).slider({
 		range: true,
-		min: 50,
-		max: 2000,
-		values: [ 0, 999 ],
+		min: 0,
+		max: 1000000,
+		step: 50000,
+		values: [ 1, 1000000 ],
 		slide: function( event, ui ) {
-			$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+			$( "#amount" ).val( ui.values[ 0 ] + "원 - " + ui.values[ 1 ] + "원");
 		}
 	});
-	$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-	" - $" + $( "#slider-range" ).slider( "values", 1 ) );  
+	
+	$( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+	"원 - " + $( "#slider-range" ).slider( "values", 1 ) + "원");  	
+	
 	
 /*----------------------------
 	Cart Plus Minus Button
