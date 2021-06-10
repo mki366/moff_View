@@ -18,6 +18,7 @@
 		
 		
 		
+		
 		<!-- Google Font -->
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
@@ -48,6 +49,7 @@
         <link rel="stylesheet" href="../css/shortcode.css">
 		<!-- responsive css -->
 		<link rel="stylesheet" href="../css/responsive.css">
+		<!-- step 시작 -->
 		
 		<style type="text/css">
 /* 		body {
@@ -170,12 +172,42 @@ padding-top: 10px;
 
 }
 		</style> 
+		
+		<!-- step -->
+		<!-- step -->
+		<!-- step -->
+		<!-- step -->
+		<!-- step -->
+		<!-- <link rel="stylesheet" href="../css/ExpertStep.css">
+		<script type="text/javascript" src="../js/ExpertStep.js"></script>
+	
+		<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> -->
+	    <!-- step -->
+		<!-- step -->
+		<!-- step -->
+		<!-- step -->
+		<!-- step -->
+		
+		
 <style>
     .map_wrap {position:relative;width:100%;height:350px;}
     .title {font-weight:bold;display:block;}
     .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
     #centerAddr {display:block;margin-top:2px;font-weight: normal;}
     .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+    
+    .backimage{
+    
+    background: url('../deli-image/백그라운드.jpg');
+      background-repeat : no-repeat;
+        background-size : cover;
+        width: 100%;
+    
+    }  
+    
+    
 </style>
 	<!-- delivery service -->
 		
@@ -193,6 +225,8 @@ padding-top: 10px;
 		<!-- modernizr css -->
 		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d37d0c601b91ed657160c03ac7faf573&libraries=services"></script>
+		
+			
 		
 	</head>
 	<body>	
@@ -439,7 +473,7 @@ padding-top: 10px;
 						<!-- <div class="col-md-12"> -->
 							<div class="heading-banner">
 								<div class="heading-banner-title">
-									<h2 style="padding-top: 70px;padding-bottom: 50px; color: #5d5a55 ">Interior &nbsp;&nbsp; Service</h2>
+									<h2 style="color: #5d5a55 ">Interior &nbsp;&nbsp; Service</h2>
 								</div>
 								<div class="breadcumbs pb-15" style="color:#5d5a55">
 									<ul>
@@ -926,296 +960,41 @@ padding-top: 10px;
 										<form action="#">
 											<div class="shop-cart-table">
 											<br>
-   											<h2 align="center" style="font-weight: 700;">나의 배송 목록</h2>
+   											<h2 align="center" style="font-weight: 700;">인테리어 상담 신청</h2>
 											<br>
 											<br>
 											<hr>
-											
-											<!--start  -->
-											
-													 <aside class="widget widget-search" style="width:500px">
-			                                   <!--  <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요." size="25px">
-			                                    <button type="button" id="csSearch"><i class="zmdi zmdi-search" ></i></button> 
-			                                --> 
-											
-																<select class="_choice2 custom-select mb-15" name="choice" style="width:200px">
-																	<option value="" selected="selected">주문 정보 검색</option>
-																	<option value="membername2">수령자이름</option>
-																	<option value="address2">수령주소지</option>
+											<!-- 인테리어 상담 시작----------------------------------------------------- -->
+											<div class="heading-banner-area backimage" style="background: url('../deli-image/백그라운드.jpg'); width: 100%" >
+												<div class="container">
+													<div class="row">
+														<div>
+														<!-- <div class="col-md-12"> -->
+															<div class="heading-banner">
+																<div class="heading-banner-title" style="margin-left: 25px">
+																	<h2 style="color: #2c2b28 ;  width: 600px; font-size: 30px; text-align: left">종합리모델링 업체와
+																	<span style="line-height:180%"><br></span>무료로 상담해보세요.
+																	<span style="line-height:200%"><br></span>
+																	<button type="button" class="btn btn-default" style="width: 250px; height: 60px"><b style="font-size: 20px">바로 상담하기</b></button>
+																	</h2>
+																	
+																</div>
 																
-																</select><!--  -->
-																
-																
-																
-															
-															
-															
-															
-																<input type="text" class="_searchWord2" name="searchWord"  placeholder="검색어를 입력해주세요." style="width:200px">
-																
-																
-														
-																
-																	<button data-text="Subscribe" type="button" id="btnSearch2"><i class="zmdi zmdi-search" ></i></button>
-																
-														 </aside> 
-														<!--  -->
-														
-														
-														
-											
-														<script type="text/javascript">
-														$("#btnSearch2").click(function(){
-															Mydelivery(0);
-															pagination2();
-														});
-														
-													
- 														
-														
-														
-														</script>
-											
-											
-											
-												<div class="table-content table-responsive">
-													<table>
-														<thead>
-															<tr>
-																<th class="product-thumbnail">주문번호</th>	
-																<th class="product-stock">수령자이름</th>
-																<th class="product-add-cart">수령자 전화번호</th>
-																<th class="product-remove">수령자 주소</th>
-																<th class="product-remove">주문일자</th>
-																<th class="product-remove">배송상태</th>
-																<th class="product-remove">주문상품확인</th>
-																<th class="product-remove">배송상태변경</th>
-															</tr>
-														</thead>
-														<tbody id = "_list_table2">
-														
-															
-														</tbody>
-													</table>
-													
-													
-													
-													
-													
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
+										<!-- 배너끝 -->
+											
+											
+											</div>
 										</form>		
-										
-										<div class="col-md-12">
-														<div class="shop-pagination  text-center" id="makepagination2" >
-																
-																	
-														</div>
-														
 									
-														</div>	 
-										
 					
 									</div>
 									
 									
-									 
-									<!-- wishlist end -->
-									<!-- check-out start -->
-									<div class="tab-pane" id="check-out">
-										<form action="#">
-											<div class="shop-cart-table check-out-wrap">
-													<div class="shop-cart-table check-out-wrap">
-														<h2 align="center" style="font-weight: 700;">바이백 서비스 신청 현황</h2>
-														<br>
-														<br>
-														<hr>
-														
-															 <!-- <aside class="widget widget-search" style="width:500px"> -->
-			                                   <!--  <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요." size="25px">
-			                                    <button type="button" id="csSearch"><i class="zmdi zmdi-search" ></i></button> 
-			                                    
-			                                    
-			                                      <!-- Widget-Search start -->
-								                          
-			                                    
-			                                    
-			                                    		<div class="table-container">	
-			                                 			<table style="height: 52px;width: 502px;">
-			                                 			<col width=200px><col width=400px>
-																<tr>
-																<td>
-																<select class="_choice3 custom-select mb-15" name="choice" style="width:200px">
-																	
-																	<option value=" " selected="selected">주소 검색</option>
-																	<option value="address3" >방문 주소지</option>
-																	
-																</select>
-																</td>
-																<td>
-																<!--  -->
-																
-																
-																  <aside class="widget widget-search mb-30" style="width:300px">
-								                               
-								                                    <input class="_searchWord3"  type="text" placeholder="찾고자하는 주소지를 검색하세요" />
-								                                    <button id="btnSearch3">
-								                                        <i class="zmdi zmdi-search"></i>
-								                                    </button>
-								                               
-								                       		     </aside>
-															
-											
-															 	</td>
-																
-																<!-- 월검색 -->
-																
-																<td>
-																<input type="text" readonly="readonly" value="방문신청 월 검색" style="width:200px">
-																
-																</td>
-																
-																
-																<td>
-																  <aside class="widget widget-search mb-30" style="width:300px">
-																<input type="month" id="searchdate" style="border:0px">
-																<button id="btnSearch4">
-								                                        <i class="zmdi zmdi-search"></i>
-								                                  </button>
-								                                  </aside>
-																</td>
-																</tr>
-															</table>
-															</div>
-															<hr>
-														
-														<!--  </aside>  -->
-														<!--  -->
-														
-														
-														
-											
-												
-											
-														
-														<div class= "appendbuyback">
-														</div>
-												<!-- <div class="row">
-												
-													<div class="col-md-6 col-sm-6 col-sm-12">
-														<div class="our-order payment-details pr-20">
-															<h4 class="title-1 title-border text-uppercase mb-30">바이백 신청 견적서</h4>
-															<table>
-																<thead>
-																	<tr>
-																		<th><strong>신청번호</strong></th>
-																		<th class="text-right"><strong>1</strong></th>
-																	</tr>
-																</thead>
-																<tbody>
-														
-																	<tr>
-																		<td>상품고유번호/대분류/소분류</td>
-																		<td  class="text-right">3/의자/이쁜의자</td>
-																	</tr>
-																
-																	<tr>
-																		<td>상품 원가</td>
-																		<td class="text-right">30,000</td>
-																	
-																	</tr>
-																	<tr>
-																		<td>상품 컨디션</td>
-																		<td class="text-right">40%</td>
-																	</tr>
-																	<tr>
-																		<td>바이백 리턴 가격</td>
-																		<td class="text-right">12,000</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-													</div>
-													payment-method
-													<div class="col-md-6 col-sm-6 col-sm-12 mt-xs-30">
-														<div class="payment-method  pl-20">
-															<h4 class="title-1 title-border text-uppercase mb-30">신청자 정보</h4>
-															<div class="payment-accordion">
-																Accordion start 
-																<h3 class="payment-accordion-toggle active">바이백 서비스 신청정보 </h3>
-																<div class="payment-content default">
-																
-																</div> 
-																Accordion end
-																Accordion start
-																<h3 class="payment-accordion-toggle">바이백 신청자 정보</h3>
-																<div class="payment-content">
-																			<table>
-																			<thead>
-																			
-																				<tr>
-																					<th>주소</th>
-																				</tr>
-																			
-																				<tr>
-																			
-																					<td style="padding-bottom: 10px;">양천구 신월동 남부순환로 70길 12-6번지</td>
-																				
-																				</tr>
-																				
-																			</thead>
-																			<tbody>
-																				<tr>
-																				
-																					<th><strong>전화번호</strong></th>
-																					
-																					
-																				</tr>
-																				<tr>
-																					<td style="padding-bottom: 10px;">010-2888-3498</td>
-																				</tr>
-																				
-																				
-																			
-																				<tr>
-																					<th>요청 방문 날짜</th>
-																					
-																				</tr>
-																				<tr>
-																					<td>2021-05-28</td>
-																				</tr>
-																				
-																			</tbody>
-																		</table>
-																		
-																</div>
-															
-																Accordion end 
-																<button class="button-one submit-button mt-15" data-text="place order">바이백 서비스 수락하기</button>			
-																
-															</div>
-																														
-														</div>
-														
-													</div>
-												</div> -->
-												<hr>
-											</div>
-											</div>
-										</form>		
-										
-										
-										
-												<div class="col-md-12">
-														<div class="shop-pagination  text-center" id="makepagination3" >
-																
-																	
-														</div>
-														
-									
-														</div>										
-									</div>
-									<!-- check-out end -->
 								
 								</div>
 

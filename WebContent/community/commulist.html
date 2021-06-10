@@ -861,7 +861,7 @@ function getFilterCommunity(pagenum) {
 					+		'<div class="single-blog mb-30" style="width: 345px; height: 495.55px;">'
 					+		'<div class="blog-photo">'
 					+			"<a href='communityDetail.html?cmNum=" + val.cmNum + "'>"
-					+				'<img style="width: 295px; height: 295px;" src="../image/' + val.image1 + '">'
+					+				'<img style="width: 295px; height: 295px;" src=' + val.image1 + '>'
 					+			'</a>'
 					+			'<div class="like-share text-center fix">'
 					+				"<a class='likeIcon" + i + "' href='#;' onclick='addLikeList(" + '"' + i + '"' + ',' + '"' + val.cmNum + '"' + ',' + '"' + val.cmLike + '"'+ ")'><i class='zmdi zmdi-favorite'></i><span>" + val.cmLike + "Like</span></a>"
@@ -950,7 +950,7 @@ function todayList() {
 							
 				let todayStr = '<div class="col-md-4 col-sm-6" style="margin-bottom: 10px;">'
 					  +          '<div class="box">'
-					  +              '<img src="../image/' + val.image1 + '">'
+					  +              '<img src=' + val.image1 + '>'
 					  +             	'<div class="box-content">'
 					  +                 	 '<div class="box-inner-content">'
 					  +							"<a style='height: 350px; width: 350px;' href='communityDetail.html?cmNum=" + val.cmNum + "'>"
