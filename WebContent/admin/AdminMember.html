@@ -21,6 +21,8 @@
     			
       <link rel="stylesheet" href="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.css">
 <script src="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.js"></script>
+<!--  https://apexcharts.com/ -->
+ <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <style>
 .pagination {
   display: inline-block;
@@ -671,7 +673,7 @@ HashMap.prototype = {
                         <div class="col-lg-6 col-md-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">월별 가입자</h4>
+                                    <h4 class="card-title">2021년도 월별 가입자</h4>
                                     <div>
 									    <div>
 									            <div class="container-fluid d-flex justify-content-center">
@@ -691,9 +693,7 @@ HashMap.prototype = {
                                     <h4 class="card-title">회원 연령대</h4>
                                     <div>
 									    <div>
-									            <div class="container-fluid d-flex justify-content-center">
-									               <div class=" ct-chart ct-square chartjs-render-monitor"></div>
-									            </div>
+									         <div id="chart"></div>
 									       
 									    </div>
 									</div>
@@ -704,7 +704,110 @@ HashMap.prototype = {
                      
                       
                     </div>
+                <script type="text/javascript">
+
+                $(document).ready(function() {
                 
+                	
+                	$.ajax({
+                		url:"http://localhost:3000/TotalAgeChart",
+                		type:"post",
+                		data: JSON.stringify(),
+                		success:function(TotalAge){	
+                	
+                		
+                		var AgeMap = new HashMap();
+                		var map1;
+                		var map2;
+                		var map3;
+                		var map4;
+                		var map5;
+                		var map6;
+                		
+            			$.each(TotalAge, function(i, val){
+            		
+					    /* 해쉬맵 생성 시작 */
+					    //해쉬맵에 데이터 입력
+					    
+					    
+    					AgeMap.put( val.ageDivision, val.count);	
+					    
+    					 //alert(AgeMap.get("map3")); 
+					    
+    					 map1 = AgeMap.get("map1");//20세미만
+ 					     map2 = AgeMap.get("map2");//20세이상 ~ 30세미만
+ 					     map3 = AgeMap.get("map3");//30세이상 ~ 40세미만
+ 					     map4 = AgeMap.get("map4");//40세이상 ~ 50세미만
+ 					     map5 = AgeMap.get("map5");//50세이상 ~ 60세미만
+ 					     map6 = AgeMap.get("map6");//60세이상
+                 		
+ 					     if(map1 == null ){
+ 					    	map1 = 0;
+ 					     }
+ 					     
+ 					     if(map2 == null){
+ 					    	map2 = 0;
+ 					     }
+ 					     
+ 					     if(map3 == null){
+ 					    	map3 = 0;
+ 					     }
+ 					     if(map4 == null){
+ 					    	map4 = 0;
+ 					     }
+ 					     
+ 					     if(map5 == null){
+ 					    	map5 = 0;
+ 					     }
+ 					     
+ 					     if(map6 == null){
+ 					    	map6 = 0;
+ 					     }
+                 			
+                 	
+            			 });//each
+                			
+            			 
+            			 alert("map1 : " + map1);
+            			 alert("map2 : " + map2);
+            			 alert("map3 : " + map3);
+            			 alert("map4 : " + map4);
+            			 alert("map5 : " + map5);
+            			 alert("map6 : " + map6);
+		                
+		                var options = {
+		                  series: [map1, map2 , map3 , map4 , map5 , map6],
+		                  chart: {
+		                  type: 'donut',
+		                },
+		                labels: ['20세미만', '20세이상~30대미만', '30세이상~40세미만', '40세이상~50세미만', '50세이상~60미만','60세이상'],
+		                responsive: [{
+		                  breakpoint: 480,
+		                  options: {
+		                    chart: {
+		                      width: 200
+		                    },
+		                    legend: {
+		                      position: 'bottom'
+		                    }
+		                  }
+		                }]
+		                };
+		
+		                var chart = new ApexCharts(document.querySelector("#chart"), options);
+		                chart.render();
+            			
+            			
+		                
+                		},
+                		error:function(){
+                			alert("error");
+                		}
+                	
+                		 });//ajax
+                });
+                
+                </script>
               
                 <div class="row">
                     <div class="col-lg-12">
@@ -732,20 +835,20 @@ HashMap.prototype = {
 																	<button type="button" class="btn mb-1 btn-primary" id="btnSearch" style="height: 45px">검색</button>
 																
 														 </div> 
-                                <div class="active-member">
-                                    <div class="table-responsive">
+                                <div class="active-member" align="center">
+                                    <div class="table-responsive" align="center">
                                     
-                                        <table class="table table-xs mb-0" id="_list_table">
+                                        <table class="table table-xs mb-0" id="_list_table" style="text-align: center">
                                             <thead>
                                                 <tr>
                                                     <th>회원번호</th>
                                                     <th>회원이름</th>
                                                     <th>회원아이디</th>
-                                                    <th>닉네임</th>
                                                     <th>주소</th>
                                                     <th>전화번호</th>
                                                     <th>생년월일</th>
                                                     <th>회원구분</th>
+                                                    <th>회원관리</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -765,7 +868,28 @@ HashMap.prototype = {
                     </div>
                 </div>
 
-            
+
+				<!-- 모달시작 -->
+				   <div class="modal fade" id="exampleModalCenter">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" style="font-weight: 800">회원정보</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body appendData">
+                                                  
+                                                </div>
+                                                <div class="modal-footer DelData">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-bottom: 4px;">Close</button>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+				
+            	
                 <script type="text/javascript">
                 allmemberList(0);
                 pagination1();
@@ -804,28 +928,43 @@ HashMap.prototype = {
                 				<th>회원번호</th><th>회원이름</th><th>회원아이디</th>
                 				<th>닉네임</th><th>주소</th><th>전화번호</th><th>생년월일</th>
                 				<th>회원구분</th> */
-                				
-                				
-                				
-                				let app = "<tr class='list_col'>"
+                				let app;
+                					//삭제하지않은 회원
+                				if(val.memDel == 0){
+                				 app = "<tr class='list_col'>"
                 							+ "<td>" + (i + 1) + "</td>";
 
                 					app += "<td>" +val.name + "</td>";
                 					app += "<td>" + val.id + "</td>";
-                					app += "<td>" + val.nickname + "</td>";
+                					
                 					app += "<td>" + val.address + "</td>";
                 					app += "<td>" + val.phone + "</td>";
                 					app += "<td>" + val.bdate + "</td>";
                 					if (val.memberType == 1) {
                 						app += "<td style='color: blue'>배달기사</td>"
-                					}else{
+                					}else if(val.memberType == 0){
                 						app += "<td>일반회원</td>";	
+                					}else if(val.memberType == 2){
+                						app += "<td style='color: #ff9d55'>시공업체</td>";	
                 					}
-                					
+                					app += "<td><button type='button' class='btn mb-1 btn-rounded btn-primary'   onclick='modalshow("+val.memNum +")' data-toggle='modal' data-target='#exampleModalCenter'>회원관리</button></td>";
                 				
                 					
                 					app += "</tr>";
-                						
+                					//삭제된회원
+                				}else if(val.memDel == 1){
+                					 app = "<tr class='list_col'>";
+                					 app += "<td>" + (i + 1) + "</td>";
+
+             						 app += "<td>" +val.name + "</td>";
+             						 app += "<td colspan='5' style='color:red'>회원탈퇴, 삭제된 회원입니다.</td>";
+             						 app += "<td><button type='button' class='btn mb-1 btn-rounded btn-primary'   onclick='modalshow("+val.memNum +")' data-toggle='modal' data-target='#exampleModalCenter'>회원관리</button></td>";
+             						 app += "</tr>";
+                				}
+                				
+                				
+                				
+                				
                 				$("#_list_table").append(app);	
                 			});	
                 		}//else end
@@ -837,6 +976,109 @@ HashMap.prototype = {
                 	});
                 }
                 
+                //모달
+                //모달(회원관리)
+                function modalshow(memNum){
+                	$.ajax({
+                		
+                		url:"http://localhost:3000/getMember",
+                		type:"post",
+                		data:{'memNum':memNum},
+                		success:function (mem){
+                			//alert("success");
+                			
+                			
+                			$(".list_add").remove();
+                			$(".appendB").remove();
+                		    var add = "<div class='table-responsive list_add'>";
+                		    add +=   "<table class='table table-bordered'>"
+                                 + "<thead>"
+                                  +   "<tr>"
+                                  +       "<th>구분</th>"
+                                  +       "<th>회원정보</th>"
+                                  +   "</tr>"
+                               +  "</thead>"
+                               +  "<tbody>"
+                               +     " <tr>"
+                               +          "<th>회원번호</th>"
+                               +          "<td>" + mem.memNum + "</td>"
+                               +      "</tr>"
+                               +      "<tr>"
+                               +          "<th>회원이름</th>"
+                               +          "<td>" + mem.name + "</td>"         
+                               +      "</tr>"
+                               +      "<tr>"
+                               +          "<th>회원아이디</th>"
+                               +          "<td>" + mem.id + "</td>"
+                               +      "</tr>"
+                               +      "<tr>"
+                               +          "<th>이메일주소</th>"
+                               +          "<td>" + mem.email + "</td>"
+                               +      "</tr>"
+                               +      "<tr>"
+                               +          "<th>회원주소</th>"
+                               +          "<td>" + mem.address + "</td>"
+                               +      "</tr>"
+                               +      "<tr>"
+                               +          "<th>전화번호</th>"
+                               +          "<td>" + mem.phone + "</td>"
+                               +      "</tr>"
+                               +      "<tr>"
+                               +          "<th>생년월일</th>"
+                               +          "<td>" + mem.bdate + "</td>"
+                               +      "</tr>"
+                               +      "<tr>"
+                               +          "<th>회원가입일</th>"
+                               +          "<td>" + mem.jdate + "</td>"
+                               +      "</tr>"
+                               +      "<tr>"
+                               +          "<th>소유한 포인트</th>"
+                               +          "<td>" + mem.memPoint + "</td>"
+                               +      "</tr>"
+                             +    " </tbody> "
+                          +   " </table> "
+                      +   " </div> ";
+                      
+                      var addButton;
+                      if(mem.memDel == 0 ){
+                       addButton = "<div class='appendB'><button type='button' class='btn mb-1 btn-danger' onclick=MemDel("+ mem.memNum + ") >회원삭제</button></div>";
+                      }else if(mem.memDel == 1){
+                    	  addButton = "<div class='appendB'><p style='color:red'>삭제된 회원입니다.</p></div>";
+                      }
+                      
+                      $(".appendData").append(add);
+                	  $(".DelData").append(addButton);	
+                		
+                			
+                		},
+                		error:function(){
+                			alert("error");
+                		}
+                		
+                		
+                	
+                		});//ajax
+                	}
+                //회원삭제
+                function MemDel(memNum){
+
+					$.ajax({
+						url:"http://localhost:3000/MemDel",
+						type:"post",
+						data:{ 
+							"memNum": memNum
+						},
+						success:function(result){
+							if(result){
+								alert("정상적으로 회원삭제 되었습니다.");
+							}
+						},
+						error:function(){
+							alert("error");
+						}
+					});
+						
+                }
                 
 				function pagination1( ){
 					
