@@ -17,6 +17,8 @@
     <link href="css/style.css" rel="stylesheet">
      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> 
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      
 </head>
 
 <body>
@@ -413,7 +415,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                            <div class="card-body">
-                                <h3 class="card-title">DailySales</h3>
+                                <h3 class="card-title">오늘</h3>
                                 <div class="d-inline-block">
                                     <h2 id="CountDailySales">$ 8541</h2>
                                     <p class=" mb-0">Jan - March 2019</p>
@@ -425,7 +427,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                           <div class="card-body">
-                                <h3 class="card-title">MonthlySales</h3>
+                                <h3 class="card-title">이번 달</h3>
                                 <div class="d-inline-block">
                                     <h2 id="CountMonthlySales">$ 8541</h2>
                                     <p class=" mb-0">Jan - March 2019</p>
@@ -437,7 +439,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="card-title">AnnualSales</h3>
+                                <h3 class="card-title">올 해</h3>
                                 <div class="d-inline-block">
                                     <h2 id="CountAnnualSales">$ 8541</h2>
                                     <p class=" mb-0">Jan - March 2019</p>
@@ -449,7 +451,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                            <div class="card-body">
-                                <h3 class="card-title">TotalSales</h3>
+                                <h3 class="card-title">총</h3>
                                 <div class="d-inline-block">
                                     <h2 id="CountTotalSales">$ 8541</h2>
                                     <p class=" mb-0">Jan - March 2019</p>
@@ -461,141 +463,32 @@
 
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="active-member">
-                                    <div class="table-responsive">
-                                        <table class="table table-xs mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>Customers</th>
-                                                    <th>Product</th>
-                                                    <th>Country</th>
-                                                    <th>Status</th>
-                                                    <th>Payment Method</th>
-                                                    <th>Activity</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><img src="./images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
-                                                    <td>iPhone X</td>
-                                                    <td>
-                                                        <span>United States</span>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <div class="progress" style="height: 6px">
-                                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                                    <td>
-                                                        <span>Last Login</span>
-                                                        <span class="m-0 pl-3">10 sec ago</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="./images/avatar/2.jpg" class=" rounded-circle mr-3" alt="">Walter R.</td>
-                                                    <td>Pixel 2</td>
-                                                    <td><span>Canada</span></td>
-                                                    <td>
-                                                        <div>
-                                                            <div class="progress" style="height: 6px">
-                                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                                    <td>
-                                                        <span>Last Login</span>
-                                                        <span class="m-0 pl-3">50 sec ago</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="./images/avatar/3.jpg" class=" rounded-circle mr-3" alt="">Andrew D.</td>
-                                                    <td>OnePlus</td>
-                                                    <td><span>Germany</span></td>
-                                                    <td>
-                                                        <div>
-                                                            <div class="progress" style="height: 6px">
-                                                                <div class="progress-bar bg-warning" style="width: 50%"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td><i class="fa fa-circle-o text-warning  mr-2"></i> Pending</td>
-                                                    <td>
-                                                        <span>Last Login</span>
-                                                        <span class="m-0 pl-3">10 sec ago</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="./images/avatar/6.jpg" class=" rounded-circle mr-3" alt=""> Megan S.</td>
-                                                    <td>Galaxy</td>
-                                                    <td><span>Japan</span></td>
-                                                    <td>
-                                                        <div>
-                                                            <div class="progress" style="height: 6px">
-                                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                                    <td>
-                                                        <span>Last Login</span>
-                                                        <span class="m-0 pl-3">10 sec ago</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="./images/avatar/4.jpg" class=" rounded-circle mr-3" alt=""> Doris R.</td>
-                                                    <td>Moto Z2</td>
-                                                    <td><span>England</span></td>
-                                                    <td>
-                                                        <div>
-                                                            <div class="progress" style="height: 6px">
-                                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                                    <td>
-                                                        <span>Last Login</span>
-                                                        <span class="m-0 pl-3">10 sec ago</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="./images/avatar/5.jpg" class=" rounded-circle mr-3" alt="">Elizabeth W.</td>
-                                                    <td>Notebook Asus</td>
-                                                    <td><span>China</span></td>
-                                                    <td>
-                                                        <div>
-                                                            <div class="progress" style="height: 6px">
-                                                                <div class="progress-bar bg-warning" style="width: 50%"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td><i class="fa fa-circle-o text-warning  mr-2"></i> Pending</td>
-                                                    <td>
-                                                        <span>Last Login</span>
-                                                        <span class="m-0 pl-3">10 sec ago</span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
-                </div>
-
+              
                 <div class="row">
                     <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6">
-
-                        <div class="card" style="height: 300px">
+						<select class="form-select form-select-sm" id="searchYear" aria-label=".form-select-sm example">
+						  <option selected value="년도">년도 </option>
+						  <option value="21">2021년</option>
+						  <option value="20">2020년</option>
+						  <option value="19">2019년</option>
+						</select>
+						<select class="form-select form-select-sm"id="searchMonth" aria-label=".form-select-sm example">
+						  <option selected value="월">월</option>
+						  <option value="/01">1월</option>
+						  <option value="/02">2월</option>
+						  <option value="/03">3월</option>
+						  <option value="/04">4월</option>
+						  <option value="/05">5월</option>
+						  <option value="/06">6월</option>
+						  <option value="/07">7월</option>
+						  <option value="/08">8월</option>
+						  <option value="/09">9월</option>
+						  <option value="/10">10월</option>
+						  <option value="/11">11월</option>
+						  <option value="/12">12월</option>
+						</select>
+						<input type="button" value="날짜별로 검색 하기" id="searchBtn">
+                        <div class="card" style="height: 300px; margin-top: 18px">
                              <div class="row"  style="height: 150px">
                                     <div class="col-6 border-right">
                                         <div class="pt-3 pb-3 pl-0 pr-0 text-center">
@@ -633,159 +526,65 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-sm-6 col-xxl-6">
+                    <div class="col-xl-6 col-lg-6 col-sm-6 col-xxl-6"><br><br>
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Activity</h4>
-                                <div id="activity">
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/1.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>Received New Order</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>iPhone develered</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>3 Order Pending</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>Join new Manager</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>Branch open 5 min Late</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>New support ticket received</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                    <div class="media pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/3.jpg" class="mr-3 rounded-circle">
-                                        <div class="media-body">
-                                            <h5>Facebook Post 30 Comments</h5>
-                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
-                                        </div><span class="text-muted ">April 24, 2018</span>
-                                    </div>
-                                </div>
+                                <h4 class="card-title">주문  건수</h4>
+                               <h4 id="orderBuyDate">0 건</h4>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">주문 가격</h4>
+                               <h4 id="orderBuyPriceDate">0 원</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-12 col-sm-12 col-xxl-12">
-                        <div class="card">
-                            <div class="card-body">
-                                    <h4 class="card-title mb-0">Store Location</h4>
-                                <div id="world-map" style="height: 470px;"></div>
-                            </div>        
+                    <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6"><br><br>
+                      <div class="card" style="height: 300px; ">
+                             <div class="row"  style="height: 150px">
+                                    <div class="col-12">
+                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                            <h4 class="m-1 " style="color:#698cba "><strong>취소 수량</strong></h4><br>
+                                           <i class="fas fa-store-slash fa-3x"></i><!-- <i class="fas fa-times fa-3x"></i> --><br>
+                                            <h5 class="m-0 float-right" id="orderDetailTB"  style="color:#698cba; padding-top: 13px;"></h5>
+                                        </div>
+                                    </div>
+                             
+                             </div>
+                                
+                            <div class=" border-top " style="height: 150px">
+                                  <div class="row">
+                                    <div class="col-12" style="height: 150px">
+                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                                            <h4 class="m-1" style="color: #cf6b5f"><strong>교환 수량</strong></h4><br>
+                                            <!--  <i class="fas fa-history fa-3x"></i> --><i class="fas fa-people-arrows fa-3x"></i><!-- <i class="fas fa-redo-alt fa-3x"></i> -->
+                                            <br><h5 class="m-0 float-right" id="orderDetailEX" style="color: #cf6b5f; padding-top: 13px"></h5>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                
-
+                <select class="form-select form-select-sm" id="chartYear" aria-label=".form-select-sm example">
+						  <option selected value="년도">년도 </option>
+						  <option value="21">2021년</option>
+						  <option value="20">2020년</option>
+						  <option value="19">2019년</option>
+				</select>
+                <input type="button" value="날짜별로 검색 하기" id="chartBtn">
                 <div class="row">
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-8">
                             <div class="card">
-                                <div class="social-graph-wrapper widget-facebook">
-                                    <span class="s-icon"><i class="fa fa-facebook"></i></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 border-right">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">89k</h4>
-                                            <p class="m-0">Friends</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">119k</h4>
-                                            <p class="m-0">Followers</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div id="myPlot" style="width:100%;max-width:1000px"></div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-4">
                             <div class="card">
-                                <div class="social-graph-wrapper widget-linkedin">
-                                    <span class="s-icon"><i class="fa fa-linkedin"></i></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 border-right">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">89k</h4>
-                                            <p class="m-0">Friends</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">119k</h4>
-                                            <p class="m-0">Followers</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="card">
-                                <div class="social-graph-wrapper widget-googleplus">
-                                    <span class="s-icon"><i class="fa fa-google-plus"></i></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 border-right">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">89k</h4>
-                                            <p class="m-0">Friends</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">119k</h4>
-                                            <p class="m-0">Followers</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="card">
-                                <div class="social-graph-wrapper widget-twitter">
-                                    <span class="s-icon"><i class="fa fa-twitter"></i></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 border-right">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">89k</h4>
-                                            <p class="m-0">Friends</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                                            <h4 class="m-1">119k</h4>
-                                            <p class="m-0">Followers</p>
-                                        </div>
-                                    </div>
-                                </div>
+                               <div id="myPlot2" style="width:100%;max-width:700px"></div>
                             </div>
                         </div>
                     </div>
@@ -815,6 +614,21 @@
 <script type="text/javascript">
 
 $(document).ready(function () {
+	let searchYear = "";
+	let searchMonth = "";
+	let searchDate="";
+	let chartYear="";
+	$("#searchYear").on('change',function(){
+		 searchYear=this.value;
+		// alert(searchYear);
+	});
+	 
+	 $("#searchMonth").on('change',function(){
+			searchMonth=this.value;
+			//alert(this.value);
+			
+		});
+	
 	 $.ajax({
 			url:"http://localhost:3000/CountDailySales",
 	        type: "get",
@@ -859,53 +673,219 @@ $(document).ready(function () {
 	          // alert("error");
 	        }
 		});
-	 $.ajax({
-			url:"http://localhost:3000/inDelivery",
+	 
+	 
+$("#searchBtn").on('click',function(){
+			searchDate=searchYear+searchMonth;
+			//alert(searchDate);
+			 $.ajax({
+					url:"http://localhost:3000/inDelivery",
+			        type: "get",
+			        data:{checkDate:searchDate},
+			        success:function(data){
+			       			//alert("inDelivery"+data);
+			       			$("#inDelivery").html('<strong>'+data+' 건</strong>');
+			        },
+			        error:function(){
+			          // alert("error");
+			        }
+				});
+			 $.ajax({
+					url:"http://localhost:3000/delivered",
+			        type: "get",
+			        data:{checkDate:searchDate},
+			        success:function(data){
+			       			//alert("delivered"+data);
+			       			$("#delivered").html('<strong>'+data+' 건</strong>');
+			        },
+			        error:function(){
+			          // alert("error");
+			        }
+				});
+			 $.ajax({
+					url:"http://localhost:3000/beforeDelivery",
+			        type: "get",
+			        data:{checkDate:searchDate},
+			        success:function(data){
+			       			//alert("beforeDelivery"+data);
+			       			$("#beforeDelivery").html('<strong>'+data+' 건</strong>');
+			        },
+			        error:function(){
+			          // alert("error");
+			        }
+				});
+			 $.ajax({
+					url:"http://localhost:3000/acceptDelivery",
+			        type: "get",
+			        data:{checkDate:searchDate},
+			        success:function(data){
+			       			//alert("acceptDelivery"+data);
+			       			$("#acceptDelivery").html('<strong>'+data+' 건</strong>');
+			        },
+			        error:function(){
+			          // alert("error");
+			        }
+				});
+				
+				$.ajax({
+					url:"http://localhost:3000/orderBuyDate",
+			        type: "get",
+			        data:{obDate:searchDate},
+			        success:function(data){
+			       			// alert("acceptDelivery"+data);
+			       			$("#orderBuyDate").html('<strong>'+data+' 건</strong>');
+			        },
+			        error:function(){
+			          // alert("error");
+			        }
+				});
+				$.ajax({
+					url:"http://localhost:3000/orderBuyPriceDate",
+			        type: "get",
+			        data:{obDate:searchDate},
+			        success:function(data){
+			       			// alert("acceptDelivery"+data);
+			       			$("#orderBuyPriceDate").html('<strong>'+data+' 원</strong>');
+			        },
+			        error:function(){
+			          // alert("error");
+			        }
+				});
+				$.ajax({
+					url:"http://localhost:3000/orderDetailTB",
+			        type: "get",
+			        data:{obDate:searchDate},
+			        success:function(data){
+			       			// alert("acceptDelivery"+data);
+			       			$("#orderDetailTB").html('<strong>'+data+' 건</strong>');
+			        },
+			        error:function(){
+			          // alert("error");
+			        }
+				});
+				$.ajax({
+					url:"http://localhost:3000/orderDetailEX",
+			        type: "get",
+			        data:{obDate:searchDate},
+			        success:function(data){
+			       			// alert("acceptDelivery"+data);
+			       			$("#orderDetailEX").html('<strong>'+data+' 원</strong>');
+			        },
+			        error:function(){
+			          // alert("error");
+			        }
+				});
+		})
+		
+		
+		//선택한 년도에 해당하는 월별 주문 건수 [초기-2021년]
+		$.ajax({
+			url:"http://localhost:3000/SearchAnnualSales",
 	        type: "get",
+	        data:{obDate:'21'},
 	        success:function(data){
-	       			//alert("inDelivery"+data);
-	       			$("#inDelivery").html('<strong>'+data+' 건</strong>');
+	        		 chartmyPlot(data);
 	        },
 	        error:function(){
-	          // alert("error");
+	           alert("error");
 	        }
 		});
-	 $.ajax({
-			url:"http://localhost:3000/delivered",
-	        type: "get",
-	        success:function(data){
-	       			//alert("delivered"+data);
-	       			$("#delivered").html('<strong>'+data+' 건</strong>');
-	        },
-	        error:function(){
-	          // alert("error");
-	        }
+				
+		$.ajax({
+			url:"http://localhost:3000/SearchLocalSales",
+		    type: "get",
+		    success:function(data){
+		    		alert('성공');
+		    		let resultlocal =[];
+		    		let finallocal=[];
+		    		let finalcount=[];
+		    		$.each(data,function(i,data){
+		    				resultlocal[i]=data;
+		    				//alert(resultlocal[i]);
+		    				finallocal[i] = resultlocal[i].split(",")[0];
+		    				finalcount[i] = resultlocal[i].split(",")[1];
+		    				//alert(finallocal[i]);
+		    				//alert(finalcount[i]);
+		    		
+	           	 });	chartmyPlot2(finallocal,finalcount);
+		    },
+		    error:function(){
+		       alert("error");
+		    }
 		});
-	 $.ajax({
-			url:"http://localhost:3000/beforeDelivery",
-	        type: "get",
-	        success:function(data){
-	       			//alert("beforeDelivery"+data);
-	       			$("#beforeDelivery").html('<strong>'+data+' 건</strong>');
-	        },
-	        error:function(){
-	          // alert("error");
-	        }
-		});
-	 $.ajax({
-			url:"http://localhost:3000/acceptDelivery",
-	        type: "get",
-	        success:function(data){
-	       			//alert("acceptDelivery"+data);
-	       			$("#acceptDelivery").html('<strong>'+data+' 건</strong>');
-	        },
-	        error:function(){
-	          // alert("error");
-	        }
-		});
+	
+});
+//선택한 년도에 해당하는 월별 주문 건수 
+$("#chartBtn").on('click',function(){
+	chartYear=$("#chartYear").val();
+	alert(chartYear);
+	$.ajax({
+		url:"http://localhost:3000/SearchAnnualSales",
+        type: "get",
+        data:{obDate:chartYear},
+        success:function(data){
+        		 chartmyPlot(data);
+        },
+        error:function(){
+           alert("error");
+        }
+	});
 });
 
 </script>
+
+<script>
+let ydata=[0,0,0,0,0,0,0,0,0,0,0,0]
+function chartmyPlot(data){
+	ydata=data;
+	var xArray = [1,2,3,4,5,6,7,8,9,10,11,12];
+	var yArray =ydata;
+
+	// Define Data
+	var data = [{
+	  x: xArray,
+	  y: yArray,
+	  mode:"lines"
+	}];
+
+	// Define Layout
+	var layout = {
+	  xaxis: {range: [0, 13], title: "월"},
+	  yaxis: {range: [0, 20], title: "건 수"},  
+	  title: "월 별 구매 건수"
+	};
+
+	// Display using Plotly
+	Plotly.newPlot("myPlot", data, layout);
+}
+
+</script>
+
+
+
+
+<script>
+function chartmyPlot2(datax,datay){
+	//alert(data.length);
+	
+	let xdata=datax;
+	let ydata=datay;
+	var xArray = xdata;
+	var yArray = ydata;
+
+	var data = [{
+	  x:xArray,
+	  y:yArray,
+	  type:"bar"
+	}];
+
+	var layout = {title:"World Wide Wine Production"};
+
+	Plotly.newPlot("myPlot2", data, layout);
+}
+
+</script>
+
     <!--**********************************
         Scripts
     ***********************************-->

@@ -771,6 +771,7 @@ button:focus {
 											    </div>
 											</div>
 											      <div class="OrderedProdNum"></div>
+											       <div class="OrderedQuantity"></div>
 											    </div>
 			                </div>
 			                <div class="tab" style="margin-top: 70px">
@@ -830,7 +831,7 @@ button:focus {
 								                            <div class="form-group col-md-12"> 
 								                            	 <label class="form-control-label" style="margin-bottom: 14px;">포인트 사용하기</label> 
 								                            	 <div id="MyPoint"></div>
-								                          		 <div class="row px-2"><div class="col-lg-9" id="pointUpdate"><input type="text" id="cname" name="cname" placeholder="0"></div></div>
+								                          		 <div class="row px-2"><div class="col-lg-9" id="pointUpdate"><input type="text" id="cname" name="cname" placeholder="0" readonly></div></div>
 								                          		 <div class="row px-2">	<div class="col-lg-6"><button class="btn-block btn-blue" id="gotoUsePoint">포인트 사용</button></div></div>
 								                          		   		 
 								                          		 
@@ -1128,6 +1129,7 @@ if(prodNum==null){
 			$.each(list, function (i, item) {
 				//prodNum저장
 				$(".OrderedProdNum").append(' <input type="hidden" id="OrderedProdNum'+i+'" value="'+item.prodNum+'">');
+				$(".OrderedQuantity").append(' <input type="hidden" id="OrderedQuantity'+i+'" value="'+item.quantity+'">');
 				//주문한 prodNum의 갯수
 				OrderedProdCount+=1;
 				$("#productList").append(' <tr><td><img class="pay" src="../image/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
@@ -1198,6 +1200,7 @@ else{
 
 	$("#orderPrice").html(OrderPrice);
 	$(".OrderedProdNum").append(' <input type="hidden" id="OrderedProdNum0" value="'+prodNum+'">');
+	$(".OrderedQuantity").append(' <input type="hidden" id="OrderedQuantity0" value="'+quantity+'">');
 	OrderedProdCount=1;
 	let deliveryCost=0;
 	if(weight<1){
@@ -1383,13 +1386,15 @@ function setOrderDetail(obNum){
 	alert("obNum: "+obNum);//주문번호 받음
 	for(i=0;i<OrderedProdCount;i++){
 		let a = '#OrderedProdNum'+String(i);
-		
+		let b = '#OrderedQuantity'+String(i);
+		//alert("####"+b.val())
 		//prodNum으로 product정보를 가지고 온 후, order_detail에 넣어준다. 
 		 $.ajax({
 			url:'http://localhost:3000/setOrderDetail',
 			type:'get',		
 			data:{obNum:obNum,
-				  prodNum:$(a).val()
+				  prodNum:$(a).val(),
+				  quantity:$(b).val()
 				  },
 			success:function(data){
 				//넣은 odnum가져옴
