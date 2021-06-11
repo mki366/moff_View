@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- chart -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    			
+      <link rel="stylesheet" href="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.css">
+<script src="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.js"></script>
+<style>
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+</style>
+<style type="text/css">
+
+
+ body {
+     background-color: #f9f9fa
+ }
+
+ .page-container {
+     margin-bottom: 100px
+ }
+
+ .flex {
+     -webkit-box-flex: 1;
+     -ms-flex: 1 1 auto;
+     flex: 1 1 auto
+ }
+
+ @media (max-width:991.98px) {
+     .padding {
+         padding: 1.5rem
+     }
+ }
+
+ @media (max-width:767.98px) {
+     .padding {
+         padding: 1rem
+     }
+ }
+
+ .padding {
+     padding: 5rem
+ }
+
+ .card {
+     background: #fff;
+     border-width: 0;
+     border-radius: .25rem;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+     margin-bottom: 1.5rem
+ }
+
+ .card {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     min-width: 0;
+     word-wrap: break-word;
+     background-color: #fff;
+     background-clip: border-box;
+     border: 1px solid rgba(19, 24, 44, .125);
+     border-radius: .25rem
+ }
+
+ .card-header {
+     padding: .75rem 1.25rem;
+     margin-bottom: 0;
+     background-color: rgba(19, 24, 44, .03);
+     border-bottom: 1px solid rgba(19, 24, 44, .125)
+ }
+
+ .card-header:first-child {
+     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+ }
+
+ card-footer,
+ .card-header {
+     background-color: transparent;
+     border-color: rgba(160, 175, 185, .15);
+     background-clip: padding-box
+ }
+.card-title{
+
+font-weight: 800
+
+}
+</style>
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="images/logo-text.png" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+           <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
+                        <div class="drop-down   d-md-none">
+							<form action="#">
+								<input type="text" class="form-control" placeholder="Search">
+							</form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                                <i class="mdi mdi-email-outline"></i>
+                                <span class="badge gradient-1 badge-pill badge-primary">3</span>
+                            </a>
+                            <div class="drop-down animated fadeIn dropdown-menu">
+                                <div class="dropdown-content-heading d-flex justify-content-between">
+                                    <span class="">3 New Messages</span>  
+                                    
+                                </div>
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li class="notification-unread">
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/1.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Saiful Islam</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="notification-unread">
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/2.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Adam Smith</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Can you do me a favour?</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/3.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Barak Obama</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/4.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Hilari Clinton</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hello</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                                <i class="mdi mdi-bell-outline"></i>
+                                <span class="badge badge-pill gradient-2 badge-primary">3</span>
+                            </a>
+                            <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
+                                <div class="dropdown-content-heading d-flex justify-content-between">
+                                    <span class="">2 New Notifications</span>  
+                                    
+                                </div>
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events near you</h6>
+                                                    <span class="notification-text">Within next 5 days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Ended Successfully</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events to Join</h6>
+                                                    <span class="notification-text">After two days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown d-none d-md-flex">
+                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                                <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()">English</a></li>
+                                        <li><a href="javascript:void()">Dutch</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                <span class="activity active"></span>
+                                <img src="images/user/1.png" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile   dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="email-inbox.html"><i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill badge-primary">3</div></a>
+                                        </li>
+                                        
+                                        <hr class="my-2">
+                                        <li>
+                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        </li>
+                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./index.html">Home 1</a></li>
+                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Layouts</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./layout-blank.html">Blank</a></li>
+                            <li><a href="./layout-one-column.html">One Column</a></li>
+                            <li><a href="./layout-two-column.html">Two column</a></li>
+                            <li><a href="./layout-compact-nav.html">Compact Nav</a></li>
+                            <li><a href="./layout-vertical.html">Vertical</a></li>
+                            <li><a href="./layout-horizontal.html">Horizontal</a></li>
+                            <li><a href="./layout-boxed.html">Boxed</a></li>
+                            <li><a href="./layout-wide.html">Wide</a></li>
+                            
+                            
+                            <li><a href="./layout-fixed-header.html">Fixed Header</a></li>
+                            <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Apps</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./email-inbox.html">Inbox</a></li>
+                            <li><a href="./email-read.html">Read</a></li>
+                            <li><a href="./email-compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Apps</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./app-profile.html">Profile</a></li>
+                            <li><a href="./app-calender.html">Calender</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-graph menu-icon"></i> <span class="nav-text">Charts</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./chart-flot.html">Flot</a></li>
+                            <li><a href="./chart-morris.html">Morris</a></li>
+                            <li><a href="./chart-chartjs.html">Chartjs</a></li>
+                            <li><a href="./chart-chartist.html">Chartist</a></li>
+                            <li><a href="./chart-sparkline.html">Sparkline</a></li>
+                            <li><a href="./chart-peity.html">Peity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">UI Components</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">UI Components</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./ui-accordion.html">Accordion</a></li>
+                            <li><a href="./ui-alert.html">Alert</a></li>
+                            <li><a href="./ui-badge.html">Badge</a></li>
+                            <li><a href="./ui-button.html">Button</a></li>
+                            <li><a href="./ui-button-group.html">Button Group</a></li>
+                            <li><a href="./ui-cards.html">Cards</a></li>
+                            <li><a href="./ui-carousel.html">Carousel</a></li>
+                            <li><a href="./ui-dropdown.html">Dropdown</a></li>
+                            <li><a href="./ui-list-group.html">List Group</a></li>
+                            <li><a href="./ui-media-object.html">Media Object</a></li>
+                            <li><a href="./ui-modal.html">Modal</a></li>
+                            <li><a href="./ui-pagination.html">Pagination</a></li>
+                            <li><a href="./ui-popover.html">Popover</a></li>
+                            <li><a href="./ui-progressbar.html">Progressbar</a></li>
+                            <li><a href="./ui-tab.html">Tab</a></li>
+                            <li><a href="./ui-typography.html">Typography</a></li>
+                        <!-- </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-layers menu-icon"></i><span class="nav-text">Components</span>
+                        </a>
+                        <ul aria-expanded="false"> -->
+                            <li><a href="./uc-nestedable.html">Nestedable</a></li>
+                            <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
+                            <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
+                            <li><a href="./uc-toastr.html">Toastr</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="widgets.html" aria-expanded="false">
+                            <i class="icon-badge menu-icon"></i><span class="nav-text">Widget</span>
+                        </a>
+                    </li>
+                    <li class="nav-label">Forms</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./form-basic.html">Basic Form</a></li>
+                            <li><a href="./form-validation.html">Form Validation</a></li>
+                            <li><a href="./form-step.html">Step Form</a></li>
+                            <li><a href="./form-editor.html">Editor</a></li>
+                            <li><a href="./form-picker.html">Picker</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Table</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./table-basic.html" aria-expanded="false">Basic Table</a></li>
+                            <li><a href="./table-datatable.html" aria-expanded="false">Data Table</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Pages</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./page-login.html">Login</a></li>
+                            <li><a href="./page-register.html">Register</a></li>
+                            <li><a href="./page-lock.html">Lock Screen</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="./page-error-404.html">Error 404</a></li>
+                                    <li><a href="./page-error-403.html">Error 403</a></li>
+                                    <li><a href="./page-error-400.html">Error 400</a></li>
+                                    <li><a href="./page-error-500.html">Error 500</a></li>
+                                    <li><a href="./page-error-503.html">Error 503</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+            
+              
+<script>
+HashMap = function(){  
+    this.map = new Array();
+};  
+HashMap.prototype = {  
+    put : function(key, value){  
+        this.map[key] = value;
+    },  
+    get : function(key){  
+        return this.map[key];
+    },  
+    getAll : function(){  
+        return this.map;
+    },  
+    clear : function(){  
+        this.map = new Array();
+    },  
+    isEmpty : function(){    
+         return (this.map.size() == 0);
+    },
+    remove : function(key){    
+         delete this.map[key];
+    },
+    toString : function(){
+        var temp = '';
+        for(i in this.map){  
+            temp = temp + ',' + i + ':' +  this.map[i];
+        }
+        temp = temp.replace(',','');
+          return temp;
+    },
+    keySet : function(){  
+        var keys = new Array();  
+        for(i in this.map){  
+            keys.push(i);
+        }  
+        return keys;
+    }
+};
+
+
+
+
+    $(document).ready(function() {
+    	
+    	$.ajax({
+    		url:"http://localhost:3000/MonthlyMember",
+    		type:"post",
+    		data: JSON.stringify(),
+    		success:function(MonthlyMember){
+    			//alert("success");
+    			/* //월별 가입자수 배열
+    			var MonthArr = [];
+    			MonthArr = MonthlyMember;
+    			
+    			//alert(JSON.stringify(MonthArr));
+    			
+    			//alert("success Monthly");
+    			console.log(MonthArr[1]);
+    			console.log(Object.keys(MonthArr));
+    			console.log(Object.keys(MonthlyMember));
+    			
+    			//배열확인
+    			$.each(MonthlyMember, function (key, value) {
+    				$.each(value, function (key, value) {
+    				console.log(key,value);
+    				var strArr = key.split(" ");
+    				console.log(strArr[0]);
+    				 */
+    			var map = new HashMap();
+				$.each(MonthlyMember, function(i, val){
+					
+						    
+						    /* 해쉬맵 생성 시작 */
+						    
+	    					map.put( val.month, val.count);
+	    			
+	    					/*  var allTemp = map.getAll();
+	    					 
+	    				  for(i in allTemp){  alert(i);
+	    				  	}  
+	    				  
+	    				     alert(map.toString());     */
+	    					
+						    /* 그래프시작 */
+						    
+						    //alert("해당월에대한 밸류:" + map.get("202106"));
+						    
+								var Jan = map.get("202101");
+								var Feb = map.get("202102");
+								var Mar = map.get("202103");
+								var Apr = map.get("202104");
+								var May = map.get("202105");
+								var June = map.get("202106");
+								var Jul = map.get("202107");
+								var Aug = map.get("202108");
+								var Sept = map.get("202109");
+								var Oct = map.get("202110");
+								var Nov = map.get("202111");
+								var Dec = map.get("202112");
+								//alert("5월:"+ May);
+	    				    	
+	    				        var data = {
+	    				            labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	    				            series: [
+	    				             
+	    				                [Jan, Feb, Mar, Apr, May , June, Jul, Aug, Sept, Oct, Nov, Dec]
+	    				            ]
+	    				        };
+	    				        var options = {
+	    				            seriesBarDistance: 15
+	    				        };
+	    				        var responsiveOptions = [
+	    				            ['screen and (min-width: 641px) and (max-width: 1024px)', {
+	    				                seriesBarDistance: 10,
+	    				                axisX: {
+	    				                    labelInterpolationFnc: function(value) {
+	    				                        return value;
+	    				                    }
+	    				                }
+	    				            }],
+	    				            ['screen and (max-width: 640px)', {
+	    				                seriesBarDistance: 5,
+	    				                axisX: {
+	    				                    labelInterpolationFnc: function(value) {
+	    				                        return value[0];
+	    				                    }
+	    				                }
+	    				            }]
+	    				        ];
+	    				        new Chartist.Bar('.ct-chart', data, {
+	    				            showPoint: true,
+	    				        });
+						    
+						});
+
+						
+				
+    				
+    				 
+    				
+    				 
+				
+    			
+    			
+    		},
+    		error:function(){
+    			alert("Hash error");
+    		}
+    		
+    		
+    	});
+    	
+    	
+    	
+    	
+    	
+    });
+</script>
+
+                <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">월별 가입자</h4>
+                                    <div>
+									    <div>
+									            <div class="container-fluid d-flex justify-content-center">
+									               <div class=" ct-chart ct-square chartjs-render-monitor"></div>
+									            </div>
+									       
+									    </div>
+									</div>
+                                </div>
+                            </div>
+                            
+                        </div>    
+                        <!-- 생년월일 가입자 -->
+                           <div class="col-lg-6 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">회원 연령대</h4>
+                                    <div>
+									    <div>
+									            <div class="container-fluid d-flex justify-content-center">
+									               <div class=" ct-chart ct-square chartjs-render-monitor"></div>
+									            </div>
+									       
+									    </div>
+									</div>
+                                </div>
+                            </div>
+                            
+                        </div>  
+                     
+                      
+                    </div>
+                
+              
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title" style="font-weight: 800">전체회원관리</h4>
+                              	 <div  style="width:500px; margin-bottom: 15px" class="input-group icons" >
+			                                   <!--  <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요." size="25px">
+			                                    <button type="button" id="csSearch"><i class="zmdi zmdi-search" ></i></button> 
+			                                --> 
+											
+																<select class="_choice custom-select mb-15" name="choice" style="width:200px;height: 45px;"">
+																	<option value="" selected="selected">회원데이터 검색</option>
+																	<option value="membername">회원이름</option>
+																	<option value="address">회원주소지</option>
+																	<option value="id">회원아이디</option>
+																</select><!--  -->
+													
+															
+																<input type="text" class="_searchWord form-control" name="searchWord"  placeholder="검색어를 입력해주세요." style="width:200px">
+																
+																
+														
+																
+																	<button type="button" class="btn mb-1 btn-primary" id="btnSearch" style="height: 45px">검색</button>
+																
+														 </div> 
+                                <div class="active-member">
+                                    <div class="table-responsive">
+                                    
+                                        <table class="table table-xs mb-0" id="_list_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>회원번호</th>
+                                                    <th>회원이름</th>
+                                                    <th>회원아이디</th>
+                                                    <th>닉네임</th>
+                                                    <th>주소</th>
+                                                    <th>전화번호</th>
+                                                    <th>생년월일</th>
+                                                    <th>회원구분</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                               <!--append  -->
+                                               
+                                            </tbody>
+                                        </table>
+                                        
+                                        	<div  id="makepagination" align="center">
+									
+									
+											</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+
+            
+                <script type="text/javascript">
+                allmemberList(0);
+                pagination1();
+                
+                $("#btnSearch").click(function(){
+                	
+                	//alert("회원확인");
+					allmemberList(0);
+					pagination1();
+				});
+                
+                function allmemberList( pNumber ) {
+                	
+                	$.ajax({
+                		url:"http://localhost:3000/allmemberList",
+                		type:"post",
+                		data:{ page:pNumber,
+                			choice:$("._choice").val(),
+                			search:$("._searchWord").val() },
+                		success:function( allmemberList ){
+                			//alert('success');
+                		//	alert(list);
+                		
+                	    $(".list_col").remove();
+                		if(allmemberList == ""){
+                			let app = "<tr class='list_col'>";
+                			app += "<td colspan='8'>회원이 없습니다.</td>";
+                			app += "</tr>";
+                			
+                			$("#_list_table").append(app);	
+                			
+                		}else{
+                			$.each(allmemberList, function (i, val) {
+                				
+                				/* 
+                				<th>회원번호</th><th>회원이름</th><th>회원아이디</th>
+                				<th>닉네임</th><th>주소</th><th>전화번호</th><th>생년월일</th>
+                				<th>회원구분</th> */
+                				
+                				
+                				
+                				let app = "<tr class='list_col'>"
+                							+ "<td>" + (i + 1) + "</td>";
+
+                					app += "<td>" +val.name + "</td>";
+                					app += "<td>" + val.id + "</td>";
+                					app += "<td>" + val.nickname + "</td>";
+                					app += "<td>" + val.address + "</td>";
+                					app += "<td>" + val.phone + "</td>";
+                					app += "<td>" + val.bdate + "</td>";
+                					if (val.memberType == 1) {
+                						app += "<td style='color: blue'>배달기사</td>"
+                					}else{
+                						app += "<td>일반회원</td>";	
+                					}
+                					
+                				
+                					
+                					app += "</tr>";
+                						
+                				$("#_list_table").append(app);	
+                			});	
+                		}//else end
+                		
+                		},
+                		error:function(){
+                			alert(' allmemberList error');
+                		}
+                	});
+                }
+                
+                
+				function pagination1( ){
+					
+					//alert("pagination()");
+					
+					$.ajax({
+						url:"http://localhost:3000/getallmemberList",
+						type:"post",
+						data:{ 
+							page:0,
+							choice:$("._choice").val(), 
+							search:$("._searchWord").val() ,
+						
+						},
+						success:function( pagenum ){
+							//alert("페이지 확인:" + pagenum);
+							
+							//페이지가 아예 없지 않을시에
+							if(pagenum != 0 ){
+								var page = "<div class='pagination' style='margin-top: 50px;'>";
+
+								page += "<a href='#' >&laquo;</a>";
+								
+								//페이징 생성
+								for( pageN = 0; pageN < pagenum; pageN++ ){
+									if(pagenum == pageN){
+										page += "<a class='active'>" + (pageN + 1) +"</a>";
+									}else if(pagenum != pageN){
+										page += "<a href='#'  onclick='allmemberList("+ pageN +"); return false;'> "+ (pageN + 1) + "</a>";
+									}
+								}//for end
+								
+								page += "<a href='#'  onclick=allmemberList("+ pageN +")>&raquo;</a>";
+								page += "</div>";
+								
+								$("#makepagination").html(page);
+							}//if end
+							
+							
+						},
+						error:function(){
+							alert(' pagination1 error');
+						}		
+					});
+				}
+                
+                
+                </script>
+				
+				
+				
+				<!-- 보이 회원승인------------------------------------------------------------------------------>
+				    
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title" style="font-weight: 800">배달원 승인 리스트</h4>
+                               <div  style="width:500px; margin-bottom: 15px" class="input-group icons" >
+			                                   <!--  <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요." size="25px">
+			                                    <button type="button" id="csSearch"><i class="zmdi zmdi-search" ></i></button> 
+			                                --> 
+											
+																<select class="custom-select mb-15"  id="_choice2" name="choice" style="width:200px;height: 45px;"">
+																	<option value="" selected="selected">신청자 검색</option>
+																	<option value="membername">배달원 이름</option>
+																	<option value="address">배달원 주소지</option>
+																	<option value="id">베달원 아이디</option>
+																</select><!--  -->
+													
+															
+																<input type="text" class="form-control" id="_searchWord2" name="searchWord"  placeholder="검색어를 입력해주세요." style="width:200px">
+																
+																
+														
+																
+																	<button type="button" class="btn mb-1 btn-primary" id="btnSearch2" style="height: 45px">검색</button>
+																
+														 </div> 
+                              
+                                <div class="active-member">
+                                    <div class="table-responsive">
+                                    
+                                        <table class="table table-xs mb-0" id="_list_table2">
+                                            <thead>
+                                                <tr>
+                                                    <th>신청번호</th>
+                                                    <th>신청자</th>
+                                                    <th>주소</th>
+                                                    <th>전화번호</th>
+                                                    <th>생년월일</th>
+                                                    <th>승인여부</th>
+                                                    <th>제출자료확인</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                               <!--append  -->
+                                               
+                                            </tbody>
+                                        </table>
+                                        
+                                        	<div  id="makepagination2" align="center">
+									
+									
+											</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                
+                <script type="text/javascript">
+                deliverymanList(0);
+                deliveryman();
+                
+              //검색
+                $("#btnSearch2").click(function(){
+                	deliverymanList(0);
+                	deliveryman();
+                });
+              
+             // 보이 승인목록
+                function deliverymanList( pNumber ) {
+                	
+                	$.ajax({
+                		url:"http://localhost:3000/deliverymanList",
+                		type:"post",
+                		data:{ page:pNumber, choice:$("#_choice2").val(), search:$("#_searchWord2").val() },
+                		success:function( deliverymanList ){
+                			//alert('success');
+                		//	alert(list);
+                		
+                	    $(".list_col1").remove();
+                		if(deliverymanList == ""){
+                			let app = "<tr class='list_col'>";
+                			app += "<td colspan='8'>회원이 없습니다.</td>";
+                			app += "</tr>";
+                			
+                			$("#_list_table2").append(app);	
+                			
+                		}else{
+                			$.each(deliverymanList, function (i, val) {
+                				
+                				/* 
+                					<th>신청번호</th><th>신청자</th><th>주소</th><th>전화번호</th><th>생년월일</th>
+                					<th>승인여부</th>
+
+                				*/
+                				//배달기사만 명단에 정리
+                			
+                				if(val.memberType == 1){
+                				let app = "<tr class='list_col1'>"
+                							+ "<td>" + (i + 1) + "</td>";
+
+                					app += "<td>" + val.name + "</td>";
+                					app += "<td>" + val.address + "</td>";
+                					app += "<td>" + val.phone + "</td>";
+                					app += "<td>" + val.bdate + "</td>";
+                					if (val.deliveryAdmi == 0) {
+                						app += "<td style='color: red'>미승인</td>"
+                					}else{
+                						app += "<td style='color: blue'>승인</td>";	
+                					}
+                					app += "<td><a href='DeliveryAdmiDataCheck.html?memNum=" + val.memNum + "'>" +  "신청서" + "</a></td>";
+                					app += "</tr>";
+                				
+                						
+                				$("#_list_table2").append(app);	
+                				}
+                			});	
+                		}//else end
+                		
+                		},
+                		error:function(){
+                			alert('error');
+                		}
+                	});
+                }
+
+
+                // 글의 총수를 취득
+                function deliveryman() {
+                	
+                	$.ajax({
+                		url:"http://localhost:3000/deliveryman",
+                		type:"post",
+                		data:{ page:0, choice:$("#_choice2").val(), search:$("#_searchWord2").val() },
+                		success:function( pagenum ){
+	//alert("페이지 확인:" + pagenum);
+							
+							//페이지가 아예 없지 않을시에
+							if(pagenum != 0 ){
+								var page = "<div class='pagination' style='margin-top: 50px;'>";
+
+								page += "<a href='#' >&laquo;</a>";
+								
+								//페이징 생성
+								for( pageN = 0; pageN < pagenum; pageN++ ){
+									if(pagenum == pageN){
+										page += "<a class='active'>" + (pageN + 1) +"</a>";
+									}else if(pagenum != pageN){
+										page += "<a href='#'  onclick=deliverymanList("+ pageN +"); return false;> "+ (pageN + 1) + "</a>";
+									}
+								}//for end
+								
+								page += "<a href='#'  onclick=deliverymanList("+ pageN +")>&raquo;</a>";
+								page += "</div>";
+								
+								$("#makepagination2").html(page);
+							}//if end
+							
+							
+                		},
+                		error:function(){
+                			alert('error');
+                		}		
+                	});
+                }
+                
+                
+                
+                </script>
+                
+                	<!-- 시공업체------------------------------------------------------------------------------>
+				    
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title" style="font-weight: 800">전체 시공업체</h4>
+                               <div  style="width:500px; margin-bottom: 15px" class="input-group icons" >
+			                                   <!--  <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요." size="25px">
+			                                    <button type="button" id="csSearch"><i class="zmdi zmdi-search" ></i></button> 
+			                                --> 
+											
+																<select class="custom-select mb-15"  id="_choice3" name="choice" style="width:200px;height: 45px;"">
+																	<option value="" selected="selected">시공업체 정보 검색</option>
+																	<option value="regisname">업체 이름</option>
+																	<option value="address">업체 주소지</option>
+																	
+																</select><!--  -->
+													
+															
+																<input type="text" class="form-control" id="_searchWord3" name="searchWord"  placeholder="검색어를 입력해주세요." style="width:200px">
+																
+																
+														
+																
+																	<button type="button" class="btn mb-1 btn-primary" id="btnSearch3" style="height: 45px">검색</button>
+																
+														 </div> 
+                              
+                                <div class="active-member">
+                                    <div class="table-responsive">
+                                    
+                                        <table class="table table-xs mb-0" id="_list_table3">
+                                            <thead>
+                                                <tr>
+                                                    <th>시공업체번호</th>
+                                                    <th>구분</th>
+                                                    <th>상호명</th>
+                                                    <th>주소</th>
+                                                    <th>대표자명</th>
+                                                    <th>시공분야</th>
+                                                    <th>업체정보보기</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                               <!--append  -->
+                                               
+                                            </tbody>
+                                        </table>
+                                        
+                                        	<div  id="makepagination3" align="center">
+									
+									
+											</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <!-- 시공업체 자바스크립트 -->
+                      <script type="text/javascript">
+                      ExperPage(0);
+                      paginationExpert();
+                
+              //검색
+                $("#btnSearch3").click(function(){
+                	ExperPage(0);
+                	paginationExpert();
+                });
+              
+             // 시공업체 목록
+                function ExperPage( pNumber ) {
+                	
+                	$.ajax({
+                		url:"http://localhost:3000/allExperList",
+                		type:"post",
+                		data:{ page:pNumber, choice:$("#_choice3").val(), search:$("#_searchWord3").val() },
+                		success:function( allExperList ){
+                			//alert('success');
+                		//	alert(list);
+                		
+                	    $(".list_col3").remove();
+                		if(allExperList == ""){
+                			let app = "<tr class='list_col'>";
+                			app += "<td colspan='7'>회원이 없습니다.</td>";
+                			app += "</tr>";
+                			
+                			$("#_list_table3").append(app);	
+                			
+                		}else{
+                			$.each(allExperList, function (i, val) {
+                		
+                				
+                				
+                				/*   
+                				<th>시공업체번호</th>
+                                  <th>구분</th>
+                                  <th>주소</th>
+                                  <th>상호명</th>
+                                  <th>대표자명</th>
+                                  <th>승인여부</th>
+                                  <th>시공분야</th> */
+                				
+                			
+                				let app = "<tr class='list_col3'>"
+                							+ "<td>" + val.eNUM + "</td>";
+									//업체 구분
+                					if(val.experType == 1){
+                						app += "<td>프리랜서</td>";
+                					}else if(val.experType == 2){
+                						app += "<td>개인사업자</td>";
+                					}else if(val.experType == 3){
+                						app += "<td>법인사업자</td>";
+                					}
+                							
+                							
+                					app += "<td><p style='color:#7571f9'>" + val.regisName + "</p></td>";
+                					app += "<td>" + val.address + "</td>";
+                					
+                					app += "<td>" + val.ceoName + "</td>";
+                					
+                					//시공분야
+                					
+                					if(val.part == 1){
+                						app += "<td>종합인테리어</td>";
+                					}else if(val.part == 2){
+                						app += "<td>도배,타일</td>";
+                					}
+                					
+                					app += "<td><a href='DeliveryAdmiDataCheck.html?memNum=" + val.eNUM + "'>" +  "업체정보" + "</a></td>";
+                					app += "</tr>";
+                				
+                						
+                				$("#_list_table3").append(app);	
+                				
+                			});	
+                		}//else end
+                		
+                		},
+                		error:function(){
+                			alert('error');
+                		}
+                	});
+                }
+
+
+                // 글의 총수를 취득
+                function paginationExpert() {
+                	
+                	$.ajax({
+                		url:"http://localhost:3000/allExperListCOUNT",
+                		type:"post",
+                		data:{ page:0, choice:$("#_choice3").val(), search:$("#_searchWord3").val() },
+                		success:function( pagenum ){
+	//alert("페이지 확인:" + pagenum);
+							
+							//페이지가 아예 없지 않을시에
+							if(pagenum != 0 ){
+								var page = "<div class='pagination' style='margin-top: 50px;'>";
+
+								page += "<a href='#' >&laquo;</a>";
+								
+								//페이징 생성
+								for( pageN = 0; pageN < pagenum; pageN++ ){
+									if(pagenum == pageN){
+										page += "<a class='active'>" + (pageN + 1) +"</a>";
+									}else if(pagenum != pageN){
+										page += "<a href='#'  onclick=paginationExpert("+ pageN +"); return false;> "+ (pageN + 1) + "</a>";
+									}
+								}//for end
+								
+								page += "<a href='#'  onclick=paginationExpert("+ pageN +")>&raquo;</a>";
+								page += "</div>";
+								
+								$("#makepagination3").html(page);
+							}//if end
+							
+							
+                		},
+                		error:function(){
+                			alert('error');
+                		}		
+                	});
+                }
+                
+                
+                
+                </script>
+                
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">관리자페이지</a> 2018</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <!-- Chartjs -->
+    <script src="plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="plugins/d3v3/index.js"></script>
+    <script src="plugins/topojson/topojson.min.js"></script>
+    
+    <!-- <script src="plugins/datamaps/datamaps.world.min.js"></script> -->
+    <!-- Morrisjs -->
+    <script src="plugins/raphael/raphael.min.js"></script>
+    <script src="plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="plugins/chartist/js/chartist.min.js"></script>
+    <script src="plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+
+
+    <script src="js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>
