@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 /*-----------------------------------------------------------------------------------
 
     Template Name: Hurst -eCommerce Responsive Bootstrap Furniture Template
@@ -58,7 +59,7 @@ p {
 }
 h1, h2, h3, h4, h5, h6 {
   color: #434343;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   margin: 0 0 10px;
 }
 a{
@@ -86,7 +87,7 @@ padding: 0
 .clear{clear:both}
 body {
   color: #666;
-  font-family: "Lato",sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
@@ -197,7 +198,7 @@ body {
   padding-left: 20px;
 }
 .cart-info h5 {
-  font-family: "Bree Serif",serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -653,7 +654,7 @@ body {
   font-size: 16px;
   line-height: 18px;
   text-transform: uppercase;
-  font-family: bree serif;
+  font-family: 'Noto Sans KR', sans-serif;
   margin-bottom: 5px;
 }
 .product-info p {
@@ -1980,7 +1981,7 @@ input.cart-plus-minus-box {
 .single-member img { border-radius: 50%;}
 .single-member h3 {
   color: #666;
-  font-family: bree serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 20px;
 }
 .single-member h4 {
