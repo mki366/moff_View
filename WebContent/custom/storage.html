@@ -70,22 +70,31 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 	<style type="text/css">
 	
 	#row {
-	 padding-top:100px;
-	 height:800px;
-	 position: relative;
-	 margin-left: 0px;
-	 margin-right: 0px;
-	}
+	padding-top:100px;
+	height:800px;
+	position: relative;
+	margin-left: 0px;
+	margin-right: 0px;
 	
-	.drag{
-	position:relative;
-	cursor:hand;
-	z-index: 100;
-	}
+	
+}
+
+.drag{
+position:relative;
+cursor:hand;
+z-index: 100;
+}
 
 
-    .elements-tab .tab-content {
+.fa{
+    color: #337ab7;
+    padding: 0px;
+    padding-right: 5px
+}
+
+ .elements-tab .tab-content {
     padding: 15px;
+
     }
     .elements-tab-1  .tab-content, .elements-tab-2  .tab-content {
     border: 1px solid #ddd;
@@ -96,18 +105,21 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
     float: none;
     }
     .elements-tab .nav-tabs li a {
-
     border-radius: 5px 5px 0 0;
     font-size: 16px;
     margin-right: 1px;
     }
-   
     .elements-tab .nav-tabs li.active a {
-      color: #C8A165;
-
+    color: #337ab7;
     }
-
-    /* elements-tab-3 */
+    
+  	.btn-default{
+  	border-radius: 50px; 
+  	border:3px solid #337ab7; 
+  	color: #337ab7;
+  	margin-right: 4px
+  	}
+   
     .elements-tab-menu {
     display: inline-block;
     }
@@ -116,18 +128,59 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
     float: left;
     margin: 0 2px;
     }
-   
     .elements-tab-menu li a {
     background: #ddd none repeat scroll 0 0;
     display: block;
     font-size: 16px;
     padding: 10px 20px;
     }
-   
+    .elements-tab-menu li a:hover {
+	color: #337ab7;
+    }
     .elements-tab-menu li.active a {
     background: #337ab7 none repeat scroll 0 0;
     color: #fff;
     }
+
+    .elements-tab-7 .elements-tab-menu li {
+    margin: 0 20px 0 0;
+    }
+    .elements-tab-7 .elements-tab-menu li a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    padding: 5px 0px;
+    }
+    .elements-tab-7 .elements-tab-menu li.active a {
+    color: #337ab7;
+     font-weight: bolder;
+    
+    }
+
+    .element-line-btm li.active {
+    position: relative;
+    }
+    .element-line-btm li.active::before {
+    background: #337ab7 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 60px;
+    }
+    .elements-tab-7 .element-line-btm li.active::before {
+    left: 0;
+    }  
+
+    #price{
+	font-size:28px;
+    font-weight: 600;
+    color: #444;
+	padding-bottom: 30px;
+ 	}
+
+.fleft{
+float:left;
+}
    
 </style>
 
@@ -402,10 +455,10 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
      
      <div class='storageZone' style="position: relative;">
        <div id="zone" style="WIDTH: 250PX;HEIGHT: 250PX;"> <img  src="../images/storageee.png" > </div>
- 
      </div>
     </div>
      <button type="button" class="btn btn-primary" style=" border-radius: 30px" onclick="add()">+</button>
+     <button type="button" class="btn btn-primary" onclick="del()">-</button>
     
     </div>
 
@@ -437,8 +490,9 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
      </div> 
  <div style="margin-left: 20px">
 
-     <h3><strong>30,000원</strong></h3>
-      <button type="button" class="btn btn-primary">구매하기</button>
+    <div id="price"><div id="calprice" class="fleft"></div><div class="fleft">원</div></div>
+    <button type="button" class="btn btn-primary" onclick="addStrgCart()">장바구니</button>
+      <button type="button" class="btn btn-primary" onclick="addStrgWish()">위시리스트</button>
  </div>
     
     
@@ -595,136 +649,248 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 
        
 <script type="text/javascript">
+let login = JSON.parse(sessionStorage.getItem("login"));
+alert(login.id);  
+
+	// 품목별 수량
+	 var frame=1;
+	 var top1=0;
+	 var base1=0;
+	 var box1=0;
+	 var top2=0;
+	 var base2=0;
+	 var box2=0;
+	//$("#productModal").modal("show");
+	  $("#calprice").html(numberWithCommas(onePrice(57))); 
+	  
+	  var dragobject={
+				z: 0, x: 0, y: 0, offsetx : null, offsety : null, targetobj : null, dragapproved : 0,
+				initialize:function(){
+				document.onmousedown=this.drag
+				document.onmouseup=function(){this.dragapproved=0}
+				},
+				drag:function(e){
+				var evtobj=window.event? window.event : e
+				this.targetobj=window.event? event.srcElement : e.target
+				if (this.targetobj.className=="drag"){
+				this.dragapproved=1
+				if (isNaN(parseInt(this.targetobj.style.left))){this.targetobj.style.left=0}
+				if (isNaN(parseInt(this.targetobj.style.top))){this.targetobj.style.top=0}
+				this.offsetx=parseInt(this.targetobj.style.left)
+				this.offsety=parseInt(this.targetobj.style.top)
+				this.x=evtobj.clientX
+				this.y=evtobj.clientY
+				if (evtobj.preventDefault)
+				evtobj.preventDefault()
+				document.onmousemove=dragobject.moveit
+				}
+				},
+				moveit:function(e){
+				var evtobj=window.event? window.event : e
+				if (this.dragapproved==1){
+				this.targetobj.style.left=this.offsetx+evtobj.clientX-this.x+"px"
+				this.targetobj.style.top=this.offsety+evtobj.clientY-this.y+"px"
+				return false
+				}
+				}
+				}
+
+				dragobject.initialize()
 
 
-var dragobject={
-  z: 0, x: 0, y: 0, offsetx : null, offsety : null, targetobj : null, dragapproved : 0,
-  initialize:function(){
-  document.onmousedown=this.drag
-  document.onmouseup=function(){this.dragapproved=0}
-  },
-  drag:function(e){
-  var evtobj=window.event? window.event : e
-  this.targetobj=window.event? event.srcElement : e.target
-  if (this.targetobj.className=="drag"){
-  this.dragapproved=1
-  if (isNaN(parseInt(this.targetobj.style.left))){this.targetobj.style.left=0}
-  if (isNaN(parseInt(this.targetobj.style.top))){this.targetobj.style.top=0}
-  this.offsetx=parseInt(this.targetobj.style.left)
-  this.offsety=parseInt(this.targetobj.style.top)
-  this.x=evtobj.clientX
-  this.y=evtobj.clientY
-  if (evtobj.preventDefault)
-  evtobj.preventDefault()
-  document.onmousemove=dragobject.moveit
-  }
-  },
-  moveit:function(e){
-  var evtobj=window.event? window.event : e
-  if (this.dragapproved==1){
-  this.targetobj.style.left=this.offsetx+evtobj.clientX-this.x+"px"
-  this.targetobj.style.top=this.offsety+evtobj.clientY-this.y+"px"
-  return false
-  }
-  }
-  }
-
-  dragobject.initialize()
-
-  
-  
-  
-// 품목별 수량
- var frame=1;
- var top1=0;
- var base1=0;
- var box1=0;
- var top2=0;
- var base2=0;
- var box2=0;
-  
 
 
-function stor(prodNum){
 
-// 사진 띄우기
-	 $.ajax({
-		  url:'http://localhost:3000/getProduct',
-		  type:'post',  
-		  data:{ prodNum:prodNum },
-		  success:function( dto ){
-	
-		  // alert(JSON.stringify(dto));
-		
-		    str = "<img class='drag' src='../images/" + dto.filename + "'style='position: absolute;left:0; top:0'>";
-		
-		   $("#zone").append(str); 
-		   
-		  },
-		  error:function(){
-		   alert('error');
-		  }
-	 });
-	 
-// 수량 늘리기
-	if(prodNum==58){
-		top1++;
-	}else if(prodNum==59){
-		box1++;
-	}else if(prodNum==60){
-		base1++;
-	}else if(prodNum==61){
-		top2++;
-	}else if(prodNum==62){
-		box2++;
-	}else if(prodNum==63){
-		base2++;
-	}
 
-}
+ function stor(prodNum){
 
- 
- 
+ // 사진 띄우기
+ 	 $.ajax({
+ 		  url:'http://localhost:3000/getCustomProduct',
+ 		  type:'post',  
+ 		  data:{ prodNum:prodNum },
+ 		  success:function( dto ){
+ 	
+ 		  // alert(JSON.stringify(dto));
+ 		
+ 		    str = "<img class='drag' id=" + prodNum + " src='../images/" + dto.filename + "'style='position: absolute;left:0; top:0'>";
+ 		
+ 		   $("#zone").append(str); 
+ 		   
+ 		  // 가격조정
+ 		  var oldPrice = Number($("#calprice").text().replace(",",""));
+       	  var newPrice = oldPrice + Number(dto.price);
+     	  $("#calprice").html(numberWithCommas(newPrice));
+ 		  
+ 		  },
+ 		  error:function(){
+ 		   alert('error');
+ 		  }
+ 	 });
+ 	 
 
-var number=0;
-  
-function add() {
-
-   let left = 190;
-   let str='<img  src="../images/storageee.png " style="position:absolute;left:' + left * count() +'px">';
-   $('#zone').append(str);
-
-   frame++;
-}
-  
-  
-function count() {
-	
-	if(number<3){
-  		number++;
+ // 수량 늘리기
+ 	if(prodNum==58){
+ 		top1++;
+ 	}else if(prodNum==59){
+ 		box1++;
+ 	}else if(prodNum==60){
+ 		base1++;
+ 	}else if(prodNum==61){
+ 		top2++;
+ 	}else if(prodNum==62){
+ 		box2++;
+ 	}else if(prodNum==63){
+ 		base2++;
  	}
  
-	return number;
-}  
-  
- 
-function calPrice() {
-	
-	$.ajax({
-		url:"http://localhost:3000/getPrice",
-		type:'post',
-		data:{ upperProd:upper, lowerProd:lower },
-		success:function(data){				
-		//	alert('success');
-			$("#price").html("<b>₩ " + numberWithCommas(data) + "원<b>");
-		},
-		error:function(){
-			alert('error');
-		}
+
+ }
+
 		
-	});
-}  
+function add() {
+			let left = 190; 
+
+			if(frame < 4){
+				
+		    	let str='<img id="57" src="../images/storageee.png " style="position:absolute;left:'+ left*frame +'px" class="addImg">'; 
+	
+				$('#zone').append(str);
+				frame++;
+				
+				 var oldPrice = Number($("#calprice").text().replace(",",""));
+			     var newPrice = oldPrice + Number(onePrice(57));
+			     $("#calprice").html(numberWithCommas(newPrice));
+		    
+		    }else{
+		    	alert('최대 갯수를 초과하였습니다');
+		    }
+
+  }
+		
+		
+
+	// 삭제
+	function del() {
+		    var content = document.getElementById("zone");
+	        var imgNum = content.lastChild.id;
+	        var updatePrice=0;
+	
+	        if(imgNum==57 && frame > 1){
+	        	content.removeChild(content.lastChild);
+	        	updatePrice = onePrice(57);
+	        	frame--;
+	        }else if(imgNum==58){
+	        	content.removeChild(content.lastChild);
+	        	updatePrice = onePrice(58);
+	     		top1--;
+	     	}else if(imgNum==59){
+	     		content.removeChild(content.lastChild);
+	     		updatePrice = onePrice(59);
+	     		box1--;
+	     	}else if(imgNum==60){
+	     		content.removeChild(content.lastChild);
+	     		updatePrice = onePrice(60);
+	     		base1--;
+	     	}else if(imgNum==61){
+	     		content.removeChild(content.lastChild);
+	     		updatePrice = onePrice(61);
+	     		top2--;
+	     	}else if(imgNum==62){
+	     		content.removeChild(content.lastChild);
+	     		updatePrice = onePrice(62);
+	     		box2--;
+	     	}else if(imgNum==63){
+	     		content.removeChild(content.lastChild);
+	     		updatePrice = onePrice(63);
+	     		base2--;
+	     	}
+	  
+	
+	        var oldPrice = Number($("#calprice").text().replace(",",""));
+	        var newPrice = oldPrice - Number(updatePrice);
+	     	$("#calprice").html(numberWithCommas(newPrice));
+	     	
+	     	if(imgNum==""){
+	     		$("#calprice").html('0');
+	     	}
+
+	}
   
+  
+  function onePrice(prodNum) {
+  	
+	var price;
+	
+  	$.ajax({
+  		url:"http://localhost:3000/onePrice",
+  		type:'post',
+  		data:{ prodNum:prodNum },
+  		async:false,
+  		success:function(data){				
+  			price = data;
+  		},
+  		error:function(){
+  			alert('error');
+  		}
+  		
+  	});
+  	return price;
+  }  	
+	
+	
+  
+  function numberWithCommas(x) {
+	  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+		
+  
+
+	function addStrgCart(){
+
+		alert(login.id);
+		alert(frame);
+		alert(top1);
+		alert(base1);
+		alert(box1);
+		alert(top2);
+		alert(base2);
+		alert(box2);
+		
+		$.ajax({
+			url:"http://localhost:3000/addStrgCart",
+			type:'post',
+			data:{ id:login.id, 'frame':frame, 'top1':top1, 'base1':base1, 'box1':box1, 
+				'top2':top2, 'base2':base2, 'box2':box2 },
+			success:function(){				
+				alert('suc');
+			},
+			error:function(){
+				alert('error');
+			}
+			
+		});
+		
+	}
+	
+	
+	function addStrgWish(){
+		
+		$.ajax({
+			url:"http://localhost:3000/addStrgWish",
+			type:'post',
+			data:{ id:login.id, 'frame':frame, 'top1':top1, 'base1':base1, 'box1':box1, 
+				'top2':top2, 'base2':base2, 'box2':box2 },
+			success:function(){				
+				alert('suc');
+			},
+			error:function(){
+				alert('error');
+			}
+			
+		});
+		
+	}
   
 </script>
 
