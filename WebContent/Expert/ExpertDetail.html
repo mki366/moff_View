@@ -363,14 +363,13 @@
 									<h3 id="ExpertName" class= "headerExpertName"  align="center"></h3>
 									<h5 id="ExpertText" align="center" style="border-bottom: 1px solid #d2d2d2; padding-bottom: 20px;" ></h5>
 								</div>
-								<div id="cat-treeview"  class="widget-info product-cat boxscrol2" style="padding-left: 20px;height:235px">
+								<div id="cat-treeview"  class="widget-info product-cat boxscrol2" style="padding-left: 20px;height:200px">
 									
-									<h5 id="numberExpert"></h5>
-									<h5 class="Whatpart"></h5>
+									<h4 id="numberExpert"></h4>
+									<h4 class="Whatpart"></h4>
 									<div class="chatAppend">
 									
 									</div>
-									<button type="button" class="btn btn-default btny" style="width:100%">리뷰쓰기</button>
 									
 								</div>
 							</aside>
@@ -429,18 +428,11 @@
 										<!-- Single-pro-slider Big-photo end -->										
 										<div class="product-info">
 											<div class="fix">
-												<h4 class="post-title floatleft" style="font-weight: 900">시공업체 대표사진</h4>
-												<span class="pro-rating floatright">
-													<a href="#"><i class="zmdi zmdi-star"></i></a>
-													<a href="#"><i class="zmdi zmdi-star"></i></a>
-													<a href="#"><i class="zmdi zmdi-star"></i></a>
-													<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-													<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-													<span>( 27 Rating )</span>
-												</span>
+												<h4 class="post-title floatleft" style="font-weight: 900; font-size: 20px">시공업체 대표사진</h4>
+												
 											</div>
 											
-											<div class="product-description">
+											<div class="product-description" style="font-size: 16px">
 												<p class="part"></p>
 												
 												
@@ -480,9 +472,9 @@
 											<!-- Nav tabs -->
 											<ul class="">
 												<li class="active"><a href="#description" data-toggle="tab">Address</a></li>
-												<li><a href="#reviews"  data-toggle="tab">Reviews</a></li>
+											
 												<li><a href="#information" data-toggle="tab">Information</a></li>
-												<li><a href="#tags" data-toggle="tab">Tags</a></li>
+												
 											</ul>
 										</div>
 									</div>
@@ -598,10 +590,11 @@
 											</div>
 											<div class="tab-pane" id="information">
 												<div class="pro-tab-info pro-information">
-													<h3 class="tab-title title-border mb-30">Product information</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													<h3 class="tab-title title-border mb-30">종합리모델링</h3>
+													<p>종합리모델링의 기준 </p><p>시공해야 할 곳이 많고 복잡하여 하나의 업체에 공정을 일임하는 공사를 종합리모델링이라고 합니다.
+													</p>
+													<p>지금 바로 업체에 연락해보세요!</p>
+													
 												</div>											
 											</div>
 											<div class="tab-pane" id="tags">
@@ -668,7 +661,7 @@
 					var ceo = Detail.ceoName;
 					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>연락처 </b>"+ phone +"</span><br>");
 					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>대표자명 </b>"+ ceo +"</span><br>");
-					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>주소 </b>"+ address +"</span><br>");
+					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>업체주소 </b>"+ address +"</span><br>");
 					$(".addressWhere").append("<h3 class='tab-title title-border mb-30 addressWhere'>"+ address +"</h3>");
 					
 					//지도 펼치기
@@ -767,7 +760,7 @@
 					var eNUMM = Detail.eNUM;
 					//alert(eNUMM);
 					//채팅 버튼
-					$(".chatAppend").append("<button type='button' onclick='goChat(" + Detail.eNUM + ")' class='btn btn-default btny ' style='width:100%;margin-bottom:10px'>실시간 상담하기</button>");
+					$(".chatAppend").append("<button type='button' onclick='goChat(" + Detail.eNUM + ")' class='btn btn-default btny' style='width:100%;height:60px;margin-bottom:10px; font-size:17px'>실시간 상담하기</button>");
 					
 					
 					//로그인 아이디와 업체 로그인 아이디가 같을 시에 채팅 버튼 출력

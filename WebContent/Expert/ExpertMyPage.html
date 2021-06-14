@@ -74,6 +74,10 @@
 		background-color: #ffdc16;
 		
 		}
+		
+		.single-pro-tab-menu ul li.active a {
+    background: #534f49 none repeat scroll 0 0;
+    color: #fff;
 		</style>
 	</head>
 	<body>	
@@ -333,8 +337,8 @@
 								</div>
 								<div class="breadcumbs pb-15">
 									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li>시공업체</li>
+										<li><a href="index.html" style="color:#5d5a55">Home</a></li>
+										<li style="color:#5d5a55">시공업체</li>
 									</ul>
 								</div>
 							</div>
@@ -365,7 +369,6 @@
 									<div class="chatAppend">
 									
 									</div>
-									<button type="button" class="btn btn-default btny" style="width:100%">리뷰쓰기</button>
 									
 								</div>
 							</aside>
@@ -391,27 +394,19 @@
 										<div class="single-pro-slider single-big-photo view-lightbox slider-for">
 											<div>
 												<img class= "MainImage" src="../img/single-product/medium/1.jpg" alt="" />
-												<a class="view-full-screen" href="../img/single-product/large/1.jpg"  data-lightbox="roadtrip" data-title="My caption">
-													<i class="zmdi zmdi-zoom-in"></i>
-												</a>
+											
 											</div>
 											<div>
 												<img class="image1" src="../img/single-product/medium/2.jpg" alt="" />
-												<a class="view-full-screen" href="../img/single-product/large/2.jpg"  data-lightbox="roadtrip" data-title="My caption">
-													<i class="zmdi zmdi-zoom-in"></i>
-												</a>
+												
 											</div>
 											<div>
 												<img class="image2" src="../img/single-product/medium/3.jpg" alt="" />
-												<a class="view-full-screen" href="../img/single-product/large/3.jpg"  data-lightbox="roadtrip" data-title="My caption">
-													<i class="zmdi zmdi-zoom-in"></i>
-												</a>
+												
 											</div>
 											<div>
 												<img class="image3" src="../img/single-product/medium/4.jpg" alt="" />
-												<a class="view-full-screen" href="../img/single-product/large/4.jpg"  data-lightbox="roadtrip" data-title="My caption">
-													<i class="zmdi zmdi-zoom-in"></i>
-												</a>
+												
 											</div>
 											<!-- <div>
 												<img src="../img/single-product/medium/5.jpg" alt="" />
@@ -423,15 +418,8 @@
 										<!-- Single-pro-slider Big-photo end -->										
 										<div class="product-info">
 											<div class="fix">
-												<h4 class="post-title floatleft" style="font-weight: 900">시공업체 대표사진</h4>
-												<span class="pro-rating floatright">
-													<a href="#"><i class="zmdi zmdi-star"></i></a>
-													<a href="#"><i class="zmdi zmdi-star"></i></a>
-													<a href="#"><i class="zmdi zmdi-star"></i></a>
-													<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-													<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-													<span>( 27 Rating )</span>
-												</span>
+												<h4 class="post-title floatleft" style="font-weight: 900; font-size:20px">시공업체 대표사진</h4>
+											
 											</div>
 											
 											<div class="product-description">
@@ -474,9 +462,7 @@
 											<!-- Nav tabs -->
 											<ul class="">
 												<li class="active"><a href="#description" data-toggle="tab">Description</a></li>
-												<li><a href="#reviews"  data-toggle="tab">Reviews</a></li>
-												<li><a href="#information" data-toggle="tab">Information</a></li>
-												<li><a href="#tags" data-toggle="tab">Tags</a></li>
+										
 											</ul>
 										</div>
 									</div>
@@ -485,139 +471,30 @@
 										<div class="tab-content">
 											<div class="tab-pane active" id="description">
 												<div class="pro-tab-info pro-description">
-													<h3 class="tab-title title-border mb-30">dummy Product name</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+													
+													<div class="addressWhere">
+												</div>
+													<div id="map" style="width: 100%; height: 300px;"></div>
+												</div>
 												</div>
 											</div>
-											<div class="tab-pane" id="reviews">
-												<div class="pro-tab-info pro-reviews">
-													<div class="customer-review mb-60">
-														<h3 class="tab-title title-border mb-30">Customer review</h3>
-														<ul class="product-comments clearfix">
-															<li class="mb-30">
-																<div class="pro-reviewer">
-																	<img src="img/reviewer/1.jpg" alt="" />
-																</div>
-																<div class="pro-reviewer-comment">
-																	<div class="fix">
-																		<div class="floatleft mbl-center">
-																			<h5 class="text-uppercase mb-0"><strong>Gerald Barnes</strong></h5>
-																			<p class="reply-date">27 Jun, 2017 at 2:30pm</p>
-																		</div>
-																		<div class="comment-reply floatright">
-																			<a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-																			<a href="#"><i class="zmdi zmdi-close"></i></a>
-																		</div>
-																	</div>
-																	<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-																</div>
-															</li>
-															<li class="threaded-comments">
-																<div class="pro-reviewer">
-																	<img src="img/reviewer/1.jpg" alt="" />
-																</div>
-																<div class="pro-reviewer-comment">
-																	<div class="fix">
-																		<div class="floatleft mbl-center">
-																			<h5 class="text-uppercase mb-0"><strong>Gerald Barnes</strong></h5>
-																			<p class="reply-date">27 Jun, 2017 at 2:30pm</p>
-																		</div>
-																		<div class="comment-reply floatright">
-																			<a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-																			<a href="#"><i class="zmdi zmdi-close"></i></a>
-																		</div>
-																	</div>
-																	<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div class="leave-review">
-														<h3 class="tab-title title-border mb-30">Leave your reviw</h3>
-														<div class="your-rating mb-30">
-															<p class="mb-10"><strong>Your Rating</strong></p>
-															<span>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-															</span>
-															<span class="separator">|</span>
-															<span>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-															</span>
-															<span class="separator">|</span>
-															<span>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-															</span>
-															<span class="separator">|</span>
-															<span>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-															</span>
-															<span class="separator">|</span>
-															<span>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-																<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-															</span>
-														</div>
-														<div class="reply-box">
-															<form action="#">
-																<div class="row">
-																	<div class="col-md-6">
-																		<input type="text" placeholder="Your name here..." name="name" />
-																	</div>
-																	<div class="col-md-6">
-																		<input type="text" placeholder="Subject..." name="name" />
-																	</div>
-																</div>
-																<div class="row">
-																	<div class="col-md-12">
-																		<textarea class="custom-textarea" name="message" placeholder="Your review here..." ></textarea>
-																		<button type="submit" data-text="submit review" class="button-one submit-button mt-20">submit review</button>
-																	</div>
-																</div>
-															</form>
-														</div>
-													</div>
-												</div>		
-											</div>
-											<div class="tab-pane" id="information">
-												<div class="pro-tab-info pro-information">
-													<h3 class="tab-title title-border mb-30">Product information</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-												</div>											
-											</div>
-											<div class="tab-pane" id="tags">
-												<div class="pro-tab-info pro-information">
-													<h3 class="tab-title title-border mb-30">tags</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-												</div>											
-											</div>
+										
+										
 										</div>									
 									</div>
 									
 									
 								</div>
-							</div>
+							
 							<!-- single-product-tab end -->
 						</div>
+						
 						<!--  -->
 					</div>
 				</div>
 			</div>
-			
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d37d0c601b91ed657160c03ac7faf573&libraries=services"></script>
+  
 			<!-- 스크립트 시작 -->
 			<script type="text/javascript">
 			
@@ -660,9 +537,86 @@
 					var ceo = Detail.ceoName;
 					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>연락처 </b>"+ phone +"</span><br>");
 					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>대표자명 </b>"+ ceo +"</span><br>");
-					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>주소 </b>"+ address +"</span><br>");
+					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>업체주소 </b>"+ address +"</span><br>");
+					$(".addressWhere").append("<h3 class='tab-title title-border mb-30 addressWhere'>"+ address +"</h3>");
 					
-					
+					//지도 펼치기
+					/////////////////////////////////////////////////////////////////////
+					  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+						        mapOption = {
+						            center : new daum.maps.LatLng(36.633535, 127.425882), // 지도의 중심좌표
+						            level : 4
+						        // 지도의 확대 레벨
+						        };
+						 
+						        // 지도를 생성합니다    
+						        var map = new daum.maps.Map(mapContainer, mapOption);
+						 
+						        // 주소-좌표 변환 객체를 생성합니다
+						        var geocoder = new daum.maps.services.Geocoder();
+						 
+						        var myAddress = [address];
+						 
+						        function myMarker(number, address) {
+						            // 주소로 좌표를 검색합니다
+						            geocoder
+						                    .addressSearch(
+						                            //'주소',
+						                            address,
+						                            function(result, status) {
+						                                // 정상적으로 검색이 완료됐으면 
+						                                if (status === daum.maps.services.Status.OK) {
+						 
+						                                    var coords = new daum.maps.LatLng(
+						                                            result[0].y, result[0].x);
+						 
+						                                    // 결과값으로 받은 위치를 마커로 표시합니다
+						                                    /*
+						                                    var marker = new daum.maps.Marker({
+						                                        map : map,
+						                                        position : coords
+						                                    });
+						                                     */
+						 
+						                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+						                                    /*
+						                                    var infowindow = new daum.maps.InfoWindow(
+						                                            {
+						                                                // content : '<div style="width:50px;text-align:center;padding:3px 0;">I</div>'
+						                                                content : '<div style="color:red;">' +  number + '</div>'
+						                                            });
+						                                    infowindow.open(map, marker);
+						                                     */
+						 
+						                                    // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+						                                    var content = '<div class="customoverlay">'
+						                                            + '    <span class="title">'
+						                                            + '<div style="font-style:normal; color:red; font-weight:bold; font-size:2.0em">'
+						                                            + number + '</div>' + '</span>'
+						                                            + '</div>';
+						 
+						                                    // 커스텀 오버레이가 표시될 위치입니다 
+						                                    var position = new daum.maps.LatLng(
+						                                            result[0].y, result[0].x);
+						 
+						                                    // 커스텀 오버레이를 생성합니다
+						                                    var customOverlay = new daum.maps.CustomOverlay(
+						                                            {
+						                                                map : map,
+						                                                position : position,
+						                                               
+						                                                yAnchor : 1
+						                                            });
+						 
+						                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+						                                    map.setCenter(coords);
+						                                }
+						                            });
+						        }
+						 
+						        for (i = 0; i < myAddress.length; i++) {
+						            myMarker(i + 1, myAddress[i]);
+						        }
 					
 					//최근계약
 					var recentCon = Detail.recentCon;
@@ -684,7 +638,7 @@
 					//채팅 버튼
 					
 
-					$(".chatAppend").append("<button type='button' onclick='goExpertChat(" + Detail.eNUM + ")' class='btn btn-default btny ' style='width:100%;margin-bottom:10px'>실시간 상담 이력확인</button>");
+					$(".chatAppend").append("<button type='button' onclick='goExpertChat(" + Detail.eNUM + ")' class='btn btn-default btny ' style='width:100%;margin-bottom:10px; height:60px; font-size:17px'>실시간 상담 이력확인</button>");
 						
 					
 					
@@ -839,7 +793,9 @@
 			</div>
 			<!-- END QUICKVIEW PRODUCT -->	
 			
-		</div>
+		
+</div>
+
 		<!-- WRAPPER END -->
 
 		<!-- all js here -->
