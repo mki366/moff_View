@@ -40,9 +40,9 @@
         <!-- material-design-iconic-font css -->
         <link rel="stylesheet" href="../css/material-design-iconic-font.css">
         <!-- All common css of theme -->
-        <link rel="stylesheet" href="../css/default.css">
+        <link rel="stylesheet" href="../css/taemin2.css">
         <!-- style css -->
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/taemin.css">
         <!-- shortcode css -->
         <link rel="stylesheet" href="../css/shortcode.css">
         <!-- responsive css -->
@@ -55,116 +55,14 @@
         
 <style type="text/css">
 
-/* .height {
-    height: 100vh
-}
-
-.card {
-    border: none;
-    padding: 20px;
-    position: relative;
-    align-self: center;
-}
-
-.inputs span {
-    font-size: 14px;
-    font-weight: 500
-}
-
-.inputs input {
-    font-size: 13px;
-    height: 44px
-}
-
-.inputs input:focus {
-    border-color: #2c1e8e;
-    box-shadow: none
-}
-
-.integration {
-    font-size: 14px;
-    height: 44px
-} */
-
-.filebox input[type="file"] { 
-	position: absolute; 
-	width: 1px; 
-	height: 1px; 
-	padding: 0; 
-	margin: -1px; 
-	overflow: hidden; 
-	clip:rect(0,0,0,0); 
-	border: 0; 
-}
-
-.filebox label { 
-	display: inline-block; 
-	padding: .5em .75em; 
-	color: #999; 
-	font-size: inherit; 
-	line-height: normal; 
-	vertical-align: middle; 
-	background-color: #fdfdfd; 
-	cursor: pointer; 
-	border: 1px solid #ebebeb; 
-	border-bottom-color: #e2e2e2; 
-	border-radius: .25em; 
-} /* named upload */ 
-
-.filebox .upload-name { 
-	display: inline-block; 
-	padding: .5em .75em; /* label의 패딩값과 일치 */ 
-	font-size: inherit; 
-	font-family: inherit; 
-	line-height: normal; 
-	vertical-align: middle; 
-	background-color: #f6f6f6; 
-	border: 1px solid #ebebeb; 
-	border-bottom-color: #e2e2e2; 
-	border-radius: .25em; 
-	-webkit-appearance: none; /* 네이티브 외형 감추기 */ 
-	-moz-appearance: none; appearance: none; 
-	width: 500px;
-	height: 40px;
-}
+.submit-button {background: #ffc929 none repeat scroll 0 0;	/* #ffa85d */}
+.button-one::before {background: #FD9E39;}
 
 .rating {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center
+    justify-content: center;
 }
-
-.rating>input {
-    display: none
-}
-
-.rating>label {
-    position: relative;
-    width: 1em;
-    font-size: 5vw;
-    color: #FFD600;
-    cursor: pointer
-}
-
-.rating>label::before {
-    content: "\2605";
-    position: absolute;
-    opacity: 0
-}
-
-.rating>label:hover:before,
-.rating>label:hover~label:before {
-    opacity: 1 !important
-}
-
-.rating>input:checked~label:before {
-    opacity: 1
-}
-
-.rating:hover>input:checked~label:before {
-    opacity: 0.4
-}
-
 </style>
 
 <script type="text/javascript">
@@ -190,9 +88,9 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 						<div class="row">
 							<!-- Single-blog start -->
 							<div class="col-lg-12">
-								<div class="single-blog mb-30">
+								<div class="single-blog mb-30" style="border: 1px solid #c3c3c3;">
 									<div class="blog-info blog-details-info">
-										<div style="height: 80px;"><h3 align="center">리뷰작성</h3></div>
+										<!-- <div style="height: 80px;"><h3 align="center">리뷰작성</h3></div> -->
 											
 												<div id="productInfo">
 												
@@ -233,7 +131,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 												</div>		
 											<form id="reviewForm">
 												<div style="margin-bottom: 80px;">
-													<h1 align="center">상품은 만족하셨나요?</h1>
+													<h3 align="center">상품은 만족하셨나요?</h3>
 													<div id="writingId"></div>
 														<input type="hidden" id="id" name="id" value="ddd"  style="width: 500px; background:#f6f6f6;" readonly="readonly">
 														<input type="hidden" id="prodNum" name="prodNum" value="">
@@ -256,16 +154,16 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 													
 													
 												<div style="height: 200px;"></div>
-												<div>
-													<h1 align="center">어떤 점이 좋았나요?</h1>
-													<textarea rows="20px" cols="148" id="content" name="content" style="background-color: #f6f6f6; border-style: none; resize: none;"></textarea>
+												<div align="center">
+													<h3 align="center">어떤 점이 좋았나요?</h3>
+													<textarea rows="10px" cols="130" id="content" name="content" style="background-color: #f6f6f6; border-style: none; resize: none;"></textarea>
 												</div>
 												<div style="height: 20px;"></div>
-												<div style="font-size: 17px;">
+												<div style="font-size: 17px;" align="center">
 												<i class="zmdi zmdi-border-color"></i>&emsp;<span>리뷰작성 시 500포인트 적립!</span>
 												</div>
 												<div style="height: 50px;"></div>
-												<div class="filebox">		
+												<div class="filebox" align="center">		
 													<p style="font-size: 20px;">파일첨부</p>
 													
 													<input class="upload-name" value="대표사진" disabled="disabled"> 
@@ -274,7 +172,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 												</div>
 												
 												<div style="height: 30px;"></div>
-				 								<div style="font-size: 17px;">
+				 								<div style="font-size: 17px;" align="center">
 												<i class="zmdi zmdi-camera"></i>&emsp;<span>사진 첨부 시 1,000포인트 적립!</span>
 												</div>
 												<div style="height: 30px;"></div>
@@ -431,15 +329,6 @@ function submitReview() {
 
 }
 
-
-
-
-
-
-
-
-
-	
 		
 function cancelWriting() {
 	location.href = "../member/mypage.html";
@@ -447,10 +336,6 @@ function cancelWriting() {
 	
 	 
 	 </script>
-	 
-	 
-	 
-	 	
 	 
 	 <script src="../js/vendor/jquery-1.12.0.min.js"></script>
      <!-- bootstrap js -->

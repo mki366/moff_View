@@ -35,9 +35,9 @@
 		<!-- material-design-iconic-font css -->
 		<link rel="stylesheet" href="../css/material-design-iconic-font.css">
 		<!-- All common css of theme -->
-		<link rel="stylesheet" href="../css/default.css">
+		<link rel="stylesheet" href="../css/taemin2.css">
 		<!-- style css -->
-		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/taemin.css">
         <!-- shortcode css -->
         <link rel="stylesheet" href="../css/shortcode.css">
 		<!-- responsive css -->
@@ -179,9 +179,14 @@
     .box{ margin-bottom: 30px; }
 }
 
-
-
-
+.option-btn.active, .option-btn:hover {
+    color: #0c0801;
+     /* color: #c8a165; */
+}
+a:hover {
+  color: #0c0801;
+  text-decoration: none;
+}
 </style>		
 		
 		
@@ -189,7 +194,7 @@
 <body>
 
  <!-- WRAPPER START -->
-        <div class="wrapper bg-dark-white">
+        <div class="wrapper bg-white">
 
             <!-- HEADER-AREA START -->
             <header id="sticky-menu" class="header header-2">
@@ -422,20 +427,20 @@
             </div>
             <!-- Mobile-menu end -->
             <!-- HEADING-BANNER START -->
-            <div class="heading-banner-area overlay-bg">
+            <div class="heading-banner-area">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="heading-banner">
                                 <div class="heading-banner-title">
-                                    <h2>Product Carousel</h2>
+                                    <h2>Moff Community</h2>
                                 </div>
                                 <div class="breadcumbs pb-15">
-                                    <ul>
+                                   <!--  <ul>
                                         <li><a href="index.html">Home</a></li>
                                         <li><a href="#">Shortcodes</a></li>
                                         <li>SLIDER</li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                         </div>
@@ -449,7 +454,7 @@
                     <div class="row">                   
                         <div class="col-xs-12">
                             <div class="elements-section-title mb-50 mt-50" align="center">
-                                <h2 style="font-size: 32px;">Today Best Photo</h2>
+                                <h2 style="font-size: 32px; font-weight: 700">Today Best Photo</h2>
                             </div>
                         </div>
                     </div> 
@@ -459,43 +464,6 @@
 						    </div>
 						</div>
                         
-                        
-                        
-                        <!-- Tab panes -->
-                       <!--  <div class="tab-content">
-                            <div class="tab-pane active" id="elements-preview-3">
-                                <div class="row cus-row-30" >
-                                    <div class="product-slider arrow-left-right" id="todayBest">
-                                       Single-blog start
-										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="background-color: white; margin-left: 20px;">
-											<div class="single-blog mb-30" style="background-color: white;">
-												<div class="blog-photo">
-													<a href="#"><img src="../img/blog/4.jpg" alt="" /></a>
-													<div class="like-share text-center fix">
-														<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
-														<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
-														<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
-													</div>
-												</div>
-												<div class="blog-info"> 
-													<div class="post-meta fix">
-														<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
-														<div class="post-year floatleft">
-															<p class="text-uppercase text-dark-red mb-0">June, 2017</p>
-															<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2017</a></h4>
-														</div>
-													</div>
-													<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered If you are going to use a passage  Lorem Ipsum, you alteration in some form.</p>
-													<a href="#" class="button-2 text-dark-red">Read more...</a>
-												</div>
-											</div>
-										</div>
-										Single-blog end
-                                      
-                                    </div>
-                                </div>                            
-                            </div>
-                        </div>                                         -->
                 </div>
             </div>
             <!-- ELEMENTS-SLIDER END -->
@@ -504,7 +472,7 @@
             
             <!-- Category -->
 			<div class="elements-section-title mt-100" align="center">
-            	<h2 style="font-size: 32px;">Community</h2>
+            	<h2 style="font-size: 32px; font-weight: 700;">Community</h2>
             </div>
            
             
@@ -521,13 +489,13 @@
 							
 								<div class="product-option mb-30 clearfix" id="filterCate">
 									<!-- Categories start -->
-									 <div class="dropdown floatleft">
+									 <div class="dropdown floatleft" style="font-size:17px;">
 										<button class="option-btn" onclick="popularList('readCount')" data-toggle="dropdown" >조회수순</button>
 									</div>	
 									<!-- Categories end -->
 									
 									<!-- Price start -->
-									<div class="dropdown floatleft">
+									<div class="dropdown floatleft" style="font-size:17px;">
 										<button class="option-btn" onclick="likeList('cmLike')" data-toggle="dropdown" >좋아요순</button>
 									</div>	
 									<!-- Price end -->
@@ -548,16 +516,9 @@
 												<div class="floatright">
 													<input type="text" id="_search" name="search" style="border-bottom: solid gray 1.5px;" width="180px;" height="32px;" placeholder="검색어 입력">
 					                            </div>  
-				                            <!-- <div style="float: left">
-				                            </div> -->
 										</div>
 									</div>
 						                            
-									<!-- Search end  -->
-																
-									<!-- <div class="showing text-right hidden-xs">
-										<p class="mb-0">Showing 01-09 of 17 Results</p>
-									</div> -->
 								</div>						
 							</div>							
 						</div>
@@ -713,14 +674,14 @@ function addLikeList(i, cmNum, cmLike) {
 		data:{cmNum:cmNum, id:login.id},
 		success:function(data){
 			alert(data);
-			if(data == "YES"){
-				alert('좋아요 눌럿삼');
-		//		$(".likeIcon"+i).html("<a class='delLikeIcon" + i + "' href='#;' onclick='delLikeList(" + '"' + i + '"' + ',' + '"' + cmNum + '"' + ',' + '"' + id + '"' + ")'><i class='zmdi zmdi-favorite'></i><span>" + cmLike + "Like</span></a>");
-				
+			if(data.trim() == "YES"){
+		//		alert('좋아요 눌럿삼');
+				getAllCommunity();
 			//	location.href = "communitylist.html";
 				
-			}else if(data == "NO"){
+			}else if(data.trim() == "NO"){
 				alert('삭제되었습니다.');
+				getAllCommunity();
 		//		$(".likeIcon"+i).html("<a class='delLikeIcon" + i + "' href='#;' onclick='delLikeList(" + '"' + i + '"' + ',' + '"' + cmNum + '"' + ',' + '"' + id + '"' + ")'><i class='zmdi zmdi-favorite'></i><span>" + cmLike + "Like</span></a>");
 			}
 			
@@ -749,7 +710,7 @@ function getAllCommunity(pagenum) {
 				
 				let str = '<div class="cList">'									
 					+'<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">'
-					+		'<div class="single-blog mb-30" style="width: 345px; height: 495.55px;">'
+					+		'<div class="single-blog mb-30" style="width: 345px; height: 495.55px; border:1px solid #efefef;">'
 					+		'<div class="blog-photo">'
 					+			"<a href='communityDetail.html?cmNum=" + val.cmNum + "'>"
 					+				'<img style="width: 295px; height: 295px;" src=' + val.image1 + '>'
@@ -759,17 +720,17 @@ function getAllCommunity(pagenum) {
 					+				'<i class="zmdi zmdi-eye"></i><span>' + ' ' + val.readCount + '</span>'
 					+			'</div>'
 					+		'</div>'
-					+		'<div class="blog-info">'
+					+		'<div class="blog-info" align="center">'
 					+			'<div class="post-meta fix">'
-					+				'<div class="post-year floatleft">'
-					+					'<p class="text-uppercase text-dark-red mb-0">' + val.wdate + '</p>'
-					+					'<h4 class="post-title"><a href="communityDetail.html?cmNum=' + val.cmNum + '" tabindex="0">' + val.title + '</a></h4>'
+					+				'<div class="post-year">'
+					+					'<a href="communityDetail.html?cmNum=' + val.cmNum + '" tabindex="0"><h4 class="post-title" style="font-size:18px;">' + val.title + '</h4></a>'
 					+				'</div>'
 					+			'</div>'
 					+			"<a href='communityDetail.html?cmNum=" + val.cmNum + "'>"
-					+				'<p id="_content">' + val.content.substring(0,60) + '</p>'
+					+				'<p id="_content" style="font-size:16px;">' + val.content + '</p>'
 					+			'</a>'
 					+			'<p class="button-2 text-dark-red">작성자' + ' : ' + ' ' + val.id + '</p>'
+					+					'<p class="text-uppercase text-dark-red mb-0">' + val.wdate + '</p>'
 					+		'</div>'
 					+	'</div>'
 					+	'</div>'
@@ -856,9 +817,9 @@ function getFilterCommunity(pagenum) {
 			$(".cList").remove();
 			$.each(list, function(i, val) {
 				
-				let str = '<div class="cList">'
+				let str = '<div class="cList">'									
 					+'<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">'
-					+		'<div class="single-blog mb-30" style="width: 345px; height: 495.55px;">'
+					+		'<div class="single-blog mb-30" style="width: 345px; height: 495.55px; border:1px solid #efefef;">'
 					+		'<div class="blog-photo">'
 					+			"<a href='communityDetail.html?cmNum=" + val.cmNum + "'>"
 					+				'<img style="width: 295px; height: 295px;" src=' + val.image1 + '>'
@@ -866,20 +827,19 @@ function getFilterCommunity(pagenum) {
 					+			'<div class="like-share text-center fix">'
 					+				"<a class='likeIcon" + i + "' href='#;' onclick='addLikeList(" + '"' + i + '"' + ',' + '"' + val.cmNum + '"' + ',' + '"' + val.cmLike + '"'+ ")'><i class='zmdi zmdi-favorite'></i><span>" + val.cmLike + "Like</span></a>"
 					+				'<i class="zmdi zmdi-eye"></i><span>' + ' ' + val.readCount + '</span>'
-				//	+				'<i style="margin-left: 16px;" class="zmdi zmdi-comments"></i><span>Comments</span>'
 					+			'</div>'
 					+		'</div>'
-					+		'<div class="blog-info">'
+					+		'<div class="blog-info" align="center">'
 					+			'<div class="post-meta fix">'
-					+				'<div class="post-year floatleft">'
-					+					'<p class="text-uppercase text-dark-red mb-0">' + val.wdate + '</p>'
-					+					'<h4 class="post-title"><a href="communityDetail.html?cmNum=' + val.cmNum + '" tabindex="0">' + val.title + '</a></h4>'
+					+				'<div class="post-year">'
+					+					'<a href="communityDetail.html?cmNum=' + val.cmNum + '" tabindex="0"><h4 class="post-title" style="font-size:18px;">' + val.title + '</h4></a>'
 					+				'</div>'
 					+			'</div>'
 					+			"<a href='communityDetail.html?cmNum=" + val.cmNum + "'>"
-					+				'<p id="_content">' + val.content + '</p>'
+					+				'<p id="_content" style="font-size:16px;">' + val.content + '</p>'
 					+			'</a>'
 					+			'<p class="button-2 text-dark-red">작성자' + ' : ' + ' ' + val.id + '</p>'
+					+					'<p class="text-uppercase text-dark-red mb-0">' + val.wdate + '</p>'
 					+		'</div>'
 					+	'</div>'
 					+	'</div>'

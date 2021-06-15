@@ -33,9 +33,9 @@
 		<!-- material-design-iconic-font css -->
 		<link rel="stylesheet" href="../css/material-design-iconic-font.css">
 		<!-- All common css of theme -->
-		<link rel="stylesheet" href="../css/default.css">
+		<link rel="stylesheet" href="../css/taemin2.css">
 		<!-- style css -->
-		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/taemin.css">
         <!-- shortcode css -->
         <link rel="stylesheet" href="../css/shortcode.css">
 		<!-- responsive css -->
@@ -55,7 +55,13 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 </script>
 
 <style type="text/css">
-
+.zmdi{font-size: 20px;}
+.post-share a{color: #666;}
+.post-share a:hover { color: #0c0801;}
+.comment-reply a:hover { background: #f7e6b6;}
+.submit-button {background: #ffc929 none repeat scroll 0 0;	/* #ffa85d */}
+.button-one::before {background: #FD9E39;}
+.tab-title{font-size: 18px;}
 </style>
 
 
@@ -63,7 +69,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 <body>
 
 <!-- WRAPPER START -->
-		<div class="wrapper bg-dark-white">
+		<div class="wrapper bg-white">
 
 			<!-- HEADER-AREA START -->
 			<header id="sticky-menu" class="header header-2">
@@ -296,20 +302,20 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 			</div>
 			<!-- Mobile-menu end -->
 			<!-- HEADING-BANNER START -->
-			<div class="heading-banner-area overlay-bg">
+			<div class="heading-banner-area">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="heading-banner">
 								<div class="heading-banner-title">
-									<h2>Single-Blog</h2>
+									<h2>Moff Community</h2>
 								</div>
-								<div class="breadcumbs pb-15">
+								<!-- <div class="breadcumbs pb-15">
 									<ul>
 										<li><a href="index.html">Home</a></li>
 										<li>Single-Blog</li>
 									</ul>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
@@ -337,7 +343,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 										<p>which is the same as saying through shrink ing from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour.On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrink ing from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour.</p> -->
 									</div>	
 										
-										<div class="post-share-tag clearfix mt-40">
+										<div class="post-share-tag clearfix mt-40" style="background: #ffea9d">
 											<div class="post-share floatleft">
 											
 												<div id="idInfo" class="floatleft"></div>
@@ -392,7 +398,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 										<div class="pro-reviews mt-60">
 											<div class="customer-review mb-60">
 												<h3 class="tab-title title-border mb-30">댓글</h3>
-												<ul class="product-comments clearfix" style="width: 500px">
+												<ul class="product-comments clearfix" style="width: 500px; font-size:16px;">
 													<!-- <li class="mb-30">
 														<div class="pro-reviewer">
 															<img src="img/reviewer/1.jpg" alt="" />
@@ -444,7 +450,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 														</div>
 														<div class="row">
 															<div class="col-md-12">
-																<textarea class="custom-textarea" id="content" name="content" style="resize: none; width: 500px;"></textarea>
+																<textarea class="custom-textarea" id="content" style="resize: none; width: 500px;"></textarea>
 																<button type="button" onclick="writeComment()" data-text="등록" class="button-one submit-button mt-20" style="margin-left: 20px;">등록</button>
 															</div>
 														</div>
@@ -453,9 +459,9 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 											</div>
 											
 											<!-- 수정,삭제 버튼 -->
-											<div style="height: 100px; padding-top: 10px;" align="right">
-												<button type="button" id="updatePage" data-text="수정" class="button-one submit-button mt-20" style="margin-left: 20px;">수정</button>
-												<button type="button" onclick="deletePage()" data-text="삭제" class="button-one submit-button mt-20" style="margin-left: 20px;">삭제</button>
+											<div id="upDiv" style="height: 100px; padding-top: 10px;" align="right">
+												<!-- <button type="button" id="updatePage" data-text="수정" class="button-one submit-button mt-20" style="margin-left: 20px;">수정</button> -->
+												<!-- <button type="button" onclick="deletePage()" data-text="삭제" class="button-one submit-button mt-20" style="margin-left: 20px;">삭제</button> -->
 											</div>
 											
 										</div>										
@@ -558,27 +564,6 @@ getAllComment();
 getCommentCount();
 
 
-function deletePage() {
-	let cmNum = urlParams.cmNum;
-	
-	$.ajax({
-		url:"http://localhost:3000/deleteCommunity?cmNum=" + cmNum,
-		type:'get',
-		data:{cmNum:cmNum},
-		success:function(data){
-			if(data == "YES"){
-			location.href="commulist.html";
-				
-			}else if(data == "NO"){
-				alert('다시 시도해주세요.');
-			}
-		},
-		error:function(){
-			alert('deleteCommunity err');
-		}
-		
-	});
-}
 
 
 // 디테일
@@ -595,15 +580,29 @@ function getCommunity() {
 		
 			$("#detilaImg1").html('<img style="height: 500px; width:500px; margin-left: 20px;" src='+ data.image1 + '>');
 			$("#detilaImg2").html('<img style="height: 500px; width:500px; margin-left:20px;" src='+ data.image2 + '>');
-			$("#idInfo").html("<i class='zmdi zmdi-account'></i>" + " " + "<span>" + " &ensp;" + data.id + "</span>");
-			$("#likeInfo").html("<a href='#;' onclick='addLikeDetail(" + '"' + data.cmNum + '"' + ")'><i class='zmdi zmdi-favorite'></i>" + ' ' + "<span id='likeIcon'>" + '&ensp;' + data.cmLike + "Like</span></a>");
+			$("#idInfo").html("<i class='zmdi zmdi-account' style='color:#5a5a56;'></i>" + " " + "<span style='font-size:16px;'>" + " &ensp;" + data.id + "</span>");
+			$("#likeInfo").html("<a href='#;' onclick='addLikeDetail(" + '"' + data.cmNum + '"' + ")'><i class='zmdi zmdi-favorite' style='color:#f56d6d;font-size:16px;'></i>" + ' ' + "<span id='likeIcon'>" + '&ensp;' + data.cmLike + "Like</span></a>");
 			
 		
-			$("#wdateInfo").html("<span class='text-uppercase'><strong>" + data.wdate + "</strong></span>");
-			$("#titleInfo").html('<h4 class="post-title post-title-2">' + data.title + '</h4>');
-			$("#contentInfo").html('<p>' + data.content + '</p>');		
+			$("#wdateInfo").html("<span class='text-uppercase' style='font-size:15px;'><strong>" + data.wdate + "</strong></span>");
+			$("#titleInfo").html('<h4 class="post-title post-title-2" style="font-size:24px">' + data.title + '</h4>');
+			$("#contentInfo").html('<p style="font-size:20px">' + data.content + '</p>');		
 			
 			$("#commentId").html('<input type="text" placeholder="ID:' + '&emsp;' + login.id + '" id="id" name="name" readonly="readonly">');
+			
+			
+			if(login.id == data.id){
+				let app = "<button type='button' onclick='updatePage(" + '"' + data.cmNum + '"' + ")' data-text='수정' class='button-one submit-button mt-20' style='margin-left: 20px;''>수정</button>"
+					+	"<button type='button' onclick='listPage()' data-text='목록' class='button-one submit-button mt-20' style='margin-left: 20px;''>목록</button>"
+					+	"<button type='button' onclick='deletePage(" + '"' + data.cmNum + '"' + ")' data-text='삭제' class='button-one submit-button mt-20' style='margin-left: 20px;''>삭제</button>"
+					
+				$("#upDiv").html(app);
+			
+			}else{
+				let app = "<button type='button' onclick='listPage()' data-text='목록' class='button-one submit-button mt-20' style='margin-left: 20px;''>목록</button>";
+			
+				$("#upDiv").html(app);
+			}
 		
 		
 		},
@@ -612,13 +611,39 @@ function getCommunity() {
 		}
 	});
 	
-	$("#updatePage").click(function () {
-		location.href="communityUpdate.html?cmNum=" + cmNum;
+}
+
+// 게시글 수정 이동
+function updatePage(cmNum) {
+	location.href="communityUpdate.html?cmNum=" + cmNum;
+}
+
+// 목록 이동
+function listPage() {
+	location.href="communityList.html";
+}
+
+// 게시글 삭제
+function deletePage(cmNum) {
+	
+	$.ajax({
+		url:"http://localhost:3000/deleteCommunity?cmNum=" + cmNum,
+		type:'get',
+		data:{cmNum:cmNum},
+		success:function(data){
+			if(data == "YES"){
+				alert('게시글이 삭제되었습니다.');
+				location.href="commulist.html";
+				
+			}else if(data == "NO"){
+				alert('다시 시도해주세요.');
+			}
+		},
+		error:function(){
+			alert('deleteCommunity err');
+		}
 		
 	});
-	
-	
-	
 }
 
 
@@ -632,13 +657,14 @@ function addLikeDetail(cmNum, cmLike) {
 		data:{cmNum:cmNum, id:login.id},
 		success:function(data){
 		//	alert('addLikeDetail succ');
-			
 			if(data == "YES"){
-				alert('좋아요 들어감');
+				getCommunity();
+		//		alert('좋아요 들어감');
 			//	$("#likeIcon").html(data.cmLike);
 			
 			}else if(data == "NO"){
-				alert('삭제');
+		//		alert('삭제');
+				getCommunity();
 			}
 			
 		},
@@ -661,11 +687,12 @@ function writeComment() {
 		type:"post",
 		data:{cmNum:cmNum, id:login.id, content:$("#content").val() },
 		success:function(data){
-			if(data == "YES"){
+			if(data.trim() == "YES"){
 			//	alert('writeComment succ');
-				location.href = "./communityDetail.html?cmNum=" + cmNum;
+			alert($("#content").val());
+				location.href = "communityDetail.html?cmNum=" + cmNum;
 				
-			}else if(data == "NO"){
+			}else if(data.trim() == "NO"){
 				alert("댓글입력 실패");
 			}
 			
@@ -689,7 +716,7 @@ function getCommentCount() {
 		data:{cmNum:cmNum},
 		success:function(count){
 //			alert('getCommentCount succ' + count);
-			$("#commentInfo").html("<i class='zmdi zmdi-comments'></i>" + " " + "<span>" + "&ensp;" + count + "Comment</span>");
+			$("#commentInfo").html("<i class='zmdi zmdi-comments' style='color:#ff8e2b;'></i>" + " " + "<span style='font-size:16px'>" + "&ensp;" + count + "&ensp;Comment</span>");
 		},
 		error:function(){
 			alert('getCommentCount err');
@@ -704,6 +731,7 @@ function getCommentCount() {
 // 댓글리스트
 function getAllComment() {
 	let cmNum = urlParams.cmNum;
+	let login = JSON.parse(sessionStorage.getItem("login"));
 	
 	$.ajax({
 		url:"http://localhost:3000/getAllComment?cmNum=" + cmNum,
@@ -715,25 +743,26 @@ function getAllComment() {
 			if(list != null && list != ""){
 				$.each(list, function(i, data) {
 						
-						let commentStr = '<div id="detailComment">'
-							+			'<li class="mb-30">'
-							+				'<div class="pro-reviewer-comment">'
-							+					'<div class="fix">'
-							+						'<div class="floatleft mbl-center">'
-							+							'<div id="commentNum"><input type="hidden" value="'+data.ctNum+'"></div>'
-							+							'<h5 class="text-uppercase mb-0"><strong>' + data.id +'</strong></h5>'
-							+							'<p class="reply-date">' + data.wdate + '</p>'
-							+						'</div>'
-							+						'<div class="comment-reply floatright">'
-					//		+							"<a href='#;' onclick='updateComment(" + '"' + data.ctNum + '"' +")'><i class='zmdi zmdi-edit'></i></a>"
-							+							"<a href='#;' onclick='editComment(" + '"' + data.ctNum + '"' + ',' + '"' + data.content + '"' +")'><i class='zmdi zmdi-edit'></i></a>"
-							+							"<a href='#;' onclick='deleteComment(" + '"' + data.ctNum + '"' + ")' ><i class='zmdi zmdi-close'></i></a>"
-							+						'</div>'
-							+					'</div>'
-							+					'<p class="mb-0">' + data.content + '</p>'
-							+				'</div>'
-							+			'</li>'
-							+			'</div>';
+						let commentStr = '<li class="mb-30" style="width:100%">';
+				commentStr	+=				'<div class="pro-reviewer-comment" style="margin-left:0px;">'
+				commentStr	+=				'<div class="fix">'
+				commentStr	+=					'<div class="floatleft mbl-center">'
+				commentStr	+=						'<div class="commentNum"><input type="hidden" value="'+data.ctNum+'"></div>'
+				commentStr	+=						'<h5 class="text-uppercase mb-0"><strong>' + data.id +'</strong></h5>'
+				commentStr	+=						'<p class="reply-date">' + data.wdate + '</p>'
+				commentStr	+=					'</div>'
+							
+				commentStr	+=					'<div class="comment-reply floatright">'
+				
+							if(data.id == login.id){
+				commentStr	+=						"<a href='#;' onclick='editComment(" + '"' + data.ctNum + '"' + ',' + '"' + data.content + '"' +")'><i class='zmdi zmdi-edit'></i></a>"
+				commentStr	+=						"<a href='#;' onclick='deleteComment(" + '"' + data.ctNum + '"' + ")' ><i class='zmdi zmdi-close'></i></a>"
+							}
+				
+				commentStr	+=					'</div>'
+				commentStr	+=				'</div>'
+				commentStr	+=				'<p class="mb-0">' + data.content + '</p>'
+				commentStr	+=		'</li>'
 										
 						$(".product-comments").append(commentStr);
 						
@@ -741,10 +770,10 @@ function getAllComment() {
 				
 			}else{
 				let noComment = '<li class="mb-30">'
-					+				'<div class="pro-reviewer-comment">'
+					+				'<div class="pro-reviewer-comment" style="margin-left:0px;">'
 					+					'<div class="fix">'
 					+						'<div class="floatleft mbl-center">'
-					+							'<h5 class="text-uppercase mb-0"><strong>등록된 댓글이 없습니다.</strong></h5>'
+					+							'<h5 class="text-uppercase mb-10" style="font-size:17px;"><strong>등록된 댓글이 없습니다.</strong></h5>'
 					+						'</div>'
 					+					'</div>'
 					+					'<p class="mb-0">댓글을 등록해주세요.</p>'
@@ -781,7 +810,7 @@ function editComment(ctNum, content) {
 					+					'<div class="row" id="_content">'
 					+						'<input type="text" placeholder="ID:' + '&emsp;' + id + '" id="id" name="name" readonly="readonly">'
 					+						'<div class="col-md-12">'
-					+							'<textarea class="custom-textarea" id="editContent" name="content" style="resize: none; width: 500px;"></textarea>'
+					+							'<textarea class="custom-textarea" id="editContent" style="resize: none; width: 500px;"></textarea>'
 					+							"<button type='button' onclick='updateComment(" + '"' + ctNum + '"' + ',' + '"' + content + '"' + ")' data-text='등록' class='button-one submit-button mt-20' style='margin-left: 20px;'>등록</button>"
 					+						'</div>'
 					+					'</div>'
@@ -834,7 +863,7 @@ function deleteComment(ctNum) {
 				alert("삭제되었습니다");
 				
 				$("#detailComment").remove();	
-				location.href = "communityDetail.html?cmNum=" + cmNum;
+				location.reload(true);
 				
 			}else if(data == "NO"){
 				alert("다시 시도해주세요.");

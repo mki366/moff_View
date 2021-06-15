@@ -35,9 +35,9 @@
 		<!-- material-design-iconic-font css -->
 		<link rel="stylesheet" href="../css/material-design-iconic-font.css">
 		<!-- All common css of theme -->
-		<link rel="stylesheet" href="../css/default.css">
+		<link rel="stylesheet" href="../css/taemin2.css">
 		<!-- style css -->
-		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/taemin.css">
         <!-- shortcode css -->
         <link rel="stylesheet" href="../css/shortcode.css">
 		<!-- responsive css -->
@@ -60,18 +60,20 @@
 <!-- ajax -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- Paging 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>
-<link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
--->
 
 
 <style type="text/css">
+#productRow{
+    margin-left: -30px;
+    margin-right: -180px;
+    width: auto;
+}
 
 #prd1{
-	height: 423.48px;
-	width: 292.48px;
+	height: 430px;
+	width: 300px;
 	padding: 0px 15px;
+	margin-right: 30px;
 
 }
 
@@ -82,11 +84,16 @@
 }
 
 #_single-product{
-	height: 393.48px;
-	width: 262.48px;
+	height: 400px;
+	width: 300px;
 	margin: 0px 0px 30px;
 	padding: 15px 15px 25px;
+	border: 1px solid #efefef;
 
+}
+
+.product-style-2 .product-action{
+	background: #fff;
 }
 
 .prdImg{
@@ -146,13 +153,48 @@ select{
 	color: red;
 }
 
+.pro-label sale-label{
+	background: #F2A57C;
+}
+
+.priceSpan{
+	font-weight: 700;
+}
+
+.product-cat .treeview li span {
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.product-cat .treeview li.collapsable span, .product-cat .treeview li span:hover {
+    color: #0c0801;
+}    
+ 
+.widget-title h4{
+	background: #f7f7f5;
+}   
+
+.zmdi{
+	font-size:22px;
+}
+.pro-rating{
+	color: #fda941;
+}
+.subFont{
+	font-size: 15px;
+}
+.product-cat .treeview li > a:hover,
+.product-cat .treeview li > ul > li > a:hover {
+  color: #000;
+}
+
 </style>
  
 </head>
 <body>
 
  <!-- WRAPPER START -->
-        <div class="wrapper bg-dark-white">
+        <div class="wrapper bg-dark-white" style="background: #fff">
 
             <!-- HEADER-AREA START -->
             <header id="sticky-menu" class="header header-2">
@@ -429,17 +471,17 @@ select{
             </div>
             <!-- Mobile-menu end -->
             <!-- HEADING-BANNER START -->
-            <div class="heading-banner-area overlay-bg">
+            <div class="heading-banner-area">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="heading-banner">
                                 <div class="heading-banner-title">
-                                    <h2>Product Grid View</h2>
+                                    <h2>Moff</h2>
                                 </div>
                                 <div class="breadcumbs pb-15">
                                     <ul>
-                                        <li><a href="#">Home</a></li>
+                                        <li><a href="../index.html">Home</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -451,7 +493,7 @@ select{
             <!-- PRODUCT-AREA START -->
             <div class="product-area pt-80 pb-80 product-style-2">
                 <div class="container">
-                    <div class="row">
+                    <div class="row" id="productRow">
                         <div class="col-md-9 col-sm-12 col-xs-12">
                             <!-- Shop-Content End -->
                             <div class="shop-content mt-tab-30 mt-xs-30">
@@ -493,7 +535,7 @@ select{
                             <!-- Widget-Search start -->
                             <aside class="widget widget-search mb-30">
                                 <form action="#">
-                                    <input type="text" placeholder="상품명 입력" id="_searchWord" name="searchWord"/>
+                                    <input type="text" placeholder="상품명 입력" id="_searchWord" name="searchWord" style="border-bottom:1px solid gray"/>
                                   	<button type="button" id="btnSearch">
                                         <i class="zmdi zmdi-search"></i>
                                     </button>
@@ -509,59 +551,59 @@ select{
                                 <form action="http://localhost:3000/prdoductFilter" id="cateFilter" method="get">
                                     <ul id="_categories">
                                      
-                                        <li><span onclick="categoryValue(this)">침대</span>
+                                        <li><span class="cateFont" onclick="categoryValue(this)">침대</span>
                                             <ul>
-                                                <li><a href="#;" class="temp" value="들어옵니다요" onclick="subCategoryVal(this)">더블/퀸/킹 침대</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">수납형침대</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">싱글/슈퍼싱글 침대</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">매트리스</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">기타</a></li>
+                                                <li><a href="#;" class="temp subFont" value="들어옵니다요" onclick="subCategoryVal(this)">더블/퀸/킹 침대</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">수납형침대</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">싱글/슈퍼싱글 침대</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">매트리스</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">기타</a></li>
                                             </ul>
                                         </li>
-                                        <li><span onclick="categoryValue(this)">쇼파</span>
+                                        <li><span class="cateFont" onclick="categoryValue(this)">쇼파</span>
                                             <ul>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">패브릭쇼파</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">천연/인조가죽 쇼파</a></li>	<!-- mapper: 가죽쇼파 -->
-                                                <li><a href="#;" onclick="subCategoryVal(this)">기타</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">패브릭쇼파</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">천연/인조가죽 쇼파</a></li>	<!-- mapper: 가죽쇼파 -->
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">기타</a></li>
                                             </ul>
                                         </li>        
-                                        <li><span onclick="categoryValue(this)">책장</span>
+                                        <li><span class="cateFont" onclick="categoryValue(this)">책장</span>
                                             <ul>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">책장</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">수납선반/유닛</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">기타</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">책장</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">수납선반/유닛</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">기타</a></li>
                                             </ul>
                                         </li>        
-                                        <li><span onclick="categoryValue(this)">식탁/책상</span>
+                                        <li><span class="cateFont" onclick="categoryValue(this)">식탁/책상</span>
                                             <ul>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">테이블</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">책상/컴퓨터책상</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">식탁</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">협탁/화장대</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">기타</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">테이블</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">책상/컴퓨터책상</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">식탁</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">협탁/화장대</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">기타</a></li>
                                             </ul>
                                         </li>        
-                                        <li><span onclick="categoryValue(this)">수납장/장식장/서랍장</span>		
+                                        <li><span class="cateFont" onclick="categoryValue(this)">수납장/장식장/서랍장</span>		
                                             <ul>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">장식장</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">수납장</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">서랍장</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">기타</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">장식장</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">수납장</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">서랍장</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">기타</a></li>
                                             </ul>
                                         </li>        
-                                        <li><span onclick="categoryValue(this)">의자</span>
+                                        <li><span class="cateFont" onclick="categoryValue(this)">의자</span>
                                             <ul>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">암체어</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">사무용의자</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">식탁의자</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">기타</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">암체어</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">사무용의자</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">식탁의자</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">기타</a></li>
                                             </ul>
                                         </li>
-                                        <li><span onclick="categoryValue(this)">기타</span>
+                                        <li><span class="cateFont" onclick="categoryValue(this)">기타</span>
                                             <ul>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">조명</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">장식용품</a></li>
-                                                <li><a href="#;" onclick="subCategoryVal(this)">기타</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">조명</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">장식용품</a></li>
+                                                <li><a href="#;" class="subFont" onclick="subCategoryVal(this)">기타</a></li>
                                             </ul>
                                         </li>                           
                                       
@@ -630,70 +672,6 @@ select{
                                 <a href="">
                             		<img alt="" src="../image/주문제작list.png">
                             	</a>
-                                <!-- <div>
-	                                <select id="_star" name="star">
-										<option value="" selected="selected">별점선택</option>
-										<option value="s5">&#xf27d </option>
-										<option value="s4">별이 네개</option>
-										<option value="s3">별3</option>
-										<option value="s2">별2</option>
-										<option value="s1">별1</option>
-									</select>
-	                                
-	                                <button type="button" id="`ter">
-                                        <i class="zmdi zmdi-search"></i>
-                                    </button>
-                                </div>
-                                
-                               
-                                   <div>	
-                                    	<button type="button" class="btn btn-default pro-rating">
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                   		</button>
-                                   </div>
-                                   
-                                    <div>		
-                                    	<button type="button" class="btn btn-default pro-rating">
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    	</button>
-                                    </div>
-                                    
-                                   <div>
-                                    	<button type="button" class="btn btn-default pro-rating">
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    	</button>
-                                    </div>
-                                   <div>	
-                                    	<button type="button" class="btn btn-default pro-rating">
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    	</button>
-                                    </div>
-                                    <div>	
-                                    	<button type="button" class="btn btn-default pro-rating">
-                                    		<i class="zmdi zmdi-star"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    		<i class="zmdi zmdi-star-outline"></i>
-                                    	</button>
-                                    </div>
-                                     -->
                                 </div> 
                             </aside>
                             <!-- Widget-banner end -->
@@ -802,6 +780,7 @@ select{
 
     let cateNum = decodeURI(urlParams._category);
     let subCateNum = decodeURI(urlParams._subCategory);
+    newIcon();
 	
 	var category;
 	var subCategory;
@@ -839,7 +818,21 @@ select{
 		productlist(0);
 		productCount();
 	});
-
+	
+//new Icon
+function newIcon() {
+	$.ajax({
+		url:'http://localhost:3000/newIcon',
+		type:'get',
+		data:{},
+		success:function(){
+			alert('ddd');
+		},
+		error:function(){
+			
+		}
+	});
+}
 
 // 리스트에서 카트 눌렀을 때
 function cartInput(prodNum, prodName, color) {
@@ -900,30 +893,6 @@ function wishInput(i, prodNum, prodName, color) {
 		
 }
 
-/*
-// 위시 재클릭 시 삭제
- function deleteWish(i, prodNum, id) {
-	$.ajax({
-		url:'http://localhost:3000/deleteWish',
-		type:'get',
-		data:{prodNum:prodNum, id:login.id},
-		success:function(data){
-			if(data == "success"){
-				alert('위시리스트에서 삭제되었습니다.');
-				$("#wishIcon"+i).html("<a class='list_icon' id='delWishIcon" + i + "' href='#;' onclick='deleteWish(" + '"' + i + '"' + ',' + '"' + prodNum + '"' + ',' + '"' + id + '"' + ")' data-toggle='tooltip' data-placement='top' title='Wishlist'><i class='zmdi zmdi-favorite-outline'></i></a>");
-			}else if(data == "fail"){
-				alert('다시 시도해주세요.');
-			}
-		},
-		error:function(){
-			alert('deleteWish err');
-		}
-	});
-	
-	
-}
-*/
- 
 
 
 // 확대 아이콘 클릭 시 모달
@@ -974,7 +943,7 @@ function quickModal(prodNum, prodName, oriPrice, price, filename, info, color) {
 	zoom +=                          '<div class="quick-add-to-cart">';
 	zoom +=                             '<form method="post" class="cart">';
 	zoom +=                                '<div class="numbers-row">';
-	zoom +=                                     '<input type="number" id="french-hens" value="0">';
+	zoom +=                                     '<input type="number" id="french-hens" value="1">';
 	zoom +=                               '</div>';
 	zoom +=                              '<button class="single_add_to_cart_button" onclick="setQuickCart(' + "'" + prodNum + "'" + "," + "'" + prodName + "'" + ')" type="submit">Add to cart</button>';
 	zoom +=                             '</form>';
@@ -1017,9 +986,6 @@ function setQuickCart(prodNum, prodName) {
 		
 }
 
-var after = new Date();
-after.setDate(after.getDate() + 7);
-console.log(after);
 
 // product list
 function productlist(pagenum) {
@@ -1032,6 +998,7 @@ function productlist(pagenum) {
 			
 			$(".prdList").remove();
 			 
+			if(list != null && list != ""){
 			$.each(list, function(i, val) {
 				//문자열 3번째 자리마다 콤마추가
 				var oriexprice = String(val.oriPrice);
@@ -1046,23 +1013,24 @@ function productlist(pagenum) {
 				str	+=			"<div class='single-product' id='_single-product'>";
 				str +=	 			"<div class='product-img'>";
 				
-					 	if(val.price != "" && val.price != null){
-				str += 				"<span class='pro-label sale-label'>Sale</span>";
-				str +=	   			"<span class='pro-price-2'>₩" + laprice + "원</span>";			
-							
-						}else{
-				str +=	   			"<span class='pro-price-2'>₩" + orilaprice + "원</span>";
-						} 
-					
-					 	
+					if(val.price != "" && val.price != null){
+				str += 				"<span class='pro-label sale-label' style='background:#F2A57C;'>Sale</span>";
+				
+					}					 	
 				str +=			        "<a href='productDetail.html?prodNum=" + val.prodNum + "&" + "subCategory=" + val.subCategory + "'>";
 				str +=				      '<img class="prdImg" src="../image/' + val.filename + '">';
 				str +=				   	"</a></div>";
 				str +=			   "<div class='product-info clearfix text-center'>";
-				str +=	        "<div class='fix'>";
-				str +=		            "<h4 class='post-title'><a href='productDetail.html?prodNum=" + val.prodNum + "&" + "subCategory=" + val.subCategory + "'>" + val.prodName + "</a></h4>";
-				str +=			"<input type='hidden' value='" + val.color + "'>";
-				str +=			"<input type='hidden' value='" + val.readCount + "'>";
+				str +=	        "<div class='fix' style='margin-bottom:6px;'>";
+				str +=		            "<h4 class='post-title' style='font-size:16px;'><a href='productDetail.html?prodNum=" + val.prodNum + "&" + "subCategory=" + val.subCategory + "'>" + val.prodName + "</a></h4>";
+				
+			 		if(val.price != "" && val.price != null){
+				str +=	   			"<span class='priceSpan' style='font-size:17px;'>₩" + laprice + "원</span>";			
+								
+					}else{
+				str +=	   			"<span class='priceSpan' style='font-size:15.5px;'>₩" + orilaprice + "원</span>";
+					
+					} 
 				str +=	        "</div>";
 				str +=	        "<div class='fix'>";
 				str +=	            "<span class='pro-rating'>";
@@ -1162,9 +1130,9 @@ function productlist(pagenum) {
 				str   +=            "</span>";
 				str   +=        "</div>";
 				str   +=        "<div class='product-action clearfix'>";
-				str   +=			"<a class='list_icon' id='wishIcon" + i + "' href='#;' onclick='wishInput(" + '"' + i + '"' + ',' + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ',' + '"' + val.color + '"' + ")' data-toggle='tooltip' data-placement='top' title='Wishlist'><i class='zmdi zmdi-favorite-outline'></i></a>";
+				str   +=			"<a class='list_icon' id='wishIcon" + i + "' href='#;' onclick='wishInput(" + '"' + i + '"' + ',' + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ',' + '"' + val.color + '"' + ")' data-toggle='tooltip' data-placement='top' title='Wishlist'><i class='zmdi zmdi-favorite-outline' style='color:#FD6E61;'></i></a>";
 				str   +=			"<a class='list_icon' href='#;' onclick='quickModal(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ',' + '"' + val.oriPrice + '"' + ',' + '"' + val.price + '"' + ',' + '"' + val.filename + '"' + ',' + '"' + val.info + '"' + ',' + '"' + val.color + '"' + ")' data-toggle='modal' data-target='#productModal' title='Quick View'><i class='zmdi zmdi-zoom-in'></i></a>";
-				str   +=			"<a class='list_icon' href='#;' onclick='cartInput(" + '"' + val.prodNum + '"' + ',' + '"' + val. prodName + '"' + ',' + '"' + val.color + '"' + ")' data-toggle='tooltip' data-placement='top' title='Add To Cart'><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
+				str   +=			"<a class='list_icon' href='#;' onclick='cartInput(" + '"' + val.prodNum + '"' + ',' + '"' + val. prodName + '"' + ',' + '"' + val.color + '"' + ")' data-toggle='tooltip' data-placement='top' title='Add To Cart'><i class='zmdi zmdi-shopping-cart-plus' style='color:#484352;'></i></a>";
 				str   +=      "</div>"; 
 				str   +=     "</div>";
 				str   +=	 "</div>";
@@ -1174,6 +1142,15 @@ function productlist(pagenum) {
 				$("#productAllList").append(str);
 				
 			});
+			
+			}else{
+				let str = "<div align='center' style='font-weight:700; margin-top:200px;'>"
+					str += "<p style='font-size:30px; margin-bottom:30px;'>요청하신 상품이 없습니다.</p>"
+					str += "<p style='font-size:25px; margin-bottom:10px;'>빠른 시일 내에 준비하겠습니다.</p>"
+					str += "</div>"
+				$("#productAllList").html(str);
+					
+			}
 			
 		}, 
 		error:function(){
@@ -1185,7 +1162,7 @@ function productlist(pagenum) {
  // 글 총수 & 페이징
 function productCount(){
     $.ajax({
-       url:"http://localhost:3000/Pagination",
+       url:"http://localhost:3000/prdListCount",
        type:"get",
        data:{ page:0, choice:$("#_choice").val(), search:$("#_searchWord").val()},
        success:function( pagenum ){
@@ -1206,13 +1183,16 @@ function productCount(){
                 }
              }//for end
              
-             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right' onclick=productlist("+ pageN +")></i></a></li>";
+             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right' onclick=productlist("+ (pageN - 1) +")></i></a></li>";
              page += "</ul>";
              page += "</div>";
              
              $("#makepagination").html(page);
-          }//if end
-          
+          }else if(pagenum == 0) {
+	    	   var page = "<div class='pagination'>";
+		          page += "</div>";
+		          $("#makepagination").html(page);
+	       }
           
        },
        error:function(){
@@ -1224,12 +1204,34 @@ function productCount(){
  // filter 관련 함수 
 function categoryValue(item) {
 	category = $(item).text();
+	filterList(0);
+	filterCount();
+	
+	if($(item).text() == '침대'){
+		$(".heading-banner-title").html('<h2>MOFF BED</h2>');
+	}else if($(item).text() == '쇼파'){
+		$(".heading-banner-title").html('<h2>MOFF SOFA</h2>');
+	}else if($(item).text() == '식탁/책상'){
+		$(".heading-banner-title").html('<h2>MOFF DESK</h2>');
+	}else if($(item).text() == '책장'){
+		$(".heading-banner-title").html('<h2>MOFF BOOKCASE</h2>');
+	}else if($(item).text() == '수납장/장식장/서랍장'){
+		$(".heading-banner-title").html('<h2>MOFF STORAGE</h2>');
+	}else if($(item).text() == '의자'){
+		$(".heading-banner-title").html('<h2>MOFF CHAIR</h2>');
+	}else if($(item).text() == '기타'){
+		$(".heading-banner-title").html('<h2>MOFF DECORATION</h2>');
+	}
+	
 	subCategory = "";
 	colorVal = "";
 	_min = "";
 	_max = "";
-	filterList(0);
-	filterCount();
+	
+	
+	
+	
+	
 }
 
 function subCategoryVal(item) {
@@ -1273,38 +1275,43 @@ function filterList(pagenum) {
 					
 			$(".prdList").remove();
 			 
+			if(list != null && list != ""){
 			$.each(list, function(i, val) {
 				
+				//문자열 3번째 자리마다 콤마추가
 				var oriexprice = String(val.oriPrice);
 				var orilaprice = oriexprice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
 				
 				var exprice = String(val.price);
 				var laprice = exprice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
 				
-				
 				let str =  '<div class="prdList">';
 				
-				str   +=		"<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12' id='prd1'>";
-				str   +=			"<div class='single-product' id='_single-product'>";
-				str   +=	 			"<div class='product-img'>";
+				str	+=		"<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12' id='prd1'>";
+				str	+=			"<div class='single-product' id='_single-product'>";
+				str +=	 			"<div class='product-img'>";
 				
-				if(val.price != "" && val.price != null){
-				str += 				"<span class='pro-label sale-label'>Sale</span>";
-				str +=	   			"<span class='pro-price-2'>₩" + laprice + "원</span>";			
+					if(val.price != "" && val.price != null){
+				str += 				"<span class='pro-label sale-label' style='background:#F2A57C;'>Sale</span>";
+				
+					}					 	
+				str +=			        "<a href='productDetail.html?prodNum=" + val.prodNum + "&" + "subCategory=" + val.subCategory + "'>";
+				str +=				      '<img class="prdImg" src="../image/' + val.filename + '">';
+				str +=				   	"</a></div>";
+				str +=			   "<div class='product-info clearfix text-center'>";
+				str +=	        "<div class='fix' style='margin-bottom:6px;'>";
+				str +=		            "<h4 class='post-title' style='font-size:16px;'><a href='productDetail.html?prodNum=" + val.prodNum + "&" + "subCategory=" + val.subCategory + "'>" + val.prodName + "</a></h4>";
+				
+			 		if(val.price != "" && val.price != null){
+				str +=	   			"<span class='priceSpan' style='font-size:17px;'>₩" + laprice + "원</span>";			
 								
-				}else{
-				str +=	   			"<span class='pro-price-2'>₩" + orilaprice + "원</span>";
-				} 
-				
-				str   +=			        "<a href='productDetail.html?prodNum=" + val.prodNum + "&" + "subCategory=" + val.subCategory + "'>";
-				str   +=				      '<img class="prdImg" src="../image/' + val.filename + '">';
-				str   +=				   	"</a></div>";
-				str   +=			   "<div class='product-info clearfix text-center'>";
-				str   +=	        "<div class='fix'>";
-				str   +=		            "<h4 class='post-title'><a href='productDetail.html?prodNum=" + val.prodNum + "&" + "subCategory=" + val.subCategory + "'>" + val.prodName + "</a></h4>";
-				str   +=	        "</div>";
-				str   +=	        "<div class='fix'>";
-				str   +=	            "<span class='pro-rating'>";
+					}else{
+				str +=	   			"<span class='priceSpan' style='font-size:15.5px;'>₩" + orilaprice + "원</span>";
+					
+					} 
+				str +=	        "</div>";
+				str +=	        "<div class='fix'>";
+				str +=	            "<span class='pro-rating'>";
 				        
 				
 						if(val.star > 0 && val.star < 0.9 ){
@@ -1401,9 +1408,9 @@ function filterList(pagenum) {
 				str   +=            "</span>";
 				str   +=        "</div>";
 				str   +=        "<div class='product-action clearfix'>";
-				str   +=			"<a class='list_icon' href='#;' onclick='wishInput(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ")' data-toggle='tooltip' data-placement='top' title='Wishlist'><i class='zmdi zmdi-favorite-outline'></i></a>";
-				str   +=			"<a class='list_icon' href='#;' onclick='quickModal(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ',' + '"' + val.oriPrice + '"' + ',' + '"' + val.price + '"' + ',' + '"' + val.filename + '"' + ',' + '"' + val.info + '"' + ")' data-toggle='modal' data-target='#' title='Quick View'><i class='zmdi zmdi-zoom-in'></i></a>";
-				str   +=			"<a class='list_icon' href='#;' onclick='cartInput(" + '"' + val.prodNum + '"' + ',' + '"' + val. prodName + '"' + ")' data-toggle='tooltip' data-placement='top' title='Add To Cart'><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
+				str   +=			"<a class='list_icon' id='wishIcon" + i + "' href='#;' onclick='wishInput(" + '"' + i + '"' + ',' + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ',' + '"' + val.color + '"' + ")' data-toggle='tooltip' data-placement='top' title='Wishlist'><i class='zmdi zmdi-favorite-outline' style='color:#FD6E61;'></i></a>";
+				str   +=			"<a class='list_icon' href='#;' onclick='quickModal(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ',' + '"' + val.oriPrice + '"' + ',' + '"' + val.price + '"' + ',' + '"' + val.filename + '"' + ',' + '"' + val.info + '"' + ',' + '"' + val.color + '"' + ")' data-toggle='modal' data-target='#productModal' title='Quick View'><i class='zmdi zmdi-zoom-in'></i></a>";
+				str   +=			"<a class='list_icon' href='#;' onclick='cartInput(" + '"' + val.prodNum + '"' + ',' + '"' + val. prodName + '"' + ',' + '"' + val.color + '"' + ")' data-toggle='tooltip' data-placement='top' title='Add To Cart'><i class='zmdi zmdi-shopping-cart-plus' style='color:#484352;'></i></a>";
 				str   +=      "</div>"; 
 				str   +=     "</div>";
 				str   +=	 "</div>";
@@ -1413,6 +1420,15 @@ function filterList(pagenum) {
 				$("#productAllList").append(str);
 				
 			});
+			
+			}else{
+					let str = "<div align='center' style='font-weight:700; margin-top:200px;'>"
+						str += "<p style='font-size:30px; margin-bottom:30px;'>요청하신 상품이 없습니다.</p>"
+						str += "<p style='font-size:25px; margin-bottom:10px;'>빠른 시일 내에 준비하겠습니다.</p>"
+						str += "</div>"
+				$("#productAllList").html(str);
+				
+			}
 		},
 		error:function(){
 			alert('ProductFilter error');
@@ -1442,18 +1458,13 @@ function filterCount() {
 		             }
 		          }//for end
 		          
-		          page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right' onclick=filterList("+ pageN +")></i></a></li>";
+		          page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right' onclick=filterList("+ (pageN - 1) +")></i></a></li>";
 		          page += "</ul>";
 		          page += "</div>";
 		          
 		          $("#makepagination").html(page);
 		       } else if(pagenum == 0) {
 		    	   var page = "<div class='pagination'>";
-			          page += "<ul>";
-			          page += "<li ><a href='#' ><i class='zmdi zmdi-long-arrow-left'></i></a></li>";
-			       	  page += "<li><a>" + 1 + "</a> </li>";
-			       	  page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right'></i></a></li>";
-			          page += "</ul>";
 			          page += "</div>";
 			          $("#makepagination").html(page);
 		       }
