@@ -2,7 +2,16 @@
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
-		<meta charset="utf-8">
+		<!--font   -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> <!--CDN 링크 -->
+<!-- css -->
+<link rel="stylesheet" href="./BuyBackCss.css">
+		
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Wishlist || Hurst</title>
 		<meta name="description" content="">
@@ -43,17 +52,18 @@
 		<link rel="stylesheet" href="../css/responsive.css">
 		<!-- modernizr css -->
 		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
-	
-	<style type="text/css">
-	.payment-details table td {
-    color: #333;
-    font-weight: 700;
-    padding: 7px 30px;
-}
-	</style>
-	<!-- ///////////////// -->
-	<script type="text/javascript" src="qrcode.js"></script>
-		<script type="text/javascript">
+	<!--다음  -->
+ <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>	
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
 		//html->html에서 parm가져오는법
 		let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 		    return paramPair.split(/=(.+)?/).slice(0, 2);
@@ -61,14 +71,170 @@
 		    obj[pairArray[0]] = pairArray[1];
 		    return obj;
 		}, {});
-		</script>
+</script>
+	<style type="text/css">
 	
+	.overlay-bg::before {
+    background: #ffdc16}
+    #progressbar li.active:before, #progressbar li.active:after {
+    background: gray;
+}
+#progressbar .active {
+    color: black
+}
+.progress-bar {
+    background-color: #ffdc16
+}
+#msform .action-button {
+    width: 100px;
+    background: #ffdc16;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+.where {
+  display: block;
+  margin: 25px 15px;
+  font-size: 11px;
+  color: #000;
+  text-decoration: none;
+  font-family: verdana;
+  font-style: italic;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #000000
+}
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.checks {position: relative;}
+
+.checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0
+}
+.checks input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.checks input[type="checkbox"] + label:before {  /* 가짜 체크박스 */
+  content: ' ';
+  display: inline-block;
+  width: 21px;  /* 체크박스의 너비를 지정 */
+  height: 21px;  /* 체크박스의 높이를 지정 */
+  line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */
+  margin: -2px 8px 0 0;
+  text-align: center; 
+  vertical-align: middle;
+  background: #fafafa;
+  border: 1px solid #cacece;
+  border-radius : 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+}
+.checks input[type="checkbox"] + label:active:before,
+.checks input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.checks input[type="checkbox"]:checked + label:before {  /* 체크박스를 체크했을때 */ 
+  content: '\2714';  /* 체크표시 유니코드 사용 */
+  color: #99a1a7;
+  text-shadow: 1px 1px #fff;
+  background: #e9ecee;
+  border-color: #adb8c0;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+}
+
+.checks.small input[type="checkbox"] + label {
+  font-size: 12px;
+}
+
+.checks.small input[type="checkbox"] + label:before {
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 11px;
+}
+
+.checks.etrans input[type="checkbox"] + label {
+  padding-left: 30px;
+}
+.checks.etrans input[type="checkbox"] + label:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  opacity: .6;
+  box-shadow: none;
+  border-color: #6cc0e5;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+.checks.etrans input[type="checkbox"]:checked + label:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity:1; 
+  background: transparent;
+  border-color:transparent #6cc0e5 #6cc0e5 transparent;
+  border-top-color:transparent;
+  border-left-color:transparent;
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+
+.no-csstransforms .checks.etrans input[type="checkbox"]:checked + label:before {
+  /*content:"\2713";*/
+  content: "\2714";
+  top: 0;
+  left: 0;
+  width: 21px;
+  line-height: 21px;
+  color: #6cc0e5;
+  text-align: center;
+  border: 1px solid #6cc0e5;
+}
+
+p{
+	font-size: 16px;
+	color: #333;
+}
+
+li{
+	font-size: 16px;
+	color: #333;
+}
+	</style>
 	</head>
 	<body>
-	
-		
+
+
 		<!-- WRAPPER START -->
-		<div class="wrapper bg-dark-white">
+		<div class="wrapper bg-dark-white" style="background-color: white">
 
 			<!-- HEADER-AREA START -->
 			<header id="sticky-menu" class="header header-2">
@@ -303,18 +469,18 @@
 			</div>
 			<!-- Mobile-menu end -->
 			<!-- HEADING-BANNER START -->
-			<div class="heading-banner-area overlay-bg">
-				<div class="container">
+			<div class="heading-banner-area overlay-bg" style="background-color:#ffdc16 ">
+				<div class="container" style="height: 400px">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="heading-banner">
 								<div class="heading-banner-title">
-									<h2>Wishlist</h2>
+									<h2 style="color: #5d5a55">BUYBACK</h2>
 								</div>
-								<div class="breadcumbs pb-15">
+								<div class="breadcumbs pb-15" style="color: #5d5a55">
 									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li>Wishlist</li>
+										<li><a href="index.html" style="color: #5d5a55">Home</a></li>
+										<li style="color: #5d5a55">Wishlist</li>
 									</ul>
 								</div>
 							</div>
@@ -324,102 +490,41 @@
 			</div>
 			<!-- HEADING-BANNER END -->
 			<!-- WISHLIST-AREA START -->
-			<div class="shopping-cart-area  pt-80 pb-80">
-				<div class="container">	
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="shopping-cart">
-								
-								<!-- Tab panes -->
-								<div class="tab-content">
-								<div style="text-align: center">
-									<h1>바이백 번호</h1>
-									<div class="BuyBackNo"></div>
-									<input id="text" type="hidden" value="http://192.168.0.37:8081/BuyBack/BuyBackResultQr.html" style="width:80%" /><br />
-									<div id="qrcode" style="padding-left: 450px; padding-right: 15px;" ></div>
-									<form action="#">
-											<div class="thank-recieve bg-white mb-30">
-												<h3 id="buybackSeq"></h3>
-											</div>
-											<div class="order-info bg-white text-center clearfix mb-30">
-												<div class="single-order-info">
-													<h4 class="title-1 text-uppercase text-light-black mb-0">바이백 번호</h4>
-													<p class="text-uppercase text-light-black mb-0"><strong><div class="BuyBackNo"></div></strong></p>
-												</div>
-												<div class="single-order-info">
-													<h4 class="title-1 text-uppercase text-light-black mb-0">수거 예정 날짜</h4>
-													<p class="text-uppercase text-light-black mb-0"><strong><div class="BuyBackDate"></div></strong></p>
-												</div>
-												<div class="single-order-info">
-													<h4 class="title-1 text-uppercase text-light-black mb-0">환불 예정 금액</h4>
-													<p class="text-uppercase text-light-black mb-0"><strong><div class="BuyBackPrice"></div></strong></p>
-												</div>
-												<div class="single-order-info">
-													<h4 class="title-1 text-uppercase text-light-black mb-0">수거 주소</h4>
-													<p class="text-uppercase text-light-black mb-0"><a href="#"><strong><div class="BuyBackbAddress"></div></strong></a></p>
-												</div>
-											</div>
-											<div class="shop-cart-table check-out-wrap">
-												<div class="row">
-												<div class="col-md-1 "></div>
-													<div class="col-md-10 col-sm-6 col-sm-12">
-														<div class="our-order payment-details pr-20">
-															<h4 class="title-1 title-border text-uppercase mb-30">나의 Buy Back</h4>
-															<table>
-																<thead>
-																	<tr>
-																		<th><strong>Product</strong></th>
-																		<th class="text-right"><strong>Total</strong></th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td>상품 번호</td>
-																		<td class="text-right"><div class="BuyBackProdNum"></div></td>
-																	</tr>
-																	<tr>
-																		<td>상품</td>
-																		<td class="text-right"><div class="BuyBackPic"></div></td>
-																	</tr>
-																	<tr>
-																		<td>상품 카테고리</td>
-																		<td class="text-right"><div class="BuyBackCate"></div></td>
-																	</tr>
-																	<tr>
-																		<td>상품 색깔</td>
-																		<td class="text-right"><div class="BuyBackColor"></div></td>
-																	</tr>
-																	<tr>
-																		<td>환불 정도</td>
-																		<td class="text-right"><div class="BuyBackCondition"></div></td>
-																	</tr>
-																	<tr>
-																		<td>환불 금액</td>
-																		<td class="text-right"><div class="BuyBackPrice"></div></td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-													</div>
-													<!-- payment-method -->
-													<div class="col-md-1 "></div>
-												</div>
-											</div>
-										</form>		
-								</div>
-									<br><br>
-									
-									
-									<!-- order-complete start -->
-								
-									<!-- order-complete end -->
-								</div>
-
-							</div>
-						</div>
-					</div>
+		   <div class="container-fluid" style="margin: 100px" >
+				    <div class="row justify-content-center">
+				        <div class="mb-2" style="width: 1500px">
+				            <div class=" px-0 pt-4 pb-0 mt-3 mb-3" style="margin-left: 250px; margin-right: 250px">
+				                <h2 id="heading" style="color: #333;">BuyBack 신청</h2>
+				                <p>사용하던 제품을 다른 제품으로 바꿀 예정이신가요? 제품의 상태가 양호하다면 저희에게 판매하여 아직 쓸만한 자원이 버려지는 것을 예방할 수 있습니다.</p><br><br>
+				                <img src="./ikea-17b42a1acba633e2fe29a91c63852f98.webp" style="margin-bottom: 150px">
+				                
+				                <h3><strong>Moff 가구에 두 번째 기회를 주세요</strong></h3>
+				                <p><strong>바이백 서비스는 고객이 사용한 Moff 가구를 매입 후 재판매해 제품의 수명을 연장하는 자원순환을 위한 서비스입니다.</strong> 쓰던 제품을 보다 지속 가능하고 모두에게 이로운 방향으로 활용할 수 있는 방법이에요. 누군가는 내가 사용하던 Moff 제품이 마음에 들지도 몰라요. 제품에게 새 주인을 찾아주면 돈도 아끼고 환경도 보호할 수 있죠.</p>
+				                <br><br><p>바이백 서비스로 집 안에 여유 공간을 만들었나요? 그렇다면 교환받은 포인트 함께  또 다른 바이백 제품을 찾아보는 것은 어떨까요?</p> <br><br>
+				                
+				                <div class="buyMain2" style="margin-bottom: 100px">
+					                <h3><strong>사용하던 가구를 판매하려면 어떻게 해야 하나요</strong></h3>
+					                <p style="margin-bottom: 30px">다음 단계에 따라 사용하던 제품을 IKEA에 판매할 수 있어요.</p>
+					                <ul>
+					                	<li>1. 아래의 예상가 계산기를 이용하여 예상가 견적을 내보세요.</li>
+					                	<li>2. 신청이 확인 되면, Moff의 배달원이 방문합니다. </li>
+					                	<li>3. 협의된 금액의 바이백 포인트가 환급 됩니다.</li>
+					                </ul>
+				                </div>
+				                 <div style="margin-bottom: 100px">
+					                <h3><strong>어떤 제품이 판매 가능한가요?</strong></h3>
+					                <p>안타깝지만 모든 제품이 다 매입 가능하지는 않습니다. 접수하려는 제품이 아래 '접수 불가능한 제품' 카테고리에 해당되면 접수가 불가능하므로 양해를 부탁드립니다. Moff는 항상 서비스 향상을 위해 노력하고 있으므로 목록은 변경될 수 있습니다.</p>
+					                
+				                </div>
+				                <div style="text-align: center">
+				                	<button type="button" class="btn btn-default " id="GoToBuyback">예상가 계산하러 가기</button>
+				                </div>
+				            	
+				            </div>
+				        </div>
+				    </div>
 				</div>
-			</div>
+
 			<!-- WISHLIST-AREA END -->
 			<!-- FOOTER START -->
 			<footer>
@@ -512,41 +617,41 @@
 								<div class="modal-product">
 									<div class="product-images">
 										<div class="main-image images">
-											<img alt="#" src="img/product/quickview-photo.jpg"/>
+											<img alt="#" src="../image/KakaoTalk_20210520_184836018.png" style="height: 380"/>
 										</div>
 									</div><!-- .product-images -->
 
 									<div class="product-info">
-										<h1>Aenean eu tristique</h1>
+										<h1>제품을 수거할 날짜를 선택해주세요</h1>
 										<div class="price-box-3">
 											<hr />
-											<div class="s-price-box">
-												<span class="new-price">$160.00</span>
-												<span class="old-price">$190.00</span>
-											</div>
+											<div id="addressS">
+									        		<p id="memAddressck">아래 주소로의 수거 할까요? <button type="button" class="btn btn-primary" id="reselectAddress" >확인</button> </p>
+									        		<p id="memAddress"></p>
+									        		<br><br>
+									        		<div class="newAddress">
+											        		<p>다른 주소로 배달 하기 </p>
+											        		<input type="text"  id="sample6_postcode" placeholder="우편번호">
+															<input type="button"   class="btn btn-light"  onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+															<input type="text" id="sample6_address" placeholder="주소"><br>
+															<input type="text" id="sample6_detailAddress" placeholder="상세주소">
+															<input type="text" id="sample6_extraAddress" placeholder="참고항목">
+															<input type="button" id="resultAddress"  class="btn btn-primary" onclick="resultAddress()" value="저장">
+									        		</div>
+									        		
+									        		
+									        	</div>
 											<hr />
 										</div>
-										<a href="shop.html" class="see-all">See all features</a>
+									
 										<div class="quick-add-to-cart">
-											<form method="post" class="cart">
-												<div class="numbers-row">
-													<input type="number" id="french-hens" value="3">
-												</div>
-												<button class="single_add_to_cart_button" type="submit">Add to cart</button>
-											</form>
+											<input type="date"  class="form-control" >
 										</div>
-										<div class="quick-desc">
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
-										</div>
+										
 										<div class="social-sharing">
 											<div class="widget widget_socialsharing_widget">
-												<h3 class="widget-title-modal">Share this product</h3>
-												<ul class="social-icons">
-													<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="zmdi zmdi-google-plus"></i></a></li>
-													<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="zmdi zmdi-twitter"></i></a></li>
-													<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="zmdi zmdi-facebook"></i></a></li>
-													<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
-												</ul>
+												<button type="button" class="btn btn-light" data-dismiss="modal">Close</button> 
+             							<button type="button" class="btn btn-primary" id="dataSelected" data-dismiss="modal">Save Changes</button> 
 											</div>
 										</div>
 									</div><!-- .product-info -->
@@ -562,7 +667,27 @@
 		</div>
 		<!-- WRAPPER END -->
 
-		<!-- all js here -->
+<script type="text/javascript">
+let login = JSON.parse(sessionStorage.getItem("login"));
+
+$( document ).ready(function() {	
+	//로그인 정보
+/* 	if(login==null){
+		alert('로그인 후, 이용해주세요');
+		location.href="../member/login.html";
+	} */
+	$("#GoToBuyback").on('click',function(){
+		alert('d')
+		location.href="./BuyBack.html";
+	});
+	
+	
+	
+})
+
+
+</script>
+<!-- all js here -->
 		<!-- jquery latest version -->
 		<script src="../js/vendor/jquery-1.12.0.min.js"></script>
 		<!-- bootstrap js -->
@@ -590,77 +715,6 @@
 		<script src="../js/plugins.js"></script>
 		<!-- main js -->
 		<script src="../js/main.js"></script>
-		
-		
-	<!-- ///////////////// -->
-		<script type="text/javascript">
-		let bNum = urlParams.bNum;
-		let prodNum=0;
-		$(document).ready(function () {
-			   $(".BuyBackNo").html('<h3 id="buybackSeq"> '+bNum+'</h3>')
-			   
-			   //Param으로 넘어온 bNum으로 바이백 정보 가져오기
-			   $.ajax({
-			            url:"http://localhost:3000/getMyBuyBack",
-			            type: "get",
-			            data:{bNum:bNum},
-			            success:function(data){
-			            	 $(".BuyBackDate").append('<h3>'+data.bDate+'</h3>')
-			            	 $(".BuyBackPic").append('<img src="../image/'+data.filename+'" style="width:300px">')
-			                 $(".BuyBackProdNum").append('<h3>'+data.prodNum+'</h3>')
-			                 //$(".selectedPic").append('<p>상품 이름 : '+data.prodName+'</p>')
-			                 $(".BuyBackColor").append('<p>'+data.color+'</p>')
-			                 $(".BuyBackCondition").append('<p>원가의 '+data.condition+'%</p>');
-			          	     
-			            	 $(".BuyBackCate").append('<p>'+data.category+'('+data.subCategory+')</p>');
-			                 $(".BuyBackbAddress").append('<p>'+data.bAddress+'</p>');
-			                 $(".BuyBackPrice").append('<h3>₩'+data.price+'</h3>')
-			                 
-			                  <!-- QR -->
-			                                  var qrcode = new QRCode("qrcode");
-
-			                                  function makeCode () {    
-			                                    var elText = document.getElementById("text");
-			                                    
-			                                    if (!elText.value) {
-			                                      alert("Input a text");
-			                                      elText.focus();
-			                                      return;
-			                                    }
-			                                    let ad = elText.value;
-			                                    ad += "?bNum="+bNum+"&prodName="+data.prodName+"&Bprice="+data.price+"&condition="+data.condition+"&filename="+data.filename;
-			                                    //alert(ad);
-			                                    
-			                                    qrcode.makeCode(ad);
-			                                  }
-
-			                                  makeCode();
-
-			                                  $("#text").
-			                                    on("blur", function () {
-			                                      makeCode();
-			                                    }).
-			                                    on("keydown", function (e) {
-			                                      if (e.keyCode == 13) {
-			                                        makeCode();
-			                                      }
-			                                    });
-			                 $(".MyBuyBack").append('<p>제품 상태 : '+data.condition+'</p>');
-			                 $(".MyBuyBack").append('<p>수거할 주소 : '+data.bAddress+'</p>');
-			                 
-			                 $(".MyBuyBack").append('<p>환불된 포인트 : '+data.price+'</p>');
-			                 
-			              
-			              
-			            },
-			            error:function(){
-			               alert("error");
-			            }
-			         });
-			   
-			   
-			});
-		</script>
 		
 	</body>
 </html>

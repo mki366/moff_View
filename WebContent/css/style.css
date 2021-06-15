@@ -380,7 +380,7 @@ body {
 }
 /* Header Sticky */
 .header.sticky {
-  background: #eeeeee none repeat scroll 0 0;
+  background: #ffdc16 none repeat scroll 0 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;

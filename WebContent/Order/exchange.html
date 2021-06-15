@@ -871,7 +871,7 @@ $.ajax({
 		//alert('성공');
 		$.each(list, function (i, item) {
 			//alert(item.filename);
-			$("#exFilename").html('<img class="pay" src="../productPic/'+item.filename+'" style="height:110px;width: 110px">')
+			$("#exFilename").html('<img class="pay" src="../image/'+item.filename+'" style="height:110px;width: 110px">')
 			$("#exProName").html(item.prodName);
 			$("#exColor").html('<p style="color:#F08080">색상 : '+item.color+'</p>');
 			$("#exInfo").html('<p>가격 : '+item.price+' 원 / 수량 : '+item.quantity+' 개</p>')
@@ -896,7 +896,7 @@ function getColorList(exProdNum,exprodName){
 	        let s = '<button class="exchangeSelected" onclick="exchangeSelected('+item.colorSeq+')">'
 	        		+'<div class="col-md-4" style="width: 200px;height: 180px"  >'
 	        		+'<div class="box" style="width: 180px;height: 180px">'
-	        		+'<img src="../productPic/'+item.colorFilename+'" style="width: 180px;height: 180px">'
+	        		+'<img src="../image/'+item.colorFilename+'" style="width: 180px;height: 180px">'
 	        		+'<div class="box-content"><h3 class="title">'+exprodName+'</h3>'
 	        		+' <span class="post">'+item.color+'</span></div></div></div></button>'
 				$("#colorList").append(s);
@@ -910,13 +910,13 @@ function getColorList(exProdNum,exprodName){
 };
 let exColorS=0;	//교환 색상
 function exchangeSelected(s) {
-	//alert(s);
+	alert(s);
 	exColorS=s;
 	
 }
 function exchangeS(){
 	let exReasonS =$("input[name='radio1']:checked").val();	//교환 사유
-	alert(exColorS);
+	alert(exColorS+","+odNum);	//4
 	$.ajax({
 		url:'http://localhost:3000/setExColor',
 		type:'post',		

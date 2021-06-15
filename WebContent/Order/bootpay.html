@@ -1195,7 +1195,7 @@ else{
 		//세일하는 상품
 		Hprice = price;
 	}
-	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
+	$("#productList").append(' <tr><td><img class="pay" src="../image/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
 	let OrderPrice = Hprice*quantity;
 
 	$("#orderPrice").html(OrderPrice);
@@ -1227,7 +1227,7 @@ else{
 	$("#totalPrice").html(totalPrice);
 	$("#rightTotalPrice").html(totalPrice);
 
-	let s = '<div class="row"><div class="col-lg-4" ><img src="../productPic/'+filename+'" style="height:70px;width: 70px"></div>';
+	let s = '<div class="row"><div class="col-lg-4" ><img src="../image/'+filename+'" style="height:70px;width: 70px"></div>';
 	s+='<div class="col-lg-8">'
 		+'<div id="itemName"><h5><strong>'+prodName+'</strong> ('+prodNum+') </h5></div>'
 		+'<div id="itemDetailInfo"><p>ㄴ<strong>[선택]</strong>&nbsp&nbsp'+color+' / '+weight+'kg / ( '+quantity+'개 )</p></div>'
@@ -1310,7 +1310,7 @@ function cart() {
 	 		let deliveryCost=0;
 			$.each(list, function (i, item) {
 				
-				$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
+				$("#productList").append(' <tr><td><img class="pay" src="../image/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
 				OrderPrice += parseInt(item.price);   
 				weightCart += parseInt(item.weight);   
 				//let totalPrice += parseInt(item.price) * parseInt(item.quantity);

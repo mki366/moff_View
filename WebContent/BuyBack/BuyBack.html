@@ -77,7 +77,7 @@
 	.overlay-bg::before {
     background: #ffdc16}
     #progressbar li.active:before, #progressbar li.active:after {
-    background: #ffdc16;
+    background: gray;
 }
 #progressbar .active {
     color: black
@@ -484,10 +484,11 @@
 			<!-- WISHLIST-AREA START -->
 		   <div class="container-fluid" style="margin: 100px" >
 				    <div class="row justify-content-center">
-				        <div class="mb-2">
+				        <div class="mb-2" style="width: 1500px">
 				            <div class=" px-0 pt-4 pb-0 mt-3 mb-3" style="margin-left: 250px; margin-right: 250px">
-				                <h2 id="heading" style="color: #5d5a55">BuyBack 신청</h2>
+				                <h2 id="heading" style="color: #333;">BuyBack 신청</h2>
 				                <p>사용하던 제품을 다른 제품으로 바꿀 예정이신가요? 제품의 상태가 양호하다면 저희에게 판매하여 아직 쓸만한 자원이 버려지는 것을 예방할 수 있습니다.</p><br><br>
+				               
 				                <form id="msform" style="margin-top: 0px">
 				                    <!-- progressbar -->
 				                    <ul id="progressbar">
@@ -510,10 +511,26 @@
 													<!-- payment-method -->
 													<div class="col-md-12 col-sm-6 col-sm-12 mt-xs-30" style="padding-left: 0;">
 														<div class="payment-method  pl-20">
-															<h4 class="title-1 title-border text-uppercase mb-30"></h4>
+														
 															<div class="payment-accordion">
-																<!-- Accordion start  -->
-																<h3 class="payment-accordion-toggle active" style="text-align: left; weight:470px; height: 55px; font-size: 19px"">접수 불가능한 제품</h3>
+																<!-- Accordion start -->
+																<h3 class="payment-accordion-toggle" style="text-align: left; height: 48px; font-size: 19px;"><i class="far fa-check-circle"></i>&nbsp&nbsp접수 가능한 제품</h3>
+																<div class="payment-content"><br>
+																	<ul>
+																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>우리 회사 제품 </li><br>
+																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>상태가 좋고 재판매할 수 있는 제품</li><br>
+																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>완전히 조립되어 있는 제품</li><br>
+																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>개조되지 않은 꺠끗한 제품</li><br>
+																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>의자 및 스툴</li><br>
+																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>구성품이 모두 포함되어 있고 기능에 아무런 문제가 없는 제품</li><br>
+																	 </ul><br><div class="checks">
+																			  <input type="checkbox" id="buyback_check1"> 
+																			  <label for="buyback_check1">위의 내용을 확인하셨나요?</label> 
+																		</div>
+																</div>
+																<!-- Accordion end -->
+																<!-- Accordion start -->
+																<h3 class="payment-accordion-toggle active" style="text-align: left; weight:470px;  height: 48px; font-size: 19px"><i class="far fa-times-circle"></i>&nbsp&nbsp접수 불가능한 제품</h3>
 																<div class="payment-content"><br>
 																	<ul>
 																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>우리 회사 제품이 아닌 것</li><br>
@@ -525,26 +542,8 @@
 																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>조립되어 있지 않은 제품</li><br>
 																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>어린이 및 유아용 제품</li><br>
 																	 </ul><br>
-																		  <div class="checks">
-																			  <input type="checkbox" id="buyback_check1"> 
-																			  <label for="buyback_check1">위의 내용을 확인하셨나요?</label> 
-																		</div>
-																</div>
-																<!-- Accordion end -->
-																<!-- Accordion start -->
-																<h3 class="payment-accordion-toggle" style="text-align: left; height: 55px; font-size: 19px">접수 가능한 제품</h3>
-																<div class="payment-content"><br>
-																	<ul>
-																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>우리 회사 제품 </li><br>
-																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>상태가 좋고 재판매할 수 있는 제품</li><br>
-																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>완전히 조립되어 있는 제품</li><br>
-																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>개조되지 않은 꺠끗한 제품</li><br>
-																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>의자 및 스툴</li><br>
-																			<li style="text-align: left"><i class="zmdi zmdi-dot-circle"></i>구성품이 모두 포함되어 있고 기능에 아무런 문제가 없는 제품</li><br>
-																	 </ul><br><div id="buyback_check"></div>
-																</div>
-																<!-- Accordion end -->
-																
+																		  <div id="buyback_check"></div>
+																</div><!-- Accordion end -->
 															</div>															
 														</div>
 													</div>
@@ -569,7 +568,7 @@
 							                                
 														 <div class="subcate row col-md-12 col-xs-12 col-sm-12"></div><br><br><br><br>
 														 <div class="container mt-5" style="width: 820px; margin-right: 300px; margin-left: 0px">
-														   <div class="picList row g-2" style="text-align: center; margin-right: 70px" >
+														   <div class="picList row g-2" style="text-align: center; margin-right: 70px; width: 1000px" >
 														   </div>
 														 </div>
 											        </div>
@@ -584,8 +583,7 @@
 				                    <fieldset><br><br>
 				                        <div class="form-card">
 				                            
-										                           
-										<div class="container" style="width: 880px"> <h3><strong>제품의 상태 고르기:</strong></h3><br><br>
+										<div class="container" > <h3><strong>제품의 상태 고르기:</strong></h3><br><br>
 										 <h5 id="heading3" ><strong>제품을 가장 잘 나타내는 상태를 선택하십시오.</strong></h5><br><br>
 					                         
 										    <div class="row justify-content-center"  style="text-align: center">
@@ -593,9 +591,9 @@
 										          
 										                <div class="card-body show ">
 										                    
-										                    <div class="row radio-group row justify-content-between px-3 text-center a">
-										                    	
-										                        <div class="col-md-2 col-auto mr-sm-2 mx-1 card-block py-0 text-center radio  " id="30" style="width: 160px">
+										                    <div class="row radio-group row justify-content-between px-3 text-center a" style="margin-left: 40px">
+										                    	<div class="col-md-1"></div>
+										                        <div class="col-md-2 col-auto mr-sm-2 mx-1 card-block py-0 text-center radio  " id="30">
 										                            <div class="flex-row">
 										                                <div class="col">
 										                                    <div class="pic"> <i class="far fa-meh  fa-6x  irc_mut img-fluid" ></i></div>
@@ -604,25 +602,25 @@
 										                                </div>
 										                            </div>
 										                        </div><div class="col-md-1"></div>
-										                        <div class="col-md-2 col-auto mr-sm-2 mx-1 card-block py-0 text-center radio  selected" id="40" style="width: 160px">
+										                        <div class="col-md-2 col-auto mr-sm-2 mx-1 card-block py-0 text-center radio  selected" id="40">
 										                            <div class="flex-row">
 										                                <div class="col">
 										                                    <div class="pic"><i class="far fa-smile fa-6x  irc_mut img-fluid" ></i></div>
 										                                    <p><b> 좋음 (원가의 40%) </b></p>
-										                                     <p> 경미한 흠집이 있으나 양호한 상태</p>
+										                                     <p> 경미한 흠집이 있으나 전반적으로 양호한 상태</p>
 										                                </div>
 										                            </div>
 										                        </div><div class="col-md-1"></div>
-										                        <div class="col-md-2 col-auto mr-sm-2 mx-1 card-block py-0 text-center radio  " id="50" style="width: 160px">
+										                        <div class="col-md-2 col-auto mr-sm-2 mx-1 card-block py-0 text-center radio  " id="50">
 										                            <div class="flex-row">
 										                                <div class="col">
 										                                    <div class="pic"><i class="far fa-grin-beam fa-6x  irc_mut img-fluid" ></i></div>
-										                                    <p><b> 새것 (원가의 50%) </b></p>
+										                                    <p><b>거의 새것 (원가의 50%) </b></p>
 										                                     <p> 흠집이 다소 있으며 사용감이 있는 상태</p>
 										                                </div>
 										                            </div>
 										                        </div>
-										                        
+										                        <div class="col-md-1"></div>
 										                    </div>
 										                    <div class="row justify-content-center" style="margin-top: 100px">
 										                       <div id="delivery1">
@@ -634,21 +632,20 @@
 										            </div>
 										        </div>
 										    </div>
-										</div> <input type="button" name="next" class="next action-button" value="Submit"  style="margin-right: 0px; margin-top: 0px"/>
+										</div> <input type="button" name="next" class="next action-button" value="Submit"  style="margin-right: 60px"/>
 												 <input type="button" name="previous" class="previous action-button-previous" value="Previous" style="float:left; margin-left: 60px; margin-top: 0px"/>
-										                  	<br><br>	          
+										                  	<br><br>		          
 				                  	</fieldset>
 				                    <fieldset>
 				                        <div class="form-card">
 				                            <br><br>
-				                            <h2 class="purple-text text-"><strong>신청이 완료 되었습니다. </strong></h2> <br>
+				                            <h2 class="purple-text text-" style="color: #777"><strong>신청이 완료 되었습니다. </strong></h2> <br>
 				                            <div class="row justify-content-center">
 				                               
 				                            </div> <br><br>
 				                            <div class="row justify-content-center">
 				                                <div class="col-7 text-center">
-				                                    <h5 class="purple-text text-center">바이백 신청이 완료 되었습니다. </h5>
-				                                    <input type="button" class="gotoCheckBb" value="바이백 확인하러 가기 ">
+				                                    <input type="button" class="gotoCheckBb"  style="width: 300px" value="바이백 신청서 확인하러 가기 ">
 				                                 
 				                                </div>
 				                            </div>
@@ -752,26 +749,26 @@
 								<div class="modal-product">
 									<div class="product-images">
 										<div class="main-image images">
-											<img alt="#" src="../productPic/KakaoTalk_20210520_184836018.png" style="height: 380"/>
+											<img alt="#" src="../image/KakaoTalk_20210520_184836018.png" style="height: 380"/>
 										</div>
 									</div><!-- .product-images -->
 
 									<div class="product-info">
-										<h1>뽀이가 방문할 날짜를 선택해주세요</h1>
+										<h1>제품을 수거할 날짜를 선택해주세요</h1>
 										<div class="price-box-3">
 											<hr />
 											<div id="addressS">
-									        		<p id="memAddressck">아래 주소로의 수거 할까요? <button type="button" class="btn" id="reselectAddress" >확인</button> </p>
+									        		<p id="memAddressck">아래 주소로의 수거 할까요? <button type="button" class="btn btn-primary" id="reselectAddress" >확인</button> </p>
 									        		<p id="memAddress"></p>
 									        		<br><br>
 									        		<div class="newAddress">
 											        		<p>다른 주소로 배달 하기 </p>
-											        		<input type="text" id="sample6_postcode" placeholder="우편번호">
-															<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+											        		<input type="text"  id="sample6_postcode" placeholder="우편번호">
+															<input type="button"   class="btn btn-light"  onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
 															<input type="text" id="sample6_address" placeholder="주소"><br>
 															<input type="text" id="sample6_detailAddress" placeholder="상세주소">
 															<input type="text" id="sample6_extraAddress" placeholder="참고항목">
-															<input type="button" id="resultAddress" onclick="resultAddress()" value="저장">
+															<input type="button" id="resultAddress"  class="btn btn-primary" onclick="resultAddress()" value="저장">
 									        		</div>
 									        		
 									        		
@@ -807,7 +804,29 @@ let login = JSON.parse(sessionStorage.getItem("login"));
 
 $( document ).ready(function() {	
 	//로그인 정보
-	//alert(login.id); 
+	if(login==null){
+		alert('로그인 후, 이용해주세요');
+		location.href="../member/login.html";
+	}
+
+	let check =0;
+	
+	 $('.radio-group .radio').click(function () {
+			//alert("클릭")
+			check+=1;
+			$('.selected .fa').removeClass('fa-check');
+			$('.radio').removeClass('selected');
+			$(this).addClass('selected');
+			$(".delevery").append('<');
+			 condition = $(this).attr('id');
+			//alert(condition);
+			if(check<=1){
+				
+				$("#delivery1").append('<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View" style="text-align:center; margin-right:100px"><button class="section2_btn btn55" type="button">배달 신청하러가기</button></div></a> ');
+				
+			}
+			
+	});
 });
 
 //1PAGE
@@ -888,12 +907,12 @@ let homeoffice = ['officegoods','officestorage'];
 			           			          +'<div class="product" style="float:left">'
 			           			          +'<div class="product-card">'
 			           				      +'<div  class="middle-container d-flex justify-content-between align-items-center mt-3 p-2">'
-			           					  +'<div class="dollar-div px-3" style="text-align:center">'
+			           					  +'<div class="dollar-div px-3" style="text-align:center; ">'
 			           					  +'<div class="d-flex flex-column mr-2">'
 			           					  +'<span class="amount"><strong>'+data.prodName+'</strong></span></div>'
 			           					  +'<span class="amount">'+data.info+'/'+data.color+'</span>'
 			           					  +' <div class="round-div">'
-			           					  +'<img src="../image/'+data.filename+'" class="img-fluid rounded" width="250" height="250"></div></div></div></div></div>';
+			           					  +'<img src="../image/'+data.filename+'" class="img-fluid rounded" width="130" height="130"></div></div></div></div></div>';
 		           			$(".picList ").append(pic);
 			           	 });
 		         },
@@ -1052,26 +1071,7 @@ $(document).ready(function () {
 	           alert("error");
 	        }
 		});
-	let check =0;
-	
-	//제품 상태 선택 후, 수거 날짜 선택
-	 $('.radio-group .radio').click(function () {
-			alert("클릭")
-			check+=1;
-			$('.selected .fa').removeClass('fa-check');
-			$('.radio').removeClass('selected');
-			$(this).addClass('selected');
-			$(".delevery").append('<');
-			 condition = $(this).attr('id');
-			//alert(condition);
-			if(check<=1){
-				
-				$("#delivery1").append('<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View" style="text-align:center; margin-right:100px"><button class="section2_btn btn55" type="button" style="margin-right:150px">뽀이 신청하러가기</button></div></a> ');
-				
-			}
-			
-	});
-	
+
 	
 	//선택한 날짜 & 모든 정보 db에 넣어주기 (예약 완료해주기)	-id/prodnum/condition/bdate/bdate/address
 	  $("#dataSelected").click(function(){
@@ -1119,6 +1119,7 @@ $(document).ready(function () {
 	 }); 
 	 $(".gotoCheckBb").click(function(){
 		 let bNumFinal = $(".gotoCheckBnum").val();
+			alert(bNumFinal);
 		 location.href='./BuyBackCk.html?bNum='+bNumFinal;
 	 });
 	

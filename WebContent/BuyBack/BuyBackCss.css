@@ -233,7 +233,7 @@ font-family: "Font Awesome 5 Free";
     height: 200px;
 }
 .middle-container:hover {
-    border: 1px solid #5957f9
+    border: 1px solid black;
 }
 
 .dollar-div {
@@ -313,7 +313,7 @@ body {
 /*검색*/
 
 .footer-subscribe input[type=text] {
-    border: 1px solid #5957f9;
+    border: 1px solid black;
     border-radius: 55px;
     font-size: 12px;
     padding: 12px 40% 12px 20px;
@@ -522,7 +522,7 @@ input[type=text] {
 
 /*  */
 .pic {
-	color: #5957f9;
+	color: #556068;
 	weight:100;
 	height:100} 
 
