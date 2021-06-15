@@ -98,7 +98,7 @@ a:hover,a:focus{
 
 .account-content{
 	font-size: 16px;
-	font-weight:500;
+	font-weight:400;
 	margin-top: 20px;
 }
 
@@ -389,7 +389,7 @@ a:hover,a:focus{
 .profile__modal__content {
     overflow: auto;
     height: 100%;
-    font-size: 20px;
+    font-size: 17px;
     color: #555;
     padding: 130px 30px 80px 30px;
 }
@@ -397,6 +397,58 @@ a:hover,a:focus{
 .profile__modal__content-heading{
 	margin-bottom: 50px;
 	color: black;
-    font-weight: 900;
+    font-weight: 700;
 	font-size: 24px;
+}
+
+
+
+
+
+/* Buttons */ 
+.btn {
+    min-width: 145px;
+    line-height: 50px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: box-shadow 0.25s ease-in-out;
+    -moz-transition: box-shadow 0.25s ease-in-out;
+    -webkit-transition: box-shadow 0.25s ease-in-out;
+    -o-transition: box-shadow 0.25s ease-in-out;
+    -ms-transition: box-shadow 0.25s ease-in-out;
+}
+
+.btn-fill {
+    color: #fff;
+    background-color: #212121;
+}
+
+.btn-fillnext {
+    color: #fff;
+    background-color: #3348a2;
+}
+
+.btn-border {
+    background-color: transparent;
+    color: #212121;
+    border: 1px solid #212121; 
+    margin-left: 10px;
+}
+
+.btn-fill:hover,
+.btn-fill:focus {
+    color: #fff;
+}
+
+.btn-fillnext:hover,
+.btn-fillnext:focus {
+    color: #fff;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.15);
 }

@@ -810,7 +810,7 @@
       function nextPage(){
          
          $.ajax({
-            url:"http://localhost:3000/getProduct",
+            url:"http://localhost:3000/getCustomProduct",
             type:'post',
             data:{ prodNum:upper },
             success:function(data){            
@@ -826,7 +826,7 @@
 
          
          $.ajax({
-            url:"http://localhost:3000/getProduct",
+            url:"http://localhost:3000/getCustomProduct",
             type:'post',
             data:{ prodNum:lower },
             success:function(data){            
