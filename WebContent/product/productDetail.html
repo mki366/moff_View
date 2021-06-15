@@ -136,8 +136,8 @@ margin-bottom: 70px;
     font-weight: bold;
     line-height: 28px;
 }
-.submit-button {background: #ffc929 none repeat scroll 0 0;	/* #ffa85d */}
-.button-one::before {background: #FD9E39;}
+.submit-button {background: #444 none repeat scroll 0 0;	/* #ffa85d */}
+.button-one::before {background: #ffdc16; color:black;}
 </style>
 </head>
 <body>
@@ -1319,20 +1319,20 @@ function detailCartButton(prodNum, prodName) {
 	let quantity = $("#detailQuantity").val();
 	let login = JSON.parse(sessionStorage.getItem("login"));
 //	alert('product color:' + productColor);
+
 	$.ajax({
 		url:'http://localhost:3000/detailCart',
 		type:'get',
 		data:{prodNum:prodNum, prodName:prodName, quantity:quantity, color:productColor, id:login.id},
 		success:function(data){
-			if(data == "detialCart Success"){
+			if(data == "YES"){
 			//	alert('cart data확인: ' + data);
 				alert('장바구니에 추가되었습니다.');
 				
-			}else if(data == "detialCart error"){
+			}else if(data == "NO"){
 				alert('이미 추가된 상품입니다.');
 			}
 				
-		
 		},
 		error:function(){
 			alert('detailCartInput error');
@@ -1344,16 +1344,16 @@ function detailCartButton(prodNum, prodName) {
 function detailWishButton(prodNum, prodName){
 	let quantity = $("#detailQuantity").val();
 	let login = JSON.parse(sessionStorage.getItem("login"));
+	
 	$.ajax({
 		url:'http://localhost:3000/detailWishList',
 		type:'get',
 		data:{prodNum:prodNum, prodName:prodName, quantity:quantity, color:productColor, id:login.id},
 		success:function(data){
-			
-			if(data == "detialWishList Success"){
+			if(data == "YES"){
 				alert('위시리스트에 추가되었습니다.');
 				
-			}else if(data == "detialWishList error"){
+			}else if(data == "NO"){
 				alert("이미 추가된 상품입니다.");
 
 			}
