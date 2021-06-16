@@ -1099,8 +1099,13 @@ let oriPrice = urlParams.oriPrice;
 let price = urlParams.price;
 let filename = urlParams.filename;
 let prodName = urlParams.prodName;
+let pp = decodeURI(prodName);
 let weight = urlParams.weight;
 let cartCk =0;		//장바구니인지 체크
+
+alert(prodName);
+alert(pp);
+
 $("#loginMem").html(login.name);
 $("#phoneNum").html(login.phone);
 $("#address").html(login.address);
@@ -1196,9 +1201,13 @@ else{
 		Hprice = price;
 	}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	$("#productList").append(' <tr><td><img class="pay" src="../image/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
 =======
 	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
+>>>>>>> Stashed changes
+=======
+	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+pp+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
 >>>>>>> Stashed changes
 	let OrderPrice = Hprice*quantity;
 

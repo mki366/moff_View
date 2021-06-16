@@ -19,8 +19,18 @@
 .text-black {
 	color: #6a6a6a;
 }
+
+.text-bblack{
+	color: #333;
+}
+
+
+.purtitle{
+	font-size: 22px
+}
 .text-light-black {
 	color: #666;
+	font-size:18px;
 }
 .text-tan {
 	color: #C8A165;
