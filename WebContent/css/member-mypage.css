@@ -156,10 +156,10 @@ a:hover,a:focus{
 }
 
 .button.blue:before, .button.blue:after {
-    border-color: #3498db;
+    border-color: #ffdc16;
 }
 .button.blue:hover {
-    color: #3498db;
+    color: #ffdc16;
 }
 
 @media only screen and (max-width: 767px) {
@@ -407,11 +407,11 @@ a:hover,a:focus{
 
 /* Buttons */ 
 .btn {
-    min-width: 145px;
+    min-width: 74px;
     line-height: 50px;
     padding: 0 30px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     border-radius: 0;
     transition: box-shadow 0.25s ease-in-out;
