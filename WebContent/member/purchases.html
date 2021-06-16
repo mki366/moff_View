@@ -334,7 +334,7 @@
                          </div>
                      </div>
                   </div>
-                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3" onclick="getStatusList()">
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3" onclick="obExchange()">
                      <div class="full feature_box">
                          <div class="full icon">
                             <img class="default-block" src="../image/icon4.png" alt="#" />
@@ -730,6 +730,213 @@
 			});	 
 		}
 		
+		function obExchange() {
+	
+			
+
+	 		let str = 
+						"<div class='pane'>" +
+						
+								"<div class='row'>" +
+									"<div class='col-lg-10'>" +
+										"<h3 class='tab-title title-border mb-30' style='font-size:25px'>교환내역</h3>" +
+									"</div>" +
+								"</div>" +
+								
+								"<div id='exchange'></div>" +
+								
+								"<div class='row' style='margin-top: 40px;'>" +
+									"<div class='col-lg-10'>" +
+										"<h3 class='tab-title title-border mb-30' style='font-size:25px'>환불내역</h3>" +
+									"</div>" +
+						     	"</div>" +
+						     	
+						     	"<div id='refund'></div>" +
+								
+						"</div>";
+	 				
+
+	 		$("#purchases-container").html(str);
+	 		
+	 		
+	 		
+			$.ajax({
+				url:'http://localhost:3000/obExchange',
+				type:'post',		
+				data:{ 'id': login.id },
+				success:function( list ){
+				
+					if(list==""){
+						$("#exchange").html("<h3 class='tab-title mb-30' style='font-size:25px;text-align:center;margin-bottom:60px'>교환내역이 없습니다</h3>");
+					}else{
+						$.each(list, function (i, item) {
+					 		
+							exchangeDetail(item.obNum); 
+					 		
+						})	
+					}
+				},
+				error:function(){
+					alert('error');
+				}
+			});	 
+				
+		
+			
+	 		$.ajax({
+				url:'http://localhost:3000/obRefund',
+				type:'post',		
+				data:{ 'id': login.id },
+				success:function( list ){
+				
+			//	alert(JSON.stringify(list));
+
+				if(list==""){
+					$("#refund").html("<h3 class='tab-title mb-30' style='font-size:25px;text-align:center;margin-bottom:60px'>환불내역이 없습니다</h3>");
+				}else{
+					$.each(list, function (i, item) {
+				 		
+						refundDetail(item.obNum); 
+				 		
+					})	
+				}
+				
+				},
+				error:function(){
+					alert('error');
+				}
+			});	 
+		
+	}
+		
+		
+		
+		function exchangeDetail(obNum) {
+			
+			$.ajax({
+				url:'http://localhost:3000/purchasesDetail',
+				type:'post',		
+				data:{ 'obNum': obNum },
+				success:function( list ){
+				
+				//	alert(JSON.stringify(list));
+										
+					$.each(list, function (i, item) {
+
+						let str = 		
+									"<div class='order-container clearfix'>" +
+										"<div class='tm-recommended-place-wrap'>" +
+										 
+						                           "<div class='tm-recommended-place bg-white'>" +
+						                               "<img  src='../image/" + item.filename + "' alt='Image' class='img-fluid tm-recommended-img'>" +
+						                                "<div class='tm-recommended-description-box'>" +
+						                                    "<h4 class=tm-recommended-title'><a class='text-bblack purtitle' href='productDetail.html?prodNum=" + item.prodNum  + "'>" + item.prodName + "</a></h4>" +
+						                                    "<p class='tm-text-highlight'>색상: " + item.color + " / 옵션: " + item.prodOption + "</p>" +
+						                                    "<p class='tm-text-gray'>" + numberWithCommas( parseInt(item.price) * parseInt(item.quantity) ) + " 원 | " + item.quantity + " 개</p>" +
+						                                "</div>" +
+						                                
+						                                "<div class='flex-container'>" +
+							                                "<div>" +
+								                                "<div class='row'>" +
+									                                "<div class='col-md-6'>" +
+										                                "<a href='../Order/exchange.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box3'>" +
+										                                    "<p class='tm-recommended-price'>교환</p>" +
+										                                "</a>" +
+										                            "</div>" +
+										                            "<div class='col-md-6' style='padding-left:0px'>" +
+										                                "<a href='../Order/takeback.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box4'>" +
+										                                    "<p class='tm-recommended-price'>환불</p>" +
+										                                "</a>" +
+										                          	 "</div>" +
+										                        "</div>" +
+							                                "</div>" +
+							                                "<div>" +
+							                                "<a href='../review/writeReview.html?prodNum=" + item.prodNum + "' class='tm-recommended-price-box2'>" +
+							                                    "<p class='tm-recommended-price'>리뷰작성</p>" +
+							                                "</a>" +
+							                                "</div>" +  
+						                                "</div>" +                  
+						                           "</div>" +
+							                            
+											"</div>" +
+										"</div>";
+
+						$("#exchange").append(str);				
+				
+					});	
+					
+					
+				},
+				error:function(){
+					alert('error');
+				}
+			});	 
+					
+		}
+		
+		
+	function refundDetail(obNum) {
+			
+			$.ajax({
+				url:'http://localhost:3000/purchasesDetail',
+				type:'post',		
+				data:{ 'obNum': obNum },
+				success:function( list ){
+				
+				//	alert(JSON.stringify(list));
+										
+					$.each(list, function (i, item) {
+
+						let str = 		
+									"<div class='order-container clearfix'>" +
+										"<div class='tm-recommended-place-wrap'>" +
+										 
+						                           "<div class='tm-recommended-place bg-white'>" +
+						                               "<img  src='../image/" + item.filename + "' alt='Image' class='img-fluid tm-recommended-img'>" +
+						                                "<div class='tm-recommended-description-box'>" +
+						                                    "<h4 class=tm-recommended-title'><a class='text-bblack purtitle' href='productDetail.html?prodNum=" + item.prodNum  + "'>" + item.prodName + "</a></h4>" +
+						                                    "<p class='tm-text-highlight'>색상: " + item.color + " / 옵션: " + item.prodOption + "</p>" +
+						                                    "<p class='tm-text-gray'>" + numberWithCommas( parseInt(item.price) * parseInt(item.quantity) ) + " 원 | " + item.quantity + " 개</p>" +
+						                                "</div>" +
+						                                
+						                                "<div class='flex-container'>" +
+							                                "<div>" +
+								                                "<div class='row'>" +
+									                                "<div class='col-md-6'>" +
+										                                "<a href='../Order/exchange.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box3'>" +
+										                                    "<p class='tm-recommended-price'>교환</p>" +
+										                                "</a>" +
+										                            "</div>" +
+										                            "<div class='col-md-6' style='padding-left:0px'>" +
+										                                "<a href='../Order/takeback.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box4'>" +
+										                                    "<p class='tm-recommended-price'>환불</p>" +
+										                                "</a>" +
+										                          	 "</div>" +
+										                        "</div>" +
+							                                "</div>" +
+							                                "<div>" +
+							                                "<a href='../review/writeReview.html?prodNum=" + item.prodNum + "' class='tm-recommended-price-box2'>" +
+							                                    "<p class='tm-recommended-price'>리뷰작성</p>" +
+							                                "</a>" +
+							                                "</div>" +  
+						                                "</div>" +                  
+						                           "</div>" +
+							                            
+											"</div>" +
+										"</div>";
+
+						$("#refund").append(str);				
+				
+					});	
+					
+					
+				},
+				error:function(){
+					alert('error');
+				}
+			});	 
+					
+		}
 		
 		function numberWithCommas(x) {
 			  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');

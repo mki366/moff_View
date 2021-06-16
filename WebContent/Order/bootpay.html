@@ -744,7 +744,11 @@ button:focus {
                                      <div class="padding" style="padding: 0px">
                                          <div class="row container d-flex justify-content-center"  >
                                              <div class="col-lg-9 grid-margin stretch-card" style="padding-left: 10px">
+<<<<<<< Updated upstream
                                                  <div class="card" style="width: 550px; margin-bottom: 10px;margin-top: 20px;padding-left: 40px; padding-right: 40px">
+=======
+                                                 <div class="card" style="width: 500px; margin-bottom: 10px;margin-top: 20px;padding-left: 40px; padding-right: 40px">
+>>>>>>> Stashed changes
                                                      <div class="card-body">
                                                         
                                                          <div class="table-responsive">
@@ -876,9 +880,15 @@ button:focus {
       <div class="col-md-1"> </div>
    <div class="col-md-3"> 
    
+<<<<<<< Updated upstream
        <div class="row justify-content-center"  style="margin-left: 22px; width:800px;margin-top: 0px">
                                 <div class="col-lg-12" style="width: 400px">
                                     <div class="card" style="border: 1.5px solid white; padding-left: 10px; margin-top: 0px">
+=======
+       <div class="row justify-content-center"  style="margin-left: 22px; width:800px;margin-top: 200px">
+                                <div class="col-lg-12" style="width: 400px">
+                                    <div class="card" style="border: 1.5px solid #5d5a55; padding-left: 10px">
+>>>>>>> Stashed changes
                                         <div class="row">
                                             
                                             <div class="col-lg-6">
@@ -894,7 +904,11 @@ button:focus {
                                                 </div>
                                                          <div class="row px-2"><div class="col-lg-9" id="rightPic"></div></div>
                                                          <div class="row px-2">   <div class="col-lg-6" style="margin: 2.5rem 0 0;margin-bottom: 1.25rem"><strong>주문 내역</strong></div></div>
+<<<<<<< Updated upstream
                                                          <div class="row px-2">   <div class="col-lg-6" style="margin-bottom: 1.25rem"><div class="row"><div class="col-lg-9">전체 가격 </div><div class="col-lg-3" id="rightPrice" style="text-align: right; padding-right: 0px"></div></div></div></div></div>
+=======
+                                                         <div class="row px-2">   <div class="col-lg-6" style="margin-bottom: 1.25rem"><div class="row"><div class="col-lg-8">전체 가격 </div><div class="col-lg-4" id="rightPrice" style="text-align: right;"></div></div></div></div></div>
+>>>>>>> Stashed changes
                                                                    
                                                          
                                                     </div>
@@ -1101,11 +1115,13 @@ let filename = urlParams.filename;
 let prodName = urlParams.prodName;
 let pp = decodeURI(prodName);
 let weight = urlParams.weight;
-<<<<<<< HEAD
+
 let cartCk =0;      //장바구니인지 체크
 
-=======
 let cartCk =0;		//장바구니인지 체크
+
+let cartCk =0;      //장바구니인지 체크
+
 
 alert(prodName);
 alert(pp);
@@ -1183,9 +1199,15 @@ if(prodNum==null){
          $("#deliveryPay").html(deliveryCost);
           totalPrice = OrderPrice+deliveryCost;
          $("#totalPrice").html(totalPrice);
+
          $("#rightTotalPrice").html(totalPrice+' 원');
          $("#quantityOrder").val(quantityCart);
          $("#rightPrice").html(OrderPrice+' 원');
+
+         $("#rightTotalPrice").html(totalPrice);
+         $("#quantityOrder").val(quantityCart);
+         $("#rightPrice").html(OrderPrice);
+
       },
       error:function(){
          alert('error');
@@ -1196,7 +1218,7 @@ if(prodNum==null){
 
 //2.param 있음 -> 상품 디테일에서 바로 구매한 것 
 else{
-<<<<<<< HEAD
+
    let Hprice=0;
    if(price==null){
       //세일하지 않는 상품
@@ -1207,6 +1229,7 @@ else{
       Hprice = price;
    }
    $("#productList").append(' <tr><td><img class="pay" src="../image/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px; width:116px; font-size:13px">'+pp+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
+   $("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+pp+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
    let OrderPrice = Hprice*quantity;
 
    $("#orderPrice").html(OrderPrice);
@@ -1241,13 +1264,17 @@ else{
    let s = '<div class="row"><div class="col-lg-4" ><img src="../image/'+filename+'" style="height:70px;width: 70px"></div>';
    s+='<div class="col-lg-8">'
       +'<div id="itemName"><h5><strong>'+pp+'</strong> ('+prodNum+') </h5></div>'
+   $("#rightTotalPrice").html(totalPrice);
+
+   let s = '<div class="row"><div class="col-lg-4" ><img src="../productPic/'+filename+'" style="height:70px;width: 70px"></div>';
+   s+='<div class="col-lg-8">'
+      +'<div id="itemName"><h5><strong>'+prodName+'</strong> ('+prodNum+') </h5></div>'
       +'<div id="itemDetailInfo"><p>ㄴ<strong>[선택]</strong>&nbsp&nbsp'+color+' / '+weight+'kg / ( '+quantity+'개 )</p></div>'
       +'<div id="priceInfo">'+Hprice+'원</div></div></div><br>';
       let pPrice=0;
    pPrice += price;
    $("#orderedList").append(s);
    $("#rightPrice").html(OrderPrice+' 원');
-=======
 	let Hprice=0;
 	if(price==null){
 		//세일하지 않는 상품
@@ -1257,15 +1284,11 @@ else{
 		//세일하는 상품
 		Hprice = price;
 	}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 	$("#productList").append(' <tr><td><img class="pay" src="../image/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
-=======
 	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
->>>>>>> Stashed changes
-=======
+
 	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+pp+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
->>>>>>> Stashed changes
 	let OrderPrice = Hprice*quantity;
 
 	$("#orderPrice").html(OrderPrice);
@@ -1297,11 +1320,9 @@ else{
 	$("#totalPrice").html(totalPrice);
 	$("#rightTotalPrice").html(totalPrice);
 
-<<<<<<< Updated upstream
+
 	let s = '<div class="row"><div class="col-lg-4" ><img src="../image/'+filename+'" style="height:70px;width: 70px"></div>';
-=======
 	let s = '<div class="row"><div class="col-lg-4" ><img src="../productPic/'+filename+'" style="height:70px;width: 70px"></div>';
->>>>>>> Stashed changes
 	s+='<div class="col-lg-8">'
 		+'<div id="itemName"><h5><strong>'+prodName+'</strong> ('+prodNum+') </h5></div>'
 		+'<div id="itemDetailInfo"><p>ㄴ<strong>[선택]</strong>&nbsp&nbsp'+color+' / '+weight+'kg / ( '+quantity+'개 )</p></div>'
@@ -1310,7 +1331,8 @@ else{
 	pPrice += price;
 	$("#orderedList").append(s);
 	$("#rightPrice").html(OrderPrice);
->>>>>>> 0e66c82b8d4366d4577330b7d1d6dce7a9edcdf8
+
+   $("#rightPrice").html(OrderPrice);
 }
 
 
@@ -1386,6 +1408,7 @@ function cart() {
          $.each(list, function (i, item) {
             
             $("#productList").append(' <tr><td><img class="pay" src="../image/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
+            $("#productList").append(' <tr><td><img class="pay" src="../productPic/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
             OrderPrice += parseInt(item.price);   
             weightCart += parseInt(item.weight);   
             //let totalPrice += parseInt(item.price) * parseInt(item.quantity);
@@ -1650,7 +1673,11 @@ function setDeliveryCheck(data){
          */
          name: '주문명:결제테스트',
          //결제창에서 보여질 이름
+<<<<<<< Updated upstream
          amount: money,   //amount: money
+=======
+         amount: 1,   //amount: money
+>>>>>>> Stashed changes
          //가격
          buyer_email: 'iamport@siot.do',
          buyer_name: '구매자이름',
