@@ -76,6 +76,12 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 	margin-bottom: 50px;
 }
 
+th{
+	padding-right: 25px
+}
+
+
+
 input {
 	border: none;
 }
@@ -334,7 +340,7 @@ h4{
             </div>
             <!-- Mobile-menu end -->
             <!-- HEADING-BANNER START -->
-            <div class="heading-banner-area ">
+            <div class="heading-banner-area overlay-bg">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -362,8 +368,8 @@ h4{
          <div class="elements-tab  pt-80 pb-80">
                 <div class="container">   
                 <br><br>
-                 <table class="table table-condensed">
-					<tbody  id="detail" style="text-align: center">
+                 <table >
+					<tbody  id="detail">
 						</tbody>
 						</table>    
 						<br><br><br><br>
@@ -397,23 +403,23 @@ function csdetail() {
 		success:function(dto){
 
 			let str = "<tr>"
-					+ "<th>아이디</th>";
+					+ "<th> * 아이디</th>";
 			   str += "<td>"+ dto.id +"<input type='hidden' name='csnum' value='"+ dto.csnum +"'></input><td>"
 			   		+ "</tr>"
 				 	+ "<tr>"
-					+ "<th>분류</th>";
-			   str += "<td>" + dto.category
+					+ "<th> * 분류</th>";
+			   str += "<td>"  + cate(dto.category) + "</td>"
 			   		+ "</tr>"
 				 	+ "<tr>"
-					+ "<th>제목</th>";
+					+ "<th> * 제목</th>";
 			   str += "<td><input id='title' value='"+ dto.title +"' size='110px'><td>"
 			   		+ "</tr>"
 					+ "<tr>"
-					+ "<th >내용</th>";
+					+ "<th > * 내용</th>";
 			   str += "<td><textarea id='content' rows='20px' cols='110'>"+ dto.content +"'</textarea><td>"
 			   		+ "</tr>"
 					+ "<tr>"
-					+ "<th>작성일</th>";
+					+ "<th> * 작성일</th>";
 			   str += "<td>"+ dto.wdate +"<td>"
 			   		+ "</tr>";
 
@@ -444,6 +450,12 @@ function update() {
 	
 }
 	
+//답변 카테고리 없애기
+function cate( category ) {
+	let rs = "< 답변 >";
+
+ 	return category==0?"":rs;
+}
 	
 	
 	

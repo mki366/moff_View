@@ -310,7 +310,7 @@ select {
             </div>
             <!-- Mobile-menu end -->
             <!-- HEADING-BANNER START -->
-            <div class="heading-banner-area ">
+            <div class="heading-banner-area " style="background-color: #ffdc16">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -375,7 +375,7 @@ select {
                                         </table>
                                         <br>
                                          <div class="mt-20">
-                                  			<button type="button" id="write" class="button-one font-16px" data-text="문의하기 " style="float: right;">문의하기 </button>    
+                                  			<button type="button"  class="button-one font-16px" data-text="문의하기 " style="float: right;"  id="csWrite">문의하기 </button>    
 	                                    </div>
 										<div class="container" >
 											<nav aria-label="Page navigation" style="text-align: center">
@@ -423,6 +423,9 @@ select {
         
         
 <script type="text/javascript">
+
+let login = JSON.parse(sessionStorage.getItem("login"));
+
 cslist(0);
 pagination();
 
@@ -438,9 +441,25 @@ $('#csSearch').click(function () {
 
 
 // 문의하기  
-$('#write').click(function () {
+$('#csWrite').click(function () {
 	location.href = "cswrite.html";
-});
+}); 
+
+
+
+
+
+/* function csWrite() {
+let login = JSON.parse(sessionStorage.getItem("login"));
+let id = login.id;
+	if(id != null && id != ''){
+		location.href = "cswrite.html";
+		
+	}else{
+		alert('로그인 후 이용해주세요.');
+	}
+}
+	 */
 
 function cslist(pagenum) {
 

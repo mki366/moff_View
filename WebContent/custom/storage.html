@@ -4,10 +4,11 @@
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <title> Hurst</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-   <link rel="stylesheet" href="/resources/demos/style.css">
+	 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	  <link rel="stylesheet" href="/resources/demos/style.css">
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,14 +16,13 @@
 
       <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
       <!-- Place favicon.ico in the root directory -->
-     
       <!-- Google Font -->
       <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
- 
+
 
 
  <script type="text/javascript">
@@ -32,9 +32,9 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
     obj[pairArray[0]] = pairArray[1];
     return obj;
 }, {});
-</script>  
+</script>   
 
- 
+
 
          <!-- all css here -->
       <!-- bootstrap v3.3.6 css -->
@@ -64,12 +64,12 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
       <link rel="stylesheet" href="../css/responsive.css">
       <!-- modernizr css -->
       <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-     
+      
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
-	<style type="text/css">
-	
-	#row {
+   
+<style type="text/css">
+
+#row {
 	padding-top:100px;
 	height:800px;
 	position: relative;
@@ -171,23 +171,14 @@ z-index: 100;
     left: 0;
     }  
 
-    #price{
-	font-size:28px;
-    font-weight: 600;
-    color: #444;
-	padding-bottom: 30px;
- 	}
-
-.fleft{
-float:left;
-}
-   
+    
+    
 </style>
 
- 
+
 
    </head>
-   <body>  
+   <body>   
       <!-- WRAPPER START -->
       <div class="wrapper bg-dark-white">
 
@@ -444,68 +435,73 @@ float:left;
          </div>
          <!-- HEADING-BANNER END -->
          <!-- 본문  -->
-  
-<div id="container">
+   
+<div id="container"> 
   <div class="row" id="row">
 
-   <div class="col-md-2"></div>
+ 	 <div class="col-md-2"></div>
+ 	 
+ 	 <div class="col-md-7" style=" background-color: #EAEAEA; height: 650px">
+ 
+ 		 <div style="padding-left: 100px;margin-top: 50px" >
+ 	 		
+	 	 	<div class='storageZone' style="position:relative;">
+	 
+	 			 	<div id="zone" style="WIDTH: 250PX;HEIGHT: 250PX; " > 	<img src="../images/storageee.png" > 	</div>
+	
+	 		 </div>
+ 	 
+ 	 </div>
+</div>
+	 	 <div class="col-md-2" style="border-left: 1px solid #BCBDC0; padding-left: 35px; margin-left: 20px">
+<!-- 추가버튼  -->	 	 
+	 	 <div style="padding-bottom: 40px">
+
+<button type="button" class="fa fa-plus-circle fa-3x" onclick="add()"></button>
+<button type="button" class="fa fa-minus-circle fa-3x" onclick="del()"></button>
+</div>
+<!-- 탭 -->
+  <div class="elements-tab-7">
   
-   <div class="col-md-7" >
-    <div style="padding-left: 100px;">
-     
-     <div class='storageZone' style="position: relative;">
-       <div id="zone" style="WIDTH: 250PX;HEIGHT: 250PX;"> <img  src="../images/storageee.png" > </div>
-     </div>
+    <div class="text-left">
+    <ul class="elements-tab-menu element-line-btm clearfix">
+    <li class="active"><a href="#home7" data-toggle="tab">STYLE.1</a></li>
+    <li><a href="#profile7"  data-toggle="tab">STYLE.2</a></li>
+    </ul>
     </div>
-     <button type="button" class="btn btn-primary" style=" border-radius: 30px" onclick="add()">+</button>
-     <button type="button" class="btn btn-primary" onclick="del()">-</button>
-    
+  
+    <div class="tab-content" style="padding-top: 50px;">
+    <div class="tab-pane active" id="home7">
+     <img src="../images/storage/storageW1.png"  style="width: 200px;" onclick="stor(21)"><br>
+		   <img  src="../images/storage/storageW2.png" style="width: 200px; " onclick="stor(33)"><br>
+ <img  src="../images/storage/storageW3.png" style="width: 200px;" onclick="stor(34)"><br>
+
+ </div>
+    <div class="tab-pane" id="profile7">
+  <img  src="../images/storage/storageB1.png"  style="width: 200px;" onclick="stor(30)"><br>
+ <img  src="../images/storage/storageB2.png" style="width: 200px; " onclick="stor(31)"><br>
+ <img  src="../images/storage/storageB2.png" style="width: 200px;" onclick="stor(32)"><br>
+   </div>
     </div>
 
-    <div class="col-md-2" >
-<!-- 탭 -->
-     <div class="elements-tab-3">
-     <!-- Nav tabs -->
-     <div class="text-left">
-      <ul class="elements-tab-menu clearfix">
-       <li class="active"><a href="#home3" data-toggle="tab">STYLE1</a></li>
-       <li><a href="#profile3"  data-toggle="tab">STYLE2</a></li>
-      </ul>
-     </div>
-     <!-- Tab panes -->
-     <div class="tab-content" style="padding-top: 50px">
-     <div class="tab-pane active" id="home3" >  
-     <img src="../images/storage11.png" style="width: 200px;" onclick="stor(58)"><br>
-    
-     <img  src="../images/storage22.png" style="width: 200px; " onclick="stor(59)"><br>
-     <img  src="../images/storage33.png" style="width: 200px;" onclick="stor(60)"><br>
-  </div>
-  
-     <div class="tab-pane" id="profile3">
-      <img  src="../images/storage77.png" style="width: 200px;" onclick="stor(61)"><br>
-     <img  src="../images/storage55.png" style="width: 200px; " onclick="stor(62)"><br>
-     <img  src="../images/storage66.png" style="width: 200px;" onclick="stor(63)"><br>
-   </div>
-     </div>
-     </div> 
+    </div>
  <div style="margin-left: 20px">
 
     <div id="price"><div id="calprice" class="fleft"></div><div class="fleft">원</div></div>
     <button type="button" class="btn btn-primary" onclick="addStrgCart()">장바구니</button>
       <button type="button" class="btn btn-primary" onclick="addStrgWish()">위시리스트</button>
  </div>
-    
-    
-   </div>
-   </div>   
-</div> 
-       
+	 	</div>
+	 	
+   </div>    
+</div>  
+        
 
 
-  
+   
 
 
-         <!-- 본문끝  -->     
+         <!-- 본문끝  -->      
          <!-- FOOTER START -->
          <footer>
             <!-- Footer-area start -->
@@ -642,15 +638,18 @@ float:left;
             </div>
             <!-- END Modal -->
          </div>
-         <!-- END QUICKVIEW PRODUCT -->  
+         <!-- END QUICKVIEW PRODUCT -->   
         
       </div>
       <!-- WRAPPER END -->
 
+        
        
 <script type="text/javascript">
 let login = JSON.parse(sessionStorage.getItem("login"));
 alert(login.id);  
+
+
 
 	// 품목별 수량
 	 var frame=1;
@@ -660,8 +659,11 @@ alert(login.id);
 	 var top2=0;
 	 var base2=0;
 	 var box2=0;
-	//$("#productModal").modal("show");
-	  $("#calprice").html(numberWithCommas(onePrice(57))); 
+	
+
+	 
+	 $("#productModal").modal("show");
+	 $("#calprice").html(numberWithCommas(onePrice(57))); 
 	  
 	  var dragobject={
 				z: 0, x: 0, y: 0, offsetx : null, offsety : null, targetobj : null, dragapproved : 0,
@@ -713,7 +715,7 @@ alert(login.id);
  	
  		  // alert(JSON.stringify(dto));
  		
- 		    str = "<img class='drag' id=" + prodNum + " src='../images/" + dto.filename + "'style='position: absolute;left:0; top:0'>";
+ 		    str = "<img class='drag' id=" + prodNum + " src='../images/storage/" + dto.filename + "'style='position: absolute;left:0; top:0'>";
  		
  		   $("#zone").append(str); 
  		   
@@ -753,7 +755,7 @@ function add() {
 
 			if(frame < 4){
 				
-		    	let str='<img id="57" src="../images/storageee.png " style="position:absolute;left:'+ left*frame +'px" class="addImg">'; 
+		    	let str='<img id="57" src="../images/storage/storage.png " style="position:absolute;left:'+ left*frame +'px" class="addImg">'; 
 	
 				$('#zone').append(str);
 				frame++;
@@ -894,10 +896,10 @@ function add() {
   
 </script>
 
- 
 
 
-        
+
+         
       <script src="../js/vendor/jquery-1.12.0.min.js"></script>
       <!-- bootstrap js -->
       <script src="../js/bootstrap.min.js"></script>
@@ -907,25 +909,25 @@ function add() {
       <script src="../js/slick.min.js"></script>
       <!-- jquery.treeview js -->
       <script src="../js/jquery.treeview.js"></script>
-      <!-- lightbox.min js -->
+
       <script src="../js/lightbox.min.js"></script>
-      <!-- jquery-ui js -->
+   
       <script src="../js/jquery-ui.min.js"></script>
-      <!-- jquery.nivo.slider js -->
+ 
       <script src="../lib/js/jquery.nivo.slider.js"></script>
-  
+   
       <script src="../lib/home.js"></script>
-      <!-- jquery.nicescroll.min js -->
+
       <script src="../js/jquery-ui.js"></script>
-      <!-- countdon.min js -->
+
       <script src="../js/countdon.min.js"></script>
-      <!-- wow js -->
+
       <script src="../js/wow.min.js"></script>
-      <!-- plugins js -->
+
       <script src="../js/plugins.js"></script>
-      <!-- main js -->
+
       <script src="../js/main.js"></script>
 
 
    </body>
-</html> 
+</html>

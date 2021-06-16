@@ -318,7 +318,7 @@ textarea {
 			</div>
 			<!-- Mobile-menu end -->
 			<!-- HEADING-BANNER START -->
-			<div class="heading-banner-area ">
+			<div class="heading-banner-area overlay-bg">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -386,28 +386,32 @@ textarea {
 			<!-- 답변폼  -->
 			   <div class="elements-tab  pt-80 pb-80">
                 <div class="container">   
-				<h3><b>답변하기</b> </h3><br>
-                 <table class="table table-condensed">
+		
+                 <table class="d">
 						<tbody>
 							<tr>
-					
+							</tr>
+							<tr>
 								<td>
-									<input type="text" id="id" name="id" size="50px" ><!-- 	readonly="readonly" -->
+									<input type="hidden" id="id" name="id" size="50px" ><!-- 	readonly="readonly" -->
 								<td>
 							</tr>
-
-							
 							<tr>
-						
+								<th> * 제목 </th>
+							<tr>
+							<tr>
 								<td>
-									<textarea rows="2px" cols="150" id="title" name="title"placeholder="제목을 입력해주세요." ></textarea>
+									<textarea rows="2px" cols="150" id="title" name="title"placeholder="제목을 입력해주세요." style="background: none"></textarea>
 								<td>
 							</tr>
+							<tr>
+								<th> * 내용 </th>
 							
+							</tr>
 							<tr>
 							
 								<td>
-									<textarea rows="40px" cols="150" id="content" name="content"placeholder="내용을 입력해주세요." ></textarea>
+									<textarea rows="25px" cols="150" id="content" name="content"placeholder="내용을 입력해주세요." style="background: none"></textarea>
 								<td>
 							</tr>
 							<tr>
