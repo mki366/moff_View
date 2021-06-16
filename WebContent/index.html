@@ -44,7 +44,31 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<style type="text/css">
+#sale{
+	background: #79aaad;
+}
+.cart-icon {
+  display: inline-block;
+  padding-left: 0px;
+  position: relative;
+  right: 0;
+}
+.tab-menu li.active a {
+    color: black;
+}
+.tab-menu li.active::before {
+  background: #c87065 none repeat scroll 0 0;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  position: absolute;
+  width: 30px;
+}
+.submit-button {background: #ffc929 none repeat scroll 0 0;	/* #ffa85d */}
+.button-one::before {background: #5d5a55; color: white;}
 
+</style>
 
 	</head>
 	<body>
@@ -62,9 +86,9 @@
 									<div class="table-cell">
 										<ul>
 											<li><a class="search-open" href="#"><i class="zmdi zmdi-search"></i></a></li>
-											<li><a href="login.html"><i class="zmdi zmdi-lock"></i></a></li>
-											<li><a href="my-account.html"><i class="zmdi zmdi-account"></i></a></li>
-											<li><a href="wishlist.html"><i class="zmdi zmdi-favorite"></i></a></li>
+											<li><a href="./member/login.html"><i class="zmdi zmdi-lock"></i></a></li>
+											<li><a href="./member/mypage.html"><i class="zmdi zmdi-account"></i></a></li>
+											<li><a href="./member/cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
 										</ul>
 									</div>
 								</div>
@@ -88,19 +112,11 @@
 							<div class="col-sm-4 col-xs-5">
 								<div class="mini-cart text-right">
 									<ul>
-										<li>
-											<a class="cart-icon" href="./member/mypage.html">
-												<i class="zmdi zmdi-shopping-cart"></i>
-												
-											</a>
-										</li>
-										<li>
-											<a class="cart-icon" href="./member/cart.html">
-												<i class="zmdi zmdi-shopping-cart"></i>
-											
-											</a>
-										</li>
-										<li>
+										<li class="header_Right">
+												<a href="./member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;
+												<!-- <a href="my-account.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a> -->
+												<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;
+										
 											<a class="cart-icon" href="#">
 												<i class="zmdi zmdi-shopping-cart"></i>
 												<span>3</span>
@@ -161,7 +177,7 @@
 							<li><a href="index.html">home</a>
 
 							</li>
-							<li><a href="shop.html">products</a>
+							<li><a href="./product/productlist.html">products</a>
 								  <div class="mega-menu menu-scroll">
                                     <div class="table">
                                         <div class="table-cell">
@@ -173,7 +189,7 @@
                                                     <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=수납형침대">수납형침대</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=싱글/슈퍼싱글침대">싱글/슈퍼싱글 침대</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=싱글/매트리스">매트리스</a></li>
-                                                    <li><a href="#">기타</a></li>
+                                                   <!--  <li><a href="#">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="half-width">
@@ -184,7 +200,7 @@
                                                     <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=책상/컴퓨터책상">책상/컴퓨터책상</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=식탁">식탁</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=협탁/화장대">협탁/화장대</a></li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=기타">기타</a></li>
+                                                    <!-- <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="half-width">
@@ -193,28 +209,31 @@
                                                     <li><a href="./product/productlist.html?page=0&_category=쇼파">모든 상품</a></li>
                                                     <li><a href="#">패브릭쇼파</a></li>
                                                     <li><a href="#">천연/인조가죽 쇼파</a></li>
-                                                    <li><a href="#">기타</a></li>
+                                                   <!--  <li><a href="#">기타</a></li> -->
                                                 </ul>
                                             </div>
-                                            <div class="half-width">
-                                                <ul>
-                                                    <li class="menu-title">책장</li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=책장">모든 상품</a></li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=책장&_subCategory=수납선반/유닛">수납선반/유닛</a></li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=책장&_subCategory=기타">기타</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="half-width">
+                                            
+                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">수납장/장식장/서랍장</li>
                                                     <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장">모든 상품</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=장식장">장식장</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=수납장">수납장</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=서랍장">서랍장</a></li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=기타">기타</a></li>
+                                                   <!--  <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
+                                            
+                                            
+                                            <div class="half-width">
+                                                <ul>
+                                                    <li class="menu-title">책장</li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=책장">모든 상품</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=책장&_subCategory=수납선반/유닛">수납선반/유닛</a></li>
+                                                   <!--  <li><a href="./product/productlist.html?page=0&_category=책장&_subCategory=기타">기타</a></li> -->
+                                                </ul>
+                                            </div>
+
                                             
                                             <div class="half-width">
                                                 <ul>
@@ -223,7 +242,7 @@
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=암체어">암체어</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=사무용의자">사무용의자</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=식탁의자">식탁의자</a></li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=기타">기타</a></li>
+                                                   <!--  <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="half-width">
@@ -232,7 +251,7 @@
                                                     <li><a href="./product/productlist.html?page=0&_category=기타">모든 상품</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=조명">조명</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=장식용품">장식용품</a></li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=기타">기타</a></li>
+                                                    <!-- <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="pb-80"></div>
@@ -254,7 +273,7 @@
 							<li><a href="./showroom/showroom.html">SHOWROOM</a></li>
 							<li><a href="./BuyBack/BuyBackMain.html">BUYBACK</a></li>
 							<li><a href="./Expert/ExpertPage.html">EXPERTS</a></li>
-							<li><a href="./community/commulist.html">COMMUNITY</a></li>
+							<li><a href="./community/communityList.html">COMMUNITY</a></li>
 							<li><a href="./cs/cslist.html">HELP CENTER</a></li>
 							
 						</ul>
@@ -285,14 +304,13 @@
 							</div>
 							<button type="button" class="button-one font-16px" data-text='신청하기 ' onclick="buyBack()">신청하기</button>
 						</div>
-			
 						<div class="single-banner banner-2">
 							<a class="banner-thumb" href="#"><img src="./img/banner/bboy3.png" alt="" /></a>
 								<span class="pro-label new-label hidden-md" style="background-color:#ffdc16; color:#5d5a55">모집중</span>
 							<div class="banner-brief">
 								<h2 class="banner-title hidden-md">함께 일해요!</h2>
 								<p class="hidden-md hidden-sm hidden-xs">MOFF만에 특별한 뽀이가 되어주세요.</p>
-								<a href="#" class="button-one font-16px" data-text="지원하기">지원하기</a>
+								<a href="./DeliveryAccount/DeliverySignUp.html" class="button-one font-16px" data-text="지원하기">지원하기</a>
 							</div>
 						</div>
 					</div>
@@ -381,29 +399,6 @@
 					<!-- Slider-area end -->
 				</div>
 				<!-- Sidebar-social-media start -->
-				<div class="sidebar-account hidden-xs">
-					<div class="table">
-						<div class="table-cell">
-							<ul>
-								<li><a class="search-open" href="#" title="Search"><i class="zmdi zmdi-search"></i></a></li>
-								<li><a href="#" title="Login"><i class="zmdi zmdi-lock"></i></a>
-									<div class="customer-login text-left">
-										<form action="#">
-											<h4 class="title-1 title-border text-uppercase mb-30">Registered customers</h4>
-											<p class="text-gray">If you have an account with us, Please login!</p>
-											<input type="text" name="email" placeholder="Email here..." />
-											<input type="password" placeholder="Password" />
-											<p><a class="text-gray" href="#">Forget your password?</a></p>
-											<button class="button-one submit-button mt-15" data-text="login" type="submit">login</button>
-										</form>
-									</div>
-								</li>
-								<li><a href="my-account.html" title="My-Account"><i class="zmdi zmdi-account"></i></a></li>
-								<li><a href="wishlist.html" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
 				<!-- Sidebar-social-media start -->
 			</section>
 			<!-- End Slider-section -->
@@ -603,7 +598,7 @@
                                     <h3 class="footer-title  title-border">고객 문의</h3>
                                     <ul class="footer-menu">
                                         <li><a href="./cs/cslist.html"><i class="zmdi zmdi-dot-circle"></i>고객 문의</a></li>
-                                        <li><a href="./commulist.html"><i class="zmdi zmdi-dot-circle"></i>커뮤니티</a></li>
+                                        <li><a href="./community/communityList.html"><i class="zmdi zmdi-dot-circle"></i>커뮤니티</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -761,6 +756,26 @@ productlist();
 productlist2();
 productlist3();
 commuList();
+loginSucc();
+
+
+function loginSucc() {
+	let login = JSON.parse(sessionStorage.getItem("login"));
+	
+	if(login.id == "" || login.id == null){
+		let headerStr = '<a href="./member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+						+ '<a href="./member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;';
+		$(".header_Right").html(headerStr);
+	
+	}else{
+		let headerStr = '<a href="./member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			+ '<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;';
+			
+		$(".header_Right").html(headerStr);
+		
+	}
+	
+}
 
 
 function buyBack() {
@@ -782,33 +797,34 @@ function productlist() {
 	//	alert(JSON.stringify(list));
 
 		 $.each(list, function(i, val) {
+			 
+			var oriexprice = String(val.oriPrice);
+			var orilaprice = oriexprice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+				
+			var exprice = String(val.price);
+			var laprice = exprice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+				
 			 let str = 					"<div class='single-product col-lg-3 col-md-4 col-sm-4 col-xs-12' >"
 				        +   			"<div class='product-img'>"
-				        +       			 "<span class='pro-label new-label'>new</span>"
+				        +       			 "<span id='sale' class='pro-label new-label'>new</span>"
 				        +				      "<a href='./product/productDetail.html?prodNum=" + val.prodNum + "'><img src='./image/" + val.filename + "' style='width: 270px; height: 270px;'></a>"
 				        +						'<div class="product-action clearfix">'
-				        +						"<a href='#' data-toggle='tooltip' onclick='wishInput(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ")' data-placement='top' title='Wishlist'><i class='zmdi zmdi-favorite-outline'></i></a>"
-						+ 						"<a href='#' data-toggle='modal'  onclick='quickModal(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ',' + '"' + val.oriPrice + '"' + ',' + '"' + val.price + '"' +")'  data-target='#productModal' title='Quick View'><i class='zmdi zmdi-zoom-in'></i></a>"
-						+ 						"<a href='#' data-toggle='tooltip' data-placement='top' title='Compare'data-toggle='tooltip' data-placement='top' title='Compare'><i class='zmdi zmdi-refresh'></i></a>"
-						+						"<a href='#' data-toggle='tooltip' onclick='cartInput(" + '"' + val.prodNum + '"' + ',' + '"' + val. prodName + '"' + ")' data-placement='top' title='Add To Cart'><i class='zmdi zmdi-shopping-cart-plus'></i></a>"
 						+						"</div>"
 						+						"</div>"
 						+						"<div class='product-info clearfix'>"
 						+						"<div class='fix'>"
 				        +						"<h4 class='post-title floatleft'><a href='productDetail.html?prodNum=" + val.prodNum + "'>" + val.prodName + "</a></h4>"
 				        +						"</div>"			
-				        +      					"<div class='fix'>"
-				        +						"<span class='pro-price floatleft'>" + val.oriPrice + "</span>"
-				     /*    +						"<span class='pro-rating floatright'>"
-				        +               		"<a href='#'><i class='zmdi zmdi-star'></i></a>"
-				        +             			"<a href='#'><i class='zmdi zmdi-star'></i></a>"
-				        +                		"<a href='#'><i class='zmdi zmdi-star'></i></a>"
-				        +                		"<a href='#'><i class='zmdi zmdi-star-half'></i></a>"
-				        +                		"<a href='#'><i class='zmdi zmdi-star-half'></i></a>"
-				        +        			    "</span>" */
-				        +      					"</div>"
-				        +      					"</div>"
-				        +      					"</div>";
+				        +      					"<div class='fix'>";
+				        
+				   if(val.price != "" && val.price != null){
+					str+=						"<span class='pro-price floatleft'>₩" + laprice + "원</span>";
+				        }else{
+				    str+=					"<span class='pro-price floatleft'>₩" + orilaprice + "원</span>";	
+				        }
+				  	str+=     					"</div>";
+					str+=      					"</div>";
+					str+=     					"</div>";
 
 				$("#activeList").append(str);
 				
@@ -835,26 +851,37 @@ function productlist2() {
 	//	alert(JSON.stringify(list));
 
 		 $.each(list, function(i, val) {
+			 
+			var oriexprice = String(val.oriPrice);
+			var orilaprice = oriexprice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+					
+			var exprice = String(val.price);
+			var laprice = exprice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+			 
 			 let str = 					"<div class='single-product col-lg-3 col-md-4 col-sm-4 col-xs-12' >"
-				        +   			"<div class='product-img'>"
-				        +       			 "<span class='pro-label new-label'>new</span>"
-				        +				      "<a href='./product/productDetail.html?prodNum=" + val.prodNum + "'><img src='./image/" + val.filename + "' style='width: 270px; height: 270px;'></a>"
-				        +						'<div class="product-action clearfix">'
-				        +						"<a href='#' data-toggle='tooltip' onclick='wishInput(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ")' data-placement='top' title='Wishlist'><i class='zmdi zmdi-favorite-outline'></i></a>"
-						+ 						"<a href='#' data-toggle='modal'  onclick='quickModal(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ',' + '"' + val.oriPrice + '"' + ',' + '"' + val.price + '"' +")'  data-target='#productModal' title='Quick View'><i class='zmdi zmdi-zoom-in'></i></a>"
-						+ 						"<a href='#' data-toggle='tooltip' data-placement='top' title='Compare'data-toggle='tooltip' data-placement='top' title='Compare'><i class='zmdi zmdi-refresh'></i></a>"
-						+						"<a href='#' data-toggle='tooltip' onclick='cartInput(" + '"' + val.prodNum + '"' + ',' + '"' + val. prodName + '"' + ")' data-placement='top' title='Add To Cart'><i class='zmdi zmdi-shopping-cart-plus'></i></a>"
-						+						"</div>"
-						+						"</div>"
-						+						"<div class='product-info clearfix'>"
-						+						"<div class='fix'>"
-				        +						"<h4 class='post-title floatleft'><a href='productDetail.html?prodNum=" + val.prodNum + "'>" + val.prodName + "</a></h4>"
-				        +						"</div>"			
-				        +      					"<div class='fix'>"
-				        +						"<span class='pro-price floatleft'>" + val.oriPrice + "</span>"
-				        +      					"</div>"
-				        +      					"</div>"
-				        +      					"</div>";
+				        +   			"<div class='product-img'>";
+				        if(val.price != "" && val.price != null){
+							str += 			"<span class='pro-label sale-label' style='background:#F2A57C;'>Sale</span>";
+							
+						}					 	
+				str +=				      "<a href='./product/productDetail.html?prodNum=" + val.prodNum + "'><img src='./image/" + val.filename + "' style='width: 270px; height: 270px;'></a>";
+				str +=						'<div class="product-action clearfix">';
+				str +=						"</div>";
+				str +=						"</div>";
+				str +=					"<div class='product-info clearfix'>";
+				str +=					"<div class='fix'>";
+				str +=					"<h4 class='post-title floatleft'><a href='productDetail.html?prodNum=" + val.prodNum + "'>" + val.prodName + "</a></h4>";
+				str +=						"</div>";		
+				str +=    					"<div class='fix'>";
+				
+				 if(val.price != "" && val.price != null){
+				str +=					"<span class='pro-price floatleft'>₩" + laprice + "원</span>";
+				 }else{
+				str +=					"<span class='pro-price floatleft'>₩" + orilaprice + "원</span>";	 
+				 }
+				str +=    					"</div>";
+				str +=      					"</div>";
+				str +=   					"</div>";
 
 				$("#mostView").append(str);
 				
@@ -880,33 +907,38 @@ function productlist3() {
 	//	alert(JSON.stringify(list));
 
 		 $.each(list, function(i, val) {
+			 
+			var oriexprice = String(val.oriPrice);
+			var orilaprice = oriexprice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+						
+			var exprice = String(val.price);
+			var laprice = exprice.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+				
 			 let str = 					"<div class='single-product col-lg-3 col-md-4 col-sm-4 col-xs-12' >"
-				        +   			"<div class='product-img'>"
-				        +       			 "<span class='pro-label new-label'>new</span>"
-				        +				      "<a href='./product/productDetail.html?prodNum=" + val.prodNum + "'><img src='./image/" + val.filename + "' style='width: 270px; height: 270px;'></a>"
-				        +						'<div class="product-action clearfix">'
-				        +						"<a href='#' data-toggle='tooltip' onclick='wishInput(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ")' data-placement='top' title='Wishlist'><i class='zmdi zmdi-favorite-outline'></i></a>"
-						+ 						"<a href='#' data-toggle='modal'  onclick='quickModal(" + '"' + val.prodNum + '"' + ',' + '"' + val.prodName + '"' + ',' + '"' + val.oriPrice + '"' + ',' + '"' + val.price + '"' +")'  data-target='#productModal' title='Quick View'><i class='zmdi zmdi-zoom-in'></i></a>"
-						+ 						"<a href='#' data-toggle='tooltip' data-placement='top' title='Compare'data-toggle='tooltip' data-placement='top' title='Compare'><i class='zmdi zmdi-refresh'></i></a>"
-						+						"<a href='#' data-toggle='tooltip' onclick='cartInput(" + '"' + val.prodNum + '"' + ',' + '"' + val. prodName + '"' + ")' data-placement='top' title='Add To Cart'><i class='zmdi zmdi-shopping-cart-plus'></i></a>"
-						+						"</div>"
-						+						"</div>"
-						+						"<div class='product-info clearfix'>"
-						+						"<div class='fix'>"
-				        +						"<h4 class='post-title floatleft'><a href='productDetail.html?prodNum=" + val.prodNum + "'>" + val.prodName + "</a></h4>"
-				        +						"</div>"			
-				        +      					"<div class='fix'>"
-				        +						"<span class='pro-price floatleft'>" + val.oriPrice + "</span>"
-			/* 	        +						"<span class='pro-rating floatright'>"
-				        +               		"<a href='#'><i class='zmdi zmdi-star'></i></a>"
-				        +             			"<a href='#'><i class='zmdi zmdi-star'></i></a>"
-				        +                		"<a href='#'><i class='zmdi zmdi-star'></i></a>"
-				        +                		"<a href='#'><i class='zmdi zmdi-star-half'></i></a>"
-				        +                		"<a href='#'><i class='zmdi zmdi-star-half'></i></a>"
-				        +        			    "</span>" */
-				        +      					"</div>"
-				        +      					"</div>"
-				        +      					"</div>";
+			        +   			"<div class='product-img'>";
+			        if(val.price != "" && val.price != null){
+						str += 			"<span class='pro-label sale-label' style='background:#F2A57C;'>Sale</span>";
+						
+					}					 	
+			str +=				      "<a href='./product/productDetail.html?prodNum=" + val.prodNum + "'><img src='./image/" + val.filename + "' style='width: 270px; height: 270px;'></a>";
+			str +=						'<div class="product-action clearfix">';
+			str +=						"</div>";
+			str +=						"</div>";
+			str +=					"<div class='product-info clearfix'>";
+			str +=					"<div class='fix'>";
+			str +=					"<h4 class='post-title floatleft'><a href='productDetail.html?prodNum=" + val.prodNum + "'>" + val.prodName + "</a></h4>";
+			str +=						"</div>";		
+			str +=    					"<div class='fix'>";
+			
+			if(val.price != "" && val.price != null){
+			str +=					"<span class='pro-price floatleft'>₩" + laprice + "원</span>";
+			}else{
+			str +=					"<span class='pro-price floatleft'>₩" + orilaprice + "원</span>";	 
+				 }
+			
+			str +=    					"</div>";
+			str +=      					"</div>";
+			str +=   					"</div>";
 
 				$("#bestSeller").append(str);
 				
@@ -942,7 +974,7 @@ function commuList() {
 					+ '<div class="post-meta fix">'
 					+ '<div class="post-year floatleft"  style="padding:0px">'
 					+ '<p class="text-uppercase text-dark-red mb-0">' + val.wdate + '</p>'
-					+ '<h4 class="post-title"><a href="#" tabindex="0">' +  val.title +   '</a></h4>'
+					+ '<h4 class="post-title"><a href="./community/communityDetail.html?cmNum=' + val.cmNum + '" tabindex="0">' +  val.title +   '</a></h4>'
 					+ '</div>'
 					+ '</div>'
 					+ '<div class="like-share fix">'
@@ -950,12 +982,12 @@ function commuList() {
 					+ '<a href="#"><i class="zmdi zmdi-favorite"></i><span>' + val.cmLike + ' Like</span></a>'
 					+ '</div>'
 					+ '<p>' + val.content.substring(0,60) + '</p>'
-					+ '<a href="" class="button-2 text-dark-red">더보기...</a>'
+			//		+ '<a href="" class="button-2 text-dark-red">더보기...</a>'
 					+ '</div>'
 					+ '</div>'
 					+ '<div class="col-lg-6 col-md-5 col-sm-5 col-xs-12">'
 					+ '<div class="blog-photo">'
-					+ '<a href="#"><img src="image/' + val.image1 + '" /></a>'
+					+ '<a href="#"><img src=' + val.image1 + '></a>'
 					+ '</div>'
 					+ '</div>'
 					+ '</div>'
@@ -968,20 +1000,10 @@ function commuList() {
 				
 		},
 		error:function(){
-		//	alert('todayList error');
+			alert('todayList error');
 		}
 	});
 }
-
-
-
-
-
-
-
-
-
-
 
 
 //확대 아이콘 클릭 시 모달
@@ -1047,7 +1069,6 @@ function quickModal(prodNum, prodName, oriPrice, price) {
 </script>
 
 
-<<<<<<< HEAD
    <script type="text/javascript">
      function signUp(){
     	 location.href="./member/signup.html"
@@ -1086,7 +1107,5 @@ function quickModal(prodNum, prodName, oriPrice, price) {
 
 
 
-=======
->>>>>>> d3472021a992909aa3c363f2385c5e2ecf5b566d
 	</body>
 </html>

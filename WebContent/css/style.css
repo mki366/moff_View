@@ -259,7 +259,7 @@ body {
 .main-menu > nav {}
 .main-menu > nav > ul {}
 .main-menu > nav > ul > li {}
-/* 가장 큰 타이틀 */
+/* 媛��옣 �겙 ���씠�� */
 .main-menu > nav > ul > li > a {
   background: transparent none repeat scroll 0 0;
   color: #383838;
@@ -308,7 +308,7 @@ body {
   opacity: 1;
   visibility: visible;
 }
-/* sub menu 작은 링크  카테고리 */
+/* sub menu �옉�� 留곹겕  移댄뀒怨좊━ */
 .main-menu ul li .sub-menu > ul > li a {
   color: #3c3c3c;
   display: block;
@@ -374,7 +374,7 @@ body {
   padding-left: 70px;
   width: 50%;
 }
-/*  sub menu 큰 타이틀 */
+/*  sub menu �겙 ���씠�� */
 .menu-title {
   color: #333666;
   font-size: 13px;
@@ -691,7 +691,7 @@ body {
   margin-bottom: 5px;
 }
 .pro-price {
-  color: #c87065;
+  color: #333;
   font-size: 18px;
   font-weight: bold;
   line-height: 28px;
@@ -790,9 +790,9 @@ body {
   line-height: 10px;
   padding-bottom: 12px;
 }
-.tab-menu li.active a { color: #D3B484;}
+.tab-menu li.active a { color: black;}
 .tab-menu li.active::before {
-  background: #D3B484 none repeat scroll 0 0;
+  background: #c87065 none repeat scroll 0 0;
   bottom: 0;
   content: "";
   height: 2px;
