@@ -714,7 +714,7 @@ button:focus {
                         </div>
                         <div class="breadcumbs pb-15">
                            <ul>
-                              <li><a href="index.html">Home</a></li>
+                              <li><a href="../index.html">Home</a></li>
                               <li>My Account</li>
                            </ul>
                         </div>
@@ -744,11 +744,7 @@ button:focus {
                                      <div class="padding" style="padding: 0px">
                                          <div class="row container d-flex justify-content-center"  >
                                              <div class="col-lg-9 grid-margin stretch-card" style="padding-left: 10px">
-<<<<<<< Updated upstream
-                                                 <div class="card" style="width: 550px; margin-bottom: 10px;margin-top: 20px;padding-left: 40px; padding-right: 40px">
-=======
-                                                 <div class="card" style="width: 500px; margin-bottom: 10px;margin-top: 20px;padding-left: 40px; padding-right: 40px">
->>>>>>> Stashed changes
+                                                 <div class="card" style="width: 580px; margin-bottom: 10px;margin-top: 20px;padding-left: 40px; padding-right: 40px">
                                                      <div class="card-body">
                                                         
                                                          <div class="table-responsive">
@@ -830,7 +826,7 @@ button:focus {
                                     <div class="card" style="width: 100%; margin-left: 0px; margin-top: 20px;margin-bottom: 30px">
                                         <div class="row">
                                             
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-7">
                                                 <div class="row px-2">
                                                     <div class="form-group col-md-12"> 
                                                         <label class="form-control-label" style="margin-bottom: 14px;">포인트 사용하기</label> 
@@ -855,7 +851,7 @@ button:focus {
                                                 </div>
                                                 <div class="row d-flex justify-content-between px-4">
                                                     <p class="mb-1 text-left">할인 금액</p>
-                                                    <h6 class="mb-1 text-right" id="usePoint"></h6>
+                                                    <h6 class="mb-1 text-right" id="usePoint">0 원</h6>
                                                 </div>
                                                 <div class="row d-flex justify-content-between px-4" id="tax">
                                                     <p class="mb-1 text-left">Total</p>
@@ -880,15 +876,9 @@ button:focus {
       <div class="col-md-1"> </div>
    <div class="col-md-3"> 
    
-<<<<<<< Updated upstream
        <div class="row justify-content-center"  style="margin-left: 22px; width:800px;margin-top: 0px">
                                 <div class="col-lg-12" style="width: 400px">
                                     <div class="card" style="border: 1.5px solid white; padding-left: 10px; margin-top: 0px">
-=======
-       <div class="row justify-content-center"  style="margin-left: 22px; width:800px;margin-top: 200px">
-                                <div class="col-lg-12" style="width: 400px">
-                                    <div class="card" style="border: 1.5px solid #5d5a55; padding-left: 10px">
->>>>>>> Stashed changes
                                         <div class="row">
                                             
                                             <div class="col-lg-6">
@@ -904,11 +894,9 @@ button:focus {
                                                 </div>
                                                          <div class="row px-2"><div class="col-lg-9" id="rightPic"></div></div>
                                                          <div class="row px-2">   <div class="col-lg-6" style="margin: 2.5rem 0 0;margin-bottom: 1.25rem"><strong>주문 내역</strong></div></div>
-<<<<<<< Updated upstream
-                                                         <div class="row px-2">   <div class="col-lg-6" style="margin-bottom: 1.25rem"><div class="row"><div class="col-lg-9">전체 가격 </div><div class="col-lg-3" id="rightPrice" style="text-align: right; padding-right: 0px"></div></div></div></div></div>
-=======
-                                                         <div class="row px-2">   <div class="col-lg-6" style="margin-bottom: 1.25rem"><div class="row"><div class="col-lg-8">전체 가격 </div><div class="col-lg-4" id="rightPrice" style="text-align: right;"></div></div></div></div></div>
->>>>>>> Stashed changes
+                                                         <div class="row px-2">   <div class="col-lg-6" style="margin-bottom: 1.25rem"><div class="row"><div class="col-lg-8">전체 가격 </div><div class="col-lg-4" id="rightPrice" style="text-align: right;"></div></div></div></div>
+                                                         <div class="row px-2" style="margin-bottom: 15px">   <div class="col-lg-6" style="margin-bottom: 1.25rem"><div class="row"><div class="col-lg-8">배달비 </div><div class="col-lg-4" id="rightDeliPrice" style="text-align: right;"></div></div></div></div>
+                                                         </div>
                                                                    
                                                          
                                                     </div>
@@ -1115,17 +1103,7 @@ let filename = urlParams.filename;
 let prodName = urlParams.prodName;
 let pp = decodeURI(prodName);
 let weight = urlParams.weight;
-
 let cartCk =0;      //장바구니인지 체크
-
-let cartCk =0;		//장바구니인지 체크
-
-let cartCk =0;      //장바구니인지 체크
-
-
-alert(prodName);
-alert(pp);
->>>>>>> 0e66c82b8d4366d4577330b7d1d6dce7a9edcdf8
 
 $("#loginMem").html(login.name);
 $("#phoneNum").html(login.phone);
@@ -1158,7 +1136,7 @@ if(prodNum==null){
             $(".OrderedQuantity").append(' <input type="hidden" id="OrderedQuantity'+i+'" value="'+item.quantity+'">');
             //주문한 prodNum의 갯수
             OrderedProdCount+=1;
-            $("#productList").append(' <tr><td><img class="pay" src="../image/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
+            $("#productList").append(' <tr><td><img class="pay" src="../image/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px; ">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
             //7$("#rightPic").append('<img class="pay" src="../image/'+item.filename+'" style="height:85px;width: 85px">');
             OrderPrice += parseInt(item.price);   
             weightCart += parseInt(item.weight);  
@@ -1168,8 +1146,8 @@ if(prodNum==null){
             let s = '<div class="row"><div class="col-lg-4"><img src="../image/'+item.filename+'" style="height:70px;width: 70px"></div>';
             s+='<div class="col-lg-8">'
                +'<div ><h5><strong>'+item.prodName+'</strong> ('+item.prodNum+') </h5></div>'
-               +'<div><p>ㄴ<strong>[선택]</strong>&nbsp&nbsp'+item.color+' / '+item.weight+'kg / ( '+item.quantity+'개 )</p></div>'
-               +'<div>'+item.price+'원</div></div></div>';
+               +'<div><p><strong style="font-color:#dc6262" >[선택]</strong>&nbsp&nbsp'+item.color+' / '+item.weight+'kg / ( '+item.quantity+'개 )</p></div>'
+               +'<div>'+item.price+'원</div></div></div><hr/>';
             pPrice += item.price;
             $("#orderedList").append(s);
             
@@ -1199,15 +1177,10 @@ if(prodNum==null){
          $("#deliveryPay").html(deliveryCost);
           totalPrice = OrderPrice+deliveryCost;
          $("#totalPrice").html(totalPrice);
-
-         $("#rightTotalPrice").html(totalPrice+' 원');
+         $("#rightTotalPrice").html(totalPrice+" 원");
          $("#quantityOrder").val(quantityCart);
-         $("#rightPrice").html(OrderPrice+' 원');
-
-         $("#rightTotalPrice").html(totalPrice);
-         $("#quantityOrder").val(quantityCart);
-         $("#rightPrice").html(OrderPrice);
-
+         $("#rightPrice").html(OrderPrice+" 원");
+         $("#rightDeliPrice").html(deliveryCost+" 원");
       },
       error:function(){
          alert('error');
@@ -1218,7 +1191,6 @@ if(prodNum==null){
 
 //2.param 있음 -> 상품 디테일에서 바로 구매한 것 
 else{
-
    let Hprice=0;
    if(price==null){
       //세일하지 않는 상품
@@ -1228,8 +1200,7 @@ else{
       //세일하는 상품
       Hprice = price;
    }
-   $("#productList").append(' <tr><td><img class="pay" src="../image/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px; width:116px; font-size:13px">'+pp+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
-   $("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+pp+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
+   $("#productList").append(' <tr><td><img class="pay" src="../image/'+filename+'" style="height:140px;width: 130px"></td><td><div style="width: 100px;margin-top: 80px;font-size:14px">'+pp+'</div></td><td><div style="margin-top: 80px;font-size:13px">'+quantity+'개</div></td><td><div style="margin-top: 80px;font-size:13px">'+Hprice+'원</div></td></tr>');
    let OrderPrice = Hprice*quantity;
 
    $("#orderPrice").html(OrderPrice);
@@ -1259,80 +1230,18 @@ else{
    $("#quantityOrder").val(quantity);
    $("#deliveryPay").html(deliveryCost);
    $("#totalPrice").html(totalPrice);
-   $("#rightTotalPrice").html(totalPrice+' 원');
+   $("#rightTotalPrice").html(totalPrice+" 원");
 
    let s = '<div class="row"><div class="col-lg-4" ><img src="../image/'+filename+'" style="height:70px;width: 70px"></div>';
    s+='<div class="col-lg-8">'
       +'<div id="itemName"><h5><strong>'+pp+'</strong> ('+prodNum+') </h5></div>'
-   $("#rightTotalPrice").html(totalPrice);
-
-   let s = '<div class="row"><div class="col-lg-4" ><img src="../productPic/'+filename+'" style="height:70px;width: 70px"></div>';
-   s+='<div class="col-lg-8">'
-      +'<div id="itemName"><h5><strong>'+prodName+'</strong> ('+prodNum+') </h5></div>'
-      +'<div id="itemDetailInfo"><p>ㄴ<strong>[선택]</strong>&nbsp&nbsp'+color+' / '+weight+'kg / ( '+quantity+'개 )</p></div>'
-      +'<div id="priceInfo">'+Hprice+'원</div></div></div><br>';
+      +'<div id="itemDetailInfo"><p><strong style="color:#dc6262">[선택]</strong>&nbsp&nbsp'+color+' / '+weight+'kg / ( '+quantity+'개 )</p></div>'
+      +'<div id="priceInfo">'+Hprice+'원</div></div></div><hr/><br>';
       let pPrice=0;
    pPrice += price;
    $("#orderedList").append(s);
-   $("#rightPrice").html(OrderPrice+' 원');
-	let Hprice=0;
-	if(price==null){
-		//세일하지 않는 상품
-		Hprice=oriPrice;
-	}
-	else{
-		//세일하는 상품
-		Hprice = price;
-	}
-
-	$("#productList").append(' <tr><td><img class="pay" src="../image/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
-	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+prodName+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
-
-	$("#productList").append(' <tr><td><img class="pay" src="../productPic/'+filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+pp+'</div></td><td><div style="margin-top: 80px">'+quantity+'개</div></td><td><div style="margin-top: 80px">'+Hprice+'원</div></td></tr>');
-	let OrderPrice = Hprice*quantity;
-
-	$("#orderPrice").html(OrderPrice);
-	$(".OrderedProdNum").append(' <input type="hidden" id="OrderedProdNum0" value="'+prodNum+'">');
-	$(".OrderedQuantity").append(' <input type="hidden" id="OrderedQuantity0" value="'+quantity+'">');
-	OrderedProdCount=1;
-	let deliveryCost=0;
-	if(weight<1){
-		deliveryCost=3000;
-	}
-	else if(weight<5){
-		deliveryCost=10000;
-	}
-	else if(weight<10){
-		deliveryCost=15000;
-	}
-	else if(weight<20){
-		deliveryCost=30000;
-	}
-	else if(weight<50){
-		deliveryCost=70000;
-	}
-	else{
-		deliveryCost=100000;
-	}
-	let totalPrice = OrderPrice+deliveryCost;
-	$("#quantityOrder").val(quantity);
-	$("#deliveryPay").html(deliveryCost);
-	$("#totalPrice").html(totalPrice);
-	$("#rightTotalPrice").html(totalPrice);
-
-
-	let s = '<div class="row"><div class="col-lg-4" ><img src="../image/'+filename+'" style="height:70px;width: 70px"></div>';
-	let s = '<div class="row"><div class="col-lg-4" ><img src="../productPic/'+filename+'" style="height:70px;width: 70px"></div>';
-	s+='<div class="col-lg-8">'
-		+'<div id="itemName"><h5><strong>'+prodName+'</strong> ('+prodNum+') </h5></div>'
-		+'<div id="itemDetailInfo"><p>ㄴ<strong>[선택]</strong>&nbsp&nbsp'+color+' / '+weight+'kg / ( '+quantity+'개 )</p></div>'
-		+'<div id="priceInfo">'+Hprice+'원</div></div></div><br>';
-		let pPrice=0;
-	pPrice += price;
-	$("#orderedList").append(s);
-	$("#rightPrice").html(OrderPrice);
-
-   $("#rightPrice").html(OrderPrice);
+   $("#rightPrice").html(OrderPrice+" 원");
+   $("#rightDeliPrice").html(deliveryCost+" 원");
 }
 
 
@@ -1408,7 +1317,6 @@ function cart() {
          $.each(list, function (i, item) {
             
             $("#productList").append(' <tr><td><img class="pay" src="../image/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
-            $("#productList").append(' <tr><td><img class="pay" src="../productPic/'+item.filename+'" style="height:160px;width: 150px"></td><td><div style="margin-top: 80px">'+item.prodName+'</div></td><td><div style="margin-top: 80px">'+item.quantity+'개</div></td><td><div style="margin-top: 80px">'+item.price+'원</div></td><td><a href="#" onclick="delCart(' + item.cNum + ')" ><i class="zmdi zmdi-close" style="margin-top: 80px"></i></a></td></tr>');
             OrderPrice += parseInt(item.price);   
             weightCart += parseInt(item.weight);   
             //let totalPrice += parseInt(item.price) * parseInt(item.quantity);
@@ -1630,6 +1538,7 @@ function setDeliveryCheck(data){
 
       </script>
       
+
       <!-- 주문 -->
       <script type="text/javascript">
       $("#check_module").click(function () {
@@ -1673,11 +1582,7 @@ function setDeliveryCheck(data){
          */
          name: '주문명:결제테스트',
          //결제창에서 보여질 이름
-<<<<<<< Updated upstream
-         amount: money,   //amount: money
-=======
          amount: 1,   //amount: money
->>>>>>> Stashed changes
          //가격
          buyer_email: 'iamport@siot.do',
          buyer_name: '구매자이름',
