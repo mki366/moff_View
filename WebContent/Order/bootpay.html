@@ -840,21 +840,21 @@ button:focus {
                                                 </div>
                                                 
                                             </div>
-                                            <div class="col-lg-4 mt-2">
+                                            <div class="col-lg-5 mt-2">
                                                 <div class="row d-flex justify-content-between px-4">
-                                                    <p class="mb-1 text-left">주문 금액</p>
+                                                    <p class="mb-1 text-left" style="font-size: 15px">주문 금액</p>
                                                     <h6 class="mb-1 text-right" id="orderPrice"></h6>
                                                 </div>
                                                 <div class="row d-flex justify-content-between px-4">
-                                                    <p class="mb-1 text-left">배달비</p>
+                                                    <p class="mb-1 text-left" style="font-size: 15px">배달비</p>
                                                     <h6 class="mb-1 text-right" id="deliveryPay">10000</h6>
                                                 </div>
                                                 <div class="row d-flex justify-content-between px-4">
-                                                    <p class="mb-1 text-left">할인 금액</p>
+                                                    <p class="mb-1 text-left" style="font-size: 15px">할인 금액</p>
                                                     <h6 class="mb-1 text-right" id="usePoint">0 원</h6>
                                                 </div>
                                                 <div class="row d-flex justify-content-between px-4" id="tax">
-                                                    <p class="mb-1 text-left">Total</p>
+                                                    <p class="mb-1 text-left" style="font-size: 15px">Total</p>
                                                     <h6 class="mb-1 text-right" id="totalPrice"></h6>
                                                 </div> <button class="btn-block btn-blue" id="check_module"> <span> <span id="checkout">Checkout</span> </span> </button>
                                             </div>
@@ -1546,13 +1546,16 @@ function setDeliveryCheck(data){
           let obMes = document.getElementById("obMes").value;
           let deliveryPay=$("#deliveryPay").html();
           let obAddress=$("#address").html();
+          if(money>=1000000){
+        	  money=1000000;
+          }
       alert(obAddress)
          var IMP = window.IMP; // 생략가능
          IMP.init('imp85857789');
          // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
          // i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
          IMP.request_pay({
-         pg: 'kakao', // version 1.1.0부터 지원.
+         pg: 'html5_inicis', // version 1.1.0부터 지원.
          /*
          'kakao':카카오페이,
          html5_inicis':이니시스(웹표준결제)
@@ -1582,7 +1585,7 @@ function setDeliveryCheck(data){
          */
          name: '주문명:결제테스트',
          //결제창에서 보여질 이름
-         amount: 1,   //amount: money
+         amount: money,   //amount: money
          //가격
          buyer_email: 'iamport@siot.do',
          buyer_name: '구매자이름',
@@ -1610,7 +1613,7 @@ function setDeliveryCheck(data){
                       "id":login.id,
                       "name":login.name,
                       "quantity":$("#quantityOrder").val(),
-                      "price" : money,
+                      "price" :  $('#totalPrice').html(),
                       "obName":$("#loginMem").html(),
                       "obPhone":$("#phoneNum").html(),
                       "obAddress":obAddress,

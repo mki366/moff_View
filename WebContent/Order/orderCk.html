@@ -440,37 +440,37 @@
          <!-- HEADING-BANNER END -->
       
          
-         <div class="order_check row" style="margin-left: 100px;margin-right: 100px; margin-top: 70px;margin-bottom: 100px">
+         <div class="order_check row" style="margin-left: 380px;margin-right: 100px; margin-top: 70px;margin-bottom: 100px">
             <div class="col-lg-8" style="width: 680px;  margin-right: 5px"> 
                <div class="form-bg"style="width: 650px; height: 435px;margin-right: 0px;">
                    <div class="container" style="width: 650px;height:441px;">
                        <div class="row" style="width: 650px">
                            <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6" style="margin-left: 0">
                                <form class="form-horizontal" style="width: 650px">
-                                   <div class="form-icon"><i class="fa fa-user-tie"></i></div>
-                                   <h3 class="title" style="margin-bottom: 30px">주문이 정상적으로 완료되었습니다.</h3>
+                                   
+                                   <h3 class="title" style="margin-bottom: 70px; margin-top: 30px">주문이 정상적으로 완료되었습니다.</h3>
                                    <div class="form-group">
                                        <div class="row">
-                                    <h4 class="col-lg-6">주문 번호</h4>
-                                    <div class="col-lg-6" id="odNum"></div>
+                                    <h4 class="col-lg-4">주문 번호</h4>
+                                    <div class="col-lg-8" id="odNum" style="font-size: 15px"></div>
                                  </div>
                                    </div>
                                    <div class="form-group">
                                        <div class="info_wrap" style="margin-top: 20px">
                                  <div class="row">
-                                    <h4 class="col-lg-6" >주문 정보</h4>
-                                    <div class="col-lg-6" style="margin-left: -5px">
-                                       <div  id="obName"></div>
-                                       <div  id="obPhone"></div>
-                                       <div  id="deliveryInfo"></div>
+                                    <h4 class="col-lg-4" >주문 정보</h4>
+                                    <div class="col-lg-8" style="margin-left: -5px">
+                                       <div  id="obName" style="font-size: 18px"></div><br>
+                                       <div  id="obPhone" style="font-size: 18px"></div><br>
+                                       <div  id="deliveryInfo" style="font-size: 18px"></div>
                                     </div>
                                  </div>
                                  
                               </div>
                                    </div>
-                                   <span class="forgot-password"><a href="./takeback.html?odNum=1">Forgot Password?</a></span>
+                                <!--    <span class="forgot-password"><a href="./takeback.html?odNum=1">Forgot Password?</a></span>
                                  
-                                   <span class="signup">Don't have an account yet? <a href="exchange.html?odNum=1">sign up</a></span>
+                                   <span class="signup">Don't have an account yet? <a href="exchange.html?odNum=1">sign up</a></span> -->
                                </form>
                            </div>
                        </div>
@@ -479,7 +479,7 @@
             </div>
             <div class="col-lg-4" style="background-color: white;  height: 480px">
                <div class="bill_content">
-                  <div style="overflow:scroll; width:353px; height:230px; margin-top: 20px">
+                  <div style="overflow:scroll; width:470px; height:230px; margin-top: 20px">
                      <div class="row" style="margin-top: 20px" id="orderedList">
                         
                      </div>
@@ -499,91 +499,15 @@
                      <div id="deliPrice" class="col-lg-6"></div>
                   </div>
                </div>
-               <div class="text-center px-3 pt-3"> <button type="button" class="btn btn-primary btn-block btn1"> 주문 내역 보기 </button> </div>
+               <div class="text-center px-3 pt-3"> <button type="button" id="gotoPurchases" class="btn btn-primary btn-block btn1"> 주문 내역 보기 </button> </div>
        
             
             </div>
             
             
          </div>
-
-         <!-- FOOTER START -->
-         <footer>
-            <!-- Footer-area start -->
-            <div class="footer-area footer-3">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-                        <div class="single-footer">
-                           <h3 class="footer-title  title-border">Contact Us</h3>
-                           <ul class="footer-contact">
-                              <li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
-                              <li><span>Cell-Phone :</span>+012 345 678 102</li>
-                              <li><span>Email :</span>info@example.com</li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-                        <div class="single-footer">
-                           <h3 class="footer-title  title-border">accounts</h3>
-                           <ul class="footer-menu">
-                              <li><a href="my-account.html"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
-                              <li><a href="wishlist.html"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
-                              <li><a href="cart.html"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
-                              <li><a href="login.html"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
-                              <li><a href="checkout.html"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
-                        <div class="single-footer">
-                           <h3 class="footer-title  title-border">shipping</h3>
-                           <ul class="footer-menu">
-                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>New Products</a></li>
-                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Top Sellers</a></li>
-                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Manufactirers</a></li>
-                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Suppliers</a></li>
-                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Specials</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-footer">
-                           <h3 class="footer-title  title-border">Email Newsletters</h3>
-                           <div class="footer-subscribe">
-                              <form action="#">
-                                 <input type="text" name="email" placeholder="Email Address..." />
-                                 <button class="button-one submit-btn-4" type="submit" data-text="Subscribe">Subscribe</button>
-                              </form>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- Footer-area end -->
-            <!-- Copyright-area start -->
-            <div class="copyright-area copyright-2">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-sm-6 col-xs-12">
-                        <div class="copyright">
-                           <p class="mb-0">&copy; <a href="#" target="_blank">Hurst </a> 2018. All Rights Reserved.</p>
-                        </div>
-                     </div>
-                     <div class="col-sm-6 col-xs-12">
-                        <div class="payment  text-right">
-                           <a href="#"><img src="img/payment/1.png" alt="" /></a>
-                           <a href="#"><img src="img/payment/2.png" alt="" /></a>
-                           <a href="#"><img src="img/payment/3.png" alt="" /></a>
-                           <a href="#"><img src="img/payment/4.png" alt="" /></a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- Copyright-area start -->
-         </footer>
+		<div id="footer"></div>
+       
          <!-- FOOTER END -->
          <!-- QUICKVIEW PRODUCT -->
          <div id="quickview-wrapper">
@@ -652,7 +576,9 @@
 let obNum = urlParams.obNum;
 
 $("#odNum").html(obNum);
-
+$("#gotoPurchases").on('click',function(){
+	location.href="../member/purchases.html";
+});
 //odNum으로 order_detail정보 가져옴
 $.ajax({
    url:'http://localhost:3000/getOrderDetailInfo',
@@ -663,10 +589,10 @@ $.ajax({
       $.each(list, function (i, item) {
          //alert(item.filename);
          
-         let s = '<div class="col-lg-4" id="odfilename"><img src="../productPic/'+item.filename+'" style="height:70px;width: 70px"></div>';
+         let s = '<div class="col-lg-4" id="odfilename"><img src="../image/'+item.filename+'" style="height:85px;width: 85px; margin-left:20px"></div>';
          s+='<div class="col-lg-8">'
             +'<div id="itemName"><h5><strong>'+item.prodName+'</strong> ('+item.prodNum+') </h5></div>'
-            +'<div id="itemDetailInfo"><p>ㄴ<strong>[선택]</strong>&nbsp&nbsp'+item.color+' / '+item.weight+'kg / ( '+item.quantity+'개 )</p></div>'
+            +'<div id="itemDetailInfo"<p><strong style="font-color:#dc6262">[선택]</strong>&nbsp&nbsp'+item.color+' / '+item.weight+'kg / ( '+item.quantity+'개 )</p></div>'
             +'<div id="priceInfo">'+item.price+'원</div></div>';
          pPrice += item.price;
          $("#orderedList").append(s);
@@ -688,10 +614,10 @@ $.ajax({
       
       $.each(list, function (i, item) {
          //alert(item.name);
-         $("#obName").html(item.obName);
-         $("#obPhone").html(item.obPhone);
-         $("#deliveryInfo").html(item.obAddress);
-         $("#totalPrice").text(item.price);
+         $("#obName").html(item.obName+" <span style='font-size:15px'>(성함)</span>");
+         $("#obPhone").html(item.obPhone+" <span style='font-size:15px'>(핸드폰)</span>");
+         $("#deliveryInfo").html(item.obAddress+" <span style='font-size:15px'>(주소)</span>");
+         $("#totalPrice").text(item.price+" 원");
          
       });   
       //alert($("#productPrice").text())
@@ -703,6 +629,9 @@ $.ajax({
       alert('error');
    }
 });
+$(function(){
+    $("#footer").load("../footer.html"); 
+  });
 </script>
       <!-- all js here -->
       <!-- jquery latest version -->

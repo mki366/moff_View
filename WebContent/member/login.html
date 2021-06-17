@@ -603,11 +603,11 @@
                   
                   sessionStorage.setItem("login", JSON.stringify(data));
                   
-                  location.href = "../index.html";
+                  location.href = "mypage.html";
                }
             },
             error:function(){
-            	alert('로그인에 실패하였습니다. 아이디와 비밀번호를 확인하세요.');
+               alert('error');
             }
             
          });
@@ -709,7 +709,7 @@
                   alert(JSON.stringify(data));
                   sessionStorage.setItem("login", JSON.stringify(data));
                   window.close();
-                  location.href = "../index.html";
+                  location.href = "mypage.html";
 
                   /* opener.location.href='member/mypage.html'; 
                   window.close(); */
@@ -738,11 +738,8 @@
                }else{
                   alert(JSON.stringify(data));
                   sessionStorage.setItem("login", JSON.stringify(data));
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
-                  location.href = "../index.html";
+                  location.href = "mypage.html";
 
                //   location.href='member/mypage.html'; 
                //   window.close();
