@@ -728,6 +728,26 @@
 					alert('error');
 				}
 			});	 
+			
+			exCNT();
+			
+			
+		}
+		
+		
+		function exCNT() {
+			
+			$.ajax({
+				url:'http://localhost:3000/exCNT',
+				type:'post',		
+				data:{ 'id': login.id },
+				success:function( data ){
+						$("#p3").html(data);
+				},
+				error:function(){
+					alert('error');
+				}
+			});	  
 		}
 		
 		function obExchange() {

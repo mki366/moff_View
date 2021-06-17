@@ -67,7 +67,7 @@ a:hover,a:focus{
     padding: 20px 20px 20px 0px;
     margin-top: -5px;
     font-size: 15px;
-    color: #757575;
+    color: #000;
     line-height: 26px;
     text-align: left;
 }
@@ -98,7 +98,7 @@ a:hover,a:focus{
 
 .account-content{
 	font-size: 16px;
-	font-weight:400;
+	font-weight:300;
 	margin-top: 20px;
 }
 
