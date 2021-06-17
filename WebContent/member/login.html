@@ -48,22 +48,17 @@
       <link rel="stylesheet" href="../css/responsive.css">
       <!-- modernizr css -->
       <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
-            
-      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       
-      
-      <!--  naver login -->
-      <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-      <!--  kakao login -->
-      <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-      
-      <!-- css -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--  naver login -->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<!--  kakao login -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
       <link rel="stylesheet" href="../css/member-login.css">
       
-      <!-- icon -->
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> 
-   
    </head>
    
    <body>   
@@ -320,49 +315,56 @@
                </div>
             </div>
          </div>
-<!---------------------------------------------------------------------login start------------------------------------------------------------------------------------------>
-   <div class="login-form">      
-         <div class="form-bg">
-             <div class="container">
-              <div class="row">
-                  <div class="col-lg-offset-2 col-md-offset-2 col-md-8">
-                      <div class="form-container">
-                          <div class="form-icon">
-                              <i class="fa fa-user-circle"></i>
-                              <span class="signup"><a href="signupSelect.html">회원가입</a></span>
+
+   <div class="login-form">   
+      <div class="login-reg-panel">
+      <div class="login-info-box">
+         <h2>Have an account?</h2>
+         <p>Lorem ipsum dolor sit amet</p>
+         <label id="label-register" for="log-reg-show">LOGIN</label>
+         <input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
+      </div>
+                     
+      <div class="register-info-box">
+         <h2>Don't have an account?</h2>
+         <p>Lorem ipsum dolor sit amet</p>
+         <label id="label-login" for="log-login-show">회원가입</label>
+         <input type="radio" name="active-log-panel" id="log-login-show">
+      </div>
+                     
+      <div class="white-panel">
+         <div class="login-show">
+            <h2>LOGIN</h2>
+            <input type="text" placeholder="아이디" id="id">
+            <input type="password" placeholder="비밀번호" id="pwd">
+            <input type="button" value="로그인" id="loginBtn">
+            <div>
+               <p>SNS로 로그인하기</p>
+               <div class="row">
+                          <div class="col-md-4 delpad">
+                             <div id="naver_id_login"></div>
                           </div>
-                          <form class="form-horizontal">
-                              <h3 class="title">Member Login</h3>
-                              <div class="form-group">
-                                  <span class="input-icon"><i class="fas fa-user"></i></span>
-                                  <input class="form-control" type="text" placeholder="아이디" id="id">
-                              </div>
-                              <div class="form-group">
-                                  <span class="input-icon"><i class="fa fa-lock"></i></span>
-                                  <input class="form-control" type="password" placeholder="비밀번호" id="pwd"> <!-- <i class="fas fa-key"></i> -->
-                              </div>
-                              <button type="button" class="btn signin" id="loginBtn">Login</button>
-                              <div class="row">
-                                 <div class="col-md-4 delpad">
-                                    <div id="naver_id_login"></div>
-                                 </div>
-                                 <div class="col-md-4 delpad">
-                                    <div class="g-signin2" id="google" data-onsuccess="onSignIn" data-theme="dark"></div> 
-                             <!--        <img  class="g-signin2" src="../image/google_login.png" style="height: 45px"  data-onsuccess="onSignIn"> -->
-                                 </div>
-                                 <div class="col-md-4 delpad">
-                                       <img src="../image/kakao_login.png" style="height: 38px; cursor: pointer; margin-left: 24px;" onclick="kakaoLogin()">
-                                 </div>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
+                          <div class="col-md-4 delpad">
+                           <div class="g-signin2" id="google" data-onsuccess="onSignIn" data-theme="dark"></div> 
+                        </div>
+                          <div class="col-md-4 delpad">
+                              <img src="../image/kakao_login.png" style="height: 38px; cursor: pointer; margin-left: 24px;" onclick="kakaoLogin()">
+                        </div>
+                    </div>
+            </div>
+         </div>
+         <div class="register-show">
+            <input type="button" value="MOFF 회원가입" id="account">
+            <hr style="margin">
+            <h3>소셜미디어로 회원가입하기</h3>
+            <button type="button" id="googleSignup">구글로 시작하기</button>
+            <button type="button" id="naverSignup">네이버로 시작하기</button>
+            <button type="button" id="kakaoSignup">카카오로 시작하기</button>
+         </div>
       </div>
    </div>
-   
-<!---------------------------------------------------------------------login end----------------------------------------------------------------------------------------->
+   </div>
+
          <!-- FOOTER START -->
          <footer>
             <!-- Footer-area start -->
@@ -542,9 +544,9 @@
       
       
       <!-- naver login 설정 -->
-      var naver_id_login = new naver_id_login("E2G2Ono7tLJwqb3bgB4S", "http://localhost:8090/Moff-View/member/callback.html");
+      var naver_id_login = new naver_id_login("E2G2Ono7tLJwqb3bgB4S", "http://localhost:8090/FinalProject/member/callback.html");
         var state = naver_id_login.getUniqState();
-        naver_id_login.setButton("green", 2, 36);
+        naver_id_login.setButton("green", 2, 40);
         naver_id_login.setState(state);
    //  naver_id_login.setPopup();
         naver_id_login.init_naver_id_login();
@@ -585,10 +587,6 @@
       
       
       $('#loginBtn').click(function() {   
-         //var a = $('#id').val();
-         //var b = $('#pwd').val();
-         //alert(a);
-         //alert(b);
          
          $.ajax({
             url:"http://localhost:3000/login",
@@ -597,7 +595,7 @@
             success:function(data){            
             //   alert('success');            
                if(data == ''){
-                  alert('로그인에 실패하였습니다. 비밀번호를 확인하세요.');
+                  alert('login fail');
                }else{
                //   alert('login success');
                   
@@ -628,8 +626,8 @@
            name =  profile.getName();
            email =  profile.getEmail();
            id = id_token.substring(0,10);
-      
-       //    snsCheck();
+           
+      //     snsCheck();
            
       }
       

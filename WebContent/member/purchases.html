@@ -608,7 +608,7 @@
 						                           "<div class='tm-recommended-place bg-white'>" +
 						                               "<img  src='../image/" + item.filename + "' alt='Image' class='img-fluid tm-recommended-img'>" +
 						                                "<div class='tm-recommended-description-box'>" +
-						                                    "<h4 class=tm-recommended-title'><a class='text-bblack purtitle' href='productDetail.html?prodNum=" + item.prodNum  + "'>" + item.prodName + "</a></h4>" +
+						                                    "<h4 class=tm-recommended-title'><a class='text-bblack purtitle' href='productDetail.html?prodNum=" + item.odNum  + "'>" + item.prodName + "</a></h4>" +
 						                                    "<p class='tm-text-highlight'>색상: " + item.color + " / 옵션: " + item.prodOption + "</p>" +
 						                                    "<p class='tm-text-gray'>" + numberWithCommas( parseInt(item.price) * parseInt(item.quantity) ) + " 원 | " + item.quantity + " 개</p>" +
 						                                "</div>" +
@@ -617,12 +617,12 @@
 							                                "<div>" +
 								                                "<div class='row'>" +
 									                                "<div class='col-md-6'>" +
-										                                "<a href='../Order/exchange.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box3'>" +
+										                                "<a href='../Order/exchange.html?odNum=" + item.odNum + "' class='tm-recommended-price-box3'>" +
 										                                    "<p class='tm-recommended-price'>교환</p>" +
 										                                "</a>" +
 										                            "</div>" +
 										                            "<div class='col-md-6' style='padding-left:0px'>" +
-										                                "<a href='../Order/takeback.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box4'>" +
+										                                "<a href='../Order/takeback.html?odNum=" + item.odNum + "' class='tm-recommended-price-box4'>" +
 										                                    "<p class='tm-recommended-price'>환불</p>" +
 										                                "</a>" +
 										                          	 "</div>" +
@@ -728,6 +728,26 @@
 					alert('error');
 				}
 			});	 
+			
+			exCNT();
+			
+			
+		}
+		
+		
+		function exCNT() {
+			
+			$.ajax({
+				url:'http://localhost:3000/exCNT',
+				type:'post',		
+				data:{ 'id': login.id },
+				success:function( data ){
+						$("#p3").html(data);
+				},
+				error:function(){
+					alert('error');
+				}
+			});	  
 		}
 		
 		function obExchange() {
@@ -839,12 +859,12 @@
 							                                "<div>" +
 								                                "<div class='row'>" +
 									                                "<div class='col-md-6'>" +
-										                                "<a href='../Order/exchange.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box3'>" +
+										                                "<a href='../Order/exchange.html?odNum=" + item.odNum + "' class='tm-recommended-price-box3'>" +
 										                                    "<p class='tm-recommended-price'>교환</p>" +
 										                                "</a>" +
 										                            "</div>" +
 										                            "<div class='col-md-6' style='padding-left:0px'>" +
-										                                "<a href='../Order/takeback.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box4'>" +
+										                                "<a href='../Order/takeback.html?odNum=" + item.odNum + "' class='tm-recommended-price-box4'>" +
 										                                    "<p class='tm-recommended-price'>환불</p>" +
 										                                "</a>" +
 										                          	 "</div>" +
@@ -903,12 +923,12 @@
 							                                "<div>" +
 								                                "<div class='row'>" +
 									                                "<div class='col-md-6'>" +
-										                                "<a href='../Order/exchange.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box3'>" +
+										                                "<a href='../Order/exchange.html?odNum=" + item.odNum + "' class='tm-recommended-price-box3'>" +
 										                                    "<p class='tm-recommended-price'>교환</p>" +
 										                                "</a>" +
 										                            "</div>" +
 										                            "<div class='col-md-6' style='padding-left:0px'>" +
-										                                "<a href='../Order/takeback.html?odNum=" + item.prodNum + "' class='tm-recommended-price-box4'>" +
+										                                "<a href='../Order/takeback.html?odNum=" + item.odNum + "' class='tm-recommended-price-box4'>" +
 										                                    "<p class='tm-recommended-price'>환불</p>" +
 										                                "</a>" +
 										                          	 "</div>" +
