@@ -641,7 +641,7 @@ function getAllCommunityCount() {
 	                }
 	             }//for end
 	             
-	             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right' onclick=getAllCommunity("+ pageN +")></i></a></li>";
+	             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right' onclick=getAllCommunity("+ (pageN - 1) +")></i></a></li>";
 	             page += "</ul>";
 	             page += "</div>";
 	             
@@ -750,7 +750,7 @@ function getCommunityCount() {
 	                }
 	             }//for end
 	             
-	             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right' onclick=getFilterCommunity("+ pageN +")></i></a></li>";
+	             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right' onclick=getFilterCommunity("+ (pageN - 1) +")></i></a></li>";
 	             page += "</ul>";
 	             page += "</div>";
 	             
