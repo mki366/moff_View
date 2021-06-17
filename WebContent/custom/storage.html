@@ -171,7 +171,16 @@ z-index: 100;
     left: 0;
     }  
 
-    
+     #price{
+		font-size:28px;
+	    font-weight: 600;
+	    color: #444;
+		padding-bottom: 30px;
+ 	}
+
+	.fleft{
+		float:left;
+	}
     
 </style>
 
@@ -447,7 +456,7 @@ z-index: 100;
  	 		
 	 	 	<div class='storageZone' style="position:relative;">
 	 
-	 			 	<div id="zone" style="WIDTH: 250PX;HEIGHT: 250PX; " > 	<img src="../images/storageee.png" > 	</div>
+	 			 	<div id="zone" style="WIDTH: 250PX;HEIGHT: 250PX; " > 	<img src="../images/storage/storage.png" > 	</div>
 	
 	 		 </div>
  	 
@@ -472,22 +481,22 @@ z-index: 100;
   
     <div class="tab-content" style="padding-top: 50px;">
     <div class="tab-pane active" id="home7">
-     <img src="../images/storage/storageW1.png"  style="width: 200px;" onclick="stor(21)"><br>
-		   <img  src="../images/storage/storageW2.png" style="width: 200px; " onclick="stor(33)"><br>
- <img  src="../images/storage/storageW3.png" style="width: 200px;" onclick="stor(34)"><br>
+     <img src="../images/storage/storageW1.png"  style="width: 200px;" onclick="stor(44)"><br>
+		   <img  src="../images/storage/storageW2.png" style="width: 200px; " onclick="stor(45)"><br>
+ <img  src="../images/storage/storageW3.png" style="width: 200px;" onclick="stor(43)"><br>
 
  </div>
     <div class="tab-pane" id="profile7">
-  <img  src="../images/storage/storageB1.png"  style="width: 200px;" onclick="stor(30)"><br>
- <img  src="../images/storage/storageB2.png" style="width: 200px; " onclick="stor(31)"><br>
- <img  src="../images/storage/storageB2.png" style="width: 200px;" onclick="stor(32)"><br>
+  <img  src="../images/storage/storageB1.png"  style="width: 200px;" onclick="stor(47)"><br>
+ <img  src="../images/storage/storageB2.png" style="width: 200px; " onclick="stor(48)"><br>
+ <img  src="../images/storage/storageB2.png" style="width: 200px;" onclick="stor(46)"><br>
    </div>
     </div>
 
     </div>
  <div style="margin-left: 20px">
 
-    <div id="price"><div id="calprice" class="fleft"></div><div class="fleft">원</div></div>
+    <div id="price" class="mb-20"><div id="calprice" class="fleft"></div><div class="fleft">원</div></div>
     <button type="button" class="btn btn-primary" onclick="addStrgCart()">장바구니</button>
       <button type="button" class="btn btn-primary" onclick="addStrgWish()">위시리스트</button>
  </div>
@@ -646,10 +655,8 @@ z-index: 100;
         
        
 <script type="text/javascript">
+
 let login = JSON.parse(sessionStorage.getItem("login"));
-alert(login.id);  
-
-
 
 	// 품목별 수량
 	 var frame=1;
@@ -659,11 +666,9 @@ alert(login.id);
 	 var top2=0;
 	 var base2=0;
 	 var box2=0;
-	
-
 	 
-	 $("#productModal").modal("show");
-	 $("#calprice").html(numberWithCommas(onePrice(57))); 
+//	 $("#productModal").modal("show");
+	 $("#calprice").html(numberWithCommas(onePrice(42))); 
 	  
 	  var dragobject={
 				z: 0, x: 0, y: 0, offsetx : null, offsety : null, targetobj : null, dragapproved : 0,
@@ -721,7 +726,7 @@ alert(login.id);
  		   
  		  // 가격조정
  		  var oldPrice = Number($("#calprice").text().replace(",",""));
-       	  var newPrice = oldPrice + Number(dto.price);
+       	  var newPrice = oldPrice + Number(dto.oriPrice);
      	  $("#calprice").html(numberWithCommas(newPrice));
  		  
  		  },
@@ -732,25 +737,26 @@ alert(login.id);
  	 
 
  // 수량 늘리기
- 	if(prodNum==58){
+ 	if(prodNum==44){
  		top1++;
- 	}else if(prodNum==59){
+ 	}else if(prodNum==43){
  		box1++;
- 	}else if(prodNum==60){
+ 	}else if(prodNum==45){
  		base1++;
- 	}else if(prodNum==61){
+ 	}else if(prodNum==47){
  		top2++;
- 	}else if(prodNum==62){
+ 	}else if(prodNum==46){
  		box2++;
- 	}else if(prodNum==63){
+ 	}else if(prodNum==48){
  		base2++;
  	}
- 
+
 
  }
 
 		
-function add() {
+	function add() {
+
 			let left = 190; 
 
 			if(frame < 4){
@@ -761,7 +767,7 @@ function add() {
 				frame++;
 				
 				 var oldPrice = Number($("#calprice").text().replace(",",""));
-			     var newPrice = oldPrice + Number(onePrice(57));
+			     var newPrice = oldPrice + Number(onePrice(42));
 			     $("#calprice").html(numberWithCommas(newPrice));
 		    
 		    }else{
@@ -778,33 +784,33 @@ function add() {
 	        var imgNum = content.lastChild.id;
 	        var updatePrice=0;
 	
-	        if(imgNum==57 && frame > 1){
+	        if(imgNum==42 && frame > 1){
 	        	content.removeChild(content.lastChild);
-	        	updatePrice = onePrice(57);
+	        	updatePrice = onePrice(42);
 	        	frame--;
-	        }else if(imgNum==58){
+	        }else if(imgNum==44){
 	        	content.removeChild(content.lastChild);
-	        	updatePrice = onePrice(58);
+	        	updatePrice = onePrice(44);
 	     		top1--;
-	     	}else if(imgNum==59){
+	     	}else if(imgNum==43){
 	     		content.removeChild(content.lastChild);
-	     		updatePrice = onePrice(59);
+	     		updatePrice = onePrice(43);
 	     		box1--;
-	     	}else if(imgNum==60){
+	     	}else if(imgNum==45){
 	     		content.removeChild(content.lastChild);
-	     		updatePrice = onePrice(60);
+	     		updatePrice = onePrice(45);
 	     		base1--;
-	     	}else if(imgNum==61){
+	     	}else if(imgNum==47){
 	     		content.removeChild(content.lastChild);
-	     		updatePrice = onePrice(61);
+	     		updatePrice = onePrice(47);
 	     		top2--;
-	     	}else if(imgNum==62){
+	     	}else if(imgNum==46){
 	     		content.removeChild(content.lastChild);
-	     		updatePrice = onePrice(62);
+	     		updatePrice = onePrice(46);
 	     		box2--;
-	     	}else if(imgNum==63){
+	     	}else if(imgNum==48){
 	     		content.removeChild(content.lastChild);
-	     		updatePrice = onePrice(63);
+	     		updatePrice = onePrice(48);
 	     		base2--;
 	     	}
 	  
@@ -850,47 +856,60 @@ function add() {
 
 	function addStrgCart(){
 
-		alert(login.id);
-		alert(frame);
+	/* 	alert(frame);
 		alert(top1);
 		alert(base1);
 		alert(box1);
 		alert(top2);
 		alert(base2);
-		alert(box2);
-		
-		$.ajax({
-			url:"http://localhost:3000/addStrgCart",
-			type:'post',
-			data:{ id:login.id, 'frame':frame, 'top1':top1, 'base1':base1, 'box1':box1, 
-				'top2':top2, 'base2':base2, 'box2':box2 },
-			success:function(){				
-				alert('suc');
-			},
-			error:function(){
-				alert('error');
-			}
+		alert(box2); */
+
+	 
+		if(login==null){
+			alert('로그인이 필요한 서비스입니다');
+			location.href="../member/login.html";
+		}else{
 			
-		});
+			$.ajax({
+				url:"http://localhost:3000/addStrgCart",
+				type:'post',
+				data:{ id:login.id, 'frame':frame, 'top1':top1, 'base1':base1, 'box1':box1, 
+					'top2':top2, 'base2':base2, 'box2':box2 },
+				success:function(){				
+					alert('suc');
+				},
+				error:function(){
+					alert('error');
+				}
+				
+			});
+		}
 		
 	}
 	
 	
 	function addStrgWish(){
 		
-		$.ajax({
-			url:"http://localhost:3000/addStrgWish",
-			type:'post',
-			data:{ id:login.id, 'frame':frame, 'top1':top1, 'base1':base1, 'box1':box1, 
-				'top2':top2, 'base2':base2, 'box2':box2 },
-			success:function(){				
-				alert('suc');
-			},
-			error:function(){
-				alert('error');
-			}
-			
-		});
+	
+		if(login==null){
+			alert('로그인이 필요한 서비스입니다');
+			location.href="../member/login.html";
+		}else{
+				
+			$.ajax({
+				url:"http://localhost:3000/addStrgWish",
+				type:'post',
+				data:{ id:login.id, 'frame':frame, 'top1':top1, 'base1':base1, 'box1':box1, 
+					'top2':top2, 'base2':base2, 'box2':box2 },
+				success:function(){				
+					alert('suc');
+				},
+				error:function(){
+					alert('error');
+				}
+				
+			});
+		}
 		
 	}
   
