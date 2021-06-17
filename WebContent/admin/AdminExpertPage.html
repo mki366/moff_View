@@ -8,9 +8,21 @@
     <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
+    <!-- chart -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    			
+      <link rel="stylesheet" href="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.css">
+<script src="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.js"></script>
+<!--  https://apexcharts.com/ -->
+ <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <style>
 .pagination {
   display: inline-block;
@@ -34,15 +46,87 @@
   border-radius: 5px;
 }
 </style>
-
 <style type="text/css">
-td{
-	padding:0px;
-}
-th{
-	padding:0px;
+
+
+ body {
+     background-color: #f9f9fa
+ }
+
+ .page-container {
+     margin-bottom: 100px
+ }
+
+ .flex {
+     -webkit-box-flex: 1;
+     -ms-flex: 1 1 auto;
+     flex: 1 1 auto
+ }
+
+ @media (max-width:991.98px) {
+     .padding {
+         padding: 1.5rem
+     }
+ }
+
+ @media (max-width:767.98px) {
+     .padding {
+         padding: 1rem
+     }
+ }
+
+ .padding {
+     padding: 5rem
+ }
+
+ .card {
+     background: #fff;
+     border-width: 0;
+     border-radius: .25rem;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+     margin-bottom: 1.5rem
+ }
+
+ .card {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     min-width: 0;
+     word-wrap: break-word;
+     background-color: #fff;
+     background-clip: border-box;
+     border: 1px solid rgba(19, 24, 44, .125);
+     border-radius: .25rem
+ }
+
+ .card-header {
+     padding: .75rem 1.25rem;
+     margin-bottom: 0;
+     background-color: rgba(19, 24, 44, .03);
+     border-bottom: 1px solid rgba(19, 24, 44, .125)
+ }
+
+ .card-header:first-child {
+     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+ }
+
+ card-footer,
+ .card-header {
+     background-color: transparent;
+     border-color: rgba(160, 175, 185, .15);
+     background-clip: padding-box
+ }
+.card-title{
+
+font-weight: 800
+
 }
 
+.sizeIMG{
+	width: 550px;
+	height: 700px;
+
+}
 </style>
 </head>
 
@@ -71,10 +155,15 @@ th{
         <!--**********************************
             Nav header start
         ***********************************-->
-         <div class="nav-header">
-            <div class="brand-logo" style="margin: 20px 20px 20px 20px">
-                    <span class="logo-compact"><img src="./images/1122.png" alt=""></span>
-                    <span class="brand-title" style="font-size: 24px; color:white;">MOFF</span>
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="images/logo-text.png" alt="">
+                    </span>
+                </a>
             </div>
         </div>
         <!--**********************************
@@ -84,18 +173,10 @@ th{
         <!--**********************************
             Header start
         ***********************************-->
-       <div class="header">    
-            <div class="header-content clearfix">
-                
-                <div class="nav-control">
-                    <div class="hamburger">
-                        <span class="toggle-icon"><i class="icon-menu"></i></span>
-                    </div>
-                </div>
-                <div class="header-left">
-                    <div class="input-group icons">
-                    </div>
-                </div>
+            <div class="nav-header">
+            <div class="brand-logo" style="margin: 20px 20px 20px 20px">
+                    <span class="logo-compact"><img src="./images/1122.png" alt=""></span>
+                    <span class="brand-title" style="font-size: 24px; color:white;">MOFF</span>
             </div>
         </div>
         <!--**********************************
@@ -105,7 +186,7 @@ th{
         <!--**********************************
             Sidebar start
         ***********************************-->
-<div class="nk-sidebar">           
+       <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">관리자 페이지</li>
@@ -177,77 +258,171 @@ th{
         <!--**********************************
             Content body start
         ***********************************-->
+        <script type="text/javascript">
+let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+    return paramPair.split(/=(.+)?/).slice(0, 2);
+}).reduce(function(obj, pairArray) {
+    obj[pairArray[0]] = pairArray[1];
+    return obj;
+}, {});
+</script>
         <div class="content-body">
-		 <div class="container-fluid ">
-            <div class="row page-titles mx-0" style="background-color: #fff">
 
-							<select id="_choice" name="choice"  style="height: 35px; width: 80px;  border: none;">
-								<option value="" selected="selected">선택</option>
-								<option value="prodName">상품명</option>
-								<option value="category">카테고리</option>
-								<option value="subCategory">서브카테고리</option>
-								<!-- <option value="content">내용</option>
-								<option value="writer">작성자</option> -->
-							</select>
-                            <div style="width:300px; float:right; " class="input-group icons">
-				        			<input type="text" class="form-control" placeholder="상품명 입력" id="_searchWord" name="searchWord" style="border: none;"/>
-				           			<button type="button" class="btn mb-1 btn-primary" id="btnSearch">검색
-				            		</button>
-				        	</div>
-                           <!-- <div style="float: left">
-                           </div> -->
-			 </div>
-            <!-- row -->
-            <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-             		  <div class="card-body" style="text-align: center">
-                                <h4 class="card-title" style="padding: 20px">상품 리스트</h4>
-                                <div class="table-responsive"  style="margin-left: 30px;">
-                                    <table class="table header-border table-hover verticle-middle">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">상품명</th>
-                                                <th scope="col">카테고리</th>
-                                                <th scope="col">서브카테고리</th>
-                                                <th scope="col">추가</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="adminList">
-                                           <!--  <tr>
-                                                <th>3</th>
-                                                <td>Milk Powder</td>
-                                                <td>
-                                                    <div class="progress" style="height: 10px">
-                                                        <div class="progress-bar gradient-3" style="width: 70%;" role="progressbar"><span class="sr-only">70% Complete</span>
-                                                        </div>
-                                                    </div> 
-                                                </td>
-                                                <td><span class="label btn-rounded gradient-3">70%</span>
-                                                </td>
-                                            </tr> -->
-                                        </tbody>
-                                    </table>
+            <div class="container-fluid mt-3">
+            
+              
+
+                <div class="row">
+                        
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">시공업체 정보</h4>
+                                    
+                                    <table class="table table-hover appendTable">
+
+
+									
+									<tbody>	
+									</tbody>
+									
+									</table>
+                                  
+                                  
                                 </div>
                             </div>
                             
-                             <div id="adminListPagination" align="center"></div>                     
+                          
+                
+                     
+                      
                     </div>
-                </div>
 
-
-
-
-
-
-
-
-
+          
+          
+          <script type="text/javascript">
+          
          
-   
+          
+          
+          
+$(document).ready(function () {
+	
+
+	let eNUM = urlParams.eNUM;
+	
+	//memNum 넘어오는지 확인
+	//alert("memNum:" + memNum);
+	
+	 $.ajax({
+		
+		url:"http://localhost:3000/ExpertDetail",
+		type:'post',
+		data:{'eNUM':eNUM },
+		success: function(Detail) {
+			//alert("success");
+			
+			let str = "<tr>"
+						+ "<th>시공업체 가입자 이름</th>" 
+						+ "<td><p id='deliname'>" + Detail.name + "</p></td>"
+						
+						+ "</tr>"
+						
+						
+						+ "<tr>"
+						+ "<th>아이디</th>" 
+						+ "<td>" + Detail.id + "</td>"
+						+ "</tr>"
+						
+						
+						+ "<tr>"
+						+ "<th>비밀번호</th>" 
+						+ "<td>" + Detail.pwd + "</td>"
+						+ "</tr>"
+						
+						+ "<tr>"
+						+ "<th>닉네임</th>" 
+						+ "<td>" + Detail.nickname + "</td>"
+						+ "</tr>"
+						
+						+"<tr>"
+						+"<th>생년월일</th>"
+						+"<td>" + Detail.bDate + "</td>"
+						+"</tr>"
+						
+						+"<tr>"
+						+"<th>전화번호</th>"
+						+"<td>" + Detail.phone + "</td>"
+						+"</tr>"
+						
+						+"<tr>"
+						+"<th>이메일주소</th>"
+						+"<td>" + Detail.email + "</td>"
+						+"</tr>"
+
+
+						+"<tr>"
+						+"<th>주민등록사진</th>"
+						+"<td><img class='sizeIMG' src='http://localhost:3000/exper/" + Detail.idCard +"'></td>"
+						+ "</tr>"
+						
+						+"<tr>"
+						+"<th>사업자등록증</th>"
+						+"<td><img class='sizeIMG' src='http://localhost:3000/exper/" + Detail.registration +"'></td>"
+						+ "</tr>"
+						
+				
+						$(".appendTable").append(str);	
+						//alert(dto.deliveryAdmi);
+			
+				
+			//배달 신청폼	
+		},
+		error:function(){
+			alert('error');
+		}
+	}); 
+	
+	
+});
+
+
+function signin() {
+	
+	let memNum = urlParams.memNum;
+	
+
+	$.ajax({
+		
+		url:"http://localhost:3000/deliveryAdmi",
+		type:"post",
+		data:{'memNum':memNum },
+		success: function(admi) {
+			
+			if(admi){
+			
+				alert("배달원으로 승인하였습니다");
+				location.href="DeliveryAdmiList.html";
+			}else{
+				alert("승인이 되지않았습니다.");
+			}
+		},
+		error:function(){
+			alert("error");
+		}
+		
+		
+		
+		
+		
+	});//ajax end
+	
+}
+</script>
+          
+          
+         
+            </div>
             <!-- #/ container -->
-        </div>
         </div>
         <!--**********************************
             Content body end
@@ -259,7 +434,7 @@ th{
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">관리자페이지</a> 2018</p>
             </div>
         </div>
         <!--**********************************
@@ -278,110 +453,29 @@ th{
     <script src="js/settings.js"></script>
     <script src="js/gleek.js"></script>
     <script src="js/styleSwitcher.js"></script>
-    
-    
-<script type="text/javascript">
 
-    <!-- adminProductList -->
+    <!-- Chartjs -->
+    <script src="plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="plugins/d3v3/index.js"></script>
+    <script src="plugins/topojson/topojson.min.js"></script>
     
-    adminProductList(0);
-    adminProductCount();
-    
-    $("#searchBtn").click(function () {
-    	 adminProductList(0);
-    	 adminProductCount();
-	});
-    
-    function adminProductList(pagenum) {
-    	
-    //	alert('pagenum' + pagenum);
-		
-    	$.ajax({
-    		url:'http://localhost:3000/adminProductList',
-    		type:'get',
-    		data:{page:pagenum, choice:$("#_choice").val(), search:$("#_search").val()},
-    		success:function(list){
-    		//	alert('adminProductList succ' + JSON.stringify(list));
-    				
-    			$(".listRemove").remove();
-    			$.each(list, function(i, data){
-    				let listStr = '<tr class="listRemove">'
-				      +              '<th>' + data.prodNum + '</th>'
-				      +              '<td><a href="adminProductDetail.html?prodNum=' + data.prodNum + '">'+ data.prodName + '</a></td>'
-				      +              '<td>' + data.category + '</td>'
-				      +              '<td>' + data.subCategory + '</td>'
-				      +              "<td><a href='#;' onclick='add(" + '"' + data.prodNum + '"' + ")'><span class='label btn-rounded gradient-3'>옵션추가</span></a></td>"
-				      +            '</tr>'
-				     $("#adminList").append(listStr);
-    				
-    			});
-    		
-    		
-    		},
-    		error:function(){
-    			alert('adminProductList err');
-    		}
-    	});
-	}
-
-    
-    
-    function add(prodNum){
-    	location.href="adminProductAdd.html?prodNum=" + prodNum;
-    }
-    
-    
-    
-    
-    
-    
-    function adminProductCount(){
-    	
-    	$.ajax({
-    		url:'http://localhost:3000/adminProductCount',
-    		type:'get',
-    		data:{ page:0, choice:$("#_choice").val(), search:$("#_search").val()},
-   	      	success:function( pagenum ){
-   	     //     alert("페이지 확인:" + pagenum);
-   	          
-   	      	//페이지가 아예 없지 않을시에
-      	      	 if(pagenum != 0 ){
-   					var page = "<div class='pagination' style='margin-top: 20px;' align='center'>";
-
-   					page += "<a href='#' >&laquo;</a>";
-   					
-   					//페이징 생성
-   					for( pageN = 0; pageN < pagenum; pageN++ ){
-   						if(pagenum == pageN){
-   							page += "<a class='active'>" + (pageN + 1) +"</a>";
-   						}else if(pagenum != pageN){
-   							page += "<a href='#'  onclick='adminProductList("+ pageN +"); return false;'> "+ (pageN + 1) + "</a>";
-   						}
-   					}//for end
-   					
-   					page += "<a href='#' onclick='adminProductList("+ (pageN - 1) +")'>&raquo;</a>";
-   					page += "</div>";
-   					
-   					$("#adminListPagination").html(page);
-   				}//if end
-    		
-    		
-    		},
-    		error:function(){
-    			alert('adminProductCount err');
-    		}
-    		
-    	});
-    }
+    <!-- <script src="plugins/datamaps/datamaps.world.min.js"></script> -->
+    <!-- Morrisjs -->
+    <script src="plugins/raphael/raphael.min.js"></script>
+    <script src="plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="plugins/chartist/js/chartist.min.js"></script>
+    <script src="plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
 
 
-    
-    
-</script>
-    
-    
-    
-    
+
+    <script src="js/dashboard/dashboard-1.js"></script>
 
 </body>
 

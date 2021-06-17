@@ -19,7 +19,7 @@
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     			
-      <link rel="stylesheet" href="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.css">
+<link rel="stylesheet" href="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.css">
 <script src="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.js"></script>
 <!--  https://apexcharts.com/ -->
  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -225,7 +225,7 @@ font-weight: 800
                             <li><a href="adminProductWrite.html">상품등록</a></li>
                             <li><a href="adminProductList.html">상품리스트</a></li>
                             <li><a href="adminStockList.html">재고관리</a></li>
-                                <li><a href="AdminAgeProduct.html">연령별 구매순위</a></li>
+                            <li><a href="AdminAgeProduct.html">연령별 구매순위</a></li>
                             <!-- <li><a href="adminProduct.html">주문통계</a></li> -->
                         </ul>
                     </li>
@@ -258,258 +258,265 @@ font-weight: 800
         <!--**********************************
             Content body start
         ***********************************-->
-        <script type="text/javascript">
-let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
-    return paramPair.split(/=(.+)?/).slice(0, 2);
-}).reduce(function(obj, pairArray) {
-    obj[pairArray[0]] = pairArray[1];
-    return obj;
-}, {});
-</script>
+       
         <div class="content-body">
 
             <div class="container-fluid mt-3">
             
               
 
-                <div class="row">
-                        
+                 <div class="row">
+                        <div class="col-lg-6 col-md-12">
                             <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">배달원 신청서</h4>
-                                    
-                                    <table class="table table-hover appendTable">
-
-
-									
-									<tbody>	
-									</tbody>
-									
-									</table>
-                                  
-                                  
-                                </div>
-                            </div>
                             
-                          
-                
-                     
-                      
-                    </div>
-
-                <div class="row">
-                        
-                            <div class="card" style="width: 500px">
                                 <div class="card-body">
-                                    <h4 class="card-title">라이더 결과 전송</h4>
-                                    
-                                    <div class="table-responsive" >
-									<form method="post" id="smsForm">
-									 
-									   <table class="table table-bordered">
-									   <tr class="table-info">
-									    <th>라이더 지원자</th>
-									     <td><input style="width: 200px" id="from" type="text" name="from" readonly="readonly"/></td>
-									    </tr>
-									    <tr class="table-info">
-									    <th>결과 입력</th>
-									     <td><textarea   style="width: 200px" id="text" name="text">안녕하세요. MOFF입니다. 배달 라이더지원이 승인되었습니다.</textarea></td>
-									    <tr class="table-info">
-									    <td colspan="2" align="center"> 
-									     <input type="button" class="btn mb-1 btn-primary" onclick="sendSMS('sendSms')" value="전송하기" />
-									    </td>
-									    </tr>
-									    </table>
-									  </form>
-									  </div>
-									 
-                                    
-                                  
-                                  
-                                </div>
-                            </div>
-                            
-                                  <div class="card" style="width: 450px"> 
-                                <div class="card-body">
-                                    <h4 class="card-title" style="margin-bottom: 70px">배달원 승인</h4>
-                                    
-                               
-									  
-									  <div  class="container" id="appendsignin">
-										<button  class="btn mb-1 btn-primary" style="width: 250px" onclick = "golist()">회원관리 페이지로 이동</button>
+                                    <h4 class="card-title">50세이상 ~ 60세 미만 구매순위</h4>
+                                    <div>
+									    <div>
+									            <div class="container-fluid d-flex justify-content-center">
+									               <div class=" ct-chart ct-square chartjs-render-monitor"></div>
+									            </div>
+									       
+									    </div>
 									</div>
-                                    
-                                  
-                                  
                                 </div>
                             </div>
                             
+                        </div>    
+                        <!-- 생년월일 가입자 -->
+                       <div class="row">
+                           <div class="col-lg-6 col-md-12">
+                            <div class="card">
                             
-                          
-                
+                                <div class="card-body">
+                                    <h4 class="card-title">60세이상 구매순위</h4>
+                                    <div>
+									    <div>
+									            <div class="container-fluid d-flex justify-content-center">
+									               <div class=" ct-chart2 ct-square chartjs-render-monitor"></div>
+									            </div>
+									       
+									    </div>
+									</div>
+                                </div>
+                            </div>
+                            
+                        </div>    
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                            <div class="card">
+                            
+                                <div class="card-body">
+                                    <h4 class="card-title">40세이상 ~ 50세 미만 구매순위</h4>
+                                    <div>
+									    <div>
+									            <div class="container-fluid d-flex justify-content-center">
+									               <div class=" ct-chart2 ct-square chartjs-render-monitor"></div>
+									            </div>
+									       
+									    </div>
+									</div>
+                                </div>
+                            </div>
+                            
+                        </div>    
                      
-                      
-                    </div>
-            
+                      </div>
+                    
+
+          
           
           <script type="text/javascript">
           
-          function golist() {
-        		location.href="AdminMember.html";
-        	}
+         
 
-          
-          
-          function sendSMS(pageName){
 
-        	  
+          $(document).ready(function() {
           	
           	$.ajax({
-          		
-          		url:"http://localhost:3000/sendSms",
-          		type:'post',
-          		data:{from:$("#from").val(), text:$("#text").val() },
-          		success: function(dto) {
-          			alert("승인여부 문자가 발송되었습니다.");
+          		url:"http://localhost:3000/AgeBuyRank",
+          		type:"post",
+          		data: JSON.stringify(),
+          		success:function(listA){
+          			
+          			//50세이상 ~ 60세미만
+          			//상품이름
+  					var Arr1 = new Array();
+  					//연령대 순서대로
+  					var Arr2 = new Array();
+  					
+  					
+  					
+      				$.each(listA, function(i, val){
+      					
+      					
+      					//alert(val.bdate);
+      					
+      						    	if(val.bdate == "50세이상 ~ 60세미만"){
+      						    		
+      						    		//alert(val.prodname);
+      						    		//alert(val.countp);
+      						    		
+      						    		Arr1.push( val.prodname );
+      						    		Arr2.push( val.countp );
+      						    	}
+      						 		
+      						    	//alert(Arr2);	    
+      								
+      	    				    	
+      	    				        var data = {
+      	    				            labels: Arr1,
+      	    				            series: [ Arr2]
+      	    				        };
+      	    				        var options = {
+      	    				            seriesBarDistance: 15
+      	    				        };
+      	    				        var responsiveOptions = [
+      	    				            ['screen and (min-width: 641px) and (max-width: 1024px)', {
+      	    				                seriesBarDistance: 10,
+      	    				                axisX: {
+      	    				                    labelInterpolationFnc: function(value) {
+      	    				                        return value;
+      	    				                    }
+      	    				                }
+      	    				            }],
+      	    				            ['screen and (max-width: 640px)', {
+      	    				                seriesBarDistance: 5,
+      	    				                axisX: {
+      	    				                    labelInterpolationFnc: function(value) {
+      	    				                        return value[0];
+      	    				                    }
+      	    				                }
+      	    				            }]
+      	    				        ];
+      	    				        new Chartist.Bar('.ct-chart', data, {
+      	    				            showPoint: true,
+      	    				        });
+      						    
+      						});
+
+      						
+      				
+          				
+          				 
+          				
+          				 
+      				
           			
           			
           		},
           		error:function(){
-          			alert('error');
+          			alert("Hash error");
           		}
-          	}); 
+          		
+          		
+          	});//ajax
           	
           	
           	
-          }
+          	
+          	
+          });//docu
+</script>
+
           
+          <script type="text/javascript">
           
-          
-$(document).ready(function () {
-	
+         
+		
 
-	let memNum = urlParams.memNum;
-	
-	//memNum 넘어오는지 확인
-	//alert("memNum:" + memNum);
-	
-	 $.ajax({
-		
-		url:"http://localhost:3000/getdeliveryman",
-		type:'post',
-		data:{'memNum':memNum },
-		success: function(dto) {
-			//alert("success");
-			
-			let str = "<tr>"
-						+ "<th>신청자 이름</th>" 
-						+ "<td><p id='deliname'>" + dto.name + "</p></td>"
-						
-						+ "</tr>"
-						
-						
-						+ "<tr>"
-						+ "<th>아이디</th>" 
-						+ "<td>" + dto.id + "</td>"
-						+ "</tr>"
-						
-						
-						+ "<tr>"
-						+ "<th>비밀번호</th>" 
-						+ "<td>" + dto.pwd + "</td>"
-						+ "</tr>"
-						
-						+ "<tr>"
-						+ "<th>닉네임</th>" 
-						+ "<td>" + dto.nickname + "</td>"
-						+ "</tr>"
-						
-						+"<tr>"
-						+"<th>생년월일</th>"
-						+"<td>" + dto.bdate + "</td>"
-						+"</tr>"
-						
-						+"<tr>"
-						+"<th>전화번호</th>"
-						+"<td>" + dto.phone + "</td>"
-						+"</tr>"
-						
-						+"<tr>"
-						+"<th>이메일주소</th>"
-						+"<td>" + dto.email + "</td>"
-						+"</tr>"
+          $(document).ready(function() {
+        	  
+        	  age40();
+        	  
+        	  
+          	function age40(){
+          	$.ajax({
+          		url:"http://localhost:3000/AgeBuyRank",
+          		type:"post",
+          		data: JSON.stringify(),
+          		success:function(listA){
+          			
+          			
+          			//40세이상 ~ 50세미만
+          			//상품이름
+  					var Arr3 = new Array();
+  					//연령대 순서대로
+  					var Arr4 = new Array();
+  					
+  					
+  					
+  					
+  					
+  					
+      				$.each(listA, function(i, val){
+      					
+      					
+      					//alert(val.bdate);
+      					
+      						  
+      						    if(val.bdate == "40세이상 ~ 50세미만"){
+      						    		Arr3.push( val.prodname );
+      						    		Arr4.push( val.countp );
+      						    	}
+      						 		
+      						    	//alert(Arr2);	    
+      								
+      	    				    	
+      	    				        var data = {
+      	    				            labels: Arr3,
+      	    				            series: [ Arr4]
+      	    				        };
+      	    				        var options = {
+      	    				            seriesBarDistance: 15
+      	    				        };
+      	    				        var responsiveOptions = [
+      	    				            ['screen and (min-width: 641px) and (max-width: 1024px)', {
+      	    				                seriesBarDistance: 10,
+      	    				                axisX: {
+      	    				                    labelInterpolationFnc: function(value) {
+      	    				                        return value;
+      	    				                    }
+      	    				                }
+      	    				            }],
+      	    				            ['screen and (max-width: 640px)', {
+      	    				                seriesBarDistance: 5,
+      	    				                axisX: {
+      	    				                    labelInterpolationFnc: function(value) {
+      	    				                        return value[0];
+      	    				                    }
+      	    				                }
+      	    				            }]
+      	    				        ];
+      	    				        new Chartist.Bar('.ct-chart2', data, {
+      	    				            showPoint: true,
+      	    				        });
+      						    
+      						});
 
-
-						+"<tr>"
-						+"<th>운전면허증</th>"
-						+"<td><img class='sizeIMG' src='http://localhost:3000/delidata/" + dto.license +"'></td>"
-						+ "</tr>"
-						
-						+"<tr>"
-						+"<th>통장사본</th>"
-						+"<td><img class='sizeIMG' src='http://localhost:3000/delidata/" + dto.bank +"'></td>"
-						+ "</tr>"
-						
-						
-						
-						+"<tr>"
-						+"<th>화물차 사용신고 필증, 자가용 화물차 사용신고증</th>"
-						+"<td><img class='sizeIMG' src='http://localhost:3000/delidata/" + dto.carNum +"'></td>"
-						+ "</tr>"
-						
-						$("#from").val(dto.phone);
-						
-						$(".appendTable").append(str);	
-						//alert(dto.deliveryAdmi);
-			var signbtn = "<button   class='btn mb-1 btn-primary' onclick = 'signin()'>승인하기</button>";			
-				//승인이 안됬을떄만 버튼 표시	
-				if(dto.deliveryAdmi == "" || dto.deliveryAdmi == 0){
-						$("#appendsignin").append(signbtn);	
-				}
-				
-				
-			//배달 신청폼	
-		},
-		error:function(){
-			alert('error');
-		}
-	}); 
-	
-	
-});
-
-
-function signin() {
-	
-	let memNum = urlParams.memNum;
-	
-
-	$.ajax({
-		
-		url:"http://localhost:3000/deliveryAdmi",
-		type:"post",
-		data:{'memNum':memNum },
-		success: function(admi) {
-			
-			if(admi){
-			
-				alert("배달원으로 승인하였습니다");
-				location.href="DeliveryAdmiList.html";
-			}else{
-				alert("승인이 되지않았습니다.");
-			}
-		},
-		error:function(){
-			alert("error");
-		}
-		
-		
-		
-		
-		
-	});//ajax end
-	
-}
+      						
+      				
+          				
+          				 
+          				
+          				 
+      				
+          			
+          			
+          		},
+          		error:function(){
+          			alert("Hash error");
+          		}
+          		
+          		
+          	});//ajax
+          	
+          	
+          	}
+          	
+          	
+          });//docu
 </script>
           
           
