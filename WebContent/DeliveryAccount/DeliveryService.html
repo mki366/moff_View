@@ -72,6 +72,13 @@
  
  }
 		
+		
+		
+		
+		.cart-page-menu li.active a {
+    background: #3b3833 none repeat scroll 0 0;
+    color: #fff;
+}
 		</style>
 	<!-- delivery service -->
 		
@@ -327,7 +334,7 @@
 			</div>
 			<!-- Mobile-menu end -->
 			<!-- HEADING-BANNER START -->
-			<div class="heading-banner-area overlay-bg">
+			<div class="heading-banner-area">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -337,8 +344,8 @@
 								</div>
 								<div class="breadcumbs pb-15">
 									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li>Delivery Service</li>
+										<li><a href="index.html" style="color:#5d5a55">Home</a></li>
+										<li style="color:#5d5a55">Delivery Service</li>
 									</ul>
 								</div>
 							</div>
@@ -623,7 +630,7 @@
 											//alert("pagination()");
 											
 											$.ajax({
-												url:"http://localhost:3000/Pagination",
+												url:"http://localhost:3000/PaginationDeli",
 												type:"get",
 												data:{ page:0, choice:$("._choice").val(), search:$("._searchWord").val() },
 												success:function( pagenum ){
