@@ -84,11 +84,11 @@
 							<div class="header-search-mobile">
 								<div class="table">
 									<div class="table-cell">
-										<ul>
-											<li><a class="search-open" href="#"><i class="zmdi zmdi-search"></i></a></li>
+										<ul class="header_Right">
+											<!-- <li><a class="search-open" href="#"><i class="zmdi zmdi-search"></i></a></li>
 											<li><a href="./member/login.html"><i class="zmdi zmdi-lock"></i></a></li>
 											<li><a href="./member/mypage.html"><i class="zmdi zmdi-account"></i></a></li>
-											<li><a href="./member/cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
+											<li><a href="./member/cart.html"><i class="zmdi zmdi-favorite"></i></a></li> -->
 										</ul>
 									</div>
 								</div>
@@ -109,19 +109,19 @@
 									<a href="index.html"><img src=" ./img/logo/logo6.png " alt="" /></a>
 								</div>
 							</div>
-							<div class="col-sm-4 col-xs-5">
+							<div class="col-sm-4 col-xs-5" style="margin-top:20px;">
 								<div class="mini-cart text-right">
 									<ul>
 										<li class="header_Right">
-												<a href="./member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;
-												<!-- <a href="my-account.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a> -->
+												<!-- <a href="./member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;
 												<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;
+												<a href="./member/cart.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a> -->
 										
-											<a class="cart-icon" href="#">
+										<!-- 	<a class="cart-icon" href="#">
 												<i class="zmdi zmdi-shopping-cart"></i>
 												<span>3</span>
-											</a>
-											<div class="mini-cart-brief text-left">
+											</a> -->
+										<!-- 	<div class="mini-cart-brief text-left">
 												<div class="cart-items">
 													<p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
 												</div>
@@ -156,7 +156,7 @@
 													<a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
 													<a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
 												</div>
-											</div>
+											</div> -->
 										</li>
 									</ul>
 								</div>
@@ -756,26 +756,33 @@ productlist();
 productlist2();
 productlist3();
 commuList();
-loginSucc();
 
 
-function loginSucc() {
+$(document).ready(function(){
 	let login = JSON.parse(sessionStorage.getItem("login"));
+	let id = login;
 	
-	if(login.id == "" || login.id == null){
+	if(login== null){
 		let headerStr = '<a href="./member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-						+ '<a href="./member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;';
+						+ '<a href="./member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+						+ '<a href="./member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
 		$(".header_Right").html(headerStr);
 	
 	}else{
 		let headerStr = '<a href="./member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-			+ '<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;';
+			+ '<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			+ '<a href="./member/cart.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
 			
 		$(".header_Right").html(headerStr);
 		
 	}
+
+});
+
+
+
 	
-}
+	
 
 
 function buyBack() {
@@ -963,26 +970,28 @@ function commuList() {
 		success:function(list){
 		//	alert('todayList success');
 		//	alert(list);
-			
+		
+		$(".cmList").remove();
+		
+		if(list != null && list != ""){
 	 	 $.each(list, function (i, val) {
 
-			let str = '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">'
-					+ '<div class="single-blog mt-30">'
+			let str = '<div class="cmList">'
+					+ '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border: 1px solid #e8e8e8;">'
+					+ '<div class="single-blog mt-30 mb-30">'
 					+ '<div class="row">'
 					+ '<div class="col-lg-6 col-md-7 col-sm-7 col-xs-12">'
 					+ '<div class="blog-info">'
 					+ '<div class="post-meta fix">'
-					+ '<div class="post-year floatleft"  style="padding:0px">'
-					+ '<p class="text-uppercase text-dark-red mb-0">' + val.wdate + '</p>'
-					+ '<h4 class="post-title"><a href="./community/communityDetail.html?cmNum=' + val.cmNum + '" tabindex="0">' +  val.title +   '</a></h4>'
+					+ '<div class="post-year floatleft"  style="padding:0px; margin-bottom:10px;">'
+					+ '<p class="text-uppercase text-dark-red mb-10" style="color:#ef7900">' + val.wdate.substring(0,16) + '</p>'
+					+ '<h4 class="post-title" style="font-size:19px;"><a href="./community/communityDetail.html?cmNum=' + val.cmNum + '" tabindex="0">' +  val.title +   '</a></h4>'
 					+ '</div>'
 					+ '</div>'
 					+ '<div class="like-share fix">'
-
-					+ '<a href="#"><i class="zmdi zmdi-favorite"></i><span>' + val.cmLike + ' Like</span></a>'
+					+ '<a href="#"><i class="zmdi zmdi-favorite" style="font-size:19px; color:#e46f6f;"></i><span style="font-size:15px;">' + val.cmLike + ' Like</span></a>'
 					+ '</div>'
-					+ '<p>' + val.content.substring(0,60) + '</p>'
-			//		+ '<a href="" class="button-2 text-dark-red">더보기...</a>'
+					+ '<p style="font-size:15px;">' + val.content.substring(0,60) + '</p>'
 					+ '</div>'
 					+ '</div>'
 					+ '<div class="col-lg-6 col-md-5 col-sm-5 col-xs-12">'
@@ -992,12 +1001,18 @@ function commuList() {
 					+ '</div>'
 					+ '</div>'
 					+ '</div>'
+					+ '</div>'
 					+ '</div>'; 
 
 					$("#commu").append(str); 
 			});
 
-				
+			}else{
+				let str = "<div class='cmList' align='center' style='font-weight:700; margin-top:200px;'>"
+					str += "</div>"
+
+					$("#commu").html(str); 
+			}	
 		},
 		error:function(){
 			alert('todayList error');

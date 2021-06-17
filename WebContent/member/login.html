@@ -57,6 +57,8 @@
 <!--  kakao login -->
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
+<!-- google login -->
+<script src="https://apis.google.com/js/api:client.js"></script>
       <link rel="stylesheet" href="../css/member-login.css">
       
    </head>
@@ -319,15 +321,15 @@
    <div class="login-form">   
       <div class="login-reg-panel">
       <div class="login-info-box">
-         <h2>Have an account?</h2>
-         <p>Lorem ipsum dolor sit amet</p>
-         <label id="label-register" for="log-reg-show">LOGIN</label>
+         <h2>계정이 있으신가요?</h2>
+         <p>Have an account?</p>
+         <label id="label-register" for="log-reg-show">로그인</label>
          <input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
       </div>
                      
       <div class="register-info-box">
-         <h2>Don't have an account?</h2>
-         <p>Lorem ipsum dolor sit amet</p>
+         <h2>MOFF FAMILY 가입하기</h2>
+         <p>Don't have an account?</p>
          <label id="label-login" for="log-login-show">회원가입</label>
          <input type="radio" name="active-log-panel" id="log-login-show">
       </div>
@@ -338,28 +340,32 @@
             <input type="text" placeholder="아이디" id="id">
             <input type="password" placeholder="비밀번호" id="pwd">
             <input type="button" value="로그인" id="loginBtn">
+            <hr>
             <div>
-               <p>SNS로 로그인하기</p>
                <div class="row">
-                          <div class="col-md-4 delpad">
-                             <div id="naver_id_login"></div>
+                  <div class="col-md-5" style="text-align: center;margin-top: 20px;margin-left: 7px;">소셜미디어 로그인</div>
+                          <div class="col-md-2 delpad">
+                             <div id="naver_id_login"><img src="../image/1.webp" title="네이버 아이디로 로그인"></div>
                           </div>
-                          <div class="col-md-4 delpad">
-                           <div class="g-signin2" id="google" data-onsuccess="onSignIn" data-theme="dark"></div> 
+                          <div class="col-md-2 delpad" style="margin-top: 9px;">
+                        <!--    <div class="g-signin2" id="google" data-onsuccess="onSignIn" data-theme="dark"></div>  -->
+                        <div id="customBtn" class="customGPlusSignIn"></div>
                         </div>
-                          <div class="col-md-4 delpad">
-                              <img src="../image/kakao_login.png" style="height: 38px; cursor: pointer; margin-left: 24px;" onclick="kakaoLogin()">
+                          <div class="col-md-2 delpad">
+                              <img src="../image/kakao_login2.png" style="height: 40px; cursor: pointer; margin-left: 2px; margin-top: 10px" onclick="kakaoLogin()">
                         </div>
                     </div>
             </div>
          </div>
          <div class="register-show">
-            <input type="button" value="MOFF 회원가입" id="account">
-            <hr style="margin">
-            <h3>소셜미디어로 회원가입하기</h3>
-            <button type="button" id="googleSignup">구글로 시작하기</button>
-            <button type="button" id="naverSignup">네이버로 시작하기</button>
-            <button type="button" id="kakaoSignup">카카오로 시작하기</button>
+            <button type="button" id="moffSignup">MOFF Family 회원가입</button>
+            <hr>
+            <p style="text-align: center;">소셜미디어로 회원가입하기</p>
+            <div>
+               <img alt="" src="../image/google_signup.png" style="padding-left: 20px; padding-right: 20px;cursor: pointer;" onclick="handleGoogleLogin()">
+               <img alt="" src="../image/naver_signup.png" style="margin-top: 10px;margin-left: 4px;cursor: pointer;" class="snssignup" onclick="handleNaverLogin()">
+               <img alt="" src="../image/kakao_signup.png" style="margin-left: 2px;margin-top: 10px;padding-left: 0px;padding-right: 8px;cursor: pointer;" onclick="kakaoLogin()">
+            </div>
          </div>
       </div>
    </div>
@@ -544,13 +550,12 @@
       
       
       <!-- naver login 설정 -->
-      var naver_id_login = new naver_id_login("E2G2Ono7tLJwqb3bgB4S", "http://localhost:8090/FinalProject/member/callback.html");
+      var naver_id_login = new naver_id_login("E2G2Ono7tLJwqb3bgB4S", "http://localhost:8085/Moff-View/member/callback.html");
         var state = naver_id_login.getUniqState();
-        naver_id_login.setButton("green", 2, 40);
+        naver_id_login.setButton("green", 1, 39);
         naver_id_login.setState(state);
-   //  naver_id_login.setPopup();
+   //    naver_id_login.setPopup();
         naver_id_login.init_naver_id_login();
-
         
         
       $(document).ready(function() {
@@ -613,7 +618,7 @@
       });
       
 
-      function onSignIn(googleUser) {
+/*       function onSignIn(googleUser) {
          
           var profile = googleUser.getBasicProfile();
           
@@ -631,6 +636,10 @@
            
       }
       
+      
+       */
+       
+   
       
       window.Kakao.init("897927412ae0bc3c7301cb71197b51ba");
 
@@ -722,8 +731,12 @@
       }
 
        
-
+      $("#moffSignup").click(function name() {
+         location.href="signup.html"
+      })
+      
       function login(){
+         
 
          alert(id);
          $.ajax({
@@ -749,10 +762,61 @@
          });
 
       }
-      
-      
-      </script>
 
       
+      
+      
+      
+        var googleUser = {};
+        var startApp = function() {
+          gapi.load('auth2', function(){
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+              client_id: '68527952935-alrkqjjtbtneh4591p1779f9d7eshe2n.apps.googleusercontent.com',
+              cookiepolicy: 'single_host_origin',
+              // Request scopes in addition to 'profile' and 'email'
+              //scope: 'additional_scope'
+            });
+            attachSignin(document.getElementById('customBtn'));
+          });
+        };
+
+        function attachSignin(element) {
+          console.log(element.id);
+          auth2.attachClickHandler(element, {},
+              function(googleUser) {
+             
+                var profile = googleUser.getBasicProfile();
+                 console.log('Full Name: ' + profile.getName());
+                   console.log("Email: " + profile.getEmail());
+                   // The ID token you need to pass to your backend:
+                   var id_token = googleUser.getAuthResponse().id_token;
+                   console.log("ID Token: " + id_token);
+                   
+                   name =  profile.getName();
+                   email =  profile.getEmail();
+                   id = id_token.substring(0,10);
+                         
+                   snsCheck();
+                   
+              }, function(error) {
+                alert(JSON.stringify(error, undefined, 2));
+              });
+        }
+      
+        
+       function handleNaverLogin() {
+          document.getElementById('naver_id_login').firstChild.click();
+
+      }
+
+       
+       function handleGoogleLogin() {
+          document.getElementById('customBtn').click();
+
+      }
+      </script>
+      <!--  for google -->
+        <script>startApp();</script>
    </body>
 </html>

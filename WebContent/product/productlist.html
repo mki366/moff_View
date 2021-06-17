@@ -189,87 +189,81 @@ select{
 }
 
 </style>
+
+<style type="text/css">
+.cart-icon {
+  display: inline-block;
+  padding-left: 0px;
+  position: relative;
+  right: 0;
+}
+
+</style>
  
 </head>
 <body>
 
  <!-- WRAPPER START -->
-        <div class="wrapper bg-dark-white" style="background: #fff">
-
-            <!-- HEADER-AREA START -->
-            <header id="sticky-menu" class="header header-2">
-                <div class="header-area">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-4 col-sm-offset-4 col-xs-7">
-                                <div class="logo text-center">
-                                    <a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-5">
-                                <div class="mini-cart text-right">
-                                    <ul>
-                                        <li>
-                                            <a class="cart-icon" href="#">
-                                                <i class="zmdi zmdi-shopping-cart"></i>
-                                                <span>3</span>
-                                            </a>
-                                            <div class="mini-cart-brief text-left">
-                                                <div class="cart-items">
-                                                    <p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
-                                                </div>
-                                                <div class="all-cart-product clearfix">
-                                                    <div class="single-cart clearfix">
-                                                        <div class="cart-photo">
-                                                            <a href="#"><img src="img/cart/1.jpg" alt="" /></a>
-                                                        </div>
-                                                        <div class="cart-info">
-                                                            <h5><a href="#">dummy product name</a></h5>
-                                                            <p class="mb-0">Price : $ 100.00</p>
-                                                            <p class="mb-0">Qty : 02 </p>
-                                                            <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="single-cart clearfix">
-                                                        <div class="cart-photo">
-                                                            <a href="#"><img src="img/cart/2.jpg" alt="" /></a>
-                                                        </div>
-                                                        <div class="cart-info">
-                                                            <h5><a href="#">dummy product name</a></h5>
-                                                            <p class="mb-0">Price : $ 300.00</p>
-                                                            <p class="mb-0">Qty : 01 </p>
-                                                            <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cart-totals">
-                                                    <h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
-                                                </div>
-                                                <div class="cart-bottom  clearfix">
-                                                    <a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
-                                                    <a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="wrapper bg-white" style="background: #fff">
+<!-- Mobile-header-top Start -->
+			<div class="mobile-header-top hidden-lg hidden-md hidden-sm">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- header-search-mobile start -->
+							<div class="header-search-mobile">
+								<div class="table">
+									<div class="table-cell">
+										<ul class="header_Right">
+											<!-- <li><a class="search-open" href="#"><i class="zmdi zmdi-search"></i></a></li>
+											<li><a href="./member/login.html"><i class="zmdi zmdi-lock"></i></a></li>
+											<li><a href="./member/mypage.html"><i class="zmdi zmdi-account"></i></a></li>
+											<li><a href="./member/cart.html"><i class="zmdi zmdi-favorite"></i></a></li> -->
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- header-search-mobile start -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile-header-top End -->
+			<!-- HEADER-AREA START -->
+			<header id="sticky-menu" class="header">
+				<div class="header-area">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-4 col-sm-offset-4 col-xs-7">
+								<div class="logo text-center">
+									<a href="index.html"><img src=" ./img/logo/logo6.png " alt="" /></a>
+								</div>
+							</div>
+							<div class="col-sm-4 col-xs-5" style="margin-top:20px;">
+								<div class="mini-cart text-right">
+									<ul>
+										<li class="header_Right">
+											
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+               </header>
                	<!-- MAIN-MENU START -->
-				<div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+			<div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
 					<div class="hamburger-box">
 						<div class="hamburger-inner"></div>
 					</div>
 				</div>
-				<div class="main-menu  hidden-xs">
+				<div class="main-menu hidden-xs">
 					<nav>
 						<ul class ="CategoryUp">
 							<li><a href="index.html">home</a>
-
 							</li>
-							<li><a href="./product/productlist.html">products</a>
+							<li><a href="productlist.html">products</a>
 								  <div class="mega-menu menu-scroll">
                                     <div class="table">
                                         <div class="table-cell">
@@ -277,11 +271,10 @@ select{
                                                 <ul>
                                                     <li class="menu-title">침대</li>
                                                     <li><a href="./product/productlist.html?page=0&_category=침대">모든 상품</a></li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=더블/퀸/킹 침대">더블/퀸/킹 침대</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=더블/퀸/킹침대">더블/퀸/킹 침대</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=수납형침대">수납형침대</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=싱글/슈퍼싱글침대">싱글/슈퍼싱글 침대</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=싱글/매트리스">매트리스</a></li>
-                                                   <!--  <li><a href="#">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="half-width">
@@ -292,40 +285,34 @@ select{
                                                     <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=책상/컴퓨터책상">책상/컴퓨터책상</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=식탁">식탁</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=협탁/화장대">협탁/화장대</a></li>
-                                                    <!-- <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">쇼파</li>
                                                     <li><a href="./product/productlist.html?page=0&_category=쇼파">모든 상품</a></li>
-                                                    <li><a href="#">패브릭쇼파</a></li>
-                                                    <li><a href="#">천연/인조가죽 쇼파</a></li>
-                                                   <!--  <li><a href="#">기타</a></li> -->
+                                                    <li><a href="./product/productlist.html?page=0&_category=쇼파&_subCategory=패브릭쇼파">패브릭쇼파</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=쇼파&_subCategory=천연/인조가죽쇼파">천연/인조가죽 쇼파</a></li>
                                                 </ul>
                                             </div>
                                             
-                                             <div class="half-width">
+                                            <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">수납장/장식장/서랍장</li>
                                                     <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장">모든 상품</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=장식장">장식장</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=수납장">수납장</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=서랍장">서랍장</a></li>
-                                                   <!--  <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
-                                            
                                             
                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">책장</li>
                                                     <li><a href="./product/productlist.html?page=0&_category=책장">모든 상품</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=책장&_subCategory=수납선반/유닛">수납선반/유닛</a></li>
-                                                   <!--  <li><a href="./product/productlist.html?page=0&_category=책장&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
-
                                             
                                             <div class="half-width">
                                                 <ul>
@@ -334,7 +321,6 @@ select{
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=암체어">암체어</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=사무용의자">사무용의자</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=식탁의자">식탁의자</a></li>
-                                                   <!--  <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="half-width">
@@ -343,7 +329,6 @@ select{
                                                     <li><a href="./product/productlist.html?page=0&_category=기타">모든 상품</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=조명">조명</a></li>
                                                     <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=장식용품">장식용품</a></li>
-                                                    <!-- <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="pb-80"></div>
@@ -351,26 +336,27 @@ select{
                                     </div>
                                 </div>
 							</li>
-                            <li><a href="./custom/custom.html">CUSTOM MADE</a>
+                            <li><a href="../custom/custom.html">CUSTOM MADE</a>
                                 <div class="sub-menu menu-scroll">
                                     <ul>
                                         <li class="menu-title">주문제작</li>
-                                        <li><a href="./custom/chair.html">의자</a></li>
-                                        <li><a href="./custom/bedType.html">침대</a></li>
-                                        <li><a href="./custom/storage.html">수납장</a></li>
-                                        <li><a href="./custom/desk.html">책상</a></li>  
+                                        <li><a href="../custom/chair.html">의자</a></li>
+                                        <li><a href="../custom/bedType.html">침대</a></li>
+                                        <li><a href="../custom/storage.html">수납장</a></li>
+                                        <li><a href="../custom/desk.html">책상</a></li>  
                                     </ul>
                                 </div>
                             </li>
-							<li><a href="./showroom/showroom.html">SHOWROOM</a></li>
-							<li><a href="./BuyBack/BuyBackMain.html">BUYBACK</a></li>
-							<li><a href="./Expert/ExpertPage.html">EXPERTS</a></li>
-							<li><a href="./community/communityList.html">COMMUNITY</a></li>
-							<li><a href="./cs/cslist.html">HELP CENTER</a></li>
+							<li><a href="../showroom/showroom.html">SHOWROOM</a></li>
+							<li><a href="../BuyBack/BuyBackMain.html">BUYBACK</a></li>
+							<li><a href="../Expert/ExpertPage.html">EXPERTS</a></li>
+							<li><a href="../community/communityList.html">COMMUNITY</a></li>
+							<li><a href="../cs/cslist.html">HELP CENTER</a></li>
 							
 						</ul>
 					</nav>
 				</div>
+			
 			<!-- Mobile-menu end -->
             <!-- HEADING-BANNER START -->
             <div class="heading-banner-area">
@@ -583,82 +569,7 @@ select{
             </div>
             <!-- PRODUCT-AREA END -->
             <!-- FOOTER START -->
-            <footer>
-                <!-- Footer-area start -->
-                <div class="footer-area footer-3">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-                                <div class="single-footer">
-                                    <h3 class="footer-title  title-border">Contact Us</h3>
-                                    <ul class="footer-contact">
-                                        <li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
-                                        <li><span>Cell-Phone :</span>+012 345 678 102</li>
-                                        <li><span>Email :</span>info@example.com</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-                                <div class="single-footer">
-                                    <h3 class="footer-title  title-border">accounts</h3>
-                                    <ul class="footer-menu">
-                                        <li><a href="my-account.html"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
-                                        <li><a href="wishlist.html"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
-                                        <li><a href="cart.html"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
-                                        <li><a href="login.html"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
-                                        <li><a href="checkout.html"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
-                                <div class="single-footer">
-                                    <h3 class="footer-title  title-border">shipping</h3>
-                                    <ul class="footer-menu">
-                                        <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>New Products</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Top Sellers</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Manufactirers</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Suppliers</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Specials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="single-footer">
-                                    <h3 class="footer-title  title-border">Email Newsletters</h3>
-                                    <div class="footer-subscribe">
-                                        <form action="#">
-                                            <input type="text" name="email" placeholder="Email Address..." />
-                                            <button class="button-one submit-btn-4" type="submit" data-text="Subscribe">Subscribe</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Footer-area end -->
-                <!-- Copyright-area start -->
-                <div class="copyright-area copyright-2">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6 col-xs-12">
-                                <div class="copyright">
-                                    <p class="mb-0">&copy; <a href="#" target="_blank">Hurst </a> 2018. All Rights Reserved.</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xs-12">
-                                <div class="payment  text-right">
-                                    <a href="#"><img src="img/payment/1.png" alt="" /></a>
-                                    <a href="#"><img src="img/payment/2.png" alt="" /></a>
-                                    <a href="#"><img src="img/payment/3.png" alt="" /></a>
-                                    <a href="#"><img src="img/payment/4.png" alt="" /></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Copyright-area start -->
-            </footer>
+           <div id="footer"></div>
             <!-- FOOTER END -->
             
              
@@ -713,13 +624,46 @@ select{
 	}
 	
 	
-	let login = JSON.parse(sessionStorage.getItem("login"));
+//	let login = JSON.parse(sessionStorage.getItem("login"));
 	
 	//검색 버튼
 	$("#btnSearch").click(function(){
 		productlist(0);
 		productCount();
 	});
+	
+	$(function(){
+	    $("#footer").load("../footer.html"); 
+	  });
+	
+	$(document).ready(function(){
+		let login = JSON.parse(sessionStorage.getItem("login"));
+		let id = login;
+		
+		if(login== null){
+			let headerStr = '<a href="../member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+							+ '<a href="../member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+							+ '<a href="../member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+			$(".header_Right").html(headerStr);
+		
+		}else{
+			let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+				+ '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+				+ '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+				
+			$(".header_Right").html(headerStr);
+			
+		}
+
+	});
+	
+	
+	
+	
+	
+	
+	
+	
 	
 //new Icon
 function newIcon() {
@@ -1413,4 +1357,3 @@ function filterCount() {
 
 </body>
 </html>
-

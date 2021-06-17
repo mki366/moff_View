@@ -70,7 +70,7 @@ a, *::before {
   transition: all 0.3s ease 0s;
   }
 a:hover {
-  color: #C8A165;
+  color: black;
   text-decoration: none;
 }
 a:active, a:hover {
@@ -233,7 +233,7 @@ body {
   z-index: 99999999;
 }
 .mini-cart ul li:hover  .cart-icon {
-  color: #c8a165;
+  color: black;
 }
 /* Main-Menu */
 .menu-toggle {
@@ -291,7 +291,7 @@ body {
 /* Sub-menu */
 .main-menu ul li .sub-menu {
   background: #fff none repeat scroll 0 0;
-  border-left: 1px solid #c8a165;
+  border-left: 1px solid black;
   height: 100%;
   left: 300px;
   padding-top: 172px;
@@ -334,7 +334,7 @@ body {
 /* Mega-menu */
 .main-menu ul li .mega-menu {
   background: #fff none repeat scroll 0 0;
-  border-left: 1px solid #c8a165;
+  border-left: 1px solid black;
   height: 100%;
   left: 300px;
   padding-top: 172px;
@@ -622,7 +622,7 @@ body {
   line-height: 28px;
 }
 .close-search:hover, .search-button:hover {
-  color: #C8A165;
+  color: black;
 }
 /* -----------------------------------------
 	4. Product-Area
@@ -674,7 +674,7 @@ body {
   display:none;
 }
 .product-action a:hover {
-  color: #C8A165;
+  color: black;
 }
 .product-info {
   padding: 20px 0;
@@ -892,7 +892,7 @@ body {
   line-height: 27px;
 }
 .footer-menu li a i { margin-right: 10px;}
-.footer-menu li a:hover { color: #C8A165;}
+.footer-menu li a:hover { color: black;}
 .footer-thumb {
   overflow: hidden;
   position: relative;
@@ -902,7 +902,7 @@ body {
   position: relative;
 }
 .footer-thumb > a::before {
-  background: #c8a165 none repeat scroll 0 0;
+  background: black none repeat scroll 0 0;
   content: "";
   height: 100%;
   opacity: 0.5;
@@ -1088,7 +1088,7 @@ body {
 }
 .footer-subscribe button:hover {
   background: #F6F6F6 none repeat scroll 0 0;
-  color: #C8A165;
+  color: black;
 }
 .copyright-2 {
   background: #f2f2f2 none repeat scroll 0 0;
@@ -1154,7 +1154,7 @@ body {
   padding: 0;
   color: #444;
 }
-.option-btn.active, .option-btn:hover { color: #c8a165;}
+.option-btn.active, .option-btn:hover { color: black;}
 .dropdown-menu { border-radius: 0;}
 .dropdown-width { width: 290px;}
 /* ---------------------------------
@@ -1177,7 +1177,7 @@ body {
   right: 20px;
   top: 0;
 }
-.widget-search button:hover { color: #C8A165;}
+.widget-search button:hover { color: black;}
 /* widget-categories */
 .widget {
   background: #fff none repeat scroll 0 0;
@@ -1215,7 +1215,7 @@ body {
   transition: all 0.3s ease 0s;
 }
 .product-cat .treeview li.collapsable span, .product-cat .treeview li span:hover {
-  color: #c8a165;
+  color: black;
 }
 .product-cat .treeview li > ul > li > a {
   color: #444;
@@ -1229,7 +1229,7 @@ body {
 }
 .product-cat .treeview li > a:hover,
 .product-cat .treeview li > ul > li > a:hover {
-  color: #c8a165;
+  color: black;
 }
 /* Widget Shop Filter */
 .price_slider_amount { margin-bottom: 10px;}
@@ -1280,7 +1280,7 @@ span.color {
   outline-offset: 1px;
 }
 .color-filter ul li.active a,
-.color-filter ul li.active span.count  { color: #C8A165;}
+.color-filter ul li.active span.count  { color: black;}
 span.color.color-1 { background: #ffa07a; }
 span.color.color-2 { background: #E9967A; }
 span.color.color-3 { background: #FE5858; }
@@ -1304,7 +1304,7 @@ span.color.color-7 { background: #C38B4B; }
 }
 .size-filter ul li:last-child { margin-right: 0;}
 .size-filter ul li.active a, .size-filter ul li a:hover {
-  background: #C8A165;
+  background: black;
   color: #fff;
 }
 /* Widget-Banner */
@@ -1352,7 +1352,7 @@ span.color.color-7 { background: #C38B4B; }
   display: block;
   font-size: 20px;
 }
-.shop-tab li.active a { color: #C8A165;}
+.shop-tab li.active a { color: black;}
 /* ==== */
 .shop-list .single-product {
   background: #fff none repeat scroll 0 0;
@@ -1404,7 +1404,7 @@ input.cart-plus-minus-box {
   position: relative;
   width: 33.3333%;
 }
-.qtybutton:hover { color: #C8A165;}
+.qtybutton:hover { color: black;}
 .dec.qtybutton::before, .inc.qtybutton::before {
     background: #444;
     content: "";
@@ -1442,7 +1442,7 @@ input.cart-plus-minus-box {
   line-height: 30px;
 }
 .pagination ul li.active a, .pagination ul li:hover a {
-  color: #c8a165;
+  color: black;
 }
 /* ---------------------------------
 	13. Single-Product
@@ -1469,7 +1469,7 @@ input.cart-plus-minus-box {
   background: transparent none repeat scroll 0 0;
 }
 .single-pro-size ul li.active a, .single-pro-size ul li a:hover {
-  color: #c8a165;
+  color: black;
 }
 .single-pro-size ul li { margin-right: 0;}
 .single-pro-size ul li a {
@@ -1527,7 +1527,7 @@ input.cart-plus-minus-box {
   transition: all 0.3s ease 0s;
 }
 .single-pro-info .slick-arrow:hover {
-  background: #C8A165 none repeat scroll 0 0;
+  background: black none repeat scroll 0 0;
   color: #fff;
 }
 .single-pro-info .slick-arrow.arrow-left {
@@ -1595,7 +1595,7 @@ input.cart-plus-minus-box {
   padding: 0 30px;
 }
 .single-pro-tab-menu ul li.active a {
-  background: #C8A165 none repeat scroll 0 0;
+  background: black none repeat scroll 0 0;
   color: #fff;
 }
 .tab-title {
@@ -1627,7 +1627,7 @@ input.cart-plus-minus-box {
   width: 50px;
 }
 .comment-reply a:hover {
-  background: #C8A165 none repeat scroll 0 0;
+  background: black none repeat scroll 0 0;
   color: #fff;
 }
 .reply-date {
@@ -1746,7 +1746,7 @@ input.cart-plus-minus-box {
   transition: all 0.3s ease 0s;
 }
 .product-remove i:hover {
-  background: #C8A165 none repeat scroll 0 0;
+  background: black none repeat scroll 0 0;
   color: #fff;
 }
 /* product-stock */
@@ -1879,7 +1879,7 @@ input.cart-plus-minus-box {
   box-shadow: none;
 }
 .my-account-menu a {
-  background: #C8A165;
+  background: black;
   color: #fff;
   display: block;
   font-style: normal;
@@ -1933,7 +1933,7 @@ input.cart-plus-minus-box {
   color: #444;
   margin-right: 15px;
 }
-.post-share a:hover { color: #C8A165;}
+.post-share a:hover { color: black;}
 .post-share a:last-child { margin-right: 0;}
 .author-comments {
   background: #f6f6f6 none repeat scroll 0 0;
@@ -1985,7 +1985,7 @@ input.cart-plus-minus-box {
   transition: all 0.3s ease 0s;
   width: 50px;
 }
-.error-form button:hover { color: #C8A165;}
+.error-form button:hover { color: black;}
 .go-to-home {
   background: #fff none repeat scroll 0 0;
   color: #333;
@@ -2033,7 +2033,7 @@ input.cart-plus-minus-box {
   line-height: 30px;
   width: 30px;
 }
-.team-social ul li a:hover { color: #C8A165;}
+.team-social ul li a:hover { color: black;}
 /* ---------------------------------
 	18. Contact
 ----------------------------------- */

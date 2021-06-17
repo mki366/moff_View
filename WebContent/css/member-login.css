@@ -28,6 +28,7 @@
     z-index:0;
     box-shadow: 0 0 15px 9px #00000047;
 }
+
 .login-reg-panel input[type="radio"]{
     position:relative;
     display:none;
@@ -75,7 +76,7 @@
     transition:0.3s ease-in-out;
     color:#242424;
     text-align:left;
-    padding:60px;
+    padding:48px 60px 35px 60px;
 }
 .show-log-panel{
     display:block;
@@ -92,15 +93,14 @@
 .login-show input[type="button"] {
     max-width: 150px;
     width: 100%;
-    background: #444444;
+    background: #212121;
     color: #f9f9f9;
     border: none;
     padding: 10px;
     text-transform: uppercase;
     border-radius: 2px;
-    float:right;
     cursor:pointer;
-    margin-left: 49px;
+    margin-left: 205px;
 }
 .login-show a{
     display:inline-block;
@@ -127,6 +127,10 @@
     float:right;
     cursor:pointer;
 }
+
+.delpad{
+	padding: 0px !important;
+}
 .credit {
     position:absolute;
     bottom:10px;
@@ -145,5 +149,38 @@
  .login-show p{
     ont-size: 13px;
     text-align: center;
-    margin-top: 81px;
+    margin-top: -8px;
  }
+ 
+ #moffSignup{
+    min-width: 145px;
+    line-height: 50px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: box-shadow 0.25s ease-in-out;
+    -moz-transition: box-shadow 0.25s ease-in-out;
+    -webkit-transition: box-shadow 0.25s ease-in-out;
+    -o-transition: box-shadow 0.25s ease-in-out;
+    -ms-transition: box-shadow 0.25s ease-in-out;
+    color: #fff;
+    background-color: #212121;
+    margin-left: 64px;
+
+}
+ 
+     #customBtn {
+      display: inline-block;
+      background: white;
+      color: #444;
+      background-image: url('../image/google_login.png');
+      display: inline-block;
+      vertical-align: middle;
+      width: 40px;
+      height: 40px;
+    }
+    #customBtn:hover {
+      cursor: pointer;
+    }

@@ -65,13 +65,14 @@ function snsCheck() {
 
 				if(data.trim()=="YES"){ // 이메일 존재하지 않음
 					// 가입
-					alert("yes");
+					alert("가입안함");
 					snsSignup();
 				}else{  // 이메일 존재
 					// 로그인
-					alert('no');
-					login();
-				}			
+					alert('이미 가입된 회원입니다');
+					location.href='mypage.html'; 
+					window.close();			
+				}
 			},
 			error:function(){
 				alert("error");
@@ -94,11 +95,9 @@ function snsSignup(){
 			if(data == ''){
 				alert('login fail');
 			}else{
-				alert(JSON.stringify(data));
-				sessionStorage.setItem("login", JSON.stringify(data));
 
-				location.href = "mypage.html";
-				
+				location.href='login.html'; 
+
 			//	opener.location.href='mypage.html'; 
 			//	window.close();
 		
