@@ -4,18 +4,18 @@
         <meta charset="utf-8">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script type="text/javascript" src="/js/twbs-pagination/jquery.twbsPagination.js"></script>
-		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-		        
+      <script type="text/javascript" src="/js/twbs-pagination/jquery.twbsPagination.js"></script>
+      <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+              
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />  
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
 
 
-	
-		      
+   
+            
       
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -72,29 +72,29 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
         
 <style type="text/css">
 #app {
-	margin-top: 50px;
-	margin-bottom: 50px;
+   margin-top: 50px;
+   margin-bottom: 50px;
 }
 
 th{
-	padding-right: 25px
+   padding-right: 25px
 }
 
 
 
 input {
-	border: none;
+   border: none;
 }
 textarea {
-	border: none;
+   border: none;
 }
  .heading-banner-title h2{
-	padding-bottom: 30px;
+   padding-bottom: 30px;
 }
 
 h4{
-	text-align: center;
-	color: #fff;
+   text-align: center;
+   color: #fff;
 }
 
 
@@ -348,9 +348,9 @@ h4{
                                 <div class="heading-banner-title">
                                     <h2>고객센터 문의하기</h2>
                                 </div>
-									<h4 >궁금한 점이 있으세요?</h4>
-									<h4>전화, 채팅, 홈페이지 게시판 등 다양한 방법으로 궁금한 점을 문의해주세요.</h4>
-                       				<br><br><br> 
+                           <h4 >궁금한 점이 있으세요?</h4>
+                           <h4>전화, 채팅, 홈페이지 게시판 등 다양한 방법으로 궁금한 점을 문의해주세요.</h4>
+                                   <br><br><br> 
                                 <div class="breadcumbs pb-15">
                                     <ul>
                                         <li><a href="index.html">Home</a></li>
@@ -369,97 +369,95 @@ h4{
                 <div class="container">   
                 <br><br>
                  <table >
-					<tbody  id="detail">
-						</tbody>
-						</table>    
-						<br><br><br><br>
-					<div align="center">	   
-				      <button type="button" id="update" data-text="문의하기 "class="button-one font-16px" onclick="update()">수정하기  </button>
-           			</div>
+               <tbody  id="detail">
+                  </tbody>
+                  </table>    
+                  <br><br><br><br>
+               <div align="center">      
+                  <button type="button" id="update" data-text="문의하기 "class="button-one font-16px" onclick="update()">수정하기  </button>
+                    </div>
              </div>
           </div>           
       
       
-				         			
-				         <!-- FOOTER -->
-						<div id="footer"></div>
-				    </div>
+                              
+                     <!-- FOOTER -->
+                  <div id="footer"></div>
+                </div>
 
 
 <script type="text/javascript">
-$(document).ready(function () {
 
-	csdetail()
+   csdetail();
 
-});
 
 
 function csdetail() {
-	let csnum = urlParams.csnum;
-	// alert('csnum:'+ csnum);
-	$.ajax({
-		url:'http://localhost:3000/csdetail?csnum=' + csnum,
-		type:'get',		
-		success:function(dto){
+   let csnum = urlParams.csnum;
+   // alert('csnum:'+ csnum);
+   $.ajax({
+      url:'http://localhost:3000/csdetail?csnum=' + csnum,
+      type:'get',      
+      success:function(dto){
 
-			let str = "<tr>"
-					+ "<th> * 아이디</th>";
-			   str += "<td>"+ dto.id +"<input type='hidden' name='csnum' value='"+ dto.csnum +"'></input><td>"
-			   		+ "</tr>"
-				 	+ "<tr>"
-					+ "<th> * 분류</th>";
-			   str += "<td>"  + cate(dto.category) + "</td>"
-			   		+ "</tr>"
-				 	+ "<tr>"
-					+ "<th> * 제목</th>";
-			   str += "<td><input id='title' value='"+ dto.title +"' size='110px'><td>"
-			   		+ "</tr>"
-					+ "<tr>"
-					+ "<th > * 내용</th>";
-			   str += "<td><textarea id='content' rows='20px' cols='110'>"+ dto.content +"'</textarea><td>"
-			   		+ "</tr>"
-					+ "<tr>"
-					+ "<th> * 작성일</th>";
-			   str += "<td>"+ dto.wdate +"<td>"
-			   		+ "</tr>";
+         let str = "<tr>"
+               + "<th> * 아이디</th>";
+            str += "<td>"+ dto.id +"<input type='hidden' name='csnum' value='"+ dto.csnum +"'></input><td>"
+                  + "</tr>"
+                + "<tr>"
+               + "<th> * 분류</th>";
+            str += "<td>"  + dto.category + "</td>"
+                  + "</tr>"
+                + "<tr>"
+               + "<th> * 제목</th>";
+            str += "<td><input id='title' value='"+ dto.title +"' size='110px'><td>"
+                  + "</tr>"
+               + "<tr>"
+               + "<th > * 내용</th>";
+            str += "<td><textarea id='content' rows='20px' cols='110'>"+ dto.content +"'</textarea><td>"
+                  + "</tr>"
+               + "<tr>"
+               + "<th> * 작성일</th>";
+            str += "<td>"+ dto.wdate +"<td>"
+                  + "</tr>";
 
-				$("#detail").append(str);	
-		},
-		error:function(){
-			alert('error');
-		}
-	})
+            $("#detail").append(str);   
+      },
+      error:function(){
+         alert('error');
+      }
+   })
 }
 
 
 // 수정하기 
 function update() {
-	let csnum = urlParams.csnum;
+   let csnum = urlParams.csnum;
 
-	$.ajax({
-		url:'http://localhost:3000/csupdate?csnum=' + csnum,
-		type:'post',
-		data:{ title:$("#title").val(), content:$("#content").val() },
-		success:function(){
-			location.href = "cslist.html?csnum=";
-		},
-		error:function(){
-			alert('error');
-		}
-	})
-	
+   $.ajax({
+      url:'http://localhost:3000/csupdate?csnum=' + csnum,
+      type:'post',
+      data:{ title:$("#title").val(), content:$("#content").val() },
+      success:function(){
+         location.href = "cslist.html?csnum=";
+      },
+      error:function(){
+         alert('error');
+      }
+   })
+   
 }
-	
+   
 //답변 카테고리 없애기
-function cate( category ) {
-	let rs = "< 답변 >";
+/* function cate( category ) {
+   let rs = "< 답변 >";
 
- 	return category==0?"":rs;
+    return category==0?"":rs;
 }
-	
-	
-	
-	
+   
+    */
+   
+   
 
 
 
@@ -504,28 +502,28 @@ $(function(){
 
 
 $(document).ready(function() {
-	
-	  $('#cswrite').click(function() {
-		
-		$.ajax({
-			url:"http://localhost:3000/csWrite",
-			type:"post",
-			data:{ id:$("#id").val(), title:$("#title").val(), content:$("#content").val() },
-		
-			success:function( data ){
-				if(data.trim() == "YES"){
-				//	alert("성공적으로 글을 작성하였습니다.");
-					location.href = "cslist.html";
-				}else{
-				//	alert("실패 ");
-				}						
-			},
-			error:function(){
-				alert("error");
-			}
-		});
-	});	
-	});	
+   
+     $('#cswrite').click(function() {
+      
+      $.ajax({
+         url:"http://localhost:3000/csWrite",
+         type:"post",
+         data:{ id:$("#id").val(), title:$("#title").val(), content:$("#content").val() },
+      
+         success:function( data ){
+            if(data.trim() == "YES"){
+            //   alert("성공적으로 글을 작성하였습니다.");
+               location.href = "cslist.html";
+            }else{
+            //   alert("실패 ");
+            }                  
+         },
+         error:function(){
+            alert("error");
+         }
+      });
+   });   
+   });   
 
 
 

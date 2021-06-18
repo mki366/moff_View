@@ -4,18 +4,18 @@
         <meta charset="utf-8">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script type="text/javascript" src="/js/twbs-pagination/jquery.twbsPagination.js"></script>
-		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-		        
+      <script type="text/javascript" src="/js/twbs-pagination/jquery.twbsPagination.js"></script>
+      <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+              
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />  
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
 
 
-	
-		      
+   
+            
       
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -61,10 +61,10 @@
 <style type="text/css">
 
 select {
-	border: none;
+   border: none;
 }
 #search{
-	background-color: none;
+   background-color: none;
 }
 
 
@@ -334,25 +334,25 @@ select {
             <div class="elements-tab  pt-80 pb-80">
                 <div class="container">
                           <table class="searchCs" style="float: right;">
-								<thead>
-									<tr>
-										<td>
-											<select id="choice" name="choice"> 
-											 		<option value="">선택 </option>
-											 		<option value="title">제목</option>
-													<option value="content">내용</option>
-													<option value="writer">작성자</option>
-										 	</select> 			
-										</td>
-										<td>
-											<aside class="widget widget-search">
-												<input type="text" id="search" name="search" placeholder="검색어를 입력해주세요." size="25px">
-												<button type="button" id="csSearch"><i class="zmdi zmdi-search" ></i></button> 
-											</aside>
-										</td>
-									</tr>
-								</thead>
-							</table><br>
+                        <thead>
+                           <tr>
+                              <td>
+                                 <select id="choice" name="choice"> 
+                                        <option value="">선택 </option>
+                                        <option value="title">제목</option>
+                                       <option value="content">내용</option>
+                                       <option value="writer">작성자</option>
+                                  </select>          
+                              </td>
+                              <td>
+                                 <aside class="widget widget-search">
+                                    <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요." size="25px">
+                                    <button type="button" id="csSearch"><i class="zmdi zmdi-search" ></i></button> 
+                                 </aside>
+                              </td>
+                           </tr>
+                        </thead>
+                     </table><br>
                             <div class="tab-content row">
                                 <div class="tab-pane active" id="elements-preview-1">
                                     <div class="our-order payment-details">
@@ -361,13 +361,13 @@ select {
                                         <table id="csbbs">
                                             <thead >
                                              <tr align="center">
-												<th>No.</th>
-												<th>CATEGORY</th>
-												<th>TITLE</th>
-												<th>ID</th>
-												<th>DATE</th>
-												<th > </th>
-											</tr>
+                                    <th>No.</th>
+                                    <th>CATEGORY</th>
+                                    <th>TITLE</th>
+                                    <th>ID</th>
+                                    <th>DATE</th>
+                                    <th > </th>
+                                 </tr>
                                             </thead>
                                             <tbody>
                                              
@@ -375,22 +375,22 @@ select {
                                         </table>
                                         <br>
                                          <div class="mt-20">
-                                  			<button type="button"  class="button-one font-16px" data-text="문의하기 " style="float: right;"  id="csWrite">문의하기 </button>    
-	                                    </div>
-										<div class="container" >
-											<nav aria-label="Page navigation" style="text-align: center">
-												<ul class="pagination" id="pagination" style="justify-content:center" >
-													
-												</ul>
-											</nav>
-										</div> 
+                                           <button type="button"  class="button-one font-16px" data-text="문의하기 " style="float: right;"  id="csWrite">문의하기 </button>    
+                                       </div>
+                              <div class="container" >
+                                 <nav aria-label="Page navigation" style="text-align: center">
+                                    <ul class="pagination" id="pagination" style="justify-content:center" >
+                                       
+                                    </ul>
+                                 </nav>
+                              </div> 
                                     </div>
-                              	  </div>
-              			  </div>
-         			   </div>
+                                   </div>
+                         </div>
+                     </div>
          <!-- FOOTER -->
-		<div id="footer"></div>
-		</div>
+      <div id="footer"></div>
+      </div>
 </div>
         <!-- WRAPPER END -->
 
@@ -424,7 +424,7 @@ select {
         
 <script type="text/javascript">
 
-let login = JSON.parse(sessionStorage.getItem("login"));
+//let login = JSON.parse(sessionStorage.getItem("login"));
 
 cslist(0);
 pagination();
@@ -435,14 +435,14 @@ $(function(){
   });
 
 $('#csSearch').click(function () {
-	cslist(0);
-	pagination();
+   cslist(0);
+   pagination();
 }); 
 
 
 // 문의하기  
 $('#csWrite').click(function () {
-	location.href = "cswrite.html";
+   location.href = "cswrite.html";
 }); 
 
 
@@ -452,62 +452,68 @@ $('#csWrite').click(function () {
 /* function csWrite() {
 let login = JSON.parse(sessionStorage.getItem("login"));
 let id = login.id;
-	if(id != null && id != ''){
-		location.href = "cswrite.html";
-		
-	}else{
-		alert('로그인 후 이용해주세요.');
-	}
+   if(id != null && id != ''){
+      location.href = "cswrite.html";
+      
+   }else{
+      alert('로그인 후 이용해주세요.');
+   }
 }
-	 */
+    */
 
 function cslist(pagenum) {
+let login = JSON.parse(sessionStorage.getItem("login"));
 
-	$.ajax({
-		url:'http://localhost:3000/csList',
-		type:'get',		
-		data:{ choice:$("#choice").val(), search:$("#search").val(), page:pagenum },
-		success:function(list){
-			//alert(list);
-			
-			/*
-			let login = JSON.parse(sessionStorage.getItem("login"));
-			alert(login.id);			
-			alert(login.name);
-			*/
-		    $(".cs_list").remove();
+   $.ajax({
+      url:'http://localhost:3000/csList',
+      type:'get',      
+      data:{ choice:$("#choice").val(), search:$("#search").val(), page:pagenum },
+      success:function(list){
+         //alert(list);
+         
+         /*
+         let login = JSON.parse(sessionStorage.getItem("login"));
+         alert(login.id);         
+         alert(login.name);
+         */
+          $(".cs_list").remove();
 
-			
-			if(list == ''){
-				
-				
-					let str = "<tr class='cs_list'>";
-						str += "<td colspan='4'>등록된 글이 없습니다. </td>";
-						str	+= "</tr>";
-						
-					$("#csbbs").append(str);		
-					
-			}else{
-				
-				$.each(list, function (i, item) {	
-					// alert(list);
-					let str = "<tr class='cs_list'>"
-							+ "<td>" + (i + 1) + "</td>";	
-						str +=  "<td style='color:#3742DD'><b>" + cate(item.category) + "</b></td>"
-						str += "<td><a href='csdetail.html?csnum=" + item.csnum + "'>" + item.title + "</a></td>"
-						str +=  "<td>" + item.id + "</td>"
-						str +=  "<td>" + item.wdate + "</td>"
-							+ "<td class='_hover_tr' style='text-align:left; color:#c8a165;'>"
-							+ getArrow( item.depth ) +"</td>";		// 답변완료시 
-								+ "</tr>";
-				$("#csbbs").append(str);		
-			});		
-		  }
-		},
-		error:function(){
-			alert('error');
-		}
-	});	
+         
+         if(list == ''){
+            
+            
+               let str = "<tr class='cs_list'>";
+                  str += "<td colspan='4'>등록된 글이 없습니다. </td>";
+                  str   += "</tr>";
+                  
+               $("#csbbs").append(str);      
+               
+         }else{
+            
+            $.each(list, function (i, item) {   
+               // alert(list);
+               let str = "<tr class='cs_list'>"
+                     + "<td>" + (i + 1) + "</td>";   
+                  str +=  "<td style='color:#3742DD'><b>" + cate(item.category) + "</b></td>"
+                  
+                  if(login.id == item.id || login.memberType == 2){
+                  str += "<td><a href='csdetail.html?csnum=" + item.csnum + "'>" + item.title + "</a></td>"
+                  }else{
+                  str += "<td>" + item.title + "</td>"   
+                  }
+                  str +=  "<td>" + item.id + "</td>"
+                  str +=  "<td>" + item.wdate + "</td>"
+                     + "<td class='_hover_tr' style='text-align:left; color:#c8a165;'>"
+                     + getArrow( item.depth ) +"</td>";      // 답변완료시 
+                        + "</tr>";
+            $("#csbbs").append(str);      
+         });      
+        }
+      },
+      error:function(){
+         alert('error');
+      }
+   });   
 }
 
 
@@ -528,7 +534,7 @@ function pagination(){
    
           //페이지가 아예 없지 않을시에
           if(pagenum != 0 ){
-        	 
+            
              var page = "<div class='pagination' style='margin-top: 50px;'>";
              page += "<ul>"
              page += "<li ><a href='#' ><i class='zmdi zmdi-long-arrow-left'></i></a></li>";
@@ -542,7 +548,7 @@ function pagination(){
                 }
              }//for end
              
-             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right'  onclick=cslist("+ pageN +")></i></a></li>";
+             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right'  onclick=cslist("+ (pageN -1) +")></i></a></li>";
              page += "</ul>";
              page += "</div>";
              
@@ -561,21 +567,21 @@ function pagination(){
 
 
 // 답글 
-function getArrow( depth ) {		
- 	let rs = "답변완료";
+function getArrow( depth ) {      
+    let rs = "답변완료";
 /*  let nbsp = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";  */
 
-	let ts = "";
-	for(i = 0;i < depth; i++) {
-	/*  ts += nbsp; */
-	}
-	
-	return depth==0?"":/* ts + */ rs;
+   let ts = "";
+   for(i = 0;i < depth; i++) {
+   /*  ts += nbsp; */
+   }
+   
+   return depth==0?"":/* ts + */ rs;
 }
 
 // 답변 카테고리 없애기
 function cate( category ) {
- 	return category==0?"":category;
+    return category==0?"":category;
 }
 
 </script>       

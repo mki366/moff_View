@@ -617,19 +617,19 @@
 							                                "<div>" +
 								                                "<div class='row'>" +
 									                                "<div class='col-md-6'>" +
-										                                "<a href='../Order/exchange.html?odNum=" + item.odNum + "' class='tm-recommended-price-box3'>" +
+										                                "<div onclick='exCheck(" + item.odNum + ")' class='tm-recommended-price-box3' style='cursor:pointer'>" +
 										                                    "<p class='tm-recommended-price'>교환</p>" +
-										                                "</a>" +
+										                                "</div>" +
 										                            "</div>" +
 										                            "<div class='col-md-6' style='padding-left:0px'>" +
-										                                "<a href='../Order/takeback.html?odNum=" + item.odNum + "' class='tm-recommended-price-box4'>" +
+										                            	"<a onclick='refundCheck(" + item.odNum + ")' class='tm-recommended-price-box4'>" +
 										                                    "<p class='tm-recommended-price'>환불</p>" +
 										                                "</a>" +
 										                          	 "</div>" +
 										                        "</div>" +
 							                                "</div>" +
 							                                "<div>" +
-							                                "<a href='../review/writeReview.html?prodNum=" + item.prodNum + "' class='tm-recommended-price-box2'>" +
+							                                "<a href='../review/writeReview.html?prodNum=" + item.prodNum + "' class='tm-recommended-price-box2' style='cursor:pointer'>" +
 							                                    "<p class='tm-recommended-price'>리뷰작성</p>" +
 							                                "</a>" +
 							                                "</div>" +  
@@ -653,6 +653,48 @@
 		}
 		 
 
+		function exCheck(odNum) {
+			
+			$.ajax({
+				url:'http://localhost:3000/exCheck',
+				type:'post',		
+				data:{ odNum:odNum},
+				success:function( data ){
+					if(data=='1'){
+						alert('이미 교환한 상품입니다.');
+					}else{
+						location.href = '../Order/exchange.html?odNum=' + odNum;
+					}
+				},
+				error:function(){
+					alert('error');
+				}
+			});	  
+			
+		}
+		
+		
+		function refundCheck(odNum) {
+				
+				$.ajax({
+					url:'http://localhost:3000/refundCheck',
+					type:'post',		
+					data:{ odNum:odNum},
+					success:function( data ){
+						if(data=='1'){
+							alert('이미 환불한 상품입니다.');
+						}else{
+							location.href = '../Order/takeback.html?odNum=' + odNum;
+						}
+					},
+					error:function(){
+						alert('error');
+					}
+				});	  
+				
+			}
+		
+		
 		function getStatusList(status) {
 	
 

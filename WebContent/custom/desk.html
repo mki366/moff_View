@@ -42,231 +42,13 @@
       <link rel="stylesheet" href="../css/responsive.css">
       <!-- modernizr css -->
       <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ 	  <!-- css -->
+      <link rel="stylesheet" href="../css/custom-desk.css">
       
- <style type="text/css">
-   /* 1 */
-#container { 
-    padding-top: 50px; 
-    height: 950px;
-}
-
-.carousel-inner{
-   top: 217px;
-   left: 40%
-}
-
-
-
-
-
-
-
-#customPrd{
-   width: 400px;
-   height: 820px;
-}
-
-/* chair랑 다름 */
-.customPrdU{
-   top: 124px;
-   left: 20%;
-}
-
-.customPrdD{
-   top: -300px;
-   left: 20%;
-}
-
-
-.orderbox{
-  top: 30px;
-   left: 150%;
-   height: 200px;
-   width: 500px;
-}
-
-
-
-
-/* HERO
-================================================== */
-.hero { 
-    background: url(../img/hero.jpg) no-repeat center / cover; 
-    height: 100%;
-    width: 100%;
-    min-height: 700px;
-    margin-left: 100px;
-    margin-top: 20px;
-}
-
-.hero .container {
-    position: relative;
-    height: 100%;
-}
-
-.hero .col-md-6:first-child {
-    position: absolute;
-    top: 35%;
-    left: 0;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    z-index: 2;
-}
-
-.hero .col-md-6:last-child {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-.hero h1 {
-    font-size: 46px;
-    font-weight: 700;
-    margin: 0 0 15px;
-    text-transform: uppercase;
-}
-
-.job-title {
-    font-size: 25px;
-    margin-bottom: 30px;
-    line-height: 1;
-} 
-
-.hero img {
-    height: 600px;
-}
-
-
-
-/* Buttons */ 
-.btn {
-    min-width: 145px;
-    line-height: 50px;
-    padding: 0 30px;
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 0;
-    transition: box-shadow 0.25s ease-in-out;
-    -moz-transition: box-shadow 0.25s ease-in-out;
-    -webkit-transition: box-shadow 0.25s ease-in-out;
-    -o-transition: box-shadow 0.25s ease-in-out;
-    -ms-transition: box-shadow 0.25s ease-in-out;
-}
-
-.btn-fill {
-    color: #fff;
-    background-color: #212121;
-}
-
-.btn-fillnext {
-    color: #fff;
-    background-color: #3348a2;
-}
-
-.btn-border {
-    background-color: transparent;
-    color: #212121;
-    border: 1px solid #212121; 
-    margin-left: 10px;
-}
-
-.btn-fill:hover,
-.btn-fill:focus {
-    color: #fff;
-}
-
-.btn-fillnext:hover,
-.btn-fillnext:focus {
-    color: #fff;
-}
-
-.btn:hover,
-.btn:focus {
-    box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.15);
-}
-
-
-.carousel{
-    position: relative;
-}
-.carousel-indicators{
-    position: absolute;
-    top:10px;
-    left:400px;
-    height:105px;
-    width: 100%; 
-}
-.carousel-indicators li{
-   
-    text-indent:0;
-    display:inherit;
-    float:left;
-    width: 10%;
-    height: 100px;
-    margin:5px 50px;
-    border: none;
-    color: nene;
-  
- 
-}
-/* 작은이미지 */
-.carousel-indicators li img{
-
-    width: 100%;
-    height: 100px;
-  
-
-
-   
-}
-.carousel-indicators .active img{
-
-}
-.carousel-indicators .active{
-    margin:5px 50px;
-    width: 10%;
-    height: 100px;
-    background-color:  none;
-    
-}
-
-
-
-@media screen and (min-width:320px) and (max-width:360px) {
-    .carousel-indicators{
-        top:115px;
-        left:95px;
-    }
-    .carousel-indicators li img{
-        width:95%;
-        height:50px;
-    }
-    .carousel-indicators li{
-        width:20%;
-        height:50px;
-    }
-    .carousel-indicators .active{
-        width:20%;
-        height:50px;
-    }
-}
-@media screen and (min-width:768px) and (max-width:980px){
-    .carousel-indicators{
-        top:240px;
-        left:213px;
-    }
-}
-   
-
-</style>
-   
    </head>
    <body>   
       <!-- WRAPPER START -->
@@ -564,11 +346,11 @@
         
       
         <ul class="carousel-indicators" >
-            <li data-target="#myCarousel" data-slide-to="0" onclick="setUp(49)"><img src="../images/desk/MALSKYTT몰쉬트1.png">MALSKYTT몰쉬트 </li>
-            <li data-target="#myCarousel" data-slide-to="1" onclick="setUp(50)"><img src="../images/desk/MALSKYTT몰쉬트2.png">MALSKYTT몰쉬트</li>
-            <li data-target="#myCarousel" data-slide-to="2" onclick="setUp(51)"><img src="../images/desk/LAGKAPTEN락캅텐1.png">LAGKAPTEN락캅텐</li>
-            <li data-target="#myCarousel" data-slide-to="3" onclick="setUp(52)"><img src="../images/desk/LAGKAPTEN락캅텐2.png">LAGKAPTEN락캅텐</li>
-            <li data-target="#myCarousel" data-slide-to="4" onclick="setUp(53)"><img src="../images/desk/LAGKAPTEN락캅텐3.png">sLAGKAPTEN락캅텐</li>
+            <li data-target="#myCarousel" data-slide-to="0" onclick="setUp(77)"><img src="../images/desk/MALSKYTT몰쉬트1.png">MALSKYTT몰쉬트 </li>
+            <li data-target="#myCarousel" data-slide-to="1" onclick="setUp(78)"><img src="../images/desk/MALSKYTT몰쉬트2.png">MALSKYTT몰쉬트</li>
+            <li data-target="#myCarousel" data-slide-to="2" onclick="setUp(80)"><img src="../images/desk/LAGKAPTEN락캅텐1.png">LAGKAPTEN락캅텐</li>
+            <li data-target="#myCarousel" data-slide-to="3" onclick="setUp(82)"><img src="../images/desk/LAGKAPTEN락캅텐2.png">LAGKAPTEN락캅텐</li>
+            <li data-target="#myCarousel" data-slide-to="4" onclick="setUp(81)"><img src="../images/desk/LAGKAPTEN락캅텐3.png">sLAGKAPTEN락캅텐</li>
         </ul>
     </div>
         
@@ -589,9 +371,9 @@
         </div> 
       
         <ul class="carousel-indicators" style="top:450px">
-            <li data-target="#myCarousel2" data-slide-to="0" onclick="setLow(54)"><img src="../images/desk/ALEX알렉스adils아딜스1.webp">ALEX알렉스adils아딜스1</li>
-            <li data-target="#myCarousel2" data-slide-to="1" onclick="setLow(55)"><img src="../images/desk/ALEX알렉스adils아딜스2.webp">ALEX알렉스adils아딜스2</li>
-            <li data-target="#myCarousel2" data-slide-to="2" onclick="setLow(56)"><img src="../images/desk/ALEX알렉스adils아딜스3.webp">ALEX알렉스adils아딜스3</li>
+            <li data-target="#myCarousel2" data-slide-to="0" onclick="setLow(84)"><img src="../images/desk/ALEX알렉스adils아딜스1.webp">ALEX알렉스adils아딜스1</li>
+            <li data-target="#myCarousel2" data-slide-to="1" onclick="setLow(85)"><img src="../images/desk/ALEX알렉스adils아딜스2.webp">ALEX알렉스adils아딜스2</li>
+            <li data-target="#myCarousel2" data-slide-to="2" onclick="setLow(86)"><img src="../images/desk/ALEX알렉스adils아딜스3.webp">ALEX알렉스adils아딜스3</li>
         
         </ul>
     </div>
@@ -718,19 +500,19 @@
    
       let login = JSON.parse(sessionStorage.getItem("login"));
 
-      var upper;
-	  var lower;
+      var upper=77;
+	  var lower=84;
 		
 	  
       $(document).ready(function() {
-	  $("#productModal").modal("show");
-         
-         // 초기 prodNum 설정
-         upper=49;
-         lower=54;
-   
-         calPrice();
-         
+    	  
+		  $("#productModal").modal("show");
+	         
+	         // 초기 prodNum 설정
+	        
+	   
+	         calPrice();
+	         
       });   
       
       function setUp(upnum) {
@@ -816,7 +598,8 @@
                              '<div class="carousel-inner orderbox">' +
                                 '<div id="hero" class="hero">' +       
                                  '<div class="row">' +                     
-                                            '<h2>' + upName + '     /      ' + lowName + '</h2>' +
+                                            '<h2>' + upName + '     /</h2>' + 
+                                            '<h2>' + lowName + '</h2>' +
                                             '<div class="page-scroll">' +
                                               '<p class="job-title">₩ ' + numberWithCommas(upPrice + lowPrice) + '원</p>' +
                                     
@@ -841,37 +624,46 @@
 
       function addChairtoCart(){
          
-         $.ajax({
-            url:"http://localhost:3000/addChairCart",
-            type:'post',
-            data:{ id:login.id, upperProd:upper, lowerProd:lower },
-            success:function(){            
-               alert('suc');
-            },
-            error:function(){
-               alert('error');
-            }
-            
-         });
+    	  if(login==null){
+				alert('로그인이 필요한 서비스입니다');
+				location.href="../member/login.html";
+			}else{
+				
+		         $.ajax({
+		            url:"http://localhost:3000/addChairCart",
+		            type:'post',
+		            data:{ id:login.id, upperProd:upper, lowerProd:lower },
+		            success:function(){            
+		               alert('suc');
+		            },
+		            error:function(){
+		               alert('error');
+		            }
+		            
+		         });
+			}
          
       }
       
       
       function addChairtoWish(){
-         
-         $.ajax({
-            url:"http://localhost:3000/addChairWish",
-            type:'post',
-            data:{ id:login.id, upperProd:upper, lowerProd:lower },
-            success:function(){            
-               alert('suc');
-            },
-            error:function(){
-               alert('error');
-            }
-            
-         });
-         
+    	  if(login==null){
+				alert('로그인이 필요한 서비스입니다');
+				location.href="../member/login.html";
+			}else{
+				
+		         $.ajax({
+		            url:"http://localhost:3000/addChairWish",
+		            type:'post',
+		            data:{ id:login.id, upperProd:upper, lowerProd:lower },
+		            success:function(){            
+		               alert('suc');
+		            },
+		            error:function(){
+		               alert('error');
+		            }
+        		 });
+			}
       }
       
       

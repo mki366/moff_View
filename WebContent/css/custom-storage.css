@@ -1,0 +1,113 @@
+#row {
+	padding-top:100px;
+	height:800px;
+	position: relative;
+	margin-left: 0px;
+	margin-right: 0px;
+	
+	
+}
+
+.drag{
+position:relative;
+cursor:hand;
+z-index: 100;
+}
+
+
+.fa{
+    color: #337ab7;
+    padding: 0px;
+    padding-right: 5px
+}
+
+ .elements-tab .tab-content {
+    padding: 15px;
+
+    }
+    .elements-tab-1  .tab-content, .elements-tab-2  .tab-content {
+    border: 1px solid #ddd;
+    border-top: 0;
+    }
+    .elements-tab .nav-tabs > li {
+    display: inline-block;
+    float: none;
+    }
+    .elements-tab .nav-tabs li a {
+    border-radius: 5px 5px 0 0;
+    font-size: 16px;
+    margin-right: 1px;
+    }
+    .elements-tab .nav-tabs li.active a {
+    color: #337ab7;
+    }
+    
+  	.btn-default{
+  	border-radius: 50px; 
+  	border:3px solid #337ab7; 
+  	color: #337ab7;
+  	margin-right: 4px
+  	}
+   
+    .elements-tab-menu {
+    display: inline-block;
+    }
+    .elements-tab-menu li {
+    display: block;
+    float: left;
+    margin: 0 2px;
+    }
+    .elements-tab-menu li a {
+    background: #ddd none repeat scroll 0 0;
+    display: block;
+    font-size: 16px;
+    padding: 10px 20px;
+    }
+    .elements-tab-menu li a:hover {
+	color: #337ab7;
+    }
+    .elements-tab-menu li.active a {
+    background: #337ab7 none repeat scroll 0 0;
+    color: #fff;
+    }
+
+    .elements-tab-7 .elements-tab-menu li {
+    margin: 0 20px 0 0;
+    }
+    .elements-tab-7 .elements-tab-menu li a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    padding: 5px 0px;
+    }
+    .elements-tab-7 .elements-tab-menu li.active a {
+    color: #337ab7;
+     font-weight: bolder;
+    
+    }
+
+    .element-line-btm li.active {
+    position: relative;
+    }
+    .element-line-btm li.active::before {
+    background: #337ab7 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 60px;
+    }
+    .elements-tab-7 .element-line-btm li.active::before {
+    left: 0;
+    }  
+
+     #price{
+		font-size:28px;
+	    font-weight: 600;
+	    color: #444;
+		padding-bottom: 30px;
+ 	}
+
+	.fleft{
+		float:left;
+	}
+    

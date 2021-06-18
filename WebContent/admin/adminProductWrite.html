@@ -475,7 +475,7 @@ License Terms
                                     </div>
                                     <div class="text-left m-t-15">
                                         <button class="btn btn-primary m-b-30 m-t-15 f-s-14 p-l-20 p-r-20 m-r-10" type="button" onclick="submitProduct()"><i class="fa fa-paper-plane m-r-5"></i> 등록</button>
-                                        <button class="btn btn-dark m-b-30 m-t-15 f-s-14 p-l-20 p-r-20" type="button"><i class="ti-close m-r-5 f-s-12"></i> 취소</button>
+                                        <button class="btn btn-dark m-b-30 m-t-15 f-s-14 p-l-20 p-r-20" type="button" onclick="cancelSubmit()"><i class="ti-close m-r-5 f-s-12"></i> 취소</button>
                                     </div>
                                 </div>
                             </div>
@@ -655,7 +655,8 @@ function submitProduct(){
 		cache:false,
 		success:function(data){
 			if(data.trim() == "YES"){
-					alert("등록됨");
+					alert("등록되었습니다.");
+					location.href="adminProductList.html";
 					
 				}else if(data.trim() == "NO"){
 					alert('실패');
@@ -669,6 +670,9 @@ function submitProduct(){
 	});
 }
 
+function cancelSubmit() {
+	location.href="adminProductList.html";
+}
 
 </script>
 
