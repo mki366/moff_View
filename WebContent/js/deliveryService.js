@@ -424,7 +424,7 @@ function addBuyBack(){
 				alert("서비스를 수락하였습니다. 고객에게 연락하여 방문시간을 잡으세요.");
 				BuyBacksms();
 				//새로고침
-				//location.reload(true);
+				location.reload(true);
 			}else{
 				alert("서비스 수락을 실패하였습니다.");
 			}
@@ -556,7 +556,7 @@ function buyback(pNumber){
 		+				"</div>"
 		+				"<!-- Accordion end -->" 
 		+				"<button class='btn btn-danger'  onclick=''>정보보기</button>&nbsp;&nbsp;"	;
-						if(val.bResult == " "){
+						if(val.bResult == null){
 							app += "<button class='btn btn-warning' data-toggle='modal' data-target='#buybackModal'  onclick=appendnumberBuy("+ val.bNum + ",'" + val.memPhone +"')>수락하기</button>";
 						}else if(val.bResult == "서비스수락"){
 							app += "<button class='btn btn-default' disabled='disabled'  data-toggle='modal' data-target='#buybackModal' >수락완료</button>";

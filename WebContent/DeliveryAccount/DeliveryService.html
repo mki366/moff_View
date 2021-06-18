@@ -112,7 +112,7 @@
 		<div class="wrapper bg-dark-white">
 
 			<!-- HEADER-AREA START -->
-				
+			
 <header id="sticky-menu" class="header">
 				<div class="header-area">
 					<div class="container-fluid">
@@ -126,7 +126,50 @@
 								<div class="mini-cart text-right">
 									<ul>
 										<li class="header_Right">
-									
+												<!-- <a href="./member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;
+												<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;
+												<a href="./member/cart.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a> -->
+										
+										<!-- 	<a class="cart-icon" href="#">
+												<i class="zmdi zmdi-shopping-cart"></i>
+												<span>3</span>
+											</a> -->
+										<!-- 	<div class="mini-cart-brief text-left">
+												<div class="cart-items">
+													<p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+												</div>
+												<div class="all-cart-product clearfix">
+													<div class="single-cart clearfix">
+														<div class="cart-photo">
+															<a href="#"><img src="img/cart/1.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 100.00</p>
+															<p class="mb-0">Qty : 02 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+													<div class="single-cart clearfix">
+														<div class="cart-photo">new
+															<a href="#"><img src="img/cart/2.jpg" alt="" /></a>
+														</div>
+														<div class="cart-info">
+															<h5><a href="#">dummy product name</a></h5>
+															<p class="mb-0">Price : $ 300.00</p>
+															<p class="mb-0">Qty : 01 </p>
+															<span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+														</div>
+													</div>
+												</div>
+												<div class="cart-totals">
+													<h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+												</div>
+												<div class="cart-bottom  clearfix">
+													<a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
+													<a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+												</div>
+											</div> -->
 										</li>
 									</ul>
 								</div>
@@ -249,8 +292,8 @@
 						</ul>
 					</nav>
 				</div>
-				
-					
+			
+			
 			<script type="text/javascript">
 			$(document).ready(function(){
 			    let login = JSON.parse(sessionStorage.getItem("login"));
@@ -328,7 +371,7 @@
 								</div>
 								<div class="breadcumbs pb-15">
 									<ul>
-										<li><a href="index.html" style="color:#5d5a55">Home</a></li>
+										<li><a href="../index.html" style="color:#5d5a55">Home</a></li>
 										<li style="color:#5d5a55">Delivery Service</li>
 									</ul>
 								</div>
@@ -843,7 +886,7 @@
 											
 											
 											
-												<div class="table-content table-responsive ">
+												<div class="table-content table-responsive">
 													<table>
 														<thead>
 															<tr>
@@ -1038,6 +1081,8 @@
 										let deliid =  login.id;
 										
 										$(document).ready(function() {
+											//location.reload();
+											//location.reload(true);
 											//alert("확인");
 											Mydelivery(0);
 											pagination2();
@@ -1242,7 +1287,7 @@
 																  <aside class="widget widget-search mb-30" style="width:300px">
 								                               
 								                                    <input class="_searchWord3"  type="text" placeholder="찾고자하는 주소지를 검색하세요" />
-								                                    <button id="btnSearch3" type="button">
+								                                    <button id="btnSearch3">
 								                                        <i class="zmdi zmdi-search"></i>
 								                                    </button>
 								                               
@@ -1262,7 +1307,7 @@
 																<td>
 																  <aside class="widget widget-search mb-30" style="width:300px">
 																<input type="month" id="searchdate" style="border:0px">
-																<button id="btnSearch4" type="button">
+																<button id="btnSearch4">
 								                                        <i class="zmdi zmdi-search"></i>
 								                                  </button>
 								                                  </aside>
@@ -1745,14 +1790,6 @@
 			</div>
 			<!-- SHOPPING-CART-AREA END -->
 			<!-- FOOTER START -->
-				<div id="footer"></div>   
-
-<script type="text/javascript">
-$(function(){
-    $("#footer").load("../footer.html"); 
-  });
-
-</script>
 		
 			<!-- FOOTER END -->
 			<!-- QUICKVIEW PRODUCT -->
@@ -1914,6 +1951,81 @@ $(function(){
 					</div><!-- .modal-dialog -->
 			   </div>
 			   <!-- END Modal -->
+			  <footer> 
+              <!--   Footer-area start -->
+                <div class="footer-area footer-3">
+                    <div class="container" style="margin-left: 220px; margin-right: 80px">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-4 col-sm-5 col-xs-12">
+                                <div class="single-footer" style="width: 250px">
+                                    <h3 class="footer-title  title-border">Moff</h3>
+                                    <p>지금 Moff에 무료로 가입하고 다양한 멤버 전용 혜택을 누리세요. </p>
+                                      <button class="button-one submit-btn-4" type="submit" data-text="Sign up" onclick="signUp()">Sign up</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12" >
+                                <div class="single-footer" style="margin-right: 40px">
+                                    <h3 class="footer-title  title-border">고객 문의</h3>
+                                    <ul class="footer-menu">
+                                        <li><a href="../cs/cslist.html"><i class="zmdi zmdi-dot-circle"></i>고객 문의</a></li>
+                                        <li><a href="../community/commulist.html"><i class="zmdi zmdi-dot-circle"></i>커뮤니티</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+                                <div class="single-footer" style="margin-right: 40px">
+                                    <h3 class="footer-title  title-border">쇼핑하기</h3>
+                                    <ul class="footer-menu">
+                                        <li><a href="../product/productlist.html"><i class="zmdi zmdi-dot-circle"></i>쇼핑하기</a></li>
+                                        <li><a href="../showroom/showroom.html"><i class="zmdi zmdi-dot-circle"></i>쇼룸 보러가기</a></li>
+                                        <li><a href="../Expert/ExpertPage.html"><i class="zmdi zmdi-dot-circle"></i>시공 인테리어</a></li>
+                                        <li><a href="../custom/chair.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-의자</a></li>
+                                        <li><a href="../custom/bed.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-침대</a></li>
+                                        <li><a href="../custom/desk.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-책상</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+                                <div class="single-footer" >
+                                    <h3 class="footer-title  title-border">서비스</h3>
+                                   <ul class="footer-menu">
+                                        <li><a href="../BuyBack/BuyBack.html"><i class="zmdi zmdi-dot-circle"></i>BuyBack 서비스</a></li>
+                                        <li><a href="../Expert/ExpertPage.html"><i class="zmdi zmdi-dot-circle"></i>시공 인테리어 서비스</a></li>
+                                        <li><a href="../custom/custom.html"><i class="zmdi zmdi-dot-circle"></i>주문제작 서비스</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+       
+                
+                <!-- Footer-area end -->
+                <!-- Copyright-area start -->
+                <div class="copyright-area copyright-2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12" style="text-align: center;">
+                                <div class="copyright">
+                                  <a href="#" target="_blank">Moff </a> 2021. All Rights Reserved.
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright-area start -->
+            </footer>
+			
+<script type="text/javascript">
+function signUp(){
+	 location.href="./member/signup.html"
+}
+
+</script>
+			   
 			   
 			</div>
 			<!-- END QUICKVIEW PRODUCT -->	

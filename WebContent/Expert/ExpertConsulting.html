@@ -4,18 +4,19 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>디테일 페이지</title>
+		<title>간편신청</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 		<!-- Place favicon.ico in the root directory -->
 		
-			
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		
-	
+		<script type="text/javascript" src="../jquery/jquery.twbsPagination.min.js"></script>
+		<script type="text/javascript" src="../jquery/jquery.min.js"></script>	
+		
 		
 		
 		<!-- Google Font -->
@@ -48,71 +49,59 @@
         <link rel="stylesheet" href="../css/shortcode.css">
 		<!-- responsive css -->
 		<link rel="stylesheet" href="../css/responsive.css">
-		<!-- modernizr css -->
-		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
 		
 		<style type="text/css">
-		
-		.headerExpertName{
-		font-weight: 900; 
-		padding-top: 20px;
-		font-family: "Lato",sans-serif;
-		
-		
-		}
-		#ExpertText{
-		border-bottom: 2px solid 
-		}
-		
-		
-		.Whatpart{
-		margin-bottom: 50px;
-		}
-		
-		.btny{
-		
-		background-color: #ffdc16;
-		
-		}
-		
-		.single-pro-tab-menu ul li.active a {
-    background: #534f49 none repeat scroll 0 0;
+/* 		body {
+    color: #616161;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #ECEFF1;
+    background-repeat: no-repeat
+} */
+@media screen and (max-width: 765px) and (min-width: 300px){
+
+.table-container{
+	 width:100%;	
+	 overflow-x:auto;
+     white-space: nowrap;
+	}
+   
+ table{
+    width:auto;
+ } 
+ 
+ 
+ }
+
+.cart-page-menu li.active a {
+    background: #333 none repeat scroll 0 0;
     color: #fff;
-    }
-    
-    
-    .smallPhoto{
-
-width: 65px;
-height: 48px;
-
 }
-
-
-.BigPhoto{
-width: 360px;
-height: 250px;
-
-}
-    
-.experMy{
-
-border: 1px solid #d2d2d2;
-}    
-
 
 
 .bg-dark-white {
     background: #ffffff;
-} 
-    
-    
+} 		
+
+
+
 		</style>
-	</head>
-	<body>	
+	<!-- delivery service -->
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	 -->
 	
-	<!-- 스크립트 eNUM 받아오기 -->
-	<script type="text/javascript">
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>	
+	 
+	
+	<script src="../js/deliveryService.js"></script> 
+		
+		
+		
+		<!-- modernizr css -->
+		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+		<script type="text/javascript">
 	let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 	    return paramPair.split(/=(.+)?/).slice(0, 2);
 	}).reduce(function(obj, pairArray) {
@@ -121,12 +110,13 @@ border: 1px solid #d2d2d2;
 	}, {});
 	
 	</script>
-	
+	</head>
+	<body>	
 		<!-- WRAPPER START -->
 		<div class="wrapper bg-dark-white">
 
 			<!-- HEADER-AREA START -->
-				
+			
 <header id="sticky-menu" class="header">
 				<div class="header-area">
 					<div class="container-fluid">
@@ -312,6 +302,9 @@ border: 1px solid #d2d2d2;
 			$(document).ready(function(){
 			    let login = JSON.parse(sessionStorage.getItem("login"));
 //			    let id = login;
+				
+				$("#id").val(login.id);
+				$("#phone").val(login.phone);
 			    
 			 //   let Type = login.memberType;
 			 //   let Id = login.id;
@@ -373,6 +366,7 @@ border: 1px solid #d2d2d2;
 			
 			
 			</script>
+		
 			<!-- Mobile-menu end -->
 			<!-- HEADING-BANNER START -->
 			<div class="heading-banner-area" style="background-color: #ffdc16">
@@ -381,12 +375,12 @@ border: 1px solid #d2d2d2;
 						<div class="col-md-12">
 							<div class="heading-banner">
 								<div class="heading-banner-title">
-									<h2>나의 업체 페이지</h2>
+									<h2 style="color: #5d5a55">간편상담 신청</h2>
 								</div>
-								<div class="breadcumbs pb-15">
+								<div class="breadcumbs pb-15" style="color: #5d5a55">
 									<ul>
-										<li><a href="index.html" style="color:#5d5a55">Home</a></li>
-										<li style="color:#5d5a55">시공업체</li>
+										<li><a href="../index.html" style="color: #5d5a55">Home</a></li>
+										<li style="color: #5d5a55">간편신청</li>
 									</ul>
 								</div>
 							</div>
@@ -395,318 +389,76 @@ border: 1px solid #d2d2d2;
 				</div>
 			</div>
 			<!-- HEADING-BANNER END -->
-			<!-- PRODUCT-AREA START -->
-			<div class="product-area single-pro-area pt-80 pb-80 product-style-2">
-				<div class="container">
+			<!-- SHOPPING-CART-AREA START -->
+			<div class="shopping-cart-area  pt-80 pb-80">
+				<div class="container">	
 					<div class="row">
-					
-					<!-- 왼쪽 카테고리 배너 -->
-					<div class="col-md-3 col-sm-12 col-xs-12 mt-tab-30">
-						
-							<!-- Widget-search end -->
-							<!-- Widget-Categories start -->
-							<aside class="widget widget-categories  mb-30"  style="border: 1px solid #d2d2d2 ">
-								<div class="widget-title">
-									<h3 id="ExpertName" class= "headerExpertName"  align="center"></h3>
-									<h5 id="ExpertText" align="center" style="border-bottom: 1px solid #d2d2d2; padding-left: 15px;padding-right: 15px; font-size: 16px; padding-bottom: 15px" ></h5>
-								</div>
-								<div id="cat-treeview"  class="widget-info product-cat boxscrol2" style="padding-left: 20px;height:235px">
-									
-									<h5 id="numberExpert"></h5>
-									<h5 class="Whatpart"></h5>
-									<div class="chatAppend">
-									
-									</div>
-									
-								</div>
-							</aside>
-							<!-- Widget-categories end -->
-						
-							<script type="text/javascript">
-					
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="shopping-cart">
 							
-							function goExpertChat(eNUM) {
-								location.href="Expert_CHAT_ROOM.html?eNUM=" +eNUM;
-							}
+							<div class="contact-us customer-login bg-white">
+                  <div class="row">
+                     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                        <div class="contact-details">
+                           <h4 class="title-1 title-border text-uppercase mb-30">간편상담 신청</h4>
+                       	<h5>전화번호를 남겨주시면 MOFF에서</h5>
+                       	<h5>인테리어 상담을 도와드립니다~!</h5>
+                       	<h5>요구사항이나 요청사항을 간단하게 적어주세요!</h5>
+                        </div>
+                        <div class="send-message mt-60">
+                           <form action="mail.php">
+                              <h4 class="title-1 title-border text-uppercase mb-30">send message</h4>
+                              <input type="text" id="id" name="name" placeholder="회원아이디">
+                              <input type="text" id="phone" name="email" placeholder="회원전화번호">
+                              <textarea class="custom-textarea" id="mess" name="message" placeholder="상담문의내용"></textarea>
+                              <button class="btn btn-success" type="button" id="goBack">상담신청</button>
+                           </form>
+                        </div>
+                     </div>
+                     <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 mt-xs-30">
+                        <img alt="" src="../deli-image/간편상담신청.jpg">
+                     </div>
+                  </div>
+               </div>
 							
-							</script>
-							
-							
-						</div>
-						<div class="col-md-9 col-sm-12 col-xs-12">		
-							<div class="row shop-list single-pro-info">
-								<!-- Single-product start -->
-								<div class="col-lg-12" style=" height: 390px;">
-									<div class="single-product clearfix experMy" style="height: 310px;" >
-										<!-- Single-pro-slider Big-photo start -->
-										<div class="single-pro-slider single-big-photo view-lightbox slider-for">
-											<div>
-												<img class= "MainImage BigPhoto" src="../img/single-product/medium/1.jpg" alt="" />
-											
-											</div>
-											<div>
-												<img class="image1 BigPhoto" src="../img/single-product/medium/2.jpg" alt="" />
-												
-											</div>
-											<div>
-												<img class="image2 BigPhoto" src="../img/single-product/medium/3.jpg" alt="" />
-												
-											</div>
-											<div>
-												<img class="image3 BigPhoto" src="../img/single-product/medium/4.jpg" alt="" />
-												
-											</div>
-											<!-- <div>
-												<img src="../img/single-product/medium/5.jpg" alt="" />
-												<a class="view-full-screen" href="../img/single-product/large/5.jpg"  data-lightbox="roadtrip" data-title="My caption">
-													<i class="zmdi zmdi-zoom-in"></i>
-												</a>
-											</div> -->
-										</div>	
-										<!-- Single-pro-slider Big-photo end -->										
-										<div class="product-info">
-											<div class="fix">
-												<h4 class="post-title floatleft" style="font-weight: 900; font-size:20px">시공업체 대표사진</h4>
-											
-											</div>
-											
-											<div class="product-description">
-												<p class="part"></p>
-												
-												
-											</div>
-										
-								
-											
-											<!-- Single-pro-slider Small-photo start -->
-											<div class="single-pro-slider single-sml-photo slider-nav">
-												<div>
-													<img class="MainImage smallPhoto" src="../img/single-product/small/1.jpg" alt="" />
-												</div>
-												<div>
-													<img class="image1 smallPhoto" src="../img/single-product/small/2.jpg" alt="" />
-												</div>
-												<div>
-													<img class="image2 smallPhoto" src="../img/single-product/small/3.jpg" alt="" />
-												</div>
-												<div>
-													<img  class="image3 smallPhoto" src="../img/single-product/small/4.jpg" alt="" />
-												</div>
-											 <div>
-													<img class="MainImage smallPhoto" src="../img/single-product/small/5.jpg" alt="" />
-												</div> 
-											</div>
-											<!-- Single-pro-slider Small-photo end -->
-										</div>
-									</div>
-								</div>
-								<!-- Single-product end -->
+<!--끝끝끝  -->
 							</div>
-							<!-- single-product-tab start -->
-							<div class="single-pro-tab" >
-								<div class="row">
-									<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-										<div class="single-pro-tab-menu">
-											<!-- Nav tabs -->
-											<ul class="">
-												<li class="active"><a href="#description" data-toggle="tab">Description</a></li>
-										
-											</ul>
-										</div>
-									</div>
-									<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-										<!-- Tab panes -->
-										<div class="tab-content experMy">
-											<div class="tab-pane active" id="description">
-												<div class="pro-tab-info pro-description">
-													
-													<div class="addressWhere">
-												</div>
-													<div id="map" style="width: 100%; height: 300px;"></div>
-												</div>
-												</div>
-											</div>
-										
-										
-										</div>									
-									</div>
-									
-									
-								</div>
-							
-							<!-- single-product-tab end -->
 						</div>
-						
-						<!--  -->
 					</div>
 				</div>
 			</div>
-			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d37d0c601b91ed657160c03ac7faf573&libraries=services"></script>
-  
-			<!-- 스크립트 시작 -->
-			<script type="text/javascript">
-			
-			var id = urlParams.loginId;
-			
-			$.ajax({
-				
-				url:"http://localhost:3000/ExpertMyDetail",
-				type:'post',
-				data:{'id':id},
-				success: function(Detail) {
-					
-					var ExpertName = Detail.regisName;
-					var ExpertText = Detail.expertInfo;
-					
-					
-					//alert("seccess"+ ExpertName);
-					//업체 이름
-					$("#ExpertName").append(ExpertName);
-					
-					//업체 한줄소게
-					$("#ExpertText").append(ExpertText);
-					
-					//업체 대표사진, 세부 사진
-					
-					var MainImageURL = "http://localhost:3000/exper/" + Detail.image;
-					var image1 = "http://localhost:3000/exper/" + Detail.imageDetail1;
-					var image2 = "http://localhost:3000/exper/" + Detail.imageDetail2;
-					var image3 = "http://localhost:3000/exper/" + Detail.imageDetail3;
-					
-					
-					$(".MainImage").attr("src", MainImageURL);
-					$(".image1").attr("src", image1);
-					$(".image2").attr("src", image2);
-					$(".image3").attr("src", image3);
-					
-					//업체연락처, 주소, 대표 이름
-					var phone = Detail.phone;
-					var address = Detail.regAddress;
-					var ceo = Detail.ceoName;
-					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>연락처 </b>"+ phone +"</span><br>");
-					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>대표자명 </b>"+ ceo +"</span><br>");
-					$(".product-description").append("<span><b style='color:#5d5a55; padding-right: 10px;'>업체주소 </b>"+ address +"</span><br>");
-					$(".addressWhere").append("<h3 class='tab-title title-border mb-30 addressWhere'>"+ address +"</h3>");
-					
-					//지도 펼치기
-					/////////////////////////////////////////////////////////////////////
-					  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-						        mapOption = {
-						            center : new daum.maps.LatLng(36.633535, 127.425882), // 지도의 중심좌표
-						            level : 4
-						        // 지도의 확대 레벨
-						        };
-						 
-						        // 지도를 생성합니다    
-						        var map = new daum.maps.Map(mapContainer, mapOption);
-						 
-						        // 주소-좌표 변환 객체를 생성합니다
-						        var geocoder = new daum.maps.services.Geocoder();
-						 
-						        var myAddress = [address];
-						 
-						        function myMarker(number, address) {
-						            // 주소로 좌표를 검색합니다
-						            geocoder
-						                    .addressSearch(
-						                            //'주소',
-						                            address,
-						                            function(result, status) {
-						                                // 정상적으로 검색이 완료됐으면 
-						                                if (status === daum.maps.services.Status.OK) {
-						 
-						                                    var coords = new daum.maps.LatLng(
-						                                            result[0].y, result[0].x);
-						 
-						                                    // 결과값으로 받은 위치를 마커로 표시합니다
-						                                    /*
-						                                    var marker = new daum.maps.Marker({
-						                                        map : map,
-						                                        position : coords
-						                                    });
-						                                     */
-						 
-						                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
-						                                    /*
-						                                    var infowindow = new daum.maps.InfoWindow(
-						                                            {
-						                                                // content : '<div style="width:50px;text-align:center;padding:3px 0;">I</div>'
-						                                                content : '<div style="color:red;">' +  number + '</div>'
-						                                            });
-						                                    infowindow.open(map, marker);
-						                                     */
-						 
-						                                    // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-						                                    var content = '<div class="customoverlay">'
-						                                            + '    <span class="title">'
-						                                            + '<div style="font-style:normal; color:red; font-weight:bold; font-size:2.0em">'
-						                                            + number + '</div>' + '</span>'
-						                                            + '</div>';
-						 
-						                                    // 커스텀 오버레이가 표시될 위치입니다 
-						                                    var position = new daum.maps.LatLng(
-						                                            result[0].y, result[0].x);
-						 
-						                                    // 커스텀 오버레이를 생성합니다
-						                                    var customOverlay = new daum.maps.CustomOverlay(
-						                                            {
-						                                                map : map,
-						                                                position : position,
-						                                               
-						                                                yAnchor : 1
-						                                            });
-						 
-						                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-						                                    map.setCenter(coords);
-						                                }
-						                            });
-						        }
-						 
-						        for (i = 0; i < myAddress.length; i++) {
-						            myMarker(i + 1, myAddress[i]);
-						        }
-					
-					//최근계약
-					var recentCon = Detail.recentCon;
-					$("#numberExpert").append( "최근계약 " + recentCon);
-					
-					
-					//시공분야
-					var part;
-					
-					//alert("Detail.part" + Detail.part);
-					if(Detail.part == 1){
-						part = "종합인테리어"
-					}else if(Detail.part == 2){
-						part = "도배, 타일"
-					}
-					$(".Whatpart").append(part);
-					
-					
-					//채팅 버튼
-					
-
-					$(".chatAppend").append("<button type='button' onclick='goExpertChat(" + Detail.eNUM + ")' class='btn btn-default btny ' style='width:100%;margin-bottom:10px; height:60px; font-size:17px'>실시간 상담 이력확인</button>");
-						
-					
-					
-					
-				
-				},
-				error: function() {
-					alert("error");
-				}
-				
-				
-			});
-			
-			</script>
-			
-			<!-- PRODUCT-AREA END -->
+			<!-- SHOPPING-CART-AREA END -->
 			<!-- FOOTER START -->
-		<div id="footer"></div>   
+			<div id="footer"></div>   
 
 <script type="text/javascript">
+
+$('#goBack').click(function() {
+	
+	$.ajax({
+		
+		url:"http://localhost:3000/consultingExpert",
+		type:"post",
+		data:{id:$("#id").val(),
+				mess:$("#mess").val(),
+				phone:$("#phone").val()},
+				success:function(result){
+					if(result){
+						alert("상담신청이 완료되었습니다!");
+						location.href="ExpertPage.html";
+					}else{
+						alert("상담신청에 실패하였습니다.");
+					}
+				},
+				error:function(){
+					alert("오류발생");
+				}
+		
+	});
+});
+
+
+
 $(function(){
     $("#footer").load("../footer.html"); 
   });
@@ -716,53 +468,75 @@ $(function(){
 			<!-- QUICKVIEW PRODUCT -->
 			<div id="quickview-wrapper">
 			   <!-- Modal -->
-			   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+			   <div class="modal fade" id="deliModal" tabindex="-1" role="dialog">
 					<div class="modal-dialog" role="document">
-						<div class="modal-content">
+						<div class="modal-content" style=" margin-top: 200px;">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 							</div>
 							<div class="modal-body">
-								<div class="modal-product">
-									<div class="product-images">
-										<div class="main-image images">
-											<img alt="#" src="img/product/quickview-photo.jpg"/>
-										</div>
-									</div><!-- .product-images -->
-
+								<div class="modal-product" >
+								
 									<div class="product-info">
-										<h1>Aenean eu tristique</h1>
-										<div class="price-box-3">
-											<hr />
-											<div class="s-price-box">
-												<span class="new-price">$160.00</span>
-												<span class="old-price">$190.00</span>
-											</div>
-											<hr />
+										<h1>배송 수락하기</h1>
+										
+										<div id="appendnumber1">
+										주문번호
+										
 										</div>
-										<a href="shop.html" class="see-all">See all features</a>
-										<div class="quick-add-to-cart">
-											<form method="post" class="cart">
-												<div class="numbers-row">
-													<input type="number" id="french-hens" value="3">
-												</div>
-												<button class="single_add_to_cart_button" type="submit">Add to cart</button>
-											</form>
+										
+										
+										
+										<div class="quick-desc" style=" width: 500px;" align="center">
+										<table  class="table table-bordered" style="float:center"  style=" width: 460px;">
+										<col width="400px"><col width="50px">
+										<tr>
+										<th>
+											배송전 필수사항 숙지   
+										</th>
+										<th>
+										동의
+										</th>
+										</tr>
+										<tr>
+										<td>
+											배송해야할 물품들을 <span style="color:red">주문상품확인</span>에서 확인하셨나요?     
+										</td>
+										<td align="center">
+										<input  type='checkbox' id='check1' value='check1' />
+										</td>
+										</tr>
+										<tr>
+										<td>
+										
+											빠른 배송을 위해 배송수락 후 상품을 받기위해 본사로<br>
+											<span style="color:red"> 1일 이내(24시간)</span>에 방문해야합니다.
+											<br>
+											<br>
+											(본사 상품수령 가능시간/ 10:00 ~ 16:00)                     
+                           				</td>
+                           				<td align="center">
+										<input type='checkbox' id='check2' value='check2' />
+										</td>
+										</tr>
+										<tr>
+										<td>
+										
+                           					배송가능한 물품들인지 상품의 무게를 확인하였나요? 
+										</td>
+										<td align="center">
+										<input type='checkbox' id='check3' value='check3' />
+										</td>
+										</tr>
+										
+										</table>
+										<div align="right">
+										<button  class="btn btn-warning" type="button" onclick="addDelivery()">배송수락</button><br>
 										</div>
-										<div class="quick-desc">
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
+										
+										
 										</div>
-										<div class="social-sharing">
-											<div class="widget widget_socialsharing_widget">
-												<h3 class="widget-title-modal">Share this product</h3>
-												<ul class="social-icons">
-													<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="zmdi zmdi-google-plus"></i></a></li>
-													<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="zmdi zmdi-twitter"></i></a></li>
-													<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="zmdi zmdi-facebook"></i></a></li>
-													<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
-												</ul>
-											</div>
-										</div>
+										
 									</div><!-- .product-info -->
 								</div><!-- .modal-product -->
 							</div><!-- .modal-body -->
@@ -770,12 +544,91 @@ $(function(){
 					</div><!-- .modal-dialog -->
 			   </div>
 			   <!-- END Modal -->
+			   
+	
+			      <!-- Modal -->
+			   <div class="modal fade" id="buybackModal" tabindex="-1" role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content" style=" margin-top: 200px;">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body">
+								<div class="modal-product" >
+								
+									<div class="product-info">
+										<h1>바이백 서비스 수락하기</h1>
+									
+										<div id="appendnumber3">
+									
+										
+										</div>
+										<div id="appendPhone3">
+										
+										
+										</div>
+										
+										
+										
+										<div class="quick-desc" style=" width: 500px;" align="center">
+										<table  class="table table-bordered" style="float:center"  style=" width: 460px;">
+										<col width="400px"><col width="50px">
+										<tr>
+										<th>
+											서비스 필수사항 숙지   
+										</th>
+										<th>
+										동의
+										</th>
+										</tr>
+										<tr>
+										<td>
+											바이백 서비스 <span style="color:red"> 신청자 정보를</span>확인하셨나요?     
+										</td>
+										<td align="center">
+										<input  type='checkbox' id='check4' value='check4' />
+										</td>
+										</tr>
+										<tr>
+										<td>
+										
+											빠른 방문을 위해 서비스수락 후<span style="color:red"> 4시간이내로 </span><br>신청자 주소지에 방문바랍니다.<br>
+											            
+                           				</td>
+                           				<td align="center">
+										<input type='checkbox' id='check5' value='check5' />
+										</td>
+										</tr>
+										<tr>
+										<td>
+										
+                           					서비스 수락시 고객 정보를 확인하여<span style="color:red"> 방문시간을 조율 </span>하시기 바랍니다.
+										</td>
+										<td align="center">
+										<input type='checkbox' id='check6' value='check6' />
+										</td>
+										</tr>
+										
+										</table>
+										<div align="right">
+										<button  class="btn btn-warning" type="button" onclick="addBuyBack()">서비스수락</button><br>
+										</div>
+										
+										
+										</div>
+										
+									</div><!-- .product-info -->
+								</div><!-- .modal-product -->
+							</div><!-- .modal-body -->
+						</div><!-- .modal-content -->
+					</div><!-- .modal-dialog -->
+			   </div>
+			   <!-- END Modal -->
+			   
 			</div>
 			<!-- END QUICKVIEW PRODUCT -->	
 			
-		
-</div>
-
+		</div>
 		<!-- WRAPPER END -->
 
 		<!-- all js here -->
