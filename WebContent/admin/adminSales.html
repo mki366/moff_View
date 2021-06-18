@@ -322,16 +322,16 @@
 				</select>
                 <input type="button" value="날짜별로 검색 하기" id="chartBtn">
                 <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-10">
                             <div class="card">
                                 <div id="myPlot" style="width:100%;max-width:1000px"></div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                      <!--   <div class="col-lg-4">
                             <div class="card">
                                <div id="myPlot2" style="width:100%;max-width:700px"></div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
             </div>
             <!-- #/ container -->
@@ -536,11 +536,11 @@ $("#searchBtn").on('click',function(){
 	        }
 		});
 				
-		$.ajax({
+		/* $.ajax({
 			url:"http://localhost:3000/SearchLocalSales",
 		    type: "get",
 		    success:function(data){
-		    		alert('성공');
+		    		alert('~성공');
 		    		let resultlocal =[];
 		    		let finallocal=[];
 		    		let finalcount=[];
@@ -558,7 +558,7 @@ $("#searchBtn").on('click',function(){
 		       alert("error");
 		    }
 		});
-	
+	 */
 });
 //선택한 년도에 해당하는 월별 주문 건수 
 $("#chartBtn").on('click',function(){
@@ -609,9 +609,9 @@ function chartmyPlot(data){
 
 
 
-<script>
+<!-- <script>
 function chartmyPlot2(datax,datay){
-	//alert(data.length);
+	alert(data.length);
 	
 	let xdata=datax;
 	let ydata=datay;
@@ -630,7 +630,7 @@ function chartmyPlot2(datax,datay){
 }
 
 </script>
-
+ -->
     <!--**********************************
         Scripts
     ***********************************-->
