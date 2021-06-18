@@ -261,7 +261,7 @@ select{
 				<div class="main-menu hidden-xs">
 					<nav>
 						<ul class ="CategoryUp">
-							<li><a href="index.html">home</a>
+							<li><a href="../index.html">home</a>
 							</li>
 							<li><a href="productlist.html">products</a>
 								  <div class="mega-menu menu-scroll">
@@ -569,7 +569,74 @@ select{
             </div>
             <!-- PRODUCT-AREA END -->
             <!-- FOOTER START -->
-           <div id="footer"></div>
+         		<footer> 
+              <!--   Footer-area start -->
+                <div class="footer-area footer-3">
+                    <div class="container" style="margin-left: 220px; margin-right: 80px">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-4 col-sm-5 col-xs-12">
+                                <div class="single-footer" style="width: 250px">
+                                    <h3 class="footer-title  title-border">Moff</h3>
+                                    <p>지금 Moff에 무료로 가입하고 다양한 멤버 전용 혜택을 누리세요. </p>
+                                      <button class="button-one submit-btn-4" type="button" data-text="Sign up" onclick="signUp()">Sign up</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12" >
+                                <div class="single-footer" style="margin-right: 40px">
+                                    <h3 class="footer-title  title-border">고객 문의</h3>
+                                    <ul class="footer-menu">
+                                        <li><a href="../cs/cslist.html"><i class="zmdi zmdi-dot-circle"></i>고객 문의</a></li>
+                                        <li><a href="../commulist.html"><i class="zmdi zmdi-dot-circle"></i>커뮤니티</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+                                <div class="single-footer" style="margin-right: 40px">
+                                    <h3 class="footer-title  title-border">쇼핑하기</h3>
+                                    <ul class="footer-menu">
+                                        <li><a href="productlist.html"><i class="zmdi zmdi-dot-circle"></i>쇼핑하기</a></li>
+                                        <li><a href="../showroom/showroom.html"><i class="zmdi zmdi-dot-circle"></i>쇼룸 보러가기</a></li>
+                                        <li><a href="../Expert/ExpertPage.html"><i class="zmdi zmdi-dot-circle"></i>시공 인테리어</a></li>
+                                        <li><a href="../custom/chair.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-의자</a></li>
+                                        <li><a href="../custom/bed.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-침대</a></li>
+                                        <li><a href="../custom/desk.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-책상</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+                                <div class="single-footer" >
+                                    <h3 class="footer-title  title-border">서비스</h3>
+                                   <ul class="footer-menu">
+                                        <li><a href="../BuyBack/BuyBack.html"><i class="zmdi zmdi-dot-circle"></i>BuyBack 서비스</a></li>
+                                        <li><a href="../Expert/ExpertPage.html"><i class="zmdi zmdi-dot-circle"></i>시공 인테리어 서비스</a></li>
+                                        <li><a href="../custom/custom.html"><i class="zmdi zmdi-dot-circle"></i>주문제작 서비스</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+       
+                
+                <!-- Footer-area end -->
+                <!-- Copyright-area start -->
+                <div class="copyright-area copyright-2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12" style="text-align: center;">
+                                <div class="copyright">
+                                  <a href="#" target="_blank">Moff </a> 2021. All Rights Reserved.
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright-area start -->
+            </footer>
+
             <!-- FOOTER END -->
             
              
@@ -637,26 +704,66 @@ select{
 	  });
 	
 	$(document).ready(function(){
-		let login = JSON.parse(sessionStorage.getItem("login"));
-		let id = login;
-		
-		if(login== null){
-			let headerStr = '<a href="../member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-							+ '<a href="../member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-							+ '<a href="../member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-			$(".header_Right").html(headerStr);
-		
-		}else{
-			let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-				+ '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-				+ '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-				
-			$(".header_Right").html(headerStr);
-			
-		}
+	    let login = JSON.parse(sessionStorage.getItem("login"));
+//	    let id = login;
+	    
+	 //   let Type = login.memberType;
+	 //   let Id = login.id;
+	 //   let DeliAdmi = login.deliveryAdmi;
+	    
+	    
+	    if(login== null){
+	       let headerStr = '<a href="../member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	                   + '<a href="../member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	                   + '<a href="../member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	       $(".header_Right").html(headerStr);
+	    
+	    }else if(login.memberType == 0){
+	       let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	          + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	          + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	          
+	       $(".header_Right").html(headerStr);
+	       
+	    }else if(login.memberType == 2){
+	        let headerStr = '<a href="../admin/adminSales.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	            + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	            + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	            
+	         $(".header_Right").html(headerStr);
+	 
+	    } 
+	    	
+	    	
 
-	});
-	
+	   	// 시공업체가 로그인할 때 	
+	   	if(login.memberType == 3){
+	   	 	let headerStr = '<a href="./member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	       		+ '<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	       		+ '<a href="./member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	   		
+	        $(".header_Right").html(headerStr);
+	       $(".CategoryUp").append("<li><a style='color:#4154f9' href='./Expert/ExpertMyPage.html?loginId="+ login.id + "'>나의 업체 페이지</a></li>");
+	       
+	    }
+	    
+	    // 뽀이가 로그인할 때
+	    if(login.deliveryAdmi == 1){
+	    	 let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	    	        + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	    	        + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	    	   		
+	    	
+	    	        $(".header_Right").html(headerStr);
+	    	$(".CategoryUp").append("<li><a  style='color:#4154f9' href='./DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
+	   
+	    
+	    }
+	    
+	 
+	    
+	 });
+
 	
 	
 	

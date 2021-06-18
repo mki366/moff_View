@@ -366,7 +366,7 @@ select {
 							<tr>
 								<th > * 아이디</th>
 								<td>
-									<input type="text" id="id" name="id" size="60px" style="background: none">	<!-- readonly="readonly" -->
+									<input type="text" id="id" value="" name="id" size="60px" style="background: none">	<!-- readonly="readonly" -->
 								<td>
 							</tr>
 					
@@ -450,6 +450,8 @@ $(function(){
   });
 
 
+let login = JSON.parse(sessionStorage.getItem("login"));
+$("#id").val(id);
 
 $(document).ready(function() {
 	

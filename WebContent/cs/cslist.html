@@ -424,7 +424,7 @@ select {
         
 <script type="text/javascript">
 
-let login = JSON.parse(sessionStorage.getItem("login"));
+//let login = JSON.parse(sessionStorage.getItem("login"));
 
 cslist(0);
 pagination();
@@ -462,6 +462,7 @@ let id = login.id;
 	 */
 
 function cslist(pagenum) {
+let login = JSON.parse(sessionStorage.getItem("login"));
 
 	$.ajax({
 		url:'http://localhost:3000/csList',
@@ -494,7 +495,12 @@ function cslist(pagenum) {
 					let str = "<tr class='cs_list'>"
 							+ "<td>" + (i + 1) + "</td>";	
 						str +=  "<td style='color:#3742DD'><b>" + cate(item.category) + "</b></td>"
+						
+						if(login.id == item.id || login.memberType == 2){
 						str += "<td><a href='csdetail.html?csnum=" + item.csnum + "'>" + item.title + "</a></td>"
+						}else{
+						str += "<td>" + item.title + "</td>"	
+						}
 						str +=  "<td>" + item.id + "</td>"
 						str +=  "<td>" + item.wdate + "</td>"
 							+ "<td class='_hover_tr' style='text-align:left; color:#c8a165;'>"
@@ -542,7 +548,7 @@ function pagination(){
                 }
              }//for end
              
-             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right'  onclick=cslist("+ pageN +")></i></a></li>";
+             page += "<li><a href='#'><i class='zmdi zmdi-long-arrow-right'  onclick=cslist("+ (pageN -1) +")></i></a></li>";
              page += "</ul>";
              page += "</div>";
              

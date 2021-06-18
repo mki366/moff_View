@@ -398,11 +398,12 @@ button {
 									<div class="pro-price">20</div>
 								</div> -->
 							</aside>
-							<aside style="padding-left:20px">
-								<button type="button" class="button-one font-16px" data-text="삭제 " data-toggle="modal" data-target="#my-modal" style="font-size: 16px">삭제</button>
-								<button type="button" id="update" class="button-one font-16px" data-text="수정 ">수정 </button>
-								<button type="button" id="answer" class="button-one font-16px" data-text="답변 ">답변 </button>		
-								
+							<aside style="padding-left:20px" >
+								<div id="ddd">
+							<!-- 	<button type="button" class="button-one font-16px" data-text="삭제 " data-toggle="modal" data-target="#my-modal" style="font-size: 16px">삭제</button>
+								<button type="button" id="update" class="button-one font-16px" data-text="수정 ">수정 </button> -->
+								<!-- <button type="button" id="answer" class="button-one font-16px" data-text="답변 ">답변 </button>	 -->	
+								</div>
 							</aside>
 
 
@@ -445,11 +446,8 @@ button {
 
         
 <script type="text/javascript">
-$(document).ready(function () {
 
-	csdetail()
-
-});
+	csdetail();
 
 
 
@@ -462,6 +460,7 @@ $(function(){
 
 function csdetail() {
 	let csnum = urlParams.csnum;
+	 let login = JSON.parse(sessionStorage.getItem("login"));
 	// alert('csnum:'+ csnum);
 
 	$.ajax({
@@ -494,7 +493,22 @@ function csdetail() {
 			    str2 += "</div>"
 			    str2 += "</div>";
 
-			$("#detail2").append(str2);	
+			$("#detail2").append(str2);
+			
+			if(login.id == dto.id){
+				let dtoidStr = '<button type="button" class="button-one font-16px" data-text="삭제 " data-toggle="modal" data-target="#my-modal" style="font-size: 16px">삭제</button>'
+							+ '<button type="button" onclick="update(' + dto.csnum + ')" class="button-one font-16px" data-text="수정 ">수정 </button>';
+							
+				$("#ddd").html(dtoidStr);
+				
+			}else if(login.memberType == 2){
+			//	alert("login.memberType == 2");
+				let dtoidStr = '<button type="button" class="button-one font-16px" data-text="삭제 " data-toggle="modal" data-target="#my-modal" style="font-size: 16px">삭제</button>'
+					+ '<button type="button" onclick="answer(' + dto.csnum + ')" class="button-one font-16px" data-text="답변 ">답변 </button>';
+					
+				$("#ddd").html(dtoidStr);
+				
+			}
 			
 			
 		},
@@ -507,17 +521,28 @@ function csdetail() {
 
 
 	// 답글 
-	$('#answer').click(function () {
+	/* $('#answer').click(function () {
 		location.href = "csanswer.html?csnum=" + csnum;
-	});
+	}); */
 	
 	// 수정 
-	$('#update').click(function () {
+/* 	$('#update').click(function () {
 		location.href = "csupdate.html?csnum=" + csnum;
-	});
+	}); */
 
 
 }
+
+
+function answer(csnum) {
+	location.href = "csanswer.html?csnum=" + csnum;
+	
+}
+
+function update(csnum) {
+	location.href = "csupdate.html?csnum=" + csnum;
+}
+
 
 function deleteCs() {
 	let csnum = urlParams.csnum;

@@ -390,10 +390,11 @@ textarea {
                  <table class="d">
 						<tbody>
 							<tr>
+								<th> * 아이디 </th>
 							</tr>
 							<tr>
 								<td>
-									<input type="hidden" id="id" name="id" size="50px" ><!-- 	readonly="readonly" -->
+									<input type="text" id="admin" value="" size="50px" readonly="readonly"><!-- 	readonly="readonly" -->
 								<td>
 							</tr>
 							<tr>
@@ -401,7 +402,7 @@ textarea {
 							<tr>
 							<tr>
 								<td>
-									<textarea rows="2px" cols="150" id="title" name="title"placeholder="제목을 입력해주세요." style="background: none"></textarea>
+									<textarea rows="2px" cols="150" id="title" name="title" style="background: none">[MOFF] 답변완료</textarea>
 								<td>
 							</tr>
 							<tr>
@@ -411,13 +412,13 @@ textarea {
 							<tr>
 							
 								<td>
-									<textarea rows="25px" cols="150" id="content" name="content"placeholder="내용을 입력해주세요." style="background: none"></textarea>
+									<textarea rows="25px" cols="150" id="content" name="content" placeholder="내용을 입력해주세요." style="background: none"></textarea>
 								<td>
 							</tr>
 							<tr>
-								<td colspan="2" align="center">
+								<td colspan="2" align="center" id="answerTd">
 								<br>
-								<button type="button"  class="button-one font-16px" data-text="답변하기 " onclick="answer()">답변하기</button>  
+									<button type="button" class="button-one font-16px" data-text="답변하기 " onclick="answer()">답변하기</button>
 								<td>
 							</tr>
 						</tbody>
@@ -436,11 +437,76 @@ textarea {
 			
 
 <script type="text/javascript">
-$(document).ready(function () {
 
-	csdetail()
+	csdetail();
 
-});
+	$(document).ready(function(){
+	    let login = JSON.parse(sessionStorage.getItem("login"));
+	    $("#admin").val(login.id);
+//	    let id = login;
+	    
+	 //   let Type = login.memberType;
+	 //   let Id = login.id;
+	 //   let DeliAdmi = login.deliveryAdmi;
+	    
+	    
+	    if(login== null){
+	       let headerStr = '<a href="./member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	                   + '<a href="./member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	                   + '<a href="./member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	       $(".header_Right").html(headerStr);
+	    
+	    }else if(login.memberType == 0){
+	       let headerStr = '<a href="./member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	          + '<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	          + '<a href="./member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	          
+	       $(".header_Right").html(headerStr);
+	       
+	    }else if(login.memberType == 2){
+	        let headerStr = '<a href="./admin/adminSales.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	            + '<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	            + '<a href="./member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	            
+	         $(".header_Right").html(headerStr);
+	         
+	    } 
+	    	
+	    	
+
+	   	// 시공업체가 로그인할 때 	
+	   	if(login.memberType == 3){
+	   	 	let headerStr = '<a href="./member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	       		+ '<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	       		+ '<a href="./member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	   		
+	        $(".header_Right").html(headerStr);
+	       $(".CategoryUp").append("<li><a style='color:#4154f9' href='./Expert/ExpertMyPage.html?loginId="+ login.id + "'>나의 업체 페이지</a></li>");
+	       
+	    }
+	    
+	    // 뽀이가 로그인할 때
+	    if(login.deliveryAdmi == 1){
+	    	 let headerStr = '<a href="./member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	    	        + '<a href="./member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+	    	        + '<a href="./member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+	    	   		
+	    	
+	    	        $(".header_Right").html(headerStr);
+	    	$(".CategoryUp").append("<li><a  style='color:#4154f9' href='./DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
+	   
+	    
+	    }
+	    
+	 
+	    
+	 });
+
+
+
+
+
+
 
 
 $(function(){
@@ -501,10 +567,10 @@ function answer() {
 	$.ajax({
 		url:'http://localhost:3000/replyCsInsert?csnum=' + csnum,
 		type:'post',
-		data:{ id:$("#id").val(),title:$("#title").val(), content:$("#content").val() },
+		data:{ id:$("#admin").val(),title:$("#title").val(), content:$("#content").val() },
 		success:function(data){
 			if(data.trim() == "YES"){
-				//	alert("성공적으로 글을 작성하였습니다.");
+					alert("성공적으로 글을 작성하였습니다.");
 				location.href = "cslist.html";
 					
 				}else{

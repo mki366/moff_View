@@ -207,7 +207,7 @@ th{
                                     <table class="table header-border table-hover verticle-middle">
                                         <thead>
                                             <tr>
-                                                <th scope="col">#</th>
+                                                <th scope="col">상품번호</th>
                                                 <th scope="col">상품명</th>
                                                 <th scope="col">카테고리</th>
                                                 <th scope="col">서브카테고리</th>
@@ -287,7 +287,7 @@ th{
     adminProductList(0);
     adminProductCount();
     
-    $("#searchBtn").click(function () {
+    $("#btnSearch").click(function () {
     	 adminProductList(0);
     	 adminProductCount();
 	});
@@ -299,7 +299,7 @@ th{
     	$.ajax({
     		url:'http://localhost:3000/adminProductList',
     		type:'get',
-    		data:{page:pagenum, choice:$("#_choice").val(), search:$("#_search").val()},
+    		data:{page:pagenum, choice:$("#_choice").val(), search:$("#_searchWord").val()},
     		success:function(list){
     		//	alert('adminProductList succ' + JSON.stringify(list));
     				
@@ -340,7 +340,7 @@ th{
     	$.ajax({
     		url:'http://localhost:3000/adminProductCount',
     		type:'get',
-    		data:{ page:0, choice:$("#_choice").val(), search:$("#_search").val()},
+    		data:{ page:0, choice:$("#_choice").val(), search:$("#_searchWord").val()},
    	      	success:function( pagenum ){
    	     //     alert("페이지 확인:" + pagenum);
    	          

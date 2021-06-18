@@ -692,7 +692,7 @@ function delProduct() {
 	let prodNum = urlParams.prodNum;
 	
 	$.ajax({
-		url:"http://localhost:3000/delProduct?prodNum=" + prodNum,
+		url:"http://localhost:3000/delAdminColor?prodNum=" + prodNum,
 		type:'get',
 		data:{prodNum:prodNum},
 		success:function(data){

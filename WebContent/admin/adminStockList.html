@@ -56,7 +56,8 @@
 
 <style type="text/css">
  #thNum{
-	width: 200px; 
+	width: 200px;
+	text-align: center;
 }
 #thQuantity{
 	width: 100px;
@@ -385,7 +386,7 @@ function stockList(pagenum) {
 			$.each(list, function(i, data) {
 				 
 				let str = "<tr class='listRemove'>";
-			  str   += 		"<td>" + data.prodNum + "</td>";           
+			  str   += 		"<td style='text-align:center'>" + data.prodNum + "</td>";           
 			  str 	+= 		"<td>" + data.prodName + "</td>";
 			  str   += 		"<td>";
 			  
