@@ -23,6 +23,10 @@
 <script src="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.js"></script>
 <!--  https://apexcharts.com/ -->
  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+ 
+ 
+ <!-- 차트 추가 -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <style>
 .pagination {
   display: inline-block;
@@ -262,75 +266,101 @@ font-weight: 800
         <div class="content-body">
 
             <div class="container-fluid mt-3">
-            
-              
-
-                 <div class="row">
-                        <div class="col-lg-6 col-md-12">
+            			  <div class="row">
+                         
                             <div class="card">
                             
                                 <div class="card-body">
-                                    <h4 class="card-title">50세이상 ~ 60세 미만 구매순위</h4>
+                                    <h4 class="card-title">20세이상 ~ 30세 미만 구매순위</h4>
                                     <div>
 									    <div>
-									            <div class="container-fluid d-flex justify-content-center">
-									               <div class=" ct-chart ct-square chartjs-render-monitor"></div>
-									            </div>
+									           
+												<div style="width:800px">
+												    <canvas id="myChart4"></canvas>
+												</div>
 									       
 									    </div>
 									</div>
                                 </div>
                             </div>
                             
-                        </div>    
-                        <!-- 생년월일 가입자 -->
+                       
+                     
+                      </div>
+                      
+                          <div class="row">
+                         
+                            <div class="card">
+                            
+                                <div class="card-body">
+                                    <h4 class="card-title">30세이상 ~ 40세 미만 구매순위</h4>
+                                    <div>
+									    <div>
+									           
+												<div style="width:800px">
+												    <canvas id="myChart3"></canvas>
+												</div>
+									       
+									    </div>
+									</div>
+                                </div>
+                            </div>
+                            
+                       
+                     
+                      </div>
+                         <!-- 생년월일 가입자 -->
                        <div class="row">
-                           <div class="col-lg-6 col-md-12">
-                            <div class="card">
-                            
-                                <div class="card-body">
-                                    <h4 class="card-title">60세이상 구매순위</h4>
-                                    <div>
-									    <div>
-									            <div class="container-fluid d-flex justify-content-center">
-									               <div class=" ct-chart2 ct-square chartjs-render-monitor"></div>
-									            </div>
-									       
-									    </div>
-									</div>
-                                </div>
-                            </div>
-                            
-                        </div>    
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12">
+                           
                             <div class="card">
                             
                                 <div class="card-body">
                                     <h4 class="card-title">40세이상 ~ 50세 미만 구매순위</h4>
                                     <div>
 									    <div>
-									            <div class="container-fluid d-flex justify-content-center">
-									               <div class=" ct-chart2 ct-square chartjs-render-monitor"></div>
-									            </div>
+									            <div style="width:800px">
+												    <canvas id="myChart2"></canvas>
+												</div>
 									       
 									    </div>
 									</div>
                                 </div>
                             </div>
                             
-                        </div>    
-                     
-                      </div>
+                         
+                        </div>
                     
+              
 
-          
-          
+                		 <div class="row">
+                            <div class="card">
+                            
+                                <div class="card-body">
+                                    <h4 class="card-title">50세이상 ~ 60세 미만 구매순위</h4>
+                                    <div>
+									    <div>
+									           <div style="width:800px">
+												    <canvas id="myChart1"></canvas>
+												</div>
+									    </div>
+									</div>
+                                </div>
+                        </div>  
+                        </div>  
+                     
+                    
+                      
+
+         
           <script type="text/javascript">
           
+          
+        /*   var example = document.getElementById('example');
+          var context = example.getContext('2d');
+          context.fillStyle = 'red';
+          context.fillRect(30, 30, 50, 50);
          
-
+ */
 
           $(document).ready(function() {
           	
@@ -352,54 +382,71 @@ font-weight: 800
       					
       					
       					//alert(val.bdate);
-      					
-      						    	if(val.bdate == "50세이상 ~ 60세미만"){
-      						    		
-      						    		//alert(val.prodname);
-      						    		//alert(val.countp);
-      						    		
-      						    		Arr1.push( val.prodname );
-      						    		Arr2.push( val.countp );
-      						    	}
+    					
+    						    	if(val.bdate == "50세이상 ~ 60세미만"){
+    						    		
+    						    		//alert(val.prodname);
+    						    		//alert(val.countp);
+    						    		
+    						    		Arr1.push( val.prodname );
+    						    		Arr2.push( val.countp );
+    						    	}
       						 		
-      						    	//alert(Arr2);	    
+      				});//each
+      				
+      				
+      		    	
+					   // 우선 컨텍스트를 가져옵니다. 
+					    	var ctx1 = document.getElementById("myChart1").getContext('2d');
+					    	/*
+					    	- Chart를 생성하면서, 
+					    	- ctx를 첫번째 argument로 넘겨주고, 
+					    	- 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+					    	*/
+					    	var myChart = new Chart(ctx1, {
+					    	    type: 'bar',
+					    	    data: {
+					    	        labels: Arr1,
+					    	        datasets: [{
+					    	            label: '# of Votes',
+					    	            data: Arr2,
+					    	            backgroundColor: [
+					    	                'rgba(255, 99, 132, 0.2)',
+					    	                'rgba(54, 162, 235, 0.2)',
+					    	                'rgba(255, 206, 86, 0.2)',
+					    	                'rgba(75, 192, 192, 0.2)',
+					    	                'rgba(153, 102, 255, 0.2)',
+					    	                'rgba(255, 159, 64, 0.2)'
+					    	            ],
+					    	            borderColor: [
+					    	                'rgba(255,99,132,1)',
+					    	                'rgba(54, 162, 235, 1)',
+					    	                'rgba(255, 206, 86, 1)',
+					    	                'rgba(75, 192, 192, 1)',
+					    	                'rgba(153, 102, 255, 1)',
+					    	                'rgba(255, 159, 64, 1)'
+					    	            ],
+					    	            borderWidth: 1
+					    	        }]
+					    	    },
+					    	    options: {
+					    	        maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+					    	        scales: {
+					    	            yAxes: [{
+					    	                ticks: {
+					    	                    beginAtZero:true
+					    	                }
+					    	            }]
+					    	        }
+					    	    }
+					    	});
+			
+			
+      				
+      				
       								
       	    				    	
-      	    				        var data = {
-      	    				            labels: Arr1,
-      	    				            series: [ Arr2]
-      	    				        };
-      	    				        var options = {
-      	    				            seriesBarDistance: 15
-      	    				        };
-      	    				        var responsiveOptions = [
-      	    				            ['screen and (min-width: 641px) and (max-width: 1024px)', {
-      	    				                seriesBarDistance: 10,
-      	    				                axisX: {
-      	    				                    labelInterpolationFnc: function(value) {
-      	    				                        return value;
-      	    				                    }
-      	    				                }
-      	    				            }],
-      	    				            ['screen and (max-width: 640px)', {
-      	    				                seriesBarDistance: 5,
-      	    				                axisX: {
-      	    				                    labelInterpolationFnc: function(value) {
-      	    				                        return value[0];
-      	    				                    }
-      	    				                }
-      	    				            }]
-      	    				        ];
-      	    				        new Chartist.Bar('.ct-chart', data, {
-      	    				            showPoint: true,
-      	    				        });
-      						    
-      						});
-
-      						
-      				
-          				
-          				 
+      	    				  
           				
           				 
       				
@@ -428,10 +475,12 @@ font-weight: 800
 
           $(document).ready(function() {
         	  
-        	  age40();
-        	  
+        	 age40();
+        	 age30();
+        	 age20();
         	  
           	function age40(){
+          		//alert("age40");
           	$.ajax({
           		url:"http://localhost:3000/AgeBuyRank",
           		type:"post",
@@ -439,13 +488,14 @@ font-weight: 800
           		success:function(listA){
           			
           			
+          			
           			//40세이상 ~ 50세미만
-          			//상품이름
+          			//상품이름// 
   					var Arr3 = new Array();
   					//연령대 순서대로
   					var Arr4 = new Array();
   					
-  					
+
   					
   					
   					
@@ -460,47 +510,264 @@ font-weight: 800
       						    		Arr3.push( val.prodname );
       						    		Arr4.push( val.countp );
       						    	}
+      						
+      				});
+      						    
+      						    	
+      	    				    	
+      						   // 우선 컨텍스트를 가져옵니다. 
+      						    	var ctx2 = document.getElementById("myChart2").getContext('2d');
+      						    	/*
+      						    	- Chart를 생성하면서, 
+      						    	- ctx를 첫번째 argument로 넘겨주고, 
+      						    	- 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+      						    	*/
+      						    	var myChart = new Chart(ctx2, {
+      						    	    type: 'bar',
+      						    	    data: {
+      						    	        labels: Arr3,
+      						    	        datasets: [{
+      						    	            label: '# of Votes',
+      						    	            data: Arr4,
+      						    	            backgroundColor: [
+      						    	                'rgba(255, 99, 132, 0.2)',
+      						    	                'rgba(54, 162, 235, 0.2)',
+      						    	                'rgba(255, 206, 86, 0.2)',
+      						    	                'rgba(75, 192, 192, 0.2)',
+      						    	                'rgba(153, 102, 255, 0.2)',
+      						    	                'rgba(255, 159, 64, 0.2)'
+      						    	            ],
+      						    	            borderColor: [
+      						    	                'rgba(255,99,132,1)',
+      						    	                'rgba(54, 162, 235, 1)',
+      						    	                'rgba(255, 206, 86, 1)',
+      						    	                'rgba(75, 192, 192, 1)',
+      						    	                'rgba(153, 102, 255, 1)',
+      						    	                'rgba(255, 159, 64, 1)'
+      						    	            ],
+      						    	            borderWidth: 1
+      						    	        }]
+      						    	    },
+      						    	    options: {
+      						    	        maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+      						    	        scales: {
+      						    	            yAxes: [{
+      						    	                ticks: {
+      						    	                    beginAtZero:true
+      						    	                }
+      						    	            }]
+      						    	        }
+      						    	    }
+      						    	});
+      						    	
+      						    	
+      						    	
+      						    
+          			
+          			
+          		},
+          		error:function(){
+          			alert("Hash error");
+          		}
+          		
+          		
+          	});//ajax
+          	
+          	
+          	}
+          	
+          	
+          	
+        	function age30(){
+          		//alert("age40");
+          	$.ajax({
+          		url:"http://localhost:3000/AgeBuyRank",
+          		type:"post",
+          		data: JSON.stringify(),
+          		success:function(listA){
+          			
+          			
+          		
+
+          			//30세이상 ~ 40세미만
+          			//상품이름
+  					var Arr5 = new Array();
+  					//연령대 순서대로
+  					// 4번
+  					var Arr6 = new Array();
+  					
+  					
+  					
+  					
+  					
+  					
+      				$.each(listA, function(i, val){
+      					
+      					
+      					//alert(val.bdate);
+      					
+      					
+      						    if(val.bdate == "30세이상 ~ 40세미만"){
+      						    		Arr5.push( val.prodname );
+      						    		Arr6.push( val.countp );
+      						    	}
       						 		
-      						    	//alert(Arr2);	    
+      				});
+      						    
+      						    	//alert(Arr5);	    
       								
       	    				    	
-      	    				        var data = {
-      	    				            labels: Arr3,
-      	    				            series: [ Arr4]
-      	    				        };
-      	    				        var options = {
-      	    				            seriesBarDistance: 15
-      	    				        };
-      	    				        var responsiveOptions = [
-      	    				            ['screen and (min-width: 641px) and (max-width: 1024px)', {
-      	    				                seriesBarDistance: 10,
-      	    				                axisX: {
-      	    				                    labelInterpolationFnc: function(value) {
-      	    				                        return value;
-      	    				                    }
-      	    				                }
-      	    				            }],
-      	    				            ['screen and (max-width: 640px)', {
-      	    				                seriesBarDistance: 5,
-      	    				                axisX: {
-      	    				                    labelInterpolationFnc: function(value) {
-      	    				                        return value[0];
-      	    				                    }
-      	    				                }
-      	    				            }]
-      	    				        ];
-      	    				        new Chartist.Bar('.ct-chart2', data, {
-      	    				            showPoint: true,
-      	    				        });
-      						    
-      						});
-
-      						
+      					
+      						    	
+      						    	
+      						    	 // 우선 컨텍스트를 가져옵니다. 
+      						    	var ctx3 = document.getElementById("myChart3").getContext('2d');
+      						    	/*
+      						    	- Chart를 생성하면서, 
+      						    	- ctx를 첫번째 argument로 넘겨주고, 
+      						    	- 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+      						    	*/
+      						    	var myChart = new Chart(ctx3, {
+      						    	    type: 'bar',
+      						    	    data: {
+      						    	        labels: Arr5,
+      						    	        datasets: [{
+      						    	            label: '# of Votes',
+      						    	            data: Arr6,
+      						    	            backgroundColor: [
+      						    	                'rgba(255, 99, 132, 0.2)',
+      						    	                'rgba(54, 162, 235, 0.2)',
+      						    	                'rgba(255, 206, 86, 0.2)',
+      						    	                'rgba(75, 192, 192, 0.2)',
+      						    	                'rgba(153, 102, 255, 0.2)',
+      						    	                'rgba(255, 159, 64, 0.2)'
+      						    	            ],
+      						    	            borderColor: [
+      						    	                'rgba(255,99,132,1)',
+      						    	                'rgba(54, 162, 235, 1)',
+      						    	                'rgba(255, 206, 86, 1)',
+      						    	                'rgba(75, 192, 192, 1)',
+      						    	                'rgba(153, 102, 255, 1)',
+      						    	                'rgba(255, 159, 64, 1)'
+      						    	            ],
+      						    	            borderWidth: 1
+      						    	        }]
+      						    	    },
+      						    	    options: {
+      						    	        maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+      						    	        scales: {
+      						    	            yAxes: [{
+      						    	                ticks: {
+      						    	                    beginAtZero:true
+      						    	                }
+      						    	            }]
+      						    	        }
+      						    	    }
+      						    	});
       				
-          				
-          				 
-          				
-          				 
+          			
+          			
+          		},
+          		error:function(){
+          			alert("Hash error");
+          		}
+          		
+          		
+          	});//ajax
+          	
+          	
+          	}
+        	
+        	
+        	
+        	
+
+        	function age20(){
+          		//alert("age40");
+          	$.ajax({
+          		url:"http://localhost:3000/AgeBuyRank",
+          		type:"post",
+          		data: JSON.stringify(),
+          		success:function(listA){
+          			
+          			
+          		
+
+          			//20세이상 ~ 30세미만
+          			//상품이름
+  					var Arr7 = new Array();
+  					//연령대 순서대로
+  					// 4번
+  					var Arr8 = new Array();
+  					
+  					
+  					
+  					
+  					
+  					
+      				$.each(listA, function(i, val){
+      					
+      					
+      					//alert(val.bdate);
+      					
+      					
+      						    if(val.bdate == "20세이상 ~ 30세미만"){
+      						    		Arr7.push( val.prodname );
+      						    		Arr8.push( val.countp );
+      						    	}
+      						 		
+      				});
+      						    
+      						    	
+      								
+      	    				    	
+      					
+      						    	
+      						    	
+      						    	 // 우선 컨텍스트를 가져옵니다. 
+      						    	var ctx4 = document.getElementById("myChart4").getContext('2d');
+      						    	/*
+      						    	- Chart를 생성하면서, 
+      						    	- ctx를 첫번째 argument로 넘겨주고, 
+      						    	- 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+      						    	*/
+      						    	var myChart = new Chart(ctx4, {
+      						    	    type: 'bar',
+      						    	    data: {
+      						    	        labels: Arr7,
+      						    	        datasets: [{
+      						    	            label: '# of Votes',
+      						    	            data: Arr8,
+      						    	            backgroundColor: [
+      						    	                'rgba(255, 99, 132, 0.2)',
+      						    	                'rgba(54, 162, 235, 0.2)',
+      						    	                'rgba(255, 206, 86, 0.2)',
+      						    	                'rgba(75, 192, 192, 0.2)',
+      						    	                'rgba(153, 102, 255, 0.2)',
+      						    	                'rgba(255, 159, 64, 0.2)'
+      						    	            ],
+      						    	            borderColor: [
+      						    	                'rgba(255,99,132,1)',
+      						    	                'rgba(54, 162, 235, 1)',
+      						    	                'rgba(255, 206, 86, 1)',
+      						    	                'rgba(75, 192, 192, 1)',
+      						    	                'rgba(153, 102, 255, 1)',
+      						    	                'rgba(255, 159, 64, 1)'
+      						    	            ],
+      						    	            borderWidth: 1
+      						    	        }]
+      						    	    },
+      						    	    options: {
+      						    	        maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+      						    	        scales: {
+      						    	            yAxes: [{
+      						    	                ticks: {
+      						    	                    beginAtZero:true
+      						    	                }
+      						    	            }]
+      						    	        }
+      						    	    }
+      						    	});
       				
           			
           			

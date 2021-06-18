@@ -250,50 +250,69 @@
 					</nav>
 				</div>
 				
-				<script type="text/javascript">
+					
+			<script type="text/javascript">
 			$(document).ready(function(){
-			      let login = JSON.parse(sessionStorage.getItem("login"));
-			      let id = login;
-			      
-			        let Type = login.memberType;
-					let Id = login.id;
-					let DeliAdmi = login.deliveryAdmi;
-			      
-			      
-			      if(login== null){
-			         let headerStr = '<a href="../member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-			                     + '<a href="../member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-			                     + '<a href="../member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-			         $(".header_Right").html(headerStr);
-			      
-			      }else{
-			         let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			    let login = JSON.parse(sessionStorage.getItem("login"));
+//			    let id = login;
+			    
+			 //   let Type = login.memberType;
+			 //   let Id = login.id;
+			 //   let DeliAdmi = login.deliveryAdmi;
+			    
+			    
+			    if(login== null){
+			       let headerStr = '<a href="../member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			                   + '<a href="../member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			                   + '<a href="../member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+			       $(".header_Right").html(headerStr);
+			    
+			    }else if(login.memberType == 0){
+			       let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			          + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			          + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+			          
+			       $(".header_Right").html(headerStr);
+			       
+			    }else if(login.memberType == 2){
+			        let headerStr = '<a href="../admin/AdminMember.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
 			            + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
 			            + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
 			            
 			         $(".header_Right").html(headerStr);
+			 
+			    }else 
+			       
+			       
+
+			      // 시공업체가 로그인할 때    
+			      if(login.memberType == 3){
+			          let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			             + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			             + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
 			         
-			      }
-				
-			      
-			  	// 시공업체가 로그인할때 
-					if(Type == 3){
-						
-						
-						$(".CategoryUp").append("<li><a style='color:#4154f9' href='../Expert/ExpertMyPage.html?loginId="+ Id + "'>나의 업체 페이지</a></li>");
-						
-					}
-						
-						
-					if(DeliAdmi == 1){
-						$(".CategoryUp").append("<li><a  style='color:#4154f9' href='../DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
-					}
-					
-					
-			      
-			      
-			   });
+			        $(".header_Right").html(headerStr);
+			       $(".CategoryUp").append("<li><a style='color:#4154f9' href='../Expert/ExpertMyPage.html?loginId="+ login.id + "'>나의 업체 페이지</a></li>");
+			       
+			    }
+			    
+			    // 뽀이가 로그인할 때
+			    if(login.deliveryAdmi == 1){
+			        let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			               + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+			               + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+			                
+			       
+			               $(".header_Right").html(headerStr);
+			       $(".CategoryUp").append("<li><a  style='color:#4154f9' href='../DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
 			   
+			    
+			    }
+			    
+			 
+			    
+			 });
+			 
 			
 			
 			</script>

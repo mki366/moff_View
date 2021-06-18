@@ -697,8 +697,10 @@ HashMap.prototype = {
                 						app += "<td style='color: blue'>배달기사</td>"
                 					}else if(val.memberType == 0){
                 						app += "<td>일반회원</td>";	
-                					}else if(val.memberType == 2){
+                					}else if(val.memberType == 3){
                 						app += "<td style='color: #ff9d55'>시공업체</td>";	
+                					}else if(val.memberType == 2){
+                						app += "<td style='color: red'>관리자</td>";	
                 					}
                 					app += "<td><button type='button' class='btn mb-1 btn-rounded btn-primary'   onclick='modalshow("+val.memNum +")' data-toggle='modal' data-target='#exampleModalCenter'>회원관리</button></td>";
                 				
