@@ -340,6 +340,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 						</ul>
 					</nav>
 				</div>
+				</header>
 			<!-- Mobile-menu end -->
          <!-- HEADING-BANNER START -->
          
@@ -564,32 +565,37 @@ var mProdNum = urlParams.mProdNum;
 var tProdNum = urlParams.tProdNum;
 var pProdNum = urlParams.pProdNum;
 var qProdNum = urlParams.qProdNum;
+var type = urlParams.type;
 
 // insert the images
 if(fProdNum!=0){
 	var array = getProduct(fProdNum);
-	$("#frameZone").html("<img src='../image/" + array[0] + "'>");
+	$("#frameZone").html("<img src='../images/bed/" + array[0] + "'>");
 	$("#finalProd").append("<h2>" + array[1] +"</h2>");
 	
 }
 if(mProdNum!=0){ 
 	var array1 = getProduct(mProdNum);
-	$("#matZone").html("<img src='../image/" + array1[0] + "'>");
+	$("#matZone").html("<img src='../images/bed/" + array1[0] + "'>");
 	$("#finalProd").append("<h2>" + array1[1] +"</h2>");
 }
 if(tProdNum!=0){ 
 	var array2 = getProduct(tProdNum);
-	$("#topperZone").html("<img src='../image/" + array2[0] + "'>");
+	$("#topperZone").html("<img src='../images/bed/" + array2[0] + "'>");
 	$("#finalProd").append("<h2>" + array2[1] +"</h2>");
 }
 if(pProdNum!=0){ 
 	var array3 = getProduct(pProdNum);
-	$("#pillowZone").html("<img src='../image/"+ array3[0] +"' style='height:150px;width:150px;margin-left:190px; margin-top: 130px;' ><img src='../image/"+ array3[0]  +"' style='height:150px;width:150px;margin-left:-40px; margin-top: 150px;' >") ;
+	if(type=="single"){
+		$("#pillowZone").html("<img src='../images/bed/"+ array3[0] +"' style='height:150px;width:150px;margin-left:250px; margin-top: 136px;' >") ;
+	}else{
+		$("#pillowZone").html("<img src='../images/bed/"+ array3[0] +"' style='height:150px;width:150px;margin-left:190px; margin-top: 130px;' ><img src='../images/bed/"+ array3[0]  +"' style='height:150px;width:150px;margin-left:-40px; margin-top: 150px;' >") ;
+	}
 	$("#finalProd").append("<h2>" + array3[1] +"</h2>");
 }
 if(qProdNum!=0){ 
 	var array4 = getProduct(qProdNum);
-	$("#quiltZone").html("<img src='../image/" + array4[0] + "'>");
+	$("#quiltZone").html("<img src='../images/bed/" + array4[0] + "'  style='width: 320px;height: auto;margin-left: 45px;margin-top: 74px;'>");
 	$("#finalProd").append("<h2>" + array4[4] +"</h2>");
 }
 
@@ -621,35 +627,45 @@ function getProduct(prodNum) {
 
 function addtoCart() {
 	
-	$.ajax({
-		url:'http://localhost:3000/addBedCart',
-		type:'post',
-		data:{ id:login.id, fnum:fProdNum, mnum:mProdNum, tnum:tProdNum, pnum:pProdNum, qnum:qProdNum },
-		success:function(){
-			alert('suc');
-		}, 
-		error:function(){
-			alert('error');
-		}
-	});
+	if(login==null){
+		alert('로그인이 필요한 서비스입니다');
+		location.href="../member/login.html";
+	}else{
+		$.ajax({
+			url:'http://localhost:3000/addBedCart',
+			type:'post',
+			data:{ id:login.id, fnum:fProdNum, mnum:mProdNum, tnum:tProdNum, pnum:pProdNum, qnum:qProdNum },
+			success:function(){
+				alert('suc');
+			}, 
+			error:function(){
+				alert('error');
+			}
+		});
+	}
 
 }
 
 
 function addtoWish() {
 	
-	$.ajax({
-		url:'http://localhost:3000/addBedWish',
-		type:'post',
-		data:{ id:login.id, fnum:fProdNum, mnum:mProdNum, tnum:tProdNum, pnum:pProdNum, qnum:qProdNum },
-		success:function(){
-			alert('suc');
-		}, 
-		error:function(){
-			alert('error');
-		}
-	});
-
+	if(login==null){
+		alert('로그인이 필요한 서비스입니다');
+		location.href="../member/login.html";
+	}else{
+	
+		$.ajax({
+			url:'http://localhost:3000/addBedWish',
+			type:'post',
+			data:{ id:login.id, fnum:fProdNum, mnum:mProdNum, tnum:tProdNum, pnum:pProdNum, qnum:qProdNum },
+			success:function(){
+				alert('suc');
+			}, 
+			error:function(){
+				alert('error');
+			}
+		});
+	}
 }
 </script>
 </body>

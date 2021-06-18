@@ -14,7 +14,18 @@
       <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
-
+	<!-- icon -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> 
+		
+<style type="text/css">
+#prev{
+	border-radius: 30px;
+	font-size: 19px;
+	margin-left: -14px;
+	margin-bottom: 18px;
+	padding: 8px 28px;
+}
+</style>
 
  <script type="text/javascript">
 let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
@@ -63,7 +74,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
    </head>
    <body>   
       <!-- WRAPPER START -->
-      <div class="wrapper bg-dark-white">
+      <div class="wrapper bg-white">
 
          <!-- HEADER-AREA START -->
          <header id="sticky-menu" class="header header-2">
@@ -240,9 +251,10 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 						</ul>
 					</nav>
 				</div>
+				</header>
 			<!-- Mobile-menu end -->
          <!-- HEADING-BANNER START -->
-         <div class="heading-banner-area overlay-bg">
+         <div class="heading-banner-area">
             <div class="container" >
                <div class="row" >
                   <div class="col-md-12">
@@ -270,14 +282,13 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
    
 		<div class="product-area pt-80 pb-35">
 				<div class="container">
-				
+				 <a href="bedType.html" class="btn btn-default btn-sm" id="prev">  <i class="fas fa-arrow-left" style="margin-right: 12px;"></i>침대 종 변경하기   </a>
 					<!-- Section-title end -->
 					<div class="row cus-row-30"  id="bedList">
-						
-						
+	 				</div>
+	 				<br><br><br>
+				</div>
 		</div>
-</div>
-</div>
 </div>
 
 
@@ -287,6 +298,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
             <!-- Footer-area start -->
             <div class="footer-area footer-3">
                <div class="container">
+               
                   <div class="row">
                      <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
                         <div class="single-footer">
@@ -420,7 +432,7 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
          </div>
          <!-- END QUICKVIEW PRODUCT -->   
          
-      </div>
+      
       <!-- WRAPPER END -->
 <p align="center"></p>
 
@@ -438,34 +450,42 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 		
 		//	alert('suc');	 
 		//	alert(JSON.stringify(list));			
-			
-			$.each(list, function (i, item) {
-
-				let str = '<div class="single-product col-lg-3 col-md-4 col-sm-4 col-xs-12" >'
-						+	'<div class="product-img">'
-						+	'<a href="bedcanvas.html?prodNum='+ item.prodNum + '&type=' + type + '"><img src="../images/' + item.filename + '" style="width: 270px; height: 270px"></a>'
-				       	+   '</div>'
-				        +	'<div class="product-info clearfix">'
-				        +   '<div class="fix">'
-				        +   '<h4 class="post-title floatleft" ><a href="bedcanvas.html?prodNum="'+ item.prodNum + '&bedtype=' + type + '">' + item.prodName +'</a></h4>'
-				        +   '<p class="floatright hidden-sm hidden-xs"></p>'
-				        +   '</div>'
-				        +   '<div class="fix">'
-				        +   '<span class="pro-price floatleft" >'+  item.price + '</span>'
-				        +	 "</div>"
-				        +	 "</div>"
-				        +	 "</div>";
-				
-		 		$("#bedList").append(str);	
-				 
-			});	 
-			
+			if(list==""){
+				$("#bedList").html("<h3 style='text-align:center'>해당하는 상품이 없습니다.</h3><br><br><br>");
+			}else{
+				$.each(list, function (i, item) {
+	
+					let str = '<div class="single-product col-lg-3 col-md-4 col-sm-4 col-xs-12" style="margin-right: 39px;">'
+							+	'<div class="product-img">'
+							+	'<a href="bedcanvas.html?prodNum='+ item.prodNum + '&type=' + type + '"><img src="../images/bed/' + item.filename + '" style="width: 270px; height: 270px"></a>'
+					       	+   '</div>'
+					        +	'<div class="product-info clearfix">'
+					        +   '<div class="fix">'
+					        +   '<h4 class="post-title floatleft" ><a href="bedcanvas.html?prodNum="'+ item.prodNum + '&bedtype=' + type + '">' + item.prodName +'</a></h4>'
+					        +   '<p class="floatright hidden-sm hidden-xs"></p>'
+					        +   '</div>'
+					        +   '<div class="fix">'
+					        +   '<span class="pro-price floatleft" >₩ '+  numberWithCommas(item.price) + '원</span>'
+					        +	 "</div>"
+					        +	 "</div>"
+					        +	 "</div>";
+					
+			 		$("#bedList").append(str);	
+					 
+				});	 
+			}
 		},
 		error:function(){
 			alert('error');
 		}
 	});	 
 
+	
+	function numberWithCommas(x) {
+		  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	}
+	
+	
 </script>
          
       <script src="../js/vendor/jquery-1.12.0.min.js"></script>

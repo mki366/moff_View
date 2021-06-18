@@ -31,9 +31,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-
-
-
  <script type="text/javascript">
 let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
     return paramPair.split(/=(.+)?/).slice(0, 2);
@@ -401,7 +398,7 @@ a:hover,a:focus{
 	<div id="container"> 
 		  <div class="row" id="row">
 		    <div class="col-md-1 "></div>
-		     <div class="col-md-3">
+		     <div class="col-md-2">
 		            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 		                <div class="panel panel-default">
 		                    <div class="panel-heading" role="tab" id="headingOne">
@@ -457,7 +454,7 @@ a:hover,a:focus{
 		        </div>
 		        
     
-		<div class="col-md-5">
+		<div class="col-md-5" style="margin-left: 93px;margin-right: 54px;">
 		
 			<div style=" width: 800px; height: 500px; position: relative;" id="cv1" >
 				<div style="position: absolute;  "id='frameZone' ></div>
@@ -465,7 +462,7 @@ a:hover,a:focus{
 				<div style="position: absolute;  "id='topperZone'></div>
 				<div style="position: absolute;  "id='pillowZone'></div>
 				<div style="position: absolute;  "id='quiltZone'></div>
-				<div style="position: absolute; top: 300px; left: 630px ">
+				<div style="position: absolute; top: 287px; left: 602px ">
 					<p>판매가</p>
 					<div id="price"></div>
 					<a class="btn btn-fillnext" onclick="nextPage()">다음 ></a>
@@ -669,7 +666,7 @@ a:hover,a:focus{
 	let prodNum = urlParams.prodNum;
 	getProduct(prodNum);
 	
-	let type = urlParams.type;
+	var type = urlParams.type;
 	
 	var frame=prodNum;
 	var mat=0;
@@ -700,13 +697,20 @@ a:hover,a:focus{
 			
 			$.each(list, function (i, item) {
 	
-				  str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'  onclick='canv("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"				 
+				  str += "<li><img style='height:150px;width:150px;' src='../images/bed/" + item.filename + "'  onclick='canv("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"				 
 			});	 
 			
 			$("#framelist").html(str + "</ul>");	
-			matlist();
-			pillowlist();
-			topperList();
+			
+			if(type=="single"){
+				smatlist();
+				stopplist();
+			}else{
+				matlist();
+				topplist();
+			}
+			
+			pillowlist();			
 			quiltlist();
 			calPrice();
 			
@@ -732,7 +736,34 @@ a:hover,a:focus{
 				
 				$.each(list, function (i, item) {
 		
-					  str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'onclick='canv2("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"					 
+					  str += "<li><img style='height:150px;width:150px;' src='../images/bed/" + item.filename + "'onclick='canv2("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"					 
+				});	 
+				
+				$("#matlist").html(str + "</ul>");	
+				
+			},
+			error:function(){
+				alert('error');
+			}
+		});	 
+	}
+	
+	// 싱글 매트리스
+	function smatlist(){
+			
+		$.ajax({
+			url:'http://localhost:3000/getBedList',
+			type:'post',		
+			data:{ 'type': "smat" },
+			success:function( list ){
+	
+			//	alert(JSON.stringify(list));			
+								        
+				let str = "<ul style='list-style:none;'>";
+				
+				$.each(list, function (i, item) {
+		
+					  str += "<li><img style='height:150px;width:150px;' src='../images/bed/" + item.filename + "'onclick='canv2("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"					 
 				});	 
 				
 				$("#matlist").html(str + "</ul>");	
@@ -760,7 +791,7 @@ a:hover,a:focus{
 				
 				$.each(list, function (i, item) {
 		
-					str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'onclick='canv3("+ item.prodNum +")' ><p>"  + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"
+					str += "<li><img style='height:150px;width:150px;' src='../images/bed/" + item.filename + "'onclick='canv3("+ item.prodNum +")' ><p>"  + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"
 					 
 				});	 
 				
@@ -772,6 +803,35 @@ a:hover,a:focus{
 			}
 		});	 
 	}
+	
+	// 싱글토퍼
+	function stopplist(){
+			
+		$.ajax({
+			url:'http://localhost:3000/getBedList',
+			type:'post',		
+			data:{ 'type': "stop" },
+			success:function( list ){
+	
+			//	alert(JSON.stringify(list));			
+								        
+				let str = "<ul style='list-style:none;'>";
+				
+				$.each(list, function (i, item) {
+		
+					str += "<li><img style='height:150px;width:150px;' src='../images/bed/" + item.filename + "'onclick='canv3("+ item.prodNum +")' ><p>"  + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"
+					 
+				});	 
+				
+				$("#topplist").html(str + "</ul>");	
+				
+			},
+			error:function(){
+				alert('error');
+			}
+		});	 
+	}
+	
 	
 	// 베개
 	function pillowlist(){
@@ -788,7 +848,7 @@ a:hover,a:focus{
 				
 				$.each(list, function (i, item) {
 		
-					 str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'onclick='canv4("+ item.prodNum +")'> <p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"					 
+					 str += "<li><img style='height:150px;width:150px;' src='../images/bed/" + item.filename + "'onclick='canv4("+ item.prodNum +")'> <p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"					 
 				});	 
 				
 				$("#pillowlist").html(str + "</ul>");	
@@ -816,7 +876,7 @@ a:hover,a:focus{
 				
 				$.each(list, function (i, item) {
 		
-		            str += "<li><img style='height:150px;width:150px;' src='../image/" + item.filename + "'onclick='canv5("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"
+		            str += "<li><img style='height:150px;width:150px;' src='../images/bed/" + item.filename + "'onclick='canv5("+ item.prodNum +")' ><p>" + item.prodName + "<br><strong style='font-size:18px'>" + numberWithCommas(item.price) + "원</strong></p></li>"
 					 
 				});	 
 				
@@ -840,7 +900,7 @@ a:hover,a:focus{
 			data:{ prodNum:prodNum },
 			success:function(dto){	
 					
-	          let str = "<img src='../image/"+ dto.filename +"' >" 
+	          let str = "<img src='../images/bed/"+ dto.filename +"' >" 
 			  $("#frameZone").html(str);
 	          
 	          frame = prodNum;
@@ -866,7 +926,7 @@ a:hover,a:focus{
 			data:{ prodNum:prodNum },
 			success:function(dto){
 				
-	           let str = "<img src='../image/"+ dto.filename +"'  >" 
+	           let str = "<img src='../images/bed/"+ dto.filename +"'  >" 
 			   $("#matZone").html(str);
 	           
 			   mat = prodNum;  
@@ -890,7 +950,7 @@ a:hover,a:focus{
 			data:{ prodNum:prodNum },
 			success:function(dto){
 				
-	           let str = "<img src='../image/"+ dto.filename +"'  >" 
+	           let str = "<img src='../images/bed/"+ dto.filename +"'  >" 
 			   $("#topperZone").html(str);
 	           
 			   topper = prodNum;          
@@ -905,6 +965,7 @@ a:hover,a:focus{
 		});
 	}
 	
+
 	//////////////////////////클릭시 (베개)
 	function canv4(prodNum) {
 	
@@ -913,17 +974,22 @@ a:hover,a:focus{
 			type:'post',
 			data:{ prodNum:prodNum },
 			success:function(dto){
-				
-			  let str = "<img src='../image/"+ dto.filename +"' style='height:150px;width:150px;margin-left:190px; margin-top: 130px;' >" 
-	            +   "<img src='../image/"+ dto.filename +"' style='height:150px;width:150px;margin-left:-40px; margin-top: 150px;' >" ;
 
-			   $("#pillowZone").html(str);
-	           
-			   pillow = prodNum;   
-			   pProdNum = prodNum;
-		          
-	           calPrice();
+				let str;
+				if(type=="single"){
+					  str = "<img src='../images/bed/"+ dto.filename +"' style='height:150px;width:150px;margin-left:250px; margin-top: 136px;' >" ;
+				}else{
+					
+				    str = "<img src='../images/bed/"+ dto.filename +"' style='height:150px;width:150px;margin-left:190px; margin-top: 130px;' >" 
+		           			 + "<img src='../images/bed/"+ dto.filename +"' style='height:150px;width:150px;margin-left:-40px; margin-top: 150px;' >" ;				 
+				}
 				
+				  $("#pillowZone").html(str);
+		           
+				   pillow = prodNum;   
+				   pProdNum = prodNum;
+			          
+		           calPrice();
 			}, 
 			error:function(){
 				alert('error');
@@ -941,7 +1007,7 @@ a:hover,a:focus{
 			data:{ prodNum:prodNum },
 			success:function(dto){
 				
-	           let str = "<img src='../image/"+ dto.filename +"'  >" 
+	           let str = "<img src='../images/bed/"+ dto.filename +"' style='width: 320px;height: auto;margin-left: 45px;margin-top: 74px;' >" 
 			   $("#quiltZone").html(str);
 	           
 			   quilt = prodNum;    
@@ -968,7 +1034,7 @@ a:hover,a:focus{
 			success:function(dto){
 		
 			let filename = dto.filename;
-			$("#frameZone").html("<img src='../image/"+ filename +"'>");
+			$("#frameZone").html("<img src='../images/bed/"+ filename +"'>");
 			fimg = filename;
 			fname = dto.prodName;
 			
@@ -1006,7 +1072,7 @@ a:hover,a:focus{
 	function nextPage() {
 		
 		var price=$("#price").text();
-		location.href="bedFinal.html?price=" + price + "&fProdNum=" + fProdNum + "&mProdNum=" + mProdNum + "&tProdNum=" + tProdNum + "&pProdNum=" + pProdNum + "&qProdNum=" + qProdNum;
+		location.href="bedFinal.html?price=" + price + "&type=" + type + "&fProdNum=" + fProdNum + "&mProdNum=" + mProdNum + "&tProdNum=" + tProdNum + "&pProdNum=" + pProdNum + "&qProdNum=" + qProdNum;
 	}
 	
 </script>

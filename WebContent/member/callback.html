@@ -70,8 +70,9 @@ function snsCheck() {
 				}else{  // 이메일 존재
 					// 로그인
 					alert('이미 가입된 회원입니다');
-					location.href='mypage.html'; 
-					window.close();			
+					login();
+				/* 	location.href='mypage.html'; 
+					window.close();		 */	
 				}
 			},
 			error:function(){
@@ -82,6 +83,7 @@ function snsCheck() {
 
  
 function snsSignup(){
+alert(personal);
 
 	$.ajax({
 		url:"http://localhost:3000/snsSignup",
@@ -123,14 +125,14 @@ function login(){
 			if(data == ''){
 				alert('login fail');
 			}else{
-				alert(JSON.stringify(data));
+			//	alert(JSON.stringify(data));
 				sessionStorage.setItem("login", JSON.stringify(data));
 
-			//	location.href = "mypage.html";
+				location.href = "mypage.html";
 				
 			//	opener.location.href='mypage.html'; 
 			//	window.close();
-				location.href='mypage.html'; 
+			//	location.href='mypage.html'; 
 			//	window.close();
 			}
 		},
