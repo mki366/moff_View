@@ -60,7 +60,7 @@
 
 .filebox .upload-name { 
 	display: inline-block; 
-	padding: .5em .75em; /* labelÀÇ ÆÐµù°ª°ú ÀÏÄ¡ */ 
+	padding: .5em .75em; /* labelï¿½ï¿½ ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ */ 
 	font-size: inherit; 
 	font-family: inherit; 
 	line-height: normal; 
@@ -69,7 +69,7 @@
 	border: 1px solid #ebebeb; 
 	border-bottom-color: #e2e2e2; 
 	border-radius: .25em; 
-	-webkit-appearance: none; /* ³×ÀÌÆ¼ºê ¿ÜÇü °¨Ãß±â */ 
+	-webkit-appearance: none; /* ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß±ï¿½ */ 
 	-moz-appearance: none; appearance: none; 
 	width: 500px;
 	height: 40px;
@@ -1203,7 +1203,7 @@ body {
 }
 .breadcumbs li:first-child { margin-left: 0px;}
 .breadcumbs ul li a {
-  color: #fff;
+  color: #333;
   display: block;
 }
 .breadcumbs ul li:hover a { color: #C87065;}
@@ -1361,19 +1361,19 @@ span.color {
 }
 .color-filter ul li.active a,
 .color-filter ul li.active span.count  { color: black;}
-span.color.color-1 { background: #FCFAF9; border: 1px solid gray }	/* È­ÀÌÆ® */
-span.color.color-2 { background: #000000; }	/* ºí·¢ */
-span.color.color-3 { background: #EF4F41; }	/* ·¹µå */
-span.color.color-4 { background: #F99149; }	/* ¿À·»Áö */
-span.color.color-5 { background: #F7DD73; }	/* ³ë¶û */
-span.color.color-6 { background: #79A95F; }	/* ±×¸° */
-span.color.color-7 { background: #3D80BB; }	/* ºí·ç */
-span.color.color-8 { background: #062647; }	/* ³×ÀÌºñ */
-span.color.color-9 { background: #725599; }	/* º¸¶ó */
-span.color.color-10 { background: #F28CAF; }	/* ÇÎÅ© */
-span.color.color-11 { background: #F2E8D5; }	/* ¾ÆÀÌº¸¸® */
-span.color.color-12 { background: #CAC9C8; }	/* ±×·¹ÀÌ */
-span.color.color-13 { background: #886746; }	/* ºê¶ó¿î */
+span.color.color-1 { background: #FCFAF9; border: 1px solid gray }	/* È­ï¿½ï¿½Æ® */
+span.color.color-2 { background: #000000; }	/* ï¿½ï¿½ */
+span.color.color-3 { background: #EF4F41; }	/* ï¿½ï¿½ï¿½ï¿½ */
+span.color.color-4 { background: #F99149; }	/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+span.color.color-5 { background: #F7DD73; }	/* ï¿½ï¿½ï¿½ */
+span.color.color-6 { background: #79A95F; }	/* ï¿½×¸ï¿½ */
+span.color.color-7 { background: #3D80BB; }	/* ï¿½ï¿½ï¿½ */
+span.color.color-8 { background: #062647; }	/* ï¿½ï¿½ï¿½Ìºï¿½ */
+span.color.color-9 { background: #725599; }	/* ï¿½ï¿½ï¿½ï¿½ */
+span.color.color-10 { background: #F28CAF; }	/* ï¿½ï¿½Å© */
+span.color.color-11 { background: #F2E8D5; }	/* ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ */
+span.color.color-12 { background: #CAC9C8; }	/* ï¿½×·ï¿½ï¿½ï¿½ */
+span.color.color-13 { background: #886746; }	/* ï¿½ï¿½ï¿½ï¿½ */
 
 
 /* Widget Size Filter */

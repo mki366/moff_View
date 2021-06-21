@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+             <!-- all css here -->
+      <!-- bootstrap v3.3.6 css -->
+      <link rel="stylesheet" href="../css/bootstrap.min.css">
+      <!-- animate css -->
+      <link rel="stylesheet" href="../css/animate.css">
+      <!-- jquery-ui.min css -->
+      <link rel="stylesheet" href="../css/jquery-ui.min.css">
+      <!-- meanmenu css -->
+      <link rel="stylesheet" href="../css/meanmenu.min.css">
+      <!-- nivo-slider css -->
+      <link rel="stylesheet" href="../lib/css/nivo-slider.css">
+      <link rel="stylesheet" href="../lib/css/preview.css">
+      <!-- slick css -->
+      <link rel="stylesheet" href="../css/slick.css">
+      <!-- lightbox css -->
+      <link rel="stylesheet" href="../css/lightbox.min.css">
+      <!-- material-design-iconic-font css -->
+      <link rel="stylesheet" href="../css/material-design-iconic-font.css">
+      <!-- All common css of theme -->
+      <link rel="stylesheet" href="../css/default.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="../css/style.css">
+        <!-- shortcode css -->
+        <link rel="stylesheet" href="../css/shortcode.css">
+      <!-- responsive css -->
+      <link rel="stylesheet" href="../css/responsive.css">
+      <!-- modernizr css -->
+      <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	  <script src="../js/vendor/jquery-1.12.0.min.js"></script>
+      <!-- bootstrap js -->
+      <script src="../js/bootstrap.min.js"></script>
+      <!-- jquery.meanmenu js -->  
+      <script src="../js/jquery.meanmenu.js"></script>
+      <!-- slick.min js -->
+      <script src="../js/slick.min.js"></script>
+      <!-- jquery.treeview js -->
+      <script src="../js/jquery.treeview.js"></script>
+      <!-- lightbox.min js -->
+      <script src="../js/lightbox.min.js"></script>
+      <!-- jquery-ui js -->
+      <script src="../js/jquery-ui.min.js"></script>
+      <!-- jquery.nivo.slider js -->
+      <script src="../lib/js/jquery.nivo.slider.js"></script>
+      <script src="../lib/home.js"></script>
+      <!-- jquery.nicescroll.min js -->
+      <script src="../js/jquery.nicescroll.min.js"></script>
+      <!-- countdon.min js -->
+      <script src="../js/countdon.min.js"></script>
+      <!-- wow js -->
+      <script src="../js/wow.min.js"></script>
+      <!-- plugins js -->
+      <script src="../js/plugins.js"></script>
+      <!-- main js -->
+      <script src="../js/main.js"></script>
+	
+	
+	<!--  chart js -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+	<!--  apexchart -->
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+	<style>
+      
+        #chart {
+     max-width: 1050px; 
+      margin: 35px auto;
+    }
+    
+    .text-red{
+    	color:red;
+    }
+      
+     #varvar{
+	     font-size:35px;
+	     text-align: center;
+     }
+     
+    #varvar i{
+    	font-size: 30px;
+    }
+    </style>
+    
+</head>
+
+<body>
+
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo" style="margin: 20px 20px 20px 20px">
+                    <span class="logo-compact"><img src="./images/1122.png" alt=""></span>
+                    <span class="brand-title" style="font-size: 24px; color:white;">MOFF</span>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+     <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+       <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">관리자 페이지</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-line-chart" style="font-size:20px"></i>&ensp;<span class="nav-text">매출관리</span>
+                        </a>
+                    	<ul aria-expanded="false">
+                            <li><a href="adminSaless.html">매출관리</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o" style="font-size:20px">&ensp;</i><span class="nav-text">주문관리</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="adminSales.html">주문관리</a></li>
+                          
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-line-chart" style="font-size:20px"></i>&ensp;<span class="nav-text">주문통계</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="adminProduct.html">주문통계</a></li>
+                            <!-- <li><a href="./app-calender.html">배달승인</a></li> -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-cog" style="font-size:20px">&ensp;</i><span class="nav-text">상품관리</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="adminProductWrite.html">상품등록</a></li>
+                            <li><a href="adminProductList.html">상품리스트</a></li>
+                            <li><a href="adminStockList.html">재고관리</a></li>
+                                <li><a href="AdminAgeProduct.html">연령별 구매순위</a></li>
+                            <!-- <li><a href="adminProduct.html">주문통계</a></li> -->
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                           <i class="fa fa-address-book-o" style="font-size:20px"></i>&ensp;<span class="nav-text">회원관리</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="AdminMember.html">회원관리</a></li>
+                            <!-- <li><a href="./app-calender.html">배달승인</a></li> -->
+                        </ul>
+                    </li>
+                     <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-calendar-check-o" style="font-size:20px"></i>&ensp;<span class="nav-text">배달승인</span>
+                        </a>
+                        <ul aria-expanded="false">
+                           <li><a href="AdminBoyDATA.html">배달승인</a></li>
+                            <!-- <li><a href="./app-calender.html">배달승인</a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-1">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">오늘</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white" id="dailySales"></h2>
+                                    <p class="text-white mb-0" id="daily"></p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-2">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">이번달</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white" id="monthlySales"></h2>
+                                    <p class="text-white mb-0" id="monthly"></p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-3">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">올해</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white" id="annualSales"></h2>
+                                    <p class="text-white mb-0" id="annual"></p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-4">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">누적</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white" id="totalSales"></h2>
+                                    <p class="text-white mb-0" id="allaccum"></p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               <div class="row">
+                
+                 <div class="col-lg-3">
+                    </div>
+                     <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" id="sr" style="font-size: 26px;margin-bottom: 24px;">SALES REPORT</h4>
+                                <select id="year">
+								   <option value="2021">2021</option>
+								   <option value="2020">2020</option>
+								</select>
+								<select id="month">
+								   <option value="01">1</option>
+								   <option value="02">2</option>
+								   <option value="03">3</option>
+								   <option value="04">4</option>
+								   <option value="05">5</option>
+								   <option value="06">6</option>
+								   <option value="07">7</option>
+								   <option value="08">8</option>
+								   <option value="09">9</option>
+								   <option value="10">10</option>
+								   <option value="11">11</option>
+								   <option value="12">12</option>
+								</select>
+                                <button type="button" onclick="salesReport()">검색</button>
+                                
+                                <canvas id="barChart" width="500" height="250"></canvas>
+                                 <div id="varvar">
+                                     <span><i class="fa fa-caret-up text-success"></i></span>
+                                     <h4 class="d-inline-block text-success">720</h4>
+                                 <!--     <p class=" text-danger">+5.0%</p> -->
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3">
+                    </div>
+                    
+                </div>
+		 
+		 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body pb-0 d-flex justify-content-between">
+                                        <div>
+                                            <h3 class="mb-1" style="margin-bottom: 10px">2021년 매출 현황</h3>
+                                            <p>해당 연도의 월별 매출액과 누적 매출액을 계산한 결과입니다.</p>
+                                        </div>
+                                        <div>
+                                            <ul>
+                                                <li class="d-inline-block mr-3"><a class="text-dark" href="#" onclick="yearchart(21)">2021</a></li>
+                                                <li class="d-inline-block mr-3"><a class="text-dark" href="#" onclick="yearchart(20)">2020</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="chart-wrapper">
+                                        <div id="chart"></div>
+                                    </div>
+                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body pb-0 d-flex justify-content-between">
+                                        <div>
+                                           <h3 class="mb-1" style="margin-bottom: 10px">전월 대비 매출 증감액</h3>
+                                            <p>당월 매출액과 전월 매출액을 비교하여 계산한 결과입니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="chart-wrapper">
+											 <div id="vchart"></div>
+                                    </div>
+                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                  <div class="row">
+                    <!-- Pie Chart -->
+                    
+                </div>
+
+            <!-- #/ container -->
+        </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <!-- Chartjs -->
+    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="./plugins/d3v3/index.js"></script>
+    <script src="./plugins/topojson/topojson.min.js"></script>
+    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="./plugins/raphael/raphael.min.js"></script>
+    <script src="./plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="./plugins/moment/moment.min.js"></script>
+    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="./plugins/chartist/js/chartist.min.js"></script>
+    <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+
+
+    <script src="./js/dashboard/dashboard-1.js"></script>
+    
+    
+    
+    <script type="text/javascript">
+  
+	let today = new Date();  
+   	
+   	let year = today.getFullYear(); // 년도
+   	let month = today.getMonth() + 1;  // 월
+   	let mmonth;
+
+   	if(month.toString().length < 2){
+   		mmonth = "0" + month;
+   	}else{
+   		mmonth = month;
+   	}
+
+   	let date = today.getDate();  // 날짜
+   	let day = today.getDay();  // 요일
+   	let dday;
+   	
+   	$("#year").val(year).attr("selected", "selected");
+	$("#month").val(mmonth).attr("selected", "selected");
+  
+	salesReport();
+   	
+   	var presMSales=0;
+    var prevMSales=0;
+    var salesVariation;
+    var salesGrowth;
+   	
+   	salesByPeriod();
+   	yearchart('21');
+   	
+	
+	function salesByPeriod() {	
+
+		if(day=0){
+    		dday="일요일";
+    	}else if(day=1){
+    		dday="월요일";
+    	}else if(day=2){
+    		dday="화요일";
+    	}else if(day=3){
+    		dday="수요일";
+    	}else if(day=4){
+    		dday="목요일";
+    	}else if(day=5){
+    		dday="금요일";
+    	}else if(day=6){
+    		dday="토요일";
+    	}
+    	
+    	$("#daily").html(month+"월 "+ date+ "일 " + dday);
+    	$("#monthly").html(month+"월 ");
+    	$("#annual").html(year+"년 ");
+    	$("#allaccum").html(" ~ " + year + "년");
+    	
+	   $.ajax({
+	      url:"http://localhost:3000/salesByPeriod",
+	      type:"post",
+	      success:function( data ){   
+	    	//  alert(JSON.stringify(data));
+	         $("#dailySales").html(numberWithCommas(data[0])+"원");
+	         $("#monthlySales").html(numberWithCommas(data[1])+"원");
+	         $("#annualSales").html(numberWithCommas(data[2])+"원");
+	         $("#totalSales").html(numberWithCommas(data[3])+"원");   
+	      },
+	      error:function(){
+	         alert("error");
+	      }
+	   });
+	}
+    
+ <!-------------------------------------------------------------------------------------------------------------->
+    
+    function salesReport() {
+
+    	   var year = $("#year option:selected").val();
+    	   var month = $("#month option:selected").val()
+    	   $("#sr").html(year+"년 " +month+"월 SALES REPORT")
+    	   
+    	   $.ajax({
+    	      url:"http://localhost:3000/salesReport",
+    	      type:"post",
+    	      data:{ year:year, month:month },
+    	      success:function( list ){   
+    	     //    alert(JSON.stringify(list[0]));
+    	     //    alert(JSON.stringify(list[1])); 
+    	         
+    	         
+    	         if(list[0]!=null && list[1]==null){
+    	            
+    	            presMSales = list[0].presSales;
+    	            salesVariation = "+" + list[0].presSales;
+    	            salesGrowth =  "+" + list[0].presSales;
+    	            
+    	         }else if(list[0]!=null && list[1]!=null){
+    	            
+    	            presMSales = list[0].presSales;
+    	            prevMSales = list[1].presSales;
+    	            
+    	            if(list[0].variation > 0){
+    	               salesVariation = "+" + list[0].variation;
+    	               salesGrowth = "+" + (list[0].variation / list[1].presSales * 100).toFixed(2);
+    	                $("#varvar").html(  '<span><i class="fa fa-caret-up text-success"></i></span>' + 
+                        '<h4 class="text-success">' + numberWithCommas(salesVariation) +'원</h4>');
+    	            }else if(list[0].variation < 0){
+    	               salesVariation = list[0].variation;
+    	               salesGrowth = (list[0].variation / list[1].presSales * 100).toFixed(2);
+    	               
+    	               $("#varvar").html(  '<span><i class="fa fa-caret-down text-red"></i></span>' + 
+    	                        '<h4 class="text-red">    ' + numberWithCommas(salesVariation) +'원</h4>');
+    	            }
+    	            
+    	         }else{
+    	        	 presMSales=0;
+    	        	 prevMSales=0;
+    	        	 salesVariation=0;
+    	        	 salesGrowth=0;
+    	         }
+
+	          $("#presMSales").html(presMSales);
+    	      $("#prevMSales").html(prevMSales);
+    	      $("#salesVariation").html(salesVariation);
+    	      $("#salesGrowth").html(salesGrowth);   
+
+               
+    	       bar();
+    	      },
+    	      error:function(){
+    	         alert("error");
+    	      }
+    	   });
+    	}
+
+    
+    function bar() {
+
+    	    var ctx = document.getElementById("barChart");
+    	    ctx.height = 200;
+    	    var myChart = new Chart(ctx, {
+    	        type: 'bar',
+    	        data: {
+    	            datasets: [
+    	                {
+    	                    label: "전월 매출액",
+    	                    data: [prevMSales],
+    	                    borderColor: "rgba(117, 113, 249, 0.9)",
+    	                    borderWidth: "0",
+    	                    backgroundColor: "rgba(117, 113, 249, 0.5)"
+    	                },
+    	                {
+    	                    label: "당월 매출액",
+    	                    data: [presMSales],
+    	                    borderColor: "rgba(144,	104,	190,0.9)",
+    	                    borderWidth: "0",
+    	                    backgroundColor: "rgba(144,	104,	190,0.7)"
+    	                }
+    	            ]
+    	        },
+    	        options: {
+    	            scales: {
+    	                yAxes: [{
+    	                    ticks: {
+    	                        beginAtZero: true
+    	                    }
+    	                }],
+    	                xAxes: [{
+    	                    // Change here
+    	                    barPercentage: 0.2
+    	                }]
+    	            }
+    	        }
+    	    });
+
+	}
+    
+    
+ <!-------------------------------------------------------------------------------------------------------------->
+	
+	// 연도별 매출+누적 그래프
+    	function yearchart(y) {
+    	   
+    //	   var y = $("#yearchart option:selected").val();
+    	   
+    	   var options = {
+    	           series: [{
+    	           name: '월별 총 매출',
+    	           type: 'column',
+    	           data:  JSON.parse(selMonthlySales(y))
+    	         }, {
+    	           name: '누적 매출',
+    	           type: 'line',
+    	           data:  JSON.parse(annualAccumChart(y))
+    	         }],
+    	           chart: {
+    	           height: 350,
+    	           type: 'line',
+    	         },
+    	         stroke: {
+    	           width: [0, 4]
+    	         },
+    	         title: {
+    	           text: '2021년 매출'
+    	         },
+    	         dataLabels: {
+    	           enabled: true,
+    	           enabledOnSeries: [1]
+    	         },
+    	         labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월' ],
+    	         xaxis: {
+    	         },
+    	         yaxis: [{
+    	           title: {
+    	             text: '매출액(원)',
+    	           },
+    	         
+    	         }]
+    	         };
+    	   
+    	         var chart = new ApexCharts(document.querySelector("#chart"), options);
+    	         chart.render();
+    	}     
+    	      
+    
+	// 해당 연도의 월별 총 매출
+	function selMonthlySales(year) {
+	   
+	   var column;
+	   
+	   $.ajax({
+	      url:"http://localhost:3000/selMonthlySales",
+	      type:"post",
+	      data:{year:year},
+	      async:false,
+	      success:function( list ){   
+	      //   alert(JSON.stringify(list));
+	      
+	         column = "[";
+	         
+	         $.each(list, function (i, item) {
+	            column += item.price + ",";
+	         })
+	         
+	         for(i=0; i<12-list.length; i++){
+	            column += "0,";
+	         }
+	         
+	         column = column.slice(0, -1) + "]"; 
+	         
+	      //   alert(column);
+	      },
+	      error:function(){
+	         alert("error");
+	      }
+	   });
+	   return column;
+	}
+
+
+	// 해당 연도의 월별 누적 매출
+	function annualAccumChart(year) {
+
+	   var line;
+	   
+	   $.ajax({
+	      url:"http://localhost:3000/annualAccumChart",
+	      type:"post",
+	      data:{year:year},
+	      async:false,
+	      success:function( list ){   
+	      //   alert(list.length);
+	      // alert(JSON.stringify(list));
+	      
+	         line = "[";
+	         
+	         $.each(list, function (i, item) {
+	            line += item.accum + ",";
+	         })
+	         
+	         line = line.slice(0, -1) + "]";
+	      },
+	      error:function(){
+	         alert("error");
+	      }
+	   });
+	   return line;
+	}
+
+	
+<!-------------------------------------------------------------------------------------------------------------->
+
+	var data1;
+	var data2;
+	monthlyVarChart();
+
+	// 전월대비 매출 그래프
+	function monthlyVarChart() {
+
+		
+	   $.ajax({
+	      url:"http://localhost:3000/monthlyVarChart",
+	      type:"post",
+	      async:false,
+	      success:function( list ){
+
+	    	   data1="[";
+	    	   data2="[";
+	      
+		       $.each(list, function (i, item) {
+
+		            data1 += "\"20" + item.presM + "\",";   
+					data2 += item.variation + ",";
+		       })
+	       
+	     	  data1 = data1.slice(0, -1) + "]";
+	          data2 = data2.slice(0, -1) + "]";
+	      },
+	      error:function(){
+	         alert("error");
+	      }
+	   });
+
+		variationChart();
+
+	}
+
+
+	
+	function variationChart() {
+ 	   var options = {
+ 	             series: [{
+ 	             name: '매출액',
+ 	             data:JSON.parse(data2)
+ 	           }],
+ 	             chart: {
+ 	             type: 'bar',
+ 	             height: 350
+ 	           },
+ 	           plotOptions: {
+ 	             bar: {
+ 	               colors: {
+ 	                 ranges: [{
+ 	                   from: -200000,
+ 	                   to: -100000,
+ 	                   color: '#F15B46'
+ 	                 }, {
+ 	                   from: -100000,
+ 	                   to: 0,
+ 	                   color: '#FEB019'
+ 	                 }]
+ 	               },
+ 	               columnWidth: '80%',
+ 	             }
+ 	           }, 
+ 	           dataLabels: {
+ 	        	   enabled: true,
+ 	        	   dropShadow: {
+ 	        	       enabled: true,
+ 	        	       left: 2,
+ 	        	       top: 2,
+ 	        	       opacity: 0.5
+ 	        	   }
+ 	        	 },
+ 	           yaxis: {
+ 	             title: {
+ 	               text: 'Growth',
+ 	             },
+ 	             labels: {
+ 	               formatter: function (y) {
+ 	                 return y.toFixed(0); //+ "%";
+ 	               }
+ 	             }
+ 	           },
+ 	           xaxis: {
+ 	             type: 'datetime',
+ 	             categories: 
+ 	            	 JSON.parse(data1)
+ 	             ,
+ 	             labels: {
+ 	               rotate: -90
+ 	             }
+ 	           }
+ 	           };
+
+ 	           var chart = new ApexCharts(document.querySelector("#vchart"), options);
+ 	           chart.render();
+ 	         
+ 	}
+	
+	
+ <!-------------------------------------------------------------------------------------------------------------->
+
+        
+    function numberWithCommas(x) {
+		  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	}
+    </script>
+
+</body>
+
+</html>

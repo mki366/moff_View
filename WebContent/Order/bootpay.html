@@ -494,7 +494,7 @@ button:focus {
          </div>
          <!-- Mobile-header-top End -->
           <!-- HEADER-AREA START -->
-        	  <header id="sticky-menu" class="header">
+             <header id="sticky-menu" class="header">
             <div class="header-area">
                <div class="container-fluid">
                   <div class="row">
@@ -632,7 +632,7 @@ button:focus {
                </nav>
             </div>
          <!-- Mobile-menu end -->
-			
+         
          
          <!-- HEADER-AREA END -->
          <!-- Mobile-menu start -->
@@ -1108,14 +1108,14 @@ if(prodNum==null){
           let quantityCart=0;   //총 갯수
           let pPrice=0;
          $.each(list, function (i, item) {
-        	 let cartPrice=0;
-        	 if(item.price==null){
-        		  cartPrice = item.oriPrice;
-        	 }
-        	 else{
-        		 cartPrice = item.oriPrice;
-        	 }
-        	// alert(cartPrice)
+            let cartPrice=0;
+            if(item.price==null){
+                cartPrice = item.oriPrice;
+            }
+            else{
+               cartPrice = item.oriPrice;
+            }
+           // alert(cartPrice)
             //prodNum저장
             $(".OrderedProdNum").append(' <input type="hidden" id="OrderedProdNum'+i+'" value="'+item.prodNum+'">');
             $(".OrderedQuantity").append(' <input type="hidden" id="OrderedQuantity'+i+'" value="'+item.quantity+'">');
@@ -1176,7 +1176,7 @@ if(prodNum==null){
 
 //2.param 있음 -> 상품 디테일에서 바로 구매한 것 
 else{
-	$("#deleteTable").html("");
+   $("#deleteTable").html("");
    let Hprice=0;
    if(price==null){
       //세일하지 않는 상품
@@ -1253,36 +1253,36 @@ $("#dataSelected").click(function(){
 //포인트 사용
 let point=0;
 $("#gotoUsePoint").click(function(){
-	let totalPrice = document.getElementById("totalPrice").innerHTML;
-	//포인트가 가격 보다 많을 때
-	if(login.memPoint>totalPrice){
-		 let pointFF = login.memPoint-totalPrice;
-		 $("#pointUpdate").html('<input type="text" id="cname" name="cname" value="'+totalPrice+'" readonly>');
-		
-		  $("#usePoint").html(totalPrice);
-		  $("#totalPrice").html("0");
-		 
-		  $("#MyPoint").html("보유 포인트 : "+pointFF+" 점");
-		  point+=1;
-		   alert(point);
-		 $("#rightPointPrice").html(totalPrice+ " 원");
-		 $("#rightTotalPrice").html("0 원");
-	}
-	else{
-		   $("#pointUpdate").html('<input type="text" id="cname" name="cname" value="'+login.memPoint+'" readonly>');
-		   $("#usePoint").html(login.memPoint);
-		  
-		   //alert(totalPrice)
-		   totalPrice -=login.memPoint;
-		   $("#totalPrice").html(totalPrice);
-		   $("#MyPoint").html("보유 포인트 : 0 점");
-		   //db에 0점으로 바꿔주기
-		   point+=1;
-		   alert(point);
-		   $("#rightPointPrice").html(login.memPoint+ " 원");
-		   $("#rightTotalPrice").html(totalPrice+" 원");
-	}
-	
+   let totalPrice = document.getElementById("totalPrice").innerHTML;
+   //포인트가 가격 보다 많을 때
+   if(login.memPoint>totalPrice){
+       let pointFF = login.memPoint-totalPrice;
+       $("#pointUpdate").html('<input type="text" id="cname" name="cname" value="'+totalPrice+'" readonly>');
+      
+        $("#usePoint").html(totalPrice);
+        $("#totalPrice").html("0");
+       
+        $("#MyPoint").html("보유 포인트 : "+pointFF+" 점");
+        point+=1;
+         alert(point);
+       $("#rightPointPrice").html(totalPrice+ " 원");
+       $("#rightTotalPrice").html("0 원");
+   }
+   else{
+         $("#pointUpdate").html('<input type="text" id="cname" name="cname" value="'+login.memPoint+'" readonly>');
+         $("#usePoint").html(login.memPoint);
+        
+         //alert(totalPrice)
+         totalPrice -=login.memPoint;
+         $("#totalPrice").html(totalPrice);
+         $("#MyPoint").html("보유 포인트 : 0 점");
+         //db에 0점으로 바꿔주기
+         point+=1;
+         alert(point);
+         $("#rightPointPrice").html(login.memPoint+ " 원");
+         $("#rightTotalPrice").html(totalPrice+" 원");
+   }
+   
      
    });
 //정보 일치하기 
@@ -1490,6 +1490,7 @@ function setDeliveryCheck(data){
       <script type="text/javascript">
 
 
+
       <!--다음 도로명 주소 api  -->
 
       function sample6_execDaumPostcode() {
@@ -1556,7 +1557,7 @@ function setDeliveryCheck(data){
           let deliveryPay=$("#deliveryPay").html();
           let obAddress=$("#address").html();
           if(money>=1000000){
-        	  money=1000000;
+             money=1000000;
           }
       alert(obAddress)
          var IMP = window.IMP; // 생략가능
@@ -1711,71 +1712,71 @@ function setDeliveryCheck(data){
       for (i = 0; i < y.length; i++) { if (y[i].value=="" ) { y[i].className +=" invalid" ; valid=false; } } if (valid) { document.getElementsByClassName("step")[currentTab].className +=" finish" ; } return valid; } function fixStepIndicator(n) { var i, x=document.getElementsByClassName("step"); for (i=0; i < x.length; i++) { x[i].className=x[i].className.replace(" active", "" ); } x[n].className +=" active" ; }
     
       function signUp(){
-     	 location.href="../member/signup.html"
+         location.href="../member/signup.html"
       }
       
       $(document).ready(function(){
-    	    let login = JSON.parse(sessionStorage.getItem("login"));
-//    	    let id = login;
-    	    
-    	 //   let Type = login.memberType;
-    	 //   let Id = login.id;
-    	 //   let DeliAdmi = login.deliveryAdmi;
-    	    
-    	    
-    	    if(login== null){
-    	       let headerStr = '<a href="../member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	                   + '<a href="../member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	                   + '<a href="../member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-    	       $(".header_Right").html(headerStr);
-    	    
-    	    }else if(login.memberType == 0){
-    	       let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	          + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	          + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-    	          
-    	       $(".header_Right").html(headerStr);
-    	       
-    	    }else if(login.memberType == 2){
-    	        let headerStr = '<a href="../admin/adminSales.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	            + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	            + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-    	            
-    	         $(".header_Right").html(headerStr);
-    	 
-    	    }else 
-    	       
-    	       
+           let login = JSON.parse(sessionStorage.getItem("login"));
+//           let id = login;
+           
+        //   let Type = login.memberType;
+        //   let Id = login.id;
+        //   let DeliAdmi = login.deliveryAdmi;
+           
+           
+           if(login== null){
+              let headerStr = '<a href="../member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                          + '<a href="../member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                          + '<a href="../member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+              $(".header_Right").html(headerStr);
+           
+           }else if(login.memberType == 0){
+              let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                 + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                 + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+                 
+              $(".header_Right").html(headerStr);
+              
+           }else if(login.memberType == 2){
+               let headerStr = '<a href="../admin/adminSales.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                   + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                   + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+                   
+                $(".header_Right").html(headerStr);
+        
+           }else 
+              
+              
 
-    	      // 시공업체가 로그인할 때    
-    	      if(login.memberType == 3){
-    	          let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	             + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	             + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-    	         
-    	        $(".header_Right").html(headerStr);
-    	       $(".CategoryUp").append("<li><a style='color:#4154f9' href='../Expert/ExpertMyPage.html?loginId="+ login.id + "'>나의 업체 페이지</a></li>");
-    	       
-    	    }
-    	    
-    	    // 뽀이가 로그인할 때
-    	    if(login.deliveryAdmi == 1){
-    	        let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	               + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	               + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-    	                
-    	       
-    	               $(".header_Right").html(headerStr);
-    	       $(".CategoryUp").append("<li><a  style='color:#4154f9' href='./DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
-    	   
-    	    
-    	    }
-    	    
-    	 
-    	    
-    	 });
-    	 
-    	 
+             // 시공업체가 로그인할 때    
+             if(login.memberType == 3){
+                 let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                    + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                    + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+                
+               $(".header_Right").html(headerStr);
+              $(".CategoryUp").append("<li><a style='color:#4154f9' href='../Expert/ExpertMyPage.html?loginId="+ login.id + "'>나의 업체 페이지</a></li>");
+              
+           }
+           
+           // 뽀이가 로그인할 때
+           if(login.deliveryAdmi == 1){
+               let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                      + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                      + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+                       
+              
+                      $(".header_Right").html(headerStr);
+              $(".CategoryUp").append("<li><a  style='color:#4154f9' href='./DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
+          
+           
+           }
+           
+        
+           
+        });
+        
+        
       </script>
       
 </body>

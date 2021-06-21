@@ -259,7 +259,7 @@ body {
 .main-menu > nav {}
 .main-menu > nav > ul {}
 .main-menu > nav > ul > li {}
-/* 揶쏉옙占쎌삢 占쎄쿃 占쏙옙占쎌뵠占쏙옙 */
+/* 媛��옣 �겙 ���씠�� */
 .main-menu > nav > ul > li > a {
   background: transparent none repeat scroll 0 0;
   color: #383838;
@@ -308,7 +308,7 @@ body {
   opacity: 1;
   visibility: visible;
 }
-/* sub menu 占쎌삂占쏙옙 筌띻낱寃�  燁삳똾�믤�⑥쥓�봺 */
+/* sub menu �옉�� 留곹겕  移댄뀒怨좊━ */
 .main-menu ul li .sub-menu > ul > li a {
   color: #3c3c3c;
   display: block;
@@ -374,7 +374,7 @@ body {
   padding-left: 70px;
   width: 50%;
 }
-/*  sub menu 占쎄쿃 占쏙옙占쎌뵠占쏙옙 */
+/*  sub menu �겙 ���씠�� */
 .menu-title {
   color: #333666;
   font-size: 13px;
@@ -1126,10 +1126,10 @@ body {
 }
 .breadcumbs li:first-child { margin-left: 0px;}
 .breadcumbs ul li a {
-  color: #fff;
+  color: #333;
   display: block;
 }
-.breadcumbs ul li:hover a { color: #C87065;}
+.breadcumbs ul li:hover a { color: #fff;}
 .breadcumbs li::after {
   color: #5d5a55;
   content: "/";
@@ -1780,6 +1780,7 @@ input.cart-plus-minus-box {
   border-bottom: 0;
 }
 .payment-details table tr:last-child td {
+  color: #c87065;
   padding: 15px 30px 0;
 }
 /* cart-page-menu */

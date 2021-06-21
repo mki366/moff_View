@@ -14,31 +14,31 @@
       <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
-   <!-- icon -->
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> 
-      
-<style type="text/css">
-#prev{
-   border-radius: 30px;
-   font-size: 19px;
-   margin-left: -14px;
-   margin-bottom: 18px;
-   padding: 8px 28px;
-}
-</style>
+	<!-- icon -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> 
+		
+	<style type="text/css">
+	#prev{
+		border-radius: 30px;
+		font-size: 19px;
+		margin-left: -14px;
+		margin-bottom: 18px;
+		padding: 8px 28px;
+	}
+	</style>
+	
+	 <script type="text/javascript">
+	let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
+	    return paramPair.split(/=(.+)?/).slice(0, 2);
+	}).reduce(function(obj, pairArray) {
+	    obj[pairArray[0]] = pairArray[1];
+	    return obj;
+	}, {});
+	</script>   
 
- <script type="text/javascript">
-let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
-    return paramPair.split(/=(.+)?/).slice(0, 2);
-}).reduce(function(obj, pairArray) {
-    obj[pairArray[0]] = pairArray[1];
-    return obj;
-}, {});
-</script>   
 
 
-
-         <!-- all css here -->
+      <!-- all css here -->
       <!-- bootstrap v3.3.6 css -->
       <link rel="stylesheet" href="../css/bootstrap.min.css">
       <!-- animate css -->
@@ -74,40 +74,62 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
    </head>
    <body>   
       <!-- WRAPPER START -->
-      <div class="wrapper bg-dark-white" style="background-color: white">
-      <!-- Mobile-header-top Start -->
-         <div class="mobile-header-top hidden-lg hidden-md hidden-sm">
-            <div class="container">
-               <div class="row">
-                  <div class="col-xs-12">
-                     <!-- header-search-mobile start -->
-                     <div class="header-search-mobile">
-                        <div class="table">
-                           <div class="table-cell">
-                              <ul class="header_Right">
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- header-search-mobile start -->
-                  </div>
-               </div>
-            </div>
-         </div>
-               <!-- HEADER-AREA START -->
-         <header id="sticky-menu" class="header">
+      <div class="wrapper bg-white">
+
+         <!-- HEADER-AREA START -->
+         <header id="sticky-menu" class="header header-2">
             <div class="header-area">
                <div class="container-fluid">
                   <div class="row">
                      <div class="col-sm-4 col-sm-offset-4 col-xs-7">
                         <div class="logo text-center">
-                           <a href="index.html"><img src=" ./img/logo/logo6.png " alt="" /></a>
+                           <a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
                         </div>
                      </div>
-                     <div class="col-sm-4 col-xs-5" style="margin-top:20px;">
+                     <div class="col-sm-4 col-xs-5">
                         <div class="mini-cart text-right">
                            <ul>
-                              <li class="header_Right">
+                              <li>
+                                 <a class="cart-icon" href="#">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                    <span>3</span>
+                                 </a>
+                                 <div class="mini-cart-brief text-left">
+                                    <div class="cart-items">
+                                       <p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+                                    </div>
+                                    <div class="all-cart-product clearfix">
+                                       <div class="single-cart clearfix">
+                                          <div class="cart-photo">
+                                             <a href="#"><img src="img/cart/1.jpg" alt="" /></a>
+                                          </div>
+                                          <div class="cart-info">
+                                             <h5><a href="#">dummy product name</a></h5>
+                                             <p class="mb-0">Price : $ 100.00</p>
+                                             <p class="mb-0">Qty : 02 </p>
+                                             <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                                          </div>
+                                       </div>
+                                       <div class="single-cart clearfix">
+                                          <div class="cart-photo">
+                                             <a href="#"><img src="img/cart/2.jpg" alt="" /></a>
+                                          </div>
+                                          <div class="cart-info">
+                                             <h5><a href="#">dummy product name</a></h5>
+                                             <p class="mb-0">Price : $ 300.00</p>
+                                             <p class="mb-0">Qty : 01 </p>
+                                             <span class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="cart-totals">
+                                       <h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+                                    </div>
+                                    <div class="cart-bottom  clearfix">
+                                       <a href="#" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
+                                       <a href="#" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+                                    </div>
+                                 </div>
                               </li>
                            </ul>
                         </div>
@@ -115,83 +137,93 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
                   </div>
                </div>
             </div>
-                <!-- MAIN-MENU START -->
-                	<div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+           	<!-- MAIN-MENU START -->
+				<div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
 					<div class="hamburger-box">
 						<div class="hamburger-inner"></div>
 					</div>
 				</div>
-				<div class="main-menu hidden-xs">
+				<div class="main-menu  hidden-xs">
 					<nav>
 						<ul class ="CategoryUp">
-							<li><a href="../index.html">home</a>
+							<li><a href="index.html">home</a>
+
 							</li>
-							<li><a href="../product/productlist.html">products</a>
+							<li><a href="./product/productlist.html">products</a>
 								  <div class="mega-menu menu-scroll">
                                     <div class="table">
                                         <div class="table-cell">
                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">침대</li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=침대">모든 상품</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=침대&_subCategory=더블/퀸/킹침대">더블/퀸/킹 침대</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=침대&_subCategory=수납형침대">수납형침대</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=침대&_subCategory=싱글/슈퍼싱글침대">싱글/슈퍼싱글 침대</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=침대&_subCategory=싱글/매트리스">매트리스</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=침대">모든 상품</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=더블/퀸/킹 침대">더블/퀸/킹 침대</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=수납형침대">수납형침대</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=싱글/슈퍼싱글침대">싱글/슈퍼싱글 침대</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=침대&_subCategory=싱글/매트리스">매트리스</a></li>
+                                                   <!--  <li><a href="#">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">식탁/책상</li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=식탁/책상">모든 상품</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=식탁/책상&_subCategory=테이블">테이블</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=식탁/책상&_subCategory=책상/컴퓨터책상">책상/컴퓨터책상</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=식탁/책상&_subCategory=식탁">식탁</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=식탁/책상&_subCategory=협탁/화장대">협탁/화장대</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=식탁/책상">모든 상품</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=테이블">테이블</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=책상/컴퓨터책상">책상/컴퓨터책상</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=식탁">식탁</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=협탁/화장대">협탁/화장대</a></li>
+                                                    <!-- <li><a href="./product/productlist.html?page=0&_category=식탁/책상&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">쇼파</li>
                                                     <li><a href="./product/productlist.html?page=0&_category=쇼파">모든 상품</a></li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=쇼파&_subCategory=패브릭쇼파">패브릭쇼파</a></li>
-                                                    <li><a href="./product/productlist.html?page=0&_category=쇼파&_subCategory=천연/인조가죽쇼파">천연/인조가죽 쇼파</a></li>
+                                                    <li><a href="#">패브릭쇼파</a></li>
+                                                    <li><a href="#">천연/인조가죽 쇼파</a></li>
+                                                   <!--  <li><a href="#">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             
-                                            <div class="half-width">
+                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">수납장/장식장/서랍장</li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=수납장/장식장/서랍장">모든 상품</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=장식장">장식장</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=수납장">수납장</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=서랍장">서랍장</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장">모든 상품</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=장식장">장식장</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=수납장">수납장</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=서랍장">서랍장</a></li>
+                                                   <!--  <li><a href="./product/productlist.html?page=0&_category=수납장/장식장/서랍장&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
+                                            
                                             
                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">책장</li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=책장">모든 상품</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=책장&_subCategory=수납선반/유닛">수납선반/유닛</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=책장">모든 상품</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=책장&_subCategory=수납선반/유닛">수납선반/유닛</a></li>
+                                                   <!--  <li><a href="./product/productlist.html?page=0&_category=책장&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
+
                                             
                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">의자</li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=의자">모든 상품</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=의자&_subCategory=암체어">암체어</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=의자&_subCategory=사무용의자">사무용의자</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=의자&_subCategory=식탁의자">식탁의자</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=의자">모든 상품</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=암체어">암체어</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=사무용의자">사무용의자</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=식탁의자">식탁의자</a></li>
+                                                   <!--  <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="half-width">
                                                 <ul>
                                                     <li class="menu-title">기타</li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=기타">모든 상품</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=의자&_subCategory=조명">조명</a></li>
-                                                    <li><a href="../product/productlist.html?page=0&_category=의자&_subCategory=장식용품">장식용품</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=기타">모든 상품</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=조명">조명</a></li>
+                                                    <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=장식용품">장식용품</a></li>
+                                                    <!-- <li><a href="./product/productlist.html?page=0&_category=의자&_subCategory=기타">기타</a></li> -->
                                                 </ul>
                                             </div>
                                             <div class="pb-80"></div>
@@ -199,27 +231,28 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
                                     </div>
                                 </div>
 							</li>
-                            <li><a href="../custom/custom.html">CUSTOM MADE</a>
+                            <li><a href="./custom/custom.html">CUSTOM MADE</a>
                                 <div class="sub-menu menu-scroll">
                                     <ul>
                                         <li class="menu-title">주문제작</li>
-                                        <li><a href="../custom/chair.html">의자</a></li>
-                                        <li><a href="../custom/bedType.html">침대</a></li>
-                                        <li><a href="../custom/storage.html">수납장</a></li>
-                                        <li><a href="../custom/desk.html">책상</a></li>  
+                                        <li><a href="./custom/chair.html">의자</a></li>
+                                        <li><a href="./custom/bedType.html">침대</a></li>
+                                        <li><a href="./custom/storage.html">수납장</a></li>
+                                        <li><a href="./custom/desk.html">책상</a></li>  
                                     </ul>
                                 </div>
                             </li>
-							<li><a href="../showroom/showroom.html">SHOWROOM</a></li>
-							<li><a href="../BuyBack/BuyBackMain.html">BUYBACK</a></li>
-							<li><a href="../Expert/ExpertPage.html">EXPERTS</a></li>
-							<li><a href="communityList.html">COMMUNITY</a></li>
-							<li><a href="../cs/cslist.html">HELP CENTER</a></li>
+							<li><a href="./showroom/showroom.html">SHOWROOM</a></li>
+							<li><a href="./BuyBack/BuyBackMain.html">BUYBACK</a></li>
+							<li><a href="./Expert/ExpertPage.html">EXPERTS</a></li>
+							<li><a href="./community/communityList.html">COMMUNITY</a></li>
+							<li><a href="./cs/cslist.html">HELP CENTER</a></li>
+							
 						</ul>
 					</nav>
 				</div>
-			</header>	
-         <!-- Mobile-menu end -->
+				</header>
+			<!-- Mobile-menu end -->
          <!-- HEADING-BANNER START -->
          <div class="heading-banner-area">
             <div class="container" >
@@ -231,9 +264,9 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
                         </div>
                         <div class="breadcumbs pb-15">
                            <ul>
-                              <li><a href="../index.html" style="color: #444">Home</a></li>
-                              <li><a href="custom.html" style="color: #444">Custom Made</a></li>
-                              <li style="color: #444">Bed</li>
+                              <li><a href="index.html">Home</a></li>
+                              <li><a href="index.html">Custom Made</a></li>
+                              <li>Bed</li>
                            </ul>
                         </div>
                      </div>
@@ -247,87 +280,97 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
    
    
    
-      <div class="product-area pt-80 pb-35">
-            <div class="container">
-             <a href="bedType.html" class="btn btn-default btn-sm" id="prev">  <i class="fas fa-arrow-left" style="margin-right: 12px;"></i>침대 종 변경하기   </a>
-               <!-- Section-title end -->
-               <div class="row cus-row-30"  id="bedList">
-                </div>
-                <br><br><br>
-            </div>
-      </div>
+		<div class="product-area pt-80 pb-35">
+				<div class="container">
+				 <a href="bedType.html" class="btn btn-default btn-sm" id="prev">  <i class="fas fa-arrow-left" style="margin-right: 12px;"></i>침대 종 변경하기   </a>
+					<!-- Section-title end -->
+					<div class="row cus-row-30"  id="bedList">
+	 				</div>
+	 				<br><br><br>
+				</div>
+		</div>
 </div>
 
 
          <!-- 404-AREA END -->      
          <!-- FOOTER START -->
-      <footer> 
-              <!--   Footer-area start -->
-                <div class="footer-area footer-3">
-                    <div class="container" style="margin-left: 220px; margin-right: 80px">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-4 col-sm-5 col-xs-12">
-                                <div class="single-footer" style="width: 250px">
-                                    <h3 class="footer-title  title-border">Moff</h3>
-                                    <p>지금 Moff에 무료로 가입하고 다양한 멤버 전용 혜택을 누리세요. </p>
-                                      <button class="button-one submit-btn-4" type="submit" data-text="Sign up" onclick="signUp()">Sign up</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12" >
-                                <div class="single-footer" style="margin-right: 40px">
-                                    <h3 class="footer-title  title-border">고객 문의</h3>
-                                    <ul class="footer-menu">
-                                        <li><a href="../cs/cslist.html"><i class="zmdi zmdi-dot-circle"></i>고객 문의</a></li>
-                                        <li><a href="commulist.html"><i class="zmdi zmdi-dot-circle"></i>커뮤니티</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
-                                <div class="single-footer" style="margin-right: 40px">
-                                    <h3 class="footer-title  title-border">쇼핑하기</h3>
-                                    <ul class="footer-menu">
-                                        <li><a href="../product/productlist.html"><i class="zmdi zmdi-dot-circle"></i>쇼핑하기</a></li>
-                                        <li><a href="../showroom/showroom.html"><i class="zmdi zmdi-dot-circle"></i>쇼룸 보러가기</a></li>
-                                        <li><a href="../Expert/ExpertPage.html"><i class="zmdi zmdi-dot-circle"></i>시공 인테리어</a></li>
-                                        <li><a href="../custom/chair.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-의자</a></li>
-                                        <li><a href="../custom/bed.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-침대</a></li>
-                                        <li><a href="../custom/desk.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-책상</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-                                <div class="single-footer" >
-                                    <h3 class="footer-title  title-border">서비스</h3>
-                                   <ul class="footer-menu">
-                                        <li><a href="../BuyBack/BuyBack.html"><i class="zmdi zmdi-dot-circle"></i>BuyBack 서비스</a></li>
-                                        <li><a href="../Expert/ExpertPage.html"><i class="zmdi zmdi-dot-circle"></i>시공 인테리어 서비스</a></li>
-                                        <li><a href="../custom/custom.html"><i class="zmdi zmdi-dot-circle"></i>주문제작 서비스</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+         <footer>
+            <!-- Footer-area start -->
+            <div class="footer-area footer-3">
+               <div class="container">
+               
+                  <div class="row">
+                     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                        <div class="single-footer">
+                           <h3 class="footer-title  title-border">Contact Us</h3>
+                           <ul class="footer-contact">
+                              <li><span>Address :</span>28 Green Tower, Street Name,<br>New York City, USA</li>
+                              <li><span>Cell-Phone :</span>+012 345 678 102</li>
+                              <li><span>Email :</span>info@example.com</li>
+                           </ul>
                         </div>
-                    </div>
-                </div>
-                
-                
-       
-                
-                <!-- Footer-area end -->
-                <!-- Copyright-area start -->
-                <div class="copyright-area copyright-2">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 col-xs-12" style="text-align: center;">
-                                <div class="copyright">
-                                  <a href="#" target="_blank">Moff </a> 2021. All Rights Reserved.
-                                </div>
-                            </div>
-                           
+                     </div>
+                     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                        <div class="single-footer">
+                           <h3 class="footer-title  title-border">accounts</h3>
+                           <ul class="footer-menu">
+                              <li><a href="my-account.html"><i class="zmdi zmdi-dot-circle"></i>My Account</a></li>
+                              <li><a href="wishlist.html"><i class="zmdi zmdi-dot-circle"></i>My Wishlist</a></li>
+                              <li><a href="cart.html"><i class="zmdi zmdi-dot-circle"></i>My Cart</a></li>
+                              <li><a href="login.html"><i class="zmdi zmdi-dot-circle"></i>Sign In</a></li>
+                              <li><a href="checkout.html"><i class="zmdi zmdi-dot-circle"></i>Check out</a></li>
+                           </ul>
                         </div>
-                    </div>
-                </div>
-                <!-- Copyright-area start -->
-            </footer>
+                     </div>
+                     <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+                        <div class="single-footer">
+                           <h3 class="footer-title  title-border">shipping</h3>
+                           <ul class="footer-menu">
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>New Products</a></li>
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Top Sellers</a></li>
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Manufactirers</a></li>
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Suppliers</a></li>
+                              <li><a href="#"><i class="zmdi zmdi-dot-circle"></i>Specials</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="single-footer">
+                           <h3 class="footer-title  title-border">Email Newsletters</h3>
+                           <div class="footer-subscribe">
+                              <form action="#">
+                                 <input type="text" name="email" placeholder="Email Address..." />
+                                 <button class="button-one submit-btn-4" type="submit" data-text="Subscribe">Subscribe</button>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Footer-area end -->
+            <!-- Copyright-area start -->
+            <div class="copyright-area copyright-2">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-sm-6 col-xs-12">
+                        <div class="copyright">
+                           <p class="mb-0">&copy; <a href="#" target="_blank">Hurst </a> 2018. All Rights Reserved.</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-xs-12">
+                        <div class="payment  text-right">
+                           <a href="#"><img src="img/payment/1.png" alt="" /></a>
+                           <a href="#"><img src="img/payment/2.png" alt="" /></a>
+                           <a href="#"><img src="img/payment/3.png" alt="" /></a>
+                           <a href="#"><img src="img/payment/4.png" alt="" /></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Copyright-area start -->
+         </footer>
          <!-- FOOTER END -->
          <!-- QUICKVIEW PRODUCT -->
          <div id="quickview-wrapper">
@@ -394,120 +437,55 @@ let urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
 <p align="center"></p>
 
 <script type="text/javascript">
-$(document).ready(function(){
-    let login = JSON.parse(sessionStorage.getItem("login"));
-//    let id = login;
-    
- //   let Type = login.memberType;
- //   let Id = login.id;
- //   let DeliAdmi = login.deliveryAdmi;
-    
-    
-    if(login== null){
-       let headerStr = '<a href="../member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-                   + '<a href="../member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-                   + '<a href="../member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-       $(".header_Right").html(headerStr);
-    
-    }else if(login.memberType == 0){
-       let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-          + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-          + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-          
-       $(".header_Right").html(headerStr);
-       
-    }else if(login.memberType == 2){
-        let headerStr = '<a href="../admin/adminSales.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-            + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-            + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-            
-         $(".header_Right").html(headerStr);
- 
-    } 
-    	
-    	
-
-   	// 시공업체가 로그인할 때 	
-   	if(login.memberType == 3){
-   	 	let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-       		+ '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-       		+ '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-   		
-        $(".header_Right").html(headerStr);
-       $(".CategoryUp").append("<li><a style='color:#4154f9' href='./Expert/ExpertMyPage.html?loginId="+ login.id + "'>나의 업체 페이지</a></li>");
-       
-    }
-    
-    // 뽀이가 로그인할 때
-    if(login.deliveryAdmi == 1){
-    	 let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	        + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	        + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-    	   		
-    	
-    	        $(".header_Right").html(headerStr);
-    	$(".CategoryUp").append("<li><a  style='color:#4154f9' href='./DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
-   
-    
-    }
-    
- 
-    
- });
 
 
+	let type = urlParams.bedtype;
+//	alert(type);
+	
+	$.ajax({
+		url:'http://localhost:3000/getBedList',
+		type:'post',		
+		data:{ 'type': type },
+		success:function( list ){
+		
+		//	alert('suc');	 
+		//	alert(JSON.stringify(list));			
+			if(list==""){
+				$("#bedList").html("<h3 style='text-align:center'>해당하는 상품이 없습니다.</h3><br><br><br>");
+			}else{
+				$.each(list, function (i, item) {
+	
+					let str = '<div class="single-product col-lg-3 col-md-4 col-sm-4 col-xs-12" style="margin-right: 39px;">'
+							+	'<div class="product-img">'
+							+	'<a href="bedcanvas.html?prodNum='+ item.prodNum + '&type=' + type + '"><img src="../images/bed/' + item.filename + '" style="width: 270px; height: 270px"></a>'
+					       	+   '</div>'
+					        +	'<div class="product-info clearfix">'
+					        +   '<div class="fix">'
+					        +   '<h4 class="post-title floatleft" ><a href="bedcanvas.html?prodNum="'+ item.prodNum + '&bedtype=' + type + '">' + item.prodName +'</a></h4>'
+					        +   '<p class="floatright hidden-sm hidden-xs"></p>'
+					        +   '</div>'
+					        +   '<div class="fix">'
+					        +   '<span class="pro-price floatleft" >₩ '+  numberWithCommas(item.price) + '원</span>'
+					        +	 "</div>"
+					        +	 "</div>"
+					        +	 "</div>";
+					
+			 		$("#bedList").append(str);	
+					 
+				});	 
+			}
+		},
+		error:function(){
+			alert('error');
+		}
+	});	 
 
-</script>
-<script type="text/javascript">
-
-
-   let type = urlParams.bedtype;
-//   alert(type);
-   
-   $.ajax({
-      url:'http://localhost:3000/getBedList',
-      type:'post',      
-      data:{ 'type': type },
-      success:function( list ){
-      
-      //   alert('suc');    
-      //   alert(JSON.stringify(list));         
-         if(list==""){
-            $("#bedList").html("<h3 style='text-align:center'>해당하는 상품이 없습니다.</h3><br><br><br>");
-         }else{
-            $.each(list, function (i, item) {
-   
-               let str = '<div class="single-product col-lg-3 col-md-4 col-sm-4 col-xs-12" style="margin-right: 39px;">'
-                     +   '<div class="product-img">'
-                     +   '<a href="bedcanvas.html?prodNum='+ item.prodNum + '&type=' + type + '"><img src="../images/bed/' + item.filename + '" style="width: 270px; height: 270px"></a>'
-                         +   '</div>'
-                       +   '<div class="product-info clearfix">'
-                       +   '<div class="fix">'
-                       +   '<h4 class="post-title floatleft" ><a href="bedcanvas.html?prodNum="'+ item.prodNum + '&bedtype=' + type + '">' + item.prodName +'</a></h4>'
-                       +   '<p class="floatright hidden-sm hidden-xs"></p>'
-                       +   '</div>'
-                       +   '<div class="fix">'
-                       +   '<span class="pro-price floatleft" >₩ '+  numberWithCommas(item.price) + '원</span>'
-                       +    "</div>"
-                       +    "</div>"
-                       +    "</div>";
-               
-                $("#bedList").append(str);   
-                
-            });    
-         }
-      },
-      error:function(){
-         alert('error');
-      }
-   });    
-
-   
-   function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-   }
-   
-   
+	
+	function numberWithCommas(x) {
+		  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	}
+	
+	
 </script>
          
       <script src="../js/vendor/jquery-1.12.0.min.js"></script>
