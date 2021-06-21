@@ -118,18 +118,18 @@ select {
                </div>
             </div>
                 <!-- MAIN-MENU START -->
-                	<div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
-					<div class="hamburger-box">
-						<div class="hamburger-inner"></div>
-					</div>
-				</div>
-				<div class="main-menu hidden-xs">
-					<nav>
-						<ul class ="CategoryUp">
-							<li><a href="../index.html">home</a>
-							</li>
-							<li><a href="../product/productlist.html">products</a>
-								  <div class="mega-menu menu-scroll">
+                   <div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+               <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+               </div>
+            </div>
+            <div class="main-menu hidden-xs">
+               <nav>
+                  <ul class ="CategoryUp">
+                     <li><a href="../index.html">home</a>
+                     </li>
+                     <li><a href="../product/productlist.html">products</a>
+                          <div class="mega-menu menu-scroll">
                                     <div class="table">
                                         <div class="table-cell">
                                             <div class="half-width">
@@ -200,7 +200,7 @@ select {
                                         </div>
                                     </div>
                                 </div>
-							</li>
+                     </li>
                             <li><a href="../custom/custom.html">CUSTOM MADE</a>
                                 <div class="sub-menu menu-scroll">
                                     <ul>
@@ -212,15 +212,15 @@ select {
                                     </ul>
                                 </div>
                             </li>
-							<li><a href="../showroom/showroom.html">SHOWROOM</a></li>
-							<li><a href="../BuyBack/BuyBackMain.html">BUYBACK</a></li>
-							<li><a href="../Expert/ExpertPage.html">EXPERTS</a></li>
-							<li><a href="communityList.html">COMMUNITY</a></li>
-							<li><a href="../cs/cslist.html">HELP CENTER</a></li>
-						</ul>
-					</nav>
-				</div>
-			</header>	
+                     <li><a href="../showroom/showroom.html">SHOWROOM</a></li>
+                     <li><a href="../BuyBack/BuyBackMain.html">BUYBACK</a></li>
+                     <li><a href="../Expert/ExpertPage.html">EXPERTS</a></li>
+                     <li><a href="communityList.html">COMMUNITY</a></li>
+                     <li><a href="../cs/cslist.html">HELP CENTER</a></li>
+                  </ul>
+               </nav>
+            </div>
+         </header>   
          <!-- Mobile-menu end -->
             <!-- HEADER-AREA END -->
             <!-- Mobile-menu start -->
@@ -446,15 +446,15 @@ $(document).ready(function(){
          $(".header_Right").html(headerStr);
  
     } 
-    	
-    	
+       
+       
 
-   	// 시공업체가 로그인할 때 	
-   	if(login.memberType == 3){
-   	 	let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-       		+ '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-       		+ '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-   		
+      // 시공업체가 로그인할 때    
+      if(login.memberType == 3){
+          let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+             + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+             + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+         
         $(".header_Right").html(headerStr);
        $(".CategoryUp").append("<li><a style='color:#4154f9' href='./Expert/ExpertMyPage.html?loginId="+ login.id + "'>나의 업체 페이지</a></li>");
        
@@ -462,13 +462,13 @@ $(document).ready(function(){
     
     // 뽀이가 로그인할 때
     if(login.deliveryAdmi == 1){
-    	 let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	        + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
-    	        + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
-    	   		
-    	
-    	        $(".header_Right").html(headerStr);
-    	$(".CategoryUp").append("<li><a  style='color:#4154f9' href='./DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
+        let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+               + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+               + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+                
+       
+               $(".header_Right").html(headerStr);
+       $(".CategoryUp").append("<li><a  style='color:#4154f9' href='./DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
    
     
     }

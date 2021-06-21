@@ -220,8 +220,6 @@
 								<div style="text-align: center">
 									<h1>바이백 번호</h1>
 									<div class="BuyBackNo"></div>
-									<input id="text" type="hidden" value="http://192.168.0.37:8081/BuyBack/BuyBackResultQr.html" style="width:80%" /><br />
-									<div id="qrcode" style="padding-left: 450px; padding-right: 15px;" ></div>
 									<form action="#">
 											<div class="thank-recieve bg-white mb-30">
 												<h3 id="buybackSeq"></h3>
@@ -307,7 +305,73 @@
 			</div>
 			<!-- WISHLIST-AREA END -->
 			<!-- FOOTER START -->
-		<div id="footer"></div>
+				   <footer> 
+              <!--   Footer-area start -->
+                <div class="footer-area footer-3" style="height: 400px">
+                    <div class="container" style="margin-left: 220px; margin-right: 80px; height: 400px">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-4 col-sm-5 col-xs-12">
+                                <div class="single-footer" style="width: 250px">
+                                    <h3 class="footer-title  title-border">Moff</h3>
+                                    <p>지금 Moff에 무료로 가입하고 다양한 멤버 전용 혜택을 누리세요. </p>
+                                      <button class="button-one submit-btn-4" type="submit" data-text="Sign up" onclick="signUp()">Sign up</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12" >
+                                <div class="single-footer" style="margin-right: 40px">
+                                    <h3 class="footer-title  title-border">고객 문의</h3>
+                                    <ul class="footer-menu">
+                                        <li><a href="../cs/cslist.html"><i class="zmdi zmdi-dot-circle"></i>고객 문의</a></li>
+                                        <li><a href="../community/commulist.html"><i class="zmdi zmdi-dot-circle"></i>커뮤니티</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 hidden-sm col-xs-12">
+                                <div class="single-footer" style="margin-right: 40px">
+                                    <h3 class="footer-title  title-border">쇼핑하기</h3>
+                                    <ul class="footer-menu">
+                                        <li><a href="../product/productlist.html"><i class="zmdi zmdi-dot-circle"></i>쇼핑하기</a></li>
+                                        <li><a href="../showroom/showroom.html"><i class="zmdi zmdi-dot-circle"></i>쇼룸 보러가기</a></li>
+                                        <li><a href="../Expert/ExpertPage.html"><i class="zmdi zmdi-dot-circle"></i>시공 인테리어</a></li>
+                                        <li><a href="../custom/chair.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-의자</a></li>
+                                        <li><a href="../custom/bed.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-침대</a></li>
+                                        <li><a href="../custom/desk.html"><i class="zmdi zmdi-dot-circle"></i>주문 제작-책상</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+                                <div class="single-footer" >
+                                    <h3 class="footer-title  title-border">서비스</h3>
+                                   <ul class="footer-menu">
+                                        <li><a href="./BuyBack/BuyBack.html"><i class="zmdi zmdi-dot-circle"></i>BuyBack 서비스</a></li>
+                                        <li><a href="../Expert/ExpertPage.html"><i class="zmdi zmdi-dot-circle"></i>시공 인테리어 서비스</a></li>
+                                        <li><a href="../custom/custom.html"><i class="zmdi zmdi-dot-circle"></i>주문제작 서비스</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+       
+                
+                <!-- Footer-area end -->
+                <!-- Copyright-area start -->
+                <div class="copyright-area copyright-2" style="height: 100px">
+                    <div class="container" style="height: 100px">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12" style="text-align: center;">
+                                <div class="copyright">
+                                  <a href="#" target="_blank">Moff </a> 2021. All Rights Reserved.
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright-area start -->
+            </footer>
 			<!-- FOOTER END -->
 			<!-- QUICKVIEW PRODUCT -->
 			<div id="quickview-wrapper">
@@ -427,34 +491,7 @@
 			                 $(".BuyBackPrice").append('<h3>₩'+data.price+'</h3>')
 			                 
 			                  <!-- QR -->
-			                                  var qrcode = new QRCode("qrcode");
-
-			                                  function makeCode () {    
-			                                    var elText = document.getElementById("text");
-			                                    
-			                                    if (!elText.value) {
-			                                      alert("Input a text");
-			                                      elText.focus();
-			                                      return;
-			                                    }
-			                                    let ad = elText.value;
-			                                    ad += "?bNum="+bNum+"&prodName="+data.prodName+"&Bprice="+data.price+"&condition="+data.condition+"&filename="+data.filename;
-			                                    //alert(ad);
-			                                    
-			                                    qrcode.makeCode(ad);
-			                                  }
-
-			                                  makeCode();
-
-			                                  $("#text").
-			                                    on("blur", function () {
-			                                      makeCode();
-			                                    }).
-			                                    on("keydown", function (e) {
-			                                      if (e.keyCode == 13) {
-			                                        makeCode();
-			                                      }
-			                                    });
+			                            
 			                 $(".MyBuyBack").append('<p>제품 상태 : '+data.condition+'</p>');
 			                 $(".MyBuyBack").append('<p>수거할 주소 : '+data.bAddress+'</p>');
 			                 
@@ -470,9 +507,9 @@
 			   
 			   
 			});
-		$(function(){
-		    $("#footer").load("../footer.html"); 
-		  });
+		function signUp(){
+	         location.href="../member/signup.html"
+	      }
 		</script>
 		
 	</body>

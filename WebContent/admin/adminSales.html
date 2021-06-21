@@ -18,7 +18,15 @@
      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> 
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-      
+     <style type="text/css">
+     .button5 {
+  background-color: #f3f3f9;
+  color: black;
+  border: 2px solid #555555;
+}
+
+
+     </style> 
 </head>
 
 <body>
@@ -163,7 +171,7 @@
                                 <h3 class="card-title">오늘</h3>
                                 <div class="d-inline-block">
                                     <h2 id="CountDailySales">$ 8541</h2>
-                                    <p class=" mb-0">Jan - March 2019</p>
+                                  
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                             </div>
@@ -175,7 +183,7 @@
                                 <h3 class="card-title">이번 달</h3>
                                 <div class="d-inline-block">
                                     <h2 id="CountMonthlySales">$ 8541</h2>
-                                    <p class=" mb-0">Jan - March 2019</p>
+                                  
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                             </div>
@@ -187,7 +195,6 @@
                                 <h3 class="card-title">올 해</h3>
                                 <div class="d-inline-block">
                                     <h2 id="CountAnnualSales">$ 8541</h2>
-                                    <p class=" mb-0">Jan - March 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                             </div>
@@ -199,7 +206,6 @@
                                 <h3 class="card-title">총</h3>
                                 <div class="d-inline-block">
                                     <h2 id="CountTotalSales">$ 8541</h2>
-                                    <p class=" mb-0">Jan - March 2019</p>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                             </div>
@@ -232,7 +238,8 @@
 						  <option value="/11">11월</option>
 						  <option value="/12">12월</option>
 						</select>
-						<input type="button" value="날짜별로 검색 하기" id="searchBtn">
+						 <button type="button" class="btn button5 " id="searchBtn"> 검색 </button>
+				
                         <div class="card" style="height: 300px; margin-top: 18px">
                              <div class="row"  style="height: 150px">
                                     <div class="col-6 border-right">
@@ -320,7 +327,8 @@
 						  <option value="20">2020년</option>
 						  <option value="19">2019년</option>
 				</select>
-                <input type="button" value="날짜별로 검색 하기" id="chartBtn">
+				 <button type="button" class="btn button5 " id="chartBtn">검색 </button>
+              
                 <div class="row">
                         <div class="col-lg-10">
                             <div class="card">
@@ -514,7 +522,7 @@ $("#searchBtn").on('click',function(){
 			        data:{obDate:searchDate},
 			        success:function(data){
 			       			// alert("acceptDelivery"+data);
-			       			$("#orderDetailEX").html('<strong>'+data+' 원</strong>');
+			       			$("#orderDetailEX").html('<strong>'+data+' 건</strong>');
 			        },
 			        error:function(){
 			          // alert("error");
