@@ -233,14 +233,72 @@ li{
   color: black;
   border: 2px solid #555555;
 }
+.zmdi-account:before {
+    content: '\f207';
+    color: black;
+}.zmdi-favorite-outline:before {
+    content: '\f15e';
+    color: black;
+}.zmdi-truck:before {
+    content: '\f1e6';
+    color: black;
+}
 	</style>
 	</head>
 	<body>
 
 
 		<!-- WRAPPER START -->
-		<div class="wrapper bg-dark-white" style="background-color: white"> <header>
-           <div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
+		 <div class="wrapper bg-dark-white" style="background-color: white">
+      <!-- Mobile-header-top Start -->
+         <div class="mobile-header-top hidden-lg hidden-md hidden-sm">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xs-12">
+                     <!-- header-search-mobile start -->
+                     <div class="header-search-mobile">
+                        <div class="table">
+                           <div class="table-cell">
+                              <ul class="header_Right">
+                                 <!-- <li><a class="search-open" href="#"><i class="zmdi zmdi-search"></i></a></li>
+                                 <li><a href="./member/login.html"><i class="zmdi zmdi-lock"></i></a></li>
+                                 <li><a href="./member/mypage.html"><i class="zmdi zmdi-account"></i></a></li>
+                                 <li><a href="./member/cart.html"><i class="zmdi zmdi-favorite"></i></a></li> -->
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- header-search-mobile start -->
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Mobile-header-top End -->
+          <!-- HEADER-AREA START -->
+        	  <header id="sticky-menu" class="header">
+            <div class="header-area">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-sm-4 col-sm-offset-4 col-xs-7">
+                        <div class="logo text-center">
+                           <a href="index.html"><img src=" ./img/logo/logo6.png " alt="" /></a>
+                        </div>
+                     </div>
+                     <div class="col-sm-4 col-xs-5" style="margin-top:20px;">
+                        <div class="mini-cart text-right">
+                           <ul>
+                              <li class="header_Right">
+                              
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </header>
+                 <!-- MAIN-MENU START -->
+            <div class="menu-toggle menu-toggle-2 hamburger hamburger--emphatic hidden-xs">
                <div class="hamburger-box">
                   <div class="hamburger-inner"></div>
                </div>
@@ -248,10 +306,10 @@ li{
             <div class="main-menu  hidden-xs">
                <nav>
                   <ul class ="CategoryUp">
-                     <li><a href="index.html">home</a>
+                     <li><a href="../index.html">home</a>
 
                      </li>
-                     <li><a href="./product/productlist.html">products</a>
+                     <li><a href="../product/productlist.html">products</a>
                           <div class="mega-menu menu-scroll">
                                     <div class="table">
                                         <div class="table-cell">
@@ -333,7 +391,7 @@ li{
                                     </div>
                                 </div>
                      </li>
-                            <li><a href="./custom/custom.html">CUSTOM MADE</a>
+                            <li><a href="../custom/custom.html">CUSTOM MADE</a>
                                 <div class="sub-menu menu-scroll">
                                     <ul>
                                         <li class="menu-title">주문제작</li>
@@ -499,7 +557,67 @@ $( document ).ready(function() {
 $(function(){
     $("#footer").load("../footer.html"); 
   });
+$(document).ready(function(){
+    let login = JSON.parse(sessionStorage.getItem("login"));
+//    let id = login;
+    
+ //   let Type = login.memberType;
+ //   let Id = login.id;
+ //   let DeliAdmi = login.deliveryAdmi;
+    
+    
+    if(login== null){
+       let headerStr = '<a href="../member/login.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                   + '<a href="../member/login.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+                   + '<a href="../member/login.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+       $(".header_Right").html(headerStr);
+    
+    }else if(login.memberType == 0){
+       let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+          + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+          + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+          
+       $(".header_Right").html(headerStr);
+       
+    }else if(login.memberType == 2){
+        let headerStr = '<a href="../admin/AdminMember.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+            + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+            + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+            
+         $(".header_Right").html(headerStr);
+ 
+    }
+       
+       
 
+      // 시공업체가 로그인할 때    
+      if(login.memberType == 3){
+          let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+             + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+             + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+         
+        $(".header_Right").html(headerStr);
+       $(".CategoryUp").append("<li><a style='color:#4154f9' href='./Expert/ExpertMyPage.html?loginId="+ login.id + "'>나의 업체 페이지</a></li>");
+       
+    }
+    
+    // 뽀이가 로그인할 때
+    if(login.deliveryAdmi == 1){
+        let headerStr = '<a href="../member/mypage.html"><i class="zmdi zmdi-account" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+               + '<a href="../member/cart.html"><i class="zmdi zmdi-favorite-outline" style="font-size: 25px;"></i></a>&emsp;&emsp;'
+               + '<a href="../member/purchases.html"><i class="zmdi zmdi-truck" style="font-size: 25px;"></i></a>';
+                
+       
+               $(".header_Right").html(headerStr);
+       $(".CategoryUp").append("<li><a  style='color:#4154f9' href='./DeliveryAccount/DeliveryService.html'>배달 서비스</a></li>");
+   
+    
+    }
+    
+ 
+    
+ });
+ 
 </script>
 <!-- all js here -->
 		<!-- jquery latest version -->
