@@ -497,7 +497,7 @@
                   
                   sessionStorage.setItem("login", JSON.stringify(data));
                   
-                  location.href = "mypage.html";
+                  location.href = "../index.html";
                }
             },
             error:function(){
@@ -629,7 +629,7 @@
       function login(){
          
 
-         alert(id);
+     //    alert(id);
          $.ajax({
             url:"http://localhost:3000/login",
             type:"post",
@@ -641,7 +641,7 @@
                   alert(JSON.stringify(data));
                   sessionStorage.setItem("login", JSON.stringify(data));
 
-                  location.href = "mypage.html";
+                  location.href = "../index.html";
 
                //   location.href='member/mypage.html'; 
                //   window.close();
