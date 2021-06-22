@@ -177,6 +177,15 @@
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">관리자 페이지</li>
+                     <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                           &ensp;<span class="nav-text">Home</span>
+                        </a>
+                    	<ul aria-expanded="false">
+                            <li><a href="../index.html">Home</a></li>
+                           
+                        </ul>
+                    </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="fa fa-line-chart" style="font-size:20px"></i>&ensp;<span class="nav-text">매출관리</span>
@@ -507,7 +516,7 @@ function stockListCount() {
 						}
 					}//for end
 					
-					page += "<a href='#;' onclick='stockList("+ pageN +")'>&raquo;</a>";
+					page += "<a href='#;' onclick='stockList("+ (pageN - 1 ) +")'>&raquo;</a>";
 					page += "</div>";
 					
 					$("#stockPagination").html(page);

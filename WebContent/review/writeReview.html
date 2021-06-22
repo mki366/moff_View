@@ -310,7 +310,7 @@ function submitReview() {
     		success:function(data){
     			if(data.trim() == "YES"){
     				alert('리뷰가 작성되었습니다.');
-    				location.href = "../member/mypage.html";
+    				location.href = "../member/purchases.html";
     				
     			}else if(data.trim() == "NO"){
     				alert('실패');
@@ -331,7 +331,7 @@ function submitReview() {
 
 		
 function cancelWriting() {
-	location.href = "../member/mypage.html";
+	location.href = "../member/purchases.html";
 }	
 	
 	 

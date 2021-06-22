@@ -107,7 +107,7 @@
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
-.radio-button.white label{ background-color: #FCFAF9; }
+.radio-button.white label{ background-color: #FCFAF9; border: 1px solid gray;}
 .radio-button.black label{ background-color: #000000; }
 .radio-button.red label{ background-color: #EF4F41; }
 .radio-button.orange label{ background-color: #F99149; }
@@ -116,8 +116,8 @@
 .radio-button.blue label{ background-color: #3D80BB; }
 .radio-button.navy label{ background-color: #062647; }
 .radio-button.purple label{ background-color: #725599; }
-.radio-button.pink label{ background-color: #F2E8D5; }
-.radio-button.ivory label{ background-color: #a50303; }
+.radio-button.pink label{ background-color: #ffa4fe; }
+.radio-button.ivory label{ background-color: #F2E8D5; }
 .radio-button.gray label{ background-color: #CAC9C8; }
 .radio-button.brown label{ background-color: #886746; }
 .radio-button input[type=radio]:checked+label{ box-shadow: 0 0 0 2px #fff,0 0 0 4px #ada2a2; }
@@ -195,6 +195,15 @@ License Terms
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">관리자 페이지</li>
+                     <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                           &ensp;<span class="nav-text">Home</span>
+                        </a>
+                    	<ul aria-expanded="false">
+                            <li><a href="../index.html">Home</a></li>
+                           
+                        </ul>
+                    </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="fa fa-line-chart" style="font-size:20px"></i>&ensp;<span class="nav-text">매출관리</span>
@@ -286,6 +295,7 @@ License Terms
                                             <div class="form-group">
                                             	<p class="prdTitle">상품명</p>
                                                 <input type="text" id="prodName" name="prodName" value="" class="form-control bg-transparent" style="width: 500px;">
+                                                <input type="hidden" id="prodOption" name="prodOption" value="없음">
                                             </div>
                                             
                                             <div class="form-group" id="cateId">
@@ -458,7 +468,7 @@ License Terms
                                             <div class="form-group">
                                             	<p class="prdTitle">상세이미지 정보</p>
                                                 <div class="filebox">		
-													 <textarea class="textarea_editor form-control bg-light" id="imgInfo" name="imgInfo" rows="10" placeholder="Enter text ..."></textarea>
+													 <textarea class="textarea_editor form-control bg-light" id="imgInfo" name="imgInfo" rows="10"></textarea>
 												</div>
                                             </div>
                                             
@@ -526,22 +536,19 @@ $('#category').on('change', function() {
 		let subcate1 = 		'<option value="더블/퀸/킹침대">더블/퀸/킹침대</option>'
 			+				'<option value="수납형침대">수납형침대</option>'
 			+				'<option value="싱글/슈퍼싱글침대">싱글/슈퍼싱글침대</option>'
-			+				'<option value="매트리스">매트리스</option>'
-			+				'<option value="기타">기타</option>';
+			+				'<option value="매트리스">매트리스</option>';
 			
 		$("#subCategory").html(subcate1);
 		
 	}else if($("#category option:selected").val() == '쇼파'){
 		let subcate2 = 		'<option value="패브릭쇼파">패브릭쇼파</option>'
-			+				'<option value="천연/인조가죽쇼파">천연/인조가죽쇼파</option>'
-			+				'<option value="기타">기타</option>';
+			+				'<option value="천연/인조가죽쇼파">천연/인조가죽쇼파</option>';
 			
 		$("#subCategory").html(subcate2);
 		
 	}else if($("#category option:selected").val() == '책장'){
 		let subcate3 = 		'<option value="책장">책장</option>'
-			+				'<option value="수납선반/유닛">수납선반/유닛</option>'
-			+				'<option value="기타">기타</option>';
+			+				'<option value="수납선반/유닛">수납선반/유닛</option>';
 			
 		$("#subCategory").html(subcate3);
 		
@@ -549,24 +556,21 @@ $('#category').on('change', function() {
 		let subcate4 = 		'<option value="테이블">테이블</option>'
 			+				'<option value="책상/컴퓨터책상">책상/컴퓨터책상</option>'
 			+				'<option value="식탁">식탁</option>'
-			+				'<option value="협탁/화장대">협탁/화장대</option>'
-			+				'<option value="기타">기타</option>';
+			+				'<option value="협탁/화장대">협탁/화장대</option>';
 			
 		$("#subCategory").html(subcate4);
 		
 	}else if($("#category option:selected").val() == '수납장/장식장/서랍장'){
 		let subcate5 = 		'<option value="장식장">장식장</option>'
 			+				'<option value="수납장">수납장</option>'
-			+				'<option value="서랍장">서랍장</option>'
-			+				'<option value="기타">기타</option>';
+			+				'<option value="서랍장">서랍장</option>';
 			
 		$("#subCategory").html(subcate5);
 		
 	}else if($("#category option:selected").val() == '의자'){
 		let subcate5 = 		'<option value="암체어">암체어</option>'
 			+				'<option value="사무용의자">사무용의자</option>'
-			+				'<option value="식탁의자">식탁의자</option>'
-			+				'<option value="기타">기타</option>';
+			+				'<option value="식탁의자">식탁의자</option>';
 			
 		$("#subCategory").html(subcate5);
 		
@@ -628,7 +632,7 @@ function submitProduct(){
 		alert('대표이미지를 첨부해주세요.');
 		return;
 		
-	}else if($("prodName").val() == ""){
+	}else if($("#prodName").val() == ""){
 		alert('상품명을 입력해주세요.');
 		return;
 		
@@ -659,7 +663,7 @@ function submitProduct(){
 					location.href="adminProductList.html";
 					
 				}else if(data.trim() == "NO"){
-					alert('실패');
+					alert('다시 시도해주세요.');
 				}
 				
 			

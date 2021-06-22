@@ -646,15 +646,13 @@ function addLikeList(i, cmNum, cmLike) {
 		type:'get',
 		data:{cmNum:cmNum, id:login.id},
 		success:function(data){
-		//	alert(data);
 			if(data.trim() == "YES"){
-		//		alert('좋아요 눌럿삼');
 				getAllCommunity();
-			//	location.href = "communitylist.html";
 				
 			}else if(data.trim() == "NO"){
 		//		alert('삭제되었습니다.');
 				getAllCommunity();
+				getFilterCommunity(pagenum);
 		//		$(".likeIcon"+i).html("<a class='delLikeIcon" + i + "' href='#;' onclick='delLikeList(" + '"' + i + '"' + ',' + '"' + cmNum + '"' + ',' + '"' + id + '"' + ")'><i class='zmdi zmdi-favorite'></i><span>" + cmLike + "Like</span></a>");
 			}
 			
@@ -888,7 +886,7 @@ function todayList() {
 					  +             	'<div class="box-content">'
 					  +                 	 '<div class="box-inner-content">'
 					  +							"<a style='height: 350px; width: 350px;' href='communityDetail.html?cmNum=" + val.cmNum + "'>"
-					  +                     	 '<h3 class="title">' + val.title + '</h3>'
+					  +                     	 '<h3 class="title" style="color:white">' + val.title + '</h3>'
 					  +							"</a>"
 					  +                     	 '<span class="post">' + val.id + '</span>'
 					  +                      	'<ul class="icon">'
@@ -897,14 +895,9 @@ function todayList() {
 					  +                  	'</div>'
 					  +             	 '</div>'
 					  +       	   '</div>'
-				//	  +					'<div align="center" style="height:80px; padding-top: 20px;">'
-				//	  +						'<h4>'+val.title+'</h4>'
-				//	  +						'<p class="button-2 text-dark-red">'+val.id+'</p>'
-				//	  +					'</div>'
 					  +      	'</div>';
 					  
 					  
-			//		  "<a id='likeIcon" + i + "' href='#;' onclick='addLikeList(" + '"' + i + '"' + ',' + '"' + val.cmNum + '"' + ',' + '"' + val.cmLike + '"'+ ")'><i class='zmdi zmdi-favorite'></i><span>" + val.cmLike + "Like</span></a>"
 							
 					$("#todayBest").append(todayStr);
 			});
